@@ -27,6 +27,7 @@ import shopifylogo from "@/assets/shopifylogo.png";
 import slack from "@/assets/Slack_icon_2019.svg.png";
 import woo from "@/assets/woocommerce.png";
 import magento from "@/assets/magento-2-logo-svgrepo-com.png";
+import reactnative from '@/assets/react-native.png'
 import Image from "next/image";
 
 const icons = [
@@ -42,6 +43,7 @@ const icons = [
   { src: elementor, alt: "Elementor", className: "h-14" },
   { src: redis, alt: "Redis", className: "h-24" },
   { src: tailwindcsslogo, alt: "Tailwind CSS", className: "h-full" },
+  { src: reactnative, alt: "React Native", className: "h-16" },
   { src: html, alt: "HTML5", className: "h-16" },
   { src: nextjsicon, alt: "Next.js", className: "h-16" },
   { src: mongoose, alt: "Mongoose", className: "h-24" },

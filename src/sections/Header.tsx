@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { HiChevronDown, HiMenu, HiX } from 'react-icons/hi';
 import { SiGoogleads, SiInstagram } from "react-icons/si";
 import { TbDeviceImacSearch } from 'react-icons/tb';
-import { IoLogoReact } from 'react-icons/io5';
+import { IoLogoReact, IoPhonePortraitOutline } from 'react-icons/io5';
 import { AiOutlineLineChart, AiOutlinePicture } from "react-icons/ai";
 import anr from '@/assets/anr.jpg'
 import googleads from '@/assets/grow.jpg'
@@ -26,6 +26,7 @@ import ecommerce from '@/assets/E-Commerce-Website.png'
 import seo1 from '@/assets/Component-1-1.png'
 import seo2 from '@/assets/Frame-297.png'
 import seo3 from '@/assets/Card-1.png'
+import appdev from '@/assets/appdev.png'
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -246,6 +247,14 @@ export const Header = () => {
     },
     {
       id: 10,
+      title: "Mobile App Development",
+      desc: "iOS, Android & cross-platform mobile apps.",
+      icon: <IoPhonePortraitOutline size={24} />,
+      link: "/services/app-development",
+      image: appdev,
+    },
+    {
+      id: 11,
       title: "Analytics Reporting",
       desc: "Track and analyze your business metrics for smarter decisions.",
       icon: <AiOutlineLineChart size={24} />,
@@ -253,7 +262,7 @@ export const Header = () => {
       image: anr,
     },
     {
-      id: 11,
+      id: 12,
       title: "Graphic Design",
       desc: "Create stunning visuals to elevate your brand identity.",
       icon: <AiOutlinePicture size={24} />,
@@ -261,7 +270,7 @@ export const Header = () => {
       image: graphic,
     },
     {
-      id: 12,
+      id: 13,
       title: "Custom CMS Websites",
       desc: "Tailor-built CMS platforms with flexibility and SEO-ready architecture.",
       icon: <TbLayoutDashboard size={24} />,
@@ -269,7 +278,7 @@ export const Header = () => {
       image: cmsImage,
     },
     {
-      id: 13,
+      id: 14,
       title: "Custom Coded Websites",
       desc: "Fully hand-coded sites for performance, scalability, and uniqueness.",
       icon: <AiOutlineCode size={24} />,
@@ -277,7 +286,7 @@ export const Header = () => {
       image: customcoded,
     },
     {
-      id: 14,
+      id: 15,
       title: "Payment Gateway Integration",
       desc: "Seamless integrations with Razorpay, Stripe, PayPal, and more.",
       icon: <RiBankCardLine size={24} />,
@@ -285,7 +294,7 @@ export const Header = () => {
       image: payment,
     },
     {
-      id: 15,
+      id: 16,
       title: "E-commerce Website",
       desc: "Conversion-focused online stores built for speed and scalability.",
       icon: <AiOutlineShoppingCart size={24} />,
@@ -295,7 +304,7 @@ export const Header = () => {
 
     // 🌍 NEWLY ADDED SEO SERVICES
     {
-      id: 16,
+      id: 17,
       title: "Local SEO",
       desc: "Increase local visibility with optimized maps, listings, and reviews.",
       icon: <FaMapMarkerAlt size={24} />,
@@ -303,7 +312,7 @@ export const Header = () => {
       image: seo1, // import an image named `localseo` from assets
     },
     {
-      id: 17,
+      id: 18,
       title: "On-Page SEO",
       desc: "Optimize content, meta tags, and structure for stronger relevance.",
       icon: <AiOutlineFileSearch size={24} />,
@@ -311,7 +320,7 @@ export const Header = () => {
       image: seo2, // import from assets
     },
     {
-      id: 18,
+      id: 19,
       title: "Technical SEO",
       desc: "Enhance site speed, crawlability, and schema for better indexing.",
       icon: <AiOutlineTool size={24} />,
@@ -379,6 +388,11 @@ export const Header = () => {
                         Web Design and Development
                       </Link>
                     </li>
+                    <li>
+                        <Link href="/services/app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                        App Design and Development
+                        </Link>
+                    </li>                      
                     <li>
                       <Link href="#" className="block py-2 px-4 hover:bg-gray-700 rounded">
                         Analytics Reporting

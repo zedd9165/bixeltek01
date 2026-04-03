@@ -19,6 +19,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.26.0",
     "@tailwindcss/typography": "^0.5.16",
+    "axios": "^1.13.6",
     "chart.js": "^4.4.7",
     "clsx": "^2.1.1",
     "dotenv": "^16.5.0",
