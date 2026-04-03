@@ -320,7 +320,7 @@ export default function Webdev() {
                                 </button>
                             </Link>
 
-                            <Link href="/contact" target="_blank">
+                            <Link href="/contact-us" target="_blank">
                                 <button className="px-6 py-3 border-white bg-black text-white  hover:bg-white hover:text-black hover:border-black hover:ring-1 transition rounded-md hover:bg-transparent  hover:border ">
                                     Book a Free Consultation
                                 </button>
@@ -504,7 +504,7 @@ export default function Webdev() {
                                 </button>
                             </Link>
 
-                            <Link href="/contact" target="_blank">
+                            <Link href="/contact-us" target="_blank">
                                 <button className="px-6 py-3 border-white bg-black text-white  hover:bg-white hover:text-black hover:border-black hover:ring-1 transition rounded-md hover:bg-transparent  hover:border ">
                                     Book a Free Consultation
                                 </button>
@@ -814,7 +814,7 @@ export default function Webdev() {
                                 </button>
                             </Link>
 
-                            <Link href="/contact" target="_blank">
+                            <Link href="/contact-us" target="_blank">
                                 <button className="px-6 py-3 border-white bg-black text-white  hover:bg-white hover:text-black hover:border-black hover:ring-1 transition rounded-md hover:bg-transparent  hover:border ">
                                     Book a Free Consultation
                                 </button>

@@ -21,7 +21,7 @@ export default function WhyChooseUs({whyUs}: {whyUs: {icon: JSX.Element, title: 
               transition={{ duration: 0.9 }}
               className="text-gray-300 text-lg leading-relaxed"
             >
-              We don't just write code — we build products that generate revenue, retain users, and scale with confidence. Here's what sets us apart.
+              We don&apos;t just write code — we build products that generate revenue, retain users, and scale with confidence. Here&apos;s what sets us apart.
             </motion.p>
             <Link href="mailto:hello@bixeltek.com">
               <motion.button
