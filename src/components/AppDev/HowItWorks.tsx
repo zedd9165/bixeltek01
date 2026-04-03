@@ -149,7 +149,7 @@ export default function HowAppWorksForBrand() {
             <span className="text-blue-500">for Your Brand</span>
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            A Bixeltek-built mobile app isn't a one-time deliverable. It's a living, compounding growth asset that works for your brand across every stage of the customer lifecycle.
+            A Bixeltek-built mobile app isn&apos;t a one-time deliverable. It&apos;s a living, compounding growth asset that works for your brand across every stage of the customer lifecycle.
           </p>
         </div>
 

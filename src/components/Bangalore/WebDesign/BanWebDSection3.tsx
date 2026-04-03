@@ -292,7 +292,7 @@ const WebDevelopmentProcessCards = () => {
                     className="text-center mt-16"
                 >
                     <motion.a
-                        href="/contact"
+                        href="/contact-us"
                         className="px-8 py-3 bg-gradient-to-r from-pink-300 via-purple-400 via-purple-600 to-purple-950 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-3"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}

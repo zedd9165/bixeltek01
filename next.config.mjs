@@ -11,6 +11,16 @@ const nextConfig = {
         destination: "https://bixeltek.com/:path*",
         permanent: true,
       },
+      {
+        source: '/contact',
+        destination: '/contact-us',
+        permanent: true
+      },
+      {
+        source: '/contact/',
+        destination: '/contact-us',
+        permanent: true
+      }
     ];
   },
   trailingSlash: false,

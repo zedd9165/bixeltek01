@@ -312,9 +312,9 @@ export default function CustomSolutionsSection() {
                     <PlusCircle className="w-6 h-6" style={{ color: T.accentLight }} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white text-base md:text-lg mb-1">Don't See Your System Here?</h3>
+                    <h3 className="font-bold text-white text-base md:text-lg mb-1">Don&apos;t See Your System Here?</h3>
                     <p className="text-white/40 text-xs md:text-sm">
-                      If your business needs it, we build it. Share your idea and we'll architect the perfect solution.
+                      If your business needs it, we build it. Share your idea and we&apos;ll architect the perfect solution.
                     </p>
                   </div>
                 </div>

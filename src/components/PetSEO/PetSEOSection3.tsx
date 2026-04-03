@@ -138,7 +138,7 @@ const PetCaseStudySection = () => {
                                 Let&quot;s discuss how we can transform your pet business with data-driven SEO strategies.
                             </p>
                             <motion.a
-                                href="/contact"
+                                href="/contact-us"
                                 className="inline-flex items-center gap-2 bg-white text-amber-600 px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 group"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}

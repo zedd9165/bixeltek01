@@ -53,7 +53,7 @@ export default function WhyAppDevMatter({whyMatters}: {whyMatters: string[]}) {
                         <span className="text-blue-400">Experiences That Retain.</span>
                       </h3>
                       <p className="text-gray-400 text-[11px] leading-relaxed">
-                        A great mobile app isn't just a product — it's your most powerful sales, support, and loyalty channel, running in your customer's pocket around the clock.
+                        A great mobile app isn&apos;t just a product — it&apos;s your most powerful sales, support, and loyalty channel, running in your customer&apos;s pocket around the clock.
                       </p>
                     </div>
                     {/* Metrics */}
@@ -140,7 +140,7 @@ export default function WhyAppDevMatter({whyMatters}: {whyMatters: string[]}) {
             </div>
 
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-              With over 6.8 billion smartphone users globally, your customers are already living on mobile. The question isn't <em>whether</em> you need a mobile app — it's how much business you're losing every day without one. A strategically built mobile app fundamentally transforms how you acquire, serve, and retain customers at every stage of their journey.
+              With over 6.8 billion smartphone users globally, your customers are already living on mobile. The question isn&apos;t <em>whether</em> you need a mobile app — it&apos;s how much business you&apos;re losing every day without one. A strategically built mobile app fundamentally transforms how you acquire, serve, and retain customers at every stage of their journey.
             </p>
 
             <ul className="space-y-4">
@@ -160,7 +160,7 @@ export default function WhyAppDevMatter({whyMatters}: {whyMatters: string[]}) {
             </ul>
 
             <p className="text-gray-400 text-sm leading-relaxed border-l-2 border-blue-600 pl-4">
-              In today's mobile-first economy, partnering with an experienced app development agency ensures your product is built to modern standards — performant, secure, scalable, and engineered to deliver measurable business outcomes from the moment it goes live.
+              In today&apos;s mobile-first economy, partnering with an experienced app development agency ensures your product is built to modern standards — performant, secure, scalable, and engineered to deliver measurable business outcomes from the moment it goes live.
             </p>
 
             <Link href="/contact-us">
