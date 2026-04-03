@@ -389,6 +389,11 @@ export const Header = () => {
                       </Link>
                     </li>
                     <li>
+                        <Link href="/services/app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                        App Design and Development
+                        </Link>
+                    </li>                      
+                    <li>
                       <Link href="#" className="block py-2 px-4 hover:bg-gray-700 rounded">
                         Analytics Reporting
                       </Link>
