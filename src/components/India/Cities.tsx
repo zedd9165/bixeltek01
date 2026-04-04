@@ -16,13 +16,13 @@ export function Cities({cities}: {cities: CityCard[]}) {
             <h2 className="text-3xl md:text-5xl font-black mb-4">
               We Serve Businesses
               <br />
-              <span className="text-white/30">Across India's Major Cities</span>
+              <span className="text-white/30">Across India&apos;s Major Cities</span>
             </h2>
             <p className="text-white/40 max-w-xl mx-auto text-sm sm:text-base">
-              Bixeltek operates with a deep understanding of India's regional
-              market dynamics — from Hyderabad's pharma and IT sector to
-              Mumbai's finance and retail landscape, Delhi's B2B ecosystem, and
-              Bangalore's startup culture.
+              Bixeltek operates with a deep understanding of India&apos;s regional
+              market dynamics — from Hyderabad&apos;s pharma and IT sector to
+              Mumbai&apos;s finance and retail landscape, Delhi&apos;s B2B ecosystem, and
+              Bangalore&apos;s startup culture.
             </p>
           </div>
 

@@ -22,9 +22,9 @@ export function WhyItMatters() {
                       </p>
                       <p className="text-white/40 leading-relaxed mb-8 sm:mb-10">
                         Yet most Indian businesses are still relying on word-of-mouth,
-                        print ads, and random social media posts. That's why the gap
+                        print ads, and random social media posts. That&apos;s why the gap
                         between businesses that invest in digital marketing and those
-                        that don't is growing wider every year.
+                        that don&apos;t is growing wider every year.
                       </p>
                       <a
                         href="#form"

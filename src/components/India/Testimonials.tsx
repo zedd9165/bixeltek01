@@ -31,7 +31,7 @@ export function Testimonials({testimonials}: {testimonials: {quote: string; name
                             ))}
                         </div>
                         <p className="text-white/60 text-sm leading-relaxed flex-1 mb-5 sm:mb-6 italic">
-                          "{t.quote}"
+                          &quot;{t.quote}&quot;
                         </p>
                         <div className="border-t border-white/[0.08] pt-4 sm:pt-5 flex items-center justify-between gap-3">
                           <div>

@@ -18,9 +18,9 @@ export function LeadsForm() {
                 Marketing Audit
               </h2>
               <p className="text-white/50 leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base">
-                Tell us about your business and we'll audit your current digital
+                Tell us about your business and we&apos;ll audit your current digital
                 presence, identify the biggest growth opportunities, and show
-                you exactly what we'd do differently. You'll get a clear action
+                you exactly what we&apos;d do differently. You&apos;ll get a clear action
                 plan — whether you work with us or not.
               </p>
 

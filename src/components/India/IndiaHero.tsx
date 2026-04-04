@@ -41,16 +41,16 @@ export function IndiaHero({ stats, heroBg }: { stats: StatItem[]; heroBg: string
                     </h1>
         
                   <p className="text-white/50 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-6">
-                    India's digital economy is growing faster than anywhere in the
-                    world — and competition online is fiercer than ever. Whether you're
+                    India&apos;s digital economy is growing faster than anywhere in the
+                    world — and competition online is fiercer than ever. Whether you&apos;re
                     a clinic in Hyderabad, an e-commerce brand in Mumbai, a real estate
                     firm in Delhi, or a school in Bangalore, your customers are
-                    searching Google before they call. If your business isn't visible,
+                    searching Google before they call. If your business isn&apos;t visible,
                     your competitors win every click.
                   </p>
                   <p className="text-white/50 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
                     At Bixeltek, a Google Partner Certified agency headquartered in
-                    Hyderabad with a track record across India's top metros, we build
+                    Hyderabad with a track record across India&apos;s top metros, we build
                     marketing systems that generate leads, reduce wasted ad spend, and
                     deliver measurable ROI — consistently.
                   </p>

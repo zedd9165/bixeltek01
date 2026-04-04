@@ -11,7 +11,7 @@ export default function WhyChooseUs({trustPillars}: {trustPillars: {icon: React.
               <span className="text-white/30">Choose Bixeltek</span>
             </h2>
             <p className="text-white/40 max-w-xl mx-auto text-sm sm:text-base">
-              There's no shortage of digital marketing agencies in India. What's
+              There&apos;s no shortage of digital marketing agencies in India. What&apos;s
               rare is an agency that combines Google Partner-certified expertise
               with genuine accountability, transparent reporting, and a team that
               understands the nuances of how Indian customers search and decide.
