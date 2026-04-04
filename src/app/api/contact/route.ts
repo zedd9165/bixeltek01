@@ -1,36 +1,36 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import axios from "axios";
+// import axios from "axios";
 
 /* ───────── Ensure Territory Exists ───────── */
 
-const ensureTerritory = async (frappe: any, territoryName: string) => {
-  if (!territoryName) return;
+// const ensureTerritory = async (frappe: any, territoryName: string) => {
+//   if (!territoryName) return;
 
-  try {
-    const check = await frappe.get("/api/resource/CRM Territory", {
-      params: {
-        filters: JSON.stringify([["name", "=", territoryName]]),
-        limit_page_length: 1,
-      },
-    });
+//   try {
+//     const check = await frappe.get("/api/resource/CRM Territory", {
+//       params: {
+//         filters: JSON.stringify([["name", "=", territoryName]]),
+//         limit_page_length: 1,
+//       },
+//     });
 
-    const exists = check.data?.data || [];
+//     const exists = check.data?.data || [];
 
-    if (exists.length === 0) {
-      console.log(`Creating territory: ${territoryName}`);
+//     if (exists.length === 0) {
+//       console.log(`Creating territory: ${territoryName}`);
 
-      await frappe.post("/api/resource/CRM Territory", {
-        doctype: "CRM Territory",
-        territory_name: territoryName,
-      });
+//       await frappe.post("/api/resource/CRM Territory", {
+//         doctype: "CRM Territory",
+//         territory_name: territoryName,
+//       });
 
-      console.log(`✅ Territory created: ${territoryName}`);
-    }
-  } catch (err) {
-    console.error("❌ Territory check/create failed:", err);
-  }
-};
+//       console.log(`✅ Territory created: ${territoryName}`);
+//     }
+//   } catch (err) {
+//     console.error("❌ Territory check/create failed:", err);
+//   }
+// };
 
 /* ───────── API Route ───────── */
 
@@ -108,67 +108,64 @@ Website: ${website}
 
     await transporter.sendMail(mailOptions);
 
-
     /* ───────── FRAPPE CLIENT ───────── */
 
-    const frappe = axios.create({
-      baseURL: process.env.FRAPPE_URL,
-      headers: {
-        Authorization: `token ${process.env.FRAPPE_API_KEY}:${process.env.FRAPPE_API_SECRET}`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    // const frappe = axios.create({
+    //   baseURL: process.env.FRAPPE_URL,
+    //   headers: {
+    //     Authorization: `token ${process.env.FRAPPE_API_KEY}:${process.env.FRAPPE_API_SECRET}`,
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json",
+    //   },
+    // });
 
     /* ───────── DUPLICATE CHECK ───────── */
 
-    const dupCheck = await frappe.get("/api/resource/CRM Lead", {
-      params: {
-        fields: JSON.stringify(["name", "email"]),
-        filters: JSON.stringify([["email", "=", email]]),
-        limit_page_length: 1,
-      },
-    });
+    // const dupCheck = await frappe.get("/api/resource/CRM Lead", {
+    //   params: {
+    //     fields: JSON.stringify(["name", "email"]),
+    //     filters: JSON.stringify([["email", "=", email]]),
+    //     limit_page_length: 1,
+    //   },
+    // });
 
-    const existing = dupCheck.data?.data || [];
+    // const existing = dupCheck.data?.data || [];
 
-    if (existing.length > 0) {
-      console.log("⚠️ Lead already exists, skipping insert");
+    // if (existing.length > 0) {
+    //   console.log("⚠️ Lead already exists, skipping insert");
 
-      return NextResponse.json(
-        { message: "Email sent, lead already exists" },
-        { status: 200 }
-      );
-    }
+    //   return NextResponse.json(
+    //     { message: "Email sent, lead already exists" },
+    //     { status: 200 }
+    //   );
+    // }
 
     /* ───────── TERRITORY CHECK ───────── */
 
-    await ensureTerritory(frappe, country);
+    // await ensureTerritory(frappe, country);
 
     /* ───────── CREATE LEAD ───────── */
 
-    const lead = {
-      doctype: "CRM Lead",
-      first_name: firstName || fullName,
-      last_name: lastName || "",
-      email: email,
-      mobile_no: phone,
-      organization: company,
-      website: website,
-      territory: country,
-      custom_city: city,
-      source: "Website Form Submission",
-      custom_message: message,
-      custom_service: services,
-    };
+    // const lead = {
+    //   doctype: "CRM Lead",
+    //   first_name: firstName || fullName,
+    //   last_name: lastName || "",
+    //   email: email,
+    //   mobile_no: phone,
+    //   organization: company,
+    //   website: website,
+    //   territory: country,
+    //   custom_city: city,
+    //   source: "Website Form Submission",
+    //   custom_message: message,
+    //   custom_service: services,
+    // };
 
-    const response = await frappe.post("/api/resource/CRM Lead", lead);
+    // const response = await frappe.post("/api/resource/CRM Lead", lead);
 
-    console.log("✅ Lead inserted into Frappe:", response.data);
+    // console.log("✅ Lead inserted into Frappe:", response.data);
 
-    return NextResponse.json(
-      { status: 200 }
-    );
+    return NextResponse.json({ status: 200 });
   } catch (error: any) {
     console.error("❌ Server Error:", error.response?.data || error);
 
