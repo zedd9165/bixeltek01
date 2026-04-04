@@ -69,7 +69,7 @@ export const Whiteheader = () => {
         },
         india: {
             title: "India",
-            link: "#",
+            link: "/india",
             cities: [
                 {
                     name: "Hyderabad",

@@ -79,7 +79,7 @@ export const Header = () => {
     },
     india: {
       title: "India",
-      link: "#",
+      link: "/india",
       cities: [
         {
           name: "Hyderabad",
