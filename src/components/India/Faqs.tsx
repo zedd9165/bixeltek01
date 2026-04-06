@@ -48,7 +48,7 @@ export default function FaqsSection({faqs}: {faqs: FAQItem[]}) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-14">
             <p className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-4">
-              FAQ
+              Still Got Questions?
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black">
               Frequently Asked
