@@ -97,14 +97,14 @@ const cities = [
     city: "Mumbai",
     state: "Maharashtra",
     tag: "Metro",
-    link: "/mumbai",
+    link: "#",
     services: "Google Ads · SEO · Web Design · Social Media",
   },
   {
     city: "Delhi / NCR",
     state: "Delhi, Gurugram, Noida",
     tag: "Metro",
-    link: "/delhi",
+    link: "#",
     services: "Google Ads · SEO · Web Design · Social Media",
   },
   {
@@ -118,14 +118,14 @@ const cities = [
     city: "Chennai",
     state: "Tamil Nadu",
     tag: "Metro",
-    link: "/chennai",
+    link: "#",
     services: "Google Ads · SEO · Web Design",
   },
   {
     city: "Pune",
     state: "Maharashtra",
     tag: "Metro",
-    link: "/pune",
+    link: "#",
     services: "Google Ads · SEO · Web Design · Local SEO",
   },
 ];
