@@ -1,6 +1,16 @@
 
 import React from 'react'
 import { Spotlight } from '@/components/Spotlight'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Thank You for Submitting the Form',
+  description: 'Thank you for contacting us. Our team will get back to you shortly.',
+  robots: {
+    index: false, 
+    follow: true,
+  },
+}
 
 export default function page() {
     return (

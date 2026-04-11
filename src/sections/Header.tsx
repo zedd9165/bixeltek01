@@ -601,7 +601,7 @@ export const Header = () => {
                 <ul className="absolute top-full -left-7 mt-0 bg-white rounded-b-md shadow-lg hidden group-hover:block z-50 min-w-[200px]">
                   <li>
                     <Link
-                      href="/industries/dental-marketing"
+                      href="/industries/dental-marketing-agency"
                       className="block px-4 py-2 text-black bg-gradient-to-tr hover:from-[black] hover:via-[#090040] hover:to-[#483aa0] hover:rounded-b-md hover:text-white transition"
                     >
                       Dental Marketing

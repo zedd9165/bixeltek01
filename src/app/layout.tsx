@@ -5,7 +5,6 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import { Toaster } from "react-hot-toast";
-import "./globals.css";
 import { Preloader } from "@/components/Preloader";
 import DemoPopup from "@/components/CTApopup";
 import TransitionProvider from "@/components/TransitionProvider";
@@ -168,6 +167,18 @@ export default function RootLayout({
           src="https://kit.fontawesome.com/d836a1d31c.js"
           crossOrigin="anonymous"
           strategy="lazyOnload"
+        />
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s){...}(window,document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', 'YOUR_PIXEL_ID');
+              fbq('track', 'PageView');
+            `
+          }}
         />
         {/* Google Tag Manager (noscript) - BODY */}
         <noscript>
