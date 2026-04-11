@@ -20,6 +20,11 @@ const nextConfig = {
         source: '/contact/',
         destination: '/contact-us',
         permanent: true
+      },
+      {
+        source: '/dental-marketing',
+        destination: '/dental-marketing-agency',
+        permanent: true
       }
     ];
   },

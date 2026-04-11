@@ -5,6 +5,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa'
 import { useRouter } from 'next/navigation';
 import ContactFrom from '@/components/ContactFrom'
 import ContactFromNew from './ContactFormNew';
+import { PhoneCall } from 'lucide-react';
 
 
 export const ContactSection: React.FC = () => {
@@ -221,6 +222,7 @@ export const ContactSection: React.FC = () => {
                         <div className="pt-0  bg-white rounded-xl  text-black text-sm">
                             <div className="grid grid-cols-1 md:grid-cols-2 p-7 gap-6">
                                 <div className='flex flex-col gap-3'>
+                                <div className='flex flex-col gap-3'>
                                     <p className="font-semibold text-xl">Headquarters:</p>
                                     <address className="text-base not-italic">
                                         Bixeltek,
@@ -231,10 +233,6 @@ export const ContactSection: React.FC = () => {
                                         Toli Chowki,
                                         Hyderabad, Telangana 500008  
                                     </address>
-                                    <a href="tel:+919100032301">
-                                        <p className="font-bold mt-1">+91 9100032301</p>
-                                    </a>
-
                                 </div>
                                 <div className='flex flex-col gap-3'>
                                     <p className="font-semibold text-xl">Saudi Office <span className='text-base'>(coming soon)</span>:</p>
@@ -242,9 +240,34 @@ export const ContactSection: React.FC = () => {
                                         Bixeltek,
                                         Qahtani Building, Above SAB Bank, Dammam 32242, Saudi Arabia
                                     </address>
-                                    <a href="tel:+919100032301">
-                                        <p className="font-bold mt-1">+91 9100032301</p>
+                                    </div>
+                                </div>
+                                <div className='flex flex-col gap-3'>
+                            <p className="font-semibold text-xl">Get In Touch</p>
+                                <div className='flex flex-col gap-2'>
+                                    <a href="tel:+14375252301">
+                                    <p className="font-semibold text-lg hover:text-purple-500 flex gap-3">
+                                        <PhoneCall className="text-purple-500" />
+                                        Canada : +1 437 525 2301
+                                        </p>
                                     </a>
+
+                                    <a href="tel:+18453823415">
+                                        <p className="font-semibold text-lg hover:text-purple-500 flex gap-3">
+                                        <PhoneCall className="text-purple-500" />
+                                        USA : +1 845 382 3415
+                                        </p>
+                                    </a>
+                                    <a href="tel:+919100032301">
+                                        <p className="font-semibold text-lg hover:text-purple-500 flex gap-3"><PhoneCall className="text-purple-500" />India : +91 9100032301</p>
+                                    </a>
+                                </div>
+                                <div className='flex flex-col gap-2'>
+                                    <p className="font-semibold text-xl">Email:</p>
+                                    <a href="mailto:hello@bixeltek.com " className="text-lg font-semibold hover:text-purple-500">
+                                        hello@bixeltek.com
+                                    </a>
+                                </div>
                                 </div>
                             </div>
                         </div>

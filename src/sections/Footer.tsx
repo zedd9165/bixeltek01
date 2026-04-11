@@ -35,12 +35,25 @@ export const Footer = () => {
               </address>
             </div>
             <div className="text-white mb-4 flex flex-col gap-3 mt-8">
+               <a href="tel:+14375252301">
+                <p className="text-white text-lg hover:text-purple-500 flex gap-3">
+                  <PhoneCall className="text-blue-500" />
+                  Canada : +1 437 525 2301
+                </p>
+              </a>
+
+              <a href="tel:+18453823415">
+                <p className="text-white text-lg hover:text-purple-500 flex gap-3">
+                  <PhoneCall className="text-blue-500" />
+                  USA : +1 845 382 3415
+                </p>
+              </a>
               <a href="tel:+919100032301">
-                <p className="text-white text-lg hover:text-purple-500 flex gap-3"><PhoneCall className="text-blue-500" /> +91 9100032301</p>
+                <p className="text-white text-lg hover:text-purple-500 flex gap-3"><PhoneCall className="text-blue-500" />India : +91 9100032301</p>
               </a>
-              <a href="tel:+914035095538">
+              {/* <a href="tel:+914035095538">
                 <p className="text-white text-lg hover:text-purple-500 flex gap-3"><PhoneCall className="text-blue-500" /> +91 40-35095538</p>
-              </a>
+              </a> */}
               <a href="mailto:hello@bixeltek.com">
                 <p className="text-white text-lg hover:text-purple-500 flex gap-3"><Mail className="text-blue-500" />hello@bixeltek.com</p>
               </a>
