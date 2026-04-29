@@ -160,6 +160,22 @@ export const Whiteheader = () => {
                 },
             ],
         },
+        uk: {
+      title: "United Kingdom & Ireland",
+      link: "#",
+      cities: [
+        {
+          name: "",
+          link: "#",
+          services: [
+            { name: "Google Ads Management", link: "/uk/google-ads-managment" },
+            { name: "Search Engine Optimisation", link: "/uk/seo-services" },
+            { name: "Web Design and Development", link: "/uk/web-design" },
+            { name: "Social Media Marketing", link: "/uk/social-media-management" },
+          ],
+        },
+      ],
+    },
         // uae: {
         //     title: "United Arab Emirites",
         //     link: "/united-kingdom",
@@ -183,7 +199,7 @@ export const Whiteheader = () => {
     const [activeTab2, setActiveTab2] = useState<keyof typeof locations | null>(null);
 
     const [isLocationsOpen, setIsLocationsOpen] = useState(false);
-
+    const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -635,7 +651,35 @@ export const Whiteheader = () => {
 
                             )}
                         </li>
-                        <li><Link href="/industries" className="block py-2 px-4 hover:bg-purple-600 rounded">Industries</Link></li>
+                        <li>
+                           <div className="flex justify-between items-center">
+                                <Link href="/industries" onClick={toggleMenu}>
+                                    Industries
+                                </Link>
+                                <button onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}>
+                                    <HiChevronDown />
+                                </button>
+                                </div>
+
+                            {isIndustriesOpen && (
+                                <motion.ul
+                                initial={{ opacity: 0, y: -5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="ml-4 text-lg space-y-2"
+                                >
+                                <li>
+                                    <Link
+                                    href="/industries/dental-marketing-agency"
+                                    onClick={toggleMenu}
+                                    className="block py-2 px-4 text-gray-200 hover:text-purple-400"
+                                    >
+                                    Dental Marketing
+                                    </Link>
+                                </li>
+                                </motion.ul>
+                            )}
+                            </li>
                         <li>
                             <button
                                 onClick={() => setIsLocationsOpen(!isLocationsOpen)}

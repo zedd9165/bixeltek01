@@ -34,9 +34,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<keyof typeof locations>("canada");
   const [activeTab2, setActiveTab2] = useState<keyof typeof locations | null>(null);
-
-
-
+  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -123,20 +121,6 @@ export const Header = () => {
     //     },
     //   ],
     // },
-    // uk: {
-    //   title: "United Kingdom",
-    //   link: "#",
-    //   cities: [
-    //     {
-    //       name: "London",
-    //       link: "#",
-    //       services: [
-    //         { name: "SEO Services in London", link: "#" },
-    //         { name: "PPC in London", link: "#" },
-    //       ],
-    //     },
-    //   ],
-    // },
     saudi: {
       title: "Saudi Arabia",
       link: "#",
@@ -160,6 +144,22 @@ export const Header = () => {
             { name: "Search Engine Optimisation", link: "/saudi-arabia/riyadh/seo-services" },
             { name: "Web Design and Development", link: "/saudi-arabia/riyadh/web-design-services" },
             { name: "Social Media Marketing", link: "/saudi-arabia/riyadh/social-media-management" },
+          ],
+        },
+      ],
+    },
+    uk: {
+      title: "United Kingdom & Ireland",
+      link: "#",
+      cities: [
+        {
+          name: "",
+          link: "#",
+          services: [
+            { name: "Google Ads Management", link: "/uk/google-ads-managment" },
+            { name: "Search Engine Optimisation", link: "/uk/seo-services" },
+            { name: "Web Design and Development", link: "/uk/web-design" },
+            { name: "Social Media Marketing", link: "/uk/social-media-management" },
           ],
         },
       ],
@@ -442,7 +442,35 @@ export const Header = () => {
 
                 )}
               </li>
-              <li><Link href="/industries" className="block py-2 px-4 hover:bg-purple-600 rounded">Industries</Link></li>
+              <li>
+                           <div className="flex justify-between items-center px-4">
+                                <Link href="/industries" onClick={toggleMenu}>
+                                    Industries
+                                </Link>
+                                <button onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}>
+                                    <HiChevronDown />
+                                </button>
+                                </div>
+
+                            {isIndustriesOpen && (
+                                <motion.ul
+                                initial={{ opacity: 0, y: -5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="ml-4 text-lg space-y-2"
+                                >
+                                <li>
+                                    <Link
+                                    href="/industries/dental-marketing-agency"
+                                    onClick={toggleMenu}
+                                    className="block py-2 px-4 text-gray-200 hover:text-purple-400"
+                                    >
+                                    Dental Marketing
+                                    </Link>
+                                </li>
+                                </motion.ul>
+                            )}
+                            </li>
               <li>
                 <button
                   onClick={() => setIsLocationsOpen(!isLocationsOpen)}

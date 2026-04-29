@@ -46,6 +46,7 @@ import blackcar from "@/assets/digital marketing for car detailers.jpg"
 import healthcare from "@/assets/digital marketing for health care practices.jpg"
 import LocationFaqSection from '@/components/Common/location/LocationFaqSection';
 import ContactCTASection from '@/components/Common/location/LocationCtaSection';
+import CampaignTabsSocialMissUk from '@/components/UK/SocialMedia/CampaignTabs';
 
   const proofPoints = [
     { id: 1, text: "4+ Years Helping Canadian Businesses Grow Online", icon: iconimg },
@@ -72,7 +73,7 @@ import ContactCTASection from '@/components/Common/location/LocationCtaSection';
         },
         {
             title: "Influencer Collaborations",
-            description: "Partner with local creators to amplify your brand’s reach, credibility, and authenticity in Mississauga’s market.",
+            description: "Partner with local creators to amplify your brand’s reach, credibility, and authenticity in Uk & Irish market.",
         },
         {
             title: "Branding & Creative Design",
@@ -84,7 +85,7 @@ import ContactCTASection from '@/components/Common/location/LocationCtaSection';
   {
     number: '01',
     title: 'Audit & Discovery',
-    text: "We start by auditing your existing social media presence, analyzing competitors, and reviewing audience behavior. This deep dive uncovers strengths, weaknesses, and hidden opportunities to make your Mississauga campaigns stand out right from the foundation.",
+    text: "We start by auditing your existing social media presence, analyzing competitors, and reviewing audience behavior. This deep dive uncovers strengths, weaknesses, and hidden opportunities to make your Uk & Irish campaigns stand out right from the foundation.",
     gradient: 'from-blue-500 via-blue-400 to-black',
     color: 'text-blue-500',
         bgcolor: 'hover:bg-blue-500',
@@ -108,7 +109,7 @@ import ContactCTASection from '@/components/Common/location/LocationCtaSection';
   {
     number: '04',
     title: 'Campaign Setup & Launch',
-    text: "We configure targeting, budget allocation, and ad placements across platforms like Facebook, Instagram, LinkedIn, and TikTok. Every launch is optimized to maximize exposure while keeping costs efficient for Mississauga businesses.",
+    text: "We configure targeting, budget allocation, and ad placements across platforms like Facebook, Instagram, LinkedIn, and TikTok. Every launch is optimized to maximize exposure while keeping costs efficient for Uk & Irish businesses.",
     gradient: 'from-pink-500 via-purple-400 to-transparent',
     color: 'text-purple-500',
         bgcolor: 'hover:bg-purple-500',
@@ -214,21 +215,21 @@ import ContactCTASection from '@/components/Common/location/LocationCtaSection';
 ];                 
 
 
-export default function page() {
+export default function Page() {
     return (
         <>
             {/* <HeroSocialMediaMiss /> */}
             <LocationHeroSection
             heading={
                 <>
-                <span> Social Media Marketing Services in Mississauga{" "}
+                <span> Social Media Marketing Services in UK & Ireland{" "}
               <span className="text-blue-500">That Drive Engagement and Sales</span></span>
                 </>
             }
             description='Your customers spend hours every day on platforms like Facebook, Instagram,
               LinkedIn, and TikTok. But without the right strategy, your brand gets lost
               in the noise. At Bixeltek,
-              we help Mississauga businesses build social media campaigns that capture
+              we help UK & Irish businesses build social media campaigns that capture
               attention, build trust, and convert followers into customers.'
               proofPoints={proofPoints}
               primaryCTA={{
@@ -250,10 +251,10 @@ export default function page() {
             <ServicesSection
             heading='Social Media Services'
             spanText='Designed for Growth'
-            description='Bixeltek delivers full-service social media marketing for Mississauga businesses, combining strategy, creativity, and data-driven execution to boost visibility, engagement, and conversions.'
+            description='Bixeltek delivers full-service social media marketing for UK & Irish businesses, combining strategy, creativity, and data-driven execution to boost visibility, engagement, and conversions.'
             services={services}
             />
-            <CampaignTabsSocialMiss />
+            <CampaignTabsSocialMissUk />
             {/* <SocialProcessTimeline /> */}
             <LocationProcessSection
             heading={
@@ -261,13 +262,13 @@ export default function page() {
                 <span>Our Proven Social Media Marketing <span className="text-blue-500">Process That Delivers ROI</span></span>
                 </>
             }
-            description='Social media success isn’t luck — it’s a system. We follow a structured process that keeps your campaigns consistent, strategic, and focused on results for Mississauga businesses.'
+            description='Social media success isn’t luck — it’s a system. We follow a structured process that keeps your campaigns consistent, strategic, and focused on results for Uk & Irish businesses.'
             steps={steps}
             cta={{
                 text:'Talk to a social media specialist',
                 href:'mailto:zee@bixeltek.com'
             }}
-            footerText='This structured process ensures your social media campaigns run efficiently, adapt quickly, and deliver consistent ROI for Mississauga businesses.'
+            footerText='This structured process ensures your social media campaigns run efficiently, adapt quickly, and deliver consistent ROI for Uk & Irish businesses.'
             />
             {/* <SocialMissIndustries /> */}
             <LocationIndustrySection
@@ -278,7 +279,7 @@ export default function page() {
                     </span>
                           </>      
                         }
-                        description='We’ve built campaigns for businesses across Mississauga, tailored to the way their customers engage online.'
+                        description='We’ve built campaigns for businesses across Uk & Ireland, tailored to the way their customers engage online.'
                         industries={industries}
                         />
             {/* <SocialMediaFaqs /> */}
@@ -288,11 +289,11 @@ export default function page() {
                 <>
                 <h2 className="text-4xl text-center md:text-6xl font-inter font-bold text-white mb-6">
               Social Media FAQs for{" "}
-              <span className="text-blue-500">Mississauga Businesses</span>
+              <span className="text-blue-500">Uk & Irish Businesses</span>
             </h2>
             </>
             }
-            description='Common questions Mississauga businesses ask about social media —
+            description='Common questions Uk & Irish businesses ask about social media —
               from platforms and ad spend, to organic vs paid strategies.'
             faqs={faqs}  
             />
@@ -303,7 +304,7 @@ export default function page() {
                             seeing you, or your competitors?
                             Partner with Bixeltek to launch
                             social campaigns that build awareness, engage audiences, and generate
-                            leads in Mississauga.'
+                            leads in Uk & Ireland.'
             />
             {/* <section
                 className="bg-black p-8 md:p-20 mx-auto flex flex-col md:flex-row justify-center items-center gap-10"

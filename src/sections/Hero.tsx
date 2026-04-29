@@ -75,7 +75,7 @@ export const Hero = () => {
       <h1 className="text-7xl md:text-[168px] tracking-tighter font-semibold bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,0.5))] text-transparent bg-clip-text text-center">BIXELTEK</h1>
       <div className="text-white/70 text-center text-sm md:text-xl   mt-2">
         <h2 className='text-2xl md:text-3xl'>Premier Digital Marketing Agency </h2>
-        <p className='text-base max-w-2xl mx-auto mt-2'> Bixeltek is a certified, full-service digital marketing agency helping businesses in India, US, Canada & Saudi Arabia scale profitably with performance-first strategies.
+        <p className='text-base max-w-xl mx-auto mt-2'> Bixeltek is a certified, full-service digital marketing agency helping businesses in India, US, Canada, Saudi Arabia, UK & Ireland scale profitably with performance-first strategies.
         </p>
       </div>
       <div className="flex justify-center items-center mt-10 gap-5">
