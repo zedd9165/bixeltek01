@@ -12,6 +12,7 @@ const GoogleAdsMarquee: React.FC = () => {
     "Reduce Wasted Spend",
     "Increased Phone Calls",
     "Dominate Google Search Results",
+    "Google Partner Certified"
   ];
 
   return (

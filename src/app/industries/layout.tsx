@@ -15,14 +15,16 @@ export const metadata = {
     type: "website",
   },
         alternates: {
-    canonical: "https://bixeltek.com/industries", // 👈 canonical URL here
+    canonical: "https://bixeltek.com/industries", 
   },
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
+    <Header/>
       <main className="min-h-screen">{children}</main>
+     <Footer/> 
     </>
   );
 };

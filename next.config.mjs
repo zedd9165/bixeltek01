@@ -23,8 +23,23 @@ const nextConfig = {
       },
       {
         source: '/dental-marketing',
-        destination: '/dental-marketing-agency',
+        destination: '/industries/dental-marketing-agency',
         permanent: true
+      },
+       {
+        source: '/industries/dental-marketing',
+        destination: '/industries/dental-marketing-agency',
+        permanent: true
+      },
+      {
+        source:'/dental-marketing-001bxt',
+        destination:'/industries/dental-marketing-agency',
+        permanent:true
+      },
+      {
+        source:'/dental-marketing-002bxt',
+        destination:'/industries/dental-marketing-agency',
+        permanent:true
       }
     ];
   },
