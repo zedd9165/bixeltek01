@@ -44,7 +44,7 @@ export default function WhyWebsiteUk() {
 
                     {/* Intro */}
                     <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-2xl">
-                        Think about your current website. Does it load slowly? Look outdated on mobile? Fail to generate enquiries? You're not alone — many businesses across the UK & Ireland face the exact same problems:
+                        Think about your current website. Does it load slowly? Look outdated on mobile? Fail to generate enquiries? You&apos;re not alone — many businesses across the UK & Ireland face the exact same problems:
                     </p>
 
                     {/* Pain Points */}
@@ -73,7 +73,7 @@ export default function WhyWebsiteUk() {
 
                     {/* Closing Line */}
                     <p className="text-gray-300 mb-8 font-poppins leading-relaxed max-w-2xl">
-                        Every day these problems persist, you're losing business to competitors with a stronger digital presence.
+                        Every day these problems persist, you&apos;re losing business to competitors with a stronger digital presence.
                     </p>
 
                     {/* CTA */}

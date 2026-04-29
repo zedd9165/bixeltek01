@@ -149,7 +149,7 @@ export default function Page() {
     <LocationHeroSection
      heading={
                     <>
-                    <span>UK & Ireland's <span className='text-blue-500'>Trusted Google Ads Partner</span> for Scalable Lead Growth</span>
+                    <span>UK & Ireland&apos;s <span className='text-blue-500'>Trusted Google Ads Partner</span> for Scalable Lead Growth</span>
                     </>
                 }
      description='Bixeltek is a certified Google Partner agency helping businesses across the UK & Ireland run smarter PPC campaigns that deliver high-quality leads and measurable ROI.'

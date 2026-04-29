@@ -44,7 +44,7 @@ export default function WhySEOUk() {
 
                     {/* Intro */}
                     <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-2xl">
-                        SEO — Search Engine Optimisation — is the foundation of digital competitiveness. It ensures your brand is visible when customers search with intent. In the UK & Ireland's highly competitive markets, SEO provides a compounding advantage — securing visibility, building credibility, and reducing reliance on expensive paid advertising.
+                        SEO — Search Engine Optimisation — is the foundation of digital competitiveness. It ensures your brand is visible when customers search with intent. In the UK & Ireland&apos;s highly competitive markets, SEO provides a compounding advantage — securing visibility, building credibility, and reducing reliance on expensive paid advertising.
                     </p>
 
                     {/* Copy Points */}

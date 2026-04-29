@@ -20,11 +20,11 @@ const WhyGoogleAdsUk2: React.FC = () => {
           className="flex-1 lg:w-1/2 px-8 lg:px-16 md:mb-10 lg:mb-0"
         >
           <h2 className="text-3xl md:text-6xl font-bold font-inter leading-snug mb-6">
-            Why UK & Irish Businesses Can't Ignore <span className="text-blue-500">Google Ads</span>
+            Why UK & Irish Businesses Can&apos;t Ignore <span className="text-blue-500">Google Ads</span>
           </h2>
 
           <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-2xl">
-            The UK is one of Europe's most competitive digital markets — and Ireland isn't far behind. Whether you're a clinic, a trades business, a law firm, or an ecommerce brand, Google Ads ensures you're visible at the exact moment your customers are searching.         
+            The UK is one of Europe&apos;s most competitive digital markets — and Ireland isn&apos;t far behind. Whether you&apos;re a clinic, a trades business, a law firm, or an ecommerce brand, Google Ads ensures you&apos;re visible at the exact moment your customers are searching.         
          </p>
 
           <ul className="space-y-4 mb-8">
@@ -35,7 +35,7 @@ const WhyGoogleAdsUk2: React.FC = () => {
               <span className="text-blue-500">✔</span> &quot;Near me&quot; searches across the UK & Ireland continue to rise year on year
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-500">✔</span> Your competitors are already bidding on your customers — if you're not there, they are
+              <span className="text-blue-500">✔</span> Your competitors are already bidding on your customers — if you&apos;re not there, they are
 
             </li>
           </ul>

@@ -32,7 +32,7 @@ export default function WhySEOMattersUk() {
 
                     {/* Intro */}
                     <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-2xl">
-                        The UK and Ireland are among Europe's most competitive digital markets. With rising ad costs and increasingly fragmented consumer attention, SEO ensures your brand is present where customers look first — on Google.
+                        The UK and Ireland are among Europe&apos;s most competitive digital markets. With rising ad costs and increasingly fragmented consumer attention, SEO ensures your brand is present where customers look first — on Google.
                     </p>
 
                     {/* Copy Points */}

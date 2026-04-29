@@ -41,7 +41,7 @@ export default function WhyGoogleAdsUk() {
                     </h2>
 
                     <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-2xl">
-                       Google Ads is Google's online advertising platform that puts your business at the top of search results, on YouTube, across websites, and inside Gmail. Instead of waiting months for SEO to kick in, Google Ads gets you in front of ready-to-buy customers immediately. For businesses across the UK & Ireland, that means:
+                       Google Ads is Google&apos;s online advertising platform that puts your business at the top of search results, on YouTube, across websites, and inside Gmail. Instead of waiting months for SEO to kick in, Google Ads gets you in front of ready-to-buy customers immediately. For businesses across the UK & Ireland, that means:
                     </p>
 
                     <ul className="space-y-4 mb-8">
