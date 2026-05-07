@@ -117,6 +117,9 @@ export const Footer = () => {
               <li className="mb-6">
                 <div><a target="_blank" href="https://www.vision2030.gov.sa/en"> <img src="/Group 3@2x.png.png" title="Partner in Vision 2030" className="w-20 lg:w-32 h-auto" alt="Vision 2030 Logo" /></a></div>
               </li>
+              <li className="mb-6">
+                <div> <img src="/new-logo.png" title="Partner in Vision 2030" className="w-16 lg:w-20 h-auto" alt="Vision 2030 Logo" /></div>
+              </li>
             </ul>
           </div>
 
