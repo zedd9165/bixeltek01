@@ -14,12 +14,18 @@ import ytlogo from '@/assets/4375133_logo_youtube_icon.png'
 import semrushlogo from '@/assets/4202007_analytics_google_logo_social_social media_icon.png'
 import googleadslogo from '@/assets/6929233_google ads_logo_icon.png'
 import wordpresslogo from '@/assets/317716_cms_wordpress_blog_blogging_icon.png'
+import googletagmanager from '@/assets/google-tag-manager-logo-png_seeklogo-337292.png'
+import microsoftedge from '@/assets/microsoft-edge.png'
+import shopifyLogo from '@/assets/shopifylogo.png'
+import strapilogo from '@/assets/strapi-logo.png'
 
 interface CardData {
   title: string;
   link: string;
   img1: StaticImageData;
   img2: StaticImageData;
+  img3?: StaticImageData;
+  img4?: StaticImageData;
   description: string;
 }
 
@@ -28,6 +34,8 @@ interface CardProps {
   link: string;
   img1: StaticImageData;
   img2: StaticImageData;
+  img3?: StaticImageData;
+  img4?: StaticImageData;
   description: string;
   isEven: boolean;
 }
@@ -38,6 +46,8 @@ const services: CardData[] = [
     link: "services/web-design",
     img1: reacticon,
     img2: wordpresslogo,
+    img3: shopifyLogo,
+    img4: strapilogo,
     description:
       "We build fast, scalable, and visually stunning websites that enhance user experience and drive engagement.",
   },
@@ -53,7 +63,7 @@ const services: CardData[] = [
     title: "Search Engine Optimization",
     link: "services/seo-services",
     img1: googlelogo,
-    img2: searchengineoptimizationlogo,
+    img2: microsoftedge,
     description:
       "Increase your website’s organic traffic with cutting-edge SEO techniques and best practices.",
   },
@@ -69,7 +79,7 @@ const services: CardData[] = [
     title: "Reporting and Analysis",
     link: "/contact-us",
     img1: semrushlogo,
-    img2: photoshoplogo,
+    img2: googletagmanager,
     description:
       "Optimize conversions and cut ad costs with data-driven reporting, A/B testing, and user behavior analysis.",
   },
@@ -83,7 +93,7 @@ const services: CardData[] = [
   },
 ];
 
-const Card: React.FC<CardProps> = ({ title, img1, img2, description, link, isEven }) => {
+const Card: React.FC<CardProps> = ({ title, img1, img2, img3, img4, description, link, isEven }) => {
   const gradient = isEven
     ? "from-[#7028e4] to-white/10"
     : "from-white-10 to-[#7028e4]";
@@ -97,6 +107,12 @@ const Card: React.FC<CardProps> = ({ title, img1, img2, description, link, isEve
           <div className=" flex flex-row gap-4 w-fit mb-3">
             <Image src={img1} width={50} height={50} alt={title} />
             <Image src={img2} width={50} height={50} alt={title} />
+            {
+              img3 && <Image src={img3} width={50} height={50} alt={title} />
+            }
+            {
+              img4 && <Image src={img4} width={50} height={50} alt={title} />
+            }
           </div>
           <div className=''>
             <h2 className="text-neutral-800 text-3xl mt-4 tracking-wide font-sofiasanscondensed font-semibold">
@@ -139,6 +155,8 @@ const CardList: React.FC = () => {
                 link={card.link}
                 img1={card.img1}
                 img2={card.img2}
+                img3={card.img3}
+                img4={card.img4}
                 description={card.description}
                 isEven={isEven}
               />
