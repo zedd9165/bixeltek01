@@ -1,11 +1,17 @@
 'use client';
 import { count } from 'console';
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
-export default function ContactFrom() {
+interface ContactFormProps {
+  width?: string;
+}
+
+export default function ContactFrom({
+  width = "w-[100%] lg:w-1/2",
+}: ContactFormProps) {
 
     const router = useRouter();
     const [formData, setFormData] = useState({
@@ -132,31 +138,79 @@ export default function ContactFrom() {
             alert(`Something went wrong: ${error.message}`); // Show exact error
         }
     };
-    const [isOpen, setIsOpen] = useState(false);
-    const [isOpen1, setIsOpen1] = useState(false);
-    const [isOpen2, setIsOpen2] = useState(false);
-    const [isOpen4, setIsOpen4] = useState(false);
-    const [isOpen5, setIsOpen5] = useState(false);
-    const [search, setSearch] = useState(""); // State for filtering
-    const [filteredCountries, setFilteredCountries] = useState(countries); // Dynamic list
+   const [isOpen, setIsOpen] = useState(false);
+const [isOpen1, setIsOpen1] = useState(false);
+const [isOpen2, setIsOpen2] = useState(false);
+const [isOpen4, setIsOpen4] = useState(false);
+const [isOpen5, setIsOpen5] = useState(false);
+
+const [search, setSearch] = useState("");
+const [filteredCountries, setFilteredCountries] = useState(countries);
+
+const servicesRef = useRef<HTMLDivElement>(null);
+const countryRef = useRef<HTMLDivElement>(null);
+const websiteTypeRef = useRef<HTMLDivElement>(null);
 
     const toggleDropdown1 = () => {
-        setIsOpen1(!isOpen1);
-    }
-    const toggleDropdown3 = () => {
-        setIsOpen4(!isOpen4);
+  setIsOpen1((prev) => !prev);
+};
+
+const toggleDropdown2 = () => {
+  setIsOpen2((prev) => !prev);
+};
+
+const toggleDropdown3 = () => {
+  setIsOpen4((prev) => !prev);
+};
+
+const toggleDropdown = () => {
+  setIsOpen((prev) => !prev);
+
+  // Close others
+  setIsOpen4(false);
+  setIsOpen5(false);
+};
+
+const toggleDropdown5 = () => {
+  setIsOpen5((prev) => !prev);
+
+  // Close others
+  setIsOpen(false);
+  setIsOpen4(false);
+};
+
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as Node;
+
+    if (
+      servicesRef.current &&
+      !servicesRef.current.contains(target)
+    ) {
+      setIsOpen(false);
     }
 
-    const toggleDropdown2 = () => {
-        setIsOpen2(!isOpen2);
+    if (
+      countryRef.current &&
+      !countryRef.current.contains(target)
+    ) {
+      setIsOpen4(false);
     }
-    const toggleDropdown5 = () => {
-        setIsOpen5(!isOpen5);
-        setIsOpen(false)
+
+    if (
+      websiteTypeRef.current &&
+      !websiteTypeRef.current.contains(target)
+    ) {
+      setIsOpen5(false);
     }
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
     const handleSearch = (event: any) => {
         const query = event.target.value.toLowerCase();
         setSearch(query);
@@ -167,7 +221,7 @@ export default function ContactFrom() {
 
 
     return (
-        <div className="w-[100%] lg:w-1/2 p-6 relative bg-white rounded-lg shadow-md">
+        <div className={`${width} p-6 relative bg-white rounded-lg shadow-md`}>
             
             <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="flex flex-col md:flex-row gap-5">
@@ -252,16 +306,25 @@ export default function ContactFrom() {
                 </div>
 
                 <div className='flex flex-col md:flex-row gap-5'>
-                    <div className="w-full md:w-1/2">
+                    <div
+                        ref={countryRef}
+                        className="w-full md:w-1/2 relative"
+                        >
                         <label htmlFor="country-dropdown" className="text-sm font-medium text-gray-700">Select Your Country</label>
                         <input
                             type="text"
                             placeholder="Type to search..."
                             value={search}
                             onChange={handleSearch}
-                            onFocus={() => setIsOpen4(true)}
-                            className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#670ef7]"
-                        />
+                            onFocus={() => {
+                                setIsOpen4(true);
+                                setIsOpen(false);
+                                setIsOpen5(false);
+                            }}
+                            autoComplete="off"
+                            spellCheck={false}
+                            className="w-full mt-2 p-3 rounded-md border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#670ef7]"
+                            />
                         {isOpen4 && (
                             <div className="absolute z-10 mt-2 max-h-60 w-full overflow-y-auto rounded-md bg-white border border-gray-300 shadow-lg">
                                 {filteredCountries.length > 0 ? (
@@ -299,7 +362,10 @@ export default function ContactFrom() {
                 </div>
 
                 {/* Services Dropdown */}
-                <div className="relative max-w-full inline-block text-left w-full">
+                <div
+                    ref={servicesRef}
+                    className="relative max-w-full inline-block text-left w-full"
+                    >
                     <button
                         type="button"
                         className="inline-flex w-full justify-between rounded-md border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#670ef7]"
@@ -352,7 +418,10 @@ export default function ContactFrom() {
                     <>
                         
                         <div className="w-full">
-                            <div className="relative">
+                            <div
+                                ref={websiteTypeRef}
+                                className="relative"
+                                >
                                 <button
                                     type="button"
                                     className="w-full p-3 border border-gray-300 rounded-lg text-left text-gray-700 focus:ring-2 focus:ring-[#670ef7]"
