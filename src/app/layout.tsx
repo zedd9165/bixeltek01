@@ -68,7 +68,7 @@ export default function RootLayout({
                 "telephone": "+91-9100032301",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "3rd Floor, Behind Cult Fit, K K Convention Road, Suncity Rd, opposite Ratnadeep, Bandlaguda Jagir",
+                  "streetAddress": "3rd Floor, Nahid Plaza, beside AR Banquet, Salar Jung Colony,Toli Chowki, Hyderabad, Telangana 500008",
                   "addressLocality": "Hyderabad",
                   "addressRegion": "Telangana",
                   "postalCode": "500091",

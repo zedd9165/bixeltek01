@@ -1,7 +1,7 @@
 export const Googlecard = () => {
     return (
         <>
-        <div className="container relative flex flex-col justify-between h-full lg:max-w-7xl px-6 mx-auto xl:px-0 mt-5">
+        <div className="lg:container relative flex flex-col justify-between h-full lg:max-w-7xl px-6 mx-auto xl:px-0 mt-5">
                 <h2 className="mb-1 text-3xl md:text-4xl font-extrabold leading-tight text-gray-900">Our specialties as a Google Ads Agency</h2>
                 <p className="mb-12 text-[16px] md:text-[17px] mt-4 max-w-lg text-gray-500">As Google Ads experts at Bixeltek, we specialize in crafting and optimizing a variety of campaign formats to maximize your success on Google Adwords:</p>
                 <div className="w-full">

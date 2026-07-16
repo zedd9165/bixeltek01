@@ -67,7 +67,7 @@ const jsonLd = {
         'Google Partner Certified digital marketing agency in India. SEO, Google Ads, web design, and social media for businesses in Hyderabad, Mumbai, Delhi, Bangalore, Chennai, and across India.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Suncity',
+        streetAddress: 'Tolichowki',
         addressLocality: 'Hyderabad',
         addressRegion: 'Telangana',
         postalCode: '500097',

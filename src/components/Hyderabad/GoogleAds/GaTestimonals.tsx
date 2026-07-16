@@ -2,7 +2,7 @@ import React from "react";
 
 const GaTestimonals = () => {
     return(
-         <div className="max-w-[80%] px-0 py-10 lg:px-8 lg:py-14 mx-auto">
+         <div className="lg:max-w-[80%] px-6 py-10 lg:px-8 lg:py-14 mx-auto">
         
                         <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center lg:justify-between">
                             <div className="lg:col-span-5 w-full lg:col-start-1">
@@ -48,7 +48,7 @@ const GaTestimonals = () => {
                             <div className="mt-10 lg:mt-0 lg:col-span-6 lg:col-end-13">
                                 <div className="space-y-6 sm:space-y-8">
         
-                                    <ul className="grid grid-cols-2  divide-y-2 divide-x-2 divide-gray-200 overflow-hidden dark:divide-neutral-700">
+                                    <ul className="grid lg:grid-cols-2  divide-y-2 divide-x-2 divide-gray-200 overflow-hidden dark:divide-neutral-700">
                                         <li className="flex flex-col -m-0.5 p-4 md:p-8">
                                             <div className="flex items-end gap-x-0 md:gap-x-2 text-4xl md:text-5xl font-bold text-blue-600">
                                                 60k+
