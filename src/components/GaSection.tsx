@@ -33,7 +33,7 @@ export default function GaSection() {
 
     <p>
       Every click on Google Ads costs money—but not every click becomes a
-      customer. That's why we build campaigns focused on what matters most:
+      customer. That&apos;s why we build campaigns focused on what matters most:
       generating qualified leads, increasing revenue, and delivering measurable
       business growth instead of vanity metrics.
     </p>
@@ -81,14 +81,14 @@ export default function GaSection() {
     </div>
 
     <p>
-      Whether you're looking to generate more enquiries, increase online sales,
+      Whether you&apos;re looking to generate more enquiries, increase online sales,
       book more appointments, or dominate your local market, our campaigns are
       designed to put your business in front of customers who are actively
       searching for your products or services.
     </p>
 
     <p className="font-medium text-zinc-900 text-xl">
-      Because success isn't measured by impressions or clicks—it's measured by
+      Because success isn&apos;t measured by impressions or clicks—it&apos;s measured by
       the customers your business gains.
     </p>
 
