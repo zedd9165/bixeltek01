@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import {Header} from '@/sections/Header';
 import {Footer} from '@/sections/Footer';
+import { Whiteheader } from '@/components/Whiteheader';
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,6 +23,7 @@ export const metadata = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
+    <Whiteheader/>
       <main className="min-h-screen">{children}</main>
      <Footer/> 
     </>

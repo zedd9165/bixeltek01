@@ -102,7 +102,7 @@ export default function Industries() {
               }}
             ></div>
           </div>
-          <div className="max-w-full px-4 mt-20 text-center lg:max-w-3xl">
+          <div className="max-w-full px-4 mt-40 md:mt-20 text-center lg:max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold font-sofiasanscondensed tracking-tight text-white ">
             We Know Your Industry.<br /><span className="text-purple-500"> We Know How to Scale It.</span>
             </h1>
