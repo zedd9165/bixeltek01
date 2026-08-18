@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+
 import BenefitsSection from "@/components/DentalMarketing/Variant_C/BenefitsSection"
 import CaseStudiesSection from "@/components/DentalMarketing/Variant_C/CaseStudiesSection"
 import ComparisonSection from "@/components/DentalMarketing/Variant_C/ComparisonSection"
@@ -13,11 +15,37 @@ import TrustSection from "@/components/DentalMarketing/Variant_C/TrustSection"
 import { Whiteheader } from "@/components/Whiteheader"
 import { Footer } from "@/sections/Footer"
 
+export const metadata: Metadata = {
+  title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
+
+  description:
+    "Grow your dental practice with Google Ads, SEO, local search, and conversion-focused websites built to attract more patients and appointments.",
+
+  alternates: {
+    canonical: "https://bixeltek.com/industries/dental-marketing-agency",
+  },
+
+  openGraph: {
+    title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
+    description:
+      "Grow your dental practice with Google Ads, SEO, local search, and conversion-focused websites built to attract more patients and appointments.",
+    url: "https://bixeltek.com/industries/dental-marketing-agency",
+    siteName: "Bixeltek",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
+    description:
+      "Grow your dental practice with Google Ads, SEO, local search, and conversion-focused websites built to attract more patients and appointments.",
+  },
+}
 
 export default function Page() {
-    return(
-        <>
-      <Whiteheader/>
+  return (
+    <>
+      <Whiteheader />
       <HeroSection />
       <StatsSection />
       <BenefitsSection />
@@ -30,7 +58,6 @@ export default function Page() {
       <FAQSection />
       {/* <TrustSection /> */}
       <ContactSection />
-      <Footer/>
-        </>
-    )
+    </>
+  )
 }
