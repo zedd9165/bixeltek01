@@ -223,7 +223,7 @@ export const ContactSection: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 p-7 gap-6">
                                 <div className='flex flex-col gap-3'>
                                 <div className='flex flex-col gap-3'>
-                                    <p className="font-semibold text-xl">Headquarters:</p>
+                                    <p className="font-semibold text-xl">India Office</p>
                                     <address className="text-base not-italic">
                                         Bixeltek,
                                         3rd Floor,
@@ -241,8 +241,21 @@ export const ContactSection: React.FC = () => {
                                         Qahtani Building, Above SAB Bank, Dammam 32242, Saudi Arabia
                                     </address>
                                     </div>
+                                    {/* <div className='flex flex-col gap-2'>
+                                    <p className="font-semibold text-xl">Email:</p>
+                                    <a href="mailto:hello@bixeltek.com " className="text-lg font-semibold hover:text-purple-500">
+                                        hello@bixeltek.com
+                                    </a>
+                                </div> */}
                                 </div>
+                                
                                 <div className='flex flex-col gap-3'>
+                                    <div className='flex flex-col gap-3'>
+                                    <p className="font-semibold text-xl">Canada Office</p>
+                                    <address className="text-base not-italic">
+                                        Bixeltek, 55 Caroline St N, Waterloo, ON, Canada, N2L 6B9
+                                    </address>
+                                </div>
                             <p className="font-semibold text-xl">Get In Touch</p>
                                 <div className='flex flex-col gap-2'>
                                     <a href="tel:+14375252301">
@@ -262,12 +275,7 @@ export const ContactSection: React.FC = () => {
                                         <p className="font-semibold text-lg hover:text-purple-500 flex gap-3"><PhoneCall className="text-purple-500" />India : +91 9100032301</p>
                                     </a>
                                 </div>
-                                <div className='flex flex-col gap-2'>
-                                    <p className="font-semibold text-xl">Email:</p>
-                                    <a href="mailto:hello@bixeltek.com " className="text-lg font-semibold hover:text-purple-500">
-                                        hello@bixeltek.com
-                                    </a>
-                                </div>
+                                {/*  */}
                                 </div>
                             </div>
                         </div>

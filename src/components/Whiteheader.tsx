@@ -28,6 +28,7 @@ import seo1 from '@/assets/Component-1-1.png'
 import seo2 from '@/assets/Frame-297.png'
 import seo3 from '@/assets/Card-1.png'
 import appdev from '@/assets/appdev.png'
+import pdpl from '@/assets/pdpl-consulting.png'
 import { AiOutlineLineChart, AiOutlinePicture } from "react-icons/ai";
 export const Whiteheader = () => {
 
@@ -345,7 +346,14 @@ export const Whiteheader = () => {
       link: "/technical-seo",
       image: seo3, // import from assets
     },
-
+    {
+          id: 20,
+          title: "PDPL Consulting",
+          desc: "Comprehensive PDPL compliance programs for businesses in Saudi Arabia.",
+          icon: <AiOutlineFileSearch size={24} />,
+          link: "/services/pdpl-consulting",
+          image: pdpl,
+        }
   ];
     const [hoveredService, setHoveredService] = useState(services[0]);
     return (
@@ -645,6 +653,11 @@ export const Whiteheader = () => {
                                     <li>
                                         <Link href="/on-page-seo" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
                                             On Page SEO
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/services/pdpl-consulting" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                            PDPL Consulting
                                         </Link>
                                     </li>
                                 </motion.ul>

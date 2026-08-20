@@ -16,8 +16,8 @@ export const Footer = () => {
             <Image src='/BIXELTEKLOGO.png' alt="logo" width={100}
               height={40} className="w-auto h-16"></Image>
 
-            <p className="py-5 text-gray-100 lg:max-w-xs text-center lg:text-left">Trusted by brands. Certified by Google. Focused on ROI.</p>
-            <div className="text-sm text-white mb-4">
+            <p className="py-5 text-gray-100 lg:max-w-xs text-left">Trusted by brands. Certified by Google. Focused on ROI.</p>
+            {/* <div className="text-sm text-white mb-4">
               <p className="mb-2 text-xl font-semibold">Address</p>
               <address className="text-base not-italic">      
                 Bixeltek,
@@ -33,8 +33,8 @@ export const Footer = () => {
                 Bixeltek,
                Qahtani Building, Above SAB Bank, Dammam 32242, Saudi Arabia
               </address>
-            </div>
-            <div className="text-white mb-4 flex flex-col gap-3 mt-8">
+            </div> */}
+            <div className="text-white mb-4 flex flex-col gap-3 mt-4">
                <a href="tel:+14375252301">
                 <p className="text-white text-lg hover:text-purple-500 flex gap-3">
                   <PhoneCall className="text-blue-500" />
