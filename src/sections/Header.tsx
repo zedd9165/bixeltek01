@@ -27,6 +27,7 @@ import seo1 from '@/assets/Component-1-1.png'
 import seo2 from '@/assets/Frame-297.png'
 import seo3 from '@/assets/Card-1.png'
 import appdev from '@/assets/appdev.png'
+import pdpl from '@/assets/pdpl-consulting.png'
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -327,6 +328,14 @@ export const Header = () => {
       link: "/technical-seo",
       image: seo3, // import from assets
     },
+    {
+      id: 20,
+      title: "PDPL Consulting",
+      desc: "Comprehensive PDPL compliance programs for businesses in Saudi Arabia.",
+      icon: <AiOutlineFileSearch size={24} />,
+      link: "/services/pdpl-consulting",
+      image: pdpl,
+    }
 
   ];
 
@@ -436,6 +445,11 @@ export const Header = () => {
                     <li>
                       <Link href="/on-page-seo" className="block py-2 px-4 hover:bg-gray-700 rounded">
                         On Page SEO
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/pdpl-consulting" className="block py-2 px-4 hover:bg-gray-700 rounded">
+                        PDPL Consulting
                       </Link>
                     </li>
                   </motion.ul>
