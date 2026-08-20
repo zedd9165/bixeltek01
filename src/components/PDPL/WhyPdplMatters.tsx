@@ -102,7 +102,7 @@ export default function WhyPdplMatters({
               href="/contact-us"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm sm:text-base font-semibold text-white hover:bg-blue-700 transition-colors"
             >
-              See If You're Compliant
+              See If You&apos;re Compliant
             </a>
           </div>
         </div>

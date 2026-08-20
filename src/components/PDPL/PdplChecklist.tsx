@@ -46,8 +46,8 @@ export default function ReadinessChecklist() {
             Where does your business stand today?
           </h2>
           <p className="mt-4 text-[#3F4B5B] leading-relaxed">
-            Check off what's already true. This isn't a substitute for a
-            formal assessment — but it's an honest starting point.
+            Check off what&apos;s already true. This isn&apos;t a substitute for a
+            formal assessment — but it&apos;s an honest starting point.
           </p>
         </div>
 
