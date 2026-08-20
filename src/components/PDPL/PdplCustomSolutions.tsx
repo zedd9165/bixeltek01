@@ -39,12 +39,12 @@ export default function PdplCustomSolutions() {
               Already Have Policies?
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500">
-                We'll Audit & Upgrade Them.
+                We&apos;ll Audit & Upgrade Them.
               </span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed max-w-lg">
-              You don't need to start from zero. Most businesses have partial
-              measures in place — we find exactly what's missing or outdated
+              You don&apos;t need to start from zero. Most businesses have partial
+              measures in place — we find exactly what&apos;s missing or outdated
               and bring it up to current PDPL standards.
             </p>
 
