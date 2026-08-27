@@ -84,7 +84,7 @@ export default function ComplianceSnapshot() {
             </h2>
             
             <p className="text-lg text-gray-400 leading-relaxed max-w-xl mb-10">
-              A properly built PDPL and GDPR compliance program runs quietly in the background. It isn't just a legal shield—it's a business advantage. Data requests are handled, incidents are logged, and absolutely nothing catches your team off guard.
+              A properly built PDPL and GDPR compliance program runs quietly in the background. It isn&apos;t just a legal shield—it&apos;s a business advantage. Data requests are handled, incidents are logged, and absolutely nothing catches your team off guard.
             </p>
 
             {/* 2x2 Stats Grid */}
