@@ -31,8 +31,8 @@ function StatusBadge({ status }: { status: "ok" | "outdated" | "missing" }) {
 
 export default function PdplCustomSolutions() {
   return (
-    <section className="bg-black text-white py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-7xl px-4">
+    <section className="bg-black text-white py-8 md:py-20 lg:py-24">
+      <div className="mx-auto md:max-w-[80%] px-4">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-6xl font-bold leading-tight">
@@ -42,7 +42,7 @@ export default function PdplCustomSolutions() {
                 We&apos;ll Audit & Upgrade Them.
               </span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed max-w-lg">
+            <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed md:max-w-[90%]">
               You don&apos;t need to start from zero. Most businesses have partial
               measures in place — we find exactly what&apos;s missing or outdated
               and bring it up to current PDPL standards.
@@ -68,7 +68,7 @@ export default function PdplCustomSolutions() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm rounded-2xl border border-white/40 bg-white/[0.03] p-5 sm:p-6">
+            <div className="w-full max-w-xl rounded-2xl border border-white/40 bg-white/[0.03] p-5 sm:p-6">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-sm font-semibold text-white">
                   Your Current Setup

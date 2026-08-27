@@ -1,4 +1,45 @@
-'use client'
+export const metadata = {
+  title: "PDPL Compliance Services in Saudi Arabia | Bixeltek",
+  description:
+    "Bixeltek provides PDPL compliance services in Saudi Arabia, covering gap assessments, data mapping, privacy policies, consent management, DPO advisory, breach response and ongoing compliance.",
+  keywords: [
+    "PDPL compliance services",
+    "PDPL compliance services Saudi Arabia",
+    "PDPL compliance Saudi Arabia",
+    "PDPL compliance consulting Saudi Arabia",
+    "PDPL consultant Saudi Arabia",
+    "Saudi PDPL compliance",
+    "Saudi PDPL consulting",
+    "KSA PDPL compliance",
+    "PDPL compliance consultant",
+    "PDPL compliance assessment",
+    "PDPL gap assessment",
+    "PDPL compliance audit",
+    "PDPL data mapping",
+    "PDPL privacy policy",
+    "PDPL consent management",
+    "PDPL DPO advisory",
+    "DPO services Saudi Arabia",
+    "PDPL breach response",
+    "PDPL incident response",
+    "PDPL cross-border data transfer",
+    "Saudi data protection compliance",
+    "data privacy compliance Saudi Arabia",
+    "PDPL implementation services",
+    "ongoing PDPL compliance",
+  ],
+  alternates: {
+    canonical: "https://bixeltek.com/services/pdpl-consulting",
+  },
+//   openGraph: {
+//     title: "PDPL Compliance Services in Saudi Arabia | Bixeltek",
+//     description:
+//       "Bixeltek provides PDPL compliance services in Saudi Arabia, covering gap assessments, data mapping, privacy policies, consent management, DPO advisory, breach response and ongoing compliance.",
+//     type: "website",
+//     url: "https://bixeltek.com/services/pdpl-consulting",
+//     siteName: "Bixeltek",
+//   },
+};
 
 import {
   FileSearch,
@@ -28,18 +69,12 @@ import PdplCustomSolutions from "@/components/PDPL/PdplCustomSolutions";
 import WhyPdplMatters from "@/components/PDPL/WhyPdplMatters";
 import WebdevTestimonials from "@/components/WebDev/WebDevTestimonials";
 import AreasWeServe from "@/components/WebDev/WebSection8";
-
-// Reusing existing site imagery where the industry overlaps with your
-// AppDev/WebDev pages. Swap these for dedicated PDPL industry shots when
-// you have them — banking/e-commerce/government don't have direct matches
-// in your current asset library, so these three are placeholders.
 import healthcare from "@/assets/digital marketing for health care practices.jpg";
 import oil from "@/assets/digital marketing for oil refinaries.jpg";
-import roofing from "@/assets/digital marketing for roofing industries.jpg"; // placeholder → swap for a real-estate shot
+import roofing from "@/assets/digital marketing for roofing industries.jpg";
 import blackcar from "@/assets/digital marketing for car detailers.jpg"; // placeholder → swap for a banking/fintech shot
 import cleaningcomp from "@/assets/digital marketing servies for cleaning companies.jpg"; // placeholder → swap for e-commerce/retail shot
 
-// ─── WHY IT MATTERS (custom WhyPdplMatters component — takes {title, description}[]) ──
 const whyMatters = [
   {
     title: "Regulatory exposure is real",
@@ -58,7 +93,6 @@ const whyMatters = [
   },
 ];
 
-// ─── SERVICES (ServiceAppDevSection / ServiceGrid — icon must be a JSX element) ──
 const services = [
   {
     icon: <FileSearch className="w-8 h-8" />,
@@ -98,7 +132,6 @@ const services = [
   },
 ];
 
-// ─── PROCESS STEPS (LocationProcessSection — field is "text", not "description") ──
 const steps = [
   {
     number: "01",
@@ -149,7 +182,6 @@ const steps = [
   },
 ];
 
-// ─── INDUSTRIES (DynamicIndustrySection / IndustryCarousel — id, img, label, text, description) ──
 const industries = [
   {
     id: "health",
@@ -193,7 +225,6 @@ const industries = [
   },
 ];
 
-// ─── WHY CHOOSE US (WhyChooseUs / WhyUs — icon JSX, field is "desc", plus hoverBg) ──
 const whyUs = [
   {
     icon: <ShieldCheck size={22} className="w-8 h-8 group-hover:text-white text-blue-500" />,
@@ -233,7 +264,6 @@ const whyUs = [
   },
 ];
 
-// ─── FAQs (LocationFaqSection — question / answer, this shape was already correct) ──
 const faqs = [
   {
     question: "What is the PDPL and who does it apply to?",
