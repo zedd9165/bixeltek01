@@ -47,125 +47,122 @@ export default function HeroSection() {
           />
         </div>
 
-        <div className="relative w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative w-full md:max-w-[80%] mx-auto px-4 md:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             {/* ── Left Content ── */}
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-              className="space-y-8"
-            >
-              {/* Badge */}
-              <motion.div
-                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
-                className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2 bg-white shadow-sm"
-              >
-                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-                <span className="text-xs font-semibold tracking-wide text-gray-600 uppercase">
-                  Dental Marketing Agency for Growing Practices
-                </span>
-              </motion.div>
+  initial="hidden"
+  animate="visible"
+  variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
+  className="space-y-8 max-w-3xl"
+>
+  {/* Badge */}
+  <motion.div
+    variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
+    className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2 bg-white shadow-sm"
+  >
+    <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+    <span className="text-xs font-semibold tracking-wide text-gray-600 uppercase">
+      Dental Marketing Agency for Growing Practices
+    </span>
+  </motion.div>
 
-              {/* Divider line */}
-              <motion.div
-                variants={{ hidden: { width: 0, opacity: 0 }, visible: { width: 40, opacity: 1, transition: { duration: 0.4 } } }}
-                className="h-[2px] bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full"
-                style={{ width: 40 }}
-              />
+  {/* Divider line */}
+  <motion.div
+    variants={{ hidden: { width: 0, opacity: 0 }, visible: { width: 40, opacity: 1, transition: { duration: 0.4 } } }}
+    className="h-[2px] bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full"
+    style={{ width: 40 }}
+  />
 
-              {/* Headline */}
-              <motion.h1
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45 } } }}
-                className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-[-0.03em] text-gray-950"
-              >
-                Fill Your Dental<br />
-                Schedule with{' '}
-                <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                  Google Ads
-                </span>
-              </motion.h1>
+  {/* Headline */}
+  <motion.h1
+    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45 } } }}
+    className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.8] tracking-[-0.03em] text-gray-950"
+  >
+    Dental Marketing That Converts Searches Into{' '}
+    <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+      New Patients
+    </span>
+  </motion.h1>
 
-              {/* Subtext */}
-              <motion.p
-                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
-                className="text-lg text-gray-500 leading-relaxed max-w-md"
-              >
-                Stop losing patients to competitors. Get high-converting campaigns
-                built exclusively for dental practices. Measurable results in 30 days.
-              </motion.p>
+  {/* Subtext */}
+  <motion.p
+    variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
+    className="text-lg text-gray-500 leading-relaxed max-w-2xl"
+  >
+    Stop losing potential patients to competitors. Bixeltek runs Google and Meta Ads for dental practices and builds the landing pages, tracking, and follow-up systems that turn ad clicks and searches into qualified leads, consultations, and booked appointments.
+  </motion.p>
 
-              {/* Feature tags */}
-              <motion.div
-                variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
-                className="flex flex-wrap gap-3"
-              >
-                {[
-                  { icon: FaChartLine, text: 'Instant Results', color: 'text-blue-600' },
-                  { icon: FaTooth, text: 'Dental Marketing Experts', color: 'text-blue-600' },
-                  { icon: FaPhone, text: 'ROI Guaranteed', color: 'text-blue-600' },
-                ].map((f, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ y: -2, borderColor: '#2563eb', color: '#2563eb' }}
-                    transition={{ duration: 0.15 }}
-                    className="flex items-center gap-2 border border-gray-200 bg-white px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-600 shadow-sm cursor-default"
-                  >
-                    <f.icon size={14} className={f.color} />
-                    {f.text}
-                  </motion.div>
-                ))}
-              </motion.div>
+  {/* Feature tags */}
+  <motion.div
+    variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
+    className="flex flex-wrap gap-3"
+  >
+    {[
+      { icon: FaChartLine, text: 'Instant Results', color: 'text-blue-600' },
+      { icon: FaTooth, text: 'Dental Marketing Experts', color: 'text-blue-600' },
+      { icon: FaPhone, text: 'ROI-Focused Strategy', color: 'text-blue-600' },
+    ].map((f, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ y: -2, borderColor: '#2563eb', color: '#2563eb' }}
+        transition={{ duration: 0.15 }}
+        className="flex items-center gap-2 border border-gray-200 bg-white px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-600 shadow-sm cursor-default"
+      >
+        <f.icon size={14} className={f.color} />
+        {f.text}
+      </motion.div>
+    ))}
+  </motion.div>
 
-              {/* CTA Buttons */}
-              <motion.div
-                variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
-                className="flex flex-col md:flex-row gap-3 pt-2"
-              >
-                {/* ↓ ONLY CHANGE: was <motion.a href="#contact">, now opens booking modal */}
-                <motion.button
-                  onClick={() => setShowBooking(true)}
-                  whileHover={{ y: -2, boxShadow: '0 12px 32px rgba(26,86,219,0.35)' }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.15 }}
-                  className="inline-flex items-center justify-center gap-2 bg-gray-950 text-white px-7 py-4 rounded-xl text-[15px] font-bold tracking-tight group"
-                >
-                  Schedule An Appointment
-                  <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-150" />
-                </motion.button>
+  {/* CTA Buttons */}
+  <motion.div
+    variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
+    className="flex flex-col md:flex-row gap-3 pt-2"
+  >
+    <motion.button
+      onClick={() => setShowBooking(true)}
+      whileHover={{ y: -2, boxShadow: '0 12px 32px rgba(26,86,219,0.35)' }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ duration: 0.15 }}
+      className="inline-flex items-center justify-center gap-2 bg-gray-950 text-white px-7 py-4 rounded-xl text-[15px] font-bold tracking-tight group"
+    >
+      Schedule An Appointment
+      <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-150" />
+    </motion.button>
 
-                <motion.a
-                  href="#contact"
-                  whileHover={{ y: -2, borderColor: '#2563eb', color: '#2563eb' }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.15 }}
-                  className="inline-flex items-center justify-center border border-gray-200 bg-white text-gray-800 px-7 py-4 rounded-xl text-[15px] font-bold tracking-tight shadow-sm"
-                >
-                  Talk to an Specialist
-                </motion.a>
-              </motion.div>
+    <motion.a
+      href="#contact"
+      whileHover={{ y: -2, borderColor: '#2563eb', color: '#2563eb' }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ duration: 0.15 }}
+      className="inline-flex items-center justify-center border border-gray-200 bg-white text-gray-800 px-7 py-4 rounded-xl text-[15px] font-bold tracking-tight shadow-sm"
+    >
+      Talk to a Specialist
+    </motion.a>
+  </motion.div>
 
-              {/* Trust avatars */}
-              <motion.div
-                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.4 } } }}
-                className="flex items-center gap-4 pt-2"
-              >
-                <div className="flex">
-                  {['JD', 'MK', 'SR'].map((initials, i) => (
-                    <div
-                      key={i}
-                      className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 border-2 border-white flex items-center justify-center text-white text-[10px] font-bold -ml-2 first:ml-0"
-                    >
-                      {initials}
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-gray-500">
-                  <span className="font-bold text-gray-900">102K+</span> patients acquired for clients
-                </p>
-              </motion.div>
-            </motion.div>
+  {/* Trust avatars */}
+  <motion.div
+    variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.4 } } }}
+    className="flex items-center gap-4 pt-2"
+  >
+    <div className="flex">
+      {['JD', 'MK', 'SR'].map((initials, i) => (
+        <div
+          key={i}
+          className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 border-2 border-white flex items-center justify-center text-white text-[10px] font-bold -ml-2 first:ml-0"
+        >
+          {initials}
+        </div>
+      ))}
+    </div>
+    <p className="text-sm text-gray-500">
+      <span className="font-bold text-gray-900">102K+</span> patients acquired for clients
+    </p>
+  </motion.div>
+</motion.div>
 
             {/* ── Right: Calculator ── */}
             <motion.div
@@ -182,7 +179,7 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-gray-950 tracking-tight">Revenue Calculator</p>
-                    <p className="text-xs text-gray-400 mt-0.5">Drag sliders to see your growth potential</p>
+                    <p className="text-xs text-gray-400 mt-0.5">See how more qualified leads and a stronger conversion rate could impact your practice revenue.</p>
                   </div>
                 </div>
 
@@ -302,8 +299,7 @@ export default function HeroSection() {
                 {/* Footer disclaimer */}
                 <div className="px-7 py-3 bg-gray-50 border-t border-gray-100">
                   <p className="text-[10px] text-gray-400 leading-relaxed">
-                    Calculator reflects average ROI improvement across 60+ dental client practices via Google Ads, Web Design &amp; SEO.
-                    Individual results vary by market, specialty, and budget.
+                    Calculator reflects average ROI improvement across 60+ dental client practices through Google Ads, Meta Ads, Web Design & SEO. Individual results vary by market, specialty, competition, offer, and budget.
                   </p>
                 </div>
 

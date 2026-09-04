@@ -14,18 +14,18 @@ import {
 const benefits = [
   {
     icon: FaStar,
-    title: 'Dental-Only Expertise',
+    title: 'Dental Marketing Expertise',
     description:
-      'We work exclusively with dental practices. Every campaign, every strategy is built from 50+ practices worth of data and real-world results.',
+      'We understand the search behavior, competition, treatments, and patient journey unique to dental practices. Every campaign is built around your services, location, audience, and growth goals.',
     accent: '#eff6ff',
     iconColor: '#1a56db',
     num: '01',
   },
   {
     icon: FaShieldAlt,
-    title: '60-Day Results Guarantee',
+    title: '60-Day Performance Commitment',
     description:
-      'If you don\'t see measurable growth within 60 days, we keep optimizing at zero extra cost until you do. No excuses, just results.',
+      "If your campaigns aren't showing measurable improvement, we continue optimizing at no additional cost until performance improves, subject to agreed campaign terms and conditions.",
     accent: '#ecfdf5',
     iconColor: '#059669',
     num: '02',
@@ -34,16 +34,16 @@ const benefits = [
     icon: FaChartBar,
     title: 'Transparent ROI Reporting',
     description:
-      'Real-time dashboards showing cost per lead, cost per patient, and exactly how much revenue your ads are generating every single day.',
+      'See where your leads come from and how your campaigns perform—from cost per lead and calls to conversions and, where integrations allow, patient and revenue outcomes.',
     accent: '#fdf4ff',
     iconColor: '#9333ea',
     num: '03',
   },
   {
     icon: FaClock,
-    title: '10-Day Onboarding',
+    title: 'Fast, Structured Onboarding',
     description:
-      'Campaigns go live fast. Our streamlined onboarding gets your Google Ads running and driving appointment calls within 30 days.',
+      'We get your Google and Meta campaigns, landing pages, tracking, and conversion systems prepared quickly so you can start generating and measuring new patient opportunities.',
     accent: '#fff7ed',
     iconColor: '#ea580c',
     num: '04',
@@ -52,21 +52,21 @@ const benefits = [
     icon: FaUserCheck,
     title: 'Dedicated Account Manager',
     description:
-      'One expert who knows your practice, answers your calls, and owns your results. No being passed around between teams or reps.',
+      'One dedicated expert who understands your practice, answers your questions, and stays focused on your marketing performance.',
     accent: '#eff6ff',
     iconColor: '#1a56db',
     num: '05',
   },
   {
     icon: FaRocket,
-    title: 'Scale When You\'re Ready',
+    title: "Scale When You're Ready",
     description:
-      'Start with one location, expand to many. Our infrastructure handles multi-location dental groups with ease and zero disruption.',
+      'Start with one location or scale across multiple practices. Our marketing systems are designed to support growth without disrupting your existing operations.',
     accent: '#ecfdf5',
     iconColor: '#059669',
     num: '06',
   },
-]
+];
 
 export default function BenefitsSection() {
   return (
@@ -77,7 +77,7 @@ export default function BenefitsSection() {
       {/* Subtle orb */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-blue-50 to-cyan-50 opacity-60 blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="relative md:max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
         {/* Heading */}
         <motion.div
@@ -91,14 +91,13 @@ export default function BenefitsSection() {
             Why choose us
           </p>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-[-0.03em] text-gray-950 leading-tight mb-4">
-            Why Dentists Choose{' '}
+            Why Dental Practices Choose{' '}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Bixeltek
             </span>
           </h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-            More than just a marketing agency — we&apos;re strategic growth partners dedicated
-            to your practice&apos;s success.
+            We don&apos;t just run ads. We build and optimize the system behind them—so your practice can attract the right patients, respond quickly, and turn more opportunities into appointments.
           </p>
         </motion.div>
 
@@ -124,7 +123,7 @@ export default function BenefitsSection() {
               />
 
               {/* Number */}
-              <p className="text-sm font-bold text-gray-300 tracking-[0.08em] mb-4 group-hover:text-gray-400 transition-colors duration-200">
+              <p className="text-lg font-bold text-gray-300 tracking-[0.08em] mb-4 group-hover:text-gray-400 transition-colors duration-200">
                 {benefit.num}
               </p>
 
