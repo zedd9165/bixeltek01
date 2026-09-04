@@ -7,27 +7,43 @@ import { motion, AnimatePresence } from 'framer-motion'
 const faqs = [
   {
     question: 'How long until we see results from Google Ads?',
-    answer: 'Most practices see measurable results within 30-60 days. We typically spend the first 2-3 weeks optimizing campaigns and gathering data, then results compound from there. The faster your conversion setup, the quicker we can scale.',
+    answer: 'Google Ads can begin generating traffic and inquiries after launch, but performance depends on competition, location, treatment, budget, landing-page quality, and tracking. We continuously optimize campaigns based on performance data.',
+  },
+  {
+    question: 'How long does it take to see results from Meta Ads?',
+    answer: 'Meta Ads can generate inquiries soon after launch, but results depend on your audience, offer, creative, location, treatment, budget, and follow-up process. We test and optimize campaigns to improve lead quality and conversion performance.',
   },
   {
     question: 'Do you work with practices in my area?',
-    answer: 'Yes! We serve dental practices across the USA and Canada. We have experience in competitive urban markets and smaller towns. Our geo-targeting expertise ensures we reach patients in your exact service area.',
+    answer: 'Yes. We work with dental practices across multiple markets and customize campaigns around your location, competitors, services, audience, and growth goals.',
   },
   {
-    question: 'What\'s the difference between Google Ads and SEO?',
-    answer: 'Google Ads is paid and immediate - you appear at the top of Google search results right away. SEO is organic and takes 3-6 months to show results, but costs less long-term. We recommend both for maximum market domination.',
+    question: "What's the difference between Google Ads and Meta Ads?",
+    answer: 'Google Ads captures existing demand from people actively searching for dental services. Meta Ads helps create and capture demand through Facebook and Instagram using audience targeting, creative, offers, and retargeting. Many practices benefit from using both.',
   },
   {
     question: 'Can I set a maximum monthly budget?',
-    answer: 'Absolutely. We work with practices ranging from $1,000-$10,000+ monthly ad spend. Your budget determines how many patients we can reach. We optimize to maximize ROI at any budget level.',
+    answer: 'Yes. We can structure your acquisition strategy around your available advertising budget and growth objectives, then prioritize the channels and campaigns with the strongest opportunity.',
   },
   {
-    question: 'What happens if my ads aren\'t working?',
-    answer: 'We have a systematic optimization process. If results aren\'t meeting expectations at 60 days, we conduct a full audit, adjust targeting, rewrite ad copy, and optimize landing pages. We stay committed until we hit your goals.',
+    question: "What happens if my ads aren't working?",
+    answer: 'We review targeting, search terms, creative, offers, landing pages, tracking, lead quality, and conversion data to identify where performance is leaking. We then test and optimize the relevant areas.',
   },
   {
-    question: 'Do you require long-term lock in contracts?',
-    answer: 'No contracts required. We work month-to-month because we believe in earning your business every day. If we\'re not delivering results, you\'re free to leave. This keeps us focused on your success.',
+    question: 'Do you require long-term lock-in contracts?',
+    answer: "Our engagement terms depend on the services and scope of work. We'll clearly explain the agreement, deliverables, and expectations before you begin.",
+  },
+  {
+    question: 'Can you help me get more dental implant or Invisalign patients?',
+    answer: 'Yes. We can build treatment-specific Google and Meta campaigns, landing pages, offers, tracking, and follow-up around high-value services such as implants, Invisalign, cosmetic dentistry, and emergency dentistry.',
+  },
+  {
+    question: 'How do you measure dental marketing ROI?',
+    answer: 'We track leads, calls, appointment inquiries, cost per lead, conversion rates, campaign performance, and—where integrations allow—downstream patient and revenue outcomes.',
+  },
+  {
+    question: 'Can you guarantee a specific number of new patients?',
+    answer: 'No marketing agency can reliably guarantee a specific number of patients because results depend on location, competition, treatment demand, budget, website performance, lead response, and practice operations.',
   },
 ]
 
@@ -66,13 +82,13 @@ export default function FAQSection() {
             FAQ
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-4">
-            Common Questions{" "}
+            Dental Marketing Questions{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
               Answered
             </span>
           </h2>
           <p className="text-xl text-gray-500">
-            Everything you need to know about Google Ads for your dental practice
+            Everything you need to know about Google Ads, Meta Ads, dental SEO, lead generation, and converting more patient inquiries.
           </p>
         </motion.div>
 
@@ -87,7 +103,7 @@ export default function FAQSection() {
           {faqs.map((faq, idx) => (
             <motion.div key={idx} variants={fadeUp}>
               <button
-              //@ts-ignore
+                //@ts-ignore
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full text-left group"
               >

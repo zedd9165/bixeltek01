@@ -19,7 +19,7 @@ const stats = [
     value: 102,
     suffix: 'K+',
     label: 'Patients Acquired',
-    description: 'Real appointments scheduled',
+    description: 'Real patient inquiries and appointments generated for clients',
     accent: '#ecfdf5',
     iconColor: '#059669',
   },
@@ -92,7 +92,7 @@ export default function StatsSection() {
 
   return (
     <section className="bg-white py-20 md:py-28 overflow-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="md:max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         
 
         {/* Heading */}
@@ -106,14 +106,14 @@ export default function StatsSection() {
           <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-blue-600 mb-4">
             By the numbers
           </p>
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-[-0.03em] text-gray-950 leading-tight mb-4 lg:max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-[-0.03em] text-gray-950 leading-tight mb-4 lg:max-w-4xl mx-auto">
            5+ Years of Proven Results That{' '}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Speak for Themselves
             </span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-            With over 500+ successful ads implementations, we&apos;ve helped dental practices achieve unprecedented growth.
+          <p className="text-gray-500 text-lg max-w-3xl mx-auto leading-relaxed">
+            With 500+ successful advertising implementations, we've helped dental practices build stronger patient acquisition systems across paid advertising, websites, SEO, and conversion optimization.
           </p>
         </motion.div>
 

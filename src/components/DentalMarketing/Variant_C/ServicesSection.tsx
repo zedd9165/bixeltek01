@@ -4,11 +4,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import {
   FaChartLine,
-  FaSearch,
+  FaBullhorn,
   FaDesktop,
   FaPhoneAlt,
   FaStar,
-  FaEnvelope,
   FaRobot,
 } from 'react-icons/fa'
 
@@ -17,10 +16,11 @@ const services = [
     icon: FaChartLine,
     title: 'Google Ads Management',
     description:
-      'High-converting campaigns built exclusively for dental practices. Target high-intent patients ready to book.',
+      'Capture high-intent patients actively searching for dental services in your area.',
     features: [
       'Keyword research & strategy',
       'Ad copy optimization',
+      'Geographic targeting',
       'Conversion tracking',
       'Monthly performance reports',
     ],
@@ -28,15 +28,16 @@ const services = [
     iconColor: '#1a56db',
   },
   {
-    icon: FaSearch,
-    title: 'Local SEO Domination',
+    icon: FaBullhorn,
+    title: 'Meta Ads Management',
     description:
-      'Rank #1 in your city for high-value dental searches. Own your local market before competitors do.',
+      'Reach potential patients on Facebook and Instagram with treatment-focused campaigns, offers, retargeting, and creative designed to generate qualified inquiries.',
     features: [
-      'Google Business optimization',
-      'Local citation building',
-      'Review generation',
-      'Map pack ranking',
+      'Facebook & Instagram campaigns',
+      'Audience & offer strategy',
+      'Creative & ad copy',
+      'Lead generation campaigns',
+      'Conversion tracking',
     ],
     accent: '#ecfdf5',
     iconColor: '#059669',
@@ -45,12 +46,13 @@ const services = [
     icon: FaDesktop,
     title: 'Website & Landing Page Optimization',
     description:
-      'Custom pages engineered for maximum conversions. Turn clicks into booked appointments.',
+      'Turn paid traffic into more inquiries with dedicated dental landing pages and conversion-focused experiences.',
     features: [
       'CRO-focused design',
+      'Treatment-specific landing pages',
       'A/B testing',
       'Mobile-first build',
-      'Speed optimized',
+      'Speed optimization',
     ],
     accent: '#fdf4ff',
     iconColor: '#9333ea',
@@ -59,10 +61,11 @@ const services = [
     icon: FaPhoneAlt,
     title: 'Call & Lead Tracking',
     description:
-      'Know exactly which campaigns drive calls and bookings. Full attribution from click to patient.',
+      'Know which campaigns generate calls, forms, and patient opportunities so you can make smarter marketing decisions.',
     features: [
       'Dynamic call tracking',
       'CRM integration',
+      'Lead attribution',
       'Lead scoring',
       'ROI dashboards',
     ],
@@ -73,21 +76,22 @@ const services = [
     icon: FaStar,
     title: 'Reputation Management',
     description:
-      'Build a 5-star reputation that converts browsers into patients. Automated review requests that work.',
+      'Build the online trust patients look for before choosing a dental practice.',
     features: [
       'Review automation',
       'Response management',
+      'Reputation monitoring',
       'Sentiment monitoring',
       'Competitor analysis',
     ],
     accent: '#eff6ff',
     iconColor: '#1a56db',
   },
- {
+  {
     icon: FaRobot,
     title: 'AI Agentic Call Integration',
     description:
-      'Never miss a patient call again. AI-powered voice agents handle inquiries, book appointments, and follow up 24/7—just like a trained front desk.',
+      'Help your practice respond to new inquiries 24/7 with AI-powered voice and follow-up systems that can assist with questions, booking, rescheduling, and missed-call follow-up.',
     features: [
       '24/7 AI call answering',
       'Appointment booking & rescheduling',
@@ -116,13 +120,13 @@ export default function ServicesSection() {
             What we do
           </p>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-[-0.03em] text-gray-950 leading-tight mb-4">
-            Complete Dental Marketing{' '}
+            Complete Dental Patient Acquisition{' '}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Suite
             </span>
           </h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-            Everything you need to dominate your local market and grow your practice revenue.
+            From Google and Meta Ads to landing pages, tracking, SEO, and follow-up, we connect the pieces that turn marketing spend into qualified patient opportunities.
           </p>
         </motion.div>
 
@@ -184,8 +188,7 @@ export default function ServicesSection() {
           className="text-center mt-16"
         >
           <p className="text-gray-500 max-w-lg mx-auto mb-7 leading-relaxed">
-            All services come with our 60-day results guarantee. If you&apos;re not seeing measurable
-            improvement, we&apos;ll optimize for free until you do.
+            Our services work together to create a measurable path from ad impression and search to lead, appointment, and patient.
           </p>
           <motion.a
             href="#contact"

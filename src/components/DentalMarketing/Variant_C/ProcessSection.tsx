@@ -13,26 +13,26 @@ const steps = [
   {
     icon: FaClipboardList,
     step: '01',
-    title: 'Free Audit',
-    description: 'We analyze your current performance, identify gaps, and reveal untapped opportunities in your local market.',
+    title: 'Free Dental Marketing Audit',
+    description: 'We analyze your current ads, website, landing pages, local visibility, competitors, tracking, and conversion journey to find where you can generate and convert more leads.',
   },
   {
     icon: FaLightbulb,
     step: '02',
-    title: 'Custom Strategy',
-    description: 'Receive a tailored roadmap built for your practice size, location, and revenue goals. No cookie-cutter plans.',
+    title: 'Custom Acquisition Strategy',
+    description: 'Receive a tailored plan based on your location, treatments, competition, budget, audience, and growth goals.',
   },
   {
     icon: FaRocket,
     step: '03',
-    title: 'Launch Campaign',
-    description: 'We set everything up and go live within 4 weeks. You focus on patients; we focus on patient acquisition.',
+    title: 'Launch Campaigns',
+    description: 'We build and launch the right combination of Google Ads, Meta Ads, landing pages, tracking, and follow-up systems.',
   },
   {
     icon: FaChartLine,
     step: '04',
     title: 'Optimize & Scale',
-    description: 'Monthly optimization ensures maximum ROI. Your practice grows predictably and consistently month after month.',
+    description: 'We continuously analyze leads, conversion performance, and campaign data, then optimize what is working and scale stronger opportunities.',
   },
 ]
 
@@ -69,13 +69,13 @@ export default function ProcessSection() {
             Our Process
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-4">
-            Your Path to a{" "}
+            From Ad Click to{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-              Thriving Practice
+              Booked Appointment
             </span>
           </h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Simple, proven process that delivers consistent results month after month
+            A simple, measurable process designed to turn paid traffic into qualified patient opportunities.
           </p>
         </motion.div>
 
