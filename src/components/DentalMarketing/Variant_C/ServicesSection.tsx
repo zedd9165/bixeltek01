@@ -43,7 +43,7 @@ const services = [
   },
   {
     icon: FaDesktop,
-    title: 'Landing Page Design',
+    title: 'Website & Landing Page Optimization',
     description:
       'Custom pages engineered for maximum conversions. Turn clicks into booked appointments.',
     features: [

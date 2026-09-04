@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
 
   description:
-    "Grow your dental practice with Google Ads, SEO, local search, and conversion-focused websites built to attract more patients and appointments.",
+    "Bixeltek is a dental marketing agency helping practices attract more patients with dental SEO, Google Ads, local SEO, conversion-focused websites and reputation management.",
 
   alternates: {
     canonical: "https://bixeltek.com/industries/dental-marketing-agency",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
     description:
-      "Grow your dental practice with Google Ads, SEO, local search, and conversion-focused websites built to attract more patients and appointments.",
+      "Bixeltek is a dental marketing agency helping practices attract more patients with dental SEO, Google Ads, local SEO, conversion-focused websites and reputation management.",
     url: "https://bixeltek.com/industries/dental-marketing-agency",
     siteName: "Bixeltek",
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
     description:
-      "Grow your dental practice with Google Ads, SEO, local search, and conversion-focused websites built to attract more patients and appointments.",
+      "Bixeltek is a dental marketing agency helping practices attract more patients with dental SEO, Google Ads, local SEO, conversion-focused websites and reputation management.",
   },
 }
 

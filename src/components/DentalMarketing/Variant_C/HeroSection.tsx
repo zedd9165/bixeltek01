@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight, FaTooth, FaPhone, FaChartLine, FaTimes } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
+import LeadPopup from './LeadPopup'
+
 
 const ROI_MULTIPLIER = 3.2
 
@@ -11,6 +13,8 @@ export default function HeroSection() {
   const [newPatients, setNewPatients] = useState(20)
   const [treatmentValue, setTreatmentValue] = useState(800)
   const [closeRate, setCloseRate] = useState(40)
+  const [showPopup, setShowPopup] = useState(false);
+
 
   const currentRevenue = Math.round(newPatients * treatmentValue * (closeRate / 100))
   const withBixeltek = Math.round(currentRevenue * ROI_MULTIPLIER)
@@ -27,7 +31,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen bg-white overflow-hidden flex items-center pt-20 mt-[">
+      <section className="relative min-h-screen bg-white overflow-hidden flex items-center pt-20">
         {/* Subtle orb accents */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-200 to-cyan-200 opacity-70 blur-3xl" />
@@ -60,7 +64,7 @@ export default function HeroSection() {
               >
                 <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
                 <span className="text-xs font-semibold tracking-wide text-gray-600 uppercase">
-                  Trusted by 50+ Dental Practices
+                  Dental Marketing Agency for Growing Practices
                 </span>
               </motion.div>
 
@@ -188,7 +192,7 @@ export default function HeroSection() {
                   {/* Left: sliders */}
                   <div className="px-7 py-6 space-y-6">
                     <CalcSlider
-                      label="New patients / month"
+                      label="Current leads / month"
                       value={newPatients}
                       min={5}
                       max={100}
@@ -302,6 +306,30 @@ export default function HeroSection() {
                     Individual results vary by market, specialty, and budget.
                   </p>
                 </div>
+
+                <div className="px-7 py-5 bg-white border-t border-gray-100">
+                <button
+                  type="button"
+                  onClick={() => setShowPopup(true)}
+                  className="w-full bg-gradient-to-tr from-black via-[#090040] to-[#483aa0] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                >
+                  Get My Free Growth Plan
+                </button>
+              </div>
+
+              {showPopup && (
+                <LeadPopup
+                  onClose={() => setShowPopup(false)}
+                  calculatorData={{
+                    newPatients,
+                    treatmentValue,
+                    closeRate,
+                    currentRevenue,
+                    withBixeltek,
+                    upside,
+                  }}
+                />
+              )}
               </div>
             </motion.div>
 
