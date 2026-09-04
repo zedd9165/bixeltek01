@@ -113,7 +113,7 @@ export default function StatsSection() {
             </span>
           </h2>
           <p className="text-gray-500 text-lg max-w-3xl mx-auto leading-relaxed">
-            With 500+ successful advertising implementations, we've helped dental practices build stronger patient acquisition systems across paid advertising, websites, SEO, and conversion optimization.
+            With 500+ successful advertising implementations, we&apos;ve helped dental practices build stronger patient acquisition systems across paid advertising, websites, SEO, and conversion optimization.
           </p>
         </motion.div>
 
