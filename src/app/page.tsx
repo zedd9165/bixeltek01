@@ -1,7 +1,7 @@
   export const metadata = {
-  title: "Best Digital Marketing Agency | SEO, Google Ads & Web Design",
+  title: "Bixeltek | Digital Transformation and Growth Agency India",
   description:
-    "Bixeltek is a Google-certified digital marketing agency offering SEO, Google Ads, web design & social media marketing. Trusted in India, USA, Canada & Saudi. & Saudi.",
+    "Bixeltek is a Google-certified digital transformation and growth agency offering SEO, Google Ads, web design & social media marketing. Trusted in India, USA, Canada & Saudi. & Saudi.",
   keywords: [
     "digital marketing company Hyderabad",
     "best digital marketing agency Hyderabad",
