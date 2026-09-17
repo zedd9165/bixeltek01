@@ -42,7 +42,7 @@ const trustItems: TrustItem[] = [
 ];
 
 const stats: StatItem[] = [
-  { value: "50+",  label: "Practices Served" },
+  { value: "100+",  label: "Practices Served" },
   { value: "102K+", label: "Patients Acquired" },
   { value: "98%",   label: "Retention Rate" },
 ];
@@ -50,21 +50,15 @@ const stats: StatItem[] = [
 const contactDetails: ContactDetail[] = [
   {
     icon: FaPhone,
-    label: "Canada",
+    label: "Call Us",
     value: "+1 437 525 2301",
     href: "tel:+14375252301",
-  },
-  {
-    icon: FaPhone,
-    label: "USA",
-    value: "+1 845 382 3415",
-    href: "tel:+18453823415",
   },
   {
     icon: FaEnvelope,
     label: "Email",
     value: "Connect@bixeltekglobal.com",
-    href: "mailto:Connect@bixeltekglobal.com",
+    href: "mailto:connect@bixeltekglobal.com",
   },
 ];
 

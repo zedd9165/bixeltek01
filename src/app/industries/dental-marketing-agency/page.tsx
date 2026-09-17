@@ -14,6 +14,7 @@ import TestimonialsSection from "@/components/DentalMarketing/Variant_C/Testimon
 import TrustSection from "@/components/DentalMarketing/Variant_C/TrustSection"
 import { Whiteheader } from "@/components/Whiteheader"
 import { Footer } from "@/sections/Footer"
+import EbookDownloadSection from "@/components/DentalMarketing/EBookDownloadSection"
 
 export const metadata: Metadata = {
   title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
@@ -48,12 +49,13 @@ export default function Page() {
       <Whiteheader />
       <HeroSection />
       <StatsSection />
-      <BenefitsSection />
       <ServicesSection />
+       <BenefitsSection />
       <ImageContentSection />
       <ProcessSection />
       <CaseStudiesSection />
       {/* <ComparisonSection /> */}
+      <EbookDownloadSection/>
       <TestimonialsSection />
       <FAQSection />
       {/* <TrustSection /> */}

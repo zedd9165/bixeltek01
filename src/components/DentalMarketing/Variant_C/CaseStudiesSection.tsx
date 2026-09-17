@@ -158,7 +158,7 @@ export default function CaseStudiesSection() {
         </motion.div>
 
         {/* CTA */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
@@ -175,7 +175,7 @@ export default function CaseStudiesSection() {
             Get My Case Study Analysis
             <FaArrowUp className="rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

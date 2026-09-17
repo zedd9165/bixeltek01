@@ -261,14 +261,7 @@ export const ContactSection: React.FC = () => {
                                     <a href="tel:+14375252301">
                                     <p className="font-semibold text-lg hover:text-purple-500 flex gap-3">
                                         <PhoneCall className="text-purple-500" />
-                                        Canada : +1 437 525 2301
-                                        </p>
-                                    </a>
-
-                                    <a href="tel:+18453823415">
-                                        <p className="font-semibold text-lg hover:text-purple-500 flex gap-3">
-                                        <PhoneCall className="text-purple-500" />
-                                        USA : +1 845 382 3415
+                                        Canada & USA : +1 437 525 2301
                                         </p>
                                     </a>
                                     <a href="tel:+919100032301">
