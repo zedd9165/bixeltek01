@@ -98,7 +98,7 @@ export default function TimedAuditPopup({
 
               {/* Description */}
               <p className="text-sm md:text-[17px] text-gray-600 leading-relaxed mb-6">
-                Discover precisely where your practice is leaking patient bookings to local competitors. We'll review your Google Ads, local search presence, website flow, and competitor gaps free of charge.
+                Discover precisely where your practice is leaking patient bookings to local competitors. We&apos;ll review your Google Ads, local search presence, website flow, and competitor gaps free of charge.
               </p>
 
               {/* Social Proof / Practice Badges */}
