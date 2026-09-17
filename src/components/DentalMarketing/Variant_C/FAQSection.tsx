@@ -6,44 +6,44 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const faqs = [
   {
-    question: 'How long until we see results from Google Ads?',
-    answer: 'Google Ads can begin generating traffic and inquiries after launch, but performance depends on competition, location, treatment, budget, landing-page quality, and tracking. We continuously optimize campaigns based on performance data.',
+    question: 'How much should a dental practice spend on Google Ads each month?',
+    answer:
+      'For many single-location practices, a healthy starting point is around $2,000 per month in Google Ads spend, moving toward $3,000+ once the campaign, tracking, landing page, and follow-up systems begin stabilizing. Highly competitive markets or procedures such as dental implants, Invisalign, cosmetic dentistry, and emergency dentistry may require more. The goal is not to spend more for the sake of it—it is to generate enough qualified search volume and conversion data to optimize properly.',
   },
   {
-    question: 'How long does it take to see results from Meta Ads?',
-    answer: 'Meta Ads can generate inquiries soon after launch, but results depend on your audience, offer, creative, location, treatment, budget, and follow-up process. We test and optimize campaigns to improve lead quality and conversion performance.',
+    question: 'What is a realistic cost per dental lead from Google Ads?',
+    answer:
+      'In many Canadian and US markets, a qualified dental lead can commonly fall in the $70–$125 range, depending on the city, competition, treatment, search demand, and landing-page quality. Some markets will be lower and some significantly higher. We focus less on chasing the cheapest lead and more on cost per booked and attended patient, because a low-cost enquiry that never books has very little value.',
   },
   {
-    question: 'Do you work with practices in my area?',
-    answer: 'Yes. We work with dental practices across multiple markets and customize campaigns around your location, competitors, services, audience, and growth goals.',
+    question: 'How quickly can Google Ads start generating new patient enquiries?',
+    answer:
+      'Google Ads can begin generating calls and enquiries soon after launch because it captures people already searching for dental treatment. However, the first few weeks are usually an optimization period. We review search terms, lead quality, conversion tracking, locations, landing pages, and cost per acquisition before scaling. The objective is a stable patient-acquisition system, not simply a temporary spike in clicks.',
   },
   {
-    question: "What's the difference between Google Ads and Meta Ads?",
-    answer: 'Google Ads captures existing demand from people actively searching for dental services. Meta Ads helps create and capture demand through Facebook and Instagram using audience targeting, creative, offers, and retargeting. Many practices benefit from using both.',
+    question: "Why shouldn't I just send all my Google Ads traffic to my homepage?",
+    answer:
+      'Someone searching for an emergency dentist, dental implants, or Invisalign has a specific need. Sending every visitor to a generic homepage can force them to search for the information they came for. We generally use treatment-specific landing pages that match the patient\'s search intent, answer important questions, establish trust, and provide a clear way to call, submit a form, or book an appointment.',
   },
   {
-    question: 'Can I set a maximum monthly budget?',
-    answer: 'Yes. We can structure your acquisition strategy around your available advertising budget and growth objectives, then prioritize the channels and campaigns with the strongest opportunity.',
+    question: 'Do you target our practice name or branded keywords in Google Ads?',
+    answer:
+      'We generally focus budget on non-branded, high-intent searches that can introduce your practice to new patients, rather than relying on branded searches to make campaign performance appear stronger. Campaign structure depends on the market and competitive environment, but our priority is understanding what genuinely creates incremental patient opportunities rather than simply capturing people who were already searching for your practice.',
   },
   {
-    question: "What happens if my ads aren't working?",
-    answer: 'We review targeting, search terms, creative, offers, landing pages, tracking, lead quality, and conversion data to identify where performance is leaking. We then test and optimize the relevant areas.',
+    question: 'Are Display Ads worth using for dental practices?',
+    answer:
+      'Display Ads can offer lower click costs than Google Search, but lower cost does not necessarily mean higher patient-acquisition value. Someone searching for an emergency dentist near me is actively looking for treatment, while someone seeing a banner ad may have no immediate need. For that reason, we generally do not treat Display as the primary patient-acquisition channel. It can be more useful as a secondary remarketing and awareness channel for people who have already visited your website or interacted with your practice.',
   },
   {
-    question: 'Do you require long-term lock-in contracts?',
-    answer: "Our engagement terms depend on the services and scope of work. We'll clearly explain the agreement, deliverables, and expectations before you begin.",
+    question: 'What happens after a lead submits a form or misses our call?',
+    answer:
+      'Generating the enquiry is only half the job. Bixeltek can help connect lead forms, call tracking, CRM workflows, appointment booking, missed-call follow-up, and automated communication so fewer opportunities disappear between the advertisement and the front desk. The goal is to create a connected patient-acquisition process from the initial enquiry through to appointment booking.',
   },
   {
-    question: 'Can you help me get more dental implant or Invisalign patients?',
-    answer: 'Yes. We can build treatment-specific Google and Meta campaigns, landing pages, offers, tracking, and follow-up around high-value services such as implants, Invisalign, cosmetic dentistry, and emergency dentistry.',
-  },
-  {
-    question: 'How do you measure dental marketing ROI?',
-    answer: 'We track leads, calls, appointment inquiries, cost per lead, conversion rates, campaign performance, and—where integrations allow—downstream patient and revenue outcomes.',
-  },
-  {
-    question: 'Can you guarantee a specific number of new patients?',
-    answer: 'No marketing agency can reliably guarantee a specific number of patients because results depend on location, competition, treatment demand, budget, website performance, lead response, and practice operations.',
+    question: 'How do I know whether the marketing is actually producing patients and not just leads?',
+    answer:
+      'We track the patient-acquisition journey as far beyond the click as your systems allow: calls, forms, appointment requests, booked appointments, and, where integrations permit, patient and revenue outcomes. This helps evaluate marketing channels based on business performance rather than impressions, clicks, or website traffic alone.',
   },
 ]
 
@@ -82,9 +82,9 @@ export default function FAQSection() {
             FAQ
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-4">
-            Dental Marketing Questions{" "}
+            Still Have Questions? {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-              Answered
+              Regarding Dental Marketing
             </span>
           </h2>
           <p className="text-xl text-gray-500">
@@ -161,7 +161,7 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <p className="text-gray-400 mb-5">Still have questions?</p>
+          <p className="text-gray-400 mb-5">Still Confused About Dental Marketing?</p>
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}

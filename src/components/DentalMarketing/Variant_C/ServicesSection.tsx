@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   FaChartLine,
@@ -10,6 +10,7 @@ import {
   FaStar,
   FaRobot,
 } from 'react-icons/fa'
+import { MicrosoftBooking } from './Microsoft_Booking'
 
 const services = [
   {
@@ -104,6 +105,16 @@ const services = [
 ]
 
 export default function ServicesSection() {
+  const [showBooking, setShowBooking] = useState(false)
+
+  useEffect(() => {
+      if (showBooking) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
+      }
+      return () => { document.body.style.overflow = '' }
+    }, [showBooking])
   return (
     <section className="relative bg-white py-20 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -188,19 +199,21 @@ export default function ServicesSection() {
           className="text-center mt-16"
         >
           <p className="text-gray-500 max-w-lg mx-auto mb-7 leading-relaxed">
-            Our services work together to create a measurable path from ad impression and search to lead, appointment, and patient.
+            Get a No Obligation Free 30 min One On One Consultation with our Certified Dental Marketing Specialists.
           </p>
-          <motion.a
-            href="#contact"
-            whileHover={{ y: -2, boxShadow: '0 12px 32px rgba(26,86,219,0.3)' }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.15 }}
-            className="inline-flex items-center bg-gray-950 text-white px-8 py-4 rounded-xl text-[15px] font-bold tracking-tight"
-          >
-            Explore Our Services
-          </motion.a>
+          <motion.button
+                onClick={() => setShowBooking(true)}
+                whileHover={{ y: -2, boxShadow: '0 12px 32px rgba(26,86,219,0.35)' }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.15 }}
+                className="inline-flex items-center justify-center gap-2 bg-gray-950 text-white px-7 py-4 rounded-xl text-[15px] font-bold tracking-tight group"
+              >
+            Book A Free One on One Consultation
+          </motion.button>
         </motion.div>
       </div>
+
+      <MicrosoftBooking showBooking={showBooking} setShowBooking={setShowBooking} />
     </section>
   )
 }

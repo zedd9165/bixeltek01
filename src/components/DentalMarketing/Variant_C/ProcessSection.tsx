@@ -69,13 +69,13 @@ export default function ProcessSection() {
             Our Process
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-4">
-            From Ad Click to{" "}
+            See Where Your Practice Is{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-              Booked Appointment
+              Losing Patients
             </span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            A simple, measurable process designed to turn paid traffic into qualified patient opportunities.
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
+            Get a complimentary $250 Dental Growth Audit covering your Google Ads, website, SEO, local search presence, and conversion setup plus practical recommendations to improve patient bookings.
           </p>
         </motion.div>
 
@@ -126,14 +126,14 @@ export default function ProcessSection() {
           viewport={{ once: true }}
           className="text-center mt-20"
         >
-          <p className="text-base text-gray-400 mb-5">Ready to start your Month One?</p>
+          <p className="text-base text-gray-400 mb-5">See Where Your Practice Is Losing Patients</p>
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             href="#contact"
             className="inline-flex items-center gap-3 bg-[#0a0a0a] hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-base transition-all duration-300 shadow-lg group"
           >
-            Get Your Free Growth Audit
+            Get My Free Audit
             <FaRocket className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </motion.a>
         </motion.div>

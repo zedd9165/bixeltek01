@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    name: 'Dr. Sarah Chen',
+    name: 'Dr. Anushika Brogan',
     location: 'Atlanta, GA',
     specialty: 'General Dentist',
     quote: 'Before Bixeltek, we averaged 15 new patients monthly. Now we consistently hit 60+ qualified leads. The ROI dashboard changed how we think about marketing investment.',
@@ -14,7 +14,7 @@ const testimonials = [
     color: 'from-blue-400 to-cyan-400',
   },
   {
-    name: 'Dr. Marcus Webb',
+    name: 'Dr. Fiona Ellwood',
     location: 'Austin, TX',
     specialty: 'Cosmetic Dentist',
     quote: 'We went from buried on page 4 of Google to the #1 result in our city in 60 days. Our phone literally doesn\'t stop ringing, and we had to hire two hygienists.',
@@ -22,7 +22,7 @@ const testimonials = [
     color: 'from-purple-400 to-pink-400',
   },
   {
-    name: 'Dr. Priya Nair',
+    name: 'Dr. Sandeep Kumar',
     location: 'Seattle, WA',
     specialty: 'Orthodontist',
     quote: 'Every dollar we spend, I can trace back to a specific patient and their treatment value. I\'ve never had that kind of transparency with any marketing agency before.',

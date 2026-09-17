@@ -7,10 +7,10 @@ import { FaUsers, FaSmile, FaDollarSign, FaStar } from 'react-icons/fa'
 const stats = [
   {
     icon: FaUsers,
-    value: 50,
+    value: 100,
     suffix: '+',
     label: 'Dental Practices Served',
-    description: 'Growing dental businesses acrosss US, Canada, and UK',
+    description: 'Growing dental businesses across US, Canada, and UK',
     accent: '#eff6ff',
     iconColor: '#1a56db',
   },
