@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { IconType } from 'react-icons'
 import {
   FaStar,
   FaShieldAlt,
@@ -11,74 +12,106 @@ import {
   FaRocket,
 } from 'react-icons/fa'
 
-const benefits = [
-  {
-    icon: FaStar,
-    title: 'Dental Marketing Expertise',
-    description:
-      'We understand the search behavior, competition, treatments, and patient journey unique to dental practices. Every campaign is built around your services, location, audience, and growth goals.',
-    accent: '#eff6ff',
-    iconColor: '#1a56db',
-    num: '01',
-  },
-  {
-    icon: FaShieldAlt,
-    title: '60-Day Performance Commitment',
-    description:
-      "If your campaigns aren't showing measurable improvement, we continue optimizing at no additional cost until performance improves, subject to agreed campaign terms and conditions.",
-    accent: '#ecfdf5',
-    iconColor: '#059669',
-    num: '02',
-  },
-  {
-    icon: FaChartBar,
-    title: 'Transparent ROI Reporting',
-    description:
-      'See where your leads come from and how your campaigns perform—from cost per lead and calls to conversions and, where integrations allow, patient and revenue outcomes.',
-    accent: '#fdf4ff',
-    iconColor: '#9333ea',
-    num: '03',
-  },
-  {
-    icon: FaClock,
-    title: 'Fast, Structured Onboarding',
-    description:
-      'We get your Google and Meta campaigns, landing pages, tracking, and conversion systems prepared quickly so you can start generating and measuring new patient opportunities.',
-    accent: '#fff7ed',
-    iconColor: '#ea580c',
-    num: '04',
-  },
-  {
-    icon: FaUserCheck,
-    title: 'Dedicated Account Manager',
-    description:
-      'One dedicated expert who understands your practice, answers your questions, and stays focused on your marketing performance.',
-    accent: '#eff6ff',
-    iconColor: '#1a56db',
-    num: '05',
-  },
-  {
-    icon: FaRocket,
-    title: "Scale When You're Ready",
-    description:
-      'Start with one location or scale across multiple practices. Our marketing systems are designed to support growth without disrupting your existing operations.',
-    accent: '#ecfdf5',
-    iconColor: '#059669',
-    num: '06',
-  },
-];
+export interface BenefitItem {
+  icon: IconType
+  title: string
+  description: string
+  accent: string
+  iconColor: string
+  num: string
+}
 
-export default function BenefitsSection() {
+export interface BenefitsSectionContent {
+  badge: string
+  headingStart: string
+  headingHighlight: string
+  headingEnd?: string
+  subtext: string
+  benefits: BenefitItem[]
+}
+
+// ─── EXISTING NORTH AMERICAN DATA (DEFAULT) ──────────────────────────────────
+export const NA_BENEFITS_CONTENT: BenefitsSectionContent = {
+  badge: 'Why choose us',
+  headingStart: 'Why Dental Practices Choose ',
+  headingHighlight: 'Bixeltek',
+  headingEnd: '',
+  subtext:
+    "We don't just run ads. We build and optimize the system behind them—so your practice can attract the right patients, respond quickly, and turn more opportunities into appointments.",
+  benefits: [
+    {
+      icon: FaStar,
+      title: 'Dental Marketing Expertise',
+      description:
+        'We understand the search behavior, competition, treatments, and patient journey unique to dental practices. Every campaign is built around your services, location, audience, and growth goals.',
+      accent: '#eff6ff',
+      iconColor: '#1a56db',
+      num: '01',
+    },
+    {
+      icon: FaShieldAlt,
+      title: '60-Day Performance Commitment',
+      description:
+        "If your campaigns aren't showing measurable improvement, we continue optimizing at no additional cost until performance improves, subject to agreed campaign terms and conditions.",
+      accent: '#ecfdf5',
+      iconColor: '#059669',
+      num: '02',
+    },
+    {
+      icon: FaChartBar,
+      title: 'Transparent ROI Reporting',
+      description:
+        'See where your leads come from and how your campaigns perform—from cost per lead and calls to conversions and, where integrations allow, patient and revenue outcomes.',
+      accent: '#fdf4ff',
+      iconColor: '#9333ea',
+      num: '03',
+    },
+    {
+      icon: FaClock,
+      title: 'Fast, Structured Onboarding',
+      description:
+        'We get your Google and Meta campaigns, landing pages, tracking, and conversion systems prepared quickly so you can start generating and measuring new patient opportunities.',
+      accent: '#fff7ed',
+      iconColor: '#ea580c',
+      num: '04',
+    },
+    {
+      icon: FaUserCheck,
+      title: 'Dedicated Account Manager',
+      description:
+        'One dedicated expert who understands your practice, answers your questions, and stays focused on your marketing performance.',
+      accent: '#eff6ff',
+      iconColor: '#1a56db',
+      num: '05',
+    },
+    {
+      icon: FaRocket,
+      title: "Scale When You're Ready",
+      description:
+        'Start with one location or scale across multiple practices. Our marketing systems are designed to support growth without disrupting your existing operations.',
+      accent: '#ecfdf5',
+      iconColor: '#059669',
+      num: '06',
+    },
+  ],
+}
+
+interface BenefitsSectionProps {
+  content?: BenefitsSectionContent
+}
+
+export default function BenefitsSection({
+  content = NA_BENEFITS_CONTENT,
+}: BenefitsSectionProps) {
   return (
     <section
       id="benefits"
       className="relative bg-gray-50 py-20 md:py-28 overflow-hidden"
     >
-      {/* Subtle orb */}
+      {/* Subtle background orb */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-blue-50 to-cyan-50 opacity-60 blur-3xl" />
 
       <div className="relative md:max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -88,67 +121,74 @@ export default function BenefitsSection() {
           className="text-center mb-16"
         >
           <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-blue-600 mb-4">
-            Why choose us
+            {content.badge}
           </p>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-[-0.03em] text-gray-950 leading-tight mb-4">
-            Why Dental Practices Choose{' '}
+            {content.headingStart}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Bixeltek
+              {content.headingHighlight}
             </span>
+            {content.headingEnd && <span>{content.headingEnd}</span>}
           </h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-            We don&apos;t just run ads. We build and optimize the system behind them—so your practice can attract the right patients, respond quickly, and turn more opportunities into appointments.
+            {content.subtext}
           </p>
         </motion.div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {benefits.map((benefit, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: idx * 0.07 }}
-              whileHover={{ y: -6, boxShadow: '0 16px 48px rgba(26,86,219,0.1)' }}
-              className="group relative bg-white border border-cyan-200 rounded-2xl p-8 cursor-default overflow-hidden transition-all hover:border-blue-200"
-            >
-              {/* Top accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-
-              {/* Corner accent bg */}
-              <div
-                className="absolute top-0 right-0 w-16 h-16 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                style={{ background: benefit.accent }}
-              />
-
-              {/* Number */}
-              <p className="text-lg font-bold text-gray-300 tracking-[0.08em] mb-4 group-hover:text-gray-400 transition-colors duration-200">
-                {benefit.num}
-              </p>
-
-              {/* Icon */}
-              <div
-                className="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-5 transition-transform duration-200 group-hover:scale-110"
-                style={{ background: benefit.accent }}
+          {content.benefits.map((benefit, idx) => {
+            const Icon = benefit.icon
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: idx * 0.07 }}
+                whileHover={{
+                  y: -6,
+                  boxShadow: '0 16px 48px rgba(26,86,219,0.1)',
+                }}
+                className="group relative bg-white border border-cyan-200 rounded-2xl p-8 cursor-default overflow-hidden transition-all hover:border-blue-200"
               >
-                <benefit.icon size={18} style={{ color: benefit.iconColor }} />
-              </div>
+                {/* Top accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
-              {/* Title */}
-              <h3 className="text-[17px] font-bold text-gray-950 mb-2.5 tracking-tight group-hover:text-blue-600 transition-colors duration-200">
-                {benefit.title}
-              </h3>
+                {/* Corner accent bg */}
+                <div
+                  className="absolute top-0 right-0 w-16 h-16 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{ background: benefit.accent }}
+                />
 
-              {/* Description */}
-              <p className="text-[14px] text-gray-500 leading-relaxed">
-                {benefit.description}
-              </p>
+                {/* Number */}
+                <p className="text-lg font-bold text-gray-300 tracking-[0.08em] mb-4 group-hover:text-gray-400 transition-colors duration-200">
+                  {benefit.num}
+                </p>
 
-              {/* Bottom bar */}
-              <div className="mt-6 h-[1.5px] w-6 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full group-hover:w-10 transition-all duration-300" />
-            </motion.div>
-          ))}
+                {/* Icon */}
+                <div
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-5 transition-transform duration-200 group-hover:scale-110"
+                  style={{ background: benefit.accent }}
+                >
+                  <Icon size={18} style={{ color: benefit.iconColor }} />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-[17px] font-bold text-gray-950 mb-2.5 tracking-tight group-hover:text-blue-600 transition-colors duration-200">
+                  {benefit.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[14px] text-gray-500 leading-relaxed">
+                  {benefit.description}
+                </p>
+
+                {/* Bottom bar */}
+                <div className="mt-6 h-[1.5px] w-6 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full group-hover:w-10 transition-all duration-300" />
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

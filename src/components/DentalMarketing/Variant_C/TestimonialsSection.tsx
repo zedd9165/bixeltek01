@@ -4,49 +4,88 @@ import React from 'react'
 import { FaStar, FaQuoteLeft } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
-const testimonials = [
-  {
-    name: 'Dr. Anushika Brogan',
-    location: 'Atlanta, GA',
-    specialty: 'General Dentist',
-    quote: 'Before Bixeltek, we averaged 15 new patients monthly. Now we consistently hit 60+ qualified leads. The ROI dashboard changed how we think about marketing investment.',
-    metrics: '+300% New Patients',
-    color: 'from-blue-400 to-cyan-400',
-  },
-  {
-    name: 'Dr. Fiona Ellwood',
-    location: 'Austin, TX',
-    specialty: 'Cosmetic Dentist',
-    quote: 'We went from buried on page 4 of Google to the #1 result in our city in 60 days. Our phone literally doesn\'t stop ringing, and we had to hire two hygienists.',
-    metrics: '#1 Google Ranking',
-    color: 'from-purple-400 to-pink-400',
-  },
-  {
-    name: 'Dr. Sandeep Kumar',
-    location: 'Seattle, WA',
-    specialty: 'Orthodontist',
-    quote: 'Every dollar we spend, I can trace back to a specific patient and their treatment value. I\'ve never had that kind of transparency with any marketing agency before.',
-    metrics: '+$420K Revenue',
-    color: 'from-green-400 to-emerald-400',
-  },
-]
+export interface TestimonialItem {
+  name: string
+  location: string
+  specialty: string
+  quote: string
+  metrics: string
+  color: string
+}
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
+export interface TestimonialsSectionContent {
+  badge: string
+  headingStart: string
+  headingHighlight: string
+  headingEnd?: string
+  subtext: string
+  testimonials: TestimonialItem[]
+}
+
+// ─── EXISTING NORTH AMERICAN DATA (DEFAULT) ──────────────────────────────────
+export const NA_TESTIMONIALS_CONTENT: TestimonialsSectionContent = {
+  badge: 'Testimonials',
+  headingStart: 'Real Results from ',
+  headingHighlight: 'Real Dentists',
+  headingEnd: '',
+  subtext:
+    'Hear directly from dental professionals who transformed their practices with our Google Ads expertise',
+  testimonials: [
+    {
+      name: 'Dr. Anushika Brogan',
+      location: 'Atlanta, GA',
+      specialty: 'General Dentist',
+      quote:
+        'Before Bixeltek, we averaged 15 new patients monthly. Now we consistently hit 60+ qualified leads. The ROI dashboard changed how we think about marketing investment.',
+      metrics: '+300% New Patients',
+      color: 'from-blue-400 to-cyan-400',
+    },
+    {
+      name: 'Dr. Fiona Ellwood',
+      location: 'Austin, TX',
+      specialty: 'Cosmetic Dentist',
+      quote:
+        "We went from buried on page 4 of Google to the #1 result in our city in 60 days. Our phone literally doesn't stop ringing, and we had to hire two hygienists.",
+      metrics: '#1 Google Ranking',
+      color: 'from-purple-400 to-pink-400',
+    },
+    {
+      name: 'Dr. Sandeep Kumar',
+      location: 'Seattle, WA',
+      specialty: 'Orthodontist',
+      quote:
+        "Every dollar we spend, I can trace back to a specific patient and their treatment value. I've never had that kind of transparency with any marketing agency before.",
+      metrics: '+$420K Revenue',
+      color: 'from-green-400 to-emerald-400',
+    },
+  ],
+}
+
+interface TestimonialsSectionProps {
+  content?: TestimonialsSectionContent
+}
+
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }
 const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
-};
+}
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({
+  content = NA_TESTIMONIALS_CONTENT,
+}: TestimonialsSectionProps) {
   return (
-    <section id="testimonials" className="relative py-24 bg-[#0a0a0a] overflow-hidden">
+    <section
+      id="testimonials"
+      className="relative py-24 bg-[#0a0a0a] overflow-hidden"
+    >
       {/* Grid texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
-          backgroundSize: "48px 48px",
+            'linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)',
+          backgroundSize: '48px 48px',
         }}
       />
       <div className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-600 opacity-10 blur-[130px]" />
@@ -62,16 +101,17 @@ export default function TestimonialsSection() {
           className="text-center mb-20"
         >
           <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-cyan-600 mb-4">
-            Testimonials
+            {content.badge}
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Real Results from{" "}
+            {content.headingStart}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Real Dentists
+              {content.headingHighlight}
             </span>
+            {content.headingEnd && <span>{content.headingEnd}</span>}
           </h2>
           <p className="text-xl text-white/40 max-w-2xl mx-auto">
-            Hear directly from dental professionals who transformed their practices with our Google Ads expertise
+            {content.subtext}
           </p>
         </motion.div>
 
@@ -83,7 +123,7 @@ export default function TestimonialsSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {testimonials.map((testimonial, idx) => (
+          {content.testimonials.map((testimonial, idx) => (
             <motion.div
               key={idx}
               variants={fadeUp}
@@ -128,5 +168,5 @@ export default function TestimonialsSection() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

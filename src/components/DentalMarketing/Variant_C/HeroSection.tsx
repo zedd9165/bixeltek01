@@ -12,23 +12,134 @@ import LeadPopup from './LeadPopup'
 import { MicrosoftBooking } from './Microsoft_Booking'
 import TimedAuditPopup from '../TimedAuditPopup'
 
-export default function HeroSection() {
+export interface HeroCalculatorConfig {
+  currencySymbol: string
+  defaultMonthlyBudget: number
+  minBudget: number
+  maxBudget: number
+  budgetStep: number
+  defaultPatientValue: number
+  minPatientValue: number
+  maxPatientValue: number
+  patientValueStep: number
+  costPerEnquiry: number
+  enquiryToPatientRate: number
+  budgetLabel: string
+  patientValueLabel: string
+  assumptionsNotice: string
+  leadsPanelLabel: string
+  leadsPanelSubtext: string
+  patientsPanelLabel: string
+  patientsPanelSubtext: string
+  revenuePanelLabel: string
+  revenuePanelSubtext: string
+  disclaimerText: string
+  calculatorCtaText: string
+  tags: string[]
+}
+
+export interface HeroFeatureTag {
+  iconType: 'chart' | 'tooth' | 'phone'
+  text: string
+}
+
+export interface HeroSectionContent {
+  eyebrowBadge: string
+  h1Start: string
+  h1Highlight: string
+  h1End?: string
+  subtext: string
+  featureTags: HeroFeatureTag[]
+  primaryCtaText: string
+  secondaryCtaText: string
+  proofNumber: string
+  proofLabel: string
+  trustInitials: string[]
+  calculator: HeroCalculatorConfig
+}
+
+
+
+export const NA_HERO_CONTENT: HeroSectionContent = {
+  eyebrowBadge: 'Dental Marketing Agency for Growing Practices',
+  h1Start: 'Dental Marketing That Converts Searches Into ',
+  h1Highlight: 'New Patients',
+  h1End: '',
+  subtext:
+    'Stop losing potential patients to competitors. Bixeltek runs Google and Meta Ads for dental practices and builds the landing pages, tracking, and follow-up systems that turn ad clicks and searches into qualified leads, consultations, and booked appointments.',
+  featureTags: [
+    { iconType: 'chart', text: 'High-Intent Leads' },
+    { iconType: 'tooth', text: 'Dental Marketing Experts' },
+    { iconType: 'phone', text: 'ROI-Focused Strategy' },
+  ],
+  primaryCtaText: 'Schedule An Appointment',
+  secondaryCtaText: 'Talk to a Specialist',
+  proofNumber: '102K+',
+  proofLabel: 'patients acquired for clients',
+  trustInitials: ['JD', 'MK', 'SR'],
+  calculator: {
+    currencySymbol: '$',
+    defaultMonthlyBudget: 3000,
+    minBudget: 1000,
+    maxBudget: 12000,
+    budgetStep: 500,
+    defaultPatientValue: 800,
+    minPatientValue: 300,
+    maxPatientValue: 3000,
+    patientValueStep: 50,
+    costPerEnquiry: 75,
+    enquiryToPatientRate: 0.5,
+    budgetLabel: 'Monthly Google Ads Budget',
+    patientValueLabel: 'Average New Patient Value',
+    assumptionsNotice:
+      'Estimates use a fixed $75 cost per phone lead and a 50% phone-lead-to-patient conversion rate.',
+    leadsPanelLabel: 'Estimated Phone Leads',
+    leadsPanelSubtext: 'Expected monthly phone leads',
+    patientsPanelLabel: 'Estimated New Patients',
+    patientsPanelSubtext: 'Based on a 50% lead-to-patient rate',
+    revenuePanelLabel: 'Potential New Patient Revenue',
+    revenuePanelSubtext: 'Potential monthly revenue from estimated new patients',
+    disclaimerText:
+      'Estimates are based on a $75 cost per phone lead and an assumed 50% phone-lead-to-patient conversion rate. Actual results vary by market, competition, treatment mix, landing pages, budget, and follow-up.',
+    calculatorCtaText: 'Get My Free $250 Dental Marketing Audit →',
+    tags: ['Google Ads', 'Patient Acquisition'],
+  },
+}
+
+interface HeroSectionProps {
+  content?: HeroSectionContent
+  onPrimaryCtaClick?: () => void
+}
+
+export default function HeroSection({
+  content = NA_HERO_CONTENT,
+  onPrimaryCtaClick,
+}: HeroSectionProps) {
   const [showBooking, setShowBooking] = useState(false)
-
-  // Calculator inputs
-  const [monthlyBudget, setMonthlyBudget] = useState(3000)
-  const [patientValue, setPatientValue] = useState(800)
-
   const [showPopup, setShowPopup] = useState(false)
 
-  // Calculator results
+  const calcConfig = content.calculator
+  const [monthlyBudget, setMonthlyBudget] = useState(calcConfig.defaultMonthlyBudget)
+  const [patientValue, setPatientValue] = useState(calcConfig.defaultPatientValue)
+
+  // Keep state synchronised if country configuration changes
+  useEffect(() => {
+    setMonthlyBudget(calcConfig.defaultMonthlyBudget)
+    setPatientValue(calcConfig.defaultPatientValue)
+  }, [calcConfig])
+
   const {
     expectedLeads,
     estimatedPatients,
     potentialRevenue,
     cpl,
     conversionRate,
-  } = calculateGrowth(monthlyBudget, patientValue)
+  } = calculateGrowth(
+    monthlyBudget,
+    patientValue,
+    calcConfig.costPerEnquiry,
+    calcConfig.enquiryToPatientRate
+  )
 
   useEffect(() => {
     if (showBooking) {
@@ -42,16 +153,34 @@ export default function HeroSection() {
     }
   }, [showBooking])
 
+  const handlePrimaryAction = () => {
+    if (onPrimaryCtaClick) {
+      onPrimaryCtaClick()
+    } else {
+      setShowPopup(true)
+    }
+  }
+
+  const renderIcon = (type: HeroFeatureTag['iconType']) => {
+    switch (type) {
+      case 'chart':
+        return <FaChartLine size={14} className="text-blue-600" />
+      case 'tooth':
+        return <FaTooth size={14} className="text-blue-600" />
+      case 'phone':
+        return <FaPhone size={14} className="text-blue-600" />
+      default:
+        return <FaTooth size={14} className="text-blue-600" />
+    }
+  }
+
   return (
     <>
       <section className="relative min-h-screen bg-white overflow-hidden flex items-center pt-20">
-        {/* Subtle orb accents */}
+        {/* Subtle background accents */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-200 to-cyan-200 opacity-70 blur-3xl" />
-
           <div className="absolute bottom-0 -left-24 w-[360px] h-[360px] rounded-full bg-gradient-to-tr from-sky-200 to-blue-200 opacity-70 blur-3xl" />
-
-          {/* Fine grid texture */}
           <div
             className="absolute inset-0 opacity-[0.07]"
             style={{
@@ -64,7 +193,6 @@ export default function HeroSection() {
 
         <div className="relative w-full md:max-w-[80%] mx-auto px-4 md:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-
             {/* ── Left Content ── */}
             <motion.div
               initial="hidden"
@@ -81,40 +209,29 @@ export default function HeroSection() {
               {/* Badge */}
               <motion.div
                 variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 16,
-                  },
+                  hidden: { opacity: 0, y: 16 },
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: {
-                      duration: 0.4,
-                    },
+                    transition: { duration: 0.4 },
                   },
                 }}
                 className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2 bg-white shadow-sm"
               >
                 <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-
                 <span className="text-xs font-semibold tracking-wide text-gray-600 uppercase">
-                  Dental Marketing Agency for Growing Practices
+                  {content.eyebrowBadge}
                 </span>
               </motion.div>
 
-              {/* Divider line */}
+              {/* Accent Line */}
               <motion.div
                 variants={{
-                  hidden: {
-                    width: 0,
-                    opacity: 0,
-                  },
+                  hidden: { width: 0, opacity: 0 },
                   visible: {
                     width: 40,
                     opacity: 1,
-                    transition: {
-                      duration: 0.4,
-                    },
+                    transition: { duration: 0.4 },
                   },
                 }}
                 className="h-[2px] bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full"
@@ -124,84 +241,50 @@ export default function HeroSection() {
               {/* Headline */}
               <motion.h1
                 variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 20,
-                  },
+                  hidden: { opacity: 0, y: 20 },
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: {
-                      duration: 0.45,
-                    },
+                    transition: { duration: 0.45 },
                   },
                 }}
-                className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.8] tracking-[-0.03em] text-gray-950"
+                className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.25] tracking-[-0.03em] text-gray-950"
               >
-                Dental Marketing That Converts Searches Into{' '}
+                {content.h1Start}
                 <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                  New Patients
+                  {content.h1Highlight}
                 </span>
+                {content.h1End && <span>{content.h1End}</span>}
               </motion.h1>
 
-              {/* Subtext */}
+              {/* Body Text */}
               <motion.p
                 variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 16,
-                  },
+                  hidden: { opacity: 0, y: 16 },
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: {
-                      duration: 0.4,
-                    },
+                    transition: { duration: 0.4 },
                   },
                 }}
-                className="text-lg text-gray-500 leading-relaxed max-w-2xl"
+                className="text-lg text-gray-600 leading-relaxed max-w-2xl"
               >
-                Stop losing potential patients to competitors. Bixeltek runs
-                Google and Meta Ads for dental practices and builds the landing
-                pages, tracking, and follow-up systems that turn ad clicks and
-                searches into qualified leads, consultations, and booked
-                appointments.
+                {content.subtext}
               </motion.p>
 
-              {/* Feature tags */}
+              {/* Feature Tags */}
               <motion.div
                 variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 12,
-                  },
+                  hidden: { opacity: 0, y: 12 },
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: {
-                      duration: 0.4,
-                    },
+                    transition: { duration: 0.4 },
                   },
                 }}
                 className="flex flex-wrap gap-3"
               >
-                {[
-                  {
-                    icon: FaChartLine,
-                    text: 'Instant Results',
-                    color: 'text-blue-600',
-                  },
-                  {
-                    icon: FaTooth,
-                    text: 'Dental Marketing Experts',
-                    color: 'text-blue-600',
-                  },
-                  {
-                    icon: FaPhone,
-                    text: 'ROI-Focused Strategy',
-                    color: 'text-blue-600',
-                  },
-                ].map((f, i) => (
+                {content.featureTags.map((feature, i) => (
                   <motion.div
                     key={i}
                     whileHover={{
@@ -210,44 +293,37 @@ export default function HeroSection() {
                       color: '#2563eb',
                     }}
                     transition={{ duration: 0.15 }}
-                    className="flex items-center gap-2 border border-gray-200 bg-white px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-600 shadow-sm cursor-default"
+                    className="flex items-center gap-2 border border-gray-200 bg-white px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 shadow-sm cursor-default"
                   >
-                    <f.icon size={14} className={f.color} />
-                    {f.text}
+                    {renderIcon(feature.iconType)}
+                    {feature.text}
                   </motion.div>
                 ))}
               </motion.div>
 
-              {/* CTA Buttons */}
+              {/* Action Buttons */}
               <motion.div
                 variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 12,
-                  },
+                  hidden: { opacity: 0, y: 12 },
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: {
-                      duration: 0.4,
-                    },
+                    transition: { duration: 0.4 },
                   },
                 }}
-                className="flex flex-col md:flex-row gap-3 pt-2"
+                className="flex flex-col sm:flex-row gap-3 pt-2"
               >
                 <motion.button
                   onClick={() => setShowBooking(true)}
                   whileHover={{
                     y: -2,
-                    boxShadow:
-                      '0 12px 32px rgba(26,86,219,0.35)',
+                    boxShadow: '0 12px 32px rgba(26,86,219,0.35)',
                   }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.15 }}
                   className="inline-flex items-center justify-center gap-2 bg-gray-950 text-white px-7 py-4 rounded-xl text-[15px] font-bold tracking-tight group"
                 >
-                  Schedule An Appointment
-
+                  {content.primaryCtaText}
                   <FaArrowRight
                     size={13}
                     className="group-hover:translate-x-1 transition-transform duration-150"
@@ -255,7 +331,7 @@ export default function HeroSection() {
                 </motion.button>
 
                 <motion.a
-                  href="#contact"
+                  href='tel:+14375252301'
                   whileHover={{
                     y: -2,
                     borderColor: '#2563eb',
@@ -265,27 +341,23 @@ export default function HeroSection() {
                   transition={{ duration: 0.15 }}
                   className="inline-flex items-center justify-center border border-gray-200 bg-white text-gray-800 px-7 py-4 rounded-xl text-[15px] font-bold tracking-tight shadow-sm"
                 >
-                  Talk to a Specialist
+                  {content.secondaryCtaText}
                 </motion.a>
               </motion.div>
 
-              {/* Trust avatars */}
+              {/* Social Proof */}
               <motion.div
                 variants={{
-                  hidden: {
-                    opacity: 0,
-                  },
+                  hidden: { opacity: 0 },
                   visible: {
                     opacity: 1,
-                    transition: {
-                      duration: 0.4,
-                    },
+                    transition: { duration: 0.4 },
                   },
                 }}
                 className="flex items-center gap-4 pt-2"
               >
                 <div className="flex">
-                  {['JD', 'MK', 'SR'].map((initials, i) => (
+                  {content.trustInitials.map((initials, i) => (
                     <div
                       key={i}
                       className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 border-2 border-white flex items-center justify-center text-white text-[10px] font-bold -ml-2 first:ml-0"
@@ -297,212 +369,160 @@ export default function HeroSection() {
 
                 <p className="text-sm text-gray-500">
                   <span className="font-bold text-gray-900">
-                    102K+
+                    {content.proofNumber}
                   </span>{' '}
-                  patients acquired for clients
+                  {content.proofLabel}
                 </p>
               </motion.div>
             </motion.div>
 
-            {/* ── Right: Calculator ── */}
+            {/* ── Right: Patient Growth Calculator ── */}
             <motion.div
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.2,
-              }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="bg-white border border-gray-200 rounded-2xl shadow-[0_2px_40px_rgba(0,0,0,0.07)] overflow-hidden">
-
-                {/* Card header */}
+                {/* Card Header */}
                 <div className="flex items-center gap-3 px-7 py-5 border-b border-gray-100">
                   <div className="w-10 h-10 rounded-xl bg-gray-950 flex items-center justify-center flex-shrink-0">
-                    <FaChartLine
-                      size={16}
-                      className="text-white"
-                    />
+                    <FaChartLine size={16} className="text-white" />
                   </div>
 
                   <div>
                     <p className="text-[15px] font-bold text-gray-950 tracking-tight">
-                      Dental Patient Growth Calculator
+                      Dental Practice Patient Growth Calculator
                     </p>
-
                     <p className="text-xs text-gray-500 mt-0.5">
-                      Estimate potential phone leads, new patients,
-                      and revenue from your monthly Google Ads budget.
+                      Model potential patient enquiries, booked appointments, and treatment revenue.
                     </p>
                   </div>
                 </div>
 
-                {/* Two-column body */}
+                {/* Body */}
                 <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-
                   {/* Left: Inputs */}
                   <div className="px-7 py-6 space-y-7">
-
                     <CalcSlider
-                      label="Monthly Google Ads Budget"
+                      label={calcConfig.budgetLabel}
                       value={monthlyBudget}
-                      min={1000}
-                      max={12000}
-                      step={500}
-                      display={`$${monthlyBudget.toLocaleString()}`}
+                      min={calcConfig.minBudget}
+                      max={calcConfig.maxBudget}
+                      step={calcConfig.budgetStep}
+                      display={`${calcConfig.currencySymbol}${monthlyBudget.toLocaleString()}`}
                       onChange={setMonthlyBudget}
-                      minLabel="$1,000"
-                      maxLabel="$12,000"
+                      minLabel={`${calcConfig.currencySymbol}${calcConfig.minBudget.toLocaleString()}`}
+                      maxLabel={`${calcConfig.currencySymbol}${calcConfig.maxBudget.toLocaleString()}`}
                     />
 
                     <CalcSlider
-                      label="Average New Patient Value"
+                      label={calcConfig.patientValueLabel}
                       value={patientValue}
-                      min={300}
-                      max={3000}
-                      step={50}
-                      display={`$${patientValue.toLocaleString()}`}
+                      min={calcConfig.minPatientValue}
+                      max={calcConfig.maxPatientValue}
+                      step={calcConfig.patientValueStep}
+                      display={`${calcConfig.currencySymbol}${patientValue.toLocaleString()}`}
                       onChange={setPatientValue}
-                      minLabel="$300"
-                      maxLabel="$3,000"
+                      minLabel={`${calcConfig.currencySymbol}${calcConfig.minPatientValue.toLocaleString()}`}
+                      maxLabel={`${calcConfig.currencySymbol}${calcConfig.maxPatientValue.toLocaleString()}`}
                     />
 
-                    {/* Calculator assumptions */}
                     <div className="pt-1">
                       <p className="text-[12px] text-gray-600 leading-relaxed">
-                        Estimates use a fixed $75 cost per phone lead and
-                        a 50% phone-lead-to-patient conversion rate.
+                        {calcConfig.assumptionsNotice}
                       </p>
                     </div>
 
-                    {/* Service tags */}
                     <div className="flex flex-wrap items-center gap-2">
-                      {['Google Ads', 'Patient Acquisition'].map(
-                        (tag) => (
-                          <span
-                            key={tag}
-                            className="text-[11px] font-semibold text-blue-600 border border-blue-200 bg-blue-50 rounded-full px-3 py-1"
-                          >
-                            {tag}
-                          </span>
-                        )
-                      )}
+                      {calcConfig.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[11px] font-semibold text-blue-600 border border-blue-200 bg-blue-50 rounded-full px-3 py-1"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Right: Results */}
+                  {/* Right: Calculated Metrics */}
                   <div className="px-7 py-6 flex flex-col gap-3">
-
-                    {/* Panel 1: Phone Leads */}
                     <div className="bg-gray-50 border border-gray-100 rounded-xl p-4">
                       <p className="text-[10px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-1.5">
-                        Estimated Phone Leads
+                        {calcConfig.leadsPanelLabel}
                       </p>
-
                       <motion.p
                         key={expectedLeads}
-                        initial={{
-                          opacity: 0.5,
-                          y: 4,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                        }}
-                        transition={{
-                          duration: 0.18,
-                        }}
+                        initial={{ opacity: 0.5, y: 4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.18 }}
                         className="text-[28px] font-extrabold tracking-[-0.03em] text-gray-950 leading-none"
                       >
                         {expectedLeads}
                       </motion.p>
-
                       <p className="text-[13px] text-gray-400 mt-1.5">
-                        Expected monthly phone leads
+                        {calcConfig.leadsPanelSubtext}
                       </p>
                     </div>
 
-                    {/* Panel 2: Estimated New Patients */}
                     <div className="bg-gray-950 rounded-xl p-4">
                       <p className="text-[10px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-1.5">
-                        Estimated New Patients
+                        {calcConfig.patientsPanelLabel}
                       </p>
-
                       <motion.p
                         key={estimatedPatients}
-                        initial={{
-                          opacity: 0.5,
-                          y: 4,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                        }}
-                        transition={{
-                          duration: 0.18,
-                        }}
+                        initial={{ opacity: 0.5, y: 4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.18 }}
                         className="text-[28px] font-extrabold tracking-[-0.03em] text-white leading-none"
                       >
                         {estimatedPatients}
                       </motion.p>
-
-                      <p className="text-[13px] text-white mt-1.5">
-                        Based on a 50% lead-to-patient rate
+                      <p className="text-[13px] text-white/80 mt-1.5">
+                        {calcConfig.patientsPanelSubtext}
                       </p>
                     </div>
 
-                    {/* Panel 3: Potential Revenue */}
                     <div className="border border-blue-100 bg-blue-50 rounded-xl p-4">
                       <p className="text-[10px] font-bold tracking-[0.1em] uppercase text-blue-400 mb-1">
-                        Potential New Patient Revenue
+                        {calcConfig.revenuePanelLabel}
                       </p>
-
                       <motion.p
                         key={potentialRevenue}
-                        initial={{
-                          opacity: 0.5,
-                          y: 4,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                        }}
-                        transition={{
-                          duration: 0.18,
-                        }}
+                        initial={{ opacity: 0.5, y: 4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.18 }}
                         className="text-[22px] font-extrabold tracking-[-0.03em] text-blue-700 leading-none"
                       >
-                        ${potentialRevenue.toLocaleString()}
+                        {calcConfig.currencySymbol}
+                        {potentialRevenue.toLocaleString()}
                       </motion.p>
-
-                      <p className="text-[13px] text-gray-400 mt-1.5">
-                        Potential monthly revenue from estimated new patients
+                      <p className="text-[13px] text-gray-500 mt-1.5">
+                        {calcConfig.revenuePanelSubtext}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Footer disclaimer */}
+                {/* Footer Disclaimer */}
                 <div className="px-7 py-3 bg-gray-50 border-t border-gray-100">
                   <p className="text-[12px] text-gray-500 leading-relaxed">
-                    Estimates are based on a $75 cost per phone lead and
-                    an assumed 50% phone-lead-to-patient conversion rate.
-                    Actual results vary by market, competition, treatment
-                    mix, landing pages, budget, and follow-up.
+                    {calcConfig.disclaimerText}
                   </p>
                 </div>
 
-                {/* CTA */}
+                {/* Card CTA */}
                 <div className="px-7 py-5 bg-white border-t border-gray-100">
                   <button
                     type="button"
                     onClick={() => setShowPopup(true)}
                     className="w-full bg-gradient-to-tr from-black via-[#090040] to-[#483aa0] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"
                   >
-                    Get My Free $250 Dental Marketing Audit →
+                    {calcConfig.calculatorCtaText}
                   </button>
                 </div>
 
-                {/* Lead Popup */}
+                {/* Lead Modal */}
                 {showPopup && (
                   <LeadPopup
                     onClose={() => setShowPopup(false)}
@@ -528,7 +548,6 @@ export default function HeroSection() {
         onBookClick={() => setShowBooking(true)}
       />
 
-      {/* ── Booking Modal ── */}
       <MicrosoftBooking
         showBooking={showBooking}
         setShowBooking={setShowBooking}
@@ -537,7 +556,6 @@ export default function HeroSection() {
   )
 }
 
-/* ── Slider sub-component ── */
 function CalcSlider({
   label,
   value,
@@ -567,7 +585,6 @@ function CalcSlider({
         <label className="text-[13px] font-semibold text-gray-700">
           {label}
         </label>
-
         <span className="text-[15px] font-extrabold tracking-tight text-blue-600">
           {display}
         </span>
@@ -590,13 +607,11 @@ function CalcSlider({
         <span className="text-[11px] text-gray-400">
           {minLabel ?? min}
         </span>
-
         <span className="text-[11px] text-gray-400">
           {maxLabel ?? max}
         </span>
       </div>
 
-      {/* Scoped slider thumb styles */}
       <style>{`
         .calc-slider::-webkit-slider-thumb {
           -webkit-appearance: none;
@@ -632,34 +647,21 @@ function CalcSlider({
   )
 }
 
-/* ── Growth Calculator ── */
 function calculateGrowth(
   monthlyBudget: number,
-  patientValue: number
+  patientValue: number,
+  costPerEnquiry: number,
+  conversionRate: number
 ) {
-  // Fixed planning assumptions
-  const CPL = 75
-  const PATIENT_CONVERSION_RATE = 0.50
-
-  // Monthly budget ÷ cost per phone lead
-  const expectedLeads = Math.floor(
-    monthlyBudget / CPL
-  )
-
-  // Expected phone leads × 50% conversion rate
-  const estimatedPatients = Math.floor(
-    expectedLeads * PATIENT_CONVERSION_RATE
-  )
-
-  // Estimated patients × average new patient value
-  const potentialRevenue =
-    estimatedPatients * patientValue
+  const expectedLeads = Math.floor(monthlyBudget / costPerEnquiry)
+  const estimatedPatients = Math.floor(expectedLeads * conversionRate)
+  const potentialRevenue = estimatedPatients * patientValue
 
   return {
     expectedLeads,
     estimatedPatients,
     potentialRevenue,
-    cpl: CPL,
-    conversionRate: PATIENT_CONVERSION_RATE,
+    cpl: costPerEnquiry,
+    conversionRate,
   }
 }

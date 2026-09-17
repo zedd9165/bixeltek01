@@ -120,7 +120,7 @@ export default function TimedAuditPopup({
               </div> */}
 
               {/* Key Takeaways */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid md:grid-cols-2 gap-3 mb-6">
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600">
                   <div className="w-5 h-5 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
                     <FaChartLine size={15} />
