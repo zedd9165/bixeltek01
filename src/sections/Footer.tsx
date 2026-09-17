@@ -38,14 +38,7 @@ export const Footer = () => {
                <a href="tel:+14375252301">
                 <p className="text-white text-lg hover:text-purple-500 flex gap-3">
                   <PhoneCall className="text-blue-500" />
-                  Canada : +1 437 525 2301
-                </p>
-              </a>
-
-              <a href="tel:+18453823415">
-                <p className="text-white text-lg hover:text-purple-500 flex gap-3">
-                  <PhoneCall className="text-blue-500" />
-                  USA : +1 845 382 3415
+                  Canada & USA : +1 437 525 2301
                 </p>
               </a>
               <a href="tel:+919100032301">
@@ -114,9 +107,9 @@ export const Footer = () => {
 
             </ul>
             <ul className="text-sm flex flex-col md:flex-row md:gap-10  transition-all duration-500 mt-6">
-              <li className="mb-6">
+              {/* <li className="mb-6">
                 <div><a target="_blank" href="https://www.vision2030.gov.sa/en"> <img src="/Group 3@2x.png.png" title="Partner in Vision 2030" className="w-20 lg:w-32 h-auto" alt="Vision 2030 Logo" /></a></div>
-              </li>
+              </li> */}
               <li className="mb-6">
                 <div> <img src="/new-logo.png" title="Partner in Vision 2030" className="w-16 lg:w-20 h-auto" alt="Vision 2030 Logo" /></div>
               </li>
