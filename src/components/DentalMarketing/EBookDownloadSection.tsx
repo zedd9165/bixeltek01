@@ -146,7 +146,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="absolute -bottom-24 -left-20 w-[420px] h-[420px] bg-gradient-to-tr from-sky-100 to-blue-100 rounded-full blur-3xl opacity-70" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="relative md:max-w-[80%] mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
          {/* ── Left Column: Playbook Value & SEO Breakdown ── */}
@@ -163,10 +163,10 @@ const handleSubmit = async (e: React.FormEvent) => {
                 <span>Dental Growth Playbook</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-950">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-950">
                 Download Your{' '}
                 <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                    Free Dental Growth Playbook
+                    Free Dental Growth Playbook 2026
                 </span>
             </h2>
 
@@ -180,7 +180,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
 
             {/* Structured Takeaway Cards */}
-            <div className="grid sm:grid-cols-2 gap-3.5 pt-2">
+            <div className="grid md:grid-cols-2 gap-3.5 pt-2">
                 {CHAPTER_HIGHLIGHTS.map((item, idx) => (
                 <div
                     key={idx}

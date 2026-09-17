@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 
@@ -29,6 +30,7 @@ export default function LeadPopup({
   onClose: () => void
   calculatorData: CalculatorData
 }) {
+  const router = useRouter()
   const [formData, setFormData] = useState(initialFormData)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -113,12 +115,10 @@ These figures are planning estimates and actual results may vary based on market
         )
       }
 
-      toast.success("Thanks! We'll be in touch shortly.", {
-        id: loadingToast,
-      })
-
+      window.setTimeout(() => {
+                router.push('/thank-you');
+            }, 1000)
       setFormData(initialFormData)
-      setSubmitted(true)
     } catch (error: any) {
       toast.error(
         `Something went wrong: ${error.message}`,
