@@ -966,10 +966,7 @@ export default function DentalGrowthPlaybookClient() {
 
                     <div className="relative flex h-full flex-col justify-between">
                       <div>
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-xs font-bold">
-                          B
-                        </div>
-
+                      
                         <p className="mt-8 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-400">
                           Free resource
                         </p>
@@ -1026,9 +1023,9 @@ export default function DentalGrowthPlaybookClient() {
                       </h3>
 
                       <p className="mt-2 max-w-sm text-sm leading-6 text-black/50">
-                        Tell us a little about your practice and we'll send
-                        the PDF straight to you.
-                      </p>
+                      Tell us a little about your practice and we&apos;ll send
+                      the PDF straight to you.
+                    </p>
 
                       {status === 'error' && errorMessage && (
                         <motion.div
