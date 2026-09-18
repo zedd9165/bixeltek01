@@ -28,9 +28,10 @@ import {
 
 export const INDIA_HERO_CONTENT: HeroSectionContent = {
   eyebrowBadge: 'India’s Leading Dental Growth Agency',
-  h1Start: 'Dental Marketing Agency for Indian ',
-  h1Highlight: 'Dental Clinics & Chains',
+  h1Start: 'Dental Growth Marketing for ',
+  h1Highlight: 'Indian Practices',
   h1End: '',
+  subtitle: 'Grow Your Indian Practice With Targeted Google & Meta Campaigns Built for Better ROI',
   subtext:
     'Turn online searches into confirmed clinic visits and high-ticket treatment cases. Bixeltek builds dedicated patient acquisition systems for Indian dental practices—combining hyper-targeted Google Ads, local Dental SEO, high-converting WhatsApp & mobile landing pages, and rapid front-desk lead recovery for Dental Implants, Clear Aligners, and Cosmetic Dentistry.',
   featureTags: [

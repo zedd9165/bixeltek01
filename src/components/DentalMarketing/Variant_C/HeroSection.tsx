@@ -48,6 +48,7 @@ export interface HeroSectionContent {
   h1Start: string
   h1Highlight: string
   h1End?: string
+  subtitle?: string
   subtext: string
   featureTags: HeroFeatureTag[]
   primaryCtaText: string
@@ -65,6 +66,7 @@ export const NA_HERO_CONTENT: HeroSectionContent = {
   h1Start: 'Dental Marketing That Converts Searches Into ',
   h1Highlight: 'New Patients',
   h1End: '',
+  subtitle: 'Acquire High-Value Dental Patients With Targeted Google & Meta Ads',
   subtext:
     'Stop losing potential patients to competitors. Bixeltek runs Google and Meta Ads for dental practices and builds the landing pages, tracking, and follow-up systems that turn ad clicks and searches into qualified leads, consultations, and booked appointments.',
   featureTags: [
@@ -257,6 +259,23 @@ export default function HeroSection({
                 {content.h1End && <span>{content.h1End}</span>}
               </motion.h1>
 
+              {/* Subtitle */}
+              {content.subtitle && (
+                <motion.h2
+                  variants={{
+                    hidden: { opacity: 0, y: 16 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.4 },
+                    },
+                  }}
+                  className="text-xl md:text-2xl font-bold text-gray-800 tracking-tight"
+                >
+                  {content.subtitle}
+                </motion.h2>
+              )}
+
               {/* Body Text */}
               <motion.p
                 variants={{
@@ -299,6 +318,32 @@ export default function HeroSection({
                     {feature.text}
                   </motion.div>
                 ))}
+              </motion.div>
+
+              {/* Google Partner Trust Badge */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.4 },
+                  },
+                }}
+                className="pt-1 flex items-center"
+              >
+                <a
+                  href="https://www.google.com/partners/agency?id=2188074075"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform duration-200 hover:scale-[1.03]"
+                >
+                  <img
+                    src="https://www.gstatic.com/partners/badge/images/2024/PartnerBadgeClickable.svg"
+                    alt="Google Partner Badge"
+                    className="w-auto h-12 md:h-14"
+                  />
+                </a>
               </motion.div>
 
               {/* Action Buttons */}

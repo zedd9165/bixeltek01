@@ -11,6 +11,7 @@ import ProcessSection from "@/components/DentalMarketing/Variant_C/ProcessSectio
 import ServicesSection from "@/components/DentalMarketing/Variant_C/ServicesSection"
 import StatsSection from "@/components/DentalMarketing/Variant_C/StatsSection"
 import TestimonialsSection from "@/components/DentalMarketing/Variant_C/TestimonialsSection"
+import TreatmentsSection from "@/components/DentalMarketing/Variant_C/TreatmentsSection"
 import TrustSection from "@/components/DentalMarketing/Variant_C/TrustSection"
 import { Whiteheader } from "@/components/Whiteheader"
 import { Footer } from "@/sections/Footer"
@@ -50,6 +51,7 @@ export default function Page() {
       <Ads_HeroSection />
       <StatsSection />
       <ServicesSection />
+      <TreatmentsSection />
        <BenefitsSection />
       <ImageContentSection />
       <ProcessSection />
@@ -60,6 +62,7 @@ export default function Page() {
       <FAQSection />
       {/* <TrustSection /> */}
       <ContactSection />
+      <Footer/>
     </>
   )
 }

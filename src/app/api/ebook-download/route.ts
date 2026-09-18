@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 export async function POST(req: Request) {
   try {
     const data = await req.json();
-    const { name, email, clinic } = data;
+    const { name, email, clinic, phone } = data;
 
     if (!name || !email) {
       return NextResponse.json(
@@ -34,6 +34,7 @@ New Dental Playbook Download:
 
 Practitioner: ${name}
 Work Email: ${email}
+Phone Number: ${phone || "Not Provided"}
 Clinic Name: ${clinic || "Not Provided"}
 Downloaded Asset: BixDental Growth Playbook (2026 Edition)
 Date/Time: ${new Date().toLocaleString()}
@@ -49,6 +50,10 @@ Date/Time: ${new Date().toLocaleString()}
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">Work Email:</td>
               <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Phone Number:</td>
+              <td style="padding: 8px 0;">${phone ? `<a href="tel:${phone}">${phone}</a>` : "Not Provided"}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">Clinic Name:</td>
