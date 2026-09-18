@@ -47,23 +47,54 @@ const stats: StatItem[] = [
   { value: "98%",   label: "Retention Rate" },
 ];
 
-const contactDetails: ContactDetail[] = [
-  {
-    icon: FaPhone,
-    label: "Call Us",
-    value: "+1 437 525 2301",
-    href: "tel:+14375252301",
-  },
-  {
-    icon: FaEnvelope,
-    label: "Email",
-    value: "Connect@bixeltekglobal.com",
-    href: "mailto:connect@bixeltekglobal.com",
-  },
-];
+export interface ContactSectionProps {
+  phoneNumber?: string;
+  phoneHref?: string;
+}
+
+const DEFAULT_PHONE_VALUE = "+1 437 525 2301";
+const DEFAULT_PHONE_HREF = "tel:+14375252301";
+const DEFAULT_EMAIL_VALUE = "Connect@bixeltekglobal.com";
+const DEFAULT_EMAIL_HREF = "mailto:connect@bixeltekglobal.com";
 
 // ─── Component ────────────────────────────────────────────────
-export default function ContactSection() {
+export default function ContactSection({
+  phoneNumber,
+  phoneHref,
+}: ContactSectionProps = {}) {
+  const displayPhone = phoneNumber
+    ? phoneNumber.trim().startsWith("+") || phoneNumber.includes(" ") || phoneNumber.includes("-")
+      ? phoneNumber
+      : phoneNumber.length === 10
+      ? `+91 ${phoneNumber}`
+      : `+${phoneNumber}`
+    : DEFAULT_PHONE_VALUE;
+
+  const rawDigits = phoneNumber ? phoneNumber.replace(/[^0-9+]/g, "") : "";
+  const activePhoneHref = phoneHref
+    ? phoneHref
+    : phoneNumber
+    ? rawDigits.startsWith("+")
+      ? `tel:${rawDigits}`
+      : rawDigits.length === 10
+      ? `tel:+91${rawDigits}`
+      : `tel:+${rawDigits}`
+    : DEFAULT_PHONE_HREF;
+
+  const contactDetails: ContactDetail[] = [
+    {
+      icon: FaPhone,
+      label: "Call Us",
+      value: displayPhone,
+      href: activePhoneHref,
+    },
+    {
+      icon: FaEnvelope,
+      label: "Email",
+      value: DEFAULT_EMAIL_VALUE,
+      href: DEFAULT_EMAIL_HREF,
+    },
+  ];
 
   return (
     <section id="contact" className="relative py-24 bg-white overflow-hidden">
