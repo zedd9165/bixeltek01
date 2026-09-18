@@ -1,19 +1,20 @@
 'use client'
 
 import React from 'react'
-import { FaTrophy, FaArrowUp } from 'react-icons/fa'
+import { FaTrophy, FaArrowUp, FaExternalLinkAlt } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const caseStudies = [
   {
     title: 'Markham Gateway Dentistry',
+    url: 'https://markhamgatewaydentistry.ca/',
     location: 'Scarborough, CA',
-    challenge: 'Started with $20k/month revenue, wanted to scale to enterprise level',
+    challenge: 'Aren`t getting enough Calls or New Patients, despite high traffic',
     results: [
       { metric: '400+', label: 'New Patients', icon: '👥' },
       { metric: '380%', label: 'Patient Growth', icon: '📈' },
       { metric: '520%', label: 'ROI', icon: '💰' },
-      { metric: '750+', label: 'Calls', icon: '☎️' },
+      { metric: '750+', label: 'Calls/month', icon: '☎️' },
     ],
     image: '/markham.png',
     color: 'from-blue-400 to-cyan-400',
@@ -21,6 +22,7 @@ const caseStudies = [
   },
   {
     title: 'Revita Family Dentistry',
+    url: 'https://revitadentistry.ca/',
     location: 'Brampton, CA',
     challenge: 'Brand new practice in 2024, needed rapid patient acquisition',
     results: [
@@ -35,6 +37,7 @@ const caseStudies = [
   },
   {
     title: 'Listiyo Family Dentistry',
+    url: 'https://listiyofamilydentalca.com/',
     location: 'California, US',
     challenge: 'High competition market with low patient calls',
     results: [
@@ -101,11 +104,14 @@ export default function CaseStudiesSection() {
           viewport={{ once: true }}
         >
           {caseStudies.map((study, idx) => (
-            <motion.div
+            <motion.a
               key={idx}
+              href={study.url}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={fadeUp}
               whileHover={{ y: -6 }}
-              className="group relative border border-cyan-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300"
+              className="group relative block border border-cyan-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 cursor-pointer"
             >
               {/* Image */}
               <div className="relative h-56 overflow-hidden bg-gray-100 lg:px-6">
@@ -115,17 +121,16 @@ export default function CaseStudiesSection() {
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/60" />
-
-                {/* Revenue badge */}
-                {/* <div className="absolute top-4 right-4 flex items-center gap-2 bg-[#0a0a0a] group-hover:bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-lg shadow-lg transition-colors duration-300">
-                  <FaTrophy size={13} />
-                  {study.finalRevenue}
-                </div> */}
               </div>
 
               {/* Content */}
               <div className="p-7">
-                <h3 className="text-xl font-bold text-[#0a0a0a] mb-1">{study.title}</h3>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <h3 className="text-xl font-bold text-[#0a0a0a] group-hover:text-blue-600 transition-colors">
+                    {study.title}
+                  </h3>
+                  <FaExternalLinkAlt size={12} className="text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                </div>
                 <p className="text-blue-600 font-semibold text-sm mb-4">{study.location}</p>
 
                 <p className="text-gray-500 text-sm leading-relaxed mb-6 pb-6 border-b border-gray-100">
@@ -153,7 +158,7 @@ export default function CaseStudiesSection() {
                 {/* Bottom accent bar */}
                 <div className="mt-6 h-0.5 w-10 bg-blue-500 rounded-full group-hover:w-full transition-all duration-500" />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 

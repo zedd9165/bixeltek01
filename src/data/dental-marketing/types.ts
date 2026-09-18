@@ -36,6 +36,7 @@ export interface HeroSectionContent {
   h1Start: string
   h1Highlight: string
   h1End?: string
+  subtitle?: string
   subtext: string
   featureTags: HeroFeatureTag[]
   primaryCtaText: string

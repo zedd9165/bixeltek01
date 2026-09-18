@@ -130,7 +130,7 @@ export default function ContactSection({
               <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] leading-tight mb-5">
                 Ready to Fill Your{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-                  Dental Schedule?
+                  Dental Practice Schedule?
                 </span>
               </h2>
               <p className="text-lg text-gray-500 leading-relaxed">

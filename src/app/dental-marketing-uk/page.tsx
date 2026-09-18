@@ -11,11 +11,13 @@ import ProcessSection from "@/components/DentalMarketing/Variant_C/ProcessSectio
 import ServicesSection from "@/components/DentalMarketing/Variant_C/ServicesSection"
 import StatsSection from "@/components/DentalMarketing/Variant_C/StatsSection"
 import TestimonialsSection from "@/components/DentalMarketing/Variant_C/TestimonialsSection"
+import TreatmentsSection from "@/components/DentalMarketing/Variant_C/TreatmentsSection"
 import TrustSection from "@/components/DentalMarketing/Variant_C/TrustSection"
 import { Whiteheader } from "@/components/Whiteheader"
 import { Footer } from "@/sections/Footer"
 import EbookDownloadSection from "@/components/DentalMarketing/EBookDownloadSection"
 import { UK_BENEFITS_CONTENT, UK_HERO_CONTENT, UK_IMAGE_CONTENT, UK_SERVICES_CONTENT, UK_TESTIMONIALS_CONTENT } from "@/data/dental-marketing/uk-dentalmarketing-content"
+import Ads_HeroSection from "@/components/DentalMarketing/HeroSection"
 
 export const metadata: Metadata = {
   title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
@@ -47,20 +49,21 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Whiteheader />
-      <HeroSection content={UK_HERO_CONTENT}/>
+      <Ads_HeroSection content={UK_HERO_CONTENT}/>
       <StatsSection />
       <ServicesSection content={UK_SERVICES_CONTENT} />
+      <TreatmentsSection />
        <BenefitsSection content={UK_BENEFITS_CONTENT} />
       <ImageContentSection content={UK_IMAGE_CONTENT} />
       <ProcessSection />
       <CaseStudiesSection />
       {/* <ComparisonSection /> */}
       <EbookDownloadSection/>
-      <TestimonialsSection content={UK_TESTIMONIALS_CONTENT} />
+      <TestimonialsSection />
       <FAQSection />
       {/* <TrustSection /> */}
       <ContactSection />
+      <Footer/>
     </>
   )
 }

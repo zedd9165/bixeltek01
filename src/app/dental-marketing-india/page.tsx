@@ -11,6 +11,7 @@ import ProcessSection from "@/components/DentalMarketing/Variant_C/ProcessSectio
 import ServicesSection from "@/components/DentalMarketing/Variant_C/ServicesSection"
 import StatsSection from "@/components/DentalMarketing/Variant_C/StatsSection"
 import TestimonialsSection from "@/components/DentalMarketing/Variant_C/TestimonialsSection"
+import TreatmentsSection from "@/components/DentalMarketing/Variant_C/TreatmentsSection"
 import TrustSection from "@/components/DentalMarketing/Variant_C/TrustSection"
 import { Whiteheader } from "@/components/Whiteheader"
 import { Footer } from "@/sections/Footer"
@@ -22,6 +23,7 @@ import {
   INDIA_SERVICES_CONTENT,
   INDIA_TESTIMONIALS_CONTENT,
 } from "@/data/dental-marketing/india-dentalmarketing-content"
+import Ads_HeroSection from "@/components/DentalMarketing/HeroSection"
 
 export const metadata: Metadata = {
   title: "Dental Marketing Agency in India | Grow Clinic Patients & Revenue | Bixeltek",
@@ -53,17 +55,17 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Whiteheader />
-      <HeroSection content={INDIA_HERO_CONTENT} />
+      <Ads_HeroSection content={INDIA_HERO_CONTENT} />
       <StatsSection />
       <ServicesSection content={INDIA_SERVICES_CONTENT} />
+      <TreatmentsSection />
       <BenefitsSection content={INDIA_BENEFITS_CONTENT} />
       <ImageContentSection content={INDIA_IMAGE_CONTENT} />
       <ProcessSection />
       <CaseStudiesSection />
       {/* <ComparisonSection /> */}
       <EbookDownloadSection />
-      <TestimonialsSection content={INDIA_TESTIMONIALS_CONTENT} />
+      <TestimonialsSection />
       <FAQSection />
       {/* <TrustSection /> */}
       <ContactSection phoneNumber="9100032301" />

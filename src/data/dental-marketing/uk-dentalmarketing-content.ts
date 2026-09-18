@@ -15,9 +15,10 @@ import { BenefitsSectionContent, HeroSectionContent, ImageContentSectionContent,
 
 export const UK_HERO_CONTENT: HeroSectionContent = {
   eyebrowBadge: 'UK Dental Marketing Agency',
-  h1Start: 'Dental Marketing Agency for UK ',
-  h1Highlight: 'Dental Practices',
+  h1Start: 'Dental Growth Marketing for ',
+  h1Highlight: 'UK Practices',
   h1End: '',
+  subtitle: 'Grow Your UK Practice With Targeted Google & Meta Campaigns Built for Better ROI',
   subtext:
     'Turn Google searches into qualified patient enquiries and booked appointments. Bixeltek builds dedicated patient acquisition systems for UK private and mixed dental practices—combining high-intent Google Ads, dental SEO, conversion-led landing pages, and rapid follow-up tracking.',
   featureTags: [
