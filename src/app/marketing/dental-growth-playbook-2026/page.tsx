@@ -1,6 +1,12 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import DentalGrowthPlaybookClient from './DentalGrowthPlaybookClient'
 import { Footer } from '@/sections/Footer'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export const metadata: Metadata = {
   title: 'Dental Growth Playbook 2026 | Free BixDental Playbook',
@@ -27,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function DentalGrowthPlaybookPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full max-w-full overflow-x-hidden">
       <DentalGrowthPlaybookClient />
       <Footer />
     </main>
