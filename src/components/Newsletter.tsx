@@ -54,19 +54,19 @@ export default function Newsletter() {
             </div>
             <form
                 onSubmit={handleSubmit}
-                className="flex items-center flex-col gap-4 md:flex-row"
+                className="flex items-center flex-col gap-4 md:flex-row w-full max-w-md"
             >
                 <input
                     onChange={handleInputChange}
                     value={formData.email}
-                    type="text"
+                    type="email"
                     name="email"
-                    className="py-3 px-6 h-14 border border-gray-300 shadow-sm rounded-full focus:outline-none"
+                    className="w-full max-w-full sm:w-80 py-3 px-6 h-14 border border-gray-300 shadow-sm rounded-full focus:outline-none text-base md:text-sm"
                     placeholder="Enter your mail.."
                 />
                 <button
                     type="submit"
-                    className="h-14 py-3.5 px-7 bg-indigo-600 shadow-sm rounded-full text-white font-bold"
+                    className="w-full sm:w-auto h-14 py-3.5 px-7 bg-indigo-600 shadow-sm rounded-full text-white font-bold"
                 >
                     Subscribe
                 </button>

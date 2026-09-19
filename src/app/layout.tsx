@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import WhatsAppPill from "@/components/WhatsAppPill";
 import { Toaster } from "react-hot-toast";
 import './globals.css'
 import { Preloader } from "@/components/Preloader";
@@ -200,6 +201,7 @@ export default function RootLayout({
       {/* <NoCopy/> */}
          {children}
         {/* Floating WhatsApp Button */}
+        <WhatsAppPill />
         <DemoPopup />
         <ScrollToTopButton/>
 
