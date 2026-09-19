@@ -9,7 +9,7 @@ const SeoPartners = ({logos}:any) =>{
 
                     <div className="w-2/3 mx-auto text-center mb-6">
                         <h2 className=" text-4xl md:text-5xl font-semibold  font-sofiasanscondensed text-neutral-900">
-                            Trusted by Open Source, enterprise, and more than 99,000 of you
+                            Our Partners
                         </h2>
                     </div>
 

@@ -549,11 +549,11 @@ export default function Ads_HeroSection({
                 </div>
 
                 {/* Footer Disclaimer */}
-                <div className="px-7 py-3 bg-gray-50 border-t border-gray-100">
+                {/* <div className="px-7 py-3 bg-gray-50 border-t border-gray-100">
                   <p className="text-[12px] text-gray-500 leading-relaxed">
                     {calcConfig.disclaimerText}
                   </p>
-                </div>
+                </div> */}
 
                 {/* Card CTA */}
                 <div className="px-7 py-5 bg-white border-t border-gray-100">
