@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     canonical: "https://bixeltek.com/industries/dental-marketing-agency",
   },
 
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+
   openGraph: {
     title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
     description:

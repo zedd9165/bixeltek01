@@ -15,6 +15,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://bixeltek.com/marketing/dental-growth-playbook-2026',
   },
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   openGraph: {
     title: 'Dental Growth Playbook 2026 | Free BixDental Playbook',
     description:

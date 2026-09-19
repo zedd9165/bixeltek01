@@ -35,6 +35,15 @@ export const metadata: Metadata = {
     canonical: "https://bixeltek.com/dental-marketing-usa",
   },
 
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+
   openGraph: {
     title: "Dental Marketing Agency USA | Attract High-Value Patients | Bixeltek",
     description:
