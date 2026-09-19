@@ -143,7 +143,7 @@ export default function TimedAuditPopup({
                 onClick={handleAction}
                 className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gray-950 via-[#0a0038] to-blue-900 hover:opacity-95 text-white py-4 px-6 rounded-xl font-bold text-[15px] shadow-lg shadow-blue-950/20 group transition-all"
               >
-                <span>Claim My Free $250 Growth Plan</span>
+                <span>Book A Free 1-on-1 Consultation</span>
                 <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
