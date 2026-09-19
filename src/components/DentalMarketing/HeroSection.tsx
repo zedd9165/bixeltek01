@@ -183,7 +183,7 @@ export default function Ads_HeroSection({
       <section className="relative min-h-screen bg-white overflow-hidden flex items-center pt-0">
         {/* Subtle background accents */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-200 to-cyan-200 opacity-70 blur-3xl" />
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-200 to-cyan-200 opacity-40 lg:opacity-70 blur-3xl" />
           <div className="absolute bottom-0 -left-24 w-[360px] h-[360px] rounded-full bg-gradient-to-tr from-sky-200 to-blue-200 opacity-70 blur-3xl" />
           <div
             className="absolute inset-0 opacity-[0.07]"
@@ -194,9 +194,9 @@ export default function Ads_HeroSection({
             }}
           />
         </div>
-        <div className="relative w-full md:max-w-[80%] mx-auto px-4 md:px-6 lg:px-8 py-16">
+        <div className="relative w-full md:max-w-[80%] mx-auto px-6 lg:px-8 lg:py-16">
           <Image src={Bixeltekblacklogo} width={150} height={40} alt="Bixeltek Logo" className='h-16 w-auto' />
-        <div className="relative py-16">
+        <div className="relative py-6 lg:py-16">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* ── Left Content ── */}
             <motion.div
@@ -212,7 +212,7 @@ export default function Ads_HeroSection({
               className="space-y-8 max-w-3xl"
             >
               {/* Badge */}
-              <motion.div
+              {/* <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 16 },
                   visible: {
@@ -227,7 +227,7 @@ export default function Ads_HeroSection({
                 <span className="text-xs font-semibold tracking-wide text-gray-600 uppercase">
                   {content.eyebrowBadge}
                 </span>
-              </motion.div>
+              </motion.div> */}
 
               {/* Accent Line */}
               <motion.div
@@ -340,7 +340,7 @@ export default function Ads_HeroSection({
                                 <img
                                   src="https://www.gstatic.com/partners/badge/images/2024/PartnerBadgeClickable.svg"
                                   alt="Google Partner Badge"
-                                  className="w-auto h-12 md:h-20"
+                                  className="w-auto h-20"
                                 />
                               </a>
                             </motion.div>
@@ -355,7 +355,7 @@ export default function Ads_HeroSection({
                     transition: { duration: 0.4 },
                   },
                 }}
-                className="flex flex-col sm:flex-row gap-3 pt-2"
+                className="flex flex-col md:flex-row gap-3 pt-2"
               >
                 <motion.button
                   onClick={() => setShowBooking(true)}

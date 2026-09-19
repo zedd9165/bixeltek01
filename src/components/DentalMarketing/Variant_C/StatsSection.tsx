@@ -92,7 +92,7 @@ export default function StatsSection() {
 
   return (
     <section className="bg-white py-20 md:py-28 overflow-hidden" ref={ref}>
-      <div className="md:max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="md:max-w-7xl mx-auto px-6 lg:px-8">
         
 
         {/* Heading */}
@@ -137,7 +137,7 @@ export default function StatsSection() {
                 className="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-6"
                 style={{ background: stat.accent }}
               >
-                <stat.icon size={18} style={{ color: stat.iconColor }} />
+                <stat.icon size={24} style={{ color: stat.iconColor }} />
               </div>
 
               {/* Value */}
@@ -151,8 +151,8 @@ export default function StatsSection() {
                 />
               </div>
 
-              <p className="text-[14px] font-bold text-gray-800 mb-1.5">{stat.label}</p>
-              <p className="text-[13px] text-gray-400 leading-snug">{stat.description}</p>
+              <p className="text-lg font-bold text-gray-800 mb-1.5">{stat.label}</p>
+              <p className="text-sm text-gray-400 leading-snug">{stat.description}</p>
 
               {/* Bottom bar */}
               <div className="mt-6 h-[1.5px] w-7 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full group-hover:w-12 transition-all duration-300" />

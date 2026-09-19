@@ -128,7 +128,7 @@ export default function TreatmentsSection({ onCtaClick }: TreatmentsSectionProps
       <div className="pointer-events-none absolute bottom-20 left-10 w-[450px] h-[450px] rounded-full bg-blue-600/5 blur-[130px]" />
       <div className="pointer-events-none absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[140px]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <motion.div
@@ -176,7 +176,7 @@ export default function TreatmentsSection({ onCtaClick }: TreatmentsSectionProps
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="relative rounded-3xl p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-blue-50 via-white to-cyan-50 border border-blue-200 shadow-[0_24px_64px_rgba(15,23,42,0.30)] overflow-hidden"
+            className="relative rounded-3xl p-4 md:p-8 lg:p-10 bg-gradient-to-br from-blue-50 via-white to-cyan-50 border border-blue-200 shadow-[0_24px_64px_rgba(15,23,42,0.30)] overflow-hidden"
           >
             {/* Ambient inner card glow */}
             <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
@@ -260,7 +260,7 @@ export default function TreatmentsSection({ onCtaClick }: TreatmentsSectionProps
 
               {/* Right Column: Conceptual Miniature Funnel SaaS UI */}
               <div className="lg:col-span-7">
-                <div className="relative rounded-2xl bg-[#07090e] border border-gray-200 p-5 sm:p-6 lg:p-7 shadow-[0_20px_50px_rgba(15,23,42,0.18)]">
+                <div className="relative rounded-2xl bg-[#07090e] border border-gray-200 p-5 md:p-6 lg:p-7 shadow-[0_20px_50px_rgba(15,23,42,0.18)]">
                   {/* Mock Window Top Bar */}
                   <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/[0.08]">
                     <div className="flex items-center gap-1.5">

@@ -111,7 +111,7 @@ export default function BenefitsSection({
       {/* Subtle background orb */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-blue-50 to-cyan-50 opacity-60 blur-3xl" />
 
-      <div className="relative md:max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="relative md:max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -171,16 +171,16 @@ export default function BenefitsSection({
                   className="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-5 transition-transform duration-200 group-hover:scale-110"
                   style={{ background: benefit.accent }}
                 >
-                  <Icon size={18} style={{ color: benefit.iconColor }} />
+                  <Icon size={24} style={{ color: benefit.iconColor }} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[17px] font-bold text-gray-950 mb-2.5 tracking-tight group-hover:text-blue-600 transition-colors duration-200">
+                <h3 className="text-lg font-bold text-gray-950 mb-2.5 tracking-tight group-hover:text-blue-600 transition-colors duration-200">
                   {benefit.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[14px] text-gray-500 leading-relaxed">
+                <p className="text-sm text-gray-500 leading-relaxed">
                   {benefit.description}
                 </p>
 

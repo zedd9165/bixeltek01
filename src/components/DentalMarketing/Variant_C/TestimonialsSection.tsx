@@ -91,7 +91,7 @@ export default function TestimonialsSection({
       <div className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-600 opacity-10 blur-[130px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 w-80 h-80 rounded-full bg-cyan-600 opacity-5 blur-[100px]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
