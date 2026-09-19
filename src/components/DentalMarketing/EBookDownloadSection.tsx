@@ -146,7 +146,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="absolute -bottom-24 -left-20 w-[420px] h-[420px] bg-gradient-to-tr from-sky-100 to-blue-100 rounded-full blur-3xl opacity-70" />
       </div>
 
-      <div className="relative md:max-w-[80%] mx-auto px-4 md:px-6 lg:px-8">
+      <div className="relative md:max-w-[80%] mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
          {/* ── Left Column: Playbook Value & SEO Breakdown ── */}

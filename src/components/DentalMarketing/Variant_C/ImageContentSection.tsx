@@ -119,7 +119,7 @@ export default function ImageContentSection({
       <div className="pointer-events-none absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-blue-600 opacity-10 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 w-96 h-96 rounded-full bg-blue-500 opacity-10 blur-[100px]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* ── Left: Image ── */}
           <motion.div
