@@ -46,7 +46,7 @@ export const UK_HERO_CONTENT: HeroSectionContent = {
     budgetLabel: 'Monthly Dental Marketing Budget',
     patientValueLabel: 'Average New Patient / Treatment Value',
     assumptionsNotice:
-      'Planning model based on an indicative £65 cost per qualified enquiry and a 40% enquiry-to-appointment conversion rate.',
+      'Estimates use a fixed £65 cost per phone lead and a 50% phone-lead-to-patient conversion rate.',
     leadsPanelLabel: 'Estimated Patient Enquiries',
     leadsPanelSubtext: 'Expected monthly treatment enquiries',
     patientsPanelLabel: 'Estimated Booked Patients',

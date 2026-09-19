@@ -55,15 +55,15 @@ export const INDIA_HERO_CONTENT: HeroSectionContent = {
     maxPatientValue: 150000,
     patientValueStep: 2500,
     costPerEnquiry: 500,
-    enquiryToPatientRate: 0.4,
+    enquiryToPatientRate: 0.5,
     budgetLabel: 'Monthly Dental Marketing Ad Budget',
     patientValueLabel: 'Average High-Value Treatment Value (₹)',
     assumptionsNotice:
-      'Planning model based on an indicative ₹500 cost per qualified enquiry and a 40% enquiry-to-appointment conversion rate across Indian cities.',
+      'Estimates use a fixed ₹500 cost per phone lead and a 50% phone-lead-to-patient conversion rate.',
     leadsPanelLabel: 'Estimated Patient Enquiries',
     leadsPanelSubtext: 'Expected monthly treatment enquiries',
     patientsPanelLabel: 'Estimated Booked Patients',
-    patientsPanelSubtext: 'Based on a 40% clinic consultation booking rate',
+    patientsPanelSubtext: 'Based on a 50% clinic consultation booking rate',
     revenuePanelLabel: 'Potential Practice Revenue',
     revenuePanelSubtext: 'Estimated gross revenue from booked treatments',
     disclaimerText:
