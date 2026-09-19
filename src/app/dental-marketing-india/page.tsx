@@ -35,6 +35,15 @@ export const metadata: Metadata = {
     canonical: "https://bixeltek.com/dental-marketing-india-ind003BXTDENTAL",
   },
 
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+
   openGraph: {
     title: "Dental Marketing Agency in India | Grow Clinic Patients & Revenue | Bixeltek",
     description:

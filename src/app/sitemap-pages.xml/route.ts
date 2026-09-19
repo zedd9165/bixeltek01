@@ -26,6 +26,20 @@ function getAppRoutes(dirPath: string, prefix = ""): { url: string; lastModified
 
       const routePath = prefix ? `${prefix}/${entry.name}` : `/${entry.name}`;
 
+      // Exclude dedicated paid marketing landing pages & playbook from the sitemap
+      if (
+        entry.name === "dental-marketing-usa" ||
+        entry.name === "dental-marketing-canada" ||
+        entry.name === "dental-marketing-uk" ||
+        entry.name === "dental-marketing-india" ||
+        entry.name === "marketing" ||
+        routePath === "/marketing" ||
+        routePath === "/marketing/dental-growth-playbook-2026" ||
+        routePath.startsWith("/marketing/")
+      ) {
+        continue;
+      }
+
       urls.push({
         url: `${baseUrl}${routePath}`,
         lastModified: new Date().toISOString(),
