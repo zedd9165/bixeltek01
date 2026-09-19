@@ -57,7 +57,7 @@ export default function Page() {
     <>
       <Ads_HeroSection content={USA_HERO_CONTENT} />
       <StatsSection />
-      <ServicesSection content={USA_SERVICES_CONTENT} />
+      <ServicesSection/>
       <TreatmentsSection />
       <BenefitsSection content={USA_BENEFITS_CONTENT} />
       <ImageContentSection content={USA_IMAGE_CONTENT} />
