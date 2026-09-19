@@ -58,9 +58,6 @@ const isValidWorkEmail = (email: string): boolean => {
   return !PERSONAL_EMAIL_DOMAINS.includes(domain)
 }
 
-/* -------------------------------------------------------------------------- */
-/* Analytics                                                                  */
-/* -------------------------------------------------------------------------- */
 
 const trackAnalyticsEvent = (
   eventName: string,
@@ -207,17 +204,17 @@ export default function DentalGrowthPlaybookClient() {
   /* ------------------------------------------------------------------------ */
 
   const handleOpenModal = useCallback((triggerLocation = 'hero') => {
-    trackAnalyticsEvent('playbook_cta_click', {
-      triggerLocation,
-    })
+      setErrorMessage('')
+      setIsModalOpen(true)
 
-    trackAnalyticsEvent('playbook_form_open', {
-      triggerLocation,
-    })
+      trackAnalyticsEvent('playbook_cta_click', {
+        triggerLocation,
+      })
 
-    setErrorMessage('')
-    setIsModalOpen(true)
-  }, [])
+      trackAnalyticsEvent('playbook_form_open', {
+        triggerLocation,
+      })
+    }, [])
 
   const handleCloseModal = useCallback(() => {
     setIsModalOpen(false)
@@ -871,7 +868,7 @@ export default function DentalGrowthPlaybookClient() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.05 }}
               onClick={handleCloseModal}
               className="fixed inset-0 cursor-default bg-[#050914]/75 backdrop-blur-md"
             />
@@ -897,7 +894,7 @@ export default function DentalGrowthPlaybookClient() {
                 y: 16,
               }}
               transition={{
-                duration: 0.25,
+                duration: 0.08,
                 ease: 'easeOut',
               }}
               className="relative z-10 my-auto w-full max-w-[860px] overflow-hidden rounded-[24px] border border-black/10 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.3)]"
