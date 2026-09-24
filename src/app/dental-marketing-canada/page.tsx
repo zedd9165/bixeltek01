@@ -17,6 +17,8 @@ import { Whiteheader } from "@/components/Whiteheader"
 import { Footer } from "@/sections/Footer"
 import EbookDownloadSection from "@/components/DentalMarketing/EBookDownloadSection"
 import Ads_HeroSection from "@/components/DentalMarketing/HeroSection"
+import CanadaCalculator from "@/components/DentalMarketing/Canada/CanadaCalculator"
+import CanadaAuditBreakdown from "@/components/DentalMarketing/Canada/CanadaAuditBreakdown"
 
 export const metadata: Metadata = {
   title: "Dental Marketing Built to Bring in More Patients | Bixeltek",
@@ -26,15 +28,6 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://bixeltek.com/industries/dental-marketing-agency",
-  },
-
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
   },
 
   openGraph: {
@@ -59,16 +52,19 @@ export default function Page() {
     <>
       <Ads_HeroSection />
       <StatsSection />
-      <ServicesSection />
-      <TreatmentsSection />
-       <BenefitsSection />
-      <ImageContentSection />
-      <ProcessSection />
+      {/* <ImageContentSection /> */}
       <CaseStudiesSection />
+            <ServicesSection />
+          <ProcessSection />
+      <CanadaCalculator/>
+          <TreatmentsSection />
+<CanadaAuditBreakdown/>
+             <BenefitsSection />
+          <FAQSection />
+
       {/* <ComparisonSection /> */}
-      <EbookDownloadSection/>
-      <TestimonialsSection />
-      <FAQSection />
+      {/* <EbookDownloadSection/> */}
+      {/* <TestimonialsSection /> */}
       {/* <TrustSection /> */}
       <ContactSection />
       <Footer/>

@@ -104,7 +104,12 @@ export default function TreatmentsSection({ onCtaClick }: TreatmentsSectionProps
     if (onCtaClick) {
       onCtaClick()
     } else {
-      setShowBooking(true)
+      const formElement = document.getElementById('audit-form') || document.getElementById('final-audit-form')
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        const input = formElement.querySelector('input')
+        if (input) setTimeout(() => input.focus(), 500)
+      }
     }
   }
 
@@ -247,7 +252,7 @@ export default function TreatmentsSection({ onCtaClick }: TreatmentsSectionProps
                       onClick={handleAction}
                       className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors group cursor-pointer"
                     >
-                      <span>Build Implants Campaign</span>
+                      <span>Get My Free $250 Audit</span>
 
                       <FaArrowRight
                         size={11}
@@ -577,8 +582,8 @@ export default function TreatmentsSection({ onCtaClick }: TreatmentsSectionProps
             </p>
           </div>
 
-          {/* Primary CTA Button */}
-          <div className="mb-5">
+          {/* Primary & Secondary CTA Buttons */}
+          <div className="mb-5 flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.button
               onClick={handleAction}
               whileHover={{
@@ -589,12 +594,22 @@ export default function TreatmentsSection({ onCtaClick }: TreatmentsSectionProps
               transition={{ duration: 0.15 }}
               className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 sm:px-10 py-4 sm:py-4.5 rounded-xl text-base sm:text-[17px] font-bold tracking-tight shadow-xl shadow-blue-500/20 transition-all group"
             >
-              <span>Build My Treatment Campaign</span>
+              <span>Get My Free $250 Audit</span>
 
               <FaArrowRight
                 size={14}
                 className="group-hover:translate-x-1 transition-transform duration-200"
               />
+            </motion.button>
+
+            <motion.button
+              onClick={() => setShowBooking(true)}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.15 }}
+              className="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 hover:border-gray-900 text-gray-900 px-7 py-4 rounded-xl text-base font-bold tracking-tight transition-all"
+            >
+              <span>Book a 1-on-1 Consultation</span>
             </motion.button>
           </div>
 
