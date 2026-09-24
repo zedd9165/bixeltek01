@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { FaArrowRight, FaCheckCircle } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -211,7 +211,9 @@ export default function Ads_HeroSection({
           >
               {/* Existing audit form */}
               <div className="w-full">
-                <CanadaAuditForm />
+                <Suspense fallback={null}>
+                  <CanadaAuditForm />
+                </Suspense>
               </div>
           </motion.div>
         </div>
