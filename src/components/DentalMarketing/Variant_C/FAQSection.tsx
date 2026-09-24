@@ -82,13 +82,13 @@ export default function FAQSection() {
             FAQ
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-4">
-            Still Have Questions? {" "}
+            Frequently Asked Questions{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-              Regarding Dental Marketing
+              About Dental Marketing
             </span>
           </h2>
-          <p className="text-xl text-gray-500">
-            Everything you need to know about Google Ads, Meta Ads, dental SEO, lead generation, and converting more patient inquiries.
+          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
+            Everything you need to know about Google Ads, patient acquisition, lead tracking, and turning enquiries into booked appointments.
           </p>
         </motion.div>
 
@@ -161,14 +161,13 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <p className="text-gray-400 mb-5">Still Confused About Dental Marketing?</p>
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="#contact"
+            href="#audit-form"
             className="inline-flex items-center gap-3 bg-[#0a0a0a] hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-base transition-all duration-300 shadow-lg"
           >
-            Schedule a Free Consultation
+            Claim My Free $250 Dental Growth Audit
           </motion.a>
         </motion.div>
       </div>

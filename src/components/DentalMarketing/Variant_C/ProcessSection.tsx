@@ -6,33 +6,41 @@ import {
   FaLightbulb,
   FaRocket,
   FaChartLine,
+  FaSearch,
+  FaFileAlt,
+  FaPhoneVolume,
+  FaUserCheck,
 } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const steps = [
   {
-    icon: FaClipboardList,
     step: '01',
-    title: 'Free Dental Marketing Audit',
-    description: 'We analyze your current ads, website, landing pages, local visibility, competitors, tracking, and conversion journey to find where you can generate and convert more leads.',
+    icon: FaSearch,
+    title: 'High-Intent Google & Meta Campaigns',
+    description:
+      'We run Google Ads targeting patients actively searching for specific treatments (implants, clear aligners, emergency dental) alongside Meta Ads to capture localized social demand in your city.',
   },
   {
-    icon: FaLightbulb,
     step: '02',
-    title: 'Custom Acquisition Strategy',
-    description: 'Receive a tailored plan based on your location, treatments, competition, budget, audience, and growth goals.',
+    icon: FaFileAlt,
+    title: 'Treatment-Specific Landing Pages',
+    description:
+      'Instead of confusing visitors with a generic website, we direct ad clicks to fast, mobile-first treatment landing pages engineered with high trust, doctor credentials, and clear calls to action.',
   },
   {
-    icon: FaRocket,
     step: '03',
-    title: 'Launch Campaigns',
-    description: 'We build and launch the right combination of Google Ads, Meta Ads, landing pages, tracking, and follow-up systems.',
+    icon: FaPhoneVolume,
+    title: 'Lead & Dynamic Call Tracking',
+    description:
+      'Every phone call and form submission is recorded and traced directly back to the exact campaign, ad creative, and keyword that generated it, so you know exactly which dollars are working.',
   },
   {
-    icon: FaChartLine,
     step: '04',
-    title: 'Optimize & Scale',
-    description: 'We continuously analyze leads, conversion performance, and campaign data, then optimize what is working and scale stronger opportunities.',
+    icon: FaUserCheck,
+    title: 'Front-Desk Follow-Up & Bookings',
+    description:
+      'We connect incoming leads directly to your clinic reception with rapid notifications and follow-up protocols, turning incoming enquiries into scheduled, chair-filling consultations.',
   },
 ]
 
@@ -63,19 +71,19 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-20 max-w-4xl mx-auto"
         >
-          <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-blue-600 mb-4">
-            Our Process
+          <p className="text-xs font-bold tracking-[0.15em] uppercase text-blue-600 mb-3">
+            THE ACQUISITION ARCHITECTURE
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-4">
-            See Where Your Practice Is{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-              Losing Patients
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-950 tracking-tight leading-tight mb-4">
+            How Bixeltek Generates{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Qualified Patient Enquiries
             </span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-            Get a complimentary $250 Dental Growth Audit covering your Google Ads, website, SEO, local search presence, and conversion setup plus practical recommendations to improve patient bookings.
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Most dental marketing fails because ads lead to generic homepages with zero conversion tracking. Here is the connected system we build for your clinic:
           </p>
         </motion.div>
 
@@ -130,10 +138,10 @@ export default function ProcessSection() {
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="#contact"
+            href="#audit-form"
             className="inline-flex items-center gap-3 bg-[#0a0a0a] hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-base transition-all duration-300 shadow-lg group"
           >
-            Get My Free Audit
+            Get My Free $250 Audit
             <FaRocket className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </motion.a>
         </motion.div>

@@ -44,7 +44,7 @@ export const NA_SERVICES_CONTENT: ServicesSectionContent = {
     'From Google and Meta Ads to landing pages, tracking, SEO, and follow-up, we connect the pieces that turn marketing spend into qualified patient opportunities.',
   footerText:
     'Get a No Obligation Free 30 min One On One Consultation with our Certified Dental Marketing Specialists.',
-  ctaText: 'Book A Free One on One Consultation',
+  ctaText: 'Get My Free Dental Growth Audit',
   services: [
     {
       icon: FaChartLine,

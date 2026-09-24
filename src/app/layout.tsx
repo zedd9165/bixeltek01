@@ -196,7 +196,7 @@ export default function RootLayout({
         
         {/* <Loader />
         {children} */}
-      <Loader/>
+      {/* <Loader/> */}
       <Toaster position="bottom-center" reverseOrder={false} />
       {/* <NoCopy/> */}
          {children}
