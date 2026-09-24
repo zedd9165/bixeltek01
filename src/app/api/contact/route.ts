@@ -49,6 +49,7 @@ export async function POST(req: Request) {
       marketingBudget,
       services,
       website,
+      subject,
       message,
       websiteType,
       seoGoals,
@@ -90,9 +91,9 @@ export async function POST(req: Request) {
     }
 
     const mailOptions = {
-      from: '"Bixeltek Support" <noreply@bixeltek.com>',
+      from: '"Bixeltek Website" <noreply@bixeltek.com>',
       to: "zee@bixeltek.com",
-      subject: "Bixeltek - New Contact Form Submission",
+      subject: subject || "Bixeltek - New Contact Form Submission",
       text: `
 Name: ${fullName}
 Email: ${email}

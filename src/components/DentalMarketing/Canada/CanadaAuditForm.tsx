@@ -89,6 +89,7 @@ export default function CanadaAuditForm({
         email: trimmedEmail,
         phone: trimmedPhone,
         website: trimmedWebsite,
+        subject: 'Dental Marketing - Canada Audit Form Submission',
         city: 'Canada',
         country: 'Canada',
         services: 'Free $250 Dental Growth Audit (Canada Paid Landing Page)',
