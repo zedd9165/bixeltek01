@@ -202,7 +202,7 @@ export default function RootLayout({
          {children}
         {/* Floating WhatsApp Button */}
         <WhatsAppPill />
-        <DemoPopup />
+        {/* <DemoPopup /> */}
         <ScrollToTopButton/>
 
       </body>
