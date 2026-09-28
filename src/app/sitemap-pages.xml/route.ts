@@ -28,6 +28,7 @@ function getAppRoutes(dirPath: string, prefix = ""): { url: string; lastModified
 
       // Exclude dedicated paid marketing landing pages & playbook from the sitemap
       if (
+        entry.name === 'home-2'||
         entry.name === "dental-marketing-usa" ||
         entry.name === "dental-marketing-canada" ||
         entry.name === "dental-marketing-uk" ||
