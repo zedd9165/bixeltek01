@@ -6,7 +6,6 @@ import { useReducedMotion } from 'framer-motion';
 
 import daddyshark from '@/assets/daddyshark logo-01.png';
 import cycas from '@/assets/CYCAS-INVESTMENT-ADVISORS-2048x1677.png';
-import daprbins from '@/assets/DAPrBINS.logo_.jpg';
 import durrat from '@/assets/durrat_logo.png';
 import edify from '@/assets/edify-new-logo-1.webp';
 import wheels from '@/assets/head-logo.png';
@@ -22,59 +21,60 @@ import cloud from '@/assets/logo-2.png';
 import binhindi from '@/assets/Bin-Hindi-Logo_Dark.png';
 import innovwayz from '@/assets/innovwayz.avif';
 import promenade from '@/assets/PDlogo_red3.webp';
-import cellfashion from '@/assets/cell-fashion-us.webp'
-import hasiniestate from '@/assets/hasiniestates.webp'
-import martin from '@/assets/martin.png'
-import whitestar from '@/assets/white-star.webp'
-import Enaara from '@/assets/enaara.webp'
-import wefound from '@/assets/we-found-global.webp'
+import cellfashion from '@/assets/cell-fashion-us.webp';
+import hasiniestate from '@/assets/hasiniestates.webp';
+import martin from '@/assets/martin.png';
+import whitestar from '@/assets/white-star.webp';
+import Enaara from '@/assets/enaara.webp';
+import wefound from '@/assets/we-found-global.webp';
 
 interface ClientLogo {
   id: string;
   name: string;
   src?: StaticImageData | string;
   scale?: number;
-  text?:string;
+  text?: string;
   bgColor?: string;
+  href?: string;
 }
 
 const clientLogosRowOne: ClientLogo[] = [
-  { id: 'c1', name: 'Daddy Shark Consultation', src: daddyshark, scale: 1.1 },
-  { id: 'c2', name: 'Cycas investments', src: cycas, scale: 1.3 },
-  { id: 'c3', name: 'Cell Fashion', src: cellfashion, scale: 1 },
+  { id: 'c1', name: 'Daddy Shark Consultation', src: daddyshark, scale: 1.1, href: 'https://daddyshark.sa/' },
+  { id: 'c2', name: 'Cycas investments', src: cycas, scale: 1.3, href: 'https://cycas.co.in/' },
+  { id: 'c3', name: 'Cell Fashion', src: cellfashion, scale: 1, href: 'https://cellfashionusa.com/' },
   { id: 'c4', name: 'Durrat', src: durrat, scale: 1.3 },
-  { id: 'c5', name: 'Edify', src: edify, scale: 1 },
-  { id: 'c6', name: 'Wheels On Site', src: wheels, scale: 0.8 },
-  { id: 'c19', name: 'Hasini Estate', src: hasiniestate, scale: 1.2 },
-  { id: 'c22', name: 'Enaara School', src: Enaara, text : 'Enaara High School', scale: 1.2 },
+  { id: 'c5', name: 'Edify', src: edify, scale: 1, href: 'https://edifyschools.com/' },
+  { id: 'c6', name: 'Wheels On Site', src: wheels, scale: 0.8, href: 'https://wheelsonsite.com/' },
+  { id: 'c19', name: 'Hasini Estate', src: hasiniestate, scale: 1.2, href: 'https://www.hasiniestates.in/' },
+  { id: 'c22', name: 'Enaara School', src: Enaara, text: 'Enaara High School', scale: 1.2, href: 'https://www.enaraahighschool.com/' },
 ];
 
 const clientLogosRowTwo: ClientLogo[] = [
-  { id: 'c7', name: 'Markham Dentistry', src: markham, scale: 1 },
-  { id: 'c8', name: 'Tumble Wash', src: tumble, scale: 1 },
-  { id: 'c9', name: 'Revita dentistry', src: revita, scale: 1.3 },
+  { id: 'c7', name: 'Markham Dentistry', src: markham, scale: 1, href: 'https://markhamgatewaydentistry.ca/' },
+  { id: 'c8', name: 'Tumble Wash', src: tumble, scale: 1, href: 'https://tumblewash.co/' },
+  { id: 'c9', name: 'Revita dentistry', src: revita, scale: 1.3, href: 'https://revitadentistry.ca/' },
   { id: 'c10', name: 'Blooming', src: blooming, scale: 1 },
-  { id: 'c11', name: 'Pawgo', src: pawgo, scale: 1 },
-  { id: 'c12', name: 'Listiyo', src: listiyo, scale: 1 },
-  { id: 'c20', name: 'Martin', src: martin, scale: 1 },
-  { id: 'c23', name: 'We Found Global ', src: wefound, scale: 1.2,bgColor:'#000' },
+  { id: 'c11', name: 'Pawgo', src: pawgo, scale: 1, href: 'https://pawgo.com/' },
+  { id: 'c12', name: 'Listiyo', src: listiyo, scale: 1, href: 'https://listiyofamilydentalca.com/' },
+  { id: 'c20', name: 'Martin', src: martin, scale: 1, href: 'https://martincarpetcleaning.com/' },
+  { id: 'c23', name: 'We Found Global ', src: wefound, scale: 1.2, bgColor: '#000', href: 'https://wefoundglobal.com/' },
 ];
 
 const clientLogosRowThree: ClientLogo[] = [
-  { id: 'c13', name: 'Rooted', src: rooted, scale: 1 },
-  { id: 'c14', name: 'Oma', src: oma, scale: 1 },
-  { id: 'c15', name: 'Cloud', src: cloud, scale: 1.3 },
-  { id: 'c16', name: 'Bin Hindi', src: binhindi, scale: 1.2 },
-  { id: 'c17', name: 'Innovwayz', src: innovwayz, scale: 0.8,},
-  { id: 'c18', name: 'Promenade Dentistry', src: promenade, scale: 1 },
-  { id: 'c21', name: 'White Star', src: whitestar, scale: 1 },
+  { id: 'c13', name: 'Rooted', src: rooted, scale: 1, href: 'https://rootedtreeservices.com/' },
+  { id: 'c14', name: 'Oma', src: oma, scale: 1, href: 'https://omacomputers.com/' },
+  { id: 'c15', name: 'Cloud', src: cloud, scale: 1.3, href: 'https://cloudupskills.com/' },
+  { id: 'c16', name: 'Bin Hindi', src: binhindi, scale: 1.2, href: 'https://www.binhindi.com/' },
+  { id: 'c17', name: 'Innovwayz', src: innovwayz, scale: 0.8, href: 'https://innovwayz.com/' },
+  { id: 'c18', name: 'Promenade Dentistry', src: promenade, scale: 1, href: 'https://www.promenadedds.com/' },
+  { id: 'c21', name: 'White Star', src: whitestar, scale: 1, href: 'https://www.whitestardumpsters.com/' },
 ];
 
 function LogoCard({ logo }: { logo: ClientLogo }) {
-  return (
-    <div className="group inline-flex items-center justify-center w-[200px] sm:w-[240px] h-[82px] sm:h-[100px] px-6 rounded-2xl border border-neutral-200/90 bg-[#FFFFFF] hover:border-[#670EF7]/40 shadow-xs hover:shadow-md transition-all duration-300 select-none shrink-0 overflow-hidden">
+  const content = (
+    <div className="group inline-flex items-center justify-center w-[200px] sm:w-[240px] h-[82px] sm:h-[100px] px-6 rounded-2xl border border-neutral-200/90 bg-[#FFFFFF] hover:border-[#670EF7]/40 shadow-xs hover:shadow-md transition-all duration-300 select-none shrink-0 overflow-hidden cursor-pointer">
       {logo.src ? (
-        <div className={`relative w-full h-full flex flex-col items-center justify-center `}>
+        <div className="relative w-full h-full flex flex-col items-center justify-center">
           <Image
             src={logo.src}
             alt={logo.name}
@@ -85,12 +85,14 @@ function LogoCard({ logo }: { logo: ClientLogo }) {
               transform: `scale(${logo.scale ?? 1})`,
             }}
           />
-          <span
-          className="text-sm sm:text-base font-bold tracking-tight text-[#08080C] transition-colors truncate"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          {logo.text}
-        </span>
+          {logo.text && (
+            <span
+              className="text-sm sm:text-base font-bold tracking-tight text-[#08080C] transition-colors truncate"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              {logo.text}
+            </span>
+          )}
         </div>
       ) : (
         <span
@@ -102,6 +104,22 @@ function LogoCard({ logo }: { logo: ClientLogo }) {
       )}
     </div>
   );
+
+  if (logo.href && logo.href !== '#') {
+    return (
+      <a
+        href={logo.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={logo.name}
+        className="inline-block shrink-0"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return content;
 }
 
 export default function ClientTrustMarquee() {
