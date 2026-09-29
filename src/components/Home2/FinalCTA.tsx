@@ -76,7 +76,7 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
             >
               <Sparkles className="w-3.5 h-3.5 text-[#8C45FF]" />
               <span className="text-sm font-semibold tracking-wider uppercase text-neutral-300">
-                Let&apos;s Talk About Your Business
+                LET’S TALK ABOUT WHAT COMES NEXT
               </span>
             </div>
 
@@ -85,9 +85,9 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
               className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.06] mb-8"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Ready to Build What&apos;s
+              Tell us where your business is headed.{' '}
               <span className="block bg-gradient-to-r from-white via-[#D8C5FF] to-[#8B45FF] bg-clip-text text-transparent">
-                Next for Your Business?
+                We’ll help you build the way forward.
               </span>
             </h2>
             
@@ -96,21 +96,19 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
               className="text-base sm:text-lg md:text-xl text-neutral-300 font-normal leading-relaxed max-w-2xl mb-12"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Whether you need a stronger digital presence, better ways to reach
-              customers, connected systems, or a clearer path forward, let&apos;s
-              look at where your business is today and what it could build next.
+              Whether you are launching a business, rebuilding an outdated web presence, scaling customer acquisition or connecting platforms behind the scenes, we would welcome the conversation. We will look at what you have today, understand what you want to achieve and share a clear perspective on the most practical next step.
             </p>
 
             {/* CTA */}
-            <div className="flex flex-col md:flex-row items-start sm:items-center gap-6 pt-10 border-t border-white/[0.08] w-full mt-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 pt-8 border-t border-white/[0.08] w-full mt-6">
               
               <button 
                 onClick={onOpenAudit}
-                className="w-full md:w-auto px-6 py-4 bg-white text-neutral-950 rounded-full font-bold text-sm sm:text-base hover:shadow-[0_4px_35px_rgba(103,14,247,0.5)] flex items-center justify-center gap-3 transition-all duration-300 group cursor-pointer"
+                className="w-full sm:w-auto px-7 py-4 bg-white text-[#08080C] rounded-full font-bold text-sm sm:text-base hover:shadow-[0_4px_35px_rgba(103,14,247,0.5)] flex items-center justify-center gap-3 transition-all duration-300 group cursor-pointer"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 <span className="shrink-0">
-                  Talk About Your Business
+                  Discuss Your Project
                 </span>
 
                 <div className="w-8 h-8 rounded-full bg-[#08080C] flex items-center justify-center shrink-0 transform group-hover:translate-x-1 transition-transform">
@@ -118,11 +116,14 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
                 </div>
               </button>
 
-            <Link href="#"                 
-            className="w-full md:w-auto px-4 py-4 text-white rounded-full font-bold text-sm sm:text-base hover:shadow-[0_4px_35px_rgba(103,14,247,0.5)] flex items-center justify-center transition-all duration-300 group cursor-pointer"
-            >
-              Schedule a 1 on 1 Consultation 
-            </Link>
+              <Link 
+                href="/case-studies"                 
+                className="w-full sm:w-auto px-7 py-4 text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                <span>Explore Our Work</span>
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform text-[#8C45FF]" />
+              </Link>
 
             </div>
           </div>
@@ -148,12 +149,12 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
               </p>
             </div>
 
-            <div className="space-y-2 w-full">
+            <div className="space-y-2.5 w-full">
               {[
-                { step: '01', scope: 'Strengthen Your Digital Presence' },
-                { step: '02', scope: 'Reach More Relevant Customers' },
-                { step: '03', scope: 'Connect Your Systems' },
-                { step: '04', scope: 'Build for What Comes Next' },
+                { step: '01', scope: 'Launch a New Business' },
+                { step: '02', scope: 'Build or Redesign a Website' },
+                { step: '03', scope: 'Grow Through Google Ads & SEO' },
+                { step: '04', scope: 'Develop an App or Connected System' },
               ].map((stage) => (
                 <div 
                   key={stage.step}

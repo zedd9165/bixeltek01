@@ -25,6 +25,8 @@ import  medusa from '@/assets/medusa-commerce.png'
 import nest from '@/assets/nest.png'
 import express from '@/assets/express-js.jpg'
 import strapi from '@/assets/strapi-logo.png'
+import meta from '@/assets/9805185_meta_logo_facebook_social media_icon.png'
+import analytics from '@/assets/4202007_analytics_google_logo_social_social media_icon.png'
 /* ============================================================
    DATA MODEL
    ============================================================ */
@@ -57,54 +59,50 @@ interface Category {
 const categories: Category[] = [
   {
     id: 'web',
-    label: 'Web Development & Experience',
-    description: 'Websites and digital experiences built for your customers.',
+    label: 'Websites & Content',
+    description: 'WordPress · Strapi · Next.js · React',
     icon: Layers3,
     technologies: [
+      { id: 'wordpress', name: 'WordPress', icon: wordpress },
+      { id: 'strapi', name: 'Strapi', icon: strapi },
       { id: 'nextjs', name: 'Next.js', icon: next },
       { id: 'react', name: 'React', icon: react },
-      { id: 'vue', name: 'Vue', icon: vue },
-      { id: 'nuxt', name: 'Nuxt', icon: nuxt },
-      { id: 'wordpress', name: 'WordPress', icon: wordpress },
-      { id: 'elementor', name: 'Elementor', icon: elementor },
     ],
   },
   {
     id: 'commerce',
-    label: 'Commerce',
-    description: 'Commerce platforms and payment infrastructure.',
+    label: 'Ecommerce',
+    description: 'Shopify · WooCommerce · Medusa · Payment Integrations',
     icon: ShoppingBag,
     technologies: [
       { id: 'shopify', name: 'Shopify', icon: shopifylogo },
-      { id: 'medusa', name: 'Medusa', icon: medusa },
       { id: 'woocommerce', name: 'WooCommerce', icon: woo },
-      { id: 'magento', name: 'Magento', icon: magento },
-      { id: 'stripe', name: 'Stripe', icon: stripe },
-      { id: 'razorpay', name: 'Razorpay', icon: razorpay },
+      { id: 'medusa', name: 'Medusa', icon: medusa },
+      { id: 'payments', name: 'Payment Integrations', icon: stripe },
     ],
   },
   {
     id: 'application',
-    label: 'Applications & Platforms',
-    description: 'Applications, APIs and the systems behind digital products.',
+    label: 'Applications & Systems',
+    description: 'Web & Mobile Development · APIs · CRM Integrations · Automation',
     icon: Code2,
     technologies: [
-      { id: 'nest', name: 'NestJS', icon: nest },
-      { id: 'express', name: 'Express', icon: express },
-      { id: 'python', name: 'Python', icon: python },
-      { id: 'strapi', name: 'Strapi', icon: strapi },
-      { id: 'frappe', name: 'Frappe', icon: frappe },
+      { id: 'appdev', name: 'Web & Mobile Dev', badge: 'DEV', badgeColor: '#670EF7' },
+      { id: 'apis', name: 'APIs', badge: 'API', badgeColor: '#4F46E5' },
+      { id: 'crm', name: 'CRM Integrations', badge: 'CRM', badgeColor: '#0EA5E9' },
+      { id: 'automation', name: 'Automation', icon: zapier },
     ],
   },
   {
     id: 'growth',
-    label: 'Growth & Automation',
-    description: 'Connected tools that help businesses grow and operate better.',
+    label: 'Marketing & Measurement',
+    description: 'Google Ads · Meta Ads · GA4 · Reporting',
     icon: Workflow,
     technologies: [
       { id: 'googleads', name: 'Google Ads', icon: googleadslogo },
-      { id: 'zapier', name: 'Zapier', icon: zapier },
-      { id: 'slack', name: 'Slack', icon: slack },
+      { id: 'metaads', name: 'Meta Ads', icon: meta, },
+      { id: 'ga4', name: 'GA4', icon: analytics },
+      { id: 'reporting', name: 'Reporting', badge: 'DATA', badgeColor: '#10B981' },
     ],
   },
 ];
@@ -190,7 +188,7 @@ export default function TechnologyArchitecture() {
   }, [measure]);
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28">
+    <section className="relative overflow-hidden bg-white py-20 md:py-28 border-b border-neutral-200">
       {/* Precision Structural Background Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
@@ -203,32 +201,30 @@ export default function TechnologyArchitecture() {
         }}
       />
 
-      <div className="relative mx-auto lg:max-w-[80%] px-5 sm:px-6 lg:px-8">
+      <div className="relative mx-auto lg:max-w-[90%] px-5 sm:px-6 lg:px-8">
         
         {/* HEADER */}
         <div className="mx-auto max-w-4xl text-center mb-16 sm:mb-20">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#670EF7]/20 bg-[#670EF7]/5 px-3.5 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-[#670EF7] animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#670EF7]">
-              Digital Architecture
+              PLATFORMS & TECHNOLOGY
             </span>
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-[#08080C] sm:text-4xl md:text-6xl"
           style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Systems that work <span className="text-[#670EF7]">together.</span>
+            Built on technology that fits the work.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-neutral-500 sm:text-lg"
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-neutral-600 sm:text-lg"
           style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            We choose technology around your business needs — bringing websites,
-            applications, commerce, growth tools, and automation together when they
-            need to work as one.
-            </p>
+            A platform decision affects what customers experience and what your team can manage later. We work with WordPress, Shopify, WooCommerce, modern development frameworks, commerce and content systems, and tools for advertising, analytics and automation. We recommend the stack based on business requirements, integrations, ownership and the support it needs after launch.
+          </p>
         </div>
 
         {/* ARCHITECTURE WORKBENCH (Desktop): LAYER 1 → 2 → 3 */}
-        <div ref={containerRef} className="relative hidden lg:flex gap-12 xl:gap-16 items-center">
+        <div ref={containerRef} className="relative hidden lg:flex gap-10 xl:gap-14 items-center">
           
           {/* SVG CABLING LAYER */}
           <svg className="pointer-events-none absolute inset-0 z-0 h-full w-full overflow-visible" aria-hidden="true">
@@ -332,11 +328,11 @@ export default function TechnologyArchitecture() {
                     
                   </div>
 
-                  <span className="block text-lg font-bold tracking-tight text-[#08080C]"
+                  <h3 className="block text-lg font-bold tracking-tight text-[#08080C]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {category.label}
-                  </span>
+                  </h3>
                   <span className="block mt-1.5 text-sm text-neutral-500 leading-snug"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
@@ -364,7 +360,7 @@ export default function TechnologyArchitecture() {
                       : 'border-neutral-200/70 bg-[#FBFBFA]/60'
                   }`}
                 >
-                  <div className="grid grid-cols-3 gap-2.5 content-center">
+                  <div className="grid grid-cols-2 xl:grid-cols-4 gap-2.5 content-center">
                     {category.technologies.map((tech) => {
                       const rowId = flatTechRowId(category.id, tech.id);
                       const isTechActive = activeTech === rowId;
@@ -441,9 +437,11 @@ export default function TechnologyArchitecture() {
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
-                    <span className="block text-base font-extrabold text-[#08080C]">
+                    <h3 className="block text-base font-extrabold text-[#08080C]"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    >
                       {category.label}
-                    </span>
+                    </h3>
                     <span className="block text-xs text-neutral-500">
                       {category.description}
                     </span>

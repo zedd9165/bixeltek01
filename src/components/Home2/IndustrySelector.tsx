@@ -13,32 +13,32 @@ import b2bImg from '@/assets/campaign-creators-gMsnXqILjp4-unsplash.jpg';
 const industries = [
   {
     id: 0,
-    title: 'B2B & Growing Companies',
-    focus: 'Digital Transformation',
+    title: 'B2B & Established Businesses',
+    focus: 'Complex Offers & Long Cycles',
     description:
-      'Bring your digital presence, customer journey, technology, and internal systems together to create a more connected foundation for generating opportunities and growing the business.',
-    cta: 'Talk to Bixeltek',
+      'When the offer is complex or the buying cycle is long, the website must do more than look credible. We help businesses explain their value, guide prospective buyers toward an enquiry and connect that journey with the teams responsible for follow-up.',
+    cta: 'Discuss Your Requirements',
     link: '/contact-us',
     image: b2bImg,
-    tag: 'B2B & Technology'
+    tag: 'B2B & Established'
   },
   {
     id: 1,
     title: 'Dental & Healthcare',
-    focus: 'Digital Growth',
+    focus: 'Trust & Local Demand',
     description:
-      'Build a stronger digital presence for practices that depend on trust, local visibility, and a steady flow of new patients — from the website and search experience to lead generation and follow-up.',
-    cta: 'Explore Healthcare',
+      'Choosing a provider requires trust. We help practices present their care clearly, improve local visibility and create better journeys from search or advertising to a patient enquiry.',
+    cta: 'Explore Healthcare Work',
     link: '/industries/dental-marketing-agency',
     image: dentalImg,
     tag: 'Healthcare'
   },
-   {
+  {
     id: 2,
-    title: 'Ecommerce & D2C',
-    focus: 'Digital Commerce',
+    title: 'Ecommerce & Consumer Brands',
+    focus: 'Storefront to Scale',
     description:
-      'Create ecommerce experiences that connect discovery, product experience, marketing, and conversion — giving growing brands a stronger foundation to sell and scale online.',
+      'From a new brand’s first store to a growing catalogue that needs a better platform, we design commerce experiences that connect product discovery, buying and the operations behind every order.',
     cta: 'Explore Ecommerce',
     link: '/ecommerce-websites',
     image: ecommerceImg,
@@ -46,16 +46,15 @@ const industries = [
   },
   {
     id: 3,
-    title: 'Local & Multi-Location',
-    focus: 'Local Digital Presence',
+    title: 'Local & Multi-Location Services',
+    focus: 'Location Pages & Inbound',
     description:
-      'Help customers find, understand, and choose your business across locations with stronger websites, local search visibility, targeted campaigns, and connected lead workflows.',
+      'Help customers find the right service in the right place, understand why they should choose you and contact the right team. We connect location pages, local SEO, Google Ads and enquiry handling around that journey.',
     cta: 'Explore Local Growth',
     link: '/local-seo',
     image: localServiceImg,
-    tag: 'Local Business'
+    tag: 'Local Services'
   },
-  
 ];
 
 export default function IndustrySelector() {
@@ -92,7 +91,7 @@ export default function IndustrySelector() {
             >
               <Sparkles className="w-3.5 h-3.5 text-[#8C45FF]" />
               <span className="text-xs md:text-sm font-semibold tracking-wider uppercase text-neutral-300">
-                Industries We Work With
+                WHO WE WORK WITH
               </span>
             </div>
 
@@ -100,13 +99,13 @@ export default function IndustrySelector() {
               className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-6"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              We Believe Every Business Needs the Different Playbook.
+              Different businesses. A solution shaped around yours.
             </h2>
             <p 
               className="text-base sm:text-lg md:text-xl text-[#A1A1AA] font-normal leading-relaxed"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-               Every business has a different customer journey, operating model, and stage of growth. We adapt the digital strategy, technology, and growth systems around how your business actually works.
+              We work with new ventures preparing to launch, growing companies building their next channel and established businesses modernizing the experience they offer. The work changes with the market and business model; our first job is to understand what success looks like in your context.
             </p>
           </div>
         </div>

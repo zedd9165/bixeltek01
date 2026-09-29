@@ -51,7 +51,7 @@ const clientLogosRowOne: ClientLogo[] = [
 
 const clientLogosRowTwo: ClientLogo[] = [
   { id: 'c7', name: 'Markham Dentistry', src: markham, scale: 1, href: 'https://markhamgatewaydentistry.ca/' },
-  { id: 'c8', name: 'Tumble Wash', src: tumble, scale: 1, href: 'https://tumblewash.co/' },
+  { id: 'c8', name: 'Tumble Wash', src: tumble, scale: 1, href: '/case-studies/Tumblewash-Casestudy' },
   { id: 'c9', name: 'Revita dentistry', src: revita, scale: 1.3, href: 'https://revitadentistry.ca/' },
   { id: 'c10', name: 'Blooming', src: blooming, scale: 1 },
   { id: 'c11', name: 'Pawgo', src: pawgo, scale: 1, href: 'https://pawgo.com/' },
@@ -173,7 +173,7 @@ export default function ClientTrustMarquee() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#670EF7] animate-pulse" />
             <span className="text-xs md:text-sm font-semibold tracking-widest uppercase text-[#670EF7]">
-              TRUSTED BY BUSINESSES ACROSS INDUSTRIES
+              SELECTED WORK
             </span>
           </div>
 
@@ -181,18 +181,22 @@ export default function ClientTrustMarquee() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#08080C] leading-[1.08] mb-6"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Businesses We&apos;ve Helped{' '}<br className="hidden lg:block"/>
-            <span className="bg-gradient-to-r from-[#670EF7] to-[#8B45FF] bg-clip-text text-transparent">
-              Move Forward.
-            </span>
+            Work that solves a business problem and shows its impact.
           </h2>
 
           <p 
             className="text-base sm:text-lg md:text-xl text-[#71717A] font-normal leading-relaxed max-w-3xl mx-auto"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            From growing local businesses to established companies and specialized healthcare brands, we&apos;ve worked across different industries to build better digital experiences, generate demand and improve the systems behind growth.
+            A stronger digital presence matters when it changes what customers can do and what the business can measure. Our work spans websites, ecommerce, applications and customer acquisition. Each engagement begins with the problem, the work required to solve it and a way to judge whether it is improving.
           </p>
+
+          <h3 
+            className="text-xs sm:text-sm uppercase tracking-widest text-neutral-400 font-bold mt-8 block"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
+            Businesses that have worked with Bixeltek
+          </h3>
         </div>
 
         {/* 3-Row Seamless Multi-Track Stream */}

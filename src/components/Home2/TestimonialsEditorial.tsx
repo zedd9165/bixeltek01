@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface Testimonial {
   id: string;
@@ -26,10 +25,10 @@ const testimonials: Testimonial[] = [
     role: 'Managing Director',
     organization: 'TumbleWash Franchise',
     sector: 'Multi-Location Service',
-    quote: 'Bixeltek transformed our digital customer acquisition. Within 90 days, our cost per acquisition dropped from ₹754 down to ₹77, while our monthly inbound call volume expanded beyond 477 verified calls.',
+    quote: 'Bixeltek transformed our digital customer acquisition. By rebuilding the search journey, landing experience and conversion path, our campaign efficiency and inbound enquiry volume improved dramatically within 90 days.',
     metricHighlight: {
-      primary: '₹77 CPA',
-      label: '89.7% CAC Reduction'
+      primary: '89.7%',
+      label: 'Acquisition Cost Reduction'
     },
     initials: 'TW'
   },
@@ -98,7 +97,7 @@ export default function TestimonialsDeck() {
   const active = testimonials[current];
 
   return (
-    <section className="relative w-full py-24 sm:py-32 lg:py-40 bg-[#FFFFFF] text-[#08080C] border-b border-neutral-200/90 overflow-hidden">
+    <section className="relative w-full py-20 sm:py-28 lg:py-32 bg-[#FFFFFF] text-[#08080C] border-b border-neutral-200/90 overflow-hidden">
       
       {/* Subtle Restrained Ambient Purple Glow Behind Deck */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#670EF7]/[0.035] blur-[150px] rounded-full pointer-events-none" />
@@ -106,25 +105,24 @@ export default function TestimonialsDeck() {
       <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">
         
         {/* Centered Editorial Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-            <div 
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
+          <div 
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#670EF7]/30 bg-[#670EF7]/10 text-[#670EF7] text-xs sm:text-sm font-semibold tracking-wider uppercase mb-5"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>What Our Clients Say</span>
+            <span>CLIENT PERSPECTIVES</span>
           </div>
 
-          <h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#08080C] tracking-tight leading-[1.12] mb-4"
+          <h3 
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#08080C] tracking-tight leading-[1.12] mb-4"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Built Around Their Business.
-            <br className="hidden md:inline" />
+            Built Around Their Business.{' '}
             <span className="bg-gradient-to-r from-[#670EF7] to-[#8B45FF] bg-clip-text text-transparent">
               Proven Through Real Work.
             </span>
-          </h2>
+          </h3>
 
           <p 
             className="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed max-w-xl mx-auto"
@@ -179,77 +177,70 @@ export default function TestimonialsDeck() {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.2}
-                  onDragEnd={(e, { offset, velocity }) => {
-                    const swipe = offset.x;
-                    if (swipe < -50) {
-                      paginate(1);
-                    } else if (swipe > 50) {
-                      paginate(-1);
-                    }
-                  }}
-                  className="rounded-3xl bg-white border border-neutral-200/90 p-8 md:p-12 lg:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.06)] flex flex-col justify-between"
+                  className="w-full rounded-3xl border border-neutral-200/90 bg-white p-7 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] relative overflow-hidden"
                 >
-                  {/* Card Header Vector / Badge */}
-                  <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 pb-6 mb-6 border-b border-neutral-100">
-                    <span 
-                      className="text-xs font-mono uppercase tracking-widest text-[#8B45FF] font-semibold text-center md:text-left"
-                      style={{ fontFamily: "'Poppins', sans-serif" }}
-                    >
-                      Sector // {active.sector}
-                    </span>
+                  {/* Subtle Top Purple Accent */}
+                  <div className="absolute inset-x-8 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#670EF7] to-transparent opacity-80" />
 
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>{active.metricHighlight.label}</span>
+                  {/* Header Row: Sector Tag + Metric Badge */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-neutral-100">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#670EF7]" />
+                      <span 
+                        className="text-xs font-semibold uppercase tracking-wider text-neutral-500"
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                      >
+                        {active.sector}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#670EF7]/10 border border-[#670EF7]/20">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#670EF7]" />
+                      <span 
+                        className="text-xs font-bold text-[#670EF7]"
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                      >
+                        {active.metricHighlight.primary} — {active.metricHighlight.label}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Main Testimonial Statement */}
+                  {/* Quote Body */}
                   <blockquote 
-                    className="text-lg md:text-xl lg:text-2xl font-normal text-neutral-800 leading-relaxed tracking-tight mb-8"
+                    className="text-base sm:text-lg md:text-xl text-[#08080C] font-normal leading-relaxed mb-8 italic"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     &ldquo;{active.quote}&rdquo;
                   </blockquote>
 
-                  {/* Author Meta Strip */}
-                  <div className="flex items-center justify-between gap-4 pt-6 border-t border-neutral-100">
+                  {/* Footer Attribution */}
+                  <div className="flex items-center justify-between pt-6 border-t border-neutral-100">
                     <div className="flex items-center gap-3.5">
-                      <div className="w-12 h-12 rounded-2xl bg-[#670EF7]/10 border border-[#670EF7]/20 flex items-center justify-center font-bold text-md text-[#670EF7] font-mono">
+                      <div className="w-11 h-11 rounded-full bg-[#670EF7]/10 border border-[#670EF7]/20 flex items-center justify-center text-[#670EF7] font-bold text-sm shrink-0">
                         {active.initials}
                       </div>
                       <div>
-                        <h4 
-                          className="text-base md:text-lg font-bold text-[#08080C] tracking-tight"
+                        <div 
+                          className="text-sm font-bold text-[#08080C]"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                           {active.client}
-                        </h4>
-                        <p 
-                          className="text-xs sm:text-sm text-neutral-500 font-normal"
+                        </div>
+                        <div 
+                          className="text-xs text-neutral-500 font-normal"
                           style={{ fontFamily: "'Poppins', sans-serif" }}
                         >
-                          {active.role} · <strong className="text-neutral-700 font-medium">{active.organization}</strong>
-                        </p>
+                          {active.role} · {active.organization}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Prominent Stat Stamp */}
-                    <div className="hidden md:block text-right">
-                      <span 
-                        className="text-2xl font-extrabold text-[#670EF7] tracking-tight block"
-                        style={{ fontFamily: "'Inter', sans-serif" }}
-                      >
-                        {active.metricHighlight.primary}
-                      </span>
-                      <span 
-                        className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono"
-                      >
-                        Verified Lift
-                      </span>
+                    {/* Deck Index Indicator */}
+                    <div 
+                      className="text-xs font-mono font-bold text-neutral-400"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {current + 1} / {testimonials.length}
                     </div>
                   </div>
 
@@ -259,42 +250,6 @@ export default function TestimonialsDeck() {
 
           </div>
 
-          {/* Dots Indicator Below Deck */}
-          <div className="flex items-center justify-center gap-2 mt-8">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  setDirection(i > current ? 1 : -1);
-                  setCurrent(i);
-                }}
-                aria-label={`Go to slide ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  current === i ? 'w-8 bg-[#670EF7]' : 'w-2 bg-neutral-200 hover:bg-neutral-300'
-                }`}
-              />
-            ))}
-          </div>
-
-        </div>
-
-        {/* Bottom Proof Strip CTA */}
-        <div className="mt-16 sm:mt-20 pt-8 border-t border-neutral-200 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p 
-          className="text-sm font-medium text-neutral-500 text-center sm:text-left"
-          style={{ fontFamily: "'Poppins', sans-serif" }}
-        >
-          See how we&apos;ve helped businesses build stronger digital foundations and create new opportunities for growth.
-        </p>
-
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#08080C] hover:bg-[#670EF7] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200 shadow-md group"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            <span>View Our Work</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
         </div>
 
       </div>
