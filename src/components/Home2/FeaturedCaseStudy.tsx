@@ -39,58 +39,54 @@ export default function FeaturedCaseStudy() {
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#670EF7]" />
                 <span className="text-xs sm:text-sm uppercase tracking-widest text-[#670EF7] font-semibold">
-                  Featured Case Study
+                  FEATURED PROJECT · TUMBLEWASH
                 </span>
               </div>
 
-              <h2 
+              <h3 
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#08080C] leading-[1.08] mb-6 sm:mb-8"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
-                 Building a digital growth system around a growing franchise.
-              </h2>
+                Turning local search demand into more customer enquiries.
+              </h3>
 
               <p 
                 className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-8 sm:mb-10 font-normal"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                TumbleWash needed more than another advertising campaign. We brought together
-                paid acquisition, landing experiences, local targeting, and conversion
-                optimization to create a more connected path from search to customer.
+                TumbleWash was reaching potential customers, but its acquisition journey was not working efficiently enough. The opportunity was broader than an ad adjustment: local search intent, campaign structure, landing pages and the path to a call all needed to work together. We rebuilt that journey and measured the result against the enquiries it produced.
               </p>
 
               {/* Challenge & Approach Editorial Blocks */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10 pt-6 border-t border-neutral-200">
                 <div>
-                  <h3 
+                  <h4 
                     className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#08080C] mb-2 flex items-center gap-2"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
-                    The Challenge
-                  </h3>
+                    THE CHALLENGE
+                  </h4>
                   <p 
                     className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                     Rising acquisition costs and underperforming local landing experiences were
-                    making it harder to turn search demand into consistent customer enquiries.
+                    Rising acquisition costs and underperforming local landing experiences were limiting the return from existing demand.
                   </p>
                 </div>
                 <div>
-                  <h3 
+                  <h4 
                     className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#08080C] mb-2 flex items-center gap-2"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#670EF7]" />
-                    The Approach
-                  </h3>
+                    WHAT WE DID
+                  </h4>
                   <p 
                     className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                    We rebuilt the acquisition journey around local intent — improving campaign
-                    structure, landing experiences, targeting, and the path from click to call.
+                    We aligned local targeting, Google Ads campaigns, landing experiences and conversion measurement around the way customers searched and contacted the business.
                   </p>
                 </div>
               </div>
@@ -171,7 +167,7 @@ export default function FeaturedCaseStudy() {
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#08080C] hover:bg-[#670EF7] text-white font-semibold text-sm sm:text-base tracking-wide transition-all duration-300 group shadow-md hover:shadow-lg hover:shadow-[#670EF7]/20 w-full md:w-auto"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                <span>See How We Built It</span>
+                <span>Read the TumbleWash Case Study</span>
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
               </Link>
             </div>

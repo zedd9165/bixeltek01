@@ -14,39 +14,34 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What type of businesses do you work with?",
+    question: "Do you work with new businesses as well as established companies?",
     answer:
-      "We work with established and growing businesses across dental and healthcare, local and multi-location services, ecommerce, and B2B. The common thread is a business with a proven offer that wants to strengthen its digital presence, generate more demand, or build better systems for growth."
+      "Yes. We work with businesses at different stages. For newer businesses, the focus is usually on establishing the brand, launching the website or store and finding the first dependable customer acquisition channels. For established companies, the work often involves modernising an outdated web presence, improving conversion rates, expanding search visibility or building custom applications to support operations."
   },
-
   {
-    question: "Do you only provide digital marketing?",
+    question: "Do you only offer digital marketing?",
     answer:
-      "No. Digital marketing is one part of what we do. We bring strategy, marketing and technology together — from SEO and paid acquisition to websites, ecommerce, mobile applications, CRM integrations, automation and AI-powered workflows. The goal is to build a connected digital system that supports business growth."
+      "No. Digital marketing is one part of what we do. We combine web design and development, ecommerce, custom applications, SEO, Google Ads management and analytics. Our focus is on how these parts connect to produce a business result, rather than offering marketing in isolation from the website or platform it depends on."
   },
-
   {
-    question: "Can you work with our existing website?",
+    question: "Can you improve our current website instead of rebuilding it?",
     answer:
-      "Yes. We don't always recommend starting with a rebuild. If your existing website has good traffic but isn't converting effectively, we can audit the experience and identify what needs to improve first. Depending on the situation, that may mean improving your current site, building focused landing pages, or planning a larger rebuild."
+      "Yes, where it makes sense. If your current website has a solid foundation and needs better messaging, improved conversion paths, technical fixes or new landing pages, we can focus on those improvements without a full rebuild. If the existing site has structural limitations that would hold back results, we will explain why and recommend the right approach."
   },
-
   {
-    question: "Do you work with businesses outside India?",
+    question: "Can you manage our Google Ads or SEO without building a new website?",
     answer:
-      "Yes. Bixeltek works with businesses across the United Kingdom, United States, Canada, the Middle East and Australia. Our strategy, development and growth workflows are designed to support businesses remotely, with clear communication, documentation and measurable deliverables."
+      "Yes. Many clients start with Google Ads management or SEO on their existing site. We review the site’s current performance and landing pages as part of that work, because traffic only creates value if the site can convert it. Where landing page or technical adjustments are needed to improve results, we will recommend them."
   },
-
   {
-    question: "How much does it cost to work with Bixeltek?",
+    question: "Do you work with clients outside India?",
     answer:
-      "Pricing depends on the scope of work, the systems involved and the business objectives. We don't use a one-size-fits-all package or generic retainer. After understanding your business and requirements, we recommend the appropriate scope, milestones and investment."
+      "Yes. Bixeltek works with clients internationally as well as across India. Our communication, project tracking and reporting workflows are designed to support remote collaboration across different time zones."
   },
-
   {
-    question: "How do we get started?",
+    question: "How is a project priced?",
     answer:
-      "Start with a free Digital Growth Assessment or schedule an introductory conversation. We'll review your current digital presence, marketing, customer journey and technology, then identify the areas with the greatest potential for improvement. You'll get a straightforward view of what needs attention and where we can help."
+      "Pricing depends on the scope of work, technical requirements and level of ongoing support required. Website and application projects are typically scoped and priced by milestone. Google Ads management and SEO are typically structured as ongoing monthly engagements. After an initial discussion about your requirements, we provide a clear proposal explaining the scope, timeline and investment."
   }
 ];
 
@@ -72,14 +67,14 @@ export default function FAQAccordion() {
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Transparent Answers</span>
+            <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
 
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#08080C] tracking-tight leading-[1.08]"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Frequently Asked Questions
+            What you may want to know before we talk.
           </h2>
         </div>
 

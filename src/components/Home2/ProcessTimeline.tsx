@@ -17,28 +17,28 @@ const steps: ProcessStep[] = [
   {
     num: '1',
     title: 'Understand',
-    desc: 'We learn how your business works, who your customers are, where you are today, and what you want to achieve next.',
+    desc: 'We learn about the business, its customers, current performance and the problem the project must solve.',
     icon: Search,
     position: 'top',
   },
   {
     num: '2',
     title: 'Plan',
-    desc: 'We turn what we learn into a clear roadmap — identifying what needs to be built, improved, connected, or changed first.',
+    desc: 'We define priorities, deliverables, dependencies and success measures, then recommend the platform, channels or improvements that fit the brief.',
     icon: Compass,
     position: 'bottom',
   },
   {
     num: '3',
-    title: 'Build',
-    desc: 'We bring the plan to life across the right digital touchpoints, from websites and ecommerce to applications, marketing systems, and automation.',
+    title: 'Build & Launch',
+    desc: 'We design, develop or deploy the agreed solution, test the customer journey and make sure measurement is in place.',
     icon: Rocket,
     position: 'top',
   },
   {
     num: '4',
     title: 'Improve',
-    desc: 'We measure what is happening, learn from real-world data, and continuously improve the systems so they become more effective over time.',
+    desc: 'We review real usage and results, fix friction and identify the next changes that can improve performance.',
     icon: BarChart3,
     position: 'bottom',
   },
@@ -60,22 +60,21 @@ export default function CleanProcessCurve() {
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>How We Work</span>
+            <span>HOW WE WORK</span>
           </div>
 
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#08080C] tracking-tight leading-[1.12] mb-4"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-             From First Conversation to Continuous Improvement.
+            Good work starts with the right business question.
           </h2>
 
           <p 
-            className="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed max-w-xl mx-auto mb-8"
+            className="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed max-w-2xl mx-auto mb-8"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            Every engagement starts with understanding the business and ends with
-            building something that can keep improving as the business grows.
+            We begin by identifying what is holding the business back, what customers need and what the existing setup can support. Then we agree on a scope, deliver the work and measure what changes.
           </p>
         </div>
 

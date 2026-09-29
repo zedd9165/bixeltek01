@@ -1,125 +1,112 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ArrowUpRight, 
-  Search, 
+  ArrowRight, 
   TrendingUp, 
   Layout, 
   ShoppingBag, 
   Smartphone, 
   Workflow,
   Sparkles,
-  Award
+  BarChart3,
+  ChevronDown
 } from 'lucide-react';
 
-const services = [
+interface ServiceCard {
+  id: string;
+  title: string;
+  gridCopy: string;
+  expandedCopy: string;
+  labels: string[];
+  cta: string;
+  link: string;
+  icon: React.ElementType;
+}
+
+const services: ServiceCard[] = [
   {
     id: '01',
-    title: 'Digital Presence',
-    summary: 'Build a stronger digital presence around how your customers discover, evaluate, and engage with your business.',
-    detail:
-      'We create websites and digital experiences that combine clear positioning, thoughtful UX, strong performance, and conversion-focused design — giving your business a digital foundation built to grow.',
-    tags: [
-      'Website Development',
-      'UX & Conversion',
-      'Landing Pages',
-      'Web Applications'
-    ],
+    title: 'Web Design & Development',
+    gridCopy: 'Websites that explain your business clearly, earn trust and make it easy for customers to take the next step.',
+    expandedCopy:
+      'We design and develop corporate websites, service websites and campaign landing pages around the questions customers ask before they enquire or buy. That means clear structure, considered UX, responsive design, fast performance, a CMS your team can use and conversion paths that suit the business. We work with WordPress, headless CMS and custom-coded solutions according to the requirements.',
+    labels: ['Corporate Websites', 'Website Redesign', 'WordPress', 'Custom Development', 'Landing Pages'],
+    cta: 'Explore Web Design & Development',
     link: '/services/web-design',
     icon: Layout
   },
-
   {
     id: '02',
-    title: 'Digital Growth',
-    summary: 'Reach the right people through the digital channels that matter to your business.',
-    detail:
-      'We combine SEO, paid advertising, local search, and digital growth strategies to help businesses become more visible, attract qualified opportunities, and build a stronger customer pipeline.',
-    tags: [
-      'SEO',
-      'Google Ads',
-      'Meta Ads',
-      'Local Search'
-    ],
-    link: '/services/seo-services',
-    icon: TrendingUp
-  },
-
-  {
-    id: '03',
-    title: 'Ecommerce',
-    summary: 'Turn your products into a digital business built around how customers discover, decide, and buy.',
-    detail:
-      'From storefront experience to checkout and integrations, we build ecommerce systems that make it easier for customers to browse, trust, and purchase — while giving your business room to scale.',
-    tags: [
-      'Ecommerce Development',
-      'Product Experiences',
-      'Checkout Optimization',
-      'Third-Party Integrations'
-    ],
+    title: 'Ecommerce Development',
+    gridCopy: 'Stores and commerce platforms that make products easier to discover, compare and purchase.',
+    expandedCopy:
+      'We build ecommerce experiences around your catalogue, customers and operations. From Shopify and WooCommerce to headless or custom commerce, we plan the storefront, product journey, checkout and required integrations together. The result should be a store customers can use with confidence and your team can run effectively.',
+    labels: ['Shopify', 'WooCommerce', 'Headless Commerce', 'Checkout', 'Payments & Integrations'],
+    cta: 'Explore Ecommerce Development',
     link: '/ecommerce-websites',
     icon: ShoppingBag
   },
-
   {
-    id: '04',
-    title: 'Digital Products',
-    summary: 'Build the apps and custom technology your business needs when off-the-shelf tools are not enough.',
-    detail:
-      'We design and develop mobile applications, custom platforms, portals, and connected digital products around your specific business model, customers, and operational needs.',
-    tags: [
-      'Mobile Applications',
-      'Custom Platforms',
-      'Customer Portals',
-      'APIs & Integrations'
-    ],
+    id: '03',
+    title: 'Web & Mobile Applications',
+    gridCopy: 'Digital products for customers, teams and business processes that need more than an off-the-shelf tool.',
+    expandedCopy:
+      'We develop web applications, mobile apps, portals and internal platforms for defined users and workflows. Our team helps shape the requirements, design the experience, build the functionality and connect it with the systems it depends on. The work is scoped around what the product needs to do at launch and how it may evolve.',
+    labels: ['Web Apps', 'Mobile Apps', 'Customer Portals', 'Internal Platforms', 'APIs'],
+    cta: 'Explore Application Development',
     link: '/services/app-development',
     icon: Smartphone
   },
-
+  {
+    id: '04',
+    title: 'Google Ads Management & Paid Media',
+    gridCopy: 'Campaigns built to reach people with relevant intent and turn advertising spend into qualified opportunities.',
+    expandedCopy:
+      'We plan and manage Google Ads campaigns around the searches, locations and services that matter to your business. We support Meta Ads where the audience and offer call for it. Campaign structure, messaging, landing pages, conversion tracking and optimization form one acquisition journey. Reporting focuses on enquiries, sales and the quality of results, not clicks in isolation.',
+    labels: ['Google Ads Management', 'PPC', 'Meta Ads', 'Landing Pages', 'Conversion Tracking'],
+    cta: 'Explore Google Ads Management',
+    link: '/services/google-ads',
+    icon: TrendingUp
+  },
   {
     id: '05',
-    title: 'Connected Operations',
-    summary: 'Connect the systems and workflows behind your business so less gets lost between people, tools, and processes.',
-    detail:
-      'We connect CRM systems, lead management, communication channels, business tools, and automated workflows to reduce manual work and create a more connected way of operating.',
-    tags: [
-      'CRM & Workflows',
-      'Business Automation',
-      'Lead Routing',
-      'System Integrations'
-    ],
-    link: '/services/automation',
-    icon: Workflow
+    title: 'SEO & Search Visibility',
+    gridCopy: 'Help the right customers find your business when they are researching solutions and ready to act.',
+    expandedCopy:
+      'Our SEO services connect technical health, site structure, useful content and local relevance. We identify how customers search, improve the pages that should answer them and address issues that make the site difficult to discover or use. For location-based businesses, we strengthen local search visibility and the path from search result to enquiry.',
+    labels: ['SEO Services', 'Technical SEO', 'Local SEO', 'Content Strategy', 'On-Page SEO'],
+    cta: 'Explore SEO Services',
+    link: '/services/seo-services',
+    icon: BarChart3
   },
-
   {
     id: '06',
-    title: 'Strategy & Transformation',
-    summary: 'Create a clear digital roadmap for where your business is today and where it needs to go next.',
-    detail:
-      'We bring business goals, technology, customer experience, and digital growth together into a practical roadmap — helping you prioritize what to build, improve, connect, and scale.',
-    tags: [
-      'Digital Roadmaps',
-      'Technology Strategy',
-      'Growth Planning',
-      'Continuous Improvement'
-    ],
-    link: '/services/business-consulting',
-    icon: Sparkles
+    title: 'Automation, Analytics & Optimization',
+    gridCopy: 'Connect marketing, enquiries and operations so fewer opportunities are lost between tools and teams.',
+    expandedCopy:
+      'We improve what happens after a customer clicks, submits a form or places an order. That can mean CRM integrations, lead routing, reporting, customer communication workflows, conversion optimization or practical automation. We find where information is lost or manual work slows the business, then build a more dependable process.',
+    labels: ['CRM Integrations', 'Automation', 'GA4 & Analytics', 'Conversion Optimization'],
+    cta: 'Explore Connected Systems',
+    link: '/analytics-and-cro-services',
+    icon: Workflow
   }
 ];
 
 export default function ServicesEditorial() {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const activeService = services[activeIdx];
-  const IconComponent = activeService.icon;
+  const [expandedCards, setExpandedCards] = useState<Record<string, boolean>>({});
+
+  const toggleCard = (id: string) => {
+    setExpandedCards((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
 
   return (
-    <section className="bg-[#FFFFFF] text-[#08080C] py-24 sm:py-32 lg:py-40 border-b border-neutral-200/90 relative">
+    <section className="bg-[#FFFFFF] text-[#08080C] py-24 sm:py-32 lg:py-40 border-b border-neutral-200/90 relative overflow-hidden">
       
       {/* Background Ambience: Subtle Soft Purple Spotlights on White */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -148,7 +135,7 @@ export default function ServicesEditorial() {
           >
             <Sparkles className="w-3.5 h-3.5 text-[#670EF7]" />
             <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#670EF7]">
-              WHAT WE BUILD
+              OUR EXPERTISE
             </span>
           </div>
 
@@ -156,171 +143,143 @@ export default function ServicesEditorial() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#08080C] leading-[1.08] mb-6"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            The Digital Capabilities Behind <br className="hidden md:inline" />
-            <span className="bg-gradient-to-r from-[#670EF7] to-[#8B45FF] bg-clip-text text-transparent">
-              Your Next Stage Of Growth.
-            </span>
+            The expertise to build your presence and turn it into growth.
           </h2>
 
           <p 
-            className="text-base sm:text-lg md:text-xl text-neutral-600 font-normal leading-relaxed max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-neutral-600 font-normal leading-relaxed max-w-3xl mx-auto"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            From your digital presence to the systems behind it, we bring the right capabilities together to help your business reach more customers, operate better and grow.
+            A website alone cannot fix a weak customer journey, and more traffic cannot fix a website that fails to convert. We work across the connected pieces of digital growth, from the platform customers see to the campaigns, content and systems that support it.
           </p>
         </div>
 
-        {/* Editorial Split Composition */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-stretch relative">
-            
-            {/* LEFT: Fixed-Height Capability List (NO HEIGHT JITTER) */}
-            <div className="lg:col-span-7 flex flex-col divide-y divide-neutral-200/90 border-t border-b border-neutral-200/90">
-              {services.map((service, index) => {
-                const isActive = index === activeIdx;
+        {/* --- SIX-CARD EXPERTISE GRID (3 Cols Desktop, 2 Cols Tablet, 1 Col Mobile) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {services.map((service) => {
+            const Icon = service.icon;
+            const isExpanded = !!expandedCards[service.id];
 
-                return (
-                  <div
-                    key={service.id}
-                    onMouseEnter={() => setActiveIdx(index)}
-                    onClick={() => setActiveIdx(index)}
-                    className={`relative py-6 sm:py-8 px-4 sm:px-6 transition-colors duration-200 cursor-pointer flex flex-col justify-center group ${
-                      isActive ? 'bg-[#FBFBFA]' : 'hover:bg-neutral-50/60'
-                    }`}
-                  >
-                    {/* Left Edge Active Bar */}
-                    <div 
-                      className={`absolute inset-y-0 left-0 w-1.5 rounded-r-full transition-all duration-200 ${
-                        isActive ? 'bg-[#670EF7] opacity-100' : 'bg-transparent opacity-0'
-                      }`} 
-                    />
+            return (
+              <motion.div
+                key={service.id}
+                layout
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className={`relative rounded-3xl border transition-all duration-300 flex flex-col justify-between p-7 sm:p-9 bg-white group overflow-hidden ${
+                  isExpanded
+                    ? 'border-[#670EF7] shadow-[0_20px_50px_rgba(103,14,247,0.12)] ring-1 ring-[#670EF7]/20'
+                    : 'border-neutral-200/90 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(103,14,247,0.08)] hover:border-[#670EF7]/40'
+                }`}
+              >
+                {/* Top Subtle Purple Edge Accent Line on Hover / Active */}
+                <div 
+                  className={`absolute inset-x-8 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#670EF7] to-transparent transition-opacity duration-300 ${
+                    isExpanded ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`} 
+                />
 
-                    <div className="flex items-center justify-between gap-6 relative z-10">
-                      <div className="flex items-center gap-5 sm:gap-7">
-                        <span 
-                          className={`text-2xl sm:text-3xl font-black font-mono transition-colors ${
-                            isActive ? 'text-[#670EF7]' : 'text-neutral-300 group-hover:text-neutral-400'
-                          }`}
-                        >
-                          {service.id}
-                        </span>
-                        <div>
-                          <h3 
-                            className={`text-lg sm:text-xl md:text-2xl font-bold tracking-tight transition-colors ${
-                              isActive ? 'text-[#08080C]' : 'text-neutral-600 group-hover:text-[#08080C]'
-                            }`}
-                            style={{ fontFamily: "'Inter', sans-serif" }}
-                          >
-                            {service.title}
-                          </h3>
-                          <p 
-                            className="text-xs sm:text-sm text-neutral-500 line-clamp-1 mt-0.5 font-normal"
-                            style={{ fontFamily: "'Poppins', sans-serif" }}
-                          >
-                            {service.summary}
-                          </p>
-                        </div>
-                      </div>
-
-                      <Link
-                        href={service.link}
-                        className={`p-2.5 rounded-full border transition-all duration-200 shrink-0 ${
-                          isActive 
-                            ? 'border-[#670EF7] text-[#670EF7] bg-[#670EF7]/10 shadow-xs' 
-                            : 'border-neutral-200 text-neutral-400 group-hover:border-neutral-300 group-hover:text-neutral-700'
-                        }`}
-                      >
-                        <ArrowUpRight className="w-5 h-5" />
-                      </Link>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* RIGHT: Perfectly Sticky Showcase Card (Centered in viewport & zero jitter) */}
-            <div className="lg:col-span-5 w-full flex items-center justify-center">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeService.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.22, ease: 'easeOut' }}
-                  className="w-full rounded-3xl border border-neutral-200/90 bg-[#FFFFFF] p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(103,14,247,0.12)] transition-shadow duration-300 flex flex-col justify-between relative overflow-hidden"
-                >
-                  {/* Top Subtle Purple Border Line */}
-                  <div className="absolute inset-x-8 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#670EF7] to-transparent opacity-80" />
-
-                  <div>
-                    {/* Card Header Bar */}
-                    <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-100">
-                      <div className="flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-2xl bg-[#670EF7]/10 border border-[#670EF7]/20 flex items-center justify-center text-[#670EF7]">
-                          <IconComponent className="w-5 h-5" />
-                        </div>
-                        <div style={{ fontFamily: "'Poppins', sans-serif" }}>
-                          <span className="text-[11px] uppercase tracking-widest text-[#8B45FF] font-semibold block">
-                            Capability Focus
-                          </span>
-                          <span 
-                            className="text-base font-extrabold text-[#08080C] uppercase tracking-wider"
-                            style={{ fontFamily: "'Inter', sans-serif" }}
-                          >
-                            {activeService.title}
-                          </span>
-                        </div>
-                      </div>
-                      <span 
-                        className="text-3xl font-black font-mono text-neutral-300 select-none"
-                        style={{ fontFamily: "'Inter', sans-serif" }}
-                      >
-                        {activeService.id}
-                      </span>
+                {/* CARD BODY */}
+                <div>
+                  {/* Top Bar: Icon Container & Card Number */}
+                  <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-100">
+                    <div className="w-12 h-12 rounded-2xl bg-[#670EF7]/10 border border-[#670EF7]/20 flex items-center justify-center text-[#670EF7] group-hover:bg-[#670EF7] group-hover:text-white transition-all duration-300">
+                      <Icon className="w-5 h-5" />
                     </div>
 
-                    
-
-                    <p 
-                      className="text-neutral-600 text-sm sm:text-base leading-relaxed mb-6 font-normal"
-                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    <span 
+                      className="text-2xl sm:text-3xl font-black font-mono text-neutral-300 group-hover:text-[#670EF7]/70 transition-colors"
+                      style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      {activeService.detail}
-                    </p>
-
-                    {/* Tags displayed right inside the card where it stays stable */}
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {activeService.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 rounded-full border border-neutral-200 bg-[#FBFBFA] text-neutral-600 text-xs font-medium"
-                          style={{ fontFamily: "'Poppins', sans-serif" }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                      {service.id}
+                    </span>
                   </div>
 
-                  {/* Card Action Strip */}
-                  <div 
-                    className="pt-6 mt-6 border-t border-neutral-100 flex items-center justify-between"
+                  {/* Title (H3) */}
+                  <h3 
+                    className="text-xl sm:text-2xl font-bold tracking-tight text-[#08080C] mb-3 group-hover:text-[#670EF7] transition-colors"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  >
+                    {service.title}
+                  </h3>
+
+                  {/* Short Grid Copy */}
+                  <p 
+                    className="text-sm sm:text-base text-neutral-600 font-normal leading-relaxed mb-6"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                    <Link
-                      href={activeService.link}
-                      className="text-xs sm:text-sm uppercase tracking-wider font-bold text-[#08080C] hover:text-[#670EF7] transition-colors inline-flex items-center gap-2 group"
+                    {service.gridCopy}
+                  </p>
+
+                  {/* Collapsible / Expandable Panel */}
+                  <AnimatePresence initial={false}>
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.28, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pt-4 pb-6 border-t border-neutral-100 space-y-4">
+                          <p 
+                            className="text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed"
+                            style={{ fontFamily: "'Poppins', sans-serif" }}
+                          >
+                            {service.expandedCopy}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Labels / Pills */}
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {service.labels.map((label) => (
+                      <span
+                        key={label}
+                        className="px-2.5 py-1 rounded-full border border-neutral-200/80 bg-[#FBFBFA] text-neutral-600 text-xs font-medium"
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                      >
+                        {label}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CARD FOOTER: Expand Toggle & Direct Destination Link */}
+                <div className="pt-5 border-t border-neutral-100 flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => toggleCard(service.id)}
+                      className="text-xs font-semibold uppercase tracking-wider text-[#670EF7] hover:text-[#520bc4] inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
-                      <span>Explore Deep-Dive Capability</span>
-                      <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-[#670EF7] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </Link>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#670EF7] ring-4 ring-[#670EF7]/20" />
+                      <span>{isExpanded ? 'Less Details' : 'Full Scope'}</span>
+                      <ChevronDown 
+                        className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                          isExpanded ? 'rotate-180' : ''
+                        }`} 
+                      />
+                    </button>
+
+                    <span className="w-2 h-2 rounded-full bg-[#670EF7]/40 group-hover:bg-[#670EF7] transition-colors" />
                   </div>
 
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                  <Link
+                    href={service.link}
+                    className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#08080C] hover:text-[#670EF7] inline-flex items-center justify-between gap-2 pt-2 border-t border-neutral-50 transition-colors group/link"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    <span>{service.cta}</span>
+                    <ArrowRight className="w-4 h-4 text-[#670EF7] transform group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
 
-          </div>
+              </motion.div>
+            );
+          })}
+        </div>
 
       </div>
     </section>

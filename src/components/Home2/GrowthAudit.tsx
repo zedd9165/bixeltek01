@@ -26,92 +26,59 @@ interface DiagnosticVector {
   num: string;
   name: string;
   icon: React.ElementType;
-  primaryLeak: string;
-  sampleFinding: string;
-  strategicFix: string;
-  typicalImpact: string;
-  timeToAudit: string;
+  question: string;
+  review: string;
 }
 
 const vectors: DiagnosticVector[] = [
   {
     id: 'presence',
     num: '01',
-    name: 'Digital Presence',
+    name: 'Website & Digital Presence',
     icon: Layout,
-    primaryLeak: 'How your business shows up online',
-    sampleFinding:
-      'We look at your website, positioning, user experience, and the first impression customers get when they discover your business.',
-    strategicFix:
-      'Identify the most important opportunities to strengthen your digital foundation and customer experience.',
-    typicalImpact: 'A Stronger Digital Foundation',
-    timeToAudit: 'Initial Review'
+    question: 'Does the experience explain your offer and make the next action clear?',
+    review: 'We look at structure, messaging clarity, user experience, mobile performance and how effectively pages guide visitors toward enquiry or purchase.',
   },
   {
-    id: 'visibility',
+    id: 'search',
     num: '02',
-    name: 'Digital Visibility',
+    name: 'Search Visibility',
     icon: Search,
-    primaryLeak: 'How customers find you',
-    sampleFinding:
-      'We examine how easily the right customers can discover your business across search, local results, paid channels, and other digital touchpoints.',
-    strategicFix:
-      'Identify the channels and opportunities that can improve your reach and bring more relevant attention to the business.',
-    typicalImpact: 'More Relevant Visibility',
-    timeToAudit: 'Channel Review'
+    question: 'Can the right customers find you when they look for your products or services?',
+    review: 'We examine organic visibility, search relevance, technical site health and local search presence for your key products and services.',
   },
   {
-    id: 'experience',
+    id: 'paid',
     num: '03',
-    name: 'Customer Experience',
+    name: 'Paid Acquisition',
     icon: TrendingUp,
-    primaryLeak: 'What happens after discovery',
-    sampleFinding:
-      'We look at the journey from first visit to enquiry, purchase, booking, or another meaningful customer action.',
-    strategicFix:
-      'Highlight friction and opportunities to make the customer journey clearer, easier, and more effective.',
-    typicalImpact: 'A Better Customer Journey',
-    timeToAudit: 'Experience Review'
+    question: 'Are Google Ads or Meta Ads bringing relevant enquiries at a workable cost?',
+    review: 'We evaluate campaign targeting, search intent alignment, ad messaging, landing page relevance and conversion tracking accuracy.',
+  },
+  {
+    id: 'journey',
+    num: '04',
+    name: 'Customer Journey',
+    icon: Zap,
+    question: 'What happens between a first visit, an enquiry and a sale?',
+    review: 'We trace the path from initial visitor discovery to form submission, call or order to identify where prospective customers encounter friction.',
   },
   {
     id: 'technology',
-    num: '04',
-    name: 'Technology & Systems',
-    icon: Cpu,
-    primaryLeak: 'The systems behind the business',
-    sampleFinding:
-      'We look at the technology, platforms, integrations, and digital tools supporting the way your business operates.',
-    strategicFix:
-      'Identify disconnected systems, outdated technology, and opportunities to create a more connected digital foundation.',
-    typicalImpact: 'Connected Digital Systems',
-    timeToAudit: 'Systems Review'
-  },
-  {
-    id: 'operations',
     num: '05',
-    name: 'Digital Operations',
-    icon: Inbox,
-    primaryLeak: 'What happens behind the scenes',
-    sampleFinding:
-      'We examine how enquiries, customer information, internal workflows, and repetitive processes move through the business.',
-    strategicFix:
-      'Identify opportunities to simplify workflows, connect systems, and reduce unnecessary manual work.',
-    typicalImpact: 'More Efficient Operations',
-    timeToAudit: 'Workflow Review'
+    name: 'Technology & Operations',
+    icon: Cpu,
+    question: 'Where are platform limitations or disconnected tools slowing the team down?',
+    review: 'We review platform capabilities, CMS flexibility, system integrations and automated workflows supporting your digital operations.',
   },
   {
-    id: 'growth',
+    id: 'measurement',
     num: '06',
-    name: 'Growth Opportunities',
-    icon: Zap,
-    primaryLeak: 'Where the next opportunity sits',
-    sampleFinding:
-      'We bring the findings together to understand which improvements could have the greatest impact on the next stage of your business.',
-    strategicFix:
-      'Prioritize the opportunities worth pursuing now and create a clearer direction for what comes next.',
-    typicalImpact: 'A Clearer Path Forward',
-    timeToAudit: 'Opportunity Review'
-  }
+    name: 'Measurement',
+    icon: Inbox,
+    question: 'Can you see which channels and experiences are creating business value?',
+    review: 'We look at analytics setup, lead tracking, conversion attribution and reporting dependability across your marketing and sales tools.',
+  },
 ];
 
 export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
@@ -143,26 +110,24 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             <Zap className="w-3.5 h-3.5" />
-            <span>Digital Growth Assessment</span>
+            <span>A PRACTICAL FIRST STEP</span>
           </div>
 
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-6"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Find What&apos;s Holding Your <br className="hidden md:inline" />
+            Not sure where the biggest opportunity is?{' '}
             <span className="bg-gradient-to-r from-[#670EF7] via-[#8B45FF] to-white bg-clip-text text-transparent">
-              Digital Growth Back.
+              Let’s find out.
             </span>
           </h2>
 
           <p 
-            className="text-base sm:text-lg md:text-xl text-neutral-300 font-normal leading-relaxed max-w-2xl"
+            className="text-base sm:text-lg md:text-xl text-neutral-300 font-normal leading-relaxed max-w-3xl"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            We look at the digital parts of your business together — from your online
-  presence and customer journey to marketing, technology, and the systems
-  behind them — to identify where the biggest opportunities are.
+            You may know what is not working without knowing which part to fix first. Tell us about the business and the result you want. We will look at the relevant parts of your website, marketing or digital systems, discuss the most visible gaps and recommend a sensible next step.
           </p>
         </div>
 
@@ -175,7 +140,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
               className="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-2 block"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              What We Look At
+              Areas We Review
             </span>
 
             {vectors.map((vec) => {
@@ -206,20 +171,20 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                         <span className="text-[11px] font-mono text-[#8C45FF] font-semibold">
                           {vec.num}
                         </span>
-                        <h4 
+                        <h3 
                           className={`text-sm sm:text-base font-bold truncate transition-colors ${
                             isSelected ? 'text-white' : 'text-neutral-300 group-hover:text-white'
                           }`}
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                           {vec.name}
-                        </h4>
+                        </h3>
                       </div>
                       <p 
                         className="text-xs text-neutral-400 truncate mt-0.5"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
-                        {vec.primaryLeak}
+                        {vec.question}
                       </p>
                     </div>
                   </div>
@@ -253,10 +218,10 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="text-xs font-mono uppercase text-[#8C45FF] tracking-wider font-semibold">
-                            Inspection Vector {activeVector.num}
+                            Assessment Focus {activeVector.num}
                           </span>
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                            Available in Free Audit
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#670EF7]/15 text-[#8C45FF] border border-[#670EF7]/30">
+                            Initial Review
                           </span>
                         </div>
                         <h3 
@@ -267,35 +232,31 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                         </h3>
                       </div>
                     </div>
-
-                    <span className="text-xs font-mono text-neutral-500 hidden sm:block">
-                      {activeVector.timeToAudit}
-                    </span>
                   </div>
 
                   {/* Terminal Data Readouts */}
                   <div className="space-y-6">
                     
-                    {/* Common Friction Vulnerability */}
+                    {/* Key Question */}
                     <div className="p-4 sm:p-5 rounded-2xl bg-[#141824]/60 border border-white/[0.06]">
-                      <div className="flex items-center gap-2 mb-2 text-red-600">
-                        <AlertCircle className="w-4 h-4 shrink-0" />
+                      <div className="flex items-center gap-2 mb-2 text-[#8C45FF]">
+                        <AlertCircle className="w-4 h-4 shrink-0 text-[#670EF7]" />
                         <span 
                           className="text-xs uppercase tracking-wider font-bold"
                           style={{ fontFamily: "'Poppins', sans-serif" }}
                         >
-                          Common Commercial Bottleneck Identified
+                          Key Question
                         </span>
                       </div>
                       <p 
-                        className="text-sm text-neutral-300 leading-relaxed font-normal"
+                        className="text-sm sm:text-base text-neutral-200 leading-relaxed font-normal"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
-                        {activeVector.sampleFinding}
+                        {activeVector.question}
                       </p>
                     </div>
 
-                    {/* Engineering Solution */}
+                    {/* What We Review */}
                     <div className="p-4 sm:p-5 rounded-2xl bg-[#141824]/60 border border-white/[0.06]">
                       <div className="flex items-center gap-2 mb-2 text-[#8C45FF]">
                         <Terminal className="w-4 h-4 shrink-0" />
@@ -303,14 +264,14 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                           className="text-xs uppercase tracking-wider font-bold"
                           style={{ fontFamily: "'Poppins', sans-serif" }}
                         >
-                          Strategic Bixeltek Prescription
+                          What We Review
                         </span>
                       </div>
                       <p 
                         className="text-sm text-neutral-300 leading-relaxed font-normal"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
-                        {activeVector.strategicFix}
+                        {activeVector.review}
                       </p>
                     </div>
 
@@ -321,25 +282,25 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                 <div className="pt-8 mt-8 border-t border-white/[0.08] flex flex-col md:flex-row sm:items-center justify-between gap-6">
                   <div>
                     <span 
-                      className="text-xs uppercase tracking-wider text-neutral-400 font-semibold block"
+                      className="text-xs uppercase tracking-wider text-neutral-400 font-semibold block mb-1"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
-                      Projected Outcome
+                      What You Receive
                     </span>
-                    <span 
-                      className="text-xl sm:text-2xl font-black text-white tracking-tight"
-                      style={{ fontFamily: "'Inter', sans-serif" }}
+                    <p 
+                      className="text-xs sm:text-sm text-neutral-300 font-normal leading-relaxed max-w-sm"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
-                      {activeVector.typicalImpact}
-                    </span>
+                      An initial discussion of observations and recommended priorities. Agree any detailed audit or project scope separately.
+                    </p>
                   </div>
 
                   <button
                     onClick={onOpenAudit}
-                    className="px-7 py-3.5 rounded-xl bg-[#670EF7] hover:bg-[#8B45FF] text-white font-semibold text-sm tracking-wide transition-all duration-200 shadow-[0_8px_25px_rgba(103,14,247,0.35)] hover:shadow-[0_12px_32px_rgba(139,69,255,0.45)] inline-flex items-center justify-center gap-2 group cursor-pointer"
+                    className="px-7 py-3.5 rounded-xl bg-[#670EF7] hover:bg-[#8B45FF] text-white font-semibold text-sm tracking-wide transition-all duration-200 shadow-[0_8px_25px_rgba(103,14,247,0.35)] hover:shadow-[0_12px_32px_rgba(139,69,255,0.45)] inline-flex items-center justify-center gap-2 group cursor-pointer shrink-0"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                    <span>Request Full Diagnostic</span>
+                    <span>Request an Initial Conversation</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -357,9 +318,9 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
         >
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Human-Verified Review · 100% Free · No Generic Crawlers</span>
+            <span>Straightforward Review · Confidential Conversation · Practical Next Steps</span>
           </div>
-          <span>Confidentiality Guaranteed</span>
+          <span>No Obligation</span>
         </div>
 
       </div>
