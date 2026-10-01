@@ -82,7 +82,7 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
 
             {/* Headline */}
             <h2 
-              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.06] mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.06] mb-8"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Tell us where your business is headed.{' '}
@@ -100,11 +100,11 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
             </p>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 pt-8 border-t border-white/[0.08] w-full mt-6">
+            <div className="flex flex-col md:flex-row items-stretch md:items-center gap-5 pt-8 border-t border-white/[0.08] w-full mt-6">
               
               <button 
                 onClick={onOpenAudit}
-                className="w-full sm:w-auto px-7 py-4 bg-white text-[#08080C] rounded-full font-bold text-sm sm:text-base hover:shadow-[0_4px_35px_rgba(103,14,247,0.5)] flex items-center justify-center gap-3 transition-all duration-300 group cursor-pointer"
+                className="w-full md:w-auto px-7 py-4 bg-white text-[#08080C] rounded-full font-bold text-sm sm:text-base hover:shadow-[0_4px_35px_rgba(103,14,247,0.5)] flex items-center justify-center gap-3 transition-all duration-300 group cursor-pointer"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 <span className="shrink-0">
@@ -118,7 +118,7 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
 
               <Link 
                 href="/case-studies"                 
-                className="w-full sm:w-auto px-7 py-4 text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                className="w-full md:w-auto px-7 py-4 text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 <span>Explore Our Work</span>

@@ -106,7 +106,7 @@ export default function ServicesEditorial() {
   };
 
   return (
-    <section className="bg-[#FFFFFF] text-[#08080C] py-24 sm:py-32 lg:py-40 border-b border-neutral-200/90 relative overflow-hidden">
+    <section className="bg-[#FFFFFF] text-[#08080C] py-16 md:py-32 lg:py-40 border-b border-neutral-200/90 relative overflow-hidden">
       
       {/* Background Ambience: Subtle Soft Purple Spotlights on White */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">

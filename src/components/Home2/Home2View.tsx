@@ -16,9 +16,15 @@ import GrowthAudit from "./GrowthAudit";
 import FAQAccordion from "./FAQAccordion";
 import FinalCTA from "./FinalCTA";
 import GrowthAuditModal from "./GrowthAuditModal";
+import BookingRegionModal from "./BookingRegionModal";
+import WhyBixeltek from "./WhyBixeltek";
+import Solutions from "./Solutions";
+import ProofPointsBar from "./ProofPointsBar";
+import { Whiteheader } from "../Whiteheader";
 
 export const Home2View: React.FC = () => {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const handleOpenAudit = () => {
     setIsAuditModalOpen(true);
@@ -28,48 +34,48 @@ export const Home2View: React.FC = () => {
     setIsAuditModalOpen(false);
   };
 
+  const handleOpenBooking = () => {
+    setIsBookingModalOpen(true);
+  };
+
+  const handleCloseBooking = () => {
+    setIsBookingModalOpen(false);
+  };
+
   return (
     <div className="relative min-h-screen bg-[#070709] text-white selection:bg-[#670ef7] selection:text-white font-sans antialiased overflow-x-hidden">
       {/* Main Homepage Flow */}
       <main id="main-content" className="relative w-full">
-        {/* 1. Hero */}
-        <HeroGrowthSystem onOpenAudit={handleOpenAudit} />
+        <Whiteheader/>
+        <HeroGrowthSystem 
+          onOpenAudit={handleOpenAudit} 
+          onOpenBooking={handleOpenBooking} 
+        />
         <ClientTrustMarquee />
-        {/* 2. Who We Are */}
         <GrowthJourney />
-
-        {/* 3. Our Expertise */}
+        <Solutions />
         <ServicesEditorial />
-
-        {/* 4. Selected Work: Client Logo Wall, Featured Case Study, Testimonials */}
+        <ProofPointsBar />
         <FeaturedCaseStudy />
         <TestimonialsEditorial />
-
-        {/* 5. Who We Work With */}
         <IndustrySelector />
-
-        {/* 6. How We Work */}
-        <ProcessTimeline />
-
-        {/* 7. Technology */}
+        <WhyBixeltek />
         <TechnologiesEcosystem />
-
-        {/* 8. Initial Assessment */}
         <GrowthAudit onOpenAudit={handleOpenAudit} />
-
-        {/* 9. FAQ */}
         <FAQAccordion />
-
-        {/* 10. Final CTA */}
         <FinalCTA onOpenAudit={handleOpenAudit} />
       </main>
 
-      {/* Existing Bixeltek Footer */}
       <Footer />
 
       {/* Interactive Growth Audit Modal */}
       <GrowthAuditModal isOpen={isAuditModalOpen} onClose={handleCloseAudit} />
+
+      {/* Reusable Booking Region Selector Modal */}
+      <BookingRegionModal 
+        open={isBookingModalOpen} 
+        onClose={handleCloseBooking} 
+      />
     </div>
   );
 };
-

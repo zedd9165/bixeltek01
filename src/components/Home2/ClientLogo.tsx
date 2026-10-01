@@ -38,56 +38,63 @@ interface ClientLogo {
   href?: string;
 }
 
-const clientLogosRowOne: ClientLogo[] = [
+// Combined into a single unified row
+const clientLogosSingleRow: ClientLogo[] = [
   { id: 'c1', name: 'Daddy Shark Consultation', src: daddyshark, scale: 1.1, href: 'https://daddyshark.sa/' },
   { id: 'c2', name: 'Cycas investments', src: cycas, scale: 1.3, href: 'https://cycas.co.in/' },
   { id: 'c3', name: 'Cell Fashion', src: cellfashion, scale: 1, href: 'https://cellfashionusa.com/' },
   { id: 'c4', name: 'Durrat', src: durrat, scale: 1.3 },
   { id: 'c5', name: 'Edify', src: edify, scale: 1, href: 'https://edifyschools.com/' },
   { id: 'c6', name: 'Wheels On Site', src: wheels, scale: 0.8, href: 'https://wheelsonsite.com/' },
+  { id: 'c17', name: 'Innovwayz', src: innovwayz, scale: 0.8, href: 'https://innovwayz.com/' },
+  { id: 'c18', name: 'Promenade Dentistry', src: promenade, scale: 1, href: 'https://www.promenadedds.com/' },
+  { id: 'c21', name: 'White Star', src: whitestar, scale: 1, href: 'https://www.whitestardumpsters.com/' },
   { id: 'c19', name: 'Hasini Estate', src: hasiniestate, scale: 1.2, href: 'https://www.hasiniestates.in/' },
   { id: 'c22', name: 'Enaara School', src: Enaara, text: 'Enaara High School', scale: 1.2, href: 'https://www.enaraahighschool.com/' },
-];
-
-const clientLogosRowTwo: ClientLogo[] = [
   { id: 'c7', name: 'Markham Dentistry', src: markham, scale: 1, href: 'https://markhamgatewaydentistry.ca/' },
   { id: 'c8', name: 'Tumble Wash', src: tumble, scale: 1, href: '/case-studies/Tumblewash-Casestudy' },
   { id: 'c9', name: 'Revita dentistry', src: revita, scale: 1.3, href: 'https://revitadentistry.ca/' },
   { id: 'c10', name: 'Blooming', src: blooming, scale: 1 },
   { id: 'c11', name: 'Pawgo', src: pawgo, scale: 1, href: 'https://pawgo.com/' },
   { id: 'c12', name: 'Listiyo', src: listiyo, scale: 1, href: 'https://listiyofamilydentalca.com/' },
-  { id: 'c20', name: 'Martin', src: martin, scale: 1, href: 'https://martincarpetcleaning.com/' },
-  { id: 'c23', name: 'We Found Global ', src: wefound, scale: 1.2, bgColor: '#000', href: 'https://wefoundglobal.com/' },
-];
-
-const clientLogosRowThree: ClientLogo[] = [
   { id: 'c13', name: 'Rooted', src: rooted, scale: 1, href: 'https://rootedtreeservices.com/' },
   { id: 'c14', name: 'Oma', src: oma, scale: 1, href: 'https://omacomputers.com/' },
   { id: 'c15', name: 'Cloud', src: cloud, scale: 1.3, href: 'https://cloudupskills.com/' },
   { id: 'c16', name: 'Bin Hindi', src: binhindi, scale: 1.2, href: 'https://www.binhindi.com/' },
-  { id: 'c17', name: 'Innovwayz', src: innovwayz, scale: 0.8, href: 'https://innovwayz.com/' },
-  { id: 'c18', name: 'Promenade Dentistry', src: promenade, scale: 1, href: 'https://www.promenadedds.com/' },
-  { id: 'c21', name: 'White Star', src: whitestar, scale: 1, href: 'https://www.whitestardumpsters.com/' },
+  { id: 'c20', name: 'Martin', src: martin, scale: 1, href: 'https://martincarpetcleaning.com/' },
+  { id: 'c23', name: 'We Found Global', src: wefound, scale: 1.2, bgColor: '#000', href: 'https://wefoundglobal.com/' },
 ];
+
+/*
+  Breakpoints used in this file:
+    base  = mobile
+    md:   = tablet   (768px+)
+    lg:   = desktop  (1024px+)
+  (sm: is intentionally not used)
+*/
 
 function LogoCard({ logo }: { logo: ClientLogo }) {
   const content = (
-    <div className="group inline-flex items-center justify-center w-[200px] sm:w-[240px] h-[82px] sm:h-[100px] px-6 rounded-2xl border border-neutral-200/90 bg-[#FFFFFF] hover:border-[#670EF7]/40 shadow-xs hover:shadow-md transition-all duration-300 select-none shrink-0 overflow-hidden cursor-pointer">
+    <div className="group inline-flex items-center justify-center w-[160px] h-[60px] px-3 md:w-[170px] md:h-[68px] md:px-4 lg:w-[220px] lg:h-[85px] lg:px-5 rounded-xl border border-neutral-200/90 bg-[#FFFFFF] hover:border-[#670EF7]/50 shadow-xs hover:shadow-md transition-all duration-300 select-none shrink-0 overflow-hidden cursor-pointer">
       {logo.src ? (
-        <div className="relative w-full h-full flex flex-col items-center justify-center">
+        <div className="relative w-full h-full flex flex-col items-center justify-center gap-0.5">
           <Image
             src={logo.src}
             alt={logo.name}
-            width={180}
-            height={60}
-            className={`w-auto max-h-11 sm:max-h-12 object-contain transition-all duration-300 bg-[${logo.bgColor}]`}
+            width={160}
+            height={50}
+            className={`w-auto h-auto max-w-full max-h-8 lg:max-h-10 object-contain transition-all duration-300 ${
+              logo.bgColor ? 'rounded px-2 py-1' : ''
+            }`}
             style={{
               transform: `scale(${logo.scale ?? 1})`,
+              // (the old bg-[${...}] class was built at runtime, so Tailwind never generated it)
+              ...(logo.bgColor ? { backgroundColor: logo.bgColor } : {}),
             }}
           />
           {logo.text && (
             <span
-              className="text-sm sm:text-base font-bold tracking-tight text-[#08080C] transition-colors truncate"
+              className="text-[10px] md:text-xs lg:text-sm font-bold tracking-tight text-[#08080C] transition-colors truncate max-w-full"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {logo.text}
@@ -96,7 +103,7 @@ function LogoCard({ logo }: { logo: ClientLogo }) {
         </div>
       ) : (
         <span
-          className="text-sm sm:text-base font-bold tracking-tight text-neutral-400 group-hover:text-[#08080C] transition-colors truncate"
+          className="text-xs lg:text-sm font-bold tracking-tight text-neutral-400 group-hover:text-[#08080C] transition-colors truncate"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {logo.name}
@@ -112,7 +119,7 @@ function LogoCard({ logo }: { logo: ClientLogo }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={logo.name}
-        className="inline-block shrink-0"
+        className="inline-block shrink-0 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#670EF7]"
       >
         {content}
       </a>
@@ -126,140 +133,101 @@ export default function ClientTrustMarquee() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full py-20 sm:py-24 md:py-28 lg:py-32 bg-[#FFFFFF] text-[#08080C] border-b border-neutral-200 overflow-hidden">
-      
-      {/* Background Soft Purple Spotlights */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#670EF7]/[0.025] blur-[140px] rounded-full" />
-      </div>
-
-      {/* GPU Accelerated Seamless Infinite Scroll Keyframes */}
-      <style dangerouslySetInnerHTML={{ __html: `
+    <section className="relative w-full bg-white text-white border-b border-white/[0.08] overflow-hidden py-0">
+      {/* GPU accelerated seamless infinite scroll */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @keyframes marqueeScrollLeft {
-          0% { transform: translate3d(0, 0, 0); }
+          0%   { transform: translate3d(0, 0, 0); }
           100% { transform: translate3d(-100%, 0, 0); }
         }
-        @keyframes marqueeScrollRight {
-          0% { transform: translate3d(-100%, 0, 0); }
-          100% { transform: translate3d(0, 0, 0); }
-        }
-        .marquee-track-left {
-          display: flex;
-          gap: 1.5rem;
-          width: max-content;
-          will-change: transform;
-          animation: marqueeScrollLeft 48s linear infinite;
-        }
-        .marquee-track-right {
-          display: flex;
-          gap: 1.5rem;
-          width: max-content;
-          will-change: transform;
-          animation: marqueeScrollRight 48s linear infinite;
-        }
-        .marquee-container:hover .marquee-track-left,
-        .marquee-container:hover .marquee-track-right {
-          animation-play-state: paused;
-        }
-      `}} />
 
-      <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">
-        
-        {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-14 sm:mb-18 lg:mb-20">
-          <div 
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#670EF7]/20 bg-[#670EF7]/10 mb-6"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#670EF7] animate-pulse" />
-            <span className="text-xs md:text-sm font-semibold tracking-widest uppercase text-[#670EF7]">
-              SELECTED WORK
-            </span>
+        /* Mobile (base) */
+        .marquee-single-track {
+          display: flex;
+          flex-shrink: 0;            /* never let the flex parent squeeze the track */
+          gap: 0.75rem;
+          padding-right: 0.75rem;    /* = gap, so the seam between the two copies has the same spacing */
+          width: max-content;
+          will-change: transform;
+          animation: marqueeScrollLeft 40s linear infinite;
+        }
+        .marquee-mask {
+          -webkit-mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+        }
+
+        /* Tablet (md) */
+        @media (min-width: 768px) {
+          .marquee-single-track { gap: 1rem; padding-right: 1rem; animation-duration: 48s; }
+          .marquee-mask {
+            -webkit-mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+          }
+        }
+
+        /* Desktop (lg) */
+        @media (min-width: 1024px) {
+          .marquee-single-track { gap: 1.25rem; padding-right: 1.25rem; animation-duration: 55s; }
+          .marquee-mask {
+            -webkit-mask-image: linear-gradient(to right, transparent 0, black 60px, black calc(100% - 60px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, black 60px, black calc(100% - 60px), transparent 100%);
+          }
+        }
+
+        /* Pause on hover only for devices that really hover (avoids "stuck" pause on touch) */
+        @media (hover: hover) {
+          .marquee-wrapper:hover .marquee-single-track { animation-play-state: paused; }
+        }
+
+        ${shouldReduceMotion ? '.marquee-single-track { animation: none; }' : ''}
+      `,
+        }}
+      />
+
+      {/* Mobile: badge stacked above the logos. Tablet and up: side by side. */}
+      <div className="relative w-full flex flex-col md:flex-row md:items-stretch md:min-h-[88px] lg:min-h-[110px]">
+        {/* ============================================================
+            BADGE — full-width bar on mobile, slanted trapezoid from md:
+            ============================================================ */}
+        <div className="relative z-30 shrink-0 flex items-center justify-center md:justify-start bg-[#08080C] px-5 py-3 md:py-4 md:pl-8 md:pr-16 lg:pl-14 lg:pr-24 lg:py-5 md:[clip-path:polygon(0_0,82%_0,100%_100%,0_100%)]">
+          <div className="flex flex-col justify-center text-center md:text-left md:max-w-[240px] lg:max-w-[380px]">
+            <p
+              className="text-sm lg:text-[19px] font-bold text-[#8B45FF] tracking-tight leading-snug"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              Trusted by global brands
+              <br />
+              <span className="text-neutral-300 font-medium">across US, Canada, Saudi &amp; India</span>
+            </p>
           </div>
-
-          <h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#08080C] leading-[1.08] mb-6"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            Work that solves a business problem and shows its impact.
-          </h2>
-
-          <p 
-            className="text-base sm:text-lg md:text-xl text-[#71717A] font-normal leading-relaxed max-w-3xl mx-auto"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            A stronger digital presence matters when it changes what customers can do and what the business can measure. Our work spans websites, ecommerce, applications and customer acquisition. Each engagement begins with the problem, the work required to solve it and a way to judge whether it is improving.
-          </p>
-
-          <h3 
-            className="text-xs sm:text-sm uppercase tracking-widest text-neutral-400 font-bold mt-8 block"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Businesses that have worked with Bixeltek
-          </h3>
         </div>
 
-        {/* 3-Row Seamless Multi-Track Stream */}
-        <div 
-          className="marquee-container relative w-full overflow-hidden py-3 -mx-6 md:-mx-12 lg:-mx-16 px-6 md:px-12 lg:px-16 space-y-5 sm:space-y-6"
-          style={{
-            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-          }}
+        {/* ============================================================
+            MARQUEE TRACK — logos stream beneath the badge shape (md:+)
+            ============================================================ */}
+        <div
+          className={`marquee-wrapper marquee-mask relative w-full min-w-0 md:flex-1 md:w-auto flex items-center py-3 md:py-3 lg:py-4 md:-ml-6 lg:-ml-12 ${
+            shouldReduceMotion ? 'overflow-x-auto' : 'overflow-hidden'
+          }`}
         >
-          {/* Row 1: Leftward Direction */}
-          <div className="flex gap-6 overflow-hidden">
-            <div className="marquee-track-left">
-              {clientLogosRowOne.map((logo, idx) => (
-                <LogoCard key={`r1-a-${logo.id}-${idx}`} logo={logo} />
-              ))}
-            </div>
-            <div className="marquee-track-left" aria-hidden="true">
-              {clientLogosRowOne.map((logo, idx) => (
-                <LogoCard key={`r1-b-${logo.id}-${idx}`} logo={logo} />
-              ))}
-            </div>
+          {/* Track copy 1 */}
+          <div className="marquee-single-track items-center">
+            {clientLogosSingleRow.map((logo, idx) => (
+              <LogoCard key={`m1-${logo.id}-${idx}`} logo={logo} />
+            ))}
           </div>
 
-          {/* Row 2: Rightward Direction */}
-          <div className="flex gap-6 overflow-hidden">
-            <div className="marquee-track-right">
-              {clientLogosRowTwo.map((logo, idx) => (
-                <LogoCard key={`r2-a-${logo.id}-${idx}`} logo={logo} />
+          {/* Track copy 2 (seamless loop) — not needed when motion is reduced */}
+          {!shouldReduceMotion && (
+            <div className="marquee-single-track items-center" aria-hidden="true">
+              {clientLogosSingleRow.map((logo, idx) => (
+                <LogoCard key={`m2-${logo.id}-${idx}`} logo={logo} />
               ))}
             </div>
-            <div className="marquee-track-right" aria-hidden="true">
-              {clientLogosRowTwo.map((logo, idx) => (
-                <LogoCard key={`r2-b-${logo.id}-${idx}`} logo={logo} />
-              ))}
-            </div>
-          </div>
-
-          {/* Row 3: Leftward Direction */}
-          <div className="flex gap-6 overflow-hidden">
-            <div className="marquee-track-left">
-              {clientLogosRowThree.map((logo, idx) => (
-                <LogoCard key={`r3-a-${logo.id}-${idx}`} logo={logo} />
-              ))}
-            </div>
-            <div className="marquee-track-left" aria-hidden="true">
-              {clientLogosRowThree.map((logo, idx) => (
-                <LogoCard key={`r3-b-${logo.id}-${idx}`} logo={logo} />
-              ))}
-            </div>
-          </div>
+          )}
         </div>
-
-        {/* Tactical Footnote */}
-        <div className="mt-14 sm:mt-16 text-center">
-          <p 
-            className="text-xs sm:text-sm font-semibold tracking-wider text-neutral-400 uppercase"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Real businesses. Real projects. Real outcomes.
-          </p>
-        </div>
-
       </div>
     </section>
   );

@@ -1,217 +1,374 @@
 'use client';
 
-import Image from 'next/image';
+import React, { useState, useEffect, useCallback } from 'react';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, TrendingDown, PhoneCall, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+
 import tumblewashImg from '@/assets/bixeltek-team-3.jpeg';
 import tumblewashLogo from '@/assets/TumbleWash-Logo.webp';
+import guerr from '@/assets/guerr_logo_black.png'
+import revitaLogo from '@/assets/Revita-Logo-without-background-02-Colored-Font-01.png';
 
+
+interface ClientCard {
+  id: string;
+  client: string;
+  logo: StaticImageData | null;
+  logoText?: string;
+  description: string;
+  scale?:any;
+  verified: boolean;
+}
+
+const clientCards: ClientCard[] = [
+  {
+    id: 'tumblewash',
+    client: 'TumbleWash',
+    logo: tumblewashLogo,
+    description:
+      'Multi-location franchise business looking to build a more efficient digital acquisition system.',
+    verified: false,
+  },
+  {
+    id: 'guerr-clothing',
+    client: 'Guerr Clothing',
+    logo: guerr,  
+    scale:1.8,
+    description:
+      'Direct-to-consumer fashion brand requiring headless architecture, custom drops, and high-conversion checkout.',
+    verified: false,
+  },
+  {
+    id: 'revita-dentistry',
+    client: 'Revita Dentistry',
+    scale:1.2,
+    logo: revitaLogo,
+    description:
+      'Full-service dental clinic focused on scaling high-value patient appointments and local search visibility.',
+    verified: false,
+  },
+  {
+    id: 'eazy-bike-repairs',
+    client: 'Eazy Bike Repairs',
+    logo: null,
+    logoText: 'EAZY BIKE REPAIRS',
+    description:
+      'Doorstep two-wheeler servicing brand scaling customer enquiries through high-intent local search.',
+    verified: false,
+  },
+];
 
 export default function FeaturedCaseStudy() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const shouldReduceMotion = useReducedMotion();
+
+  const handleNext = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % clientCards.length);
+  }, []);
+
+  const handleSelect = useCallback(
+    (index: number) => {
+      if (index === currentIndex) return;
+
+      setDirection(index > currentIndex ? 1 : -1);
+      setCurrentIndex(index);
+    },
+    [currentIndex]
+  );
+
+  // Auto-advance every 6 seconds.
+  // Pauses on hover/focus and respects reduced-motion preferences.
+  useEffect(() => {
+    if (isPaused || shouldReduceMotion) return;
+
+    const timer = setInterval(() => {
+      handleNext();
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [isPaused, shouldReduceMotion, handleNext]);
+
+  const activeClient = clientCards[currentIndex];
+
+  const cardContentVariants = {
+    enter: (dir: number) => ({
+      opacity: 0,
+      x: shouldReduceMotion ? 0 : dir > 0 ? 10 : -10,
+    }),
+
+    center: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+
+    exit: (dir: number) => ({
+      opacity: 0,
+      x: shouldReduceMotion ? 0 : dir > 0 ? -10 : 10,
+      transition: {
+        duration: 0.2,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    }),
+  };
+
   return (
-    <section id="case-study" className="relative bg-[#FAF9F6] py-24 sm:py-32 lg:py-40 text-[#08080C] border-b border-neutral-200/90 overflow-hidden">
-      
-      {/* Subtle Background Structural Hairlines & Soft Radial Hue (No Boxes) */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/3 left-[-100px] w-[500px] h-[500px] bg-[#670EF7]/[0.03] blur-[150px] rounded-full" />
-        <div 
+    <section
+      id="case-studies"
+      className="relative overflow-hidden border-b border-neutral-200/90 bg-[#FAF9F6] py-20 text-[#08080C] sm:py-28 lg:py-36"
+    >
+      {/* Subtle Background Structural Hairlines & Soft Radial Hue */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute left-[-100px] top-1/3 h-[500px] w-[500px] rounded-full bg-[#670EF7]/[0.03] blur-[150px]" />
+
+        <div
           className="absolute inset-x-0 inset-y-[-100px] opacity-[0.035]"
           style={{
-            backgroundImage: `linear-gradient(90deg, rgba(8, 8, 12, 0.08) 1px, transparent 1px)`,
-            backgroundSize: '80px 100%'
+            backgroundImage:
+              'linear-gradient(90deg, rgba(8, 8, 12, 0.08) 1px, transparent 1px)',
+            backgroundSize: '80px 100%',
           }}
         />
       </div>
 
-      <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">
-        
-      
-        {/* Magazine Spread Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-20 items-stretch">
-          
-          <div className="lg:col-span-6 flex flex-col justify-between py-1">
-            
-            <div>
-              <div 
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#670EF7]/10 border border-[#670EF7]/20 mb-4"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                <Sparkles className="w-3.5 h-3.5 text-[#670EF7]" />
-                <span className="text-xs sm:text-sm uppercase tracking-widest text-[#670EF7] font-semibold">
-                  FEATURED PROJECT · TUMBLEWASH
-                </span>
-              </div>
+      <div className="relative z-10 mx-auto w-full px-6 md:px-12 lg:max-w-[90%] lg:px-16">
 
-              <h3 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#08080C] leading-[1.08] mb-6 sm:mb-8"
+        <div className="grid grid-cols-1 items-stretch gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-18">
+        <div>
+        <div className="mb-12 max-w-3xl sm:mb-14 lg:mb-16">
+          {/* Eyebrow */}
+          <div
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#670EF7]/20 bg-[#670EF7]/10 px-3 py-1"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
+            <Sparkles className="h-3.5 w-3.5 text-[#670EF7]" />
+
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#670EF7] sm:text-sm">
+              OUR CASE STUDIES
+            </span>
+          </div>
+
+          {/* Primary Section Heading */}
+          <h2
+            className="mb-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#08080C] sm:text-4xl md:text-5xl lg:text-6xl"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            Real Work. Real Businesses.
+            <br />
+            Real Outcomes.
+          </h2>
+
+          {/* Section Description */}
+          <p
+            className="max-w-2xl text-base font-normal leading-relaxed text-neutral-600 sm:text-lg"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
+            Explore a selection of businesses we&apos;ve worked with across
+            digital growth, websites, ecommerce, acquisition and connected
+            digital systems.
+          </p>
+        </div>
+        <div className="flex flex-col justify-between py-1">
+            <div>
+              {/* Small Editorial Lead-In
+                  NOT another major heading */}
+              <p
+                className="mb-3 text-base font-semibold leading-snug tracking-tight text-[#08080C] sm:text-lg"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
-                Turning local search demand into more customer enquiries.
-              </h3>
-
-              <p 
-                className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-8 sm:mb-10 font-normal"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                TumbleWash was reaching potential customers, but its acquisition journey was not working efficiently enough. The opportunity was broader than an ad adjustment: local search intent, campaign structure, landing pages and the path to a call all needed to work together. We rebuilt that journey and measured the result against the enquiries it produced.
+                Every business comes with a different challenge.
               </p>
 
-              {/* Challenge & Approach Editorial Blocks */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10 pt-6 border-t border-neutral-200">
+              {/* Supporting Paragraph */}
+              <p
+                className="mb-8 max-w-2xl text-base font-normal leading-relaxed text-neutral-600 sm:text-lg"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                From acquisition and ecommerce to local search and digital
+                infrastructure, we focus on understanding what is holding
+                growth back — then build the right solution around it.
+              </p>
+
+              {/* Challenge / Solution */}
+              <div className="mb-8 grid grid-cols-1 gap-6 border-t border-neutral-200 pt-6 sm:mb-10 sm:gap-8 md:grid-cols-2">
+                {/* Challenge */}
                 <div>
-                  <h4 
-                    className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#08080C] mb-2 flex items-center gap-2"
+                  <h3
+                    className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#08080C] sm:text-sm"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-neutral-400" />
                     THE CHALLENGE
-                  </h4>
-                  <p 
-                    className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal"
+                  </h3>
+
+                  <p
+                    className="text-xs font-normal leading-relaxed text-neutral-600 sm:text-sm"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                    Rising acquisition costs and underperforming local landing experiences were limiting the return from existing demand.
+                    Businesses can have strong products, existing demand or an
+                    established customer base — but disconnected marketing,
+                    technology and digital experiences can prevent that
+                    potential from turning into consistent growth.
                   </p>
                 </div>
+
+                {/* Solution */}
                 <div>
-                  <h4 
-                    className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#08080C] mb-2 flex items-center gap-2"
+                  <h3
+                    className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#08080C] sm:text-sm"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#670EF7]" />
-                    WHAT WE DID
-                  </h4>
-                  <p 
-                    className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal"
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#670EF7]" />
+                    THE SOLUTION
+                  </h3>
+
+                  <p
+                    className="text-xs font-normal leading-relaxed text-neutral-600 sm:text-sm"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                    We aligned local targeting, Google Ads campaigns, landing experiences and conversion measurement around the way customers searched and contacted the business.
+                    We bring strategy, technology and digital growth
+                    capabilities together around the specific problem —
+                    improving acquisition, strengthening search visibility,
+                    rebuilding ecommerce infrastructure or creating better
+                    digital systems.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* DOMINANT METRIC BREAKTHROUGH: ₹754 → ₹77 */}
-            <div className="p-7 sm:p-9 rounded-3xl bg-white border border-neutral-200/90 shadow-sm mb-8 sm:mb-10">
-              <span 
-                className="text-xs uppercase tracking-widest text-neutral-400 font-bold block mb-4"
+            {/* CTA */}
+            <div className="border-t border-neutral-200 pt-6">
+              <Link
+                href="/case-studies"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#08080C] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-300 hover:bg-[#670EF7] hover:shadow-lg hover:shadow-[#670EF7]/20 sm:w-auto sm:text-base"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                Cost Per Lead
-              </span>
-              
-              <div className="flex items-baseline flex-wrap gap-4 sm:gap-6 mb-2">
-                <span 
-                  className="text-2xl sm:text-3xl font-medium text-neutral-400 line-through"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
-                >
-                  ₹754
-                </span>
-                <span className="text-neutral-300 text-2xl font-light">→</span>
-                <span 
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black text-[#670EF7] tracking-tighter leading-none"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
-                >
-                  ₹77
-                </span>
-              </div>
+                <span>Explore All Case Studies</span>
 
-              <div 
-                className="flex items-center gap-1.5 text-xs sm:text-sm uppercase tracking-wider font-semibold text-emerald-700 mb-6"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                <TrendingDown className="w-4 h-4" />
-                <span>89.7% reduction in cost per lead</span>
-              </div>
-
-              {/* Supporting Secondary Proof Points */}
-              <div className="grid grid-cols-2 gap-6 pt-6 border-t border-neutral-100">
-                <div>
-                  <div 
-                    className="flex items-baseline gap-2 mb-1"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    <span className="text-xs sm:text-sm text-neutral-400 line-through">170</span>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#08080C]">477+</span>
-                  </div>
-                  <span 
-                    className="text-xs sm:text-sm uppercase tracking-wider text-neutral-500 font-medium"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    Monthly Calls
-                  </span>
-                </div>
-
-                <div>
-                  <div 
-                    className="text-2xl sm:text-3xl font-extrabold text-[#08080C] mb-1"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    436%+
-                  </div>
-                  <span 
-                    className="text-xs sm:text-sm uppercase tracking-wider text-neutral-500 font-medium"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    Verified ROAS
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Case Study Deep Dive Link */}
-            <div>
-              <Link 
-                href="/case-studies/Tumblewash-Casestudy"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#08080C] hover:bg-[#670EF7] text-white font-semibold text-sm sm:text-base tracking-wide transition-all duration-300 group shadow-md hover:shadow-lg hover:shadow-[#670EF7]/20 w-full md:w-auto"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                <span>Read the TumbleWash Case Study</span>
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1.5" />
               </Link>
             </div>
-
           </div>
-          
-          <div className="lg:col-span-6 relative min-h-[460px] sm:min-h-[560px] md:min-h-[620px] lg:min-h-[700px] rounded-3xl overflow-hidden border border-neutral-300 shadow-xl flex flex-col justify-end group">
+          </div>
+          <div className="group relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-3xl border border-neutral-300 shadow-xl sm:min-h-[520px] md:min-h-[580px] lg:min-h-[640px]">
+            {/* Background Image */}
             <Image
               src={tumblewashImg}
-              alt="TumbleWash Digital Acquisition Transformation"
+              alt="Bixeltek team working on digital growth projects"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
-            {/* Subtle photographic gradient vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08080C]/90 via-[#08080C]/35 to-transparent pointer-events-none" />
 
-            {/* Overlaid Editorial Client Badge */}
-            <div className="relative z-10 m-6 sm:m-8 lg:m-10 p-6 sm:p-7 rounded-2xl bg-white/95 backdrop-blur-xl border border-white/60 shadow-2xl">
-              <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 mb-3">
-                <Image 
-                  src={tumblewashLogo} 
-                  alt="TumbleWash Logo" 
-                  width={140} 
-                  height={45} 
-                  className="w-auto h-7 sm:h-9 object-contain"
-                />
-                <span 
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100/90 text-emerald-800 text-xs font-semibold uppercase tracking-wider"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
+            {/* Photographic Gradient */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#08080C]/90 via-[#08080C]/35 to-transparent" />
+
+            {/* =====================================================
+                CAROUSEL OVERLAY CARD
+            ====================================================== */}
+            <div
+              className="relative z-10 m-5 rounded-2xl border border-white/60 bg-white/95 p-5 shadow-2xl backdrop-blur-xl sm:m-7 sm:p-6 lg:m-8"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onFocus={() => setIsPaused(true)}
+              onBlur={() => setIsPaused(false)}
+            >
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={activeClient.id}
+                  custom={direction}
+                  variants={cardContentVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
                 >
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  Verified Client
-                </span>
+                  {/* Client Logo / Wordmark */}
+                  <div className="mb-2.5 flex min-h-[36px] items-center justify-between gap-3">
+                    {activeClient.logo ? (
+                      <Image
+                        src={activeClient.logo}
+                        alt={`${activeClient.client} Logo`}
+                        width={140}
+                        height={40}
+                        className="h-7 w-auto object-contain sm:h-8"
+                        style={{
+                          scale:`${activeClient.scale}`
+                        }}
+                      />
+                    ) : (
+                      <span
+                        className="text-base font-black uppercase tracking-wider text-[#08080C] sm:text-lg"
+                        style={{ fontFamily: "'Inter', sans-serif" }}
+                      >
+                        {activeClient.logoText}
+                      </span>
+                    )}
+
+                    {/* Verified Badge */}
+                    {activeClient.verified && (
+                      <span
+                        className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-emerald-100/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-800"
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                      >
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        Verified Client
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Client Description */}
+                  <p
+                    className="mb-4 min-h-[36px] text-left text-xs font-normal leading-relaxed text-neutral-600 sm:text-sm"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    {activeClient.description}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* ===================================================
+                  SIMPLE PAGINATION ONLY
+              ==================================================== */}
+              <div className="flex items-center justify-center border-t border-neutral-200/80 pt-4">
+                <div
+                  className="flex items-center justify-center gap-1.5"
+                  role="tablist"
+                  aria-label="Case study client cards"
+                >
+                  {clientCards.map((client, idx) => {
+                    const isActive = currentIndex === idx;
+
+                    return (
+                      <button
+                        key={client.id}
+                        type="button"
+                        onClick={() => handleSelect(idx)}
+                        aria-label={`View ${client.client} case study`}
+                        aria-selected={isActive}
+                        role="tab"
+                        className={`h-1.5 cursor-pointer rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#670EF7]/30 focus:ring-offset-2 ${
+                          isActive
+                            ? 'w-5 bg-[#670EF7]'
+                            : 'w-1.5 bg-neutral-300 hover:bg-neutral-400'
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-              <p className='text-center md:text-left'>
-                Multi-location franchise business looking to build a more efficient digital acquisition system.
-              </p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

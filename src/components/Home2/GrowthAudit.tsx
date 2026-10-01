@@ -87,7 +87,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
   const IconComponent = activeVector.icon;
 
   return (
-    <section className="relative w-full py-24 sm:py-32 lg:py-40 bg-[#090A10] text-white border-b border-white/[0.08] overflow-hidden">
+    <section className="relative w-full py-24 sm:py-32 bg-[#090A10] text-white border-b border-white/[0.08] overflow-hidden">
       
       {/* Precision Structural Ambient Mesh (No boxes) */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -104,7 +104,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
       <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">
         
         {/* Editorial Section Header */}
-        <div className="max-w-4xl mb-16 sm:mb-20">
+        <div className="max-w-4xl mb-16 sm:mb-20 mx-auto text-center">
           <div 
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#8C45FF]/30 bg-[#8C45FF]/10 text-[#8C45FF] text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6"
             style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -124,7 +124,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
           </h2>
 
           <p 
-            className="text-base sm:text-lg md:text-xl text-neutral-300 font-normal leading-relaxed max-w-3xl"
+            className="text-base sm:text-lg md:text-xl text-neutral-300 font-normal leading-relaxed max-w-3xl mx-auto"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             You may know what is not working without knowing which part to fix first. Tell us about the business and the result you want. We will look at the relevant parts of your website, marketing or digital systems, discuss the most visible gaps and recommend a sensible next step.

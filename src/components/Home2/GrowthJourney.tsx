@@ -4,10 +4,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import teamImg from '@/assets/bixeltek-team-3.jpeg'
 
 export default function GrowthJourney() {
   return (
-    <section className="relative w-full py-20 sm:py-24 md:py-28 lg:py-36 bg-[#FFFFFF] text-[#08080C] overflow-hidden border-b border-neutral-200">
+    <section className="relative w-full py-16 md:py-28 lg:py-36 bg-[#FFFFFF] text-[#08080C] overflow-hidden border-b border-neutral-200">
   
       {/* Standard Section Container */}
       <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">
@@ -17,7 +18,7 @@ export default function GrowthJourney() {
           {/* LEFT: Architectural Visual Asset */}
           <div className="lg:col-span-5 relative w-full h-[360px] sm:h-[440px] lg:h-[500px] rounded-3xl overflow-hidden border border-neutral-200 shadow-xl group">
             <Image
-              src="/traditional-to-digital.png" 
+              src={teamImg} 
               alt="From Traditional to Digital Scale"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -62,16 +63,6 @@ export default function GrowthJourney() {
               </p>
             </div>
 
-            <div className="pt-6 border-t border-neutral-200 flex items-center gap-3 w-full">
-              <Link
-                href="/about-us"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#08080C] hover:text-[#670EF7] transition-colors group"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                <span>Get to Know Bixeltek</span>
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform text-[#670EF7]" />
-              </Link>
-            </div>
           </div>
 
         </div>
