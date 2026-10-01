@@ -1,258 +1,377 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight, Quote, Star, ArrowRight } from 'lucide-react';
 
-interface Testimonial {
-  id: string;
-  client: string;
-  role: string;
-  organization: string;
-  sector: string;
-  quote: string;
-  metricHighlight: {
-    primary: string;
-    label: string;
-  };
-  initials: string;
+interface Metric {
+  value: string;
+  label: string;
 }
 
-const testimonials: Testimonial[] = [
+interface TestimonialCard {
+  id: string;
+  brandName: string;
+  quote: string;
+  metrics: Metric[];
+  cardColor: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageSide: 'left' | 'right';
+}
+
+const statsSummary = [
+  { value: '100', sup: '+', label: 'Practices & Brands Scaled' },
+  { value: '$380K', sup: '', label: 'Peak Monthly Sales Documented' },
+  { value: '4.9/5', sup: '', label: 'Avg. Client Satisfaction', hasStar: true },
+];
+
+const testimonials: TestimonialCard[] = [
   {
     id: 'tumblewash',
-    client: 'Operations Leadership',
-    role: 'Managing Director',
-    organization: 'TumbleWash Franchise',
-    sector: 'Multi-Location Service',
-    quote: 'Bixeltek transformed our digital customer acquisition. By rebuilding the search journey, landing experience and conversion path, our campaign efficiency and inbound enquiry volume improved dramatically within 90 days.',
-    metricHighlight: {
-      primary: '89.7%',
-      label: 'Acquisition Cost Reduction'
-    },
-    initials: 'TW'
+    brandName: 'TumbleWash Franchise',
+    quote:
+      'Bixeltek transformed our digital customer acquisition. By connecting local search intent with better landing pages and campaign structure, our acquisition journey became substantially more efficient and dependable.',
+    metrics: [
+      { value: '₹77', label: 'Cost per qualified lead' },
+      { value: '3.4x', label: 'Inbound booking conversion' },
+    ],
+    cardColor: '#0A0A10', // Obsidian black
+    imageSrc: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop',
+    imageAlt: 'TumbleWash platform growth dashboard',
+    imageSide: 'left',
   },
   {
     id: 'healthcare',
-    client: 'Managing Partner',
-    role: 'Clinical Operations Lead',
-    organization: 'Multi-Location Healthcare Practice',
-    sector: 'Dental & Healthcare',
-    quote: 'The difference with Bixeltek is they understand unit economics. They don’t report vanity clicks or impressions—they report actual booked patient consultations, show-up rates, and bottom-line revenue attribution.',
-    metricHighlight: {
-      primary: '210+ Calls',
-      label: 'Monthly Booked Patient Inbound'
-    },
-    initials: 'HP'
+    brandName: 'Dental & Healthcare Partners',
+    quote:
+      'The difference with Bixeltek is they understand unit economics. They don’t report vanity clicks or impressions—they report actual booked patient consultations, show-up rates, and revenue attribution.',
+    metrics: [
+      { value: '210+', label: 'Monthly booked patients' },
+      { value: '42%', label: 'Lower acquisition cost' },
+    ],
+    cardColor: '#670EF7', // Signature electric purple
+    imageSrc: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop',
+    imageAlt: 'Healthcare acquisition funnel',
+    imageSide: 'right',
   },
   {
-    id: 'b2b',
-    client: 'Founder & CEO',
-    role: 'Executive Director',
-    organization: 'Commercial B2B Engineering Group',
-    sector: 'Enterprise Services',
-    quote: 'Having engineering, modern web speed, and paid media managed under one roof eliminated months of contractor finger-pointing. Our site speed increased threefold and conversion rates doubled across high-intent campaigns.',
-    metricHighlight: {
-      primary: '< 1.1s',
-      label: 'Core Web Vitals & 2x Conv. Rate'
-    },
-    initials: 'BE'
-  }
+    id: 'b2b-engineering',
+    brandName: 'Commercial B2B Engineering Group',
+    quote:
+      'Having engineering, modern web speed, and paid media managed under one roof eliminated months of contractor finger-pointing. Our speed increased threefold and conversion rates doubled.',
+    metrics: [
+      { value: '< 1.1s', label: 'Core Web Vitals speed' },
+      { value: '2x', label: 'High-intent conversion rate' },
+    ],
+    cardColor: '#C8102E', // Signal red
+    imageSrc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
+    imageAlt: 'Engineering system analytics',
+    imageSide: 'left',
+  },
+  {
+    id: 'ecommerce',
+    brandName: 'Omnichannel Retail Brand',
+    quote:
+      'Their team re-architected our storefront and Google Shopping pipelines. Cart abandonment dropped significantly and our return on ad spend jumped without increasing top-of-funnel budget.',
+    metrics: [
+      { value: '+184%', label: 'Ecommerce ROAS lift' },
+      { value: '-31%', label: 'Checkout cart drop-off' },
+    ],
+    cardColor: '#1F2BD9', // Cobalt
+    imageSrc: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200&auto=format&fit=crop',
+    imageAlt: 'E-commerce conversion infrastructure',
+    imageSide: 'right',
+  },
+  {
+    id: 'specialty-dental',
+    brandName: 'Speciality Dental Network',
+    quote:
+      'From custom landing pages to local map pack rankings, Bixeltek delivered high-ticket patient cases consistently every month. The transparency and weekly performance reporting are unmatched.',
+    metrics: [
+      { value: '4.8x', label: 'Return on ad spend' },
+      { value: '180+', label: 'New consultations / mo' },
+    ],
+    cardColor: '#0B7A5A', // Deep emerald
+    imageSrc: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop',
+    imageAlt: 'Dental implant patient acquisition',
+    imageSide: 'left',
+  },
+  {
+    id: 'global-consulting',
+    brandName: 'Global Advisory & Tech Capital',
+    quote:
+      'Bixeltek delivered a corporate digital identity and web application that positioned us alongside top-tier global firms. Fast turnarounds, meticulous attention to detail, and seamless execution.',
+    metrics: [
+      { value: '3.2x', label: 'Enterprise inbound pipeline' },
+      { value: '100%', label: 'On-schedule delivery' },
+    ],
+    cardColor: '#5808D8',
+    imageSrc: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200&auto=format&fit=crop',
+    imageAlt: 'Global tech web app showcase',
+    imageSide: 'right',
+  },
 ];
 
-export default function TestimonialsDeck() {
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0);
 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrent((prev) => {
-      let next = prev + newDirection;
-      if (next < 0) next = testimonials.length - 1;
-      if (next >= testimonials.length) next = 0;
-      return next;
-    });
+
+export default function TestimonialsEditorial() {
+  const total = testimonials.length;
+
+  const loopItems = [...testimonials, ...testimonials, ...testimonials];
+
+  const [pos, setPos] = useState(total); 
+  const [offset, setOffset] = useState(0);
+  const [animated, setAnimated] = useState(false);
+
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const lockRef = useRef(false);
+
+  const activeIndex = pos % total;
+
+  const step = (dir: 1 | -1) => {
+    if (lockRef.current) return; 
+    lockRef.current = true;
+    setTimeout(() => {
+      lockRef.current = false;
+    }, 700);
+    setAnimated(true);
+    setPos((p) => p + dir);
+  };
+  const prevSlide = () => step(-1);
+  const nextSlide = () => step(1);
+
+  const goTo = (loopPos: number) => {
+    setAnimated(true);
+    setPos(loopPos);
   };
 
-  const variants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 80 : -80,
-      opacity: 0,
-      scale: 0.96,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] }
-    },
-    exit: (dir: number) => ({
-      x: dir < 0 ? 80 : -80,
-      opacity: 0,
-      scale: 0.96,
-      transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] }
-    })
+  // After the slide animation ends, hop back to the middle copy without animation.
+  const handleAnimationComplete = () => {
+    if (pos < total) {
+      setAnimated(false);
+      setPos(pos + total);
+    } else if (pos >= total * 2) {
+      setAnimated(false);
+      setPos(pos - total);
+    }
   };
 
-  const active = testimonials[current];
+  // Measure the real card position in px and center it in the viewport.
+  const computeOffset = useCallback(() => {
+    const viewport = viewportRef.current;
+    const card = cardRefs.current[pos];
+    if (!viewport || !card) return;
+    setOffset(viewport.clientWidth / 2 - (card.offsetLeft + card.offsetWidth / 2));
+  }, [pos]);
+
+  useLayoutEffect(() => {
+    computeOffset();
+    window.addEventListener('resize', computeOffset);
+    return () => window.removeEventListener('resize', computeOffset);
+  }, [computeOffset]);
+
+  // Arrows: on mobile/tablet (stacked card) they sit on the line between the image
+  // and the text, like the reference. On desktop they stay vertically centered.
+  // Mobile  : image h-64 (256px) + 8px track padding  -> top-[264px]
+  // Tablet  : image h-80 (320px) + 8px track padding  -> md:top-[328px]
+  // If you change the image heights below, change these two numbers too.
+  const arrowClass =
+    'absolute top-[244px] md:top-[328px] lg:top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/95 border border-neutral-200 shadow-[0_10px_30px_rgba(0,0,0,0.18)] text-neutral-800 hover:text-[#670EF7] hover:scale-105 transition-all flex items-center justify-center cursor-pointer';
 
   return (
-    <section className="relative w-full py-20 sm:py-28 lg:py-32 bg-[#FFFFFF] text-[#08080C] border-b border-neutral-200/90 overflow-hidden">
-      
-      {/* Subtle Restrained Ambient Purple Glow Behind Deck */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#670EF7]/[0.035] blur-[150px] rounded-full pointer-events-none" />
+    <section className="relative w-full py-20 md:py-24 lg:py-28 bg-white text-[#08080C] overflow-hidden border-b border-neutral-200">
+      {/* ===== Header + summary stats ===== */}
+      <div className="max-w-5xl mx-auto px-6 text-center mb-14 md:mb-16">
+        <h2
+          className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#08080C] tracking-tight leading-[1.12] mb-12"
+          style={{ fontFamily: "'Inter', sans-serif" }}
+        >
+          Trusted by teams at the world’s leading brands and ambitious businesses
+        </h2>
 
-      <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">
-        
-        {/* Centered Editorial Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
-          <div 
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#670EF7]/30 bg-[#670EF7]/10 text-[#670EF7] text-xs sm:text-sm font-semibold tracking-wider uppercase mb-5"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>CLIENT PERSPECTIVES</span>
-          </div>
-
-          <h3 
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#08080C] tracking-tight leading-[1.12] mb-4"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            Built Around Their Business.{' '}
-            <span className="bg-gradient-to-r from-[#670EF7] to-[#8B45FF] bg-clip-text text-transparent">
-              Proven Through Real Work.
-            </span>
-          </h3>
-
-          <p 
-            className="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed max-w-xl mx-auto"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Hear from the businesses we&apos;ve worked with and the teams who trusted us
-            to improve their digital presence, systems, and growth.
-          </p>
-        </div>
-
-        {/* --- STACKED CARD DECK WITH SIDE ARROWS --- */}
-        <div className="relative max-w-4xl mx-auto px-2 md:px-12 md:px-16">
-          
-          {/* Left Arrow Button */}
-          <button
-            onClick={() => paginate(-1)}
-            aria-label="Previous Testimonial"
-            className="absolute -left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white border border-neutral-200/90 shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_25px_rgba(103,14,247,0.15)] hover:border-[#670EF7]/50 text-neutral-700 hover:text-[#670EF7] flex items-center justify-center transition-all duration-200 cursor-pointer"
-          >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-
-          {/* Right Arrow Button */}
-          <button
-            onClick={() => paginate(1)}
-            aria-label="Next Testimonial"
-            className="absolute -right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-13 md:h-13 rounded-full bg-white border border-neutral-200/90 shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_25px_rgba(103,14,247,0.15)] hover:border-[#670EF7]/50 text-neutral-700 hover:text-[#670EF7] flex items-center justify-center transition-all duration-200 cursor-pointer"
-          >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-
-          {/* Deck Container with Layered Background Cards */}
-          <div className="relative min-h-[360px] md:min-h-[320px] flex items-center justify-center">
-            
-            {/* Background Deck Card 2 (Deepest) */}
-            <div 
-              className="absolute inset-x-8 md:inset-x-12 -top-4 bottom-4 rounded-3xl bg-neutral-100/70 border border-neutral-200/60 scale-[0.92] opacity-50 pointer-events-none transform -rotate-1 shadow-xs" 
-            />
-
-            {/* Background Deck Card 1 (Middle Layer) */}
-            <div 
-              className="absolute inset-x-4 md:inset-x-6 -top-2 bottom-2 rounded-3xl bg-neutral-50 border border-neutral-200/80 scale-[0.96] opacity-80 pointer-events-none transform rotate-1 shadow-sm" 
-            />
-
-            {/* Active Foreground Card */}
-            <div className="relative w-full z-20">
-              <AnimatePresence initial={false} custom={direction} mode="wait">
-                <motion.div
-                  key={active.id}
-                  custom={direction}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  className="w-full rounded-3xl border border-neutral-200/90 bg-white p-7 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] relative overflow-hidden"
-                >
-                  {/* Subtle Top Purple Accent */}
-                  <div className="absolute inset-x-8 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#670EF7] to-transparent opacity-80" />
-
-                  {/* Header Row: Sector Tag + Metric Badge */}
-                  <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-neutral-100">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#670EF7]" />
-                      <span 
-                        className="text-xs font-semibold uppercase tracking-wider text-neutral-500"
-                        style={{ fontFamily: "'Poppins', sans-serif" }}
-                      >
-                        {active.sector}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#670EF7]/10 border border-[#670EF7]/20">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#670EF7]" />
-                      <span 
-                        className="text-xs font-bold text-[#670EF7]"
-                        style={{ fontFamily: "'Poppins', sans-serif" }}
-                      >
-                        {active.metricHighlight.primary} — {active.metricHighlight.label}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Quote Body */}
-                  <blockquote 
-                    className="text-base sm:text-lg md:text-xl text-[#08080C] font-normal leading-relaxed mb-8 italic"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    &ldquo;{active.quote}&rdquo;
-                  </blockquote>
-
-                  {/* Footer Attribution */}
-                  <div className="flex items-center justify-between pt-6 border-t border-neutral-100">
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-11 h-11 rounded-full bg-[#670EF7]/10 border border-[#670EF7]/20 flex items-center justify-center text-[#670EF7] font-bold text-sm shrink-0">
-                        {active.initials}
-                      </div>
-                      <div>
-                        <div 
-                          className="text-sm font-bold text-[#08080C]"
-                          style={{ fontFamily: "'Inter', sans-serif" }}
-                        >
-                          {active.client}
-                        </div>
-                        <div 
-                          className="text-xs text-neutral-500 font-normal"
-                          style={{ fontFamily: "'Poppins', sans-serif" }}
-                        >
-                          {active.role} · {active.organization}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Deck Index Indicator */}
-                    <div 
-                      className="text-xs font-mono font-bold text-neutral-400"
-                      style={{ fontFamily: "'Poppins', sans-serif" }}
-                    >
-                      {current + 1} / {testimonials.length}
-                    </div>
-                  </div>
-
-                </motion.div>
-              </AnimatePresence>
+        <div className="grid grid-cols-1 md:grid-cols-3 max-w-4xl mx-auto gap-8 md:gap-0 md:divide-x divide-neutral-200">
+          {statsSummary.map((item, i) => (
+            <div key={i} className="flex flex-col items-center px-4">
+              <div
+                className="relative text-4xl md:text-5xl font-extrabold tracking-tight text-[#08080C] mb-2"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                {item.value}
+                {item.sup && (
+                  <sup className="text-2xl md:text-3xl font-semibold align-super ml-0.5">{item.sup}</sup>
+                )}
+                {item.hasStar && (
+                  <Star className="absolute -top-1 -right-5 w-4 h-4 fill-amber-400 text-amber-400" />
+                )}
+              </div>
+              <p
+                className="text-xs md:text-sm text-neutral-500 font-medium"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                {item.label}
+              </p>
             </div>
-
-          </div>
-
+          ))}
         </div>
-
       </div>
+
+      {/* ===== Carousel ===== */}
+      <motion.div
+        ref={viewportRef}
+        className="relative w-full overflow-hidden select-none"
+        style={{ touchAction: 'pan-y' }}
+        onPanEnd={(_, info) => {
+          if (info.offset.x < -60) nextSlide();
+          else if (info.offset.x > 60) prevSlide();
+        }}
+      >
+        {/* Arrows (on mobile they sit inside the card edge: card is 86vw, so margin = 7vw) */}
+        <button
+          onClick={prevSlide}
+          aria-label="Previous testimonial"
+          className={`${arrowClass} left-[calc(7vw+0.75rem)] md:left-8 lg:left-14`}
+        >
+          <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
+        </button>
+        <button
+          onClick={nextSlide}
+          aria-label="Next testimonial"
+          className={`${arrowClass} right-[calc(7vw+0.75rem)] md:right-8 lg:right-14`}
+        >
+          <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
+        </button>
+
+        {/* Track — starts at x=0, offset is measured in px so any card can be centered */}
+        <motion.div
+          className="relative flex w-max gap-5 md:gap-6 py-2"
+          initial={false}
+          animate={{ x: offset }}
+          transition={{ duration: animated ? 0.65 : 0, ease: [0.16, 1, 0.3, 1] }}
+          onAnimationComplete={handleAnimationComplete}
+        >
+          {loopItems.map((item, idx) => {
+            const isActive = idx === pos;
+            const imageFirst = item.imageSide === 'left';
+
+            return (
+              <div
+                key={`${item.id}-${Math.floor(idx / total)}`}
+                ref={(el) => {
+                  cardRefs.current[idx] = el;
+                }}
+                onClick={() => goTo(idx)}
+                aria-hidden={!isActive && Math.floor(idx / total) !== 1 ? true : undefined}
+                // Mobile/tablet: height follows the content (all cards stretch to the tallest),
+                // so the full quote is always visible. Desktop: original fixed height.
+                className={`group shrink-0 w-[86vw] md:w-[78vw] lg:w-[62vw] xl:w-[56vw] 2xl:w-[50vw] max-w-[1100px] lg:h-[470px] rounded-3xl overflow-hidden transition-opacity duration-500 cursor-pointer ${
+                  isActive ? 'opacity-100' : 'opacity-70 hover:opacity-90'
+                }`}
+                style={{ backgroundColor: item.cardColor }}
+              >
+                <div className="w-full lg:h-full grid grid-cols-1 lg:grid-cols-12 text-white">
+                  {/* Image: on top for mobile/tablet, left/right half on desktop */}
+                  <div
+                    className={`relative lg:col-span-6 h-64 md:h-80 lg:h-full w-full overflow-hidden ${
+                      imageFirst ? 'lg:order-1' : 'lg:order-2'
+                    }`}
+                  >
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 35vw, 86vw"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    />
+                    {/* Fade the image into the card color (bottom on mobile/tablet, side on desktop) */}
+                    <div
+                      className="absolute inset-0 lg:hidden"
+                      style={{
+                        backgroundImage: `linear-gradient(to bottom, transparent 45%, ${item.cardColor})`,
+                      }}
+                    />
+                    <div
+                      className="absolute inset-0 hidden lg:block"
+                      style={{
+                        backgroundImage: `linear-gradient(to ${
+                          imageFirst ? 'right' : 'left'
+                        }, transparent 35%, ${item.cardColor} 100%)`,
+                      }}
+                    />
+                  </div>
+
+                  {/* Content half */}
+                  <div
+                    className={`relative lg:col-span-6 px-7 pb-7 pt-3 md:px-10 md:pb-9 md:pt-4 lg:p-12 flex flex-col justify-between gap-6 ${
+                      imageFirst ? 'lg:order-2' : 'lg:order-1'
+                    }`}
+                  >
+                    <div>
+                      {/* Hidden on mobile only (the arrows sit on this line there, as in the reference) */}
+                      <Quote
+                        className="hidden md:block w-9 h-9 fill-white text-white mb-5"
+                        aria-hidden
+                      />
+                      {/* No line-clamp: the full quote is shown at every size */}
+                      <blockquote
+                        className="text-base md:text-lg lg:text-[1.35rem] font-semibold leading-snug text-white tracking-tight"
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                      >
+                        {item.quote}
+                      </blockquote>
+                    </div>
+
+                    <div className="pt-5">
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        {(item.metrics ?? []).map((m, mIdx) => (
+                          <div key={mIdx}>
+                            <span
+                              className="text-3xl md:text-4xl font-extrabold text-white block tracking-tight"
+                              style={{ fontFamily: "'Inter', sans-serif" }}
+                            >
+                              {m.value}
+                            </span>
+                            <span
+                              className="text-[11px] md:text-xs text-white/85 font-medium"
+                              style={{ fontFamily: "'Poppins', sans-serif" }}
+                            >
+                              {m.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div
+                        className="text-sm md:text-base font-bold text-white tracking-tight"
+                        style={{ fontFamily: "'Inter', sans-serif" }}
+                      >
+                        {item.brandName}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </motion.div>
+
+        {/* Dots */}
+        <div className="flex items-center justify-center gap-2 mt-8 md:mt-10">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(total + i)}
+              aria-label={`Go to testimonial ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                activeIndex === i ? 'w-8 bg-[#670EF7]' : 'w-2 bg-neutral-300 hover:bg-neutral-400'
+              }`}
+            />
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }

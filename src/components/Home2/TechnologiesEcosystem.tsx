@@ -44,6 +44,7 @@ interface Technology {
   icon?: StaticImageData;
   badge?: string;
   badgeColor?: string;
+  url?: string;
 }
 
 interface Category {
@@ -63,10 +64,10 @@ const categories: Category[] = [
     description: 'WordPress · Strapi · Next.js · React',
     icon: Layers3,
     technologies: [
-      { id: 'wordpress', name: 'WordPress', icon: wordpress },
-      { id: 'strapi', name: 'Strapi', icon: strapi },
-      { id: 'nextjs', name: 'Next.js', icon: next },
-      { id: 'react', name: 'React', icon: react },
+      { id: 'wordpress', name: 'WordPress', icon: wordpress, url: 'https://wordpress.com/' },
+      { id: 'strapi', name: 'Strapi', icon: strapi, url: 'https://strapi.io/' },
+      { id: 'nextjs', name: 'Next.js', icon: next, url: 'https://nextjs.org/' },
+      { id: 'react', name: 'React', icon: react, url: 'https://react.dev/' },
     ],
   },
   {
@@ -75,10 +76,10 @@ const categories: Category[] = [
     description: 'Shopify · WooCommerce · Medusa · Payment Integrations',
     icon: ShoppingBag,
     technologies: [
-      { id: 'shopify', name: 'Shopify', icon: shopifylogo },
-      { id: 'woocommerce', name: 'WooCommerce', icon: woo },
-      { id: 'medusa', name: 'Medusa', icon: medusa },
-      { id: 'payments', name: 'Payment Integrations', icon: stripe },
+      { id: 'shopify', name: 'Shopify', icon: shopifylogo, url: 'https://www.shopify.com/' },
+      { id: 'woocommerce', name: 'WooCommerce', icon: woo, url: 'https://woocommerce.com/' },
+      { id: 'medusa', name: 'Medusa', icon: medusa, url: 'https://medusajs.com/' },
+      { id: 'payments', name: 'Payment Integrations', icon: stripe, url: 'https://stripe.com/' },
     ],
   },
   {
@@ -90,7 +91,7 @@ const categories: Category[] = [
       { id: 'appdev', name: 'Web & Mobile Dev', badge: 'DEV', badgeColor: '#670EF7' },
       { id: 'apis', name: 'APIs', badge: 'API', badgeColor: '#4F46E5' },
       { id: 'crm', name: 'CRM Integrations', badge: 'CRM', badgeColor: '#0EA5E9' },
-      { id: 'automation', name: 'Automation', icon: zapier },
+      { id: 'automation', name: 'Automation', icon: zapier, url: 'https://zapier.com/' },
     ],
   },
   {
@@ -99,9 +100,9 @@ const categories: Category[] = [
     description: 'Google Ads · Meta Ads · GA4 · Reporting',
     icon: Workflow,
     technologies: [
-      { id: 'googleads', name: 'Google Ads', icon: googleadslogo },
-      { id: 'metaads', name: 'Meta Ads', icon: meta, },
-      { id: 'ga4', name: 'GA4', icon: analytics },
+      { id: 'googleads', name: 'Google Ads', icon: googleadslogo, url: 'https://ads.google.com/' },
+      { id: 'metaads', name: 'Meta Ads', icon: meta, url: 'https://www.facebook.com/business/ads' },
+      { id: 'ga4', name: 'GA4', icon: analytics, url: 'https://analytics.google.com/' },
       { id: 'reporting', name: 'Reporting', badge: 'DATA', badgeColor: '#10B981' },
     ],
   },
@@ -364,29 +365,14 @@ export default function TechnologyArchitecture() {
                     {category.technologies.map((tech) => {
                       const rowId = flatTechRowId(category.id, tech.id);
                       const isTechActive = activeTech === rowId;
+                      const cardClasses = `flex items-center gap-2.5 rounded-xl border bg-white px-3 py-2.5 transition-all duration-200 text-left ${
+                        isTechActive
+                          ? 'border-[#670EF7] shadow-[0_6px_20px_rgba(103,14,247,0.14)] ring-1 ring-[#670EF7]/30 scale-[1.02]'
+                          : 'border-neutral-200/90 hover:border-neutral-300'
+                      } ${tech.url ? 'cursor-pointer' : 'cursor-default'}`;
 
-                      return (
-                        <button
-                          key={tech.id}
-                          type="button"
-                          ref={(el) => {
-                            //@ts-ignore
-                            techRefs.current[rowId] = el;
-                          }}
-                          onMouseEnter={() => {
-                            setActiveTech(rowId);
-                            setActiveCategory(category.id);
-                          }}
-                          onMouseLeave={() => {
-                            setActiveTech(null);
-                            setActiveCategory(null);
-                          }}
-                          className={`flex items-center gap-2.5 rounded-xl border bg-white px-3 py-2.5 transition-all duration-200 text-left ${
-                            isTechActive
-                              ? 'border-[#670EF7] shadow-[0_6px_20px_rgba(103,14,247,0.14)] ring-1 ring-[#670EF7]/30 scale-[1.02]'
-                              : 'border-neutral-200/90 hover:border-neutral-300'
-                          }`}
-                        >
+                      const cardContent = (
+                        <>
                           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white overflow-hidden shrink-0 shadow-2xs">
                             {tech.icon ? (
                               <Image 
@@ -408,7 +394,55 @@ export default function TechnologyArchitecture() {
                           <span className="text-sm font-bold text-[#08080C] leading-tight truncate font-poppins">
                             {tech.name}
                           </span>
-                        </button>
+                        </>
+                      );
+
+                      if (tech.url) {
+                        return (
+                          <a
+                            key={tech.id}
+                            href={tech.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${tech.name} official website (opens in a new tab)`}
+                            ref={(el) => {
+                              //@ts-ignore
+                              techRefs.current[rowId] = el;
+                            }}
+                            onMouseEnter={() => {
+                              setActiveTech(rowId);
+                              setActiveCategory(category.id);
+                            }}
+                            onMouseLeave={() => {
+                              setActiveTech(null);
+                              setActiveCategory(null);
+                            }}
+                            className={cardClasses}
+                          >
+                            {cardContent}
+                          </a>
+                        );
+                      }
+
+                      return (
+                        <div
+                          key={tech.id}
+                          ref={(el) => {
+                            //@ts-ignore
+                            techRefs.current[rowId] = el;
+                          }}
+                          onMouseEnter={() => {
+                            setActiveTech(rowId);
+                            setActiveCategory(category.id);
+                          }}
+                          onMouseLeave={() => {
+                            setActiveTech(null);
+                            setActiveCategory(null);
+                          }}
+                          className={cardClasses}
+                        >
+                          {cardContent}
+                        </div>
                       );
                     })}
                   </div>
@@ -449,28 +483,51 @@ export default function TechnologyArchitecture() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {category.technologies.map((tech) => (
-                    <div 
-                      key={tech.id} 
-                      className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-2"
-                    >
-                      <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-neutral-100 overflow-hidden shrink-0">
-                        {tech.icon ? (
-                          <Image src={tech.icon} alt="" width={18} height={18} className="h-7 w-7 object-contain" />
-                        ) : (
-                          <span
-                            className="flex h-full w-full items-center justify-center text-[11px] font-bold text-white font-mono"
-                            style={{ backgroundColor: tech.badgeColor ?? '#670EF7' }}
-                          >
-                            {tech.badge}
-                          </span>
-                        )}
-                      </span>
-                      <span className="text-sm font-semibold text-[#08080C] truncate">
-                        {tech.name}
-                      </span>
-                    </div>
-                  ))}
+                  {category.technologies.map((tech) => {
+                    const mobileCardContent = (
+                      <>
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-neutral-100 overflow-hidden shrink-0">
+                          {tech.icon ? (
+                            <Image src={tech.icon} alt="" width={18} height={18} className="h-7 w-7 object-contain" />
+                          ) : (
+                            <span
+                              className="flex h-full w-full items-center justify-center text-[11px] font-bold text-white font-mono"
+                              style={{ backgroundColor: tech.badgeColor ?? '#670EF7' }}
+                            >
+                              {tech.badge}
+                            </span>
+                          )}
+                        </span>
+                        <span className="text-sm font-semibold text-[#08080C] truncate">
+                          {tech.name}
+                        </span>
+                      </>
+                    );
+
+                    if (tech.url) {
+                      return (
+                        <a 
+                          key={tech.id} 
+                          href={tech.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${tech.name} official website (opens in a new tab)`}
+                          className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-2 hover:border-[#670EF7]/40 transition-colors"
+                        >
+                          {mobileCardContent}
+                        </a>
+                      );
+                    }
+
+                    return (
+                      <div 
+                        key={tech.id} 
+                        className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-2"
+                      >
+                        {mobileCardContent}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             );

@@ -208,7 +208,7 @@ export default function IndustrySelector() {
           {industries.map((ind) => (
             <div
               key={ind.id}
-              className="relative rounded-3xl overflow-hidden min-h-[380px] p-7 sm:p-8 flex flex-col justify-between border border-white/10 shadow-lg group"
+              className="relative rounded-3xl overflow-hidden min-h-[380px] p-6 md:p-8 flex flex-col justify-between border border-white/10 shadow-lg group"
             >
               <Image 
                 src={ind.image} 
@@ -217,7 +217,7 @@ export default function IndustrySelector() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08080C] via-[#08080C]/80 to-[#08080C]/40" />
+              <div className="absolute inset-0 bg-[#08080C]/70" />
 
               <div className="relative z-10 flex items-center justify-between">
                 <span 
