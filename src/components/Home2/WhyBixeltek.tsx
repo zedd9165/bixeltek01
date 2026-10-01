@@ -66,7 +66,7 @@ export default function WhyBixeltek() {
       <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">
         
         {/* Manifesto Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20 lg:mb-24">
+        <div className="max-w-6xl mx-auto text-center mb-16 sm:mb-20 lg:mb-24">
           <div 
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#670EF7]/20 bg-[#670EF7]/10 mb-6"
             style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -81,7 +81,7 @@ export default function WhyBixeltek() {
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#08080C] leading-[1.05] mb-8"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            You Don&apos;t Need Another Agency.
+            You Don&apos;t Need Another Agency.<br className='hidden md:inline'/>
               You Need Commercial Engineers.
           </h2>
 
