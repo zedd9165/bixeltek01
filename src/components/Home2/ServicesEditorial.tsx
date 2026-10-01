@@ -55,18 +55,18 @@ const services: ServiceCard[] = [
     gridCopy: 'Digital products for customers, teams and business processes that need more than an off-the-shelf tool.',
     expandedCopy:
       'We develop web applications, mobile apps, portals and internal platforms for defined users and workflows. Our team helps shape the requirements, design the experience, build the functionality and connect it with the systems it depends on. The work is scoped around what the product needs to do at launch and how it may evolve.',
-    labels: ['Web Apps', 'Mobile Apps', 'Customer Portals', 'Internal Platforms', 'APIs'],
+    labels: ['Web Apps', 'Mobile Apps', 'Customer Portals', 'Internal Platforms', 'APIs', 'Conversion Optimization'],
     cta: 'Explore Application Development',
     link: '/services/app-development',
     icon: Smartphone
   },
   {
     id: '04',
-    title: 'Google Ads Management & Paid Media',
+    title: 'Google Ads Management',
     gridCopy: 'Campaigns built to reach people with relevant intent and turn advertising spend into qualified opportunities.',
     expandedCopy:
       'We plan and manage Google Ads campaigns around the searches, locations and services that matter to your business. We support Meta Ads where the audience and offer call for it. Campaign structure, messaging, landing pages, conversion tracking and optimization form one acquisition journey. Reporting focuses on enquiries, sales and the quality of results, not clicks in isolation.',
-    labels: ['Google Ads Management', 'PPC', 'Meta Ads', 'Landing Pages', 'Conversion Tracking'],
+    labels: ['Google Ads Management', 'PPC', 'Meta Ads', 'Landing Pages', 'Conversion Tracking','GA4 & Analytics'],
     cta: 'Explore Google Ads Management',
     link: '/services/google-ads',
     icon: TrendingUp
@@ -84,11 +84,11 @@ const services: ServiceCard[] = [
   },
   {
     id: '06',
-    title: 'Automation, Analytics & Optimization',
+    title: 'Automation',
     gridCopy: 'Connect marketing, enquiries and operations so fewer opportunities are lost between tools and teams.',
     expandedCopy:
       'We improve what happens after a customer clicks, submits a form or places an order. That can mean CRM integrations, lead routing, reporting, customer communication workflows, conversion optimization or practical automation. We find where information is lost or manual work slows the business, then build a more dependable process.',
-    labels: ['CRM Integrations', 'Automation', 'GA4 & Analytics', 'Conversion Optimization'],
+    labels: ['CRM Integrations', 'Automation',],
     cta: 'Explore Connected Systems',
     link: '/analytics-and-cro-services',
     icon: Workflow

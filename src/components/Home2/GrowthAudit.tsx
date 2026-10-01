@@ -118,7 +118,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Not sure where the biggest opportunity is?{' '}
-            <span className="bg-gradient-to-r from-[#670EF7] via-[#8B45FF] to-white bg-clip-text text-transparent">
+            <span className="text-[#8C45FF]">
               Let’s find out.
             </span>
           </h2>
@@ -168,7 +168,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
 
                     <div className="truncate">
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-mono text-[#8C45FF] font-semibold">
+                        <span className="text-sm font-mono text-[#8C45FF] font-semibold">
                           {vec.num}
                         </span>
                         <h3 
@@ -217,10 +217,10 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-mono uppercase text-[#8C45FF] tracking-wider font-semibold">
+                          <span className="text-sm font-mono uppercase text-[#8C45FF] tracking-wider font-semibold">
                             Assessment Focus {activeVector.num}
                           </span>
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#670EF7]/15 text-[#8C45FF] border border-[#670EF7]/30">
+                          <span className="text-sm font-mono px-2 py-0.5 rounded bg-[#ffff]/15 text-[#8C45FF] border border-[#670EF7]/30">
                             Initial Review
                           </span>
                         </div>
@@ -242,7 +242,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                       <div className="flex items-center gap-2 mb-2 text-[#8C45FF]">
                         <AlertCircle className="w-4 h-4 shrink-0 text-[#670EF7]" />
                         <span 
-                          className="text-xs uppercase tracking-wider font-bold"
+                          className="text-sm uppercase tracking-wider font-bold"
                           style={{ fontFamily: "'Poppins', sans-serif" }}
                         >
                           Key Question
@@ -261,7 +261,7 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
                       <div className="flex items-center gap-2 mb-2 text-[#8C45FF]">
                         <Terminal className="w-4 h-4 shrink-0" />
                         <span 
-                          className="text-xs uppercase tracking-wider font-bold"
+                          className="text-sm uppercase tracking-wider font-bold"
                           style={{ fontFamily: "'Poppins', sans-serif" }}
                         >
                           What We Review
