@@ -1,56 +1,106 @@
 'use client';
 import tumblewashlogo from "@/assets/TumbleWash-Logo.webp";
 import daddysharklogo from "@/assets/daddyshark logo-01.png";
-import revita from "@/assets/Revita-Logo-without-background-02-Colored-Font-01.png";
-import markham from "@/assets/Logo.png.webp";
-import durrat from "@/assets/durrat_logo.png";
-import daprbins from "@/assets/DAPrBINS.logo_.jpg";
-import oma from "@/assets/OMA-Computer-System-Trading-2-2048x426.webp";
-import rooted from '@/assets/Rooted_Logo_new-4-wbg.png'
-import {motion} from 'framer-motion'
-import anata from '@/assets/Ananta Ananda-01.png'
-import Image from 'next/image';
+import { motion } from 'framer-motion';
+import anata from '@/assets/Ananta Ananda-01.png';
+import cycas from '@/assets/CYCAS-INVESTMENT-ADVISORS-2048x1677.png';
+import durrat from '@/assets/durrat_logo.png';
+import edify from '@/assets/edify-new-logo-1.webp';
+import wheels from '@/assets/head-logo.png';
+import markham from '@/assets/Logo-300x79.png.webp';
+import revita from '@/assets/Revita-Logo-without-background-02-Colored-Font-01.png';
+import blooming from '@/assets/Logo2-2048x548.png';
+import pawgo from '@/assets/pawgologo.png';
+import listiyo from '@/assets/ListiyoFamilyDental_Primary_Mark.webp';
+import rooted from '@/assets/Rooted_Logo_new-4-wbg.png';
+import oma from '@/assets/OMA-Computer-System-Trading-2-2048x426.webp';
+import cloud from '@/assets/logo-2.png';
+import binhindi from '@/assets/Bin-Hindi-Logo_Dark.png';
+import innovwayz from '@/assets/innovwayz.avif';
+import promenade from '@/assets/PDlogo_red3.webp';
+import cellfashion from '@/assets/cell-fashion-us.webp';
+import hasiniestate from '@/assets/hasiniestates.webp';
+import martin from '@/assets/martin.png';
+import whitestar from '@/assets/white-star.webp';
+import Enaara from '@/assets/enaara.webp';
+import wefound from '@/assets/we-found-global.webp';
+import Image, { StaticImageData } from 'next/image';
+
+type MarqueeLogo = {
+  src: StaticImageData;
+  name: string;
+  scale?: number;
+  bgColor?: string; // card background for logos that are white/light, e.g. '#000'
+};
+
+const marqueeLogos: MarqueeLogo[] = [
+  { src: tumblewashlogo, name: 'Tumble Wash' },
+  { src: daddysharklogo, name: 'Daddy Shark', scale: 1.3 },
+  { src: revita, name: 'Revita Dentistry', scale: 1.3 },
+  { src: markham, name: 'Markham Dentistry' },
+  { src: durrat, name: 'Durrat', scale: 1.3 },
+  { src: oma, name: 'Oma' ,scale: 1.1 },
+  { src: rooted, name: 'Rooted' },
+  { src: anata, name: 'Anata',scale: 1.2 },
+  { src: cycas, name: 'Cycas', scale: 1.3 },
+  { src: cellfashion, name: 'Cell Fashion' },
+  { src: edify, name: 'Edify' },
+  { src: wheels, name: 'Wheels On Site', scale: 0.8 },
+  { src: innovwayz, name: 'Innovwayz', scale: 0.8 },
+  { src: promenade, name: 'Promenade Dentistry' },
+  { src: whitestar, name: 'White Star' },
+  { src: hasiniestate, name: 'Hasini Estate', scale: 1.2 },
+  { src: Enaara, name: 'Enaara School', scale: 1 },
+  { src: blooming, name: 'Blooming' },
+  { src: pawgo, name: 'Pawgo' },
+  { src: listiyo, name: 'Listiyo' },
+  { src: cloud, name: 'Cloud', scale: 1.3 },
+  { src: binhindi, name: 'Bin Hindi', scale: 1.2 },
+  { src: martin, name: 'Martin' },
+  { src: wefound, name: 'We Found Global', scale: 1.2, bgColor: '#000' },
+];
+
+const MARQUEE_DURATION = 20;
 
 export const LogoTicker2 = () => {
   return (
-    <section className='pt-10 bg-black   flex flex-col gap-20'>
-
-      <div className="w-[100%] md:w-[90%] lg:w-[90%] mx-auto">
-        <div className='flex items-center'>
-        
-          <div className=' flex flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_96%,transparent)]'>
-          <motion.div 
-          initial = {{translateX : '-50%'}}
-          animate = {{translateX : '0'}}
-          transition={{
-            repeat: Infinity,
-            duration: 30,
-            ease: 'linear',
-          }}
-          className="flex flex-none gap-10 justify-center items-center">
-            {[
-              tumblewashlogo,
-              daddysharklogo,
-              revita,
-              markham,
-              durrat,
-              oma,
-              rooted,    
-              anata,
-              tumblewashlogo,
-              daddysharklogo,
-              revita,
-              markham,
-              durrat,
-              oma,
-              rooted, 
-              anata   
-            ].map((logo, index) => (
-              <div key={index}>
-                <Image src={logo} alt={`Company Logo ${index + 1}`} className=' h-14 md:h-14 w-auto object-contain' />
-              </div>
-            ))}
-          </motion.div>
+    <section className="pt-10 bg-black flex flex-col gap-20">
+      <div className="w-full md:w-[90%] mx-auto">
+        <div className="flex items-center">
+          <div className="flex flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_96%,transparent)]">
+            <motion.div
+              key={`logo-marquee-${MARQUEE_DURATION}`}
+              initial={{ translateX: '-50%' }}
+              animate={{ translateX: '0%' }}
+              transition={{
+                repeat: Infinity,
+                duration: MARQUEE_DURATION,
+                ease: 'linear',
+              }}
+              className="flex flex-none items-center"
+            >
+             {[...marqueeLogos, ...marqueeLogos].map((logo, index) => (
+                <div key={index} className="shrink-0 px-5 md:px-6">
+                  {/* Card is always white */}
+                  <div className="flex items-center justify-center w-28 h-12 md:w-44 md:h-20 px-3 rounded-md bg-white overflow-hidden">
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={160}
+                      height={50}
+                      className={`w-auto h-auto max-w-full max-h-8 md:max-h-12 object-contain ${
+                        logo.bgColor ? 'rounded px-2 py-1' : ''
+                      }`}
+                      style={{
+                        transform: `scale(${logo.scale ?? 1})`,
+                        // inline style, because a runtime class like bg-[${...}] is never generated by Tailwind
+                        ...(logo.bgColor ? { backgroundColor: logo.bgColor } : {}),
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>

@@ -54,6 +54,7 @@ export async function POST(req: Request) {
       websiteType,
       seoGoals,
       ppcPlatform,
+      googleAdsStatus,
       city,
     } = data;
 
@@ -82,13 +83,27 @@ export async function POST(req: Request) {
       serviceDetails += `\nWebsite Type: ${websiteType}`;
     }
 
-    if (services === "SEO Optimization" && seoGoals) {
+    if (services === "Search Engine Optimization" && seoGoals) {
       serviceDetails += `\nSEO Goals: ${seoGoals}`;
     }
 
-    if (services === "PPC Campaigns" && ppcPlatform) {
-      serviceDetails += `\nPPC Platform: ${ppcPlatform}`;
+    if (services === "Google Ads and PPC") {
+      if (googleAdsStatus) {
+        serviceDetails += `\nCurrently Running Google Ads: ${googleAdsStatus}`;
+      }
+      if (googleAdsStatus === "Yes") {
+        serviceDetails += `\nCurrent Monthly Ad Spend: ${marketingBudget || "N/A"}`;
+      }
+      if (ppcPlatform) {
+        serviceDetails += `\nPPC Platform: ${ppcPlatform}`;
+      }
     }
+
+    // For Google Ads leads the spend is already listed above, so skip the generic budget line
+    const budgetLine =
+      services === "Google Ads and PPC"
+        ? ""
+        : `\nMarketing Budget: ${marketingBudget || "N/A"}`;
 
     const mailOptions = {
       from: '"Bixeltek Website" <noreply@bixeltek.com>',
@@ -99,8 +114,7 @@ Name: ${fullName}
 Email: ${email}
 Phone: ${phone}
 Company: ${company}
-Country/City: ${location}
-Marketing Budget: ${marketingBudget || "N/A"}
+Country/City: ${location}${budgetLine}
 Interested Service: ${services}${serviceDetails}
 Message: ${message}
 Website: ${website}
@@ -160,6 +174,8 @@ Website: ${website}
     //   source: "Website Form Submission",
     //   custom_message: message,
     //   custom_service: services,
+    //   // custom_running_google_ads: googleAdsStatus,
+    //   // custom_monthly_ad_spend: marketingBudget,
     // };
 
     // const response = await frappe.post("/api/resource/CRM Lead", lead);

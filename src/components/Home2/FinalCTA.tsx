@@ -10,7 +10,7 @@ interface FinalCTAProps {
 
 export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
   return (
-    <section className="relative w-full py-28 sm:py-36 lg:py-40 bg-[#08080C] text-white border-b border-white/[0.08] overflow-hidden">
+    <section className="relative w-full py-28 sm:py-36 lg:py-40 bg-[#08080C] text-white border-b border-white/[0.08] overflow-hidden" id='final-cta'>
       
       {/* Precision Structural Coordinate Mesh */}
       <div 
@@ -85,15 +85,15 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.06] mb-8"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Tell us where your business is headed.{' '}
-              <span className="block bg-gradient-to-r from-white via-[#D8C5FF] to-[#8B45FF] bg-clip-text text-transparent">
+              Tell us where your business is headed.{" "}
+              <span className="bg-gradient-to-r from-white via-[#D8C5FF] to-[#8B45FF] bg-clip-text text-transparent">
                 We’ll help you build the way forward.
               </span>
             </h2>
             
             {/* Description */}
             <p 
-              className="text-base sm:text-lg md:text-xl text-neutral-300 font-normal leading-relaxed max-w-2xl mb-12"
+              className="text-base sm:text-lg md:text-xl text-neutral-300 font-normal leading-relaxed max-w-3xl mb-12"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Whether you are launching a business, rebuilding an outdated web presence, scaling customer acquisition or connecting platforms behind the scenes, we would welcome the conversation. We will look at what you have today, understand what you want to achieve and share a clear perspective on the most practical next step.
@@ -108,7 +108,7 @@ export default function FinalCTA({ onOpenAudit }: FinalCTAProps) {
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 <span className="shrink-0">
-                  Discuss Your Project
+                 Contact Us Now
                 </span>
 
                 <div className="w-8 h-8 rounded-full bg-[#08080C] flex items-center justify-center shrink-0 transform group-hover:translate-x-1 transition-transform">

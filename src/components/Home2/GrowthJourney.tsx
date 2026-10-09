@@ -8,7 +8,7 @@ import teamImg from '@/assets/bixeltek-team-3.jpeg'
 
 export default function GrowthJourney() {
   return (
-    <section className="relative w-full py-16 md:py-28 lg:py-36 bg-[#FFFFFF] text-[#08080C] overflow-hidden border-b border-neutral-200">
+    <section className="relative w-full py-16 md:py-28 bg-[#FFFFFF] text-[#08080C] overflow-hidden border-b border-neutral-200">
   
       {/* Standard Section Container */}
       <div className="relative w-full lg:max-w-[90%] mx-auto px-6 md:px-12 lg:px-16 z-10">

@@ -168,9 +168,6 @@ export default function GrowthAudit({ onOpenAudit }: GrowthAuditProps) {
 
                     <div className="truncate">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-mono text-[#8C45FF] font-semibold">
-                          {vec.num}
-                        </span>
                         <h3 
                           className={`text-sm sm:text-base font-bold truncate transition-colors ${
                             isSelected ? 'text-white' : 'text-neutral-300 group-hover:text-white'

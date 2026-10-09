@@ -33,7 +33,7 @@ const services: ServiceCard[] = [
     gridCopy: 'Websites that explain your business clearly, earn trust and make it easy for customers to take the next step.',
     expandedCopy:
       'We design and develop corporate websites, service websites and campaign landing pages around the questions customers ask before they enquire or buy. That means clear structure, considered UX, responsive design, fast performance, a CMS your team can use and conversion paths that suit the business. We work with WordPress, headless CMS and custom-coded solutions according to the requirements.',
-    labels: ['Corporate Websites', 'Website Redesign', 'WordPress', 'Custom Development', 'Landing Pages'],
+    labels: ['Corporate Websites', 'Website Redesign', 'WordPress', 'Custom Development', 'Landing Pages', 'Web Apps', 'APIs'],
     cta: 'Explore Web Design & Development',
     link: '/services/web-design',
     icon: Layout
@@ -51,11 +51,11 @@ const services: ServiceCard[] = [
   },
   {
     id: '03',
-    title: 'Web & Mobile Applications',
+    title: 'Mobile App & Development',
     gridCopy: 'Digital products for customers, teams and business processes that need more than an off-the-shelf tool.',
     expandedCopy:
-      'We develop web applications, mobile apps, portals and internal platforms for defined users and workflows. Our team helps shape the requirements, design the experience, build the functionality and connect it with the systems it depends on. The work is scoped around what the product needs to do at launch and how it may evolve.',
-    labels: ['Web Apps', 'Mobile Apps', 'Customer Portals', 'Internal Platforms', 'APIs', 'Conversion Optimization'],
+      'We develop mobile apps, portals and internal platforms for defined users and workflows. Our team helps shape the requirements, design the experience, build the functionality and connect it with the systems it depends on. The work is scoped around what the product needs to do at launch and how it may evolve.',
+    labels: ['Mobile Apps', 'Customer Portals', 'Internal Platforms',  'Conversion Optimization'],
     cta: 'Explore Application Development',
     link: '/services/app-development',
     icon: Smartphone
@@ -90,7 +90,7 @@ const services: ServiceCard[] = [
       'We improve what happens after a customer clicks, submits a form or places an order. That can mean CRM integrations, lead routing, reporting, customer communication workflows, conversion optimization or practical automation. We find where information is lost or manual work slows the business, then build a more dependable process.',
     labels: ['CRM Integrations', 'Automation',],
     cta: 'Explore Connected Systems',
-    link: '/analytics-and-cro-services',
+    link: '#final-cta',
     icon: Workflow
   }
 ];
@@ -106,7 +106,7 @@ export default function ServicesEditorial() {
   };
 
   return (
-    <section className="bg-[#FFFFFF] text-[#08080C] py-16 md:py-32 lg:py-40 border-b border-neutral-200/90 relative overflow-hidden">
+    <section className="bg-[#FFFFFF] text-[#08080C] py-16 md:py-28 border-b border-neutral-200/90 relative overflow-hidden">
       
       {/* Background Ambience: Subtle Soft Purple Spotlights on White */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
