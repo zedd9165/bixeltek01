@@ -28,7 +28,7 @@ const solutions: Solution[] = [
       'APIs & integrations',
       'Custom CRMs & internal tools',
     ],
-    link: '/services/web-design',
+    link: '#final-cta',
   },
   {
     number: '02',
@@ -43,7 +43,7 @@ const solutions: Solution[] = [
       'Conversion tracking & analytics',
       'Landing pages & CRO',
     ],
-    link: '/services/google-ads',
+    link: '#final-cta',
     featured: true,
   },
   {
@@ -59,7 +59,7 @@ const solutions: Solution[] = [
       'Reporting dashboards',
       'Lead follow-up systems',
     ],
-    link: '/services/automation',
+    link: '#final-cta',
   },
 ];
 
@@ -67,7 +67,7 @@ export default function Solutions() {
   return (
     <section
       id="solutions"
-      className="relative w-full overflow-hidden border-b border-neutral-200/90 bg-[#FFF] py-16 text-[#08080C] md:py-28 lg:py-36"
+      className="relative w-full overflow-hidden border-b border-neutral-200/90 bg-[#FFF] py-16 text-[#08080C]"
     >
       {/* Subtle structural background */}
       {/* <div className="pointer-events-none absolute inset-0">

@@ -84,7 +84,7 @@ export default function IndustrySelector() {
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 sm:mb-20 md:mb-24 pb-10 border-b border-white/[0.08]">
-          <div className="max-w-3xl mx-auto text-center gap-4 lg:gap-6">
+          <div className="max-w-5xl mx-auto text-center gap-4 lg:gap-6">
             <div 
               className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full border border-[#8C45FF]/30 bg-[#8C45FF]/10 mb-6"
               style={{ fontFamily: "'Poppins', sans-serif" }}

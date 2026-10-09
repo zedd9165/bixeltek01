@@ -6,9 +6,8 @@ import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 
-import tumblewashImg from '@/assets/bixeltek-team-3.jpeg';
+import caseStudy from '@/assets/creative-people-working-office.jpg';
 import tumblewashLogo from '@/assets/TumbleWash-Logo.webp';
-import guerr from '@/assets/guerr_logo_black.png'
 import revitaLogo from '@/assets/Revita-Logo-without-background-02-Colored-Font-01.png';
 
 
@@ -34,7 +33,8 @@ const clientCards: ClientCard[] = [
   {
     id: 'guerr-clothing',
     client: 'Guerr Clothing',
-    logo: guerr,  
+    logo: null,
+    logoText: 'GUERR',  
     scale:1.8,
     description:
       'Direct-to-consumer fashion brand requiring headless architecture, custom drops, and high-conversion checkout.',
@@ -262,7 +262,7 @@ export default function FeaturedCaseStudy() {
           <div className="group relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-3xl border border-neutral-300 shadow-xl sm:min-h-[520px] md:min-h-[580px] lg:min-h-[640px]">
             {/* Background Image */}
             <Image
-              src={tumblewashImg}
+              src={caseStudy}
               alt="Bixeltek team working on digital growth projects"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"

@@ -1,14 +1,12 @@
 'use client';
-import { count } from 'console';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
-import Image from 'next/image';
-import Aboutusimage from '@/assets/Mk power_.jpeg';
+import toast from 'react-hot-toast';
 import Link from 'next/link';
 
-
+// Options for "Are you currently running Google Ads?"
+const adsStatusOptions = ["Yes", "No", "Planning to Start"];
 
 export default function ContactFromNew() {
 
@@ -27,7 +25,8 @@ export default function ContactFromNew() {
         otherservices: '',
         websiteType: '',
         seoGoals: '',        // 👈 for SEO
-        ppcPlatform: ''      // 👈 for PPC
+        ppcPlatform: '',     // 👈 for PPC
+        googleAdsStatus: ''  // 👈 for Google Ads: Yes / No / Planning to Start
     });
 
     const countries = [
@@ -78,7 +77,15 @@ export default function ContactFromNew() {
 
 
     const handleDropdownSelect = (field: string, value: string) => {
-        setFormData({ ...formData, [field]: value });
+        setFormData((prev) => {
+            const next = { ...prev, [field]: value };
+            // Switching service clears the Google Ads follow-up answers
+            if (field === 'services' && value !== prev.services) {
+                next.googleAdsStatus = '';
+                next.marketingBudget = '';
+            }
+            return next;
+        });
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -100,7 +107,19 @@ export default function ContactFromNew() {
             return;
         }
 
-         const loadingToast = toast.loading("Submitting your form...");
+        // Google Ads follow-up validation
+        if (formData.services === 'Google Ads and PPC') {
+            if (!formData.googleAdsStatus) {
+                toast.error("Please tell us if you are currently running Google Ads.");
+                return;
+            }
+            if (formData.googleAdsStatus === 'Yes' && !formData.marketingBudget.trim()) {
+                toast.error("Please enter your current monthly ad spend.");
+                return;
+            }
+        }
+
+        const loadingToast = toast.loading("Submitting your form...");
 
 
         try {
@@ -114,7 +133,7 @@ export default function ContactFromNew() {
 
             if (!response.ok) throw new Error(result.error || 'Failed to send message.');
 
-        toast.success("Thank you for filling the form!", { id: loadingToast });
+            toast.success("Thank you for filling the form!", { id: loadingToast });
 
             window.setTimeout(() => {
                 router.push('/thank-you'); // Redirect to thank you page
@@ -135,28 +154,20 @@ export default function ContactFromNew() {
                 websiteType: '',
                 seoGoals: '',
                 ppcPlatform: '',
+                googleAdsStatus: '',
                 message: ''
             });
         } catch (error: any) {
             console.error("Error submitting form:", error);
-            alert(`Something went wrong: ${error.message}`); // Show exact error
-             toast.error(`Something went wrong: ${error.message}`, { id: loadingToast });
+            toast.error(`Something went wrong: ${error.message}`, { id: loadingToast });
         }
     };
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpen1, setIsOpen1] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
     const [isOpen4, setIsOpen4] = useState(false);
     const [isOpen5, setIsOpen5] = useState(false);
     const [search, setSearch] = useState(""); // State for filtering
     const [filteredCountries, setFilteredCountries] = useState(countries); // Dynamic list
-
-    const toggleDropdown1 = () => {
-        setIsOpen1(!isOpen1);
-    }
-    const toggleDropdown3 = () => {
-        setIsOpen4(!isOpen4);
-    }
 
     const toggleDropdown2 = () => {
         setIsOpen2(!isOpen2);
@@ -177,7 +188,7 @@ export default function ContactFromNew() {
     };
 
 
-    return (       
+    return (
         <div className="w-full md:w-[100%] p-6 relative bg-white rounded-lg shadow-md">
             <form className="space-y-4" onSubmit={handleSubmit} id='form'>
                 <div className="flex flex-col md:flex-row gap-5">
@@ -294,7 +305,7 @@ export default function ContactFromNew() {
                             </div>
                         )}
                     </div>
-                    
+
                 </div>
 
                 {/* Services Dropdown */}
@@ -351,8 +362,8 @@ export default function ContactFromNew() {
                 {/* Conditional Inputs Based on Selected Service */}
                 {formData.services === 'Web Design and Development' && (
                     <>
-            
-                    <div className="w-full">
+
+                        <div className="w-full">
                             <div className="relative">
                                 <button
                                     type="button"
@@ -371,7 +382,7 @@ export default function ContactFromNew() {
                                             "Blogging Website",
                                             "Portfolio Website",
                                             "Corporate Website",
-                                            
+
                                         ].map((option) => (
                                             <div
                                                 key={option}
@@ -406,7 +417,7 @@ export default function ContactFromNew() {
                                             "Periodic Website Maintenance",
                                             "On Page SEO Implementation",
                                             "Speed Optimizations Audits",
-                                            "Ecommerce Content Management (Product Uploads Etc)",
+                                            "Ecommerce Content Management (Product Uploads Etc)",
                                         ].map((option) => (
                                             <div
                                                 key={option}
@@ -426,20 +437,54 @@ export default function ContactFromNew() {
                     </>
                 )}
 
-               
+                {/* Google Ads follow-up: running status + current spend */}
+                {formData.services === 'Google Ads and PPC' && (
+                    <div className="w-full space-y-4">
+                        <div>
+                            <label className="text-sm font-medium text-gray-700">
+                                Are you currently running Google Ads?<span className='text-red-600'>*</span>
+                            </label>
+                            <div className="grid grid-cols-3 gap-3 mt-2">
+                                {adsStatusOptions.map((status) => (
+                                    <button
+                                        key={status}
+                                        type="button"
+                                        onClick={() =>
+                                            setFormData((prev) => ({
+                                                ...prev,
+                                                googleAdsStatus: status,
+                                                // spend only applies when already running ads
+                                                marketingBudget: status === 'Yes' ? prev.marketingBudget : '',
+                                            }))
+                                        }
+                                        className={`py-3 px-3 rounded-lg text-sm font-medium border transition ${
+                                            formData.googleAdsStatus === status
+                                                ? "bg-gradient-to-tr from-[black] via-[#090040] to-[#483aa0] text-white border-transparent shadow-md"
+                                                : "bg-white border-gray-300 text-gray-700 hover:border-[#670ef7]"
+                                        }`}
+                                    >
+                                        {status}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
 
-                {formData.services === 'PPC Campaigns' && (
-                    <div className="w-full">
-                        <label htmlFor="budget" className="text-sm font-medium text-gray-700">Whats Your Current Ads Spend?</label>
-                        <input
-                            type="text"
-                            id="budget"
-                            name="marketingBudget"
-                            value={formData.marketingBudget}
-                            onChange={handleInputChange}
-                            className="w-full mt-2 p-3 border border-gray-300 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#670ef7]"
-                            placeholder="What is your marketing budget?"
-                        />
+                        {formData.googleAdsStatus === 'Yes' && (
+                            <div className="w-full">
+                                <label htmlFor="budget" className="text-sm font-medium text-gray-700">
+                                    What&apos;s your current monthly ad spend?<span className='text-red-600'>*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="budget"
+                                    name="marketingBudget"
+                                    value={formData.marketingBudget}
+                                    onChange={handleInputChange}
+                                    className="w-full mt-2 p-3 border border-gray-300 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#670ef7]"
+                                    placeholder="e.g. $2,000 / ₹1,50,000 per month"
+                                />
+                            </div>
+                        )}
                     </div>
                 )}
 
@@ -465,6 +510,6 @@ export default function ContactFromNew() {
             </form>
             <p className='text-black text-center mt-5 text-xs' >By submitting the form above, you consent to receive informational SMS and SMS-based appointment reminders from Bixeltek&apos;s Ideas at the phone number provided. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <Link href={'privacy-policy'}><span className='underline underline-offset-2'>Privacy Policy & Terms.</span></Link> </p>
         </div>
- 
+
     )
 }

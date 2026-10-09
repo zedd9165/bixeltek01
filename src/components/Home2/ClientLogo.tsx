@@ -44,7 +44,7 @@ const clientLogosSingleRow: ClientLogo[] = [
   { id: 'c2', name: 'Cycas investments', src: cycas, scale: 1.3, href: 'https://cycas.co.in/' },
   { id: 'c3', name: 'Cell Fashion', src: cellfashion, scale: 1, href: 'https://cellfashionusa.com/' },
   { id: 'c4', name: 'Durrat', src: durrat, scale: 1.3 },
-  { id: 'c5', name: 'Edify', src: edify, scale: 1, href: 'https://edifyschools.com/' },
+  { id: 'c5', name: 'Edify', src: edify, scale: 1, href: 'https://edifyworldschoolbalapur.com/' },
   { id: 'c6', name: 'Wheels On Site', src: wheels, scale: 0.8, href: 'https://wheelsonsite.com/' },
   { id: 'c17', name: 'Innovwayz', src: innovwayz, scale: 0.8, href: 'https://innovwayz.com/' },
   { id: 'c18', name: 'Promenade Dentistry', src: promenade, scale: 1, href: 'https://www.promenadedds.com/' },
@@ -133,7 +133,7 @@ export default function ClientTrustMarquee() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full bg-white text-white border-b border-white/[0.08] overflow-hidden py-0">
+    <section className="relative w-full bg-white text-white overflow-hidden py-0">
       {/* GPU accelerated seamless infinite scroll */}
       <style
         dangerouslySetInnerHTML={{

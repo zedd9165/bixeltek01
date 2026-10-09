@@ -39,7 +39,7 @@ const partners: PartnerBadge[] = [
   {
     id: 'strapi',
     name: 'Strapi',
-    badgeLabel: 'Agency Partner',
+    badgeLabel: 'Strapi Partner',
     src: strapiLogo,
     scale: 1,
   },
@@ -72,7 +72,7 @@ const capabilities = [
   { name: 'Google Ads Management', link: '/services/google-ads' },
   { name: 'SEO Services', link: '/services/seo-services' },
   { name: 'Application Development', link: '/services/app-development' },
-  { name: 'Automation & Analytics', link: '/analytics-and-cro-services' },
+  { name: 'Automation & Analytics', link: '#final-cta' },
 ];
 
 export default function HeroGrowthSystem({ 
@@ -164,8 +164,8 @@ export default function HeroGrowthSystem({
             className="text-4xl md:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.06] mb-7 drop-shadow-sm"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            We build the digital systems that win customers,{' '}
-            <span className="bg-gradient-to-r from-white via-[#D8C5FF] to-[#8B45FF] bg-clip-text text-transparent">
+            We build the digital systems that win customers{' '}
+            <span className="text-[#8B45FF]">
               and run the growth that fills them.
             </span>
           </motion.h1>

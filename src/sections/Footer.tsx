@@ -8,7 +8,7 @@ import { Mail } from 'lucide-react';
 
 export const Footer = () => {
   return (
-    <footer className="w-full pt-0 pb-16">
+    <footer className="w-full pt-0 pb-16 bg-black">
       <div className="mx-auto max-w-[97%] px-4 sm:px-6 lg:px-8">
         <Newsletter />
         <div className="grid grid-cols-2 min-[690px]:grid-cols-4 lg:grid-cols-5 gap-4 xl:gap-8 pt-14 pb-10 max-w-xs mx-auto min-[690px]:max-w-2xl lg:max-w-full">

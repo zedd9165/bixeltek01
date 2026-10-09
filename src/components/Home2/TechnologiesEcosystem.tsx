@@ -205,10 +205,10 @@ export default function TechnologyArchitecture() {
       <div className="relative mx-auto lg:max-w-[90%] px-5 sm:px-6 lg:px-8">
         
         {/* HEADER */}
-        <div className="mx-auto max-w-4xl text-center mb-16 sm:mb-20">
+        <div className="mx-auto max-w-5xl text-center mb-16 sm:mb-20">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#670EF7]/20 bg-[#670EF7]/5 px-3.5 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-[#670EF7] animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#670EF7]">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#670EF7] font-poppins">
               PLATFORMS & TECHNOLOGY
             </span>
           </div>
@@ -217,7 +217,7 @@ export default function TechnologyArchitecture() {
           >
             Built on technology that fits the work.
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-neutral-600 sm:text-lg"
+          <p className="mx-auto mt-4 max-w-4xl text-base leading-relaxed text-neutral-600 md:text-lg"
           style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             A platform decision affects what customers experience and what your team can manage later. We work with WordPress, Shopify, WooCommerce, modern development frameworks, commerce and content systems, and tools for advertising, analytics and automation. We recommend the stack based on business requirements, integrations, ownership and the support it needs after launch.
