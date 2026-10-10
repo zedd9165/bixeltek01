@@ -17,7 +17,7 @@ const industries = [
     focus: 'Complex Offers & Long Cycles',
     description:
       'When the offer is complex or the buying cycle is long, the website must do more than look credible. We help businesses explain their value, guide prospective buyers toward an enquiry and connect that journey with the teams responsible for follow-up.',
-    cta: 'Discuss Your Requirements',
+    cta: 'Discuss Your Project',
     link: '/contact-us',
     image: b2bImg,
     tag: 'B2B & Established'
@@ -28,7 +28,7 @@ const industries = [
     focus: 'Trust & Local Demand',
     description:
       'Choosing a provider requires trust. We help practices present their care clearly, improve local visibility and create better journeys from search or advertising to a patient enquiry.',
-    cta: 'Explore Healthcare Work',
+    cta: 'Explore Healthcare Solutions',
     link: '/industries/dental-marketing-agency',
     image: dentalImg,
     tag: 'Healthcare'
@@ -39,8 +39,8 @@ const industries = [
     focus: 'Storefront to Scale',
     description:
       'From a new brand’s first store to a growing catalogue that needs a better platform, we design commerce experiences that connect product discovery, buying and the operations behind every order.',
-    cta: 'Explore Ecommerce',
-    link: '/ecommerce-websites',
+    cta: 'Explore Ecommerce Solutions',
+    link: '/services/ecommerce-development',
     image: ecommerceImg,
     tag: 'Ecommerce'
   },
@@ -50,7 +50,7 @@ const industries = [
     focus: 'Location Pages & Inbound',
     description:
       'Help customers find the right service in the right place, understand why they should choose you and contact the right team. We connect location pages, local SEO, Google Ads and enquiry handling around that journey.',
-    cta: 'Explore Local Growth',
+    cta: 'Explore Local Growth Solutions',
     link: '/local-seo',
     image: localServiceImg,
     tag: 'Local Services'

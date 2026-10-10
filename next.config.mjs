@@ -37,9 +37,39 @@ const nextConfig = {
         permanent:true
       },
       {
-        source:'/dental-marketing-002bxt',
-        destination:'/industries/dental-marketing-agency',
-        permanent:true
+        source: '/dental-marketing-002bxt',
+        destination: '/industries/dental-marketing-agency',
+        permanent: true
+      },
+      {
+        source: '/shopify-development',
+        destination: '/services/ecommerce-development/shopify',
+        permanent: true
+      },
+      {
+        source: '/shopify-development/',
+        destination: '/services/ecommerce-development/shopify',
+        permanent: true
+      },
+      {
+        source: '/ecommerce-websites/shopify',
+        destination: '/services/ecommerce-development/shopify',
+        permanent: true
+      },
+      {
+        source: '/ecommerce-websites/shopify/',
+        destination: '/services/ecommerce-development/shopify',
+        permanent: true
+      },
+      {
+        source: '/ecommerce-websites/woocommerce',
+        destination: '/services/ecommerce-development/woocommerce',
+        permanent: true
+      },
+      {
+        source: '/ecommerce-websites/woocommerce/',
+        destination: '/services/ecommerce-development/woocommerce',
+        permanent: true
       }
     ];
   },

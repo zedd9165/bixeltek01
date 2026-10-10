@@ -1,8 +1,8 @@
 'use client';
-import React from 'react'
-import { LogoTicker2 } from '../GoogleAdsCarousel'
-import { useState } from 'react'
+import React, { useState } from 'react';
+import { LogoTicker2 } from '../GoogleAdsCarousel';
 import { ButtonContactForm } from '@/sections/ButtonContactForm';
+import { heroContent } from '@/data/webDesignData';
 
 export default function WebSection1() {
 
@@ -23,32 +23,29 @@ export default function WebSection1() {
                     <div className="relative z-10 mt-40 max-w-7xl">
                         {/* Headline */}
                         <h1 className="text-4xl md:text-7xl font-bold leading-tight text-white">
-                            Web Design Services That Turn  {" "}
-                            <span className="text-blue-500">Visitors Into Customers</span>
+                            {heroContent.headingPart1}{" "}
+                            <span className="text-blue-500">{heroContent.headingHighlight}</span>
                         </h1>
 
                         {/* Subheading */}
                         <p className="mt-6 text-lg md:text-base text-gray-300 max-w-5xl mx-auto">
-                            Your website is the foundation of your online presence. If it loads slowly, looks outdated, or doesn’t work on mobile, you’re losing customers every day. At Bixeltek, we provide professional web design services that combine aesthetics with performance — creating websites that rank higher, build trust, and generate measurable growth. As a global web design agency, we serve businesses across India, USA, Canada, UAE, Saudi Arabia & UK.
-
+                            {heroContent.description}
                         </p>
 
                         {/* CTA Buttons */}
                         <div className="mt-8 flex flex-wrap justify-center gap-4">
-                         
-                                <button onClick={toggleContactForm}
-
-                                    className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
-                                >
-                                    Request Your Free Web Design Consultation
-                                </button>
-
+                            <button
+                                onClick={toggleContactForm}
+                                className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
+                            >
+                                {heroContent.ctaText}
+                            </button>
                         </div>
                     </div>
                 </div>
                 <ButtonContactForm isVisible={isVisible} onClose={() => setIsVisible(false)} />
             </section>
-                <LogoTicker2 />
+                {/* <LogoTicker2 /> */}
         </>
     )
 }

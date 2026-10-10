@@ -2,60 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import faqImage from '@/assets/google-ads-black-google-ads-shutterstock_1169319226-800x533.jpg'; // Replace with your actual image path
-
-const faqs = [
-  {
-    question: "How long does it take to design a website?",
-    answer:
-      "Most business websites take 4–6 weeks, depending on complexity and content readiness.",
-  },
-  {
-    question: "Do you only build WordPress websites?",
-    answer:
-      "No. We offer both custom-coded builds and WordPress CMS websites, depending on your goals.",
-  },
-  {
-    question: "Can you redesign my existing website?",
-    answer:
-      "Yes. We specialize in website redesigns that improve aesthetics, performance, and conversions.",
-  },
-  {
-    question: "Do you develop e-commerce websites?",
-    answer:
-      "Yes. We build scalable e-commerce platforms using Shopify, WooCommerce, or custom solutions with Next.js.",
-  },
-  {
-    question: "Will my website be mobile-friendly?",
-    answer:
-      "Absolutely. Every site we build is fully responsive and optimized for all devices.",
-  },
-  {
-    question: "Can you integrate third-party tools or APIs?",
-    answer:
-      "Yes. We can integrate CRMs, payment gateways, booking systems, analytics, and other third-party tools.",
-  },
-  {
-    question: "Do you provide website maintenance?",
-    answer:
-      "Yes. We offer monthly maintenance plans to ensure your site stays secure, updated, and fast.",
-  },
-  {
-    question: "What technologies do you use?",
-    answer:
-      "We specialize in modern stacks like Next.js, React, Node.js, and also support WordPress and Shopify.",
-  },
-  {
-    question: "Do you offer SEO-friendly websites?",
-    answer:
-      "Yes. All websites we build follow SEO best practices including fast load times, clean code, and proper on-page structure.",
-  },
-  {
-    question: "Can you help with hosting and domain setup?",
-    answer:
-      "Yes. We guide you through domain registration, hosting setup, and connect everything for a smooth launch.",
-  },
-];
+import { webDevFaqs } from '@/data/webDesignData';
 
 
 export default function WebDevFaq() {
@@ -76,7 +23,7 @@ export default function WebDevFaq() {
               Still Got Questions?
             </h2>
             <div className="space-y-6">
-              {faqs.map((faq, index) => (
+              {webDevFaqs.map((faq, index) => (
                 <div
                   key={index}
                   className="w-full border-2 border-black rounded-2xl bg-[#1a1a1a] p-7"

@@ -20,12 +20,13 @@ import googleadslogo from "@/assets/6929233_google ads_logo_icon.png";
 import wordpresslogo from "@/assets/317716_cms_wordpress_blog_blogging_icon.png";
 import shoppingads from '@/assets/645a617a7f00617222c630ee_6452937893cd84e81e81c96e_google_shopping_icon.png'
 
+import { campaignTypes } from "@/data/googleAdsPageData";
+
 export default function Section1() {
   const campaigns = [
     {
-      title: "Search Ads",
-      description:
-        "Search Ads show your brand when people are actively looking for your services. They capture high-intent leads and are ideal for industries like healthcare, real estate, law, and local businesses. With the right keywords and ad copy, they drive qualified traffic that converts.",
+      title: campaignTypes[0].title,
+      description: campaignTypes[0].description,
       icon: <MdSearch className="text-blue-500 text-3xl" />,
       logos: [
         googleadslogo,
@@ -35,30 +36,26 @@ export default function Section1() {
       ],
     },
     {
-      title: "Display Ads & Video Ads",
-      description:
-        "Display & Video Ads build awareness across millions of sites and YouTube. They’re great for retargeting, storytelling, and boosting visibility with creative visuals. Perfect for keeping your brand top-of-mind and reaching new audiences at scale.",
+      title: campaignTypes[1].title,
+      description: campaignTypes[1].description,
       icon: <FaYoutube className="text-red-500 text-3xl" />,
       logos: [ytlogo, metalogo, instagramlogo],
     },
     {
-      title: "Shopping Ads",
-      description:
-        "For eCommerce & retail, we create optimized product feeds that increase visibility and drive sales.",
+      title: campaignTypes[2].title,
+      description: campaignTypes[2].description,
       icon: <FaShoppingCart className="text-green-500 text-3xl" />,
-      logos: [googleadslogo, googlelogo,shoppingads],
+      logos: [googleadslogo, googlelogo, shoppingads],
     },
     {
-      title: "Performance Max (AI Max)",
-      description:
-        "Google’s AI campaigns can be powerful — but without human oversight, they burn cash. We balance AI efficiency with strategic controls.",
+      title: campaignTypes[3].title,
+      description: campaignTypes[3].description,
       icon: <FaRobot className="text-purple-500 text-3xl" />,
       logos: [googlelogo, googleadslogo, googleanalyticslogo, ytlogo],
     },
     {
-      title: "Remarketing & Retargeting",
-      description:
-        "Stay top-of-mind and win back lost opportunities with highly segmented remarketing funnels.",
+      title: campaignTypes[4].title,
+      description: campaignTypes[4].description,
       icon: <FaRedo className="text-orange-500 text-3xl" />,
       logos: [metalogo, instagramlogo, ytlogo, googleadslogo],
     },
@@ -81,7 +78,7 @@ const cardVariants = {
 
 
   return (
-    <section className="w-full mt-0 bg-black text-gray-50 pt-32 md:py-16">
+    <section className="w-full mt-0 bg-black text-gray-50 pt-32 md:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-10">
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-center">

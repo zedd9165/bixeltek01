@@ -4,126 +4,115 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-    HiOutlineEye,
-    HiOutlineShieldCheck,
-    HiOutlineDeviceMobile,
-    HiOutlineTrendingUp,
+  HiOutlineEye,
+  HiOutlineShieldCheck,
+  HiOutlineDeviceMobile,
+  HiOutlineTrendingUp,
 } from "react-icons/hi";
-import shape1 from '@/assets/shape-1-seo.png'
 import Image from "next/image";
-import shape2 from '@/assets/chaka-rounded-two.png'
-
+import shape2 from "@/assets/chaka-rounded-two.png";
+import { architectureChoices, architectureHeader } from "@/data/webDesignData";
 
 const WebDesignSection = () => {
-    const designPoints = [
-        {
-            title: "Visibility",
-            description:
-                "SEO-ready websites make sure you’re discovered by customers when they search online.",
-            icon: <HiOutlineEye className="text-blue-700 w-6 h-6" />,
-        },
-        {
-            title: "Trust",
-            description:
-                "A polished, modern design signals professionalism and credibility.",
-            icon: <HiOutlineShieldCheck className="text-blue-700 w-6 h-6" />,
-        },
-        {
-            title: "Engagement",
-            description:
-                "Fast, mobile-responsive sites keep visitors browsing longer.",
-            icon: <HiOutlineDeviceMobile className="text-blue-700 w-6 h-6" />,
-        },
-        {
-            title: "Conversions",
-            description:
-                "Clear design funnels guide users toward inquiries, bookings, or purchases.",
-            icon: <HiOutlineTrendingUp className="text-blue-700 w-6 h-6" />,
-        },
-    ];
+  return (
+    <section className="overflow-hidden relative w-full py-20 md:py-32 bg-black text-white selection:bg-blue-600 selection:text-white">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-600/15 rounded-full blur-[160px] pointer-events-none" />
 
-    return (
-        <section className=" overflow-hidden relative w-full py-20 md:py-24 bg-black text-white">
-            {/* Glowing blue circle */}
-            {/* <div className="absolute top-10 md:top-32 -left-20 w-[500px] h-[500px] bg-blue-500 rounded-full opacity-30 blur-[190px] pointer-events-none"></div> */}
-            <motion.div
-                className="absolute -bottom-20 -right-24"
-                animate={{ rotate: 360 }}
-                transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                }}
-            >
-                <Image src={shape2} alt="shape1" className="brightness-[3]" />
-            </motion.div>
+      {/* Rotating Background Shape */}
+      <motion.div
+        className="absolute -bottom-20 -right-24 pointer-events-none opacity-40 md:opacity-60"
+        animate={{ rotate: 360 }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        <Image src={shape2} alt="shape" className="brightness-[2]" />
+      </motion.div>
 
-            <div className="max-w-7xl mx-auto px-6 text-center">
-                {/* Title */}
-                <h2 className="text-4xl md:text-6xl font-bold font-inter leading-snug mb-6">
-                    <span className="text-blue-500">How</span> Our Web Design Works For Your Brand
-                </h2>
+      <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        {/* Title */}
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-inter leading-tight mb-8 tracking-tight">
+          {architectureHeader.headingPart1}{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+            {architectureHeader.headingHighlight}
+          </span>
+        </h2>
 
-                {/* First Paragraph */}
-                <p className="text-gray-300 mb-16 font-poppins leading-relaxed max-w-4xl mx-auto text-base md:text-lg">
-                    Professional web design services combine creativity, strategy, and technology to deliver measurable results. At its core, web design ensures that your business is visible, trusted, and accessible. Here’s how:
-                </p>
+        {/* First Paragraph */}
+        <p className="text-gray-300 mb-20 font-poppins leading-relaxed max-w-4xl mx-auto text-lg md:text-xl font-normal">
+          {architectureHeader.description}
+        </p>
 
-                {/* Cards */}
-                <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 mb-16">
-                    {designPoints.map((point, index) => (
-                        <motion.div
-                            key={index}
-                            className="relative bg-gray-900 rounded-xl p-8 flex flex-col items-center text-center overflow-hidden"
-                            whileHover={{ scale: 1.03 }}
-                        >
-                            {/* Animated border */}
-                            <motion.div
-                                className="absolute inset-0 rounded-xl border-2 border-blue-700"
-                                animate={{
-                                    borderColor: [
-                                        "rgba(29, 78, 216, 0.2)",
-                                        "rgba(29, 78, 216, 0.6)",
-                                        "rgba(29, 78, 216, 0.2)",
-                                    ],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                }}
-                            />
+        {/* Redesigned Cards Grid */}
+        <div className="grid gap-8 md:grid-cols-2 mb-20">
+          {architectureChoices.map((choice, index) => {
+            const icons = [
+              <HiOutlineDeviceMobile key="cms" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />,
+              <HiOutlineTrendingUp key="code" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />,
+            ];
 
-                            {/* Icon container */}
-                            <div className="relative z-10 bg-blue-100 p-4 rounded-full mb-4 shadow-md">
-                                {point.icon}
-                            </div>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="group relative flex flex-col justify-between text-left p-8 md:p-10 rounded-2xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-white/10 hover:border-blue-500/50 backdrop-blur-xl shadow-xl hover:shadow-[0_20px_50px_rgba(37,99,235,0.18)] transition-all duration-300 overflow-hidden"
+              >
+                {/* Subtle top spotlight on card hover */}
+                <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-40 h-40 bg-blue-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                            {/* Title */}
-                            <h3 className="relative z-10 text-xl font-semibold text-white mb-2">
-                                {point.title}
-                            </h3>
+                <div>
+                  {/* Icon Container */}
+                  <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-blue-400 transition-all duration-300 shadow-inner">
+                    {icons[index % icons.length]}
+                  </div>
 
-                            {/* Description */}
-                            <p className="relative text-sm z-10 text-gray-400">{point.description}</p>
-                        </motion.div>
-                    ))}
+                  {/* Title (Bigger font & clear separation) */}
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors tracking-tight">
+                    {choice.title}
+                  </h3>
+
+                  {/* Description (Increased text size & line height) */}
+                  <p className="text-slate-300 text-base md:text-lg leading-relaxed font-normal mb-8">
+                    {choice.description}
+                  </p>
                 </div>
 
-                {/* Closing Paragraph */}
-                <p className="text-gray-300 mb-8 font-poppins leading-relaxed max-w-4xl mx-auto text-base md:text-lg">
-                    At <span className="font-semibold text-white">Bixeltek</span>, we design websites that do more than exist — they actively generate leads and sales for your business.
-                </p>
+                {/* CTA Link */}
+                <div className="pt-4 border-t border-white/10 mt-auto">
+                  <Link
+                    href={choice.href}
+                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-base tracking-wide transition-all group-hover:translate-x-1"
+                  >
+                    <span>{choice.ctaText}</span>
+                    <span className="text-lg transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
 
-                {/* CTA */}
-                <a href={"tel:+919100032301"}>
-                    <button className="px-8 py-3 rounded-2xl bg-blue-600 text-white font-semibold text-base shadow-lg hover:bg-blue-700 transition">
-                        Talk to Our Web Design Experts
-                    </button>
-                </a>
-            </div>
-        </section>
-    );
+        {/* Closing Paragraph */}
+        <p className="text-gray-300 mb-10 font-poppins leading-relaxed max-w-4xl mx-auto text-lg md:text-xl">
+          {architectureHeader.closing}
+        </p>
+
+        {/* Primary CTA */}
+        <a href="tel:+919100032301" className="inline-block">
+          <button className="px-10 py-4 rounded-xl bg-blue-600 text-white font-semibold text-lg shadow-[0_10px_30px_rgba(37,99,235,0.4)] hover:bg-blue-500 hover:shadow-[0_15px_40px_rgba(37,99,235,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            Talk to Our Web Design Experts
+          </button>
+        </a>
+      </div>
+    </section>
+  );
 };
 
 export default WebDesignSection;
