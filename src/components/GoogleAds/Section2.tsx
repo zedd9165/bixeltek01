@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import dashboardImg from "@/assets/UI Screen.jpg"; 
 import Link from "next/link";// replace with your image path
+import { whyGoogleAdsData } from "@/data/googleAdsPageData";
 
 export default function WhyGoogleAds() {
   return (
@@ -35,41 +36,35 @@ export default function WhyGoogleAds() {
           className="flex-1 lg:w-1/2 px-8 lg:px-16 mt-8 lg:mt-0"
         >
           <h2 className="text-3xl md:text-6xl font-bold font-inter leading-snug mb-6">
-            <span className="text-blue-500">Smarter</span> Google Ads Management, Built for ROI
+            <span className="text-blue-500">{whyGoogleAdsData.headingHighlight}</span>
+            {whyGoogleAdsData.headingPart2}
           </h2>
 
           <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-xl">
-            Running ads is easy. Running profitable campaigns is not. The average business wastes{" "}
-            <span className="font-semibold text-white">30–40% of its budget</span> on irrelevant clicks,
-            low-quality leads, or disapproved ads. That’s where{" "}
-            <span className="font-semibold text-white">Bixeltek</span> steps in.
+            {whyGoogleAdsData.intro}
           </p>
 
           <ul className="space-y-4 mb-8">
-            <li className="flex gap-3">
-              <span className="text-blue-500">✔</span> Leverage AI-powered tools like Performance Max and Smart Bidding
-            </li>
-            <li className="flex gap-3">
-              <span className="text-blue-500">✔</span> Prevent wasted spend with tight targeting & fraud monitoring
-            </li>
-            <li className="flex gap-3">
-              <span className="text-blue-500">✔</span> Navigate Google Ads policy compliance to keep your account safe
-            </li>
-            <li className="flex gap-3">
-              <span className="text-blue-500">✔</span> Focus relentlessly on ROI, not just impressions or clicks
-            </li>
+            {whyGoogleAdsData.bulletPoints.map((point, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <span className="text-blue-500 font-bold mt-0.5">✔</span>
+                <span className="text-gray-200">
+                  <strong className="text-white">{point.title}:</strong> {point.text}
+                </span>
+              </li>
+            ))}
           </ul>
+
           <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-xl">
-            When you work with Bixeltek, you’re not just hiring a PPC agency — you’re partnering with a global performance marketing team that treats your money like our own.
+            {whyGoogleAdsData.closing}
           </p>
 
           {/* CTA */}
-          <motion.div
-          >
-            <Link href={'#form'}>
-            <button className="px-7 py-3 rounded-2xl bg-blue-600 text-white font-semibold text-sm shadow-lg hover:bg-blue-700 transition">
-            Book a Free Strategy Call
-            </button>
+          <motion.div>
+            <Link href={whyGoogleAdsData.ctaHref}>
+              <button className="px-7 py-3 rounded-2xl bg-blue-600 text-white font-semibold text-sm shadow-lg hover:bg-blue-700 transition">
+                {whyGoogleAdsData.ctaText}
+              </button>
             </Link>
           </motion.div>
         </motion.div>

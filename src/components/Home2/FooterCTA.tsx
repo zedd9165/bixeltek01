@@ -7,8 +7,8 @@ const capabilities = [
   { name: 'SEO & Search', link: '/services/seo-services' },
   { name: 'Google Ads', link: '/services/google-ads' },
   { name: 'Web Development', link: '/services/web-design' },
-  { name: 'Ecommerce', link: '/ecommerce-websites' },
-  { name: 'Mobile Apps', link: '/services/app-development' },
+  { name: 'Ecommerce', link: '/services/ecommerce-development' },
+  { name: 'Mobile Apps', link: '/services/mobile-app-development' },
   { name: 'AI & Automation', link: '/services/automation' },
 ];
 

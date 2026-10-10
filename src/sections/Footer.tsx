@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer className="w-full pt-0 pb-16 bg-black">
       <div className="mx-auto max-w-[97%] px-4 sm:px-6 lg:px-8">
         <Newsletter />
-        <div className="grid grid-cols-2 min-[690px]:grid-cols-4 lg:grid-cols-5 gap-4 xl:gap-8 pt-14 pb-10 max-w-xs mx-auto min-[690px]:max-w-2xl lg:max-w-full">
+        <div className="grid grid-cols-2 min-[690px]:grid-cols-3 lg:grid-cols-6 gap-6 xl:gap-8 pt-14 pb-10 max-w-xs min-[690px]:max-w-3xl lg:max-w-full mx-auto">
           <div className="col-span-full mb-10 lg:col-span-1  lg:mb-0">
             <Image src='/BIXELTEKLOGO.png' alt="logo" width={100}
               height={40} className="w-auto h-16"></Image>
@@ -66,20 +66,80 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="lg:mx-auto text-left ">
-            <h4 className="text-lg text-gray-100 font-medium mb-7">Services</h4>
-            <ul className="text-sm  transition-all duration-500">
-              <li className="mb-6"><Link href="/services/google-ads" className="text-gray-300 hover:text-purple-700">Google Ads Management</Link></li>
-              <li className="mb-6"><Link href="/services/seo-services" className=" text-gray-300 hover:text-purple-700">SEO Services</Link></li>
-              <li className="mb-6"><Link href="/social-media-marketing-agency-hyderabad" className=" text-gray-300 hover:text-purple-700">Social Media Management</Link></li>
-              <li className="mb-6"><Link href="/custom-coded-websites" className=" text-gray-300 hover:text-purple-700">Custom Coded Websites</Link></li>
-              <li className="mb-6"><Link href="/custom-cms-websites" className=" text-gray-300 hover:text-purple-700">Custom CMS Websites</Link></li>
-              <li className="mb-6"><Link href="/payment-gateway-integrations" className=" text-gray-300 hover:text-purple-700">Payment Gateway Integrations</Link></li>
-              <li className="mb-6"><Link href="/ecommerce-websites" className=" text-gray-300 hover:text-purple-700">E-Commerce Websites</Link></li>
-              <li className="mb-6"><Link href="/local-seo" className=" text-gray-300 hover:text-purple-700">Local SEO</Link></li>
-              <li className="mb-6"><Link href="/on-page-seo" className=" text-gray-300 hover:text-purple-700">On Page SEO</Link></li>
-              <li className="mb-6"><Link href="/technical-seo" className=" text-gray-300 hover:text-purple-700">Technical SEO</Link></li>
-              {/* <li className="mb-6"><Link href="#" className=" text-gray-300 hover:text-purple-700">Youtube Ads Management in Hyderabad</Link></li> */}
+          <div className="lg:mx-auto text-left">
+            <h4 className="text-lg text-gray-100 font-medium mb-7">Build</h4>
+            <ul className="text-sm transition-all duration-500">
+              <li className="mb-6">
+                <Link href="/services/web-design" className="text-gray-300 hover:text-purple-700">
+                  Web Design & Development
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/web-design/wordpress" className="text-gray-300 hover:text-purple-700">
+                  WordPress Development
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/web-design/strapi" className="text-gray-300 hover:text-purple-700">
+                  Strapi Headless CMS
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/ecommerce-development" className="text-gray-300 hover:text-purple-700">
+                  Ecommerce Development
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/ecommerce-development/shopify" className="text-gray-300 hover:text-purple-700">
+                  Shopify Store Development
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/ecommerce-development/woocommerce" className="text-gray-300 hover:text-purple-700">
+                  WooCommerce Development
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/mobile-app-development" className="text-gray-300 hover:text-purple-700">
+                  Mobile App Development
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="lg:mx-auto text-left">
+            <h4 className="text-lg text-gray-100 font-medium mb-7">Grow</h4>
+            <ul className="text-sm transition-all duration-500">
+              <li className="mb-6">
+                <Link href="/services/google-ads" className="text-gray-300 hover:text-purple-700">
+                  Google Ads Management
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/seo-services" className="text-gray-300 hover:text-purple-700">
+                  SEO Services
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/local-seo" className="text-gray-300 hover:text-purple-700">
+                  Local SEO
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/technical-seo" className="text-gray-300 hover:text-purple-700">
+                  Technical SEO
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/on-page-seo" className="text-gray-300 hover:text-purple-700">
+                  On-Page SEO
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/conversion-rate-optimization" className="text-gray-300 hover:text-purple-700">
+                  Conversion Rate Optimization
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="lg:mx-auto text-left ">

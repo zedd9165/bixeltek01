@@ -5,6 +5,7 @@ import Image from "next/image";
 import dashboardImg from "@/assets/UI Screen.jpg";
 import Link from "next/link"; // replace with your image path
 import seodashboardimg from "@/assets/laptop dentist 2.png";
+import { whyWebDevContent } from "@/data/webDesignData";
 
 export default function WhyWebDev() {
     return (
@@ -37,40 +38,34 @@ export default function WhyWebDev() {
                     className="flex-1 lg:w-1/2 px-8 justify-center items-center lg:px-16 md:mt-10 lg:mt-0"
                 >
                     <h2 className="text-4xl md:text-6xl font-bold font-inter leading-snug mb-6">
-                        Why <span className="text-blue-500">Web Design</span><br></br> Matters for Your Business
+                        {whyWebDevContent.heading} <br className="hidden sm:inline" />
+                        <span className="text-blue-500">{whyWebDevContent.headingHighlight}</span>
                     </h2>
 
                     <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-[650px]">
-                        Your website is often the first interaction customers have with your brand. Within
-                        seconds, they decide whether to trust you or move on to a competitor. That’s why
-                        design is not just about looks — it’s about credibility, usability, and conversions.
+                        {whyWebDevContent.intro}
                     </p>
 
                     <ul className="space-y-4 mb-8">
-                        <li className="flex gap-3">
-                            <span className="text-blue-500">✔</span> Builds trust instantly, giving your business authority.
-                        </li>
-                        <li className="flex gap-3">
-                            <span className="text-blue-500">✔</span> Improves search visibility, as Google prioritizes SEO-friendly, fast websites.
-                        </li>
-                        <li className="flex gap-3">
-                            <span className="text-blue-500">✔</span> Guides users to take action, with clear navigation and call-to-actions.
-                        </li>
-                        <li className="flex gap-3">
-                            <span className="text-blue-500">✔</span> Drives long-term growth, turning your site into a 24/7 sales engine.
-                        </li>
+                        {whyWebDevContent.bulletPoints.map((point, index) => (
+                            <li key={index} className="flex items-start gap-3">
+                                <span className="text-blue-500 font-bold mt-0.5">✔</span>
+                                <span className="text-gray-200">
+                                    <strong className="text-white">{point.title}:</strong> {point.text}
+                                </span>
+                            </li>
+                        ))}
                     </ul>
 
                     <p className="text-gray-300 mb-6 font-poppins leading-relaxed max-w-[650px]">
-                        In today’s digital economy, working with a professional web design agency ensures
-                        your site is built to meet modern standards and deliver business outcomes.
+                        {whyWebDevContent.closing}
                     </p>
 
                     {/* CTA */}
                     <motion.div>
-                        <Link href={"/contact-us"}>
+                        <Link href={whyWebDevContent.ctaHref}>
                             <button className="px-7 py-3 rounded-2xl bg-blue-600 text-white font-semibold text-sm shadow-lg hover:bg-blue-700 transition">
-                                Get a Free Web Design Consultation
+                                {whyWebDevContent.ctaText}
                             </button>
                         </Link>
                     </motion.div>

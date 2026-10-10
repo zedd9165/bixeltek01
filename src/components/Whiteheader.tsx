@@ -269,7 +269,7 @@ export const Whiteheader = () => {
       title: "Mobile App Development",
       desc: "iOS, Android & cross-platform mobile apps.",
       icon: <IoPhonePortraitOutline size={24} />,
-      link: "/services/app-development",
+      link: "/services/mobile-app-development",
       image: appdev,
     },
     {
@@ -317,7 +317,7 @@ export const Whiteheader = () => {
       title: "E-commerce Website",
       desc: "Conversion-focused online stores built for speed and scalability.",
       icon: <AiOutlineShoppingCart size={24} />,
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
       image: ecommerce,
     },
 
@@ -614,7 +614,7 @@ export const Whiteheader = () => {
                                         </Link>
                                     </li>
                                      <li>
-                                        <Link href="/services/app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        <Link href="/services/mobile-app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
                                             App Design and Development
                                         </Link>
                                     </li>
@@ -644,7 +644,7 @@ export const Whiteheader = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/ecommerce-websites" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        <Link href="/services/ecommerce-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
                                             E-commerce Website
                                         </Link>
                                     </li>

@@ -251,7 +251,7 @@ export const Header = () => {
       title: "Mobile App Development",
       desc: "iOS, Android & cross-platform mobile apps.",
       icon: <IoPhonePortraitOutline size={24} />,
-      link: "/services/app-development",
+      link: "/services/mobile-app-development",
       image: appdev,
     },
     {
@@ -299,7 +299,7 @@ export const Header = () => {
       title: "E-commerce Website",
       desc: "Conversion-focused online stores built for speed and scalability.",
       icon: <AiOutlineShoppingCart size={24} />,
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
       image: ecommerce,
     },
 
@@ -398,7 +398,7 @@ export const Header = () => {
                       </Link>
                     </li>
                     <li>
-                        <Link href="/services/app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <Link href="/services/mobile-app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
                         App Design and Development
                         </Link>
                     </li>                      
@@ -428,7 +428,7 @@ export const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ecommerce-websites" className="block py-2 px-4 hover:bg-gray-700 rounded">
+                      <Link href="/services/ecommerce-development" className="block py-2 px-4 hover:bg-gray-700 rounded">
                         E-commerce Website
                       </Link>
                     </li>

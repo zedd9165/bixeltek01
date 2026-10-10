@@ -68,10 +68,10 @@ const partners: PartnerBadge[] = [
 
 const capabilities = [
   { name: 'Web Design & Development', link: '/services/web-design' },
-  { name: 'Ecommerce Development', link: '/ecommerce-websites' },
+  { name: 'Ecommerce Development', link: '/services/ecommerce-development' },
   { name: 'Google Ads Management', link: '/services/google-ads' },
   { name: 'SEO Services', link: '/services/seo-services' },
-  { name: 'Application Development', link: '/services/app-development' },
+  { name: 'Application Development', link: '/services/mobile-app-development' },
   { name: 'Automation & Analytics', link: '#final-cta' },
 ];
 

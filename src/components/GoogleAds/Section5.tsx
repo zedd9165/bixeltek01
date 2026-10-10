@@ -3,27 +3,29 @@
 import { FaRobot, FaHandPointer, FaChartLine, FaRocket, FaSyncAlt } from 'react-icons/fa';
 import { motion } from "framer-motion"
 
+import { biddingStrategies } from '@/data/googleAdsPageData';
+
 const BiddingStrategies = () => {
     const strategies = [
         {
             icon: <FaHandPointer className="text-2xl" />,
-            title: "Manual CPC",
-            description: "Controlled bidding for testing & granular optimization"
+            title: biddingStrategies[0].title,
+            description: biddingStrategies[0].description,
         },
         {
             icon: <FaChartLine className="text-2xl" />,
-            title: "Target CPA",
-            description: "Consistent lead acquisition at predictable costs"
+            title: biddingStrategies[1].title,
+            description: biddingStrategies[1].description,
         },
         {
             icon: <FaRocket className="text-2xl" />,
-            title: "Target ROAS",
-            description: "Perfect for scaling eCommerce & SaaS campaigns profitably"
+            title: biddingStrategies[2].title,
+            description: biddingStrategies[2].description,
         },
         {
             icon: <FaSyncAlt className="text-2xl" />,
-            title: "Maximize Conversions",
-            description: "Fast growth mode for aggressive scaling"
+            title: biddingStrategies[3].title,
+            description: biddingStrategies[3].description,
         }
     ];
 
@@ -31,12 +33,11 @@ const BiddingStrategies = () => {
         <section className="pt-20 md:py-16 px-6 bg-[#131313]">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl md:text-6xl text-white text-center max-w-4xl mx-auto font-bold font-inter mb-6">
-                    <span className='text-blue-500'>AI Meets Human </span>Expertise in Bidding Strategies
+                    <span className='text-blue-500'>Smart Bidding Guided </span>by Commercial Strategy
                 </h2>
 
                 <p className="text-lg text-gray-100 text-center max-w-3xl mx-auto mb-12">
-                    Google&apos;s algorithms are powerful, but they don&apos;t understand your margins, seasonality, or competitive realities.
-                    That&apos;s why blind automation = wasted spend.
+                    Bidding strategy selection depends on campaign objectives, historical conversion volume, available budget, and unit economics. We govern automated bidding to protect real business profitability.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

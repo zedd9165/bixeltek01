@@ -5,51 +5,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const protections = [
-    {
-        title: "Policy Compliance",
-        description:
-            "We craft ads that meet Google’s strict policies, lowering the chances of disapprovals and wasted time. Our compliance-first approach keeps your campaigns safe and scalable.",
-        image: "/account suspension.gif",
-    },
-    {
-        title: "Suspension Recovery",
-        description:
-            "Got flagged or suspended? Don’t panic. Our specialists handle appeals and reinstatements to recover your account fast, minimizing downtime and revenue loss.",
-        image: "/account suspension.gif",
-    },
-    {
-        title: "Advertiser Verification",
-        description:
-            "Industries like healthcare, finance, and education require strict advertiser verification. We guide you step-by-step, ensuring your account passes without hiccups.",
-        image: "/advertiser verification.png",
-    },
-    {
-        title: "Click Fraud Prevention",
-        description:
-            "Stop competitors and bots from draining your budget. Using AI-driven fraud detection, IP blocking, and geo-exclusions, we protect every ad dollar you spend.",
-        image: "/click fraud prevention.png",
-    },
-];
+import { protectionsData } from "@/data/googleAdsPageData";
 
 export default function ProtectAds() {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
         <section className="w-full bg-[#131313] text-gray-100 py-20">
-            <div className="max-w-6xl mx-auto px-6 text-center">
+            <div className="max-w-7xl mx-auto px-6 text-center">
                 {/* Heading */}
-                <h2 className="text-3xl md:text-6xl max-w-3xl mx-auto font-bold font-inter mb-6">
+                <h2 className="text-3xl md:text-6xl max-w-6xl mx-auto font-bold font-inter mb-6">
                     Protecting Your <span className="text-blue-500">Google Ads</span> Investment
                 </h2>
-                <p className="text-gray-300 max-w-2xl mx-auto mb-12 font-poppins leading-relaxed">
-                    Too many businesses lose money because of policy violations, sudden suspensions,
-                    or click fraud. We make sure that doesn’t happen to you.
+                <p className="text-gray-300 max-w-4xl mx-auto mb-12 font-poppins leading-relaxed">
+                    Account performance can be disrupted by policy reviews, advertiser verification deadlines, or invalid traffic. We implement disciplined compliance standards and proactive monitoring to safeguard your ad investment.
                 </p>
 
                 {/* Tabs */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 flex-wrap justify-center gap-4 mb-12">
-                    {protections.map((item, index) => (
+                    {protectionsData.map((item, index) => (
                         <button
                             key={index}
                             onClick={() => setActiveTab(index)}
@@ -77,8 +51,8 @@ export default function ProtectAds() {
                             {/* LEFT IMAGE */}
                             <div className="relative w-full h-72 md:h-96 bg-transparent rounded-2xl overflow-hidden">
                                 <Image
-                                    src={protections[activeTab].image}
-                                    alt={protections[activeTab].title}
+                                    src={protectionsData[activeTab].image}
+                                    alt={protectionsData[activeTab].title}
                                     fill
                                     className="object-contain"
                                 />
@@ -86,11 +60,11 @@ export default function ProtectAds() {
 
                             {/* RIGHT TEXT */}
                             <div>
-                                <h3 className="text-2xl text-center md:text-left font-semibold mb-4">
-                                    {protections[activeTab].title}
+                                <h3 className="text-2xl md:text-3xl text-center md:text-left font-semibold mb-4">
+                                    {protectionsData[activeTab].title}
                                 </h3>
                                 <p className="text-gray-300 text-center md:text-left leading-relaxed">
-                                    {protections[activeTab].description}
+                                    {protectionsData[activeTab].description}
                                 </p>
                             </div>
                         </motion.div>

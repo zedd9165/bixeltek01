@@ -12,50 +12,7 @@ import {
   HiOutlineSupport,
 } from "react-icons/hi";
 
-const benefits = [
-  {
-    icon: <HiOutlineUserGroup className="w-8 h-8 group-hover:text-white text-blue-500" />,
-    title: "Expertise & Experience",
-    description:
-      "Skilled designers who understand both aesthetics and performance for business-ready websites.",
-    hoverBg: "hover:bg-blue-600",
-  },
-  {
-    icon: <HiOutlineSearch className="w-8 h-8 group-hover:text-white text-green-500" />,
-    title: "SEO Advantage",
-    description:
-      "Websites optimized for search visibility, backed by the best SEO consultants.",
-    hoverBg: "hover:bg-green-600",
-  },
-  {
-    icon: <HiOutlineCursorClick className="w-8 h-8 group-hover:text-white text-yellow-500" />,
-    title: "Conversion-Focused Design",
-    description:
-      "Layouts crafted to transform visitors into leads and paying customers.",
-    hoverBg: "hover:bg-yellow-500",
-  },
-  {
-    icon: <HiOutlineSupport className="w-8 h-8 group-hover:text-white text-pink-500" />,
-    title: "Ongoing Support",
-    description:
-      "From updates to maintenance, your website continues to evolve with your business.",
-    hoverBg: "hover:bg-pink-600",
-  },
-  {
-    icon: <HiOutlineTrendingUp className="w-8 h-8 group-hover:text-white text-indigo-500" />,
-    title: "Scalability",
-    description:
-      "A website that grows seamlessly as your business expands and diversifies.",
-    hoverBg: "hover:bg-indigo-600",
-  },
-  {
-    icon: <HiOutlineRefresh className="w-8 h-8 group-hover:text-white text-red-500" />,
-    title: "Trust & Growth",
-    description:
-      "Partnering with a professional agency means more trust, visibility, and sales.",
-    hoverBg: "hover:bg-red-600",
-  },
-];
+import { capabilitiesHeader, technicalCapabilities } from "@/data/webDesignData";
 
 const BenefitsSection = () => {
   return (
@@ -69,8 +26,9 @@ const BenefitsSection = () => {
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-5xl font-bold leading-snug"
           >
-            Benefits of Hiring a{" "}
-            <span className="text-blue-500">Professional Web Design Agency</span>
+            {capabilitiesHeader.headingPart1}
+            <span className="text-blue-500">{capabilitiesHeader.headingHighlight}</span>
+            {capabilitiesHeader.headingPart2}
           </motion.h2>
 
           <motion.p
@@ -79,39 +37,47 @@ const BenefitsSection = () => {
             transition={{ duration: 0.9 }}
             className="text-gray-300 text-lg leading-relaxed"
           >
-            While DIY website builders may seem appealing, they rarely deliver
-            the performance businesses need. Partnering with a professional
-            agency ensures your website becomes a true growth engine.
+            {capabilitiesHeader.description}
           </motion.p>
 
-          <Link href={'mailto:zee@bixeltek.com'}>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md"
-          >
-            Talk to Our Experts
-          </motion.button>
+          <Link href={capabilitiesHeader.ctaHref}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md"
+            >
+              {capabilitiesHeader.ctaText}
+            </motion.button>
           </Link>
         </div>
 
         {/* Right Side: Grid */}
         <div className="lg:w-[66%] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              className={`bg-[#131313] rounded-2xl group p-6 flex flex-col items-start gap-4 shadow-lg transition-colors duration-300 cursor-pointer ${benefit.hoverBg}`}
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-            >
-              <div className="bg-white/10 p-3 rounded-full">{benefit.icon}</div>
-              <h3 className="text-xl font-semibold">{benefit.title}</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {benefit.description}
-              </p>
-            </motion.div>
-          ))}
+          {technicalCapabilities.map((capability, index) => {
+            const icons = [
+              <HiOutlineUserGroup key="api" className="w-8 h-8 group-hover:text-white text-blue-500" />,
+              <HiOutlineSearch key="crm" className="w-8 h-8 group-hover:text-white text-green-500" />,
+              <HiOutlineCursorClick key="portal" className="w-8 h-8 group-hover:text-white text-yellow-500" />,
+              <HiOutlineSupport key="booking" className="w-8 h-8 group-hover:text-white text-pink-500" />,
+              <HiOutlineTrendingUp key="db" className="w-8 h-8 group-hover:text-white text-indigo-500" />,
+              <HiOutlineRefresh key="migration" className="w-8 h-8 group-hover:text-white text-red-500" />,
+            ];
+            return (
+              <motion.div
+                key={index}
+                className={`bg-[#131313] rounded-2xl group p-6 flex flex-col items-start gap-4 shadow-lg transition-colors duration-300 cursor-pointer ${capability.hoverBg}`}
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <div className="bg-white/10 p-3 rounded-full">{icons[index % icons.length]}</div>
+                <h3 className="text-xl font-semibold">{capability.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {capability.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

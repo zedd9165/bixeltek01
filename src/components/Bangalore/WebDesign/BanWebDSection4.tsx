@@ -45,7 +45,7 @@ const BangaloreWebSolutions = () => {
             color: "from-green-500 to-green-600",
             bgColor: "bg-green-50",
             iconColor: "text-green-600",
-            link: "/services/wordpress-development",
+            link: "/services/web-design/wordpress",
             gradient: "bg-gradient-to-t from-green-500 to-green-600"
         },
         {

@@ -1,36 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import faqImage from '@/assets/google-ads-black-google-ads-shutterstock_1169319226-800x533.jpg'; // Replace with your actual image path
-
-const faqs = [
-  {
-    question: "How quickly can a Google Ads campaign go live?",
-    answer:
-      "Once we finalize your strategy and ad creatives, most campaigns can be live within 3–5 business days. Google usually approves ads within 24 hours, so you’ll start seeing traffic almost immediately.",
-  },
-  {
-    question: "What budget do I need to run Google Ads?",
-    answer:
-      "Budgets are super flexible — we’ve managed accounts from ₹10,000/month to ₹10 lakh+. The key is aligning spend with your goals, competition, and industry benchmarks. We’ll recommend a smart starting point and scale based on performance.",
-  },
-  {
-    question: "Will I get detailed reports on performance?",
-    answer:
-      "Absolutely. You’ll receive transparent reports with live access to clicks, conversions, cost-per-click (CPC), and ROI metrics. No black-box reporting — you’ll know exactly where every rupee is going.",
-  },
-  {
-    question: "Do you optimize campaigns after launch?",
-    answer:
-      "Yes, optimization is continuous. We refine keywords, ad copy, targeting, and bidding strategies weekly (often daily for competitive niches) to make sure you’re squeezing maximum ROI out of your budget.",
-  },
-  {
-    question: "Can you run campaigns internationally?",
-    answer:
-      "Definitely. We run geo-targeted campaigns for multiple regions including the US, UK, UAE, and India. Whether you want local leads or global reach, we tailor targeting and messaging accordingly.",
-  },
-];
+import { googleAdsFaqs } from '@/data/googleAdsPageData';
 
 export default function FAQSection8() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -50,7 +21,7 @@ export default function FAQSection8() {
               Still Got Questions?
             </h2>
             <div className="space-y-6">
-              {faqs.map((faq, index) => (
+              {googleAdsFaqs.map((faq, index) => (
                 <div
                   key={index}
                   className="w-full border-2 border-black rounded-2xl bg-[#1a1a1a] p-7"

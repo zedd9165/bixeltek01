@@ -1,292 +1,304 @@
-export const metadata = {
-  title: "Google Ads Management Services | Google Partner PPC Agency | Bixeltek",
-  description:
-    "Bixeltek is a global-first Google Partner agency delivering smarter Google Ads management. From AI bidding & Performance Max to fraud protection, suspension recovery & advertiser verification — we scale businesses in the USA, Canada, India & Saudi Arabia",
-  keywords: [
-"Google Ads management",
-    "Google Ads agency",
-    "PPC management",
-    "Google Partner agency",
-    "Google Ads certified",
-    "Pay per click advertising",
-    "Google Ads campaign",
-    "PPC services",
-    "Google Ads optimization",
-    "Performance Max campaigns",
-    "Google Ads suspension recovery",
-    "PPC agency USA",
-    "Google Ads Canada",
-    "PPC management India",
-    "Google Ads Saudi Arabia",
-    "AI bidding strategies",
-    "Google Ads fraud protection",
-    "Advertiser verification",
-    "ROI focused PPC",
-    "Conversion optimization",
-    "Lead generation ads"
-  ],
-  alternates: {
-    canonical: "https://bixeltek.com/services/google-ads", 
+import React from "react";
+import { Metadata } from "next";
+import {
+  googleAdsPreviewMetadata,
+  heroPreviewData,
+  businessProblemPreviewData,
+  googleAdsOverviewData,
+  googleAdsWhyChooseData,
+  googleAdsRelatedServicesData,
+  reportingLeadQualityPreviewData,
+  faqPreviewData,
+  finalOfferPreviewData,
+  googleAdsCertificatesData,
+} from "@/data/googleAdsPreviewData";
+
+// Remaining Custom Preview Components
+import ManagementScopePreview from "@/components/GoogleAds/preview/ManagementScopePreview";
+import CampaignSelectionPreview from "@/components/GoogleAds/preview/CampaignSelectionPreview";
+import ConversionJourneyPreview from "@/components/GoogleAds/preview/ConversionJourneyPreview";
+import StartingSituationsPreview from "@/components/GoogleAds/preview/StartingSituationsPreview";
+import OnboardingTimelinePreview from "@/components/GoogleAds/preview/OnboardingTimelinePreview";
+import BudgetFeesPreview from "@/components/GoogleAds/preview/BudgetFeesPreview";
+import BusinessMarketsPreview from "@/components/GoogleAds/preview/BusinessMarketsPreview";
+import GoogleAdsCertificates from "@/components/GoogleAds/preview/GoogleAdsCertificates";
+
+// Reusable Shared Services Components
+import {
+  ServiceHero,
+  ServiceProblemSection,
+  ServiceSystemCards,
+  ServiceOverviewSection,
+  ServiceWhyChooseUs,
+  ServiceRelatedServices,
+  ServiceFAQ,
+  ServiceFinalCTA,
+} from "@/components/services/common";
+
+import TechnologiesSection, {
+  TechnologyItem,
+} from "@/components/services/common/ServiceTechnologySection";
+import type { TechStackItem } from "@/components/services/common/ServiceFinalCTA";
+
+import overviewImg from "@/assets/google-ads-overview.jpg";
+import whyChooseImg from "@/assets/google-ads-dentists-reporting-dashboard.webp";
+
+import { Header } from "@/sections/Header";
+import ClientTrustMarquee from "@/components/Home2/ClientLogo";
+import { Footer } from "@/sections/Footer";
+
+// Icons for Technologies Ecosystem & Final CTA Stack
+import {
+  SiGoogleads,
+  SiGoogleanalytics,
+  SiGoogletagmanager,
+  SiGoogle,
+  SiLooker,
+  SiMeta,
+  SiSemrush,
+  SiShopify,
+  SiWordpress,
+  SiHubspot,
+  SiZapier,
+  SiFrappe,
+} from "react-icons/si";
+import { BarChart3, Database, PhoneCall, Target, ShieldCheck } from "lucide-react";
+
+// Google Ads Technology Ecosystem Items
+const googleAdsTechnologies: TechnologyItem[] = [
+  {
+    name: "Google Ads",
+    icon: <SiGoogleads className="w-6 h-6" />,
+    iconColor: "text-[#4285F4]",
   },
-//   openGraph: {
-//     title:
-//       "Google Ads Management Services | Google Partner PPC Agency | Bixeltek",
-//     description:
-//       "Bixeltek is a global-first Google Partner agency delivering smarter Google Ads management. From AI bidding & Performance Max to fraud protection, suspension recovery & advertiser verification — we scale businesses in the USA, Canada, India & Saudi Arabia.",
-//     type: "website",
-//     url: "https://bixeltek.com/services/google-ads", 
-//     siteName: "Bixeltek",
-//   },
+  {
+    name: "Google Analytics 4",
+    icon: <SiGoogleanalytics className="w-6 h-6" />,
+    iconColor: "text-[#E37400]",
+  },
+  {
+    name: "Google Tag Manager",
+    icon: <SiGoogletagmanager className="w-6 h-6" />,
+    iconColor: "text-[#246FDB]",
+  },
+  {
+    name: "Merchant Center",
+    icon: <SiGoogle className="w-6 h-6" />,
+    iconColor: "text-[#34A853]",
+  },
+
+  {
+    name: "Meta Ads Manager",
+    icon: <SiMeta className="w-6 h-6" />,
+    iconColor: "text-[#0081FB]",
+  },
+  {
+    name: "Semrush",
+    icon: <SiSemrush className="w-6 h-6" />,
+    iconColor: "text-[#FF642D]",
+  },
+  {
+    name: "Shopify / Feeds",
+    icon: <SiShopify className="w-6 h-6" />,
+    iconColor: "text-[#96BF48]",
+  },
+  {
+    name: "WordPress / Forms",
+    icon: <SiWordpress className="w-6 h-6" />,
+    iconColor: "text-[#21759B]",
+  },
+  {
+    name: "HubSpot CRM",
+    icon: <SiFrappe className="w-6 h-6" />,
+    iconColor: "text-[#246FDB]",
+  },
+  {
+    name: "Zapier / Webhooks",
+    icon: <SiZapier className="w-6 h-6" />,
+    iconColor: "text-[#FF4A00]",
+  },
+];
+
+// Google Ads Tech & Attribution Stack for Final CTA (6 items, clean white icons)
+const googleAdsFinalCtaTools: TechStackItem[] = [
+  {
+    name: "Google Ads Management",
+    category: "PPC & Intent Search",
+    description: "Search, Performance Max, and Shopping campaigns structured around commercially viable customer acquisition.",
+    icon: <SiGoogleads className="w-5 h-5 text-white" />,
+  },
+  {
+    name: "GA4 & Server-Side GTM",
+    category: "Attribution & Tracking",
+    description: "Custom conversion events, offline conversion imports, and accurate purchase/lead measurement.",
+    icon: <SiGoogleanalytics className="w-5 h-5 text-white" />,
+  },
+  {
+    name: "Looker Studio Dashboards",
+    category: "Reporting & Intelligence",
+    description: "Live commercial dashboards reporting cost per qualified lead, ROAS, and transparent search metrics.",
+    icon: <SiLooker className="w-5 h-5 text-white" />,
+  },
+  {
+    name: "Landing Page Architecture",
+    category: "Conversion Engineering",
+    description: "High-relevance landing pages and form funnels synchronized to campaign keywords and search intent.",
+    icon: <Target className="w-5 h-5 text-white" />,
+  },
+  {
+    name: "CRM & Call Tracking Integration",
+    category: "Lead Pipeline Sync",
+    description: "Connecting inbound calls and web inquiries directly into your sales workflow and CRM pipeline.",
+    icon: <Database className="w-5 h-5 text-white" />,
+  },
+  {
+    name: "Merchant Center & Feed Sync",
+    category: "Catalog & Ecom Feeds",
+    description: "Multi-platform product feeds and shopping asset optimization for retail and ecommerce scale.",
+    icon: <SiGoogle className="w-5 h-5 text-white" />,
+  },
+];
+
+export const metadata: Metadata = {
+  title: googleAdsPreviewMetadata.title,
+  description: googleAdsPreviewMetadata.description,
+  openGraph: {
+    title: googleAdsPreviewMetadata.openGraph.title,
+    description: googleAdsPreviewMetadata.openGraph.description,
+  },
+  alternates: {
+    canonical: googleAdsPreviewMetadata.canonical,
+  },
 };
 
 export const dynamic = "force-dynamic";
 
-import React from 'react'
-import { LogoTicker2 } from '@/components/GoogleAdsCarousel'
-import Section1 from '@/components/GoogleAds/Section1';
-import ProtectAds from '@/components/GoogleAds/Section3';
-import WhyGoogleAds from '@/components/GoogleAds/Section2';
-import BiddingStrategies from '@/components/GoogleAds/Section5';
-import GoogleAdsCostSection from '@/components/GoogleAds/Section6';
-import IndustryCarouselSection from '@/components/GoogleAds/Section7';
-import GoogleAdsSection10 from '@/components/GoogleAds/Section10';
-import BixeltekAdvantage from '@/components/GoogleAds/Section8';
-import FAQSection8 from '@/components/GoogleAds/SectionFaq';
-import ContactFromNew from '@/components/ContactFormNew';
-import { PhoneCall } from "lucide-react";
-import GradientBorderContainersMob from '@/components/GoogleAds/TimelineMobile';
-import TechStackSection from '@/components/GoogleAds/Section9';
-import Link from 'next/link';
-import cleaningcomp from "@/assets/digital marketing servies for cleaning companies.jpg";
-import oil from "@/assets/digital marketing for oil refinaries.jpg"
-import pet from "@/assets/digital marketing for pet stores.jpg"
-import roofing from "@/assets/digital marketing for roofing industries.jpg"
-import dental from "@/assets/digital marketing for health care practices.jpg"
-import lawncare from "@/assets/digital marketing for lawn care services.jpg"
-import blackcar from "@/assets/digital marketing for car detailers.jpg"
-import healthcare from "@/assets/digital marketing for health care practices.jpg"
-import LocationIndustrySection from '@/components/Common/location/LocationIndustrySection';
-import LocationProcessSection from '@/components/Common/location/LocationProcessSection';
-import DynamicIndustrySection from '@/components/Common/IndustryCarousel';
+export default function GoogleAdsPreviewPage() {
+  return (
+    <main className="bg-[#08080C] min-h-screen">
+      {/* 02 Service Hero (Shared Common Component) */}
+      <ServiceHero
+        eyebrow={heroPreviewData.eyebrow}
+        h1={heroPreviewData.h1}
+        p1={heroPreviewData.p1}
+        p2={heroPreviewData.p2}
+        primaryButtonText={heroPreviewData.primaryButtonText}
+        primaryButtonHref={heroPreviewData.primaryButtonHref}
+        trustStrip={heroPreviewData.trustStrip}
+        visualTagSubtitle="Google Partner Agency"
+        visualTagTitle="Search · Performance Max · Shopping"
+        visualBadgeText="Verified Management"
+        visualImage={whyChooseImg}
+      />
 
-const steps = [
-  {
-    number: '01',
-    title: 'Research & Analysis',
-    text: 'In-depth keyword research, competitor benchmarking, and market insights ensuring stronger, data-driven advertising performance.',
-    gradient: 'from-blue-500 via-blue-400 to-[#131313]',
-    color: 'text-blue-500',
-  },
-  {
-    number: '02',
-    title: 'Campaign Architecture',
-    text: 'Scalable account structures built for efficiency, higher quality scores, and long-term advertising success growth.',
-    gradient: 'from-green-500 via-teal-400 to-[#13131333]',
-    color: 'text-yellow-500',
-  },
-  {
-    number: '03',
-    title: 'Ad Copy & Creatives',
-    text: 'Compelling ad copy and compliant creatives designed to maximize visibility, engagement, and consistent click-through rates.',
-    gradient: 'from-yellow-400 via-yellow-300 to-[#13131333]',
-    color: 'text-red-500',
-  },
-  {
-    number: '04',
-    title: 'Landing Page Optimization',
-    text: 'Fast, responsive, and conversion-focused landing pages designed to improve mobile experiences and drive results.',
-    gradient: 'from-pink-500 via-purple-400 to-[#13131333]',
-    color: 'text-orange-500',
-  },
-  {
-    number: '05',
-    title: 'Conversion Tracking',
-    text: 'Robust GA4, GTM, and CRM integrations delivering full-funnel tracking and actionable performance insights.',
-    gradient: 'from-indigo-500 via-indigo-400 to-[#13131333]',
-    color: 'text-teal-500',
-  },
-  {
-    number: '06',
-    title: 'Continuous Scaling',
-    text: 'Ongoing A/B testing, budget optimization, and audience expansion strategies for consistent campaign performance improvements.',
-    gradient: 'from-red-500 via-[#131313] to-[#13131333]',
-    color: 'text-pink-500',
-  },
-];
+      {/* 03 Client Trust Marquee */}
+      <ClientTrustMarquee />
 
-const industries = [
-                        {
-                            id: "health",
-                            img: healthcare,
-                            label: "Digital Marketing for Healthcare",
-                            text: "Health Care Practices",
-                            description: "Local SEO + targeted ads to book 30+ new patients per month.",
-                        },
-                        {
-                            id: "auto",
-                            img: blackcar,
-                            label: "Digital Marketing for Automobiles",
-                            text: "Automobile industries",
-                            description: "Maps optimization + hyperlocal PPC to drive more calls and foot traffic.",
-                        },
-                        {
-                            id: "cleaning",
-                            img: cleaningcomp,
-                            label: "Digital Marketing for Cleaning Companies",
-                            text: "Cleaning Industries",
-                            description: "Maps optimization + hyperlocal PPC to drive more calls and foot traffic.",
-                        },
-                        {
-                            id: "roofing",
-                            img: roofing,
-                            label: "Digital Marketing for Roofing Companies",
-                            text: "Roofing Industries",
-                            description: "High-ticket lead funnels built for real estate and project-based services.",
-                        },
-                        {
-                            id: "lawncare",
-                            img: lawncare,
-                            label: "Digital Marketing for Lawn Care and Landscaping",
-                            text: "Lawn Care Industries",
-                            description: "Maps optimization + hyperlocal PPC to drive more calls and foot traffic.",
-                        },
-                        {
-                            id: "dental",
-                            img: dental,
-                            label: "Digital Marketing for Dental Clinic",
-                            text: "Dental Clinics",
-                            description: "Local SEO + targeted ads to book 30+ new patients per month.",
-                        },
-                        {
-                            id: "pet",
-                            img: pet,
-                            label: "Digital Marketing for Pet Stores",
-                            text: "Pet Stores",
-                            description: "Product SEO, performance ads & retargeting funnels to scale sales.",
-                        },
-                        {
-                            id: "oil",
-                            img: oil,
-                            label: "Digital Marketing for Oil Refineries",
-                            text: "Oil Refineries",
-                            description: "Paid growth loops, demo-booking strategies, and B2B marketing that closes deals.",
-                        }
-                    ]
+      {/* 04 Overview Section (What is Google Ads) */}
+      <ServiceOverviewSection
+        id="overview"
+        eyebrow={googleAdsOverviewData.eyebrow}
+        h2={googleAdsOverviewData.h2}
+        intro={googleAdsOverviewData.intro}
+        body={googleAdsOverviewData.body}
+        closingCopy={googleAdsOverviewData.closingCopy}
+        imageSrc={overviewImg}
+        imageAlt="What is Google Ads - Intent Search Acquisition by Bixeltek"
+        direction="left"
+      />
 
-export default function page() {
+      {/* 05 Problem Section (Shared Common Component) */}
+      <ServiceProblemSection
+        id="challenges"
+        eyebrow={businessProblemPreviewData.eyebrow}
+        h2={businessProblemPreviewData.h2}
+        intro={businessProblemPreviewData.intro}
+        cards={businessProblemPreviewData.cards}
+      />
 
+      {/* 07 Management Scope */}
+      <ManagementScopePreview />
 
-    return (
-        <>
-            <section className="relative flex flex-col items-center justify-center min-h-[70vh] lg:min-h-[80vh]  bg-black -mt-32 text-center px-6 overflow-hidden">
-                <div className='flex justify-center items-center'>
-                    {/* Blue Sphere Glow */}
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-blue-500 opacity-20 blur-3xl pointer-events-none" />
+      {/* 08 Related Services Section */}
+      <ServiceRelatedServices
+        id="related-services"
+        eyebrow={googleAdsRelatedServicesData.eyebrow}
+        h2={googleAdsRelatedServicesData.h2}
+        intro={googleAdsRelatedServicesData.intro}
+        cards={googleAdsRelatedServicesData.cards}
+      />
 
-                    <div className="relative z-10 mt-40 max-w-7xl">
-                        {/* Headline */}
-                        <h1 className="text-3xl md:text-6xl font-bold leading-tight text-white">
-                            Google Ads Management Services {" "}
-                            <span className="text-blue-500">That Deliver Real Growth</span>
-                        </h1>
+      {/* 09 Campaign Selection */}
+      <CampaignSelectionPreview />
 
-                        {/* Subheading */}
-                        <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                            Stop wasting ad spend. Start scaling with a Google Partner certified agency trusted in the USA, Canada, India & Saudi Arabia.
-                        </p>
+      {/* 10 Conversion Journey */}
+      <ConversionJourneyPreview />
 
-                        {/* CTA Buttons */}
-                        <div className="mt-8 flex flex-wrap justify-center gap-4">
-                            <a
-                                href="tel:+919100032301"
-                                className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
-                            >
-                                Call To Start Your Campaign
-                            </a>
-                            <a
-                                href="/contact-us"
-                                className="px-6 py-3 rounded-full border border-gray-400 text-gray-200 hover:bg-gray-800 transition"
-                            >
-                                Book A Free Audit
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <LogoTicker2 />
-            <Section1 />
-            <WhyGoogleAds />
-            <ProtectAds />
-            {/* <GradientBorderContainersMob/> */}
-            <LocationProcessSection
-            heading={
-                <span>A <span className="text-blue-500">Proven Framework</span> to Scale Profitably</span>
-            }
-            description='Our Google Ads process is battle-tested across multiple industries and regions:'
-            steps={steps}
-            cta={{
-                text:'Talk To Our Certified PPC Specialist',
-                href:'tel:+919100032301'
-            }}
-            footerText='This isn’t theory. It’s a repeatable framework we’ve used to drive results in the USA, Canada, India, and Saudi Arabia.'
-            />
-            <BiddingStrategies />
-            <GoogleAdsCostSection/>
-            {/* <IndustryCarouselSection /> */}
-            <DynamicIndustrySection
-            backgroundColor='bg-black'
-            heading={<>
-            <span><span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500">
-                        INDUSTRIES WE
-                    </span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500">
-                        SERVE
-                    </span></span>
-            </>}
-            description='Discover the diverse industries we proudly cater to, offering innovative solutions to help you excel in your field.'
-            industries={industries}
-            />
-            {/* <LocationIndustrySection
-            heading={<>
-            <span><span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500">
-                        INDUSTRIES WE
-                    </span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500">
-                        SERVE
-                    </span></span>
-            </>}
-            description='Discover the diverse industries we proudly cater to, offering innovative solutions to help you excel in your field.'
-            industries={industries}
-            /> */}
-            <BixeltekAdvantage />
-            <TechStackSection />
-            <GoogleAdsSection10/>
-            <FAQSection8/>
-           <section className='bg-black md:p-20 mx-auto flex flex-col justify-center gap-10 items-center lg:flex-row ' id='form'>
-                <div className="w-full mt-14 md:mt-0 flex justify-center items-center px-6">
-                    <div className="space-y-5 text-white max-w-xl ">
-                        <h2 className="text-4xl md:text-4xl capitalize font-bold">
-                            Lets grow your<br></br> business with 
-                            <span className='text-blue-500'> google ads</span>
-                        </h2>
-                        <h3 className='text-xl md:text-2xl font-poppins'>Fill the form to get started</h3>
-                        <p className="text-white font-poppins text-base leading-relaxed">
-                            Ready to stop wasting ad spend and start driving measurable results? Partner with Bixeltek — a Google Partnered agency trusted by businesses worldwide. Fill out the form now to request your free Google Ads audit, and our certified experts will show you exactly how to increase conversions, reduce costs, and scale your growth with precision.
-                        </p>
-                        <div className="space-y-3 pt-3">
-                            <Link href={'tel:+919100032301'}>
-                                <div className="flex items-center gap-2">
-                                    <PhoneCall size={22} />
-                                    <span className="text-white text-base">Call: +91-9100032301</span>
-                                </div>
-                            </Link>
+      {/* 11 Reporting & Lead Quality (Shared System Cards Component) */}
+      <ServiceSystemCards
+        id="reporting-systems"
+        eyebrow={reportingLeadQualityPreviewData.eyebrow}
+        h2={reportingLeadQualityPreviewData.h2}
+        intro={reportingLeadQualityPreviewData.intro}
+        cards={reportingLeadQualityPreviewData.cards}
+        supportingNote={reportingLeadQualityPreviewData.supportingParagraph}
+      />
 
-                            
-                        </div>
-                    </div>
-                </div>
-                <div className='w-full flex justify-center items-center px-6' >
-                    <ContactFromNew />
-                </div>
-            </section>
-        </>
-    )
+            <ServiceWhyChooseUs
+        id="why-bixeltek"
+        data={googleAdsWhyChooseData}
+        defaultImage={whyChooseImg}
+      />
+
+      {/* 11b Our Certificates & Google Certified Badges */}
+      <GoogleAdsCertificates
+        id="our-certificates"
+        eyebrow={googleAdsCertificatesData.eyebrow}
+        h2={googleAdsCertificatesData.h2}
+        intro={googleAdsCertificatesData.intro}
+      />
+
+      {/* 12 Technologies Ecosystem (Shared Common Component) */}
+      <TechnologiesSection
+        id="technologies"
+        eyebrow="ADVERTISING & ATTRIBUTION ECOSYSTEM"
+        h2="Platforms & Tools Engineered for Measurement & Scale"
+        intro="From high-intent search bidding to server-side attribution and live ROAS dashboards, we deploy enterprise marketing technologies to optimize every click."
+        technologies={googleAdsTechnologies}
+        ctaText="Need custom CRM integration, offline conversion tracking, or server-side GTM?"
+        ctaButtonText="Contact Us Now"
+        ctaHref="#google-ads-review"
+      />
+
+      {/* 13 Starting Situations */}
+      <StartingSituationsPreview />
+
+      {/* 14 Onboarding and First 90 Days */}
+      <OnboardingTimelinePreview />
+
+      {/* 15 Budget and Fees */}
+      <BudgetFeesPreview />
+
+      {/* 16 Business Types and Markets */}
+      <BusinessMarketsPreview />
+
+      {/* 17 FAQs (Shared Common Component) */}
+      <ServiceFAQ
+        id="faqs"
+        h2={faqPreviewData.h2}
+        faqs={faqPreviewData.faqs}
+      />
+
+      {/* 18 Final CTA & Review Form (Shared Common Component) */}
+      <ServiceFinalCTA
+        id="google-ads-review"
+        eyebrow={finalOfferPreviewData.eyebrow}
+        h2={finalOfferPreviewData.h2}
+        intro={finalOfferPreviewData.intro}
+        sectionSubtitle="Measurement & Attribution Stack"
+        tools={googleAdsFinalCtaTools}
+      />
+
+    </main>
+  );
 }

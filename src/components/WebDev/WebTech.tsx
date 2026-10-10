@@ -34,17 +34,20 @@ const logos = [
 export default function WebTech() {
   return (
     <section className="w-full py-20 mt-10 md:mt-20 bg-black">
-      <div className="max-w-[90%] mx-auto flex flex-col lg:flex-row gap-8">
+      <div className="max-w-[90%] mx-auto flex flex-col gap-8">
         {/* Left text */}
-        <div className="w-full lg:w-[40%] flex items-center justify-center lg:justify-start">
-          <h2 className=" text-3xl md:text-5xl text-center md:text-left font-semibold text-gray-50">
-            Powered by<br /> Industry-Leading Tools
+        <div className="w-full lg:w-[40%] flex flex-col justify-center items-center lg:items-start text-center mx-auto ">
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-50 mb-4">
+            Technology Selected Around <span className="text-blue-500">Business Logic</span>
           </h2>
+          <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+            We do not force a single framework. Our team selects platforms, languages, and integrations based on your performance, team editorial workflow, and scaling requirements.
+          </p>
         </div>
         
         {/* Right side logos */}
-        <div className="w-full lg:w-[60%] col-span-2 lg:col-span-3">
-          <TechGrid/>
+        <div className="w-full">
+          <TechGrid cols={10} />
         </div>
       </div>
     </section>

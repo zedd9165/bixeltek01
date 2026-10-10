@@ -46,7 +46,7 @@ const services: ServiceCard[] = [
       'We build ecommerce experiences around your catalogue, customers and operations. From Shopify and WooCommerce to headless or custom commerce, we plan the storefront, product journey, checkout and required integrations together. The result should be a store customers can use with confidence and your team can run effectively.',
     labels: ['Shopify', 'WooCommerce', 'Headless Commerce', 'Checkout', 'Payments & Integrations'],
     cta: 'Explore Ecommerce Development',
-    link: '/ecommerce-websites',
+    link: '/services/ecommerce-development',
     icon: ShoppingBag
   },
   {
@@ -57,7 +57,7 @@ const services: ServiceCard[] = [
       'We develop mobile apps, portals and internal platforms for defined users and workflows. Our team helps shape the requirements, design the experience, build the functionality and connect it with the systems it depends on. The work is scoped around what the product needs to do at launch and how it may evolve.',
     labels: ['Mobile Apps', 'Customer Portals', 'Internal Platforms',  'Conversion Optimization'],
     cta: 'Explore Application Development',
-    link: '/services/app-development',
+    link: '/services/mobile-app-development',
     icon: Smartphone
   },
   {
