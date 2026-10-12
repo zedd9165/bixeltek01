@@ -56,30 +56,103 @@ const calculateReadTime = (html: string): string => {
 };
 
 // ✅ DYNAMIC META HANDLER
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bixeltek.com'; // set your real domain
+const SITE_NAME = 'Bixeltek Blog';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`; // add a 1200x630 image in /public
+
+const decodeEntities = (str: string) =>
+  str
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&#8217;|&rsquo;/g, '’')
+    .replace(/&#8216;|&lsquo;/g, '‘')
+    .replace(/&#8220;|&ldquo;/g, '“')
+    .replace(/&#8221;|&rdquo;/g, '”')
+    .replace(/&#8211;|&ndash;/g, '–')
+    .replace(/&#8212;|&mdash;/g, '—')
+    .replace(/&hellip;|&#8230;/g, '…')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+
+const toPlainText = (html: string) =>
+  decodeEntities(html.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
+
+const toAbsoluteUrl = (url?: string) => {
+  if (!url) return undefined;
+  if (url.startsWith('//')) return `https:${url}`;
+  if (url.startsWith('http://')) return url.replace('http://', 'https://'); // LinkedIn prefers https
+  if (url.startsWith('/')) return `${SITE_URL}${url}`;
+  return url;
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
+  const canonicalUrl = `${SITE_URL}/blog/${slug}`;
 
   try {
     const { post } = await client.request<GetSinglePostResponse>(GET_SINGLE_POST, { slug });
 
-    const cleanContent = post.content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
     const metaTitle = post.title.slice(0, 60);
-    const metaDescription = cleanContent.slice(0, 150);
+    const metaDescription = toPlainText(post.content).slice(0, 155);
+    const image = toAbsoluteUrl(post.featuredImage?.node.sourceUrl) ?? DEFAULT_OG_IMAGE;
+    const categories = post.categories?.nodes.map((c) => c.name) ?? [];
 
     return {
+      metadataBase: new URL(SITE_URL),
       title: metaTitle,
       description: metaDescription,
+      alternates: { canonical: canonicalUrl },
+
+      // Facebook, WhatsApp, LinkedIn, Telegram, Slack, Discord, iMessage, Pinterest, Reddit
       openGraph: {
+        type: 'article',
+        url: canonicalUrl,
+        siteName: SITE_NAME,
+        locale: 'en_US',
         title: metaTitle,
         description: metaDescription,
-        images: post.featuredImage?.node.sourceUrl ? [post.featuredImage.node.sourceUrl] : [],
+        images: [
+          {
+            url: image,
+            secureUrl: image,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
+        publishedTime: new Date(post.date).toISOString(),
+        authors: [post.author.node.name],
+        section: categories[0],
+        tags: categories,
+      },
+
+      // X (Twitter), separate tags so it renders a large card
+      twitter: {
+        card: 'summary_large_image',
+        site: '@bixeltek',      // your brand handle
+        creator: '@bixeltek',    // or the author's handle
+        title: metaTitle,
+        description: metaDescription,
+        images: [{ url: image, alt: post.title }],
+      },
+
+      // Extra tags some platforms read
+      other: {
+        'article:author': post.author.node.name,
+        'og:image:secure_url': image,
+        'pinterest-rich-pin': 'true',
+        'theme-color': '#3b0764',
       },
     };
   } catch (err) {
     console.error('Failed to fetch metadata:', err);
     return {
+      metadataBase: new URL(SITE_URL),
       title: 'Post not found | Bixeltek Blog',
       description: 'The blog post you’re looking for could not be found.',
+      robots: { index: false, follow: false },
     };
   }
 }
@@ -105,7 +178,7 @@ export default async function SinglePostPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-purple-700 text-white pt-40 pb-24 px-8 md:px-24">
+      <div className="bg-gradient-to-br from-purple-950 via-purple-900 to-neutral-900 text-white pt-40 pb-24 px-8 md:px-24">
         <div className="sm:w-[99%] md:w-[80%] lg:max-w-[70%] mx-auto flex flex-col items-center justify-center text-center lg:text-center min-h-[40vh]">
 
           <h1 className="text-4xl md:text-5xl font-bold text-center leading-tight mb-8">{post.title}</h1>
@@ -204,7 +277,7 @@ export default async function SinglePostPage({ params }: Props) {
                       />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                    <span className="absolute top-3 left-3 rounded-full bg-white/15 backdrop-blur-md px-3 py-1 text-[11px] font-medium uppercase tracking-wider">
+                    <span className="absolute top-3 left-3 rounded-full bg-red-500/60 backdrop-blur-md px-3 py-1 text-[11px] font-medium uppercase tracking-wider">
                       Top pick
                     </span>
                     <div className="absolute inset-x-0 bottom-0 p-4">

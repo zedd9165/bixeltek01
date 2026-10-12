@@ -139,7 +139,7 @@ export function BlogPageUI({ allPosts, categories }: { allPosts: Post[]; categor
               <div className="p-4 lg:p-6 transition-colors flex flex-col justify-around duration-300 hover:bg-white rounded-2xl">
                 <div>
                   <div>
-                    <span className="text-black font-normal text-sm bg-[#e8fbc6] py-2 px-4 w-fit rounded-full mb-3 block">
+                    <span className="text-white font-normal text-sm bg-purple-600 py-2 px-4 w-fit rounded-full mb-3 block">
                       {new Date(post.date).toLocaleDateString('en-GB', {
                         day: '2-digit',
                         month: 'short',
