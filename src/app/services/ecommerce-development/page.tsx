@@ -138,19 +138,19 @@ const ecomTechTools: TechStackItem[] = [
     name: "Shopify",
     category: "Ecommerce CRO",
     description: "Optimizing product discovery, merchandising, cart flows, and checkout experiences.",
-    icon: <SiShopify className="w-5 h-5 text-emerald-500" />,
+    icon: <SiShopify className="w-5 h-5 text-white" />,
   },
   {
     name: "WooCommerce",
     category: "Ecommerce CRO",
     description: "Improving storefront journeys, product pages, cart behaviour, and purchase flows.",
-    icon: <SiWoo className="w-5 h-5 text-purple-500" />,
+    icon: <SiWoo className="w-5 h-5 text-white" />,
   },
   {
     name: "WordPress",
     category: "Content & Lead Gen",
     description: "Optimizing business websites, landing pages, forms, and lead-generation journeys.",
-    icon: <SiWordpress className="w-5 h-5 text-blue-500" />,
+    icon: <SiWordpress className="w-5 h-5 text-white" />,
   },
   {
     name: "Next.js",
@@ -162,13 +162,13 @@ const ecomTechTools: TechStackItem[] = [
     name: "Medusa",
     category: "Headless Commerce",
     description: "Optimizing flexible commerce experiences across custom storefronts and purchase journeys.",
-    icon: <SiMedusa className="w-5 h-5 text-indigo-400" />,
+    icon: <SiMedusa className="w-5 h-5 text-white" />,
   },
   {
     name: "Custom Web Applications",
     category: "Custom Experiences",
     description: "Improving conversion flows across business-specific websites, portals, and web applications.",
-    icon: <Code2 className="w-5 h-5 text-blue-400" />,
+    icon: <Code2 className="w-5 h-5 text-white" />,
   },
 ];
 
@@ -200,8 +200,6 @@ export default function EcommerceDevelopmentPage() {
         p2={ecommerceHeroPreviewData.p2}
         primaryButtonText={ecommerceHeroPreviewData.primaryButtonText}
         primaryButtonHref={ecommerceHeroPreviewData.primaryButtonHref}
-        secondaryLinkText={ecommerceHeroPreviewData.secondaryLinkText}
-        secondaryLinkHref={ecommerceHeroPreviewData.secondaryLinkHref}
         microcopy={ecommerceHeroPreviewData.microcopy}
         visualTagSubtitle="Ecommerce Delivery"
         visualTagTitle="Shopify · WooCommerce · Custom"
