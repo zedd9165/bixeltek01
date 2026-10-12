@@ -441,7 +441,7 @@ export const businessMarketsPreviewData = {
   regionalLinks: [
     { label: "Hyderabad", destination: "/google-ads-agency-hyderabad" },
     { label: "Toronto", destination: "/toronto/google-ads-management" },
-    { label: "Mississauga", destination: "mississauga/google-ads" },
+    { label: "Mississauga", destination: "/mississauga/google-ads" },
     { label: "Vancouver", destination: "/vancouver/google-ads" },
   ],
 };

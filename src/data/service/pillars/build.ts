@@ -327,7 +327,7 @@ export const buildCapabilities: BuildCapability[] = [
     ],
 
     ctaText: "Discuss a WordPress Project",
-    ctaHref: "#build-project",
+    ctaHref: "/services/web-design/wordpress",
   },
 
   {

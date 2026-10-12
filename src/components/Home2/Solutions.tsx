@@ -28,7 +28,7 @@ const solutions: Solution[] = [
       'APIs & integrations',
       'Custom CRMs & internal tools',
     ],
-    link: '#final-cta',
+    link: '/services/build',
   },
   {
     number: '02',
@@ -43,7 +43,7 @@ const solutions: Solution[] = [
       'Conversion tracking & analytics',
       'Landing pages & CRO',
     ],
-    link: '#final-cta',
+    link: '/services/grow',
     featured: true,
   },
   {
@@ -59,7 +59,7 @@ const solutions: Solution[] = [
       'Reporting dashboards',
       'Lead follow-up systems',
     ],
-    link: '#final-cta',
+    link: '/services/automate',
   },
 ];
 
