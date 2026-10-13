@@ -27,6 +27,7 @@ import martin from '@/assets/martin.png';
 import whitestar from '@/assets/white-star.webp';
 import Enaara from '@/assets/enaara.webp';
 import wefound from '@/assets/we-found-global.webp';
+import sac from '@/assets/scorpion-arabia-logo.png'
 
 interface ClientLogo {
   id: string;
@@ -63,6 +64,7 @@ const clientLogosSingleRow: ClientLogo[] = [
   { id: 'c16', name: 'Bin Hindi', src: binhindi, scale: 1.2, href: 'https://www.binhindi.com/' },
   { id: 'c20', name: 'Martin', src: martin, scale: 1, href: 'https://martincarpetcleaning.com/' },
   { id: 'c23', name: 'We Found Global', src: wefound, scale: 1.2, bgColor: '#000', href: 'https://wefoundglobal.com/' },
+  { id: 'c24', name: 'Sac', src: sac, scale: 1, href: 'https://scorpion-contracting.com/' },
 ];
 
 /*
