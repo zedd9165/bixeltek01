@@ -12,35 +12,38 @@ export interface BookingRegion {
   flagCode?: string; // ISO 3166-1 alpha-2 for clean native flag display
 }
 
-// Centralized configuration for all regions. Replace with actual booking calendar URLs.
+export const BOOKING_URLS = {
+  northAmerica:
+    'https://bookings.cloud.microsoft/book/DiscoveryCallxBixeltek@bixeltekglobal.com/?ismsaljsauthenabled',
+  international:
+    'https://bookings.cloud.microsoft/book/BixeltekIndia@bixeltekglobal.com/?ismsaljsauthenabled',
+};
+
+// Centralized configuration for all regions.
 export const bookingRegions: BookingRegion[] = [
   {
     id: 'north-america',
     label: 'Canada & United States',
     description: 'Schedule with our North America team',
-    calendarUrl: 'REPLACE_WITH_CANADA_US_CALENDAR_URL',
-    flagCode: 'US_CA',
+    calendarUrl: BOOKING_URLS.northAmerica,
   },
   {
     id: 'uk',
     label: 'United Kingdom',
     description: 'Schedule with our UK team',
-    calendarUrl: 'REPLACE_WITH_UK_CALENDAR_URL',
-    flagCode: 'GB',
+    calendarUrl: BOOKING_URLS.international,
   },
   {
     id: 'saudi',
     label: 'Saudi Arabia',
     description: 'Schedule with our Middle East team',
-    calendarUrl: 'REPLACE_WITH_SAUDI_CALENDAR_URL',
-    flagCode: 'SA',
+    calendarUrl: BOOKING_URLS.international,
   },
   {
     id: 'india',
     label: 'India',
     description: 'Schedule with our India team',
-    calendarUrl: 'REPLACE_WITH_INDIA_CALENDAR_URL',
-    flagCode: 'IN',
+    calendarUrl: BOOKING_URLS.international,
   },
 ];
 
@@ -48,33 +51,14 @@ interface BookingRegionModalProps {
   open: boolean;
   onClose: () => void;
   regions?: BookingRegion[];
-}
-
-// Minimal, restrained flag icons to stay aligned with Bixeltek's premium aesthetic
-function RegionIconBadge({ flagCode }: { flagCode?: string }) {
-  if (flagCode === 'US_CA') {
-    return (
-      <span className="text-base select-none inline-flex items-center gap-0.5 tracking-tight" aria-hidden="true">
-        🇨🇦 🇺🇸
-      </span>
-    );
-  }
-  if (flagCode === 'GB') {
-    return <span className="text-base select-none" aria-hidden="true">🇬🇧</span>;
-  }
-  if (flagCode === 'SA') {
-    return <span className="text-base select-none" aria-hidden="true">🇸🇦</span>;
-  }
-  if (flagCode === 'IN') {
-    return <span className="text-base select-none" aria-hidden="true">🇮🇳</span>;
-  }
-  return <Globe className="w-4 h-4 text-[#8C45FF]" aria-hidden="true" />;
+  onSelectBookingUrl?: (url: string) => void;
 }
 
 export default function BookingRegionModal({
   open,
   onClose,
   regions = bookingRegions,
+  onSelectBookingUrl,
 }: BookingRegionModalProps) {
   const shouldReduceMotion = useReducedMotion();
   const modalRef = useRef<HTMLDivElement>(null);
@@ -114,10 +98,8 @@ export default function BookingRegionModal({
   }, [open, onClose]);
 
   const handleRegionSelect = (calendarUrl: string) => {
-    if (!calendarUrl || calendarUrl.startsWith('REPLACE_WITH_')) {
-      console.warn(`[BookingRegionModal] Please provide a valid calendar URL for: ${calendarUrl}`);
-      // Fallback or opens placeholder
-      window.open('#booking-calendar', '_blank', 'noopener,noreferrer');
+    if (onSelectBookingUrl) {
+      onSelectBookingUrl(calendarUrl);
     } else {
       window.open(calendarUrl, '_blank', 'noopener,noreferrer');
     }

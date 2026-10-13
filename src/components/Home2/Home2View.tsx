@@ -17,6 +17,7 @@ import FAQAccordion from "./FAQAccordion";
 import FinalCTA from "./FinalCTA";
 import GrowthAuditModal from "./GrowthAuditModal";
 import BookingRegionModal from "./BookingRegionModal";
+import { MicrosoftBooking } from "../DentalMarketing/Variant_C/Microsoft_Booking";
 import WhyBixeltek from "./WhyBixeltek";
 import Solutions from "./Solutions";
 import ProofPointsBar from "./ProofPointsBar";
@@ -25,6 +26,7 @@ import { Whiteheader } from "../Whiteheader";
 export const Home2View: React.FC = () => {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [activeBookingUrl, setActiveBookingUrl] = useState<string | null>(null);
 
   const handleOpenAudit = () => {
     setIsAuditModalOpen(true);
@@ -40,6 +42,11 @@ export const Home2View: React.FC = () => {
 
   const handleCloseBooking = () => {
     setIsBookingModalOpen(false);
+  };
+
+  const handleSelectBookingUrl = (calendarUrl: string) => {
+    setIsBookingModalOpen(false);
+    setActiveBookingUrl(calendarUrl);
   };
 
   return (
@@ -75,6 +82,17 @@ export const Home2View: React.FC = () => {
       <BookingRegionModal 
         open={isBookingModalOpen} 
         onClose={handleCloseBooking} 
+        onSelectBookingUrl={handleSelectBookingUrl}
+      />
+
+      {/* Dynamic Microsoft Booking Iframe Modal */}
+      <MicrosoftBooking
+        showBooking={Boolean(activeBookingUrl)}
+        setShowBooking={(show: boolean) => {
+          if (!show) setActiveBookingUrl(null);
+        }}
+        bookingUrl={activeBookingUrl || undefined}
+        title="Schedule a 1-on-1 Consultation"
       />
     </div>
   );
