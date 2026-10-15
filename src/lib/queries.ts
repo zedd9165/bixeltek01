@@ -1,28 +1,19 @@
 export const GET_ALL_POSTS = `
-  query GET_ALL_POSTS {
-    posts(first: 10) {
+  query GET_ALL_POSTS($first: Int!, $after: String) {
+    posts(first: $first, after: $after) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       nodes {
         id
         title
         excerpt
         slug
         date
-        author {
-          node {
-            name
-          }
-        }
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        categories {
-          nodes {
-            name
-            slug
-          }
-        }
+        author { node { name } }
+        featuredImage { node { sourceUrl } }
+        categories { nodes { name slug } }
       }
     }
   }

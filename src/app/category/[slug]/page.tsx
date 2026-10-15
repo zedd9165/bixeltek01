@@ -3,6 +3,7 @@
 import { client } from '@/lib/graphql-client';
 import { gql } from 'graphql-request';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export const dynamic = "force-dynamic";
 
@@ -74,19 +75,18 @@ type CategorySlugResponse = {
 
 
 export default async function CategoryPage({ params }: { params: { slug: string } }) {
-    const data = await client.request<CategoryPageData>(GET_POSTS_BY_CATEGORY, {
-        slug: [params.slug],
-    });
-    const category = data.categories.nodes[0];
-
+    let data: CategoryPageData | null = null;
+    try {
+        data = await client.request<CategoryPageData>(GET_POSTS_BY_CATEGORY, {
+            slug: [params.slug],
+        });
+    } catch {
+        notFound();
+    }
+    const category = data?.categories?.nodes?.[0];
 
     if (!category) {
-        return (
-            <div className="text-center py-20 text-white">
-                <h1 className="text-3xl font-bold">Category not found</h1>
-                <p className="text-neutral-500 mt-2">This category does not exist or has no posts.</p>
-            </div>
-        );
+        notFound();
     }
 
     return (
@@ -131,25 +131,56 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 
 
 export async function generateStaticParams() {
-    const res: CategorySlugResponse = await client.request(gql`
-    {
-      categories(first: 50) {
-        nodes {
-          slug
+    try {
+        const res: CategorySlugResponse = await client.request(gql`
+        {
+          categories(first: 50) {
+            nodes {
+              slug
+            }
+          }
         }
-      }
-    }
-  `);
+      `);
 
-    return res.categories.nodes.map((cat: { slug: string }) => ({
-        slug: cat.slug,
-    }));
+        return res.categories.nodes.map((cat: { slug: string }) => ({
+            slug: cat.slug,
+        }));
+    } catch {
+        return [];
+    }
 }
 
 // 👇 Dynamic metadata per category
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-    return {
-        title: `Category: ${params.slug} | My Blog`,
-        description: `Explore blog posts under the ${params.slug} category.`,
-    };
+    try {
+        const data = await client.request<CategoryPageData>(GET_POSTS_BY_CATEGORY, {
+            slug: [params.slug],
+        });
+        const category = data?.categories?.nodes?.[0];
+
+        if (!category) {
+            return {
+                title: "Category Not Found | Bixeltek",
+            };
+        }
+
+        return {
+            title: `Category: ${category.name} | Bixeltek`,
+            description: `Explore blog posts under the ${category.name} category on Bixeltek.`,
+            alternates: {
+                canonical: `https://bixeltek.com/category/${params.slug}`,
+            },
+            openGraph: {
+                title: `Category: ${category.name} | Bixeltek`,
+                description: `Explore blog posts under the ${category.name} category on Bixeltek.`,
+                url: `https://bixeltek.com/category/${params.slug}`,
+                siteName: "Bixeltek",
+                type: "website",
+            },
+        };
+    } catch {
+        return {
+            title: "Category Not Found | Bixeltek",
+        };
+    }
 }
