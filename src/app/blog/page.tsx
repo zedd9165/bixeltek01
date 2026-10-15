@@ -30,22 +30,41 @@ type Post = {
 type Category = { name: string; slug: string; count: number };
 
 type GetAllPostsResponse = {
-  posts: { nodes: Post[] };
+  posts: {
+    pageInfo: { hasNextPage: boolean; endCursor: string | null };
+    nodes: Post[];
+  };
 };
 
 type GetCategoriesResponse = {
   categories: { nodes: Category[] };
 };
 
+// WPGraphQL returns at most 100 per request, so follow the cursor until done
+async function fetchAllPosts(): Promise<Post[]> {
+  const all: Post[] = [];
+  let after: string | null = null;
+
+  while (true) {
+    const data: GetAllPostsResponse = await client.request<GetAllPostsResponse>(
+      GET_ALL_POSTS,
+      { first: 100, after }
+    );
+    all.push(...data.posts.nodes);
+    if (!data.posts.pageInfo.hasNextPage) break;
+    after = data.posts.pageInfo.endCursor;
+  }
+
+  return all;
+}
+
 export default async function BlogPage() {
-  const [postsData, categoriesData] = await Promise.all([
-    client.request<GetAllPostsResponse>(GET_ALL_POSTS , { cache: "no-store" }),
-    client.request<GetCategoriesResponse>(GET_ALL_CATEGORIES_WITH_COUNT , {} , { cache: "no-store" }),
+  const [posts, categoriesData] = await Promise.all([
+    fetchAllPosts(),
+    client.request<GetCategoriesResponse>(GET_ALL_CATEGORIES_WITH_COUNT),
   ]);
 
-  const posts = postsData.posts.nodes;
   const categories = categoriesData.categories.nodes;
 
   return <BlogPageUI allPosts={posts} categories={categories} />;
 }
-
