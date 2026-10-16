@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title: "Dental Marketing Agency in India | Grow Clinic Patients & Revenue | Bixeltek",
 
   description:
-    "India's leading dental marketing agency. We help dental clinics and multi-speciality dental chains in Delhi NCR, Mumbai, Bengaluru, Hyderabad & across India attract high-ticket implant, aligner & cosmetic patients with Google Ads, Dental SEO, and high-converting landing pages.",
+    "India's leading dental marketing agency. We help dental clinics and multi-specialty dental chains in Delhi NCR, Mumbai, Bengaluru, Hyderabad & across India attract high-ticket implant, aligner & cosmetic patients with Google Ads, Dental SEO, and high-converting landing pages.",
 
   alternates: {
     canonical: "https://bixeltek.com/dental-marketing-india-ind003BXTDENTAL",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dental Marketing Agency in India | Grow Clinic Patients & Revenue | Bixeltek",
     description:
-      "India's leading dental marketing agency. We help dental clinics and multi-speciality dental chains in Delhi NCR, Mumbai, Bengaluru, Hyderabad & across India attract high-ticket implant, aligner & cosmetic patients with Google Ads, Dental SEO, and high-converting landing pages.",
+      "India's leading dental marketing agency. We help dental clinics and multi-specialty dental chains in Delhi NCR, Mumbai, Bengaluru, Hyderabad & across India attract high-ticket implant, aligner & cosmetic patients with Google Ads, Dental SEO, and high-converting landing pages.",
     url: "https://bixeltek.com/dental-marketing-india-ind003BXTDENTAL",
     siteName: "Bixeltek",
     type: "website",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dental Marketing Agency in India | Grow Clinic Patients & Revenue | Bixeltek",
     description:
-      "India's leading dental marketing agency. We help dental clinics and multi-speciality dental chains in Delhi NCR, Mumbai, Bengaluru, Hyderabad & across India attract high-ticket implant, aligner & cosmetic patients with Google Ads, Dental SEO, and high-converting landing pages.",
+      "India's leading dental marketing agency. We help dental clinics and multi-specialty dental chains in Delhi NCR, Mumbai, Bengaluru, Hyderabad & across India attract high-ticket implant, aligner & cosmetic patients with Google Ads, Dental SEO, and high-converting landing pages.",
   },
-}
+};
 
 export default function Page() {
   return (

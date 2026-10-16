@@ -193,7 +193,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://bixeltek.com/home-2",
+    canonical: "https://bixeltek.com/",
   },
 
   openGraph: {
@@ -202,7 +202,15 @@ export const metadata: Metadata = {
       "We help businesses modernize how they attract customers, sell online and operate digitally — bringing strategy, marketing and technology together to drive business growth.",
     siteName: "Bixeltek",
     type: "website",
-    url: "https://bixeltek.com/home-2",
+    url: "https://bixeltek.com/",
+    images: [
+      {
+        url: "https://bixeltek.com/BIXELTEKLOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "Bixeltek - Digital Transformation & Growth Agency",
+      },
+    ],
   },
 
   twitter: {
@@ -210,6 +218,7 @@ export const metadata: Metadata = {
     title: "Digital Transformation & Growth Agency | Bixeltek",
     description:
       "We help businesses modernize how they attract customers, sell online and operate digitally — bringing strategy, marketing and technology together to drive business growth.",
+    images: ["https://bixeltek.com/BIXELTEKLOGO.png"],
   },
 };
 

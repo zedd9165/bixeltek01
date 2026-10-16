@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import {
   FaChartLine,
   FaDesktop,
@@ -33,7 +33,7 @@ export const INDIA_HERO_CONTENT: HeroSectionContent = {
   h1End: '',
   subtitle: 'Grow Your Indian Practice With Targeted Google & Meta Campaigns Built for Better ROI',
   subtext:
-    'Turn online searches into confirmed clinic visits and high-ticket treatment cases. Bixeltek builds dedicated patient acquisition systems for Indian dental practices—combining hyper-targeted Google Ads, local Dental SEO, high-converting WhatsApp & mobile landing pages, and rapid front-desk lead recovery for Dental Implants, Clear Aligners, and Cosmetic Dentistry.',
+    'Turn online searches into confirmed clinic visits and high-ticket treatment cases. Bixeltek builds dedicated patient acquisition systems for Indian dental practices - combining hyper-targeted Google Ads, local Dental SEO, high-converting WhatsApp & mobile landing pages, and rapid front-desk lead recovery for Dental Implants, Clear Aligners, and Cosmetic Dentistry.',
   featureTags: [
     { iconType: 'chart', text: 'High-Ticket Treatment Leads' },
     { iconType: 'tooth', text: 'India Dental Market Specialists' },
@@ -88,7 +88,7 @@ export const INDIA_SERVICES_CONTENT: ServicesSectionContent = {
       icon: FaChartLine,
       title: 'Google Ads & Dental PPC',
       description:
-        'Capture private patients actively searching for high-margin dental procedures in your city catchment—from Single & Full Mouth Dental Implants to Clear Aligners and Smile Makeovers.',
+        'Capture private patients actively searching for high-margin dental procedures in your city catchment - from Single & Full Mouth Dental Implants to Clear Aligners and Smile Makeovers.',
       features: [
         'High-intent treatment keyword architecture',
         'High-converting ad copy & local extensions',
@@ -118,7 +118,7 @@ export const INDIA_SERVICES_CONTENT: ServicesSectionContent = {
       icon: FaDesktop,
       title: 'High-Converting Dental Landing Pages',
       description:
-        'Turn paid ad clicks into confirmed appointments with mobile-first dental landing pages built specifically for Indian patient behaviour—with 1-click WhatsApp and call actions.',
+        'Turn paid ad clicks into confirmed appointments with mobile-first dental landing pages built specifically for Indian patient behaviour - with 1-click WhatsApp and call actions.',
       features: [
         'Treatment-led CRO layouts engineered for mobile 4G/5G',
         'Direct 1-tap WhatsApp chat & call appointment flows',
@@ -182,13 +182,13 @@ export const INDIA_BENEFITS_CONTENT: BenefitsSectionContent = {
   headingHighlight: 'Bixeltek',
   headingEnd: '',
   subtext:
-    'We don’t just deliver vanity clicks or low-intent leads. We build and scale the entire patient acquisition engine behind them—helping Indian dental clinics attract high-value patients and fill surgery chairs predictably.',
+    'We don’t just deliver vanity clicks or low-intent leads. We build and scale the entire patient acquisition engine behind them - helping Indian dental clinics attract high-value patients and fill surgery chairs predictably.',
   benefits: [
     {
       icon: FaStar,
       title: 'Specialized in Indian Dental Economics',
       description:
-        'We understand the patient psychology in India—from price sensitivity on general treatments to value-driven decisions on Dental Implants, Clear Aligners, Full Mouth Rehabilitation, and NRI Dental Tourism.',
+        'We understand the patient psychology in India - from price sensitivity on general treatments to value-driven decisions on Dental Implants, Clear Aligners, Full Mouth Rehabilitation, and NRI Dental Tourism.',
       accent: '#eff6ff',
       iconColor: '#1a56db',
       num: '01',
@@ -319,7 +319,7 @@ export const INDIA_TESTIMONIALS_CONTENT: TestimonialsSectionContent = {
       location: 'Indiranagar, Bengaluru',
       specialty: 'Orthodontist & Clear Aligner Specialist',
       quote:
-        'Bixeltek transformed our clear aligner patient acquisition. We now dominate Google Local 3-Pack and targeted search ads across East Bangalore. The quality of patients walking into our clinic is exceptional—they already know our expertise and come ready to proceed with treatment.',
+        'Bixeltek transformed our clear aligner patient acquisition. We now dominate Google Local 3-Pack and targeted search ads across East Bangalore. The quality of patients walking into our clinic is exceptional - they already know our expertise and come ready to proceed with treatment.',
       metrics: '#1 Google Maps Ranking',
       color: 'from-purple-400 to-pink-400',
     },

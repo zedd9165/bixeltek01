@@ -10,6 +10,7 @@ export interface ServiceOverviewSectionProps {
   h2: string;
   intro: string;
   body?: string | string[];
+  points?: { title: string; description: string }[];
   closingCopy?: string;
   imageSrc?: string | StaticImageData;
   imageAlt?: string;
@@ -22,6 +23,7 @@ export default function ServiceOverviewSection({
   h2,
   intro,
   body,
+  points,
   closingCopy,
   imageSrc,
   imageAlt = "Service overview image",
@@ -64,12 +66,27 @@ export default function ServiceOverviewSection({
 
             {/* Body Paragraph(s) */}
             {body && (
-              <div className="space-y-4 text-base md:text-lg text-gray-600 font-poppins leading-relaxed mb-8">
+              <div className="space-y-4 text-base md:text-lg text-gray-600 font-poppins leading-relaxed mb-6">
                 {Array.isArray(body) ? (
                   body.map((para, idx) => <p key={idx}>{para}</p>)
                 ) : (
                   <p>{body}</p>
                 )}
+              </div>
+            )}
+
+            {/* Key Structured Points */}
+            {points && points.length > 0 && (
+              <div className="space-y-3.5 mb-8">
+                {points.map((pt, idx) => (
+                  <div key={idx} className="flex items-start gap-3 text-sm sm:text-base font-poppins">
+                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="font-semibold text-[#08080C]">{pt.title}: </strong>
+                      <span className="text-gray-600">{pt.description}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
 

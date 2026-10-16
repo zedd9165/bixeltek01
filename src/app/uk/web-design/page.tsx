@@ -83,7 +83,7 @@ const proofPoints = [
   {
     title: "Ecommerce Websites",
     description: "Shopify, WooCommerce, or custom ecommerce websites optimised for sales — with seamless user experiences, smooth checkout processes, and high conversion rates.",
-    link: "/ecommerce-websites",
+    link: "/services/ecommerce-development",
   },
   {
     title: "Payment Gateway Integrations",

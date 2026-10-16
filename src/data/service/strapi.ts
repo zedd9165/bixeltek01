@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   BreadcrumbItem,
   JumpLinkItem,
   ProblemCard,
@@ -123,7 +123,7 @@ export const strapiHero = {
   eyebrow: "STRAPI CMS & HEADLESS DEVELOPMENT",
   h1: "Strapi Development Built Around Your Content and Applications",
   p1:
-    "When content needs to power more than one website—or needs a structure your team can manage reliably—a headless CMS can offer a more flexible foundation.",
+    "When content needs to power more than one website - or needs a structure your team can manage reliably - a headless CMS can offer a more flexible foundation.",
   p2:
     "Bixeltek builds Strapi content models, APIs and frontend integrations around how your business publishes and uses information, from Next.js websites to application-backed content experiences.",
   primaryButtonText: "Talk to an Expert",
@@ -307,7 +307,7 @@ export const strapiImplementationDecisions: StrapiDecisionItem[] = [
     context:
       "Both approaches can deliver Strapi content, but they shape how the frontend requests and selects data.",
     consideration:
-      "Choose based on query needs, team familiarity and integration requirements—not simply because one is newer.",
+      "Choose based on query needs, team familiarity and integration requirements - not simply because one is newer.",
   },
   {
     title: "Standard configuration or custom extensions",
@@ -467,7 +467,7 @@ export const strapiWhyChoose: StrapiWhyChooseData = {
     },
   ],
   closingCopy:
-    "The goal is a content system your team can operate and your applications can depend on—not complexity for its own sake.",
+    "The goal is a content system your team can operate and your applications can depend on - not complexity for its own sake.",
   ctaText: "Talk to an Expert",
   ctaHref: "#contact-us",
 };

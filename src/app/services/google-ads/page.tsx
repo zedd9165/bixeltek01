@@ -165,6 +165,21 @@ export const metadata: Metadata = {
   openGraph: {
     title: googleAdsPreviewMetadata.openGraph.title,
     description: googleAdsPreviewMetadata.openGraph.description,
+    url: googleAdsPreviewMetadata.canonical,
+    images: [
+      {
+        url: "https://bixeltek.com/BIXELTEKLOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "Bixeltek - Google Ads Management & Performance PPC",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: googleAdsPreviewMetadata.title,
+    description: googleAdsPreviewMetadata.description,
+    images: ["https://bixeltek.com/BIXELTEKLOGO.png"],
   },
   alternates: {
     canonical: googleAdsPreviewMetadata.canonical,

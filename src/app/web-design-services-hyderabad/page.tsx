@@ -60,7 +60,7 @@ export default function WebDevAd() {
             bg: "bg-red-500",
         },
         {
-            title: "Search Engine Optimisation",
+            title: "Search Engine Optimization",
             desc: "Structured HTML, Keyword Research, On Page SEO and more.",
             icon: <LineChart className="w-6 h-6 text-white" />,
             bg: "bg-yellow-400",

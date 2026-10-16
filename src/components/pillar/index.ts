@@ -6,6 +6,7 @@ export { default as PillarCapabilities } from "./PillarCapabilities";
 export { default as PillarConnected } from "./PillarConnected";
 export { default as PillarStartingPoints } from "./PillarStartingPoints";
 export { default as PillarProcess } from "./PillarProcess";
+export { default as PillarPlatformComparison } from "./PillarPlatformComparison";
 export { default as PillarEngagement } from "./PillarEngagement";
 export { default as PillarWhy } from "./PillarWhy";
 export { default as PillarRelated } from "./PillarRelated";

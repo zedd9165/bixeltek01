@@ -17,3 +17,8 @@ export { default as ServiceOverviewSection } from "./ServiceOverviewSection";
 export { default as ServiceSuitabilitySection } from "./ServiceSuitabilitySection";
 export { default as ServiceUseCaseSection } from "./ServiceUseCaseSection";
 export { default as ServiceComparisonSection } from "./ServiceComparisonSection";
+export { default as ServiceStartingSituations } from "./ServiceStartingSituations";
+export { default as ServiceBusinessMarkets } from "./ServiceBusinessMarkets";
+export { default as ServiceConversionJourney } from "./ServiceConversionJourney";
+export { default as ServiceTechnologySection } from "./ServiceTechnologySection";
+export { default as TechnologiesSection } from "./ServiceTechnologySection";

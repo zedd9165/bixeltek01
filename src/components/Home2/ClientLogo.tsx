@@ -61,7 +61,7 @@ const clientLogosSingleRow: ClientLogo[] = [
   { id: 'c13', name: 'Rooted', src: rooted, scale: 1, href: 'https://rootedtreeservices.com/' },
   { id: 'c14', name: 'Oma', src: oma, scale: 1, href: 'https://omacomputers.com/' },
   { id: 'c15', name: 'Cloud', src: cloud, scale: 1.3, href: 'https://cloudupskills.com/' },
-  { id: 'c16', name: 'Bin Hindi', src: binhindi, scale: 1.2, href: 'https://www.binhindi.com/' },
+  { id: 'c16', name: 'Bin Hindi', src: binhindi, scale: 1.2, href: 'https://www.binhindilaw.sa/en' },
   { id: 'c20', name: 'Martin', src: martin, scale: 1, href: 'https://martincarpetcleaning.com/' },
   { id: 'c23', name: 'We Found Global', src: wefound, scale: 1.2, bgColor: '#000', href: 'https://wefoundglobal.com/' },
   { id: 'c24', name: 'Sac', src: sac, scale: 1, href: 'https://scorpion-contracting.com/' },
@@ -199,9 +199,9 @@ export default function ClientTrustMarquee() {
               className="text-sm lg:text-[19px] font-bold text-[#8B45FF] tracking-tight leading-snug"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Trusted by global brands
+              Trusted by businesses
               <br />
-              <span className="text-neutral-300 font-medium">across US, Canada, Saudi &amp; India</span>
+              <span className="text-neutral-300 font-medium">across India, North America and Saudi Arabia</span>
             </p>
           </div>
         </div>

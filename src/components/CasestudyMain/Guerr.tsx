@@ -353,7 +353,7 @@ export default function GuerrCaseStudySection() {
                 <div id="cta" className="scroll-mt-20 pb-20">
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4">Want a Storefront Built Around Your Business? Let&apos;s Build Your Success Story.</h2>
                     <p className='text-lg font-poppins'>
-                        At Bixeltek, we don&apos;t just theme an ecommerce template — we engineer custom Medusa-powered platforms with the payments, security, merchandising, automation, and growth tools your brand actually needs. See more of our work in <Link href={'/ecommerce-websites'} className='underline underline-offset-2'>ecommerce website development.</Link>
+                        At Bixeltek, we don&apos;t just theme an ecommerce template — we engineer custom Medusa-powered platforms with the payments, security, merchandising, automation, and growth tools your brand actually needs. See more of our work in <Link href={'/services/ecommerce-development'} className='underline underline-offset-2'>ecommerce website development.</Link>
                     </p>
                     <p className='text-lg font-poppins mt-3'>
                         Whether you&apos;re launching your first store or rebuilding one that&apos;s holding you back, our mission is simple: <span className='font-semibold'>build a platform that turns traffic into trackable, repeatable revenue.</span>

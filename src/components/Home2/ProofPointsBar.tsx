@@ -112,9 +112,8 @@ export default function ProofPointsBar() {
               className="text-3xl md:text-4xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Why settle for average when you can{' '}
               <span className="bg-gradient-to-r from-white via-[#D8C5FF] to-[#8B45FF] bg-clip-text text-transparent">
-                outperform your competitors easily?
+                Numbers from the work we do
               </span>
             </h2>
 
@@ -123,7 +122,7 @@ export default function ProofPointsBar() {
               className="text-sm sm:text-base text-neutral-400 font-normal leading-relaxed max-w-lg mb-8"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              We engineer commercial grade digital experiences, paid search engines, and conversion funnels that systematically unlock market share for ambitious brands.
+              Figures from client accounts we manage.
             </p>
           </div>
           <div className="lg:col-span-8 xl:col-span-7">

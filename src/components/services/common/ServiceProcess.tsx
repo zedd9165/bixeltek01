@@ -278,7 +278,7 @@ export default function ServiceProcess({
         <MobileTimeline stages={stages} />
 
         {/* Collaborative Expectations Banner */}
-        <div className="mt-16 p-6 sm:p-8 rounded-2xl bg-gray-50 border border-gray-200 flex flex-col text-center items-center gap-4 max-w-4xl mx-auto shadow-sm">
+        {supportingParagraph && (<div className="mt-16 p-6 sm:p-8 rounded-2xl bg-gray-50 border border-gray-200 flex flex-col text-center items-center gap-4 max-w-4xl mx-auto shadow-sm">
           <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 text-blue-600">
             <Users2 className="w-5 h-5" />
           </div>
@@ -291,7 +291,7 @@ export default function ServiceProcess({
                 "Successful projects depend on prompt feedback during review stages and clear alignment on scope and commercial requirements."}
             </p>
           </div>
-        </div>
+        </div>)}
       </div>
     </section>
   );

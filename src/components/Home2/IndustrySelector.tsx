@@ -27,8 +27,8 @@ const industries = [
     title: 'Dental & Healthcare',
     focus: 'Trust & Local Demand',
     description:
-      'Choosing a provider requires trust. We help practices present their care clearly, improve local visibility and create better journeys from search or advertising to a patient enquiry.',
-    cta: 'Explore Healthcare Solutions',
+      'Choosing a dentist or clinic takes trust. We build practice websites, run Google Ads and Meta Ads, and manage local SEO for dental and healthcare practices across Canada, the US and India.',
+    cta: 'See our dental work',
     link: '/industries/dental-marketing-agency',
     image: dentalImg,
     tag: 'Healthcare'

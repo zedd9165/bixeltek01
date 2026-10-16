@@ -508,7 +508,7 @@ export default function ContactFromNew() {
                 </button>
                 <p className='text-black text-xs text-center'>In a hurry? Give us a call now at <Link href={'tel:+91910032301'}><span className='text-purple-500 font-bold'>+91-9100032301</span></Link></p>
             </form>
-            <p className='text-black text-center mt-5 text-xs' >By submitting the form above, you consent to receive informational SMS and SMS-based appointment reminders from Bixeltek&apos;s Ideas at the phone number provided. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <Link href={'privacy-policy'}><span className='underline underline-offset-2'>Privacy Policy & Terms.</span></Link> </p>
+            <p className='text-black text-center mt-5 text-xs' >By submitting the form above, you consent to receive informational SMS and SMS-based appointment reminders from Bixeltek at the phone number provided. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <Link href={'privacy-policy'}><span className='underline underline-offset-2'>Privacy Policy & Terms.</span></Link> </p>
         </div>
 
     )

@@ -11,10 +11,10 @@ export const Footer = () => {
     <footer className="w-full pt-0 pb-16 bg-black">
       <div className="mx-auto max-w-[97%] px-4 sm:px-6 lg:px-8">
         <Newsletter />
-        <div className="grid grid-cols-2 min-[690px]:grid-cols-3 lg:grid-cols-6 gap-6 xl:gap-8 pt-14 pb-10 max-w-xs min-[690px]:max-w-3xl lg:max-w-full mx-auto">
+        <div className="grid grid-cols-2 min-[690px]:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6 xl:gap-8 pt-14 pb-10 max-w-xs min-[690px]:max-w-3xl lg:max-w-full mx-auto">
           <div className="col-span-full mb-10 lg:col-span-1  lg:mb-0">
             <Image src='/BIXELTEKLOGO.png' alt="logo" width={100}
-              height={40} className="w-auto h-16"></Image>
+              height={100} className="w-auto h-12 object-cover"/>
 
             <p className="py-5 text-gray-100 lg:max-w-xs text-left">Trusted by brands. Certified by Google. Focused on ROI.</p>
             {/* <div className="text-sm text-white mb-4">
@@ -67,7 +67,9 @@ export const Footer = () => {
           </div>
 
           <div className="lg:mx-auto text-left">
-            <h4 className="text-lg text-gray-100 font-medium mb-7">Build</h4>
+            <h4 className="text-lg text-gray-100 font-medium mb-7">
+              <Link href="/services/build" className="hover:text-purple-400">Build</Link>
+            </h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-6">
                 <Link href="/services/web-design" className="text-gray-300 hover:text-purple-700">
@@ -108,11 +110,18 @@ export const Footer = () => {
           </div>
 
           <div className="lg:mx-auto text-left">
-            <h4 className="text-lg text-gray-100 font-medium mb-7">Grow</h4>
+            <h4 className="text-lg text-gray-100 font-medium mb-7">
+              <Link href="/services/grow" className="hover:text-purple-400">Grow</Link>
+            </h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-6">
                 <Link href="/services/google-ads" className="text-gray-300 hover:text-purple-700">
                   Google Ads Management
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/meta-ads" className="text-gray-300 hover:text-purple-700">
+                  Meta Ads Management
                 </Link>
               </li>
               <li className="mb-6">
@@ -138,6 +147,24 @@ export const Footer = () => {
               <li className="mb-6">
                 <Link href="/services/conversion-rate-optimization" className="text-gray-300 hover:text-purple-700">
                   Conversion Rate Optimization
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="lg:mx-auto text-left">
+            <h4 className="text-lg text-gray-100 font-medium mb-7">
+              <Link href="/services/automate" className="hover:text-purple-400">Automate</Link>
+            </h4>
+            <ul className="text-sm transition-all duration-500">
+              <li className="mb-6">
+                <Link href="/services/automation" className="text-gray-300 hover:text-purple-700">
+                  Workflow & CRM Automation
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/pdpl-consulting" className="text-gray-300 hover:text-purple-700">
+                  PDPL Compliance Consulting
                 </Link>
               </li>
             </ul>
@@ -180,7 +207,9 @@ export const Footer = () => {
 
         <div className="py-7 border-t border-gray-200">
           <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
-            <span className="text-sm text-white "><a href="/">Copyright © Bixeltek&nbsp;</a>2025 - All rights reserved.</span>
+            <span className="text-sm text-white">
+              Copyright &copy; {new Date().getFullYear()} <Link href="/" className="hover:text-purple-400">Bixeltek</Link>. All rights reserved.
+            </span>
             <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
 
 

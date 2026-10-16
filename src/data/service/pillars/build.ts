@@ -98,6 +98,7 @@ export interface BuildFinalCTAData {
   primaryButtonHref: string;
   secondaryButtonText: string;
   secondaryButtonHref: string;
+  footnote?: string;
 }
 
 
@@ -107,9 +108,9 @@ export interface BuildFinalCTAData {
 
 export const buildMetadata: BuildMetadata = {
   title:
-    "Digital Product & Business Systems Development | Bixeltek",
+    "Website, Ecommerce & App Development Company | Bixeltek",
   description:
-    "Build the digital foundation your business needs with websites, ecommerce systems, mobile applications, integrations and custom business tools from Bixeltek.",
+    "We design and develop business websites, ecommerce stores, mobile apps and the integrations that connect them to your CRM, payments and reporting.",
   keywords: [
     "web development services",
     "ecommerce development",
@@ -184,10 +185,10 @@ export const buildHero: BuildHeroData = {
     "BUILD · WEBSITES · ECOMMERCE · APPLICATIONS · BUSINESS SYSTEMS",
 
   h1:
-    "Build the Digital Foundation Your Business Needs to Grow",
+    "Websites, Online Stores and Custom Apps, Built by One Team",
 
   p1:
-    "Your digital presence should do more than exist online. It should help customers understand your business, make important actions easier and give your team systems that can support what comes next.",
+    "We design and develop business websites, ecommerce stores, mobile apps and the integrations that connect them to your CRM, payments and reporting, so what your customers see and what your team uses work together.",
 
   p2:
     "We design and develop websites, ecommerce systems, mobile applications, integrations and custom business tools around the way your business actually works — rather than forcing every project into the same technology or template.",
@@ -214,24 +215,19 @@ export const buildHero: BuildHeroData = {
    ========================================================= */
 
 export const buildOverview: BuildOverviewData = {
-  eyebrow:
-    "THE BUILD LAYER",
+  eyebrow: "THE BUILD LAYER",
 
-  h2:
-    "Build the Parts of Your Digital Business That Customers and Teams Actually Depend On",
+  h2: "Build the Parts of Your Digital Business That Customers and Teams Actually Depend On",
 
   intro:
-    "A business rarely needs just a website, just an app or just an ecommerce store. Different parts of the digital experience often need to work together.",
+    "A business rarely needs just a website, just an app or just a store. A patient submits a booking form, the request lands in your CRM, the front desk gets an alert and the patient receives a WhatsApp confirmation. An online order triggers payment, stock, shipping and reporting. We build and connect those pieces as one system.",
 
   paragraphs: [
-    "Your website may generate enquiries. Your ecommerce system may process orders. Your application may give customers or employees a faster way to complete important actions. APIs and integrations may connect those experiences to the systems your team already uses.",
+    "The goal is to make every part of your digital business work together, rather than leaving your team to manage disconnected tools and manual processes. From customer-facing websites and ecommerce stores to internal dashboards, mobile applications, APIs and third-party integrations, we build solutions around how your business actually operates. Each part is designed to support the next, helping customers move through their journey more easily while giving your team a clearer, more reliable way to manage the work behind it.",
 
-    "We approach these as connected digital products and business systems rather than isolated development projects. The technology follows the requirements, customer journey and operational needs of the business.",
-
-    "Some businesses need a stronger website. Others need an ecommerce platform, a mobile product, a custom internal tool or a combination of systems. The right starting point depends on what the business is trying to accomplish.",
+    "Not sure where to start? Tell us what you want your customers and your team to be able to do, where your current process creates friction and which tasks take too much time. We will help you identify what needs to be built, what can be connected using your existing tools and what can wait until later. The result is a practical starting point focused on solving the right problem without adding unnecessary complexity.",
   ],
 };
-
 
 /* =========================================================
    WHAT WE BUILD
@@ -359,7 +355,7 @@ export const buildCapabilities: BuildCapability[] = [
     ],
 
     ctaText: "Explore Headless Development",
-    ctaHref: "/custom-cms-websites",
+    ctaHref: "/services/web-design/strapi",
   },
 
   {
@@ -425,6 +421,33 @@ export const buildCapabilities: BuildCapability[] = [
     ctaText: "Explore App Development",
     ctaHref: "/services/mobile-app-development",
   },
+
+  {
+    number: "07",
+    label: "SYSTEMS",
+    title: "Custom Business Systems & Integrations",
+
+    description:
+      "The internal tools and connections that stop your team re-entering data between systems.",
+
+    items: [
+      "Internal tools and dashboards",
+      "Customer and partner portals",
+      "CRM integrations",
+      "Payment, API and WhatsApp integrations",
+      "Workflow automation",
+    ],
+
+    links: [
+      {
+        label: "Explore Automate",
+        href: "/services/automate",
+      },
+    ],
+
+    ctaText: "Explore Connected Systems",
+    ctaHref: "/services/automate",
+  },
 ];
 
 
@@ -448,7 +471,7 @@ export const buildIntegrationSection = {
         "Web & Content",
 
       description:
-        "Websites, landing pages and content systems can share the same structure and data so your digital presence stays consistent as the business grows.",
+        "Your website, landing pages and blog share one content system, so a change is made once and appears everywhere.",
     },
 
     {
@@ -456,7 +479,7 @@ export const buildIntegrationSection = {
         "Ecommerce & Commerce",
 
       description:
-        "Stores can connect products, payments, orders and customer information across the systems responsible for delivering the buying experience.",
+        "Your store connects products, payments, stock and orders, so staff do not re-enter data between tools.",
     },
 
     {
@@ -464,7 +487,7 @@ export const buildIntegrationSection = {
         "Mobile & Applications",
 
       description:
-        "Mobile and web applications can work alongside your existing website, backend systems and APIs instead of becoming another disconnected platform.",
+        "Your app works with your website and backend through APIs, instead of becoming another separate system.",
     },
 
     {
@@ -472,7 +495,7 @@ export const buildIntegrationSection = {
         "Customer Journeys",
 
       description:
-        "Important customer actions can move naturally from discovery and enquiry through forms, accounts, applications, communication and follow-up.",
+        "A form submission creates a CRM record, alerts the right person and sends the customer an automatic reply.",
     },
 
     {
@@ -480,7 +503,7 @@ export const buildIntegrationSection = {
         "Business Operations",
 
       description:
-        "Internal tools, dashboards and connected workflows can reduce unnecessary manual work while giving teams better visibility into what is happening.",
+        "Internal tools and dashboards replace spreadsheets and manual updates, so your team sees what is happening in one place.",
     },
 
     {
@@ -488,7 +511,7 @@ export const buildIntegrationSection = {
         "Data & Integrations",
 
       description:
-        "APIs and system connections help information move between the tools your business already depends on instead of creating disconnected islands of data.",
+        "We connect the tools you already use (CRM, payments, analytics, WhatsApp) through APIs and webhooks.",
     },
   ] as BuildIntegrationPoint[],
 };
@@ -616,7 +639,7 @@ export const buildProcess: BuildProcessStage[] = [
       "Understand the Business",
 
     description:
-      "We start with the business objective, users, existing systems and the problem the digital product needs to solve.",
+      "We start with the business objective, users, existing systems and the problem the digital product needs to solve. You get: a one-page brief of goals, users and requirements.",
   },
   {
     number: "02",
@@ -624,7 +647,7 @@ export const buildProcess: BuildProcessStage[] = [
       "Define the Right Scope",
 
     description:
-      "We identify what needs to be built now, what can come later and where existing systems can be reused instead of rebuilding everything.",
+      "We identify what needs to be built now, what can come later and where existing systems can be reused instead of rebuilding everything. You get: a scope document, timeline and fixed quote.",
   },
   {
     number: "03",
@@ -632,7 +655,7 @@ export const buildProcess: BuildProcessStage[] = [
       "Choose the Technology",
 
     description:
-      "Platform and architecture decisions follow the product requirements, integrations, performance needs, content model and plans for growth.",
+      "Platform and architecture decisions follow the product requirements, integrations, performance needs, content model and plans for growth. You get: a platform recommendation with reasons.",
   },
   {
     number: "04",
@@ -640,7 +663,7 @@ export const buildProcess: BuildProcessStage[] = [
       "Design the Experience",
 
     description:
-      "We structure the user experience around the actions customers or teams actually need to complete rather than designing screens in isolation.",
+      "We structure the user experience around the actions customers or teams actually need to complete rather than designing screens in isolation. You get: wireframes and designs to approve before development starts.",
   },
   {
     number: "05",
@@ -648,7 +671,7 @@ export const buildProcess: BuildProcessStage[] = [
       "Build & Integrate",
 
     description:
-      "Development covers the agreed experience, supporting systems and relevant integrations needed for the product to work as intended.",
+      "Development covers the agreed experience, supporting systems and relevant integrations needed for the product to work as intended. You get: a staging link to review progress.",
   },
   {
     number: "06",
@@ -656,7 +679,7 @@ export const buildProcess: BuildProcessStage[] = [
       "Test, Launch & Improve",
 
     description:
-      "Before launch we test important journeys and integrations, then use real-world feedback and business priorities to guide what comes next.",
+      "Before launch we test important journeys and integrations, then use real-world feedback and business priorities to guide what comes next. You get: a tested launch, handover documentation and training.",
   },
 ];
 
@@ -668,45 +691,45 @@ export const buildProcess: BuildProcessStage[] = [
 export const buildWhyChoose: BuildWhyChoosePoint[] = [
   {
     title:
-      "5+ Years of Engineering Experience Across 30+ Brands",
+      "Websites, Stores and Apps Delivered Globally",
 
     description:
-      "Over half a decade of hands-on delivery building custom web applications, ecommerce stores, and digital platforms for 30+ ambitious businesses globally.",
+      "Built for clients in India, Canada, the US and Saudi Arabia, including dental practices, schools, ecommerce brands, and B2B companies.",
   },
   {
     title:
-      "We Start With the Business Requirement",
+      "You Own What We Build",
 
     description:
-      "The technology should support the business problem rather than becoming the reason the project exists.",
+      "You receive full ownership of the code, designs and content, with no proprietary platform lock-in.",
   },
   {
     title:
-      "We Work Across Different Digital Products",
+      "Built to Be Found",
 
     description:
-      "Websites, ecommerce systems, applications and business tools can be considered together when the project requires more than one digital layer.",
+      "URLs, metadata, structured data and page speed are part of the build, not an add-on.",
   },
   {
     title:
-      "We Consider the Systems Around the Product",
+      "Tested on Mobile Before Launch",
 
     description:
-      "Payments, APIs, analytics, CRM systems, content management and operational workflows can be part of the wider technical picture.",
+      "We check speed, forms, tracking and key journeys on real mobile devices before go-live.",
   },
   {
     title:
-      "Design and Development Stay Connected",
+      "One Team From Build to Growth",
 
     description:
-      "User experience decisions are considered alongside technical constraints so the final product is practical to build, use and maintain.",
+      "The team that builds your site can also run your Google Ads, SEO and automation, so tracking and landing pages are right from day one. We are a Google Partner agency.",
   },
   {
     title:
-      "We Build for What Comes Next",
+      "Handover and Ongoing Support",
 
     description:
-      "A first release should solve the immediate problem without unnecessarily creating technical or operational limitations for future development.",
+      "You get documentation and training at launch, and can add a monthly plan for fixes, updates and improvements.",
   },
 ];
 
@@ -828,6 +851,34 @@ export const buildFAQs: FAQItem[] = [
     answer:
       "That is a suitable starting point. We can first understand the business problem, existing process and desired outcome before recommending whether a website, ecommerce system, application, integration or custom tool is actually required.",
   },
+  {
+    question:
+      "Will a redesign hurt our Google rankings?",
+
+    answer:
+      "Not if it is planned. We map every existing URL, 301-redirect the ones that change, keep the pages that rank, and check Search Console after launch.",
+  },
+  {
+    question:
+      "Who owns the code and hosting?",
+
+    answer:
+      "You do. You receive full ownership of your code, designs, and content upon completion, with no proprietary platform lock-in.",
+  },
+  {
+    question:
+      "Can you take over a site someone else built?",
+
+    answer:
+      "Yes. We start with a technical review of the code, hosting and content, then tell you whether to fix, rebuild or migrate.",
+  },
+  {
+    question:
+      "What do you need from us?",
+
+    answer:
+      "Your goals, brand assets, content (or we can help write it), access to existing tools and your domain, and one person who can approve each stage.",
+  },
 ];
 
 
@@ -846,7 +897,7 @@ export const buildFinalCTA: BuildFinalCTAData = {
     "Whether you need a new digital foundation, a better ecommerce experience, a mobile application or a custom business system, start with the business requirement. We can help identify the right direction before the technology is decided.",
 
   primaryButtonText:
-    "Talk to an Expert",
+    "Scope my build",
 
   primaryButtonHref:
     "#build-project",
@@ -856,6 +907,9 @@ export const buildFinalCTA: BuildFinalCTAData = {
 
   secondaryButtonHref:
     "#selected-work",
+
+  footnote:
+    "Tell us what you want built · You leave with a recommended approach and rough timeline · No obligation",
 };
 
 
@@ -871,9 +925,12 @@ export const buildImages = {
 
 export const buildCapabilityBestFor = [
   "your website is the first place customers judge you, and it is not doing that job yet.",
+  "performance, speed, and tailored logic require complete control over the frontend and backend.",
+  "your team needs a familiar, established CMS with a large plugin ecosystem.",
+  "content is managed once and delivered to multiple frontends, websites, and mobile apps.",
   "selling online is, or is about to become, a real revenue line.",
   "a workflow or product idea needs its own interface for customers or staff.",
-  "your team spends hours moving data between tools by hand.",
+  "your team repeats the same manual work, or your tools do not share data.",
 ];
 
 export const buildStartingPointSteps = [
@@ -916,7 +973,7 @@ export const buildEngagement = {
   models: [
     {
       title: "Fixed-scope project",
-      description: "A defined deliverable with an agreed scope, timeline and price.",
+      description: "A defined deliverable with an agreed scope, timeline and price. Fixed price agreed before development starts.",
       bestFor: "a new website, store or first version of an app.",
       includes: ["Discovery and scoping", "Design and development", "Testing and launch", "Handover and training"],
       ctaText: "Plan a project",
@@ -924,7 +981,7 @@ export const buildEngagement = {
     },
     {
       title: "Build and improve",
-      description: "A launch followed by a monthly rhythm of improvements and new features.",
+      description: "A launch followed by a monthly rhythm of improvements and new features. Includes monthly design and development, plus hosting, security updates and backups.",
       bestFor: "products that need to keep evolving after release.",
       includes: ["Everything in a fixed-scope project", "Monthly improvement cycles", "Performance and security upkeep", "Priority support"],
       ctaText: "Talk about ongoing work",
@@ -932,11 +989,54 @@ export const buildEngagement = {
     },
     {
       title: "Dedicated team",
-      description: "Designers and engineers embedded in your roadmap for larger or longer programmes.",
+      description: "Designers and engineers embedded in your roadmap for larger or longer programmes. A named lead plus designers and developers working on your roadmap, priced by team size.",
       bestFor: "multi-system builds and fast-growing products.",
       includes: ["Named team lead", "Flexible capacity", "Shared roadmap and reporting", "Integration with your in-house team"],
       ctaText: "Discuss a team",
       ctaHref: "#build-project",
+    },
+  ],
+};
+
+export const buildPlatformComparison = {
+  eyebrow: "PLATFORM SELECTION",
+  h2: "Which Platform Fits Your Project?",
+  intro: "There is no single best platform. This is how we usually choose.",
+  rows: [
+    {
+      need: "A content-led business website that your team edits often",
+      platform: "WordPress",
+      reason: "Familiar editing, large plugin ecosystem, quick to launch.",
+    },
+    {
+      need: "A fast, fully custom website with strict performance goals",
+      platform: "Custom-coded (Next.js)",
+      reason: "Full control over design and speed, no plugin overhead.",
+    },
+    {
+      need: "Structured content used across a website and apps",
+      platform: "Strapi (headless CMS)",
+      reason: "Content is managed once and delivered to every front end.",
+    },
+    {
+      need: "An online store with a standard catalogue and a quick launch",
+      platform: "Shopify",
+      reason: "Managed hosting and a large app ecosystem.",
+    },
+    {
+      need: "A store tied to WordPress content or needing flexible customization",
+      platform: "WooCommerce",
+      reason: "Integrates with WordPress and is open source.",
+    },
+    {
+      need: "Unusual catalogue, B2B pricing or custom checkout logic",
+      platform: "Custom or headless commerce (for example Medusa)",
+      reason: "Full control over checkout and business rules.",
+    },
+    {
+      need: "A mobile app",
+      platform: "Native or cross-platform",
+      reason: "Depends on features, budget and the devices you must support.",
     },
   ],
 };

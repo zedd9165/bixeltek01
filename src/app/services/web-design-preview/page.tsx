@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Metadata } from "next";
 
 // Data Source of Truth for Web Design
@@ -182,6 +182,10 @@ const webDesignFinalCtaTools: TechStackItem[] = [
 export const metadata: Metadata = {
   title: webDesignMetadata.title,
   description: webDesignMetadata.description,
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: webDesignMetadata.openGraph.title,
     description: webDesignMetadata.openGraph.description,

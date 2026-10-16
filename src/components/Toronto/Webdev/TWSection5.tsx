@@ -24,7 +24,7 @@ export default function WebDesignServicesToronto() {
     {
       title: "Ecommerce Websites",
       description: "Create Shopify, WooCommerce, or custom ecommerce websites optimized for sales, providing seamless user experiences, smooth checkout processes, and high conversion rates for online stores.",
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
     },
     {
       title: "Payment Gateway Integrations",

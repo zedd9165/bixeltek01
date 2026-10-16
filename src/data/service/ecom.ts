@@ -1,4 +1,4 @@
-import type { StaticImageData } from "next/image";
+﻿import type { StaticImageData } from "next/image";
 
 // Import your local assets from /src/assets
 import shopifyImg from "@/assets/shopify-industry.webp";
@@ -171,7 +171,7 @@ export const ecommercePageNavigationData = {
 export const ecommerceHeroPreviewData = {
   eyebrow: "ECOMMERCE DEVELOPMENT · SHOPIFY · WOOCOMMERCE · CUSTOM",
   h1: "Build an Ecommerce System That Works From Product to Purchase",
-  p1: "Your online store needs to do more than display products. It needs to help customers find what they want, understand their options and complete their purchase — while giving your team a manageable way to run the business.",
+  p1: "Your online store needs to do more than display products. It needs to help customers find what they want, understand their options and complete their purchase - while giving your team a manageable way to run the business.",
   p2: "We design and develop ecommerce websites around your catalogue, business model, operational needs and plans for growth, using Shopify, WooCommerce or custom development where appropriate.",
   primaryButtonText: "Talk to an Ecommerce Expert",
   primaryButtonHref: "#plan-project",
@@ -194,7 +194,7 @@ export const ecommerceSelectedWorkPreviewData = {
     {
       title: "Guerr Clothing",
       description:
-        "A fully custom Medusa headless ecommerce platform engineered for an apparel brand — featuring OTP-secured checkout, Razorpay payments, automated abandoned cart recovery, Shiprocket fulfillment, and an integrated influencer program.",
+        "A fully custom Medusa headless ecommerce platform engineered for an apparel brand - featuring OTP-secured checkout, Razorpay payments, automated abandoned cart recovery, Shiprocket fulfillment, and an integrated influencer program.",
       linkText: "Explore the Guerr Case Study",
       destination: "/case-studies/guerr-clothing-case-study",
     },
@@ -647,7 +647,7 @@ export const ecommercePostLaunchPreviewData = {
     "Launching the store is the starting point, not the end of the project. Once customers begin using it, real behaviour can reveal where they discover products, where they hesitate and where they leave.",
 
   description:
-    "We can use that information to identify opportunities across the buying journey — from product and category pages to checkout, mobile experience, analytics and acquisition.",
+    "We can use that information to identify opportunities across the buying journey - from product and category pages to checkout, mobile experience, analytics and acquisition.",
 
   image: ecomPostLaunchImg,
 
@@ -738,7 +738,7 @@ export const ecommerceOverviewData = {
   intro:
     "Ecommerce development is far more than listing products online. It is the end-to-end engineering of product discovery, checkout psychology, inventory synchronization, payment gateways, and operational fulfillment into one cohesive sales system.",
   body: [
-    "Most online stores underperform not due to lack of traffic, but due to friction within the purchase journey—cluttered category navigation, slow mobile page loads, unoptimized checkout funnels, and disconnected back-office inventory systems.",
+    "Most online stores underperform not due to lack of traffic, but due to friction within the purchase journey - cluttered category navigation, slow mobile page loads, unoptimized checkout funnels, and disconnected back-office inventory systems.",
     "At Bixeltek, we architect ecommerce systems tailored to your specific commercial requirements. Whether building on Shopify Plus, WooCommerce, Medusa.js, or custom headless architectures, we optimize every interaction from catalog discovery to one-click payment and automated order fulfillment."
   ],
   closingCopy:

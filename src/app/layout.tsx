@@ -46,13 +46,22 @@ export default function RootLayout({
                   "https://www.linkedin.com/company/bixeltek",
                   "https://g.page/r/CX3wqGzMd0boEB0/review"
                 ],
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+91-9100032301",
-                  "contactType": "customer support",
-                  "availableLanguage": ["English", "Hindi", "Telugu"],
-                  "areaServed": ["IN", "US", "CA", "AE", "SA"]
-                },
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9100032301",
+                    "contactType": "customer support",
+                    "availableLanguage": ["English", "Hindi", "Telugu"],
+                    "areaServed": ["IN", "AE", "SA"]
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+1-437-525-2301",
+                    "contactType": "customer support",
+                    "availableLanguage": ["English"],
+                    "areaServed": ["CA", "US"]
+                  }
+                ],
                 "aggregateRating": {
                   "@type": "AggregateRating",
                   "ratingValue": "5.0",
@@ -63,7 +72,7 @@ export default function RootLayout({
                 "@type": "LocalBusiness",
                 "@id": "https://bixeltek.com#localbusiness",
                 "name": "Bixeltek",
-                "image": "https://bixeltek.com/path-to-logo.png",
+                "image": "https://bixeltek.com/BIXELTEKLOGO.png",
                 "priceRange": "$$",
                 "url": "https://bixeltek.com",
                 "telephone": "+91-9100032301",

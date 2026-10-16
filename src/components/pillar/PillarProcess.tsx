@@ -30,6 +30,7 @@ export interface PillarProcessProps {
   h2?: string;
   intro?: string;
   stages: PillarStage[];
+  footerNote?: string;
 }
 
 /** The primary brand blue used across accents, badges, and icons. */
@@ -112,6 +113,7 @@ export default function PillarProcess({
   h2 = "From First Conversation to Launch and Beyond",
   intro,
   stages,
+  footerNote,
 }: PillarProcessProps) {
   return (
     <section
@@ -169,6 +171,15 @@ export default function PillarProcess({
             );
           })}
         </ol>
+
+        {footerNote && (
+          <div className="mt-14 mx-auto max-w-3xl text-center">
+            <p className="text-sm md:text-base text-gray-700 font-poppins bg-blue-50/70 border border-blue-200/80 rounded-2xl px-6 py-4.5 leading-relaxed">
+              <strong className="text-gray-950 font-semibold">What we need from you:</strong>{" "}
+              {footerNote.replace(/^What we need from you:\s*/i, "")}
+            </p>
+          </div>
+        )}
 
       </div>
     </section>

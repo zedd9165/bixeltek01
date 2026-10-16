@@ -102,7 +102,7 @@ export const whyWebDevContent = {
     },
   ],
   closing:
-    "In today's digital economy, Bixeltek designs and builds websites as operational assets—engineered to solve practical bottlenecks and support steady commercial growth.",
+    "In today's digital economy, Bixeltek designs and builds websites as operational assets - engineered to solve practical bottlenecks and support steady commercial growth.",
   ctaText: "Get a Free Web Design Consultation",
   ctaHref: "/contact-us",
 };
@@ -197,7 +197,7 @@ export const webServices: WebServiceSolution[] = [
     title: "eCommerce Website Development",
     description:
       "Digital storefronts built for intuitive product browsing, secure multi-step checkouts, and seamless payment processing. We build scalable stores on Shopify, WooCommerce, or custom headless commerce architectures.",
-    href: "/ecommerce-websites",
+    href: "/services/ecommerce-development",
     ctaText: "Explore eCommerce Stores →",
   },
   {

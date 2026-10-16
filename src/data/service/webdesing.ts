@@ -388,7 +388,7 @@ export const websiteTypesData = {
   eyebrow: "THE RIGHT WEBSITE DEPENDS ON THE BUSINESS",
   h2: "We Build Websites Around How Your Customers Buy",
   intro:
-    "A five-page service website, Enterprise Webiste, Educational Institute portal and a large ecommerce platform should not be approached as the same project. We choose the structure, experience and technical approach around what the website needs to accomplish.",
+    "A five-page service website, Enterprise Website, Educational Institute portal and a large ecommerce platform should not be approached as the same project. We choose the structure, experience and technical approach around what the website needs to accomplish.",
   cards: [
     {
       title: "Business & Service Websites",
@@ -818,7 +818,7 @@ export const croLandingPageData = {
   },
 
   description: [
-    "A landing page has a different job from a normal business website. Instead of asking visitors to explore everything you offer, it gives them a focused path toward one action — submitting an enquiry, booking an appointment, requesting a quote or making a purchase.",
+    "A landing page has a different job from a normal business website. Instead of asking visitors to explore everything you offer, it gives them a focused path toward one action - submitting an enquiry, booking an appointment, requesting a quote or making a purchase.",
     "We design and develop landing pages around the campaign, audience and offer behind the traffic. That means aligning the message, page structure, proof, CTA and conversion flow rather than simply creating another attractive page.",
   ],
 
