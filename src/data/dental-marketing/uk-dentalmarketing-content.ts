@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { FaChartLine, FaDesktop, FaPhoneAlt, FaRobot, FaSearchLocation, FaStar,FaShieldAlt,
   FaChartBar,
   FaClock,
@@ -20,7 +20,7 @@ export const UK_HERO_CONTENT: HeroSectionContent = {
   h1End: '',
   subtitle: 'Grow Your UK Practice With Targeted Google & Meta Campaigns Built for Better ROI',
   subtext:
-    'Turn Google searches into qualified patient enquiries and booked appointments. Bixeltek builds dedicated patient acquisition systems for UK private and mixed dental practices—combining high-intent Google Ads, dental SEO, conversion-led landing pages, and rapid follow-up tracking.',
+    'Turn Google searches into qualified patient enquiries and booked appointments. Bixeltek builds dedicated patient acquisition systems for UK private and mixed dental practices - combining high-intent Google Ads, dental SEO, conversion-led landing pages, and rapid follow-up tracking.',
   featureTags: [
     { iconType: 'chart', text: 'High-Intent Leads' },
     { iconType: 'tooth', text: 'UK Dental Market Specialists' },
@@ -76,7 +76,7 @@ export const UK_SERVICES_CONTENT: ServicesSectionContent = {
       icon: FaChartLine,
       title: 'Google Ads & Dental PPC',
       description:
-        'Target private patients actively searching for dental treatments in your territory—from dental implants and Invisalign to emergency appointments.',
+        'Target private patients actively searching for dental treatments in your territory - from dental implants and Invisalign to emergency appointments.',
       features: [
         'Treatment-intent keyword strategy',
         'High-converting ad copy & extensions',
@@ -171,7 +171,7 @@ export const UK_BENEFITS_CONTENT: BenefitsSectionContent = {
   headingHighlight: 'Bixeltek',
   headingEnd: '',
   subtext:
-    'We don’t simply buy clicks. We build and optimise the complete patient acquisition system behind them—helping private and mixed UK practices attract high-intent patient enquiries and fill appointment diaries predictably.',
+    'We don’t simply buy clicks. We build and optimise the complete patient acquisition system behind them - helping private and mixed UK practices attract high-intent patient enquiries and fill appointment diaries predictably.',
   benefits: [
     {
       icon: FaStar,

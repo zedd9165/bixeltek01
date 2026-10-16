@@ -21,7 +21,7 @@ export default function WebDesignServicesVancouver() {
       title: "Ecommerce Websites",
       description:
         "Boost online sales with ecommerce stores optimized for speed, conversions, and secure checkout experiences.",
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
     },
     {
       title: "Conversion Landing Pages",

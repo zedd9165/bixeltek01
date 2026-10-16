@@ -200,10 +200,10 @@ export const growHero: GrowHeroData = {
     "GROW · GOOGLE ADS · SEO · META ADS · CRO · ANALYTICS",
 
   h1:
-    "Turn More of the Right Demand Into Customers and Revenue",
+    "Google Ads, SEO and Meta Ads That Bring You Enquiries You Can Measure",
 
   p1:
-    "Getting more traffic is only part of growth. Your marketing needs to reach the right people, give them a reason to act and make it possible to understand which efforts are actually contributing to the business.",
+    "We run paid search, paid social and SEO for dental practices, local service businesses and ecommerce brands. We report on calls, bookings and sales, not just clicks.",
 
   p2:
     "We bring paid search, paid social, SEO, landing pages, conversion optimization and measurement together around your business goals — whether that means more qualified enquiries, ecommerce revenue, booked appointments or another measurable outcome.",
@@ -329,10 +329,10 @@ export const growCapabilities: GrowCapability[] = [
     ],
 
     ctaText:
-      "Discuss Meta Ads",
+      "Explore Meta Ads",
 
     ctaHref:
-      "#growth-project",
+      "/services/meta-ads",
   },
 
   {
@@ -525,7 +525,7 @@ export const growJourney = {
         "1. Reach the Right Audience",
 
       description:
-        "Search, social and organic strategies should focus on audiences and demand that have a meaningful relationship with what the business actually sells.",
+        "We build campaigns and search content around the services you want more of, in the locations you serve, not broad keywords that bring in the wrong enquiries.",
     },
 
     {
@@ -533,7 +533,7 @@ export const growJourney = {
         "2. Match the Intent",
 
       description:
-        "The message, offer and destination should make sense for why someone clicked, searched or arrived on the page in the first place.",
+        "Every ad group gets its own landing page. Someone searching “dental implants near me” lands on a page about implants, not your homepage.",
     },
 
     {
@@ -541,7 +541,7 @@ export const growJourney = {
         "3. Build the Right Experience",
 
       description:
-        "The website, landing page or store should make the value clear, answer important questions and help visitors understand why they should take the next step.",
+        "Landing pages state the offer, proof and next step on the first screen, and load fast on mobile.",
     },
 
     {
@@ -549,7 +549,7 @@ export const growJourney = {
         "4. Make the Next Step Clear",
 
       description:
-        "Forms, calls, bookings, purchases and other important actions should be easy to understand and complete without unnecessary friction.",
+        "One main action per page (call, book or buy), a short form and a tap-to-call button on mobile.",
     },
 
     {
@@ -557,7 +557,7 @@ export const growJourney = {
         "5. Measure the Business Outcome",
 
       description:
-        "Clicks and sessions can be useful indicators, but the important measurement depends on the business — such as qualified leads, calls, bookings, purchases or revenue.",
+        "We track calls, form fills, bookings and purchases in GA4 and Google Ads, and report cost per lead and ROAS.",
     },
 
     {
@@ -565,7 +565,7 @@ export const growJourney = {
         "6. Learn & Improve",
 
       description:
-        "Performance data should feed the next decision, helping refine audiences, campaigns, pages, offers and budgets based on what is actually producing useful results.",
+        "Each month we review search terms, ad copy, landing pages and budgets, and move spend toward what is producing enquiries.",
     },
   ] as GrowJourneyPoint[],
 };
@@ -575,67 +575,46 @@ export const growJourney = {
    HOW WE APPROACH GROWTH
    ========================================================= */
 
+
 export const growProcess: GrowProcessStage[] = [
   {
     number: "01",
-
-    title:
-      "Understand the Business & Demand",
-
+    title: "Discovery call",
     description:
-      "We look at the business model, customers, offer, market, existing channels and commercial goals before deciding where growth opportunities may exist.",
+      "We review your goals, budget, current accounts and what a lead is worth to you. You get: an agreed target for cost per lead or ROAS.",
   },
-
   {
     number: "02",
-
-    title:
-      "Audit the Existing Journey",
-
+    title: "Audit",
     description:
-      "Where relevant, we review campaigns, search visibility, landing pages, analytics, conversion paths and existing performance to understand what is already working and where opportunities are being lost.",
+      "We review campaigns, tracking, landing pages and search visibility. You get: a written audit and a priority list.",
   },
-
   {
     number: "03",
-
-    title:
-      "Prioritize the Opportunities",
-
+    title: "Setup",
     description:
-      "Not every channel or improvement deserves attention at the same time. We prioritize opportunities based on business impact, evidence, feasibility and available resources.",
+      "Campaigns, tracking and landing pages go live. You get: accounts in your name with tracking verified.",
   },
-
   {
     number: "04",
-
-    title:
-      "Build the Growth System",
-
+    title: "Optimize",
     description:
-      "Depending on the engagement, this can include campaign setup, SEO improvements, landing pages, tracking, CRO work, creative testing or other agreed growth activities.",
+      "We check search terms, bids, ad copy and pages. You get: regular updates on account adjustments and performance.",
   },
-
   {
     number: "05",
-
-    title:
-      "Launch, Measure & Learn",
-
+    title: "Report results",
     description:
-      "Performance is reviewed against meaningful conversion signals rather than simply activity metrics, allowing decisions to be made from what the data is showing.",
+      "You get a monthly report covering calls, leads, cost per lead and revenue, so you can see what your campaigns are delivering.",
   },
-
   {
     number: "06",
-
-    title:
-      "Improve What the Data Reveals",
-
+    title: "Plan next steps",
     description:
-      "Growth work continues through structured iteration — improving campaigns, pages, audiences, offers, targeting or measurement based on evidence from the previous stage.",
+      "We use the results to set priorities for the next month, identify opportunities and decide where to focus the budget.",
   },
 ];
+
 
 
 /* =========================================================
@@ -726,10 +705,10 @@ export const growEngagementOptions: GrowEngagementOption[] = [
 export const growWhyChoose: GrowWhyChoosePoint[] = [
   {
     title:
-      "5+ Years of Growth & Performance Delivery for 30+ Clients",
+      "Google Partner Agency Running Paid and Organic Growth",
 
     description:
-      "Backed by over five years of multi-channel expertise driving commercial customer acquisition and verified ROAS across 30+ regional and international brands.",
+      "Managing performance and organic campaigns across India, Canada, the US and Saudi Arabia, with a focus on dental and healthcare practices, local services and ecommerce.",
   },
 
   {
@@ -737,23 +716,23 @@ export const growWhyChoose: GrowWhyChoosePoint[] = [
       "We Look Beyond Channel Metrics",
 
     description:
-      "Clicks, impressions and traffic can help diagnose performance, but the business outcome is what ultimately matters.",
+      "We report cost per lead, booked appointments, calls and revenue. Clicks and impressions are there only to explain why those numbers moved.",
   },
 
   {
     title:
-      "We Connect Acquisition With Conversion",
+      "We Fix the Page, Not Just the Ad",
 
     description:
-      "Advertising and SEO do not operate independently from the pages and customer journeys they send people into.",
+      "Ads and SEO send people to a page. We build or fix that page as part of the work, so you are not paying to send traffic to a site that cannot convert it.",
   },
 
   {
     title:
-      "We Work From Evidence",
+      "You Own Your Accounts and Data",
 
     description:
-      "Campaign decisions, SEO priorities and conversion improvements should be informed by search behaviour, performance data, customer intent and what the business can actually support.",
+      "Ad, analytics and tracking accounts are set up in your name. If we stop working together, you keep everything.",
   },
 
   {
@@ -761,15 +740,15 @@ export const growWhyChoose: GrowWhyChoosePoint[] = [
       "We Do Not Force Every Channel",
 
     description:
-      "A business does not automatically need Google Ads, Meta Ads, SEO and CRO at the same time. The right mix depends on the market, customer journey and commercial objective.",
+      "You may not need Google Ads, Meta Ads and SEO at once. We start with the channel most likely to pay back first and add others when the numbers justify it.",
   },
 
   {
     title:
-      "We Think About What Happens Next",
+      "Leads Do Not Get Lost After the Click",
 
     description:
-      "Growth creates more value when the systems receiving leads, enquiries or orders can handle the additional demand and give the business a way to follow through.",
+      "We connect forms and calls to your CRM, WhatsApp and reporting so every enquiry gets followed up.",
   },
 ];
 
@@ -881,7 +860,23 @@ export const growFAQs: FAQItem[] = [
       "How long does SEO or paid advertising take to produce results?",
 
     answer:
-      "There is no universal timeline. Paid campaigns can begin generating measurable activity once they are properly configured, while SEO usually requires more time for technical, content and authority improvements to take effect. Results depend on the market, competition, starting point, budget and implementation quality.",
+      "Google Ads and Meta Ads usually start producing enquiries within 2–4 weeks and settle into a steady pattern after 60–90 days of optimization. SEO usually shows steady gains after 4–6 months. Results depend on your market, competition and budget.",
+  },
+
+  {
+    question:
+      "Do I own the ad account and my data?",
+
+    answer:
+      "Yes. We set up ad, analytics and tracking accounts in your name, so you keep full access and ownership if we stop working together.",
+  },
+
+  {
+    question:
+      "What does reporting look like?",
+
+    answer:
+      "You get a regular report covering calls, form fills, bookings, cost per lead and ROAS, with a plain-language summary of what changed and what comes next.",
   },
 
   {
@@ -925,7 +920,7 @@ export const growFinalCTA: GrowFinalCTAData = {
     "Whether you need more qualified demand, stronger search visibility, better campaign performance or higher conversion from the traffic you already have, start with the business objective and work backwards from there.",
 
   primaryButtonText:
-    "Talk to an Expert",
+    "Find where your growth is leaking",
 
   primaryButtonHref:
     "#growth-project",

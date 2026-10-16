@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   BreadcrumbItem,
   JumpLinkItem,
   ProblemCard,
@@ -211,7 +211,7 @@ export const shopifyOverview = {
   intro:
     "Shopify provides a hosted commerce foundation, but the final store still depends on how the business organizes products, presents information, handles customer decisions and connects its operations.",
   body:
-    "Our work starts by understanding the existing store or planned business model. From there, we can scope the storefront, theme changes, integrations and supporting workflows needed for the project—without assuming that every store needs a fully custom build.",
+    "Our work starts by understanding the existing store or planned business model. From there, we can scope the storefront, theme changes, integrations and supporting workflows needed for the project - without assuming that every store needs a fully custom build.",
   closingCopy:
     "The aim is a maintainable Shopify implementation that supports the current business and leaves a sensible path for future improvements.",
 };
@@ -283,7 +283,7 @@ export const whenYouNeedShopifyDevelopment = {
     {
       title: "You are moving from another platform",
       description:
-        "The migration needs a plan for product and customer data, URL mapping, redirects, integrations, analytics and launch checks—not only a visual rebuild.",
+        "The migration needs a plan for product and customer data, URL mapping, redirects, integrations, analytics and launch checks - not only a visual rebuild.",
     },
     {
       title: "The store needs a measured improvement plan",
@@ -551,7 +551,7 @@ export const shopifyWhyChoose: ShopifyWhyChooseData = {
     {
       title: "We Treat Migration as a Continuity Project",
       description:
-        "When moving an existing store, the work includes data checks, URL redirects, integration validation and measurement—not only recreating the visible pages.",
+        "When moving an existing store, the work includes data checks, URL redirects, integration validation and measurement - not only recreating the visible pages.",
     },
     {
       title: "We Connect Development With Growth Needs",
@@ -725,7 +725,7 @@ export const shopifyFinalCta: ShopifyFinalCtaData = {
     href: "#contact",
   },
   supportingCopy:
-    "We will start with your catalogue, current setup, operational requirements and priorities—not assume that every store needs the same build.",
+    "We will start with your catalogue, current setup, operational requirements and priorities - not assume that every store needs the same build.",
 };
 
 
@@ -944,5 +944,5 @@ export const shopifyPlatformComparison: EcommercePlatformComparisonData = {
   customCodedBestFor:
     "Businesses whose differentiating workflows, product experience or integration requirements justify greater architectural control and long-term engineering ownership.",
   closingNote:
-    "The right choice depends on your requirements, available resources and total cost of ownership—not just the initial development budget.",
+    "The right choice depends on your requirements, available resources and total cost of ownership - not just the initial development budget.",
 };

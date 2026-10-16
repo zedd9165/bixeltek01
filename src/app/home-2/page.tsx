@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://bixeltek.com/home-2",
+    canonical: "https://bixeltek.com/",
   },
 
   openGraph: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "We help businesses modernize how they attract customers, sell online and operate digitally — bringing strategy, marketing and technology together to drive business growth.",
     siteName: "Bixeltek",
     type: "website",
-    url: "https://bixeltek.com/home-2",
+    url: "https://bixeltek.com/",
   },
 
   twitter: {

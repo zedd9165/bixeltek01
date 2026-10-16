@@ -1,4 +1,4 @@
-// data/services/automate.ts
+﻿// data/services/automate.ts
 
 export interface AutomateMetadata {
   title: string;
@@ -211,7 +211,7 @@ export const automateHero: AutomateHeroData = {
     "Your website, advertising, CRM, WhatsApp, ecommerce store and internal tools all create information. The problem starts when that information has to be copied, chased, checked or moved manually between people and systems.",
 
   p2:
-    "We connect the systems behind your business and automate repeatable workflows — from lead routing and CRM updates to WhatsApp communication, reporting, ecommerce operations, API integrations and practical AI-assisted processes.",
+    "We connect the systems behind your business and automate repeatable workflows - from lead routing and CRM updates to WhatsApp communication, reporting, ecommerce operations, API integrations and practical AI-assisted processes.",
 
   primaryButtonText:
     "Talk to an Expert",

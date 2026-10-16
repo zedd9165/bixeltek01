@@ -314,7 +314,7 @@ export default function Webdev() {
                             From slow load times to outdated branding, we fix what’s holding you back and build what moves you forward.
                         </p>
                         <div className="flex flex-wrap gap-4 mt-10">
-                            <Link href="/casestudies-bixeltek/Tumblewash-Casestudy" target="_blank">
+                            <Link href="/case-studies/Tumblewash-Casestudy" target="_blank">
                                 <button className="px-6 py-3 border border-white bg-black text-white rounded-md hover:bg-white hover:text-black hover:border-black hover:ring-1 transition">
                                     Explore Our Projects
                                 </button>
@@ -498,7 +498,7 @@ export default function Webdev() {
                     </p>
 
                     <div className="flex flex-wrap gap-4 mt-10">
-                        <Link href="/casestudies-bixeltek/Tumblewash-Casestudy" target="_blank">
+                        <Link href="/case-studies/Tumblewash-Casestudy" target="_blank">
                                 <button className="px-6 py-3 border border-white bg-black text-white rounded-md hover:bg-white hover:text-black hover:border-black hover:ring-1 transition">
                                     Explore Our Projects
                                 </button>
@@ -808,7 +808,7 @@ export default function Webdev() {
                         ))}
                     </div>
                      <div className="flex flex-wrap gap-4 mt-10">
-                        <Link href="/casestudies-bixeltek/Tumblewash-Casestudy" target="_blank">
+                        <Link href="/case-studies/Tumblewash-Casestudy" target="_blank">
                                 <button className="px-6 py-3 border border-white bg-black text-white rounded-md hover:bg-white hover:text-black hover:border-black hover:ring-1 transition">
                                     Explore Our Projects
                                 </button>

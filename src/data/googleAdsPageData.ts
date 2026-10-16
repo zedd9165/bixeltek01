@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image';
+﻿import { StaticImageData } from 'next/image';
 import cleaningcomp from "@/assets/digital marketing servies for cleaning companies.jpg";
 import oil from "@/assets/digital marketing for oil refinaries.jpg";
 import pet from "@/assets/digital marketing for pet stores.jpg";
@@ -139,7 +139,7 @@ export const campaignTypes: CampaignTypeItem[] = [
   {
     title: "Performance Max Campaigns",
     description:
-      "Performance Max accesses Google's full advertising inventory—Search, YouTube, Display, Discover, Gmail, and Maps—from a single campaign. We implement audience signals, brand exclusions, and structured asset groups to steer automated learning toward genuine business value rather than cannibalized branded traffic.",
+      "Performance Max accesses Google's full advertising inventory - Search, YouTube, Display, Discover, Gmail, and Maps - from a single campaign. We implement audience signals, brand exclusions, and structured asset groups to steer automated learning toward genuine business value rather than cannibalized branded traffic.",
   },
   {
     title: "Remarketing & First-Party Audiences",
@@ -177,7 +177,7 @@ export const whyGoogleAdsData = {
     },
   ],
   closing:
-    "When you partner with Bixeltek, you work with a team that actively manages and optimizes your account fundamentals—treating your advertising budget with the care and rigor your business expects.",
+    "When you partner with Bixeltek, you work with a team that actively manages and optimizes your account fundamentals - treating your advertising budget with the care and rigor your business expects.",
   ctaText: "Book a Free Strategy Call",
   ctaHref: "#form",
 };
@@ -242,7 +242,7 @@ export const processSteps: ProcessStep[] = [
   {
     number: "04",
     title: "Conversion Tracking Implementation",
-    text: "We configure Google Tag Manager and GA4 to track meaningful business events—such as completed contact forms, phone calls, and appointment bookings—before launching traffic.",
+    text: "We configure Google Tag Manager and GA4 to track meaningful business events - such as completed contact forms, phone calls, and appointment bookings - before launching traffic.",
     gradient: "from-pink-500 via-purple-400 to-[#13131333]",
     color: "text-orange-500",
   },
@@ -492,7 +492,7 @@ export const googleAdsFaqs: FaqItem[] = [
   {
     question: "How do you measure and verify lead quality?",
     answer:
-      "We implement conversion tracking for meaningful business interactions—such as phone calls with duration thresholds, completed contact forms, and appointment bookings. Additionally, we regularly review search terms to eliminate irrelevant queries and, where supported, integrate CRM feedback to optimize toward qualified leads.",
+      "We implement conversion tracking for meaningful business interactions - such as phone calls with duration thresholds, completed contact forms, and appointment bookings. Additionally, we regularly review search terms to eliminate irrelevant queries and, where supported, integrate CRM feedback to optimize toward qualified leads.",
   },
   {
     question: "How often will our campaigns be reviewed and optimized?",
@@ -701,7 +701,7 @@ export const beyondTheClickContent: BeyondTheClickData = {
   headingPart1: "A Click Is Only the Beginning. ",
   headingHighlight: "What Happens Next Matters.",
   description:
-    "Getting someone to click an ad is just one part of a successful campaign. We focus on what happens after that click — from the landing-page experience to conversion measurement and the quality of enquiries generated.",
+    "Getting someone to click an ad is just one part of a successful campaign. We focus on what happens after that click - from the landing-page experience to conversion measurement and the quality of enquiries generated.",
   steps: [
     {
       num: "01",
@@ -718,7 +718,7 @@ export const beyondTheClickContent: BeyondTheClickData = {
     {
       num: "03",
       title: "Turn Visits into Actions",
-      desc: "Landing pages designed around the next step — enquiries, phone calls, bookings or purchases.",
+      desc: "Landing pages designed around the next step - enquiries, phone calls, bookings or purchases.",
       position: "top",
     },
     {

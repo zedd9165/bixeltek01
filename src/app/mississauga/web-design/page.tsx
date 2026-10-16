@@ -60,7 +60,7 @@ const services = [
     {
       title: "Ecommerce Websites",
       description: "Optimized online stores that boost sales and user experience.",
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
     },
     {
       title: "Payment Gateway Integrations",

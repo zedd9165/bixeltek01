@@ -31,12 +31,12 @@ const statsSummary = [
 const testimonials: TestimonialCard[] = [
   {
     id: 'tumblewash',
-    brandName: 'TumbleWash Franchise',
+    brandName: 'Founder · Laundry Service, Gurgaon',
     quote:
-      'Bixeltek transformed our digital customer acquisition. By connecting local search intent with better landing pages and campaign structure, our acquisition journey became substantially more efficient and dependable.',
+      'We thought Google Ads didn’t work. Now, we’re getting 15–20 quality calls every day.',
     metrics: [
-      { value: '₹77', label: 'Cost per qualified lead' },
-      { value: '3.4x', label: 'Inbound booking conversion' },
+      { value: '₹754 → ₹77', label: 'Cost per acquisition' },
+      { value: '170 → 477+', label: 'Monthly phone calls' },
     ],
     cardColor: '#0A0A10', // Obsidian black
     imageSrc: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop',
@@ -87,7 +87,7 @@ const testimonials: TestimonialCard[] = [
   },
   {
     id: 'specialty-dental',
-    brandName: 'Speciality Dental Network',
+    brandName: 'Specialty Dental Network',
     quote:
       'From custom landing pages to local map pack rankings, Bixeltek delivered high-ticket patient cases consistently every month. The transparency and weekly performance reporting are unmatched.',
     metrics: [

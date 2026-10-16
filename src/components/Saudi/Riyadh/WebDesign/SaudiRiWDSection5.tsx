@@ -27,7 +27,7 @@ export default function WebDesignServicesRiyadh() {
       title: "E-Commerce Solutions",
       description:
         "Fast, secure, bilingual online stores with payment gateway integration (SADAD, HyperPay, PayTabs, Stripe).",
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
     },
     {
       title: "Website Redesign & UX Optimization",

@@ -62,7 +62,9 @@ function HexTile({ item, index }: { item: TechnologyItem; index: number }) {
 
   const tile = (
     <div
-      className="group relative transition-transform duration-300 hover:scale-110"
+      // tabIndex lets phones show the tooltip on tap (focus) as well as hover
+      tabIndex={item.href ? -1 : 0}
+      className="group relative outline-none transition-transform duration-300 hover:scale-110 focus:scale-110"
       style={{
         width: "var(--hex-w)",
         height: "calc(var(--hex-w) * 1.1547)",
@@ -72,7 +74,7 @@ function HexTile({ item, index }: { item: TechnologyItem; index: number }) {
     >
       {/* Thin border layer */}
       <div
-        className="absolute inset-0 bg-[#ECE8F6] group-hover:bg-[#8B45FF] transition-colors duration-300"
+        className="absolute inset-0 bg-[#ECE8F6] group-hover:bg-[#8B45FF] group-focus:bg-[#8B45FF] transition-colors duration-300"
         style={{ clipPath: HEX_CLIP }}
       />
       {/* White face */}
@@ -81,7 +83,7 @@ function HexTile({ item, index }: { item: TechnologyItem; index: number }) {
         style={{ clipPath: HEX_CLIP }}
       >
         <div
-          className={`w-[42%] h-[42%] flex items-center justify-center [&>svg]:w-full [&>svg]:h-full ${
+          className={`w-[44%] h-[44%] flex items-center justify-center [&>svg]:w-full [&>svg]:h-full ${
             item.iconColor ?? "text-gray-800"
           }`}
         >
@@ -100,7 +102,7 @@ function HexTile({ item, index }: { item: TechnologyItem; index: number }) {
       </div>
 
       {/* Tooltip */}
-      <span className="pointer-events-none absolute left-1/2 top-full z-50 mt-1 -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-900 px-2.5 py-1 text-[11px] font-poppins font-medium text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100">
+      <span className="pointer-events-none absolute left-1/2 top-full z-50 mt-1 -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-900 px-2.5 py-1 text-[11px] font-poppins font-medium text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100">
         {item.name}
       </span>
     </div>
@@ -110,7 +112,7 @@ function HexTile({ item, index }: { item: TechnologyItem; index: number }) {
     <motion.div
       // Transformed wrappers create stacking contexts, so the z-index
       // must be raised on this outer wrapper for the tooltip to sit on top.
-      className="relative hover:z-50"
+      className="relative hover:z-50 focus-within:z-50"
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -194,16 +196,16 @@ function Hub({
       />
       {/* Dark face */}
       <div
-        className="absolute inset-[2px] bg-[#0B0B14] flex flex-col items-center justify-center text-center text-white px-2"
+        className="absolute inset-[2px] bg-[#0B0B14] flex flex-col items-center justify-center text-center text-white px-4 md:px-2"
         style={{ clipPath: HEX_CLIP }}
       >
-        <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#8B45FF] to-[#670EF7] flex items-center justify-center mb-1.5 [&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
+        <div className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-[#8B45FF] to-[#670EF7] flex items-center justify-center mb-1.5 [&>svg]:w-5 [&>svg]:h-5">
           {icon ?? <Layers />}
         </div>
-        <div className="text-[11px] sm:text-sm lg:text-base font-bold font-inter leading-tight">
+        <div className="text-sm md:text-sm lg:text-base font-bold font-inter leading-tight">
           {title}
         </div>
-        <div className="text-[9px] sm:text-[11px] text-violet-200 font-poppins mt-0.5 leading-tight">
+        <div className="text-[11px] text-violet-200 font-poppins mt-0.5 leading-tight">
           {subtitle}
         </div>
       </div>
@@ -231,18 +233,18 @@ export default function TechnologiesSection({
   const left = technologies.slice(0, mid);
   const right = technologies.slice(mid);
 
-  // Desktop/tablet: hexes per row scale with how many items each side has
+  // md+: hexes per row scale with how many items each side has
   const sideRow = mid <= 3 ? 2 : mid >= 9 ? 4 : 3;
-  // Mobile: narrow clusters (2 / 1 / 2 / 1 ...) so left | hub | right fits
-  const mobileRow = 2;
+  // Phones: one combined cluster below the hub (4 / 3 / 4 / 3 ...)
+  const mobileRow = 4;
   const subtitle = centerSubtitle ?? `${count} technologies`;
 
   if (count === 0) return null;
 
   return (
-        <section
+    <section
       id={id}
-      className="scroll-mt-24 py-24 sm:py-28 lg:py-32 bg-[#08080C] text-gray-900 relative border-t border-white/[0.08] overflow-hidden"
+      className="scroll-mt-24 py-16 md:py-28 lg:py-32 bg-[#08080C] text-gray-900 relative border-t border-white/[0.08] overflow-hidden"
     >
       {/* Coordinate mesh */}
       <div
@@ -266,9 +268,9 @@ export default function TechnologiesSection({
           `,
         }}
       />
-      <div className="w-full lg:max-w-[90%] mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="w-full lg:max-w-[90%] mx-auto px-3 md:px-6 lg:px-8">
         {/* Card */}
-        <div className="relative rounded-3xl border border-gray-100 bg-white shadow-[0_20px_60px_rgba(80,60,140,0.10)] px-3 sm:px-10 py-10 sm:py-14">
+        <div className="relative rounded-3xl border border-gray-100 bg-white shadow-[0_20px_60px_rgba(80,60,140,0.10)] px-3 md:px-10 py-8 md:py-14">
           {/* Soft lavender corner glows (clipped to the card) */}
           <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
             <div
@@ -283,11 +285,11 @@ export default function TechnologiesSection({
           </div>
 
           {/* Header */}
-          <div className="relative z-10 max-w-3xl mx-auto text-center mb-10 sm:mb-12 px-2">
-            <div className="text-xs font-poppins font-semibold uppercase tracking-wider text-[#670EF7] mb-3">
+          <div className="relative z-10 max-w-3xl mx-auto text-center mb-8 md:mb-12 px-2">
+            <div className="text-[11px] md:text-xs font-poppins font-semibold uppercase tracking-wider text-[#670EF7] mb-3">
               {eyebrow}
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.18] mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.18] mb-4">
               {h2}
             </h2>
             <p className="text-sm md:text-base text-gray-600 font-poppins leading-relaxed">
@@ -295,38 +297,41 @@ export default function TechnologiesSection({
             </p>
           </div>
 
-          {/* Left cluster | hub | right cluster (same layout on every screen size) */}
+          {/*
+            Phones: hub on top, ONE combined honeycomb underneath (stacked column).
+            md+: left cluster | hub | right cluster in a 3-column grid.
+          */}
           <div
-            className="relative z-10 grid grid-cols-[1fr_auto_1fr] items-center gap-1.5 sm:gap-6
-                       [--hex-w:44px] [--hub-w:92px]
-                       sm:[--hex-w:72px] sm:[--hub-w:150px]
+            className="relative z-10 flex flex-col items-center gap-6
+                       md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6
+                       [--hex-w:60px] [--hub-w:140px]
+                       md:[--hex-w:72px] md:[--hub-w:150px]
                        lg:[--hex-w:84px] lg:[--hub-w:190px]"
           >
-            {/* Left */}
-            <div className="justify-self-end">
-              <div className="sm:hidden">
-                <HexCluster items={left} startIndex={0} perRow={mobileRow} />
-              </div>
-              <div className="hidden sm:block">
-                <HexCluster items={left} startIndex={0} perRow={sideRow} />
-              </div>
+            {/* Left (md+) */}
+            <div className="hidden md:block md:justify-self-end">
+              <HexCluster items={left} startIndex={0} perRow={sideRow} />
             </div>
 
             <Hub title={centerTitle} subtitle={subtitle} icon={centerIcon} />
 
-            {/* Right */}
-            <div className="justify-self-start">
-              <div className="sm:hidden">
-                <HexCluster items={right} startIndex={mid} perRow={mobileRow} />
-              </div>
-              <div className="hidden sm:block">
-                <HexCluster items={right} startIndex={mid} perRow={sideRow} />
-              </div>
+            {/* Right (md+) */}
+            <div className="hidden md:block md:justify-self-start">
+              <HexCluster items={right} startIndex={mid} perRow={sideRow} />
+            </div>
+
+            {/* All items (phones only) */}
+            <div className="md:hidden pb-6">
+              <HexCluster
+                items={technologies}
+                startIndex={0}
+                perRow={mobileRow}
+              />
             </div>
           </div>
 
           {/* CTA */}
-          <div className="relative z-0 mt-12 sm:mt-14 rounded-2xl border border-violet-100 bg-violet-50/40 p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+          <div className="relative z-0 mt-8 md:mt-14 rounded-2xl border border-violet-100 bg-violet-50/40 p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center gap-4">
               <div className="w-11 h-11 rounded-xl bg-violet-100 border border-violet-200 text-violet-700 flex items-center justify-center shrink-0">
                 <MessageSquare className="w-5 h-5" />
@@ -335,7 +340,7 @@ export default function TechnologiesSection({
                 <div className="text-sm font-bold font-inter text-[#08080C]">
                   {ctaTitle}
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 font-poppins max-w-xl">
+                <p className="text-xs md:text-sm text-gray-600 font-poppins max-w-xl">
                   {ctaText}
                 </p>
               </div>
@@ -343,7 +348,7 @@ export default function TechnologiesSection({
 
             <Link
               href={ctaHref}
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#670EF7] hover:bg-[#5a0bd9] text-white font-poppins font-semibold text-sm shadow-lg shadow-violet-600/25 transition-colors shrink-0"
+              className="group inline-flex w-full md:w-auto justify-center items-center gap-2 px-6 py-3 rounded-full bg-[#670EF7] hover:bg-[#5a0bd9] text-white font-poppins font-semibold text-sm shadow-lg shadow-violet-600/25 transition-colors shrink-0"
             >
               <span>{ctaButtonText}</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

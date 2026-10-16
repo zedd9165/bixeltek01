@@ -16,7 +16,7 @@ const faqs: FAQItem[] = [
   {
     question: "Do you work with new businesses as well as established companies?",
     answer:
-      "Yes. We work with businesses at different stages. For newer businesses, the focus is usually on establishing the brand, launching the website or store and finding the first dependable customer acquisition channels. For established companies, the work often involves modernising an outdated web presence, improving conversion rates, expanding search visibility or building custom applications to support operations."
+      "Yes. We work with businesses at different stages. For newer businesses, the focus is usually on establishing the brand, launching the website or store and finding the first dependable customer acquisition channels. For established companies, the work often involves modernizing an outdated web presence, improving conversion rates, expanding search visibility or building custom applications to support operations."
   },
   {
     question: "Do you only offer digital marketing?",

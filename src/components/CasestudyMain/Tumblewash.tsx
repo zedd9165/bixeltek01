@@ -45,7 +45,7 @@ const strategySteps = [
             "Prominent CTA buttons: Call Now and Book Pickup",
             "A short, frictionless form that collected just what was needed: name, location, phone number",
         ],
-        suffix: "The result? Over 400 form submissions with a 100% conversion rate.",
+        suffix: "The result? Over 400 form submissions in 90 days with qualified customer inquiries.",
     },
     {
         title: "4. Smart Bidding + Budget",
@@ -108,7 +108,7 @@ export default function TumbleWashCaseStudySection() {
                         In mid-2024, a Gurgaon-based laundry and dry-cleaning business came to Bixeltek with a critical problem. Despite running Google Ads with a daily spend of ₹2,000, the campaign was falling flat.
 
                     </p>
-                    <p className='text-lg mt-3 font-poppins'>Their ads were attracting unqualified leads, the cost per acquisition (CPA) had skyrocketed to ₹1,200+, and they weren&apos;t seeing a measurable return on ad spend (ROAS). They were close to pulling the plug on paid advertising.</p>
+                    <p className='text-lg mt-3 font-poppins'>Their ads were attracting unqualified leads, the cost per acquisition (CPA) stood at ₹754, and they weren&apos;t seeing a measurable return on ad spend (ROAS). They were close to pulling the plug on paid advertising.</p>
                     <p className='text-lg mt-3 font-poppins'>Their objective was ambitious: <span className='font-semibold'>cut the budget in half and double the results.</span> <br />
                         We delivered exactly that — and more.</p>
                 </div>
@@ -116,7 +116,7 @@ export default function TumbleWashCaseStudySection() {
                 <div id="objectives" className="scroll-mt-32">
                     <h2 className="text-3xl font-sofiasanscondensed font-bold text-[#670ef7] mb-4">Objectives</h2>
                     <ul className="list-disc pl-5 space-y-3 text-lg font-poppins">
-                        <li>Reduce CPA from ₹1,200+ to below ₹100</li>
+                        <li>Reduce CPA from ₹754 to below ₹100</li>
                         <li>Generate 10+ high-quality calls every day</li>
                         <li>Drive over 400 monthly form submissions</li>
                         <li>Optimize the landing page for mobile conversions</li>
@@ -150,7 +150,7 @@ export default function TumbleWashCaseStudySection() {
                                     <p className='mb-3 max-w-xl'>{step.des}</p>
                                     <ul className="list-disc md:text-lg pl-5 text-gray-700  space-y-1">
                                         {step.points.map((point, i) => (
-                                            <li key={i}>{point}</li>
+                                             <li key={i}>{point}</li>
                                         ))}
                                     </ul>
                                     <p className='mt-3 max-w-xl'>{step.suffix}</p>
@@ -173,9 +173,9 @@ export default function TumbleWashCaseStudySection() {
                         </thead>
                         <tbody>
                             <tr><td className="p-2">Monthly Phone Calls</td><td className="p-2">170</td><td className="p-2">477+</td><td className="p-2"><MdKeyboardArrowUp className='text-green-600 inline-block text-xl' /> 180%</td></tr>
-                            <tr><td className="p-2">CPA</td><td className="p-2">₹754</td><td className="p-2">₹77</td><td className="p-2"><MdKeyboardArrowDown className='text-red-600 inline text-xl' /> 90%</td></tr>
-                            <tr><td className="p-2">Form Fills</td><td className="p-2">0</td><td className="p-2">400+</td><td className="p-2"><MdKeyboardArrowUp className='text-green-600 inline-block text-xl' /> 100%</td></tr>
-                            <tr><td className="p-2">ROAS</td><td className="p-2">0.41%</td><td className="p-2">436.7%</td><td className="p-2"><MdKeyboardArrowUp className='text-green-600 inline-block text-xl' /> 1000%+</td></tr>
+                            <tr><td className="p-2">Cost Per Acquisition (CPA)</td><td className="p-2">₹754</td><td className="p-2">₹77</td><td className="p-2"><MdKeyboardArrowDown className='text-red-600 inline text-xl' /> 90%</td></tr>
+                            <tr><td className="p-2">Form Fills</td><td className="p-2">0</td><td className="p-2">400+</td><td className="p-2">n/a (tracking added)</td></tr>
+                            <tr><td className="p-2">Return on Ad Spend (ROAS)</td><td className="p-2">0.41x (41%)</td><td className="p-2">4.36x (436.7%)</td><td className="p-2"><MdKeyboardArrowUp className='text-green-600 inline-block text-xl' /> 10x+</td></tr>
                             <tr><td className="p-2">Avg. CPC</td><td className="p-2">₹18</td><td className="p-2">₹10</td><td className="p-2"><MdKeyboardArrowDown className='text-red-600 inline text-xl' /> 44%</td></tr>
                             <tr><td className="p-2">Avg. CTR</td><td className="p-2">3.1%</td><td className="p-2">4.8%</td><td className="p-2"><MdKeyboardArrowUp className='text-green-600 inline-block text-xl' /> 21%</td></tr>
                         </tbody>

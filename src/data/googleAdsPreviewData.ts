@@ -1,4 +1,4 @@
-export interface GoogleAdsMetadata {
+﻿export interface GoogleAdsMetadata {
   title: string;
   description: string;
   url: string;
@@ -569,7 +569,7 @@ export const googleAdsWhyChooseData = {
   eyebrow: "WHY CHOOSE BIXELTEK",
   h2: "Data-Driven Precision, Verified Expertise & Zero Wasted Ad Spend",
   intro:
-    "We don't manage Google Ads in isolation. We operate as your dedicated commercial growth engine—connecting smart bidding, landing-page conversion architecture, and deep CRM revenue attribution into one cohesive system.",
+    "We don't manage Google Ads in isolation. We operate as your dedicated commercial growth engine - connecting smart bidding, landing-page conversion architecture, and deep CRM revenue attribution into one cohesive system.",
   points: [
     { title: "Certified Official Google Partner Agency with verified track record" },
     { title: "Commercial-first approach: optimizing for revenue, not vanity clicks" },

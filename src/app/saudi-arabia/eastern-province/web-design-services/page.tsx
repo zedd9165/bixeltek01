@@ -58,7 +58,7 @@ import healthcare from "@/assets/beautiful-young-female-doctor-looking-camera-of
       title: "E-Commerce Websites",
       description:
         "Launch your online store with seamless checkout flows, conversion-driven product grids, and lightning-fast mobile optimization that drives real sales.",
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
     },
     {
       title: "Payment Gateway Integrations",

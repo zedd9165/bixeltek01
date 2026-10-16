@@ -71,7 +71,7 @@ import healthcare from "@/assets/beautiful-young-female-doctor-looking-camera-of
       title: "E-Commerce Solutions",
       description:
         "Fast, secure, bilingual online stores with payment gateway integration (SADAD, HyperPay, PayTabs, Stripe).",
-      link: "/ecommerce-websites",
+      link: "/services/ecommerce-development",
     },
     {
       title: "Website Redesign & UX Optimization",

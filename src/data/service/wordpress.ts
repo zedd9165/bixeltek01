@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   BreadcrumbItem,
   JumpLinkItem,
   ProblemCard,
@@ -9,7 +9,7 @@ import type {
 } from "./ecom";
 
 // ============================================================
-// WORDPRESS DEVELOPMENT — PAGE DATA
+// WORDPRESS DEVELOPMENT - PAGE DATA
 // Content-only data for Bixeltek's reusable service-page system.
 // Confirm route names and each component's expected props against
 // the repository before integrating.
@@ -123,7 +123,7 @@ export const wordpressHero = {
   p1:
     "Your website should make it easier for people to understand what you offer, find the right information and take the next step. It should also give your team a practical way to keep content accurate as the business changes.",
   p2:
-    "Bixeltek develops and improves WordPress websites around your content, customer journey and operational needs—from tailored theme work and integrations to redesigns and carefully planned migrations.",
+    "Bixeltek develops and improves WordPress websites around your content, customer journey and operational needs - from tailored theme work and integrations to redesigns and carefully planned migrations.",
   primaryButtonText: "Talk to an Expert",
   primaryButtonHref: "#final-cta",
   secondaryLinkText: "Explore Web Design & Development",
@@ -150,7 +150,7 @@ export const wordpressProblems: ProblemCard[] = [
   {
     title: "The Website No Longer Reflects the Business",
     description:
-      "As services, audiences and positioning change, the original page structure may stop explaining the offer clearly. A redesign should address content hierarchy, navigation and customer journeys—not just replace colours and imagery.",
+      "As services, audiences and positioning change, the original page structure may stop explaining the offer clearly. A redesign should address content hierarchy, navigation and customer journeys - not just replace colours and imagery.",
   },
   {
     title: "Performance Problems Are Difficult to Diagnose",
@@ -463,7 +463,7 @@ export const wordpressWhyChoose: WordPressWhyChooseData = {
     {
       title: "We Plan for Content and Search Continuity",
       description:
-        "When redesigning or migrating a site, we consider page structure, important URLs, redirects and measurement as part of the delivery—not as an afterthought.",
+        "When redesigning or migrating a site, we consider page structure, important URLs, redirects and measurement as part of the delivery - not as an afterthought.",
     },
     {
       title: "We Connect the Website With Business Workflows",
@@ -666,5 +666,5 @@ export const wordpressFinalCta: WordPressFinalCtaData = {
     href: "#contact",
   },
   supportingCopy:
-    "We will start with your content, editing needs, customer journeys and current technical setup—not assume every project needs a custom theme or a complete rebuild.",
+    "We will start with your content, editing needs, customer journeys and current technical setup - not assume every project needs a custom theme or a complete rebuild.",
 };

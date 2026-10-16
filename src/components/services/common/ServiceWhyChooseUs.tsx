@@ -30,19 +30,41 @@ const POINT_ICONS: LucideIcon[] = [
   Rocket,
 ];
 
-export interface ServiceWhyChooseUsProps {
-  id?: string;
-  data: EcommerceWhyChooseData;
-  defaultImage?: StaticImageData | string;
+export interface WhyChoosePointItem {
+  title: string;
+  description?: string;
 }
 
+export interface GenericWhyChooseData {
+  eyebrow: string;
+  h2: string;
+  intro: string;
+  image?: StaticImageData | string;
+  points: WhyChoosePointItem[];
+  closingCopy?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  direction?: "left" | "right";
+}
 
+export interface ServiceWhyChooseUsProps {
+  id?: string;
+  data: GenericWhyChooseData | EcommerceWhyChooseData;
+  defaultImage?: StaticImageData | string;
+  direction?: "left" | "right";
+}
 
 export default function ServiceWhyChooseUs({
   id = "why-bixeltek",
   data,
   defaultImage = defaultWhyChooseImg,
+  direction = "left",
 }: ServiceWhyChooseUsProps) {
+  const resolvedDirection =
+    direction ||
+    ("direction" in data && data.direction ? data.direction : "left");
+  const isImageLeft = resolvedDirection === "left";
+
   const imageSrc = data.image || defaultImage;
   const rawItems = data.points && data.points.length > 0 ? data.points : [];
 
@@ -53,16 +75,22 @@ export default function ServiceWhyChooseUs({
     >
       <div className="relative mx-auto w-full px-4 sm:px-6 lg:max-w-[90%] lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-start">
-          {/* LEFT: Image & floating badges */}
+          {/* Image & floating badges */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: isImageLeft ? -20 : 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 lg:sticky lg:top-28"
+            className={`lg:col-span-5 lg:sticky lg:top-28 ${
+              isImageLeft ? "lg:order-1" : "lg:order-2"
+            }`}
           >
             <div className="relative mx-auto w-full">
-              <div className="pointer-events-none absolute -bottom-5 -right-5 h-full w-full rounded-3xl border border-blue-200/70 bg-gradient-to-br from-blue-100/50 to-[#670EF7]/10 -z-10" />
+              <div
+                className={`pointer-events-none absolute -bottom-5 ${
+                  isImageLeft ? "-right-5" : "-left-5"
+                } h-full w-full rounded-3xl border border-blue-200/70 bg-gradient-to-br from-blue-100/50 to-[#670EF7]/10 -z-10`}
+              />
               <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-blue-500/20 via-purple-500/10 to-indigo-500/15 blur-2xl -z-10" />
 
               <div className="relative h-[440px] md:h-[520px] lg:h-[680px] w-full rounded-3xl overflow-hidden border border-gray-200/90 bg-gray-50 shadow-2xl shadow-blue-950/10 group">
@@ -111,13 +139,15 @@ export default function ServiceWhyChooseUs({
             </div>
           </motion.div>
 
-          {/* RIGHT: Header, reasons & CTA */}
+          {/* Content Column: Header, reasons & CTA */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: isImageLeft ? 20 : -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 flex flex-col justify-start"
+            className={`lg:col-span-7 flex flex-col justify-start ${
+              isImageLeft ? "lg:order-2" : "lg:order-1"
+            }`}
           >
             <div className="inline-flex items-center self-start gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
@@ -133,7 +163,7 @@ export default function ServiceWhyChooseUs({
             </p>
 
             {/* Points: plain icon + text list, 2 columns */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-1 mb-8 border-t border-gray-200/90">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-1 mb-8 border-t border-gray-200/90">
               {rawItems.map((item, idx) => {
                 const Icon = POINT_ICONS[idx % POINT_ICONS.length];
 
@@ -148,14 +178,21 @@ export default function ServiceWhyChooseUs({
                       delay: 0.05 * idx,
                       ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="flex items-center gap-4 py-4 border-b border-gray-200/90 group"
+                    className="flex items-start gap-4 py-4 border-b border-gray-200/90 group"
                   >
-                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-white text-blue-600 ring-1 ring-blue-200/80 shadow-sm group-hover:bg-blue-600 group-hover:ring-blue-600 group-hover:shadow-md group-hover:shadow-blue-600/30 transition-all duration-300">
+                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-white text-blue-600 ring-1 ring-blue-200/80 shadow-sm group-hover:bg-blue-600 group-hover:ring-blue-600 group-hover:shadow-md group-hover:shadow-blue-600/30 transition-all duration-300 mt-0.5">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <span className="text-[15px] sm:text-base font-semibold font-inter leading-snug text-[#08080C] group-hover:text-blue-600 transition-colors">
-                      {item.title}
-                    </span>
+                    <div className="space-y-1 flex-1">
+                      <span className="text-[15px] sm:text-base font-semibold font-inter leading-snug text-[#08080C] group-hover:text-blue-600 transition-colors block">
+                        {item.title}
+                      </span>
+                      {"description" in item && typeof (item as WhyChoosePointItem).description === "string" && (
+                        <p className="text-xs sm:text-sm text-gray-600 font-poppins leading-relaxed">
+                          {(item as WhyChoosePointItem).description}
+                        </p>
+                      )}
+                    </div>
                   </motion.li>
                 );
               })}

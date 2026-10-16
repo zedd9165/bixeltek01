@@ -18,7 +18,8 @@ export interface ServiceFinalCTAProps {
   h2: string;
   intro: string;
   sectionSubtitle?: string;
-  tools: TechStackItem[];
+  tools?: TechStackItem[];
+  supportingCopy?: string;
 }
 
 export default function ServiceFinalCTA({
@@ -27,7 +28,8 @@ export default function ServiceFinalCTA({
   h2,
   intro,
   sectionSubtitle = "Measurement & Technology Stack",
-  tools,
+  tools = [],
+  supportingCopy,
 }: ServiceFinalCTAProps) {
   return (
     <section
@@ -85,19 +87,27 @@ export default function ServiceFinalCTA({
               <p className="text-base md:text-lg text-neutral-300 font-poppins leading-relaxed">
                 {intro}
               </p>
+
+              {/* Supporting Copy Callout */}
+              {supportingCopy && (
+                <div className="p-4 rounded-xl bg-white/[0.04] border border-[#8C45FF]/30 text-xs sm:text-sm text-neutral-300 font-poppins leading-relaxed">
+                  {supportingCopy}
+                </div>
+              )}
             </div>
 
             {/* Dynamic Tools / Points Grid */}
-            <div className="pt-2 space-y-3">
-              {sectionSubtitle && (
-                <div className="text-xs font-bold uppercase tracking-wider text-neutral-400 font-poppins flex items-center gap-2 mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8C45FF]" />
-                  <span>{sectionSubtitle}</span>
-                </div>
-              )}
+            {tools && tools.length > 0 && (
+              <div className="pt-2 space-y-3">
+                {sectionSubtitle && (
+                  <div className="text-xs font-bold uppercase tracking-wider text-neutral-400 font-poppins flex items-center gap-2 mb-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8C45FF]" />
+                    <span>{sectionSubtitle}</span>
+                  </div>
+                )}
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                {tools.map((tool, idx) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                  {tools.map((tool, idx) => (
                   <div
                     key={`${tool.name}-${idx}`}
                     className="group relative p-4 rounded-xl border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.06] hover:border-[#8C45FF]/40 transition-all duration-300 flex flex-col justify-between"
@@ -129,10 +139,11 @@ export default function ServiceFinalCTA({
                 ))}
               </div>
             </div>
+          )}
           </div>
 
           {/* Right Column: Lead Form */}
-          <div className="lg:col-span-6 rounded-2xl border border-white/[0.1] bg-white/[0.03] backdrop-blur-md p-6 sm:p-8 shadow-2xl">
+          <div className="lg:col-span-6 rounded-2xl border border-white/[0.1] bg-white/[0.03] backdrop-blur-md md:p-8 shadow-2xl">
             <ContactFromNew />
           </div>
         </div>

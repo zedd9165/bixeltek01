@@ -38,7 +38,7 @@ export default function WhyAppDevMatter({whyMatters}: {whyMatters: string[]}) {
                       <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
                     </div>
                     <div className="flex-1 bg-white/5 rounded-full px-3 py-1 text-[10px] text-white/30 font-mono">
-                      bixeltek.com/services/app-development
+                      bixeltek.com/services/mobile-app-development
                     </div>
                   </div>
                   {/* Content */}

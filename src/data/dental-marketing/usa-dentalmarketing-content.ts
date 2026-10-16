@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import {
   FaChartLine,
@@ -89,7 +89,7 @@ export const USA_SERVICES_CONTENT: ServicesSectionContent = {
       icon: FaChartLine,
       title: 'Google Ads & Dental PPC',
       description:
-        'Capture private and fee-for-service patients actively searching for high-margin dental procedures in your territory—from Single & Full Arch Implants to Invisalign and Emergency Dental Care.',
+        'Capture private and fee-for-service patients actively searching for high-margin dental procedures in your territory - from Single & Full Arch Implants to Invisalign and Emergency Dental Care.',
       features: [
         'Treatment-intent keyword architecture (implants, veneers, clear aligners)',
         'High-converting ad copy & local call extensions',
@@ -183,7 +183,7 @@ export const USA_BENEFITS_CONTENT: BenefitsSectionContent = {
   headingHighlight: 'Bixeltek',
   headingEnd: '',
   subtext:
-    'We don’t just buy clicks. We build and optimize the entire patient acquisition and production engine behind them—helping fee-for-service clinics, private practices, and growing DSOs attract high-value patients and fill operatory schedules predictably.',
+    'We don’t just buy clicks. We build and optimize the entire patient acquisition and production engine behind them - helping fee-for-service clinics, private practices, and growing DSOs attract high-value patients and fill operatory schedules predictably.',
   benefits: [
     {
       icon: FaStar,

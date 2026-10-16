@@ -50,6 +50,20 @@ export const metadata: Metadata = {
     title: automateMetadata.title,
     description: automateMetadata.description,
     url: automateMetadata.canonical,
+    images: [
+      {
+        url: "https://bixeltek.com/BIXELTEKLOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "Bixeltek - Automate Systems & AI Operations",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: automateMetadata.title,
+    description: automateMetadata.description,
+    images: ["https://bixeltek.com/BIXELTEKLOGO.png"],
   },
 };
 

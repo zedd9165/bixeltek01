@@ -180,6 +180,10 @@ const ecomTechTools: TechStackItem[] = [
 export const metadata: Metadata = {
   title: ecommercePreviewMetadata.title,
   description: ecommercePreviewMetadata.description,
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: ecommercePreviewMetadata.openGraph.title,
     description: ecommercePreviewMetadata.openGraph.description,

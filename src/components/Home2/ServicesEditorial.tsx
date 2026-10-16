@@ -90,7 +90,7 @@ const services: ServiceCard[] = [
       'We improve what happens after a customer clicks, submits a form or places an order. That can mean CRM integrations, lead routing, reporting, customer communication workflows, conversion optimization or practical automation. We find where information is lost or manual work slows the business, then build a more dependable process.',
     labels: ['CRM Integrations', 'Automation',],
     cta: 'Explore Connected Systems',
-    link: '#final-cta',
+    link: '/services/automate',
     icon: Workflow
   }
 ];

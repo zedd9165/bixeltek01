@@ -12,6 +12,56 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/home-2',
+        destination: '/',
+        statusCode: 301,
+      },
+      {
+        source: '/home-2/',
+        destination: '/',
+        statusCode: 301,
+      },
+      {
+        source: '/ecommerce-websites',
+        destination: '/services/ecommerce-development',
+        statusCode: 301,
+      },
+      {
+        source: '/ecommerce-websites/',
+        destination: '/services/ecommerce-development',
+        statusCode: 301,
+      },
+      {
+        source: '/web-design-services',
+        destination: '/services/web-design',
+        statusCode: 301,
+      },
+      {
+        source: '/web-design-services/',
+        destination: '/services/web-design',
+        statusCode: 301,
+      },
+      {
+        source: '/services/app-development',
+        destination: '/services/mobile-app-development',
+        statusCode: 301,
+      },
+      {
+        source: '/services/app-development/',
+        destination: '/services/mobile-app-development',
+        statusCode: 301,
+      },
+      {
+        source: '/uk/google-ads-managment',
+        destination: '/uk/google-ads-management',
+        statusCode: 301,
+      },
+      {
+        source: '/uk/google-ads-managment/',
+        destination: '/uk/google-ads-management',
+        statusCode: 301,
+      },
+      {
         source: '/contact',
         destination: '/contact-us',
         permanent: true
@@ -24,7 +74,7 @@ const nextConfig = {
       {
         source: '/dental-marketing',
         destination: '/industries/dental-marketing-agency',
-        permanent: true
+        statusCode: 301,
       },
        {
         source: '/industries/dental-marketing',
@@ -49,6 +99,156 @@ const nextConfig = {
       {
         source: '/shopify-development/',
         destination: '/services/ecommerce-development/shopify',
+        permanent: true
+      },
+      {
+        source: '/react-native-app-development',
+        destination: '/services/mobile-app-development/react-native',
+        permanent: true
+      },
+      {
+        source: '/react-native-app-development/',
+        destination: '/services/mobile-app-development/react-native',
+        permanent: true
+      },
+      {
+        source: '/services/app-development/react-native',
+        destination: '/services/mobile-app-development/react-native',
+        permanent: true
+      },
+      {
+        source: '/services/app-development/react-native/',
+        destination: '/services/mobile-app-development/react-native',
+        permanent: true
+      },
+      {
+        source: '/services/payment-gateway-integration',
+        destination: '/services/ecommerce-development/payment-gateway-integration',
+        permanent: true
+      },
+      {
+        source: '/services/payment-gateway-integration/',
+        destination: '/services/ecommerce-development/payment-gateway-integration',
+        permanent: true
+      },
+      {
+        source: '/payment-gateway-integration',
+        destination: '/services/ecommerce-development/payment-gateway-integration',
+        permanent: true
+      },
+      {
+        source: '/payment-gateway-integration/',
+        destination: '/services/ecommerce-development/payment-gateway-integration',
+        permanent: true
+      },
+      {
+        source: '/services/ai-automation',
+        destination: '/services/automation/ai-automation',
+        permanent: true
+      },
+      {
+        source: '/services/ai-automation/',
+        destination: '/services/automation/ai-automation',
+        permanent: true
+      },
+      {
+        source: '/ai-automation',
+        destination: '/services/automation/ai-automation',
+        permanent: true
+      },
+      {
+        source: '/ai-automation/',
+        destination: '/services/automation/ai-automation',
+        permanent: true
+      },
+      {
+        source: '/graphic-design',
+        destination: '/services/graphic-design',
+        permanent: true
+      },
+      {
+        source: '/graphic-design/',
+        destination: '/services/graphic-design',
+        permanent: true
+      },
+      {
+        source: '/content-creation',
+        destination: '/services/content-creation',
+        permanent: true
+      },
+      {
+        source: '/content-creation/',
+        destination: '/services/content-creation',
+        permanent: true
+      },
+      {
+        source: '/digital-growth-audit',
+        destination: '/services/digital-growth-audit',
+        permanent: true
+      },
+      {
+        source: '/digital-growth-audit/',
+        destination: '/services/digital-growth-audit',
+        permanent: true
+      },
+      {
+        source: '/services/web-mobile-app-development',
+        destination: '/services/custom-app-development',
+        permanent: true
+      },
+      {
+        source: '/services/web-mobile-app-development/',
+        destination: '/services/custom-app-development',
+        permanent: true
+      },
+      {
+        source: '/web-mobile-app-development',
+        destination: '/services/custom-app-development',
+        permanent: true
+      },
+      {
+        source: '/web-mobile-app-development/',
+        destination: '/services/custom-app-development',
+        permanent: true
+      },
+      {
+        source: '/services/custom-app-development/web-applications',
+        destination: '/services/custom-app-development/web-application-development',
+        permanent: true
+      },
+      {
+        source: '/services/custom-app-development/web-applications/',
+        destination: '/services/custom-app-development/web-application-development',
+        permanent: true
+      },
+      {
+        source: '/services/custom-app-development/mobile-application',
+        destination: '/services/custom-app-development/mobile-app-development',
+        permanent: true
+      },
+      {
+        source: '/services/custom-app-development/mobile-application/',
+        destination: '/services/custom-app-development/mobile-app-development',
+        permanent: true
+      },
+      {
+        source: '/web-application-development',
+        destination: '/services/custom-app-development/web-application-development',
+        permanent: true
+      },
+      {
+        source: '/web-application-development/',
+        destination: '/services/custom-app-development/web-application-development',
+        permanent: true
+      },
+      {
+        source: '/services/web-applications',
+        destination: '/services/custom-app-development/web-application-development',
+        permanent: true
+      },
+      {
+        source: '/services/web-applications/',
+        destination: '/services/custom-app-development/web-application-development',
         permanent: true
       },
       {

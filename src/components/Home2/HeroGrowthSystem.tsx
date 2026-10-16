@@ -72,7 +72,7 @@ const capabilities = [
   { name: 'Google Ads Management', link: '/services/google-ads' },
   { name: 'SEO Services', link: '/services/seo-services' },
   { name: 'Application Development', link: '/services/mobile-app-development' },
-  { name: 'Automation & Analytics', link: '#final-cta' },
+  { name: 'Automation & Analytics', link: '/services/automate' },
 ];
 
 export default function HeroGrowthSystem({ 
@@ -87,7 +87,7 @@ export default function HeroGrowthSystem({
   const yOffset = shouldReduceMotion ? 0 : 18;
 
   return (
-    <section className="relative w-full bg-[#08080C] text-white overflow-hidden pt-36 md:pt-40 md:pt-44 pb-20 sm:pb-28 lg:pb-32 border-b border-white/[0.08]">
+    <section className="relative w-full bg-[#08080C] text-white overflow-hidden pt-36 md:pt-44 pb-20 sm:pb-28 lg:pb-32 border-b border-white/[0.08]">
       
       {/* Background Visual Layer */}
       <div 
@@ -203,7 +203,7 @@ export default function HeroGrowthSystem({
               onClick={onOpenBooking ?? onOpenAudit}
               className="w-full md:w-auto px-7 py-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 text-white font-semibold text-sm sm:text-base transition-all duration-300 text-center inline-flex items-center justify-center gap-2 cursor-pointer group"
             >
-              <span>Schedule a 1-on-1 consultation</span>
+              <span>Book a 30-minute call</span>
               <ArrowUpRight className="w-4 h-4 text-[#8C45FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </motion.div>

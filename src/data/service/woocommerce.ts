@@ -1,4 +1,4 @@
-
+﻿
 import {
   Layers,
   Code2,
@@ -672,7 +672,7 @@ export const woocommerceInvestment = {
   eyebrow: "PROJECT SCOPE & COST",
   h2: "What Determines the Cost of WooCommerce Development?",
   intro:
-    "The cost depends on the store's functionality, existing setup and ongoing operating requirements—not just the number of pages.",
+    "The cost depends on the store's functionality, existing setup and ongoing operating requirements - not just the number of pages.",
   cards: [
     {
       title: "Store Design and Customization",

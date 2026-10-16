@@ -52,6 +52,20 @@ export const metadata: Metadata = {
     title: growMetadata.title,
     description: growMetadata.description,
     url: growMetadata.canonical,
+    images: [
+      {
+        url: "https://bixeltek.com/BIXELTEKLOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "Bixeltek - Grow Performance Marketing & Ads",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: growMetadata.title,
+    description: growMetadata.description,
+    images: ["https://bixeltek.com/BIXELTEKLOGO.png"],
   },
 };
 
@@ -123,7 +137,7 @@ export default function GrowPillarPage() {
         <PillarCapabilities
           id="capabilities"
           eyebrow="GROWTH CAPABILITIES"
-          h2="Five Connected Channels & Disciplines Working Together"
+          h2="Six Connected Channels & Disciplines Working Together"
           intro="Explore each growth area to understand how we structure campaigns, visibility and conversion around your business goals."
           capabilities={capabilities}
         />

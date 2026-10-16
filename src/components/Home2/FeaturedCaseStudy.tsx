@@ -27,7 +27,7 @@ const clientCards: ClientCard[] = [
     client: 'TumbleWash',
     logo: tumblewashLogo,
     description:
-      'Multi-location franchise business looking to build a more efficient digital acquisition system.',
+      'Gurgaon laundry and dry-cleaning business. We rebuilt its Google Ads around local, intent-based keywords and a mobile-first landing page.',
     verified: false,
   },
   {
