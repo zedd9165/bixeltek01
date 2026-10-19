@@ -87,8 +87,6 @@ export default function SeoServicesClientView({
   return (
     <>
       <main className="bg-[#08080C] min-h-screen">
-        {/* 01 Global Header */}
-        <Header />
 
         {/* @ts-ignore */}
         <ServiceHero
@@ -243,8 +241,6 @@ export default function SeoServicesClientView({
           tools={measurementTools}
         />
 
-        {/* 17 Global Footer */}
-        <Footer />
       </main>
 
       {/* Reusable Booking Region Selector Modal */}
