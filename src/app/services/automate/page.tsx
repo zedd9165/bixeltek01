@@ -121,7 +121,7 @@ export default function AutomatePillarPage() {
         <PillarCapabilities
           id="capabilities"
           eyebrow="WHAT WE AUTOMATE"
-          h2="Eight Areas Where We Connect Systems & Remove Friction"
+          h2="Six Areas Where We Connect Systems & Remove Friction"
           intro="Explore each automation area to see how we connect platforms, eliminate manual handoffs, and keep business workflows moving reliably."
           capabilities={capabilities}
         />

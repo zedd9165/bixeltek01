@@ -43,12 +43,12 @@ const nextConfig = {
       },
       {
         source: '/services/app-development',
-        destination: '/services/mobile-app-development',
+        destination: '/services/custom-app-development/mobile-app-development',
         statusCode: 301,
       },
       {
         source: '/services/app-development/',
-        destination: '/services/mobile-app-development',
+        destination: '/services/custom-app-development/mobile-app-development',
         statusCode: 301,
       },
       {
@@ -103,22 +103,42 @@ const nextConfig = {
       },
       {
         source: '/react-native-app-development',
-        destination: '/services/mobile-app-development/react-native',
+        destination: '/services/custom-app-development/mobile-app-development/react-native',
         permanent: true
       },
       {
         source: '/react-native-app-development/',
-        destination: '/services/mobile-app-development/react-native',
+        destination: '/services/custom-app-development/mobile-app-development/react-native',
         permanent: true
       },
       {
         source: '/services/app-development/react-native',
-        destination: '/services/mobile-app-development/react-native',
+        destination: '/services/custom-app-development/mobile-app-development/react-native',
         permanent: true
       },
       {
         source: '/services/app-development/react-native/',
-        destination: '/services/mobile-app-development/react-native',
+        destination: '/services/custom-app-development/mobile-app-development/react-native',
+        permanent: true
+      },
+      {
+        source: '/flutter-app-development',
+        destination: '/services/custom-app-development/mobile-app-development/flutter',
+        permanent: true
+      },
+      {
+        source: '/flutter-app-development/',
+        destination: '/services/custom-app-development/mobile-app-development/flutter',
+        permanent: true
+      },
+      {
+        source: '/services/app-development/flutter',
+        destination: '/services/custom-app-development/mobile-app-development/flutter',
+        permanent: true
+      },
+      {
+        source: '/services/app-development/flutter/',
+        destination: '/services/custom-app-development/mobile-app-development/flutter',
         permanent: true
       },
       {
@@ -269,6 +289,16 @@ const nextConfig = {
       {
         source: '/ecommerce-websites/woocommerce/',
         destination: '/services/ecommerce-development/woocommerce',
+        permanent: true
+      },
+      {
+        source: '/services/seo-service',
+        destination: '/services/seo-services',
+        permanent: true
+      },
+      {
+        source: '/services/seo-service/',
+        destination: '/services/seo-services',
         permanent: true
       }
     ];

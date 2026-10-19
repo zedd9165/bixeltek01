@@ -73,7 +73,7 @@ const services = [
     icon: <MdOutlinePhoneAndroid size={22} />,
     title: "Mobile App Development",
     desc: "We design and engineer high-performance iOS & Android applications for growth-focused businesses across India — built in React Native and Flutter. Most MVPs are live on the app store within 8–10 weeks, with businesses reporting up to 3× higher conversion rates vs mobile web.",
-    link: "/services/app-development",
+    link: "/services/mobile-app-development",
     stat: "Live in 8–10 Weeks",
   },
   {

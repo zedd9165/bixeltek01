@@ -86,12 +86,7 @@ export default function ServiceWhyChooseUs({
             }`}
           >
             <div className="relative mx-auto w-full">
-              <div
-                className={`pointer-events-none absolute -bottom-5 ${
-                  isImageLeft ? "-right-5" : "-left-5"
-                } h-full w-full rounded-3xl border border-blue-200/70 bg-gradient-to-br from-blue-100/50 to-[#670EF7]/10 -z-10`}
-              />
-              <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-blue-500/20 via-purple-500/10 to-indigo-500/15 blur-2xl -z-10" />
+            
 
               <div className="relative h-[440px] md:h-[520px] lg:h-[680px] w-full rounded-3xl overflow-hidden border border-gray-200/90 bg-gray-50 shadow-2xl shadow-blue-950/10 group">
                 <Image
@@ -103,37 +98,10 @@ export default function ServiceWhyChooseUs({
                   priority
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/70 via-gray-950/15 to-transparent pointer-events-none" />
-
-                <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-gray-200/80 shadow-lg text-xs font-poppins font-semibold text-blue-700">
-                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-                  <span>Standard of Engineering</span>
-                </div>
 
                 <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[11px] font-poppins font-medium text-white shadow-md">
                   <Sparkles className="w-3 h-3 text-amber-400" />
                   <span>5+ Yrs Field Proof</span>
-                </div>
-
-                <div className="absolute bottom-5 left-4 right-4 md:left-5 md:right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200/90 shadow-xl shadow-gray-950/10 flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600 flex-shrink-0">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-[11px] font-poppins font-semibold uppercase tracking-wider text-blue-600">
-                        Production Discipline
-                      </div>
-                      <div className="text-sm font-poppins font-bold text-[#08080C]">
-                        Commercial Delivery Standard
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-poppins font-semibold">
-                    <TrendingUp className="w-3.5 h-3.5" />
-                    <span>Zero Bloat</span>
-                  </div>
                 </div>
               </div>
             </div>

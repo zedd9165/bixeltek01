@@ -238,7 +238,7 @@ export const metaAdsConversionJourney = {
     },
   ],
   supportingLink: {
-    text: "Book an Audit for Meta Ads",
+    text: "Book an Consultation for Meta Ads",
     destination: "#meta-ads-contact",
   },
 };

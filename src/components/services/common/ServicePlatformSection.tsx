@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
@@ -23,12 +23,22 @@ export interface PlatformOptionCardItem {
   badge?: string;
 }
 
+export interface ServicePlatformCTA {
+  text?: string;
+  href?: string;
+  target?: string;
+}
+
 export interface ServicePlatformSectionProps {
   id?: string;
   eyebrow: string;
   h2: string;
   intro: string;
   cards: PlatformOptionCardItem[];
+  cta?: ServicePlatformCTA | boolean;
+  ctaText?: string;
+  ctaHref?: string;
+  ctaVariant?: "blue" | "purple" | "dark";
 }
 
 const platformIcons = [
@@ -61,10 +71,33 @@ export default function ServicePlatformSection({
   h2,
   intro,
   cards,
+  cta,
+  ctaText,
+  ctaHref,
+  ctaVariant = "blue",
 }: ServicePlatformSectionProps) {
   const [activeTab, setActiveTab] = useState(0);
   const current = cards[activeTab];
 
+  const resolvedCta =
+    typeof cta === "object" && cta !== null
+      ? {
+          text: cta.text || "Book a Free Consultation",
+          href: cta.href || "/contact-us",
+          target: cta.target,
+        }
+      : cta === true
+      ? {
+          text: "Book a Free Consultation",
+          href: "/contact-us",
+        }
+      : ctaText
+      ? {
+          text: ctaText,
+          href: ctaHref || "/contact-us",
+        }
+      : null;
+        
   return (
     <section
       id={id}
@@ -72,17 +105,38 @@ export default function ServicePlatformSection({
     >
       <div className="w-full lg:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-            <span>{eyebrow}</span>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10 mb-16">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+              <span>{eyebrow}</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.15] mb-5">
+              {h2}
+            </h2>
+            <p className="text-base md:text-lg text-gray-700 font-poppins leading-relaxed">
+              {intro}
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.15] mb-5">
-            {h2}
-          </h2>
-          <p className="text-base md:text-lg text-gray-700 font-poppins leading-relaxed">
-            {intro}
-          </p>
+
+          {resolvedCta && (
+            <div className="flex-shrink-0 lg:mb-2">
+              <Link
+                href={resolvedCta.href}
+                target={resolvedCta.target}
+                className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 ${
+                  ctaVariant === "purple"
+                    ? "bg-[#670EF7] hover:bg-[#5a0bd9] text-white shadow-purple-600/25 hover:shadow-purple-500/35"
+                    : ctaVariant === "dark"
+                    ? "bg-neutral-900 hover:bg-neutral-800 text-white shadow-neutral-900/20"
+                    : "bg-blue-600 hover:bg-blue-500 text-white shadow-blue-600/25 hover:shadow-blue-500/35"
+                }`}
+              >
+                <span>{resolvedCta.text}</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Tabbed Interactive Layout */}

@@ -194,15 +194,26 @@ export default function GuerrCaseStudySection() {
         <section className="flex w-full max-w-7xl mx-auto px-6 py-20 space-x-8">
             {/* Content */}
             <div className="w-full md:w-2/3 space-y-12">
+                {/* Top Tagline / Breadcrumbs */}
+                <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
+                    <Link href="/" className="hover:underline">Bixeltek</Link>
+                    <span>/</span>
+                    <Link href="/services/ecommerce-development" className="hover:underline">E-Commerce Development</Link>
+                    <span>/</span>
+                    <Link href="/services/grow" className="hover:underline">Growth Marketing</Link>
+                    <span>/</span>
+                    <span className="text-gray-600">Client Case Study</span>
+                </div>
+
                 <div id="about" className="scroll-mt-32">
                     <h2 className="text-3xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">About Guerr</h2>
                     <p className='text-lg font-poppins'>
                         Guerr (<Link href="https://guerrclo.com" target="_blank" rel="noopener noreferrer" className="text-[#670ef7] hover:underline">
                             guerrclo.com
-                        </Link>) is a fashion and lifestyle brand that wanted to launch a fully custom ecommerce experience — not a cookie-cutter Shopify theme wearing their logo, but a platform engineered around exactly how the brand sells: seasonal drops, influencer-led discovery, and an Indian customer base with strong expectations around UPI, COD, and trust.
+                        </Link>) is a fashion and lifestyle brand that wanted to launch a fully custom <Link href="/services/ecommerce-development" className="text-[#670ef7] hover:underline font-medium">ecommerce development</Link> experience — not a cookie-cutter Shopify theme wearing their logo, but a platform engineered around exactly how the brand sells: seasonal drops, influencer-led discovery, and an Indian customer base with strong expectations around UPI, COD, and trust.
                     </p>
                     <p className='text-lg mt-3 font-poppins'>
-                        They needed more than a shopping cart. They needed a system — secure checkout, automated customer communication, real sales visibility for the team, rich merchandising tools for showcasing product the way a fashion brand actually presents it, and a structured way to formalize the influencer partnerships already driving attention to the brand.
+                        They needed more than a shopping cart. They needed a system — secure checkout, automated customer communication, real sales visibility for the team through custom <Link href="/services/analytics-tracking" className="text-[#670ef7] hover:underline font-medium">analytics and tracking</Link>, rich merchandising tools for showcasing product the way a fashion brand actually presents it, and a structured way to formalize the influencer partnerships already driving attention to the brand.
                     </p>
                     <p className='text-lg mt-3 font-poppins'>
                         We chose Medusa as the foundation because it&apos;s open-source, headless, and extensible at the code level — which mattered, because almost none of Guerr&apos;s requirements existed as an out-of-the-box feature. Every capability described below was either heavily customized or built entirely from scratch on top of Medusa&apos;s core.
@@ -239,7 +250,7 @@ export default function GuerrCaseStudySection() {
                     <h2 className="text-4xl font-bold text-left text-[#670ef7] mb-2 font-sofiasanscondensed">
                         The Bixeltek Build
                     </h2>
-                    <p className='text-base text-black max-w-xl mb-12'>This wasn&apos;t a plug-and-play storefront — it was a ground-up, custom-engineered ecommerce platform built on <span className='font-semibold'>Medusa</span>, tailored entirely around how Guerr actually does business. Below is what we built, and — because a real case study should show the hard parts too — some of the specific engineering problems we ran into along the way and how we solved them.</p>
+                    <p className='text-base text-black max-w-xl mb-12'>This wasn&apos;t a plug-and-play storefront — it was a ground-up platform built with custom <Link href="/services/build" className="text-[#670ef7] hover:underline font-medium">web &amp; digital engineering</Link> on <span className='font-semibold'>Medusa</span>, tailored entirely around how Guerr actually does business. Below is what we built, and — because a real case study should show the hard parts too — some of the specific engineering problems we ran into along the way and how we solved them.</p>
 
                     <div className="relative border-l-4 border-[#670ef7] ml-1 md:ml-4 space-y-16">
                         {strategySteps.map((step, index) => {
@@ -306,7 +317,7 @@ export default function GuerrCaseStudySection() {
                             <tr>
                                 <td className="p-3">Cart Recovery</td>
                                 <td className="p-3">
-                                    <MdKeyboardArrowUp className="text-green-600 inline-block text-xl" /> Automated, duplicate-safe abandoned-cart emails after 2 days
+                                    <MdKeyboardArrowUp className="text-green-600 inline-block text-xl" /> Automated, duplicate-safe abandoned-cart emails after 2 days to support <Link href="/services/conversion-rate-optimization" className="text-[#670ef7] hover:underline font-medium">conversion rate optimization (CRO)</Link>
                                 </td>
                             </tr>
                             <tr className="bg-gray-50">
@@ -318,13 +329,13 @@ export default function GuerrCaseStudySection() {
                             <tr>
                                 <td className="p-3">Admin Visibility</td>
                                 <td className="p-3">
-                                    <MdKeyboardArrowUp className="text-green-600 inline-block text-xl" /> Custom sales dashboard across 7/30/60/90-day views, built natively into Medusa Admin
+                                    <MdKeyboardArrowUp className="text-green-600 inline-block text-xl" /> Custom sales dashboard across 7/30/60/90-day views, integrated with <Link href="/services/analytics-tracking" className="text-[#670ef7] hover:underline font-medium">analytics &amp; tracking</Link> natively into Medusa Admin
                                 </td>
                             </tr>
                             <tr className="bg-gray-50">
                                 <td className="p-3">Growth Channel</td>
                                 <td className="p-3">
-                                    <MdKeyboardArrowUp className="text-green-600 inline-block text-xl" /> Full influencer/affiliate program with coupon tracking and self-serve dashboards
+                                    <MdKeyboardArrowUp className="text-green-600 inline-block text-xl" /> Full influencer/affiliate program with coupon tracking and self-serve dashboards powered by <Link href="/services/grow" className="text-[#670ef7] hover:underline font-medium">growth marketing</Link>
                                 </td>
                             </tr>
                             <tr>
@@ -346,14 +357,39 @@ export default function GuerrCaseStudySection() {
                         From secure OTP-gated checkout to per-product size charts, product video, collection merchandising, and an influencer program tracked down to the last order, Guerr now runs on infrastructure most brands would need five separate tools to replicate — all on a single, custom-extended Medusa backend built specifically for them.
                     </p>
                     <p className='text-lg font-poppins mt-3'>
+                        By uniting tailored <Link href="/services/ecommerce-development" className="text-[#670ef7] hover:underline font-medium">ecommerce development</Link> with <Link href="/services/conversion-rate-optimization" className="text-[#670ef7] hover:underline font-medium">conversion rate optimization (CRO)</Link> and data-led <Link href="/services/grow" className="text-[#670ef7] hover:underline font-medium">growth marketing</Link>, online brands create a scalable foundation for multi-channel acquisition across <Link href="/services/meta-ads" className="text-[#670ef7] hover:underline font-medium">Meta Ads</Link> and <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link> without leaking revenue at checkout.
+                    </p>
+                    <p className='text-lg font-poppins mt-3'>
                         The technical work wasn&apos;t trivial — extending Medusa&apos;s data model safely, keeping legacy products working through every schema change, and building admin tooling the team could actually use without a developer in the room took real engineering discipline. That&apos;s the difference between a store that looks custom and one that actually is.
                     </p>
+                </div>
+
+                {/* Services Delivered */}
+                <div className="flex flex-wrap items-center gap-3 pt-2 pb-6 text-sm font-medium text-gray-700">
+                    <span className="font-semibold text-gray-900">Services Delivered:</span>
+                    {[
+                        { label: 'E-Commerce Development', href: '/services/ecommerce-development' },
+                        { label: 'Web & App Build', href: '/services/build' },
+                        { label: 'Conversion Rate Optimization (CRO)', href: '/services/conversion-rate-optimization' },
+                        { label: 'Analytics & Tracking', href: '/services/analytics-tracking' },
+                        { label: 'Growth Marketing', href: '/services/grow' },
+                        { label: 'Meta Ads', href: '/services/meta-ads' },
+                        { label: 'Google Ads', href: '/services/google-ads' },
+                    ].map((item) => (
+                        <Link
+                            key={item.label}
+                            href={item.href}
+                            className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition hover:bg-[#670ef7] hover:text-white"
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
                 </div>
 
                 <div id="cta" className="scroll-mt-20 pb-20">
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4">Want a Storefront Built Around Your Business? Let&apos;s Build Your Success Story.</h2>
                     <p className='text-lg font-poppins'>
-                        At Bixeltek, we don&apos;t just theme an ecommerce template — we engineer custom Medusa-powered platforms with the payments, security, merchandising, automation, and growth tools your brand actually needs. See more of our work in <Link href={'/services/ecommerce-development'} className='underline underline-offset-2'>ecommerce website development.</Link>
+                        At Bixeltek, we don&apos;t just theme an ecommerce template — we engineer custom Medusa-powered platforms with the payments, security, merchandising, automation, and growth tools your brand actually needs. Explore our <Link href="/services/ecommerce-development" className="text-[#670ef7] hover:underline font-medium">ecommerce development services</Link>, learn about our <Link href="/services/build" className="text-[#670ef7] hover:underline font-medium">full-stack web engineering</Link>, or scale revenue with high-ROI <Link href="/services/grow" className="text-[#670ef7] hover:underline font-medium">growth marketing</Link> powered by <Link href="/services/meta-ads" className="text-[#670ef7] hover:underline font-medium">Meta Ads</Link> and <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link>.
                     </p>
                     <p className='text-lg font-poppins mt-3'>
                         Whether you&apos;re launching your first store or rebuilding one that&apos;s holding you back, our mission is simple: <span className='font-semibold'>build a platform that turns traffic into trackable, repeatable revenue.</span>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import Newsletter from "@/components/Newsletter";
 import { Phone, PhoneCall } from 'lucide-react';
 import { Mail } from 'lucide-react';
 
@@ -10,7 +9,6 @@ export const Footer = () => {
   return (
     <footer className="w-full pt-0 pb-16 bg-black">
       <div className="mx-auto max-w-[97%] px-4 sm:px-6 lg:px-8">
-        <Newsletter />
         <div className="grid grid-cols-2 min-[690px]:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6 xl:gap-8 pt-14 pb-10 max-w-xs min-[690px]:max-w-3xl lg:max-w-full mx-auto">
           <div className="col-span-full mb-10 lg:col-span-1  lg:mb-0">
             <Image src='/BIXELTEKLOGO.png' alt="logo" width={100}
@@ -160,6 +158,16 @@ export const Footer = () => {
               <li className="mb-6">
                 <Link href="/services/automation" className="text-gray-300 hover:text-purple-700">
                   Workflow & CRM Automation
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/automation/ai-automation" className="text-gray-300 hover:text-purple-700">
+                  AI Automation
+                </Link>
+              </li>
+              <li className="mb-6">
+                <Link href="/services/automation/whatsapp-marketing" className="text-gray-300 hover:text-purple-700">
+                  WhatsApp Automation & Marketing
                 </Link>
               </li>
               <li className="mb-6">
