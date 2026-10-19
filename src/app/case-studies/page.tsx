@@ -23,6 +23,9 @@ import heroimgdm from '@/assets/atikah-akhtar-XJptUS8nbhs-unsplash.jpg'
 import heroimgbike from '@/assets/angry-_-kat-4ORysIjH-mY-unsplash.jpg'
 import laungry from '@/assets/Denver-Commercial-Laundry-with-Free-Delivery-97beb6c9.jpeg'
 import guerr from '@/assets/guerr-case-study-1.jpeg'
+import heroimginvisalign from '@/assets/dentist-examining-patient-s-teeth.jpg'
+import innovwayzImg from '@/assets/innovwayz-case-study.png'
+import promenadeImg from '@/assets/promenade-casestudy.png'
 import Image from 'next/image'
 
 const casestudies = [
@@ -42,17 +45,38 @@ const casestudies = [
     },
     {
         id: 3,
+        title: "A Canadian Dental Clinic Was Growing. Invisalign Wasn't.",
+        description: "How search visibility, conversion optimisation and behaviour-led improvements helped an established practice develop a measurable Invisalign acquisition channel.",
+        image: heroimginvisalign,
+        link: "/case-studies/invisalign-dental-marketing-case-study",
+    },
+    {
+        id: 4,
         title: "340+ Leads in 30 Days for Hyderabad Bike Mechanic",
         description: "Discover how a trusted bike mechanic in Hyderabad gained 340+ leads in just 30 days using smart digital marketing strategies.",
         image: heroimgbike,
         link: "/case-studies/google-ads-case-study-bike-repair-hyderabad",
     },
     {
-        id: 4,
+        id: 5,
         title: "TumbleWash Case Study: 436% ROAS Growth",
         description: "Discover how we boosted monthly calls and slashed costs in half for TumbleWash.",
         image: laungry,
         link: "/case-studies/Tumblewash-Casestudy",
+    },
+    {
+        id: 6,
+        title: "InnovWayz Website : Rebuilding for a Clearer Digital Presence",
+        description: "How Bixeltek rebuilt the website with Next.js and Tailwind CSS, created reusable service pages, connected enquiry forms with Nodemailer, and resolved PDPL page indexation.",
+        image: innovwayzImg,
+        link: "/case-studies/innovwayz-website-case-study",
+    },
+    {
+        id: 7,
+        title: "Promenade Dental Website Rebuild: Next.js, Scalable Architecture & CRO",
+        description: "How Bixeltek rebuilt Promenade Dental’s practice website with Next.js and Tailwind CSS, created a scalable service-page system, and improved patient appointment journeys.",
+        image: promenadeImg,
+        link: "/case-studies/promenade-dental-website-rebuild-case-study",
     },
 ];
 

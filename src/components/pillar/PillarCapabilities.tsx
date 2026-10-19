@@ -297,6 +297,21 @@ export default function PillarCapabilities({
                             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                           </Link>
                         )}
+
+                        {c.links && c.links.length > 0 && (
+                          <div className="flex flex-wrap items-center gap-3">
+                            {c.links.map((link) => (
+                              <Link
+                                key={link.href}
+                                href={link.href}
+                                className="group/sub inline-flex items-center gap-1.5 text-sm font-semibold text-gray-700 hover:text-[#8C45FF] transition-colors font-poppins"
+                              >
+                                <span>{link.label}</span>
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover/sub:translate-x-1 text-[#8C45FF]" />
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </motion.div>
                   )}

@@ -285,7 +285,7 @@ export const Whiteheader = () => {
       title: "Graphic Design",
       desc: "Create stunning visuals to elevate your brand identity.",
       icon: <AiOutlinePicture size={24} />,
-      link: "#",
+      link: "/services/graphic-design",
       image: graphic,
     },
     {
@@ -624,7 +624,7 @@ export const Whiteheader = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        <Link href="/services/graphic-design" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
                                             Graphic Design
                                         </Link>
                                     </li>

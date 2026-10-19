@@ -86,7 +86,7 @@ export const ServiceMegamenu: React.FC<ServiceProps> = ({ service }) => {
                   {label:"Social Media Marketing",link:"#"},
                   {label:"Prototyping", link:"#"},
                   {label:"Wireframing", link:"#"},
-                  {lable:"Graphic Design",link:"#"},
+                  {label: "Graphic Design", link: "/services/graphic-design"},
                 ].map((item, index) => (
                   <motion.li
                     key={index}
