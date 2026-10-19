@@ -1,4 +1,4 @@
-﻿import type { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 
 // Import your local assets from /src/assets
 import shopifyImg from "@/assets/shopify-industry.webp";
@@ -498,13 +498,6 @@ export const ecommerceRelatedServicesPreviewData = {
     "Whether you need a complete online store or help with one part of the project, explore the service that matches your requirements.",
   cards: [
     {
-      title: "Web Design & Development",
-      description:
-        "For businesses that need a broader website redesign, a new business website or a custom digital experience beyond the store itself.",
-      linkText: "Explore Web Design",
-      destination: "/services/web-design",
-    },
-    {
       title: "Shopify Development",
       description:
         "For Shopify store builds, theme customisation and platform-specific development.",
@@ -524,6 +517,13 @@ export const ecommerceRelatedServicesPreviewData = {
         "For businesses that need to connect payment providers or implement specific payment requirements.",
       linkText: "Explore Payment Integration",
       destination: "/payment-gateway-integrations",
+    },
+    {
+      title: "WhatsApp Ecommerce Marketing",
+      description:
+        "Connect your store catalogue, automated cart recovery, order updates, and customer broadcasts directly through WhatsApp.",
+      linkText: "Explore WhatsApp Ecommerce",
+      destination: "/services/ecommerce-development/whatsapp-marketing",
     },
   ] as RelatedServiceCard[],
 };

@@ -223,11 +223,11 @@ export default function EcommerceDevelopmentPage() {
       />
 
       {/* 06 Related Services */}
-      <ServiceRelatedServices
+        <ServiceRelatedServices
         id="related-services"
         eyebrow={ecommerceRelatedServicesPreviewData.eyebrow}
         h2={ecommerceRelatedServicesPreviewData.h2}
-        intro={ecommerceRelatedServicesPreviewData.intro}
+        intro="Explore connected services across web design, custom Shopify development, WooCommerce, payment gateways, and WhatsApp ecommerce marketing."
         cards={ecommerceRelatedServicesPreviewData.cards}
       />
 
@@ -299,8 +299,8 @@ export default function EcommerceDevelopmentPage() {
         ctaText="Plan Store Optimization"
         ctaHref="#plan-project"
       />
-
-      {/* 14 FAQs */}
+  
+      {/* 15 FAQs */}
       <ServiceFAQ
         id="faqs"
         eyebrow={ecommerceFaqPreviewData.eyebrow}

@@ -20,6 +20,7 @@ import {
   buildStartingPointSteps,
   buildStats,
   buildEngagement,
+  buildPlatformComparison,
 } from "@/data/service/pillars/build";
 
 import {
@@ -31,6 +32,7 @@ import {
   PillarConnected,
   PillarStartingPoints,
   PillarProcess,
+  PillarPlatformComparison,
   PillarEngagement,
   PillarWhy,
   PillarRelated,
@@ -55,6 +57,20 @@ export const metadata: Metadata = {
     title: buildMetadata.title,
     description: buildMetadata.description,
     url: buildMetadata.canonical,
+    images: [
+      {
+        url: "https://bixeltek.com/BIXELTEKLOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "Bixeltek - Build Systems & Digital Products",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: buildMetadata.title,
+    description: buildMetadata.description,
+    images: ["https://bixeltek.com/BIXELTEKLOGO.png"],
   },
 };
 
@@ -93,6 +109,8 @@ export default function BuildPillarPage() {
       
         {/* white, expanding colour panels */}
         <PillarCapabilities
+          eyebrow="WHAT WE BUILD"
+          h2="Seven Areas of Work, One Connected Foundation"
           capabilities={capabilities}
           intro="Open an area to see what is included and when it is the right choice."
         />
@@ -100,11 +118,17 @@ export default function BuildPillarPage() {
         {/* black, hub diagram */}
         <PillarConnected {...buildIntegrationSection} />
 
+        {/* Which Platform Fits Your Project comparison */}
+        <PillarPlatformComparison {...buildPlatformComparison} />
+
         {/* gray + black answer panel */}
         {/* <PillarStartingPoints points={startingPoints} /> */}
 
         {/* white */}
-        <PillarProcess stages={buildProcess} />
+        <PillarProcess
+          stages={buildProcess}
+          footerNote="What we need from you: your goals, brand assets, content (or we can help write it), access to existing tools and your domain, and one person who can approve each stage."
+        />
 
         {/* gray */}
         <PillarEngagement {...buildEngagement} />

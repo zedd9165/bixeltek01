@@ -1,5 +1,6 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, ReactNode } from 'react';
+import Link from 'next/link';
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { FaTimes } from 'react-icons/fa';
 import { MdCall, MdGroups, MdVisibility, MdCheckCircle, MdSecurity } from 'react-icons/md';
@@ -7,7 +8,9 @@ import { FaChartLine, FaPuzzlePiece, FaPhoneAlt, FaBolt } from "react-icons/fa"
 
 type StrategyStep = {
     title: string;
-    points: string[];
+    des?: ReactNode;
+    points: ReactNode[];
+    suffix?: ReactNode;
 };
 
 const sections = [
@@ -19,7 +22,7 @@ const sections = [
     { id: 'conclusion', label: 'The Takeaway' },
     { id: 'cta', label: 'Build Your Success Story.' },
 ];
-const strategySteps = [
+const strategySteps: StrategyStep[] = [
     {
         title: "The Objective",
         des: "The client approached Bixeltek to solve one core problem:",
@@ -30,11 +33,27 @@ const strategySteps = [
     },
     {
         title: "The Solution: Dental Marketing That Drives Real Growth",
-        des: "As a specialized digital marketing agency for dentists, Bixeltek created a strategy focused on:",
+        des: (
+            <>
+                As a specialized <Link href="/dental-marketing" className="text-[#670ef7] hover:underline font-medium">digital marketing agency for dentists</Link>, Bixeltek created a strategy focused on:
+            </>
+        ),
         points: [
-            "Improving Google visibility for high-intent dental search terms",
-            "Attracting patients ready to book (not just website visitors)",
-            "Prioritizing phone calls and appointment leads that turn into revenue"
+            (
+                <span key="p1">
+                    Improving Google visibility for high-intent dental search terms via targeted <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link> and <Link href="/local-seo" className="text-[#670ef7] hover:underline font-medium">Local SEO</Link>
+                </span>
+            ),
+            (
+                <span key="p2">
+                    Attracting patients ready to book with dedicated <Link href="/services/web-design" className="text-[#670ef7] hover:underline font-medium">dental landing page design</Link> and <Link href="/services/conversion-rate-optimization" className="text-[#670ef7] hover:underline font-medium">CRO</Link>
+                </span>
+            ),
+            (
+                <span key="p3">
+                    Prioritizing phone calls and appointment leads with precision <Link href="/services/analytics-tracking" className="text-[#670ef7] hover:underline font-medium">call &amp; analytics tracking</Link>
+                </span>
+            )
         ],
         suffix: "No gimmicks. No wasted clicks. Just smart digital campaigns built for dental growth.",
     },
@@ -73,6 +92,15 @@ export default function DentistCaseStudy() {
 
             {/* Content */}
             <div className="w-full md:w-2/3 space-y-12">
+                {/* Top Tagline */}
+                <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
+                    <Link href="/" className="hover:underline">Bixeltek</Link>
+                    <span>/</span>
+                    <Link href="/dental-marketing" className="hover:underline">Dental Marketing</Link>
+                    <span>/</span>
+                    <span className="text-gray-600">Client Case Study</span>
+                </div>
+
                 <div id="about" className="scroll-mt-32">
                     <h2 className="text-3xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">About the Client</h2>
                     <p className='text-lg font-poppins'>
@@ -199,7 +227,7 @@ export default function DentistCaseStudy() {
                         </tbody>
                     </table>
 
-                    <p className='mt-4'>The result? A fully booked calendar — especially from premium bike owners who found them directly through <span className='font-semibold'>Google Ads.</span></p>
+                    <p className='mt-4'>The result? A fully booked calendar — especially from dental patients who found them directly through <Link href="/services/google-ads" className="font-semibold text-[#670ef7] hover:underline">Google Ads</Link>.</p>
                 </div>
 
                 <div id="client-impact" className="scroll-mt-32">
@@ -210,7 +238,7 @@ export default function DentistCaseStudy() {
                     </blockquote>
                 </div>
 
-                <div id="conclusion" className="scroll-mt-32 pb-10">
+                <div id="conclusion" className="scroll-mt-32 pb-6">
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4">The Impact</h2>
                     <p className='text-lg font-poppins'>
                         Patients weren&apos;t just browsing — they were calling and booking. The campaign delivered a <span className='font-semibold'>surge in phone calls</span>, many for <span className='font-semibold'>high-margin procedures.</span>
@@ -219,6 +247,16 @@ export default function DentistCaseStudy() {
                         This translated into real, predictable growth and better use of the clinic&apos;s marketing budget.
                     </p>
                 </div>
+
+                {/* Services Delivered Badges */}
+                <div className="pt-2 pb-6 flex flex-wrap items-center gap-3 text-sm font-medium text-gray-700">
+                    <span className="font-semibold text-gray-900">Services Delivered:</span>
+                    <Link href="/services/google-ads" className="bg-purple-100 text-[#3b0764] hover:bg-purple-200 transition-colors px-3 py-1 rounded-full text-xs font-semibold">Google Ads Management</Link>
+                    <Link href="/local-seo" className="bg-purple-100 text-[#3b0764] hover:bg-purple-200 transition-colors px-3 py-1 rounded-full text-xs font-semibold">Local SEO</Link>
+                    <Link href="/services/conversion-rate-optimization" className="bg-purple-100 text-[#3b0764] hover:bg-purple-200 transition-colors px-3 py-1 rounded-full text-xs font-semibold">Conversion Rate Optimization</Link>
+                    <Link href="/services/analytics-tracking" className="bg-purple-100 text-[#3b0764] hover:bg-purple-200 transition-colors px-3 py-1 rounded-full text-xs font-semibold">Analytics &amp; Call Tracking</Link>
+                </div>
+
                 <div id="cta" className="scroll-mt-20 pb-0">
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4 flex items-center gap-2">
                         Is Your Dental Clinic Facing the Same Issues?
@@ -244,7 +282,7 @@ export default function DentistCaseStudy() {
                         Let&apos;s Change That.
                     </h2>
                     <p className="text-lg font-poppins mb-6">
-                        At Bixeltek, we specialize in Google Ads and SEO for dental clinics across India, Canada, and the United States.<br />
+                        At Bixeltek, we specialize in <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link> and <Link href="/services/seo-services" className="text-[#670ef7] hover:underline font-medium">SEO for dental clinics</Link> across India, Canada, and the United States.<br />
                         Our campaigns don&apos;t just drive traffic — they bring real patients to your chair.
                     </p>
                 </div>
@@ -273,9 +311,10 @@ export default function DentistCaseStudy() {
                                 </div>
                             </div>
                             <div className="w-full px-4 lg:w-1/2">
-                                <div className="text-center lg:text-right"><a
-                                    className="font-semibold rounded-lg mx-auto text-lg inline-flex items-center justify-center bg-white py-4 px-9 hover:bg-opacity-90"
-                                    href="/contact-us">Contact Us</a>
+                                <div className="text-center lg:text-right">
+                                    <Link
+                                        className="font-semibold rounded-lg mx-auto text-lg inline-flex items-center justify-center bg-white text-[#670ef7] py-4 px-9 hover:bg-opacity-90 transition shadow-md"
+                                        href="/contact-us">Contact Us</Link>
                                 </div>
                             </div>
                         </div>

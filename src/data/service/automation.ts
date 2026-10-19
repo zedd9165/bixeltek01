@@ -1130,6 +1130,34 @@ export const automationRelatedServices = [
     destination:
       "/services/mobile-app-development",
   },
+
+  {
+    title:
+      "WhatsApp Automation & Conversational Marketing",
+
+    description:
+      "Turn customer interest into immediate action with automated WhatsApp triggers, CRM synchronization, broadcast campaigns, and interactive chat flows.",
+
+    linkText:
+      "Explore WhatsApp Automation",
+
+    destination:
+      "/services/automation/whatsapp-marketing",
+  },
+
+  {
+    title:
+      "AI Automation & Intelligent Agents",
+
+    description:
+      "Deploy custom LLM workflows, autonomous task agents, and intelligent data extraction pipelines integrated directly with your operational tools.",
+
+    linkText:
+      "Explore AI Automation",
+
+    destination:
+      "/services/automation/ai-automation",
+  },
 ];
 
 

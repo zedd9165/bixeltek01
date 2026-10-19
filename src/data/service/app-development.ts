@@ -158,7 +158,7 @@ export const appDevelopmentMetadata: AppDevelopmentMetadata = {
     "mobile app development company Hyderabad",
   ],
 
-  canonical: "https://bixeltek.com/services/mobile-app-development",
+  canonical: "https://bixeltek.com/services/custom-app-development/mobile-app-development",
 };
 
 
@@ -172,8 +172,12 @@ export const appDevelopmentBreadcrumbs: BreadcrumbItem[] = [
     href: "/services",
   },
   {
-    label: "Application Development",
-    href: "/services/mobile-app-development",
+    label: "Custom App Development",
+    href: "/services/custom-app-development",
+  },
+  {
+    label: "Mobile App Development",
+    href: "/services/custom-app-development/mobile-app-development",
   },
 ];
 
@@ -977,6 +981,48 @@ export const appDevelopmentRelatedServices = [
 
     destination:
       "/services/conversion-rate-optimization",
+  },
+
+  {
+    title:
+      "Flutter App Development",
+
+    description:
+      "Cross-platform mobile applications compiled natively from a single Dart codebase for iOS and Android.",
+
+    linkText:
+      "Explore Flutter Development",
+
+    destination:
+      "/services/custom-app-development/mobile-app-development/flutter",
+  },
+
+  {
+    title:
+      "React Native App Development",
+
+    description:
+      "High-performance native mobile apps built on React and TypeScript with deep device hardware integration.",
+
+    linkText:
+      "Explore React Native Development",
+
+    destination:
+      "/services/custom-app-development/mobile-app-development/react-native",
+  },
+
+  {
+    title:
+      "Web Application Development",
+
+    description:
+      "Browser-based software, internal operations portals, customer self-service workspaces, and cloud systems engineered with Next.js.",
+
+    linkText:
+      "Explore Web Applications",
+
+    destination:
+      "/services/custom-app-development/web-application-development",
   },
 ];
 

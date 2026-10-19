@@ -1,4 +1,4 @@
-﻿// data/services/automate.ts
+// data/services/automate.ts
 
 export interface AutomateMetadata {
   title: string;
@@ -281,16 +281,16 @@ export const automateCapabilities: AutomateCapability[] = [
 
     links: [
       {
-        label: "Explore Automation Services",
+        label: "Workflow & CRM Automation",
         href: "/services/automation",
       },
     ],
 
     ctaText:
-      "Connect My CRM",
+      "Explore Workflow Automation",
 
     ctaHref:
-      "#automation-project",
+      "/services/automation",
   },
 
   {
@@ -313,13 +313,18 @@ export const automateCapabilities: AutomateCapability[] = [
       "Zapier integrations",
     ],
 
-    links: [],
+    links: [
+      {
+        label: "Explore Automation Services",
+        href: "/services/automation",
+      },
+    ],
 
     ctaText:
       "Map My Integrations",
 
     ctaHref:
-      "#automation-project",
+      "/services/automation",
   },
   {
     number: "03",
@@ -341,13 +346,18 @@ export const automateCapabilities: AutomateCapability[] = [
       "Internal alerts",
     ],
 
-    links: [],
+    links: [
+      {
+        label: "WhatsApp Marketing & Automation",
+        href: "/services/automation/whatsapp-marketing",
+      },
+    ],
 
     ctaText:
-      "Improve My Follow-Up",
+      "Explore WhatsApp Marketing",
 
     ctaHref:
-      "#automation-project",
+      "/services/automation/whatsapp-marketing",
   },
 
   {
@@ -372,16 +382,16 @@ export const automateCapabilities: AutomateCapability[] = [
 
     links: [
       {
-        label: "Explore Ecommerce",
+        label: "Ecommerce Development Services",
         href: "/services/ecommerce-development",
       },
     ],
 
     ctaText:
-      "Automate My Store",
+      "Explore Ecommerce Development",
 
     ctaHref:
-      "#automation-project",
+      "/services/ecommerce-development",
   },
 
   {
@@ -404,13 +414,18 @@ export const automateCapabilities: AutomateCapability[] = [
       "Human review and approval flows",
     ],
 
-    links: [],
+    links: [
+      {
+        label: "AI Automation Services",
+        href: "/services/automation/ai-automation",
+      },
+    ],
 
     ctaText:
-      "Explore an AI Workflow",
+      "Explore AI Automation",
 
     ctaHref:
-      "#automation-project",
+      "/services/automation/ai-automation",
   },
 
   {

@@ -76,6 +76,20 @@ import awarenessImg from "@/assets/business.jpg";
 import creativeTestingImg from "@/assets/lab-test-offers.jpg";
 import localEnquiryImg from "@/assets/local-market.jpg";
 
+// Campaign Showcase Static Creatives from assets/meta-ads-campaigns
+import b2bCampaignImg from "@/assets/meta-ads-campaigns/b2b.jpeg";
+import cafeCampaignImg from "@/assets/meta-ads-campaigns/cafe.jpeg";
+import dentalCampaignImg from "@/assets/meta-ads-campaigns/dental.jpeg";
+import dental2CampaignImg from "@/assets/meta-ads-campaigns/dental-2.jpeg";
+import ecomCampaignImg from "@/assets/meta-ads-campaigns/ecom.jpeg";
+import ecom2CampaignImg from "@/assets/meta-ads-campaigns/ecom-2.jpeg";
+import fitnessCampaignImg from "@/assets/meta-ads-campaigns/fitness.jpeg";
+import floristCampaignImg from "@/assets/meta-ads-campaigns/florist.jpeg";
+import interiorCampaignImg from "@/assets/meta-ads-campaigns/interior.jpeg";
+import itSolutionsCampaignImg from "@/assets/meta-ads-campaigns/it-solutions.jpeg";
+import realEstateCampaignImg from "@/assets/meta-ads-campaigns/realppestate.jpeg";
+import travelCampaignImg from "@/assets/meta-ads-campaigns/travel.jpeg";
+
 // Icons for Technologies & Final CTA Stack
 import {
   SiMeta,
@@ -102,6 +116,9 @@ import ConversionHero, {
   type HeroLogo,
 } from "@/components/services/meta-ads/HeroSection";
 import { Whiteheader } from "@/components/Whiteheader";
+import CampaignShowcaseSection, {
+  type CampaignItem,
+} from "@/components/services/meta-ads/Campaignshowcasesection";
 
 export const metadata: Metadata = {
   title: metaAdsMetadata.title,
@@ -238,6 +255,70 @@ const metaFinalCtaTools: TechStackItem[] = [
     category: "Commercial Analytics",
     description: "Distinguishing first-touch discovery from assisted conversions and last-click purchases.",
     icon: <BarChart3 className="w-5 h-5 text-white" />,
+  },
+];
+
+// Curated Live Creative Showcase Campaigns from assets/meta-ads-campaigns
+const metaShowcaseCampaigns: CampaignItem[] = [
+  {
+    src: realEstateCampaignImg,
+    alt: "Luxury Real Estate & Villa Development Meta Ad Creative",
+    bg: "#1a1a24",
+  },
+  {
+    src: dentalCampaignImg,
+    alt: "Dental Clinic Implant & Smile Makeover Meta Ad Creative",
+    bg: "#0d2b45",
+  },
+  {
+    src: ecomCampaignImg,
+    alt: "D2C Ecommerce Fashion & Apparel Conversion Meta Ad Creative",
+    bg: "#2b1055",
+  },
+  {
+    src: fitnessCampaignImg,
+    alt: "Premium Gym & Personal Training Membership Meta Ad Creative",
+    bg: "#111827",
+  },
+  {
+    src: cafeCampaignImg,
+    alt: "Specialty Cafe & Dining Customer Acquisition Meta Ad Creative",
+    bg: "#3b1e08",
+  },
+  {
+    src: b2bCampaignImg,
+    alt: "B2B Enterprise SaaS & Professional Lead Generation Meta Ad Creative",
+    bg: "#0f172a",
+  },
+  {
+    src: interiorCampaignImg,
+    alt: "High-End Interior Architecture & Turnkey Design Meta Ad Creative",
+    bg: "#1c1917",
+  },
+  {
+    src: dental2CampaignImg,
+    alt: "Clear Aligners & Invisalign Patient Booking Meta Ad Creative",
+    bg: "#1e1b4b",
+  },
+  {
+    src: itSolutionsCampaignImg,
+    alt: "Cloud Infrastructure & Managed IT Solutions Meta Ad Creative",
+    bg: "#022c22",
+  },
+  {
+    src: floristCampaignImg,
+    alt: "Boutique Florist & Luxury Gift Delivery Meta Ad Creative",
+    bg: "#4a044e",
+  },
+  {
+    src: ecom2CampaignImg,
+    alt: "Streetwear & Seasonal Retail Catalog Sales Meta Ad Creative",
+    bg: "#18181b",
+  },
+  {
+    src: travelCampaignImg,
+    alt: "International Travel & Bespoke Holiday Packages Meta Ad Creative",
+    bg: "#082f49",
   },
 ];
 
@@ -403,8 +484,27 @@ export default function MetaAdsPage() {
         h2={metaAdsObjectives.h2}
         intro={metaAdsObjectives.intro}
         cards={metaCampaignObjectivesCards}
+        cta={{
+          text: "Book a Free Consultation",
+          href: "#meta-ads-contact",
+        }}
       />
 
+      {/* 06.5 Campaign Showcase (Curated Visual Feed Creatives) */}
+      <CampaignShowcaseSection
+        id="campaign-creatives"
+        variant="wall"
+        direction="left" // "left" showcases creatives on the left; "right" on the right
+       eyebrow="META AD CREATIVE SHOWCASE"
+        h2="Creative that captures attention, communicates value, and drives action."
+        intro="Explore a range of static ad creatives designed for Facebook and Instagram, from attention grabbing hooks and product focused visuals to compelling offers and conversion led messaging. Every creative brings together the right message, visual direction, and call to action to help brands stand out in crowded feeds, connect with relevant audiences, and move potential customers toward the next step. These examples reflect how we approach creative development around campaign objectives, audience needs, and ongoing testing."
+        cta={{
+          label: "Get a free consultation",
+          href: "#meta-ads-contact",
+        }}
+        speed={55}
+        campaigns={metaShowcaseCampaigns}
+      />
       {/* 07 Management Scope */}
       <ServiceScopeSection
         id={metaAdsScope.id}
@@ -438,12 +538,7 @@ export default function MetaAdsPage() {
         }))}
         image={metaCreativeImg}
         imageAlt="Structured creative testing and angle validation framework"
-        direction="left"
-        supportingNote="Structured creative testing helps identify which hooks and value propositions resonate before expanding budget."
-        supportingLink={{
-          text: "Book a Free Appointment",
-          destination: "#meta-ads-contact",
-        }}
+        direction="right"
       />
 
 
@@ -501,7 +596,7 @@ export default function MetaAdsPage() {
             "The goal is a measurable, sustainable acquisition engine whose decisions are grounded in real business outcomes.",
         }}
         defaultImage={whyChooseImg}
-        direction="right"
+        direction="left"
       />
 
         <ServiceRelatedServices
