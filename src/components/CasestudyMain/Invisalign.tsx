@@ -2,15 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { 
-  MdTrendingUp, 
-  MdAttachMoney, 
-  MdAdsClick, 
-  MdCheckCircle, 
-  MdArrowForward,
-  MdBarChart
-} from 'react-icons/md';
-import { FaSearch, FaFilter, FaUsers, FaChartLine } from 'react-icons/fa';
+
 
 const sections = [
   { id: 'overview', label: 'About the Clinic' },
@@ -20,6 +12,59 @@ const sections = [
   { id: 'pricing', label: 'Pricing & Scenarios' },
   { id: 'what-changed', label: 'What Changed' },
   { id: 'takeaway', label: 'The Takeaway' },
+];
+
+
+type ApproachStep = {
+  title: string;
+  description: React.ReactNode;
+};
+
+const approachSteps: ApproachStep[] = [
+  {
+    title: 'Search Visibility and Authority',
+    description: (
+      <>
+        We optimised the website to improve treatment relevance, organic discoverability, and the credibility of the clinic’s Invisalign offering through targeted{' '}
+        <Link href="/services/seo-services" className="text-[#670ef7] hover:underline font-medium">
+          SEO services
+        </Link>{' '}
+        and{' '}
+        <Link href="/local-seo" className="text-[#670ef7] hover:underline font-medium">
+          local SEO
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    title: 'Conversion Optimisation',
+    description: (
+      <>
+        Through structured{' '}
+        <Link href="/services/conversion-rate-optimization" className="text-[#670ef7] hover:underline font-medium">
+          conversion rate optimization (CRO)
+        </Link>{' '}
+        and dedicated{' '}
+        <Link href="/services/web-design" className="text-[#670ef7] hover:underline font-medium">
+          landing page design
+        </Link>
+        , we simplified access to treatment information, refined how offers were presented, and reduced friction between initial interest and a phone call or form submission.
+      </>
+    ),
+  },
+  {
+    title: 'Behaviour-Led Improvements',
+    description: (
+      <>
+        Using Microsoft Clarity and comprehensive{' '}
+        <Link href="/services/analytics-tracking" className="text-[#670ef7] hover:underline font-medium">
+          analytics &amp; tracking
+        </Link>
+        , we analysed visitor behaviour and used those observations to guide further website improvements.
+      </>
+    ),
+  },
 ];
 
 export default function InvisalignCaseStudy() {
@@ -86,48 +131,23 @@ export default function InvisalignCaseStudy() {
           </p>
 
           {/* Strategy Timeline */}
-          <div className="relative border-l-4 border-[#670ef7] ml-2 md:ml-4 space-y-8 my-8">
-            {/* Step 1 */}
-            <div className="relative pl-6 md:pl-8">
-              <div className="absolute -left-[11px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10 shadow-sm" />
-              <div className="flex items-center gap-2 mb-1">
-                <FaSearch className="text-[#670ef7]" />
-                <h3 className="text-xl md:text-2xl font-sofiasanscondensed font-bold text-gray-900">
-                  Search Visibility and Authority
-                </h3>
-              </div>
-              <p className="text-base font-poppins text-gray-700 leading-relaxed">
-                We optimised the website to improve treatment relevance, organic discoverability, and the credibility of the clinic’s Invisalign offering through targeted <Link href="/services/seo-services" className="text-[#670ef7] hover:underline font-medium">SEO services</Link> and <Link href="/local-seo" className="text-[#670ef7] hover:underline font-medium">local SEO</Link>.
-              </p>
-            </div>
+          <div id="approach" className="scroll-mt-32 space-y-14 my-8">
+            {approachSteps.map((step, index) => (
+              <article key={step.title}>
+                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                  <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                </div>
 
-            {/* Step 2 */}
-            <div className="relative pl-6 md:pl-8">
-              <div className="absolute -left-[11px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10 shadow-sm" />
-              <div className="flex items-center gap-2 mb-1">
-                <FaFilter className="text-[#670ef7]" />
-                <h3 className="text-xl md:text-2xl font-sofiasanscondensed font-bold text-gray-900">
-                  Conversion Optimisation
+                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                  <span className="sr-only">Step {index + 1}: </span>
+                  {step.title}
                 </h3>
-              </div>
-              <p className="text-base font-poppins text-gray-700 leading-relaxed">
-                Through structured <Link href="/services/conversion-rate-optimization" className="text-[#670ef7] hover:underline font-medium">conversion rate optimization (CRO)</Link> and dedicated <Link href="/services/web-design" className="text-[#670ef7] hover:underline font-medium">landing page design</Link>, we simplified access to treatment information, refined how offers were presented, and reduced friction between initial interest and a phone call or form submission.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="relative pl-6 md:pl-8">
-              <div className="absolute -left-[11px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10 shadow-sm" />
-              <div className="flex items-center gap-2 mb-1">
-                <FaUsers className="text-[#670ef7]" />
-                <h3 className="text-xl md:text-2xl font-sofiasanscondensed font-bold text-gray-900">
-                  Behaviour-Led Improvements
-                </h3>
-              </div>
-              <p className="text-base font-poppins text-gray-700 leading-relaxed">
-                Using Microsoft Clarity and comprehensive <Link href="/services/analytics-tracking" className="text-[#670ef7] hover:underline font-medium">analytics &amp; tracking</Link>, we analysed visitor behaviour and used those observations to guide further website improvements.
-              </p>
-            </div>
+                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.description}</p>
+              </article>
+            ))}
           </div>
 
           <p className="text-sm md:text-base font-poppins italic text-gray-600 bg-gray-50 border border-gray-200 p-4 rounded-lg">

@@ -277,7 +277,7 @@ export const Whiteheader = () => {
       title: "Analytics Reporting",
       desc: "Track and analyze your business metrics for smarter decisions.",
       icon: <AiOutlineLineChart size={24} />,
-      link: "#",
+      link: "/services/analytics-tracking",
       image: anr,
     },
     {
@@ -488,56 +488,10 @@ export const Whiteheader = () => {
                                     </div>
                                 </li>
 
-                                <li className="relative group py-7 z-50">
-                                    <Link href={'/case-studies/'}>
-                                        <div className="flex items-center text-black hover:text-purple-800 transition cursor-pointer">
-                                            Case Studies <HiChevronDown className="ml-1 text-xs" />
-                                        </div>
+                                <li className="flex items-center py-7 z-50">
+                                    <Link href="/case-studies" className="text-black hover:text-purple-800 font-semibold transition">
+                                        Case Studies
                                     </Link>
-
-
-                                    <ul className="absolute top-full -left-7 mt-0 bg-white rounded-b-md shadow-lg hidden group-hover:block z-50 min-w-[200px]">
-                                         <li>
-                                            <Link
-                                                href="/case-studies/guerr-clothing-case-study"
-                                                className="block px-4 py-2 hover:bg-gradient-to-tr text-black hover:from-[black] hover:via-[#090040] hover:to-[#483aa0]  rounded-b-md hover:bg-[white] hover:text-white transition"
-                                            >
-                                                Guerr Clothing Case Study
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href="/case-studies/Tumblewash-Casestudy"
-                                                className="block px-4 py-2 hover:bg-gradient-to-tr text-black hover:from-[black] hover:via-[#090040] hover:to-[#483aa0]  rounded-b-md hover:bg-[white] hover:text-white transition"
-                                            >
-                                                Tumblewash Case Study
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href="/case-studies/google-ads-case-study-bike-repair-hyderabad"
-                                                className="block px-4 py-2 hover:bg-gradient-to-tr text-black hover:from-[black] hover:via-[#090040] hover:to-[#483aa0]  rounded-b-md hover:bg-[white] hover:text-white transition"
-                                            >
-                                                Eazy Bike Repair Case Study
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href="/case-studies/digital-marketing-for-dentists-case-study"
-                                                className="block px-4 py-2 hover:bg-gradient-to-tr text-black hover:from-[black] hover:via-[#090040] hover:to-[#483aa0]  rounded-b-md hover:bg-[white] hover:text-white transition"
-                                            >
-                                                Dental Clinic Case Study
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href="/case-studies"
-                                                className="block px-4 py-2 hover:bg-gradient-to-tr text-black hover:from-[black] hover:via-[#090040] hover:to-[#483aa0]  rounded-b-md hover:bg-[white] hover:text-white transition"
-                                            >
-                                                View All
-                                            </Link>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li className="flex items-center py-7 z-50">
                                     <Link href="/blog" className="text-black hover:text-purple-800 font-semibold transition">
@@ -619,7 +573,7 @@ export const Whiteheader = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        <Link href="/services/analytics-tracking" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
                                             Analytics Reporting
                                         </Link>
                                     </li>
@@ -772,17 +726,7 @@ export const Whiteheader = () => {
                                 </motion.ul>
                             )}
                         </li>
-                        <li><button onClick={() => { setIsDropdownOpen2(!isDropdownOpen2) }} className="flex justify-between w-full py-2 px-4 hover:bg-purple-600 rounded">Case Studies <HiChevronDown className="text-xl md:text-2xl" /></button>
-                            {isDropdownOpen2 && (
-                                <motion.ul initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="ml-4 text-lg md:text-xl space-y-2">
-
-                                    <li><Link  onClick={toggleMenu} href="/case-studies/guerr-clothing-case-study" className="block py-2 px-4 hover:bg-gray-700 rounded">Guerr Clothing Case Study</Link></li>
-                                    <li><Link  onClick={toggleMenu} href="/case-studies/Tumblewash-Casestudy" className="block py-2 px-4 hover:bg-gray-700 rounded">Tumblewash-Casestudy</Link></li>
-                                    <li><Link  onClick={toggleMenu} href="/case-studies/google-ads-case-study-bike-repair-hyderabad" className="block py-2 px-4 hover:bg-gray-700 rounded">Eazy Bike Repair Case Study</Link></li>
-                                    <li><Link  onClick={toggleMenu} href="/case-studies/digital-marketing-for-dentists-case-study" className="block py-2 px-4 hover:bg-gray-700 rounded">Digital Marketing for Dentists</Link></li>
-
-                                </motion.ul>
-                            )}</li>
+                        <li><Link href="/case-studies" onClick={toggleMenu} className="block py-2 px-4 hover:bg-purple-600 rounded">Case Studies</Link></li>
                         <li><Link href="/blog"  onClick={toggleMenu} className="block py-2 px-4 hover:bg-purple-600 rounded">Blog</Link></li>
 
 

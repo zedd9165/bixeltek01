@@ -27,7 +27,7 @@ type StrategyStep = {
 
 const strategySteps: StrategyStep[] = [
     {
-        title: "1. Building the Foundation on Medusa",
+        title: "Building the Foundation on Medusa",
         des: "We didn't start from a template. We started from Medusa's open-source commerce core and rebuilt it into a platform shaped entirely around Guerr — custom modules, custom admin widgets, a custom storefront, and a data model designed for a fashion brand rather than a generic product catalogue.",
         points: [
             "Custom Medusa modules for wishlist, OTP, size charts, product video, and collection merchandising",
@@ -41,7 +41,7 @@ const strategySteps: StrategyStep[] = [
         },
     },
     {
-        title: "2. Extending Medusa's Product Data Model",
+        title: "Extending Medusa's Product Data Model",
         des: "Guerr's catalogue needed structured information Medusa doesn't ship with out of the box — and every new field we added had to work across three places at once: the database, the Medusa Admin UI, and the storefront.",
         points: [
             "Custom fields for size chart data, product video URLs, fit notes, and fabric details",
@@ -55,7 +55,7 @@ const strategySteps: StrategyStep[] = [
         },
     },
     {
-        title: "3. Collection Banners & Thumbnails",
+        title: "Collection Banners & Thumbnails",
         des: "Guerr's collections needed to look like a curated fashion drop, not a generic filtered product grid. We built a custom collection module so every collection could carry its own banner image for the collection landing page and its own thumbnail for homepage and navigation cards.",
         points: [
             "Dedicated banner image field for full-width collection landing pages",
@@ -65,7 +65,7 @@ const strategySteps: StrategyStep[] = [
         suffix: "This meant every seasonal drop or capsule collection could be merchandised visually, the same way it would be styled on Instagram — without needing a developer to hardcode a landing page each time.",
     },
     {
-        title: "4. Per-Product Size Charts",
+        title: "Per-Product Size Charts",
         des: "A single fixed size chart doesn't work for a brand selling everything from t-shirts to footwear. We built a flexible, per-product size chart system so each product — or product category — could carry its own accurate sizing table.",
         points: [
             "Category-aware size chart structure, since tops, bottoms, and footwear all measure differently",
@@ -79,7 +79,7 @@ const strategySteps: StrategyStep[] = [
         },
     },
     {
-        title: "5. Product Video on the PDP",
+        title: "Product Video on the PDP",
         des: "Static images only tell half the story for apparel — fit, drape, and movement matter. We extended Guerr's product media handling so any product could include video alongside its image gallery.",
         points: [
             "Video support added directly into the existing product gallery/media flow, not a separate section",
@@ -93,7 +93,7 @@ const strategySteps: StrategyStep[] = [
         },
     },
     {
-        title: "6. A Wishlist That Actually Persists",
+        title: "A Wishlist That Actually Persists",
         des: "Medusa doesn't ship a wishlist module at all, so we built one from scratch — designed to work the way shoppers actually browse: across sessions, across devices, and before they've even logged in.",
         points: [
             "Custom wishlist module wired into Medusa's customer and product data",
@@ -103,7 +103,7 @@ const strategySteps: StrategyStep[] = [
         suffix: "No more losing a saved item because a session expired — the wishlist behaves like customers expect it to.",
     },
     {
-    title: "7. Razorpay & Shiprocket, Fully Integrated",
+    title: "Razorpay & Shiprocket, Fully Integrated",
     des: "We integrated Razorpay for secure, India-first payments and Shiprocket for streamlined shipping and order fulfillment — connecting the entire journey from checkout to delivery within a single, seamless ecommerce workflow.",
     points: [
         "Razorpay integrated directly into Medusa for UPI, cards, net banking, wallets, and secure online payments",
@@ -113,7 +113,7 @@ const strategySteps: StrategyStep[] = [
     suffix: "From payment confirmation to doorstep delivery, every step works together as one connected experience.",
 },
     {
-        title: "8. OTP Security at Every Critical Step",
+        title: "OTP Security at Every Critical Step",
         des: "We built a custom backend OTP layer that goes well beyond a standard signup flow, because Guerr's biggest COD risk wasn't payment — it was fake and unconfirmed orders.",
         points: [
             "OTP verification on every new account registration",
@@ -123,7 +123,7 @@ const strategySteps: StrategyStep[] = [
         suffix: "Fewer fake COD orders, fewer failed deliveries, and a storefront customers could actually trust with their phone number.",
     },
     {
-        title: "9. Transactional Emails That Work While You Sleep",
+        title: "Transactional Emails That Work While You Sleep",
         des: "We built a complete transactional and lifecycle email system on top of Medusa's event and subscriber architecture, so nothing depends on someone manually checking an inbox.",
         points: [
             "Order confirmation emails sent automatically to both the customer and the admin the moment an order is placed",
@@ -137,7 +137,7 @@ const strategySteps: StrategyStep[] = [
         },
     },
     {
-        title: "10. A Sales Dashboard Built for Decisions",
+        title: "A Sales Dashboard Built for Decisions",
         des: "We extended the Medusa Admin app with a custom analytics dashboard so the Guerr team can see product-level sales performance without exporting a single spreadsheet.",
         points: [
             "Product-level sales breakdowns across 7, 30, 60, and 90-day windows",
@@ -151,7 +151,7 @@ const strategySteps: StrategyStep[] = [
         },
     },
     {
-        title: "11. An Affiliate & Influencer Growth Engine",
+        title: "An Affiliate & Influencer Growth Engine",
         des: "We designed and built a full influencer/affiliate program from the ground up, integrated directly into Medusa's discount and promotions engine rather than run as a separate tracking system.",
         points: [
             "Influencers apply and go through a verification step before onboarding",
@@ -252,43 +252,46 @@ export default function GuerrCaseStudySection() {
                     </h2>
                     <p className='text-base text-black max-w-xl mb-12'>This wasn&apos;t a plug-and-play storefront — it was a ground-up platform built with custom <Link href="/services/build" className="text-[#670ef7] hover:underline font-medium">web &amp; digital engineering</Link> on <span className='font-semibold'>Medusa</span>, tailored entirely around how Guerr actually does business. Below is what we built, and — because a real case study should show the hard parts too — some of the specific engineering problems we ran into along the way and how we solved them.</p>
 
-                    <div className="relative border-l-4 border-[#670ef7] ml-1 md:ml-4 space-y-16">
-                        {strategySteps.map((step, index) => {
-                            return (
-                                <div
-                                    key={index}
-                                    className="relative pl-5 md:pl-10"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute -left-[12px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10" />
-
-                                    {/* Step Content */}
-                                    <h3 className="text-2xl font-sofiasanscondensed font-semibold mb-1">{step.title}</h3>
-                                    <p className='mb-3 max-w-2xl'>{step.des}</p>
-                                    {step.points.length > 0 && (
-                                        <ul className="list-disc md:text-lg pl-5 text-gray-700 space-y-1 max-w-2xl">
-                                            {step.points.map((point, i) => (
-                                                <li key={i}>{point}</li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                    {step.suffix && <p className='mt-3 max-w-2xl'>{step.suffix}</p>}
-
-                                    {step.challenge && (
-                                        <div className="mt-5 max-w-2xl border border-gray-200 rounded-lg overflow-hidden">
-                                            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
-                                                <p className="text-sm font-semibold uppercase tracking-wide text-[#670ef7]">The Problem</p>
-                                                <p className="text-gray-700 mt-1">{step.challenge.problem}</p>
-                                            </div>
-                                            <div className="px-4 py-3">
-                                                <p className="text-sm font-semibold uppercase tracking-wide text-[#670ef7]">How We Solved It</p>
-                                                <p className="text-gray-700 mt-1">{step.challenge.solution}</p>
-                                            </div>
-                                        </div>
-                                    )}
+                    <div className="space-y-14">
+                        {strategySteps.map((step, index) => (
+                            <article key={step.title}>
+                                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                                    <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
                                 </div>
-                            );
-                        })}
+
+                                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                                    <span className="sr-only">Step {index + 1}: </span>
+                                    {step.title}
+                                </h3>
+                                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.des}</p>
+                                {step.points.length > 0 && (
+                                    <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
+                                        {step.points.map((point, i) => (
+                                            <li key={i}>{point}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {step.suffix && (
+                                    <p className="mt-3 leading-relaxed text-gray-700 font-poppins">{step.suffix}</p>
+                                )}
+
+                                {step.challenge && (
+                                    <div className="mt-5 border border-gray-200 rounded-lg overflow-hidden">
+                                        <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                                            <p className="text-sm font-semibold uppercase tracking-wide text-[#670ef7]">The Problem</p>
+                                            <p className="text-gray-700 mt-1">{step.challenge.problem}</p>
+                                        </div>
+                                        <div className="px-4 py-3">
+                                            <p className="text-sm font-semibold uppercase tracking-wide text-[#670ef7]">How We Solved It</p>
+                                            <p className="text-gray-700 mt-1">{step.challenge.solution}</p>
+                                        </div>
+                                    </div>
+                                )}
+                            </article>
+                        ))}
                     </div>
                 </section>
 

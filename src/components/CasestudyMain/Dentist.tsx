@@ -92,13 +92,43 @@ export default function DentistCaseStudy() {
 
             {/* Content */}
             <div className="w-full md:w-2/3 space-y-12">
-                {/* Top Tagline */}
-                <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
-                    <Link href="/" className="hover:underline">Bixeltek</Link>
-                    <span>/</span>
-                    <Link href="/dental-marketing" className="hover:underline">Dental Marketing</Link>
-                    <span>/</span>
-                    <span className="text-gray-600">Client Case Study</span>
+                {/* Breadcrumbs & Service Badges */}
+                <div className="space-y-3">
+                    <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
+                        <Link href="/" className="hover:underline">Bixeltek</Link>
+                        <span>/</span>
+                        <Link href="/dental-marketing" className="hover:underline">Dental Marketing</Link>
+                        <span>/</span>
+                        <span className="text-gray-600">Client Case Study</span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                        <span className="text-xs font-medium text-gray-500 mr-1">Services:</span>
+                        <Link
+                            href="/dental-marketing"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Dental Marketing
+                        </Link>
+                        <Link
+                            href="/services/google-ads"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Google Ads Management
+                        </Link>
+                        <Link
+                            href="/local-seo"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Local SEO
+                        </Link>
+                        <Link
+                            href="/services/analytics-tracking"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Call &amp; Lead Tracking
+                        </Link>
+                    </div>
                 </div>
 
                 <div id="about" className="scroll-mt-32">
@@ -152,30 +182,35 @@ export default function DentistCaseStudy() {
                     </h2>
                     <p className='text-base text-black max-w-xl mb-12'>We knew this wasn&apos;t just about fixing ads — it was about reviving a legacy brand. As a Google Partner Certified agency, we stepped in with speed and strategy.</p> */}
 
-                    <div className="relative border-l-4 border-[#670ef7] ml-1 md:ml-4 space-y-16">
-                        {strategySteps.map((step, index) => {
+                    <div className="space-y-14">
+                        {strategySteps.map((step, index) => (
+                            <article key={step.title}>
+                                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                                    <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                                </div>
 
-
-                            return (
-                                <div
-                                    key={index}
-                                    className="relative pl-5 md:pl-10"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute -left-[12px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10" />
-
-                                    {/* Step Content */}
-                                    <h3 className="text-3xl font-sofiasanscondensed font-semibold mb-1">{step.title}</h3>
-                                    <p className='mb-3 max-w-xl'>{step.des}</p>
-                                    <ul className="list-disc md:text-lg pl-5 text-gray-700  space-y-1">
+                                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                                    <span className="sr-only">Step {index + 1}: </span>
+                                    {step.title}
+                                </h3>
+                                {step.des && (
+                                    <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.des}</p>
+                                )}
+                                {step.points && step.points.length > 0 && (
+                                    <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
                                         {step.points.map((point, i) => (
                                             <li key={i}>{point}</li>
                                         ))}
                                     </ul>
-                                    <p className='mt-3 max-w-xl'>{step.suffix}</p>
-                                </div>
-                            );
-                        })}
+                                )}
+                                {step.suffix && (
+                                    <p className="mt-3 leading-relaxed text-gray-700 font-poppins">{step.suffix}</p>
+                                )}
+                            </article>
+                        ))}
                     </div>
                 </section>
 

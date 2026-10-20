@@ -320,6 +320,36 @@ const nextConfig = {
         source: '/case-studies/pet-grooming-website-seo-nuxt-migration-case-study/',
         destination: '/case-studies/pet-grooming-website-usa-case-study',
         permanent: true
+      },
+      {
+        source: '/services/case-study',
+        destination: '/case-studies',
+        permanent: true
+      },
+      {
+        source: '/services/case-study/',
+        destination: '/case-studies',
+        permanent: true
+      },
+      {
+        source: '/services/case-studies',
+        destination: '/case-studies',
+        permanent: true
+      },
+      {
+        source: '/services/case-studies/',
+        destination: '/case-studies',
+        permanent: true
+      },
+      {
+        source: '/services/ccase-study',
+        destination: '/case-studies',
+        permanent: true
+      },
+      {
+        source: '/services/ccase-study/',
+        destination: '/case-studies',
+        permanent: true
       }
     ];
   },

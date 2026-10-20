@@ -73,7 +73,7 @@ export default function WebDevHero() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="text-white font-sofiasanscondensed z-20 sm:text-center md:text-left font-semibold sm:text-[37px] md:text-[42px] lg:text-[60px] mb-[-15px] leading-tight max-w-[800px]"
             >
-              Top Web Design Services in Hyderabad Built for Leads, Sales & Growth
+              Top Web Design & Development Services in Hyderabad Built for Leads, Sales & Growth
             </motion.h1>
             <motion.h2 className='text-white z-20 font-inter sm:text-center md:text-left font-semibold text-xl leading-tight max-w-[700px] '>
               We build websites that do more than look good - They perform.

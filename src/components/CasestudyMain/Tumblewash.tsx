@@ -19,7 +19,7 @@ const sections = [
 ];
 const strategySteps = [
     {
-        title: "1. Intent-Driven Keyword Targeting",
+        title: "Intent-Driven Keyword Targeting",
         des: "The original campaign used broad-match keywords with little intent filtering. We rebuilt the keyword strategy from scratch:",
         points: [
             "Targeted high-converting, location-based queries like “laundry pickup in Gurgaon,” “dry cleaning service near me,” and “affordable laundry same day.",
@@ -28,7 +28,7 @@ const strategySteps = [
         ],
     },
     {
-        title: "2. Ad Copy That Demands Attention",
+        title: "Ad Copy That Demands Attention",
         des: "Our creative team rewrote all ad copy with a focus on clarity, urgency, and local relevance:",
         points: [
             "Headlines like: “Same-Day Laundry Pickup in Gurgaon”, “Affordable Dry Clean Service – Book Now”",
@@ -38,7 +38,7 @@ const strategySteps = [
         suffix: "This led to a 21% increase in click-through rate (CTR) in the first 30 days."
     },
     {
-        title: "3. Landing Page Optimization",
+        title: "Landing Page Optimization",
         des: "The client's old landing page wasn’t converting. We rebuilt it with:",
         points: [
             "Mobile-first design for the 90% mobile audience",
@@ -49,7 +49,7 @@ const strategySteps = [
         suffix: "The result? Over 400 form submissions in 90 days with qualified customer inquiries.",
     },
     {
-        title: "4. Smart Bidding + Budget",
+        title: "Smart Bidding + Budget",
         des: "We restructured the campaign to make every rupee work harder",
         points: [
             "Shifted from automated bidding to manual CPC with device-level modifiers",
@@ -59,7 +59,7 @@ const strategySteps = [
         suffix: "This dropped the average CPC from ₹18 to ₹10 — while boosting conversions."
     },
     {
-        title: "5. Weekly Optimization & Reporting",
+        title: "Weekly Optimization & Reporting",
         des: "We didn’t stop at launch. We ran continuous A/B tests on:",
         points: [
             "Ad copy variations",
@@ -174,30 +174,33 @@ export default function TumbleWashCaseStudySection() {
                     </h2>
                     <p className='text-base text-black max-w-xl mb-12'>We implemented a complete full-funnel transformation — not just ad tweaks, but a <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing overhaul</Link>. Here’s how:</p>
 
-                    <div className="relative border-l-4 border-[#670ef7] ml-1 md:ml-4 space-y-16">
-                        {strategySteps.map((step, index) => {
-                            
+                    <div className="space-y-14">
+                        {strategySteps.map((step, index) => (
+                            <article key={step.title}>
+                                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                                    <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                                </div>
 
-                            return (
-                                <div
-                                    key={index}
-                                    className="relative pl-5 md:pl-10"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute -left-[12px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10" />
-
-                                    {/* Step Content */}
-                                    <h3 className="text-2xl font-sofiasanscondensed font-semibold mb-1">{step.title}</h3>
-                                    <p className='mb-3 max-w-xl'>{step.des}</p>
-                                    <ul className="list-disc md:text-lg pl-5 text-gray-700  space-y-1">
-                                        {step.points.map((point, i) => (
-                                             <li key={i}>{point}</li>
+                                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                                    <span className="sr-only">Step {index + 1}: </span>
+                                    {step.title}
+                                </h3>
+                                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.des}</p>
+                                {step.points && step.points.length > 0 && (
+                                    <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
+                                        {step.points.map((point) => (
+                                            <li key={point}>{point}</li>
                                         ))}
                                     </ul>
-                                    <p className='mt-3 max-w-xl'>{step.suffix}</p>
-                                </div>
-                            );
-                        })}
+                                )}
+                                {step.suffix && (
+                                    <p className="mt-3 leading-relaxed text-gray-700 font-poppins">{step.suffix}</p>
+                                )}
+                            </article>
+                        ))}
                     </div>
                 </section>
 

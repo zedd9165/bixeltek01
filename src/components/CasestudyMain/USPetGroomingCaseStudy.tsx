@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import petGroomingImg from '@/assets/pet-grooming-case-study.jpg';
 import { MdCheckCircle } from 'react-icons/md';
 
 const sections = [
@@ -169,9 +171,11 @@ export default function USPetGroomingCaseStudy() {
     <section className="mx-auto flex w-full max-w-7xl space-x-0 px-6 py-16 md:space-x-8 md:py-20">
       <div className="w-full space-y-12 md:w-2/3">
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
-          <span>Bixeltek</span>
+          <Link href="/" className="hover:underline">Bixeltek</Link>
           <span>/</span>
-          <span>Local SEO & Web Development</span>
+          <Link href="/local-seo" className="hover:underline">Local SEO</Link>
+          <span>/</span>
+          <Link href="/services/web-design" className="hover:underline">Web Development</Link>
           <span>/</span>
           <span className="text-gray-600">Client Case Study</span>
         </div>
@@ -182,7 +186,7 @@ export default function USPetGroomingCaseStudy() {
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
-              A US pet-grooming business wanted to improve how potential customers discovered its services in the local areas it served. The first phase focused on local SEO and conversion-focused improvements to the existing website, including the creation of city-specific pages and reusable components.
+              A US pet-grooming business wanted to improve how potential customers discovered its services in the local areas it served. The first phase focused on <Link href="/local-seo" className="font-medium text-[#670ef7] hover:underline">local SEO</Link> and <Link href="/services/conversion-rate-optimization" className="font-medium text-[#670ef7] hover:underline">conversion-focused improvements</Link> to the existing website, including the creation of city-specific pages and reusable components.
             </p>
             <p>
               As the website’s local presence expanded, the work grew into a larger engineering project: migrating the application from Nuxt 2 to Nuxt 4. That meant more than moving to a newer version. Existing behavior needed to remain dependable while legacy patterns, hydration issues and frontend-backend integration were addressed.
@@ -191,6 +195,14 @@ export default function USPetGroomingCaseStudy() {
               The project connected two kinds of work that are often handled separately: helping the site become easier to find, then improving the technical foundation required to maintain and extend it.
             </p>
           </div>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-md">
+          <Image
+            src={petGroomingImg}
+            alt="US Pet Grooming Website Local SEO & Nuxt Migration Showcase"
+            className="h-auto w-full object-cover"
+          />
         </div>
 
         <div id="challenge" className="scroll-mt-32">
@@ -281,18 +293,26 @@ export default function USPetGroomingCaseStudy() {
           <p className="mb-10 max-w-2xl text-base leading-relaxed text-gray-700 font-poppins">
             The work progressed from local search improvements to a deeper framework migration. Each stage addressed a specific problem while protecting the parts of the website that were already in use.
           </p>
-          <div className="relative ml-1 space-y-12 border-l-4 border-[#670ef7] md:ml-4">
+          <div className="space-y-14">
             {buildSteps.map((step, index) => (
-              <div key={step.title} className="relative pl-5 md:pl-10">
-                <div className="absolute -left-[12px] top-1 z-10 h-5 w-5 rounded-full border-4 border-white bg-[#670ef7]" />
-                <p className="mb-1 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Step {String(index + 1).padStart(2, '0')}</p>
-                <h3 className="mb-2 text-2xl font-semibold text-gray-900 font-sofiasanscondensed">{step.title}</h3>
-                <p className="mb-3 max-w-2xl leading-relaxed text-gray-700 font-poppins">{step.description}</p>
-                <ul className="mb-4 max-w-2xl list-disc space-y-2 pl-5 text-gray-700 font-poppins">
+              <article key={step.title}>
+                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                  <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                </div>
+
+                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                  <span className="sr-only">Step {index + 1}: </span>
+                  {step.title}
+                </h3>
+                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.description}</p>
+                <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
                   {step.points.map((point) => <li key={point}>{point}</li>)}
                 </ul>
                 {step.challenge && (
-                  <div className="mb-4 max-w-2xl overflow-hidden rounded-lg border border-gray-200">
+                  <div className="mb-5 overflow-hidden rounded-lg border border-gray-200">
                     <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
                       <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">The Challenge</p>
                       <p className="text-sm leading-relaxed text-gray-700 font-poppins">{step.challenge.problem}</p>
@@ -303,11 +323,11 @@ export default function USPetGroomingCaseStudy() {
                     </div>
                   </div>
                 )}
-                <div className="max-w-2xl rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
+                <div className="rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
                   <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">Project outcome</p>
                   <p className="text-sm leading-relaxed text-gray-800 font-poppins">{step.outcome}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -352,8 +372,8 @@ export default function USPetGroomingCaseStudy() {
 
         <div className="flex flex-wrap items-center gap-3 pt-2 text-sm font-medium text-gray-700">
           <span className="font-semibold text-gray-900">Services Delivered:</span>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Local SEO</span>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">CRO</span>
+          <Link href="/local-seo" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Local SEO</Link>
+          <Link href="/services/conversion-rate-optimization" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">CRO</Link>
           <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">City-Specific Pages</span>
           <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Nuxt 2 to Nuxt 4 Migration</span>
           <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Hydration Debugging</span>

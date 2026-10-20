@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { MdKeyboardArrowUp } from "react-icons/md";
 import Link from 'next/link';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+
 type StrategyStep = {
     title: string;
     points: string[];
@@ -19,14 +19,14 @@ const sections = [
 ];
 const strategySteps = [
     {
-        title: "1. Recovery in Record Time",
+        title: "Recovery in Record Time",
         des: "We got their Google Ads account unsuspended in just 6 hours — fully reviewed, compliant, and ready to go live.",
         points: [
 
         ],
     },
     {
-        title: "2. Campaigns That Actually Convert",
+        title: "Campaigns That Actually Convert",
         des: "No more generic ads. We built campaigns targeting real intent:",
         points: [
             "“doorstep bike service near me”",
@@ -36,7 +36,7 @@ const strategySteps = [
         suffix: "Every ad spoke directly to what riders actually searched for, with clear CTAs, trust signals, and local targeting."
     },
     {
-        title: "3. Weekly Optimizations That Deliver",
+        title: "Weekly Optimizations That Deliver",
         des: "From ad copy tests to bid strategy tweaks, we optimized daily to keep conversions high and cost per lead low.",
         points: [
 
@@ -152,30 +152,33 @@ export default function BikerepairCaseStudySection() {
                     </h2>
                     <p className='text-base text-black max-w-xl mb-12'>We knew this wasn&apos;t just about fixing ads — it was about reviving a legacy brand. As a Certified Google Partner Agency delivering high-impact <Link href="/services/google-ads" className="text-[#670ef7] font-semibold underline underline-offset-2 hover:opacity-80">Google Ads management</Link>, we stepped in with speed and strategy.</p>
 
-                    <div className="relative border-l-4 border-[#670ef7] ml-1 md:ml-4 space-y-16">
-                        {strategySteps.map((step, index) => {
+                    <div className="space-y-14">
+                        {strategySteps.map((step, index) => (
+                            <article key={step.title}>
+                                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                                    <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                                </div>
 
-
-                            return (
-                                <div
-                                    key={index}
-                                    className="relative pl-5 md:pl-10"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute -left-[12px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10" />
-
-                                    {/* Step Content */}
-                                    <h3 className="text-2xl font-sofiasanscondensed font-semibold mb-1">{step.title}</h3>
-                                    <p className='mb-3 max-w-xl'>{step.des}</p>
-                                    <ul className="list-disc md:text-lg pl-5 text-gray-700  space-y-1">
-                                        {step.points.map((point, i) => (
-                                            <li key={i}>{point}</li>
+                                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                                    <span className="sr-only">Step {index + 1}: </span>
+                                    {step.title}
+                                </h3>
+                                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.des}</p>
+                                {step.points && step.points.length > 0 && (
+                                    <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
+                                        {step.points.map((point) => (
+                                            <li key={point}>{point}</li>
                                         ))}
                                     </ul>
-                                    <p className='mt-3 max-w-xl'>{step.suffix}</p>
-                                </div>
-                            );
-                        })}
+                                )}
+                                {step.suffix && (
+                                    <p className="mt-3 leading-relaxed text-gray-700 font-poppins">{step.suffix}</p>
+                                )}
+                            </article>
+                        ))}
                     </div>
                 </section>
 

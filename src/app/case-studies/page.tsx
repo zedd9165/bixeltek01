@@ -28,6 +28,8 @@ import innovwayzImg from '@/assets/innovwayz-case-study.png'
 import promenadeImg from '@/assets/promenade-casestudy.png'
 import sacImg from '@/assets/sac-casestudy.png'
 import petGroomingImg from '@/assets/pet-grooming-case-study.jpg'
+import omaImg from '@/assets/oma-casestudy.png'
+import cloudUpskillImg from '@/assets/cloudupskill-casestudy.png'
 import Image from 'next/image'
 
 const casestudies = [
@@ -93,6 +95,20 @@ const casestudies = [
         description: "How Bixeltek built city-specific landing pages, applied CRO principles, and migrated a live Nuxt 2 website to Nuxt 4 while addressing hydration and architecture needs.",
         image: petGroomingImg,
         link: "/case-studies/pet-grooming-website-usa-case-study",
+    },
+    {
+        id: 10,
+        title: "Building a WooCommerce Store for a 2,000+ Product Computer Catalogue",
+        description: "How Bixeltek brought OMA Computer Systems’ product range online with a structured catalogue, product discovery tools and a scalable WordPress ecommerce foundation.",
+        image: omaImg,
+        link: "/case-studies/oma-computers-ecommerce-website-case-study",
+    },
+    {
+        id: 11,
+        title: "Building a WordPress Website Around Course Discovery and Enquiries",
+        description: "How Bixeltek organized Cloud Upskill’s technical training portfolio into a clearer digital experience with course information, learner-support content and direct enquiry paths.",
+        image: cloudUpskillImg,
+        link: "/case-studies/cloud-upskill-wordpress-website-case-study",
     },
 ];
 

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import sacImg from '@/assets/sac-casestudy.png';
 import { MdCheckCircle } from 'react-icons/md';
 
 const sections = [
@@ -23,7 +25,7 @@ type BuildStep = {
 
 const buildSteps: BuildStep[] = [
   {
-    title: '1. Establishing an Enterprise WordPress Foundation',
+    title: 'Establishing an Enterprise WordPress Foundation',
     description:
       'We built Scorpion Arabia’s website on WordPress with the needs of an engineering-led B2B business in mind. The website had to present technical services with clarity, support the company’s credibility and give the team a practical foundation for keeping information current.',
     points: [
@@ -35,7 +37,7 @@ const buildSteps: BuildStep[] = [
       'Scorpion Arabia gained a more structured corporate website that can communicate its capabilities to project owners, EPC contractors and other prospective partners.',
   },
   {
-    title: '2. Organising Complex Services for Technical Buyers',
+    title: 'Organising Complex Services for Technical Buyers',
     description:
       'Trenchless infrastructure work is highly specialized. Visitors may need to understand the difference between drilling, micro-tunnelling, lining and pipeline protection before they know which service fits their project. We organized the service experience so those capabilities are easier to navigate and evaluate.',
     points: [
@@ -47,7 +49,7 @@ const buildSteps: BuildStep[] = [
       'Prospective clients have a clearer route from understanding a capability to assessing whether it is relevant to their project requirements.',
   },
   {
-    title: '3. Building Trust Through Project and Capability Evidence',
+    title: 'Building Trust Through Project and Capability Evidence',
     description:
       'Enterprise buyers often evaluate more than a service description. They also look for evidence of relevant experience, equipment, operating capability and quality processes. We used the site structure to make key company and project information easier to find alongside the service offering.',
     points: [
@@ -59,7 +61,7 @@ const buildSteps: BuildStep[] = [
       'The website can help visitors build context and confidence before submitting a technical enquiry.',
   },
   {
-    title: '4. Applying Conversion Rate Optimization Principles',
+    title: 'Applying Conversion Rate Optimization Principles',
     description:
       'The goal was not simply to make the website look more modern. We considered how a technical buyer moves from discovering a service to deciding whether to contact the team. Calls to action and enquiry routes were placed around the information that helps visitors evaluate the company.',
     points: [
@@ -71,7 +73,7 @@ const buildSteps: BuildStep[] = [
       'The website gives interested visitors a clearer next step instead of leaving contact as an afterthought.',
   },
   {
-    title: '5. Supporting Search Visibility Through Better Structure',
+    title: 'Supporting Search Visibility Through Better Structure',
     description:
       'Search visibility depends on more than metadata. A service-led website needs clear page purpose, useful content and sensible relationships between related topics. We structured the website around the company’s real service areas so both visitors and search engines can better understand its offerings.',
     points: [
@@ -83,7 +85,7 @@ const buildSteps: BuildStep[] = [
       'The site provides a stronger content foundation for organic discovery, without assuming that website changes alone guarantee specific rankings.',
   },
   {
-    title: '6. Turning the Website into a Practical Business Enquiry Channel',
+    title: 'Turning the Website into a Practical Business Enquiry Channel',
     description:
       'The redesigned experience connects service discovery, proof of capability and contact options into one journey. The business reported more conversions and form submissions after the website work, indicating that the site was generating more enquiry activity.',
     points: [
@@ -146,9 +148,9 @@ export default function ScorpionArabiaCaseStudy() {
     <section className="mx-auto flex w-full max-w-7xl space-x-0 px-6 py-16 md:space-x-8 md:py-20">
       <div className="w-full space-y-12 md:w-2/3">
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
-          <span>Bixeltek</span>
+          <Link href="/" className="hover:underline">Bixeltek</Link>
           <span>/</span>
-          <span>WordPress Website Development</span>
+          <Link href="/services/web-design/wordpress" className="hover:underline">WordPress Website Development</Link>
           <span>/</span>
           <span className="text-gray-600">Client Case Study</span>
         </div>
@@ -165,9 +167,17 @@ export default function ScorpionArabiaCaseStudy() {
               For a business serving technical and enterprise buyers, a website needs to do more than list services. It should make complex capabilities easier to understand, provide useful evidence of experience and help qualified visitors take the next step toward a project discussion.
             </p>
             <p>
-              Bixeltek built an enterprise-level WordPress website designed around those needs: clearer service discovery, more accessible project and capability information, and conversion paths that make it easier to request a technical proposal or contact the team.
+              Bixeltek built an enterprise-level <Link href="/services/web-design/wordpress" className="font-medium text-[#670ef7] hover:underline">WordPress website</Link> designed around those needs: clearer service discovery, more accessible project and capability information, and conversion paths that make it easier to request a technical proposal or contact the team.
             </p>
           </div>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-md">
+          <Image
+            src={sacImg}
+            alt="Scorpion Arabia Enterprise Website Showcase"
+            className="h-auto w-full object-cover"
+          />
         </div>
 
         <div id="challenge" className="scroll-mt-32">
@@ -191,21 +201,29 @@ export default function ScorpionArabiaCaseStudy() {
           <p className="mb-10 max-w-2xl text-base leading-relaxed text-gray-700 font-poppins">
             We treated the website as a business-development tool: organize the service portfolio, make proof easier to assess, guide visitors through the decision journey and give high-intent prospects a clear next step.
           </p>
-          <div className="relative ml-1 space-y-12 border-l-4 border-[#670ef7] md:ml-4">
+          <div className="space-y-14">
             {buildSteps.map((step, index) => (
-              <div key={step.title} className="relative pl-5 md:pl-10">
-                <div className="absolute -left-[12px] top-1 z-10 h-5 w-5 rounded-full border-4 border-white bg-[#670ef7]" />
-                <p className="mb-1 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Step {String(index + 1).padStart(2, '0')}</p>
-                <h3 className="mb-2 text-2xl font-semibold text-gray-900 font-sofiasanscondensed">{step.title}</h3>
-                <p className="mb-3 max-w-2xl leading-relaxed text-gray-700 font-poppins">{step.description}</p>
-                <ul className="mb-4 max-w-2xl list-disc space-y-2 pl-5 text-gray-700 font-poppins">
+              <article key={step.title}>
+                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                  <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                </div>
+
+                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                  <span className="sr-only">Step {index + 1}: </span>
+                  {step.title}
+                </h3>
+                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.description}</p>
+                <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
                   {step.points.map((point) => <li key={point}>{point}</li>)}
                 </ul>
-                <div className="max-w-2xl rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
+                <div className="rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
                   <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">What this achieved</p>
                   <p className="text-sm leading-relaxed text-gray-800 font-poppins">{step.outcome}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -277,9 +295,11 @@ export default function ScorpionArabiaCaseStudy() {
 
         <div className="flex flex-wrap items-center gap-3 pt-2 text-sm font-medium text-gray-700">
           <span className="font-semibold text-gray-900">Services Delivered:</span>
-          {['WordPress Website Development', 'Enterprise Web Design', 'Service Page Architecture', 'Conversion Rate Optimization', 'B2B Lead Generation'].map((label) => (
-            <span key={label} className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">{label}</span>
-          ))}
+          <Link href="/services/web-design/wordpress" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">WordPress Website Development</Link>
+          <Link href="/services/web-design" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Enterprise Web Design</Link>
+          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Service Page Architecture</span>
+          <Link href="/services/conversion-rate-optimization" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Conversion Rate Optimization</Link>
+          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">B2B Lead Generation</span>
         </div>
 
         <section id="cta" className="relative mt-10 overflow-hidden rounded-2xl bg-[#670ef7] px-8 py-10 shadow-lg">
