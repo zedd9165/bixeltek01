@@ -128,29 +128,53 @@ export default function CasestudyPage() {
 
 
                     {casestudies.map((study) => (
-                        <a className="group flex flex-col focus:outline-hidden" href={study.link} key={study.id}>
-                            <div className="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-                                <Image src={study.image} alt={study.title} className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" />
-                                <span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-purple-800 text-white py-1.5 px-3">
-                                    Must Read
-                                </span>
-                        </div>
+  <a
+    key={study.id}
+    href={study.link}
+    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-purple-950 via-purple-900 to-neutral-900 shadow-[0_12px_32px_-12px_rgba(59,7,100,0.55)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_-12px_rgba(103,14,247,0.5)] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-purple-300"
+  >
+    {/* Image */}
+    <div className="relative overflow-hidden pt-[50%] sm:pt-[70%]">
+      <Image
+        src={study.image}
+        alt={study.title}
+        className="absolute start-0 top-0 size-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
+      />
+      {/* soft fade so the image blends into the card */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-purple-950/70 to-transparent" />
+      <span className="absolute end-0 top-0 rounded-es-xl bg-white/95 px-3 py-1.5 text-xs font-semibold text-purple-900">
+        Must Read
+      </span>
+    </div>
 
-                            <div className="mt-7">
-                                <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600">
-                                    {study.title}
-                                </h3>
-                                <p className="mt-3 text-gray-800">
-                                    {study.description}
-                                </p>
-                                <p className="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium">
-                                Read more
-                                <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-                            </p>
-                        </div>
-                    </a>
-                    ))    
-                }
+    {/* Content */}
+    <div className="flex flex-1 flex-col p-6">
+      <h3 className="text-xl font-semibold text-white transition-colors group-hover:text-purple-200">
+        {study.title}
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-purple-100/80 md:text-base">
+        {study.description}
+      </p>
+      <p className="mt-auto inline-flex items-center gap-x-1 pt-5 text-sm font-semibold text-purple-200 transition-colors group-hover:text-white">
+        Read more
+        <svg
+          className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </p>
+    </div>
+  </a>
+))}
 
                 </div>
 
