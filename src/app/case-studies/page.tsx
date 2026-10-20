@@ -26,6 +26,8 @@ import guerr from '@/assets/guerr-case-study-1.jpeg'
 import heroimginvisalign from '@/assets/dentist-examining-patient-s-teeth.jpg'
 import innovwayzImg from '@/assets/innovwayz-case-study.png'
 import promenadeImg from '@/assets/promenade-casestudy.png'
+import sacImg from '@/assets/sac-casestudy.png'
+import petGroomingImg from '@/assets/pet-grooming-case-study.jpg'
 import Image from 'next/image'
 
 const casestudies = [
@@ -77,6 +79,20 @@ const casestudies = [
         description: "How Bixeltek rebuilt Promenade Dental’s practice website with Next.js and Tailwind CSS, created a scalable service-page system, and improved patient appointment journeys.",
         image: promenadeImg,
         link: "/case-studies/promenade-dental-website-rebuild-case-study",
+    },
+    {
+        id: 8,
+        title: "Building an Enterprise Website for Scorpion Arabia: Infrastructure Expertise to Project Enquiries",
+        description: "How Bixeltek built a WordPress website for Scorpion Arabia with clearer specialist service pages, stronger capability information, and conversion-focused paths to technical proposals.",
+        image: sacImg,
+        link: "/case-studies/scorpion-arabia-enterprise-website-case-study",
+    },
+    {
+        id: 9,
+        title: "From Local SEO to a Nuxt 4 Migration for a US Pet Grooming Business",
+        description: "How Bixeltek built city-specific landing pages, applied CRO principles, and migrated a live Nuxt 2 website to Nuxt 4 while addressing hydration and architecture needs.",
+        image: petGroomingImg,
+        link: "/case-studies/pet-grooming-website-usa-case-study",
     },
 ];
 

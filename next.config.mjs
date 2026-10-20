@@ -300,6 +300,26 @@ const nextConfig = {
         source: '/services/seo-service/',
         destination: '/services/seo-services',
         permanent: true
+      },
+      {
+        source: '/case-studies/scorpion-arabia-enterprise-wordpress-website-case-study',
+        destination: '/case-studies/scorpion-arabia-enterprise-website-case-study',
+        permanent: true
+      },
+      {
+        source: '/case-studies/scorpion-arabia-enterprise-wordpress-website-case-study/',
+        destination: '/case-studies/scorpion-arabia-enterprise-website-case-study',
+        permanent: true
+      },
+      {
+        source: '/case-studies/pet-grooming-website-seo-nuxt-migration-case-study',
+        destination: '/case-studies/pet-grooming-website-usa-case-study',
+        permanent: true
+      },
+      {
+        source: '/case-studies/pet-grooming-website-seo-nuxt-migration-case-study/',
+        destination: '/case-studies/pet-grooming-website-usa-case-study',
+        permanent: true
       }
     ];
   },
