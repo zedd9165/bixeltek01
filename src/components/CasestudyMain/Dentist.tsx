@@ -27,9 +27,9 @@ const strategySteps: StrategyStep[] = [
         title: "The Objective",
         des: "The client approached Bixeltek to solve one core problem:",
         points: [
-            "'We need to show up when someone searches for treatments we offer — especially the high-value ones.'"
+            "'We need to show up when someone searches for treatments we offer, especially the high-value ones.'"
         ],
-        suffix: "They wanted more leads, more calls, and more booked appointments — especially for implants, RCTs, and emergency services."
+        suffix: "They wanted more leads, more calls, and more booked appointments, especially for implants, RCTs, and emergency services."
     },
     {
         title: "The Solution: Dental Marketing That Drives Real Growth",
@@ -92,13 +92,43 @@ export default function DentistCaseStudy() {
 
             {/* Content */}
             <div className="w-full md:w-2/3 space-y-12">
-                {/* Top Tagline */}
-                <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
-                    <Link href="/" className="hover:underline">Bixeltek</Link>
-                    <span>/</span>
-                    <Link href="/dental-marketing" className="hover:underline">Dental Marketing</Link>
-                    <span>/</span>
-                    <span className="text-gray-600">Client Case Study</span>
+                {/* Breadcrumbs & Service Badges */}
+                <div className="space-y-3">
+                    <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
+                        <Link href="/" className="hover:underline">Bixeltek</Link>
+                        <span>/</span>
+                        <Link href="/dental-marketing" className="hover:underline">Dental Marketing</Link>
+                        <span>/</span>
+                        <span className="text-gray-600">Client Case Study</span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                        <span className="text-xs font-medium text-gray-500 mr-1">Services:</span>
+                        <Link
+                            href="/dental-marketing"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Dental Marketing
+                        </Link>
+                        <Link
+                            href="/services/google-ads"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Google Ads Management
+                        </Link>
+                        <Link
+                            href="/local-seo"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Local SEO
+                        </Link>
+                        <Link
+                            href="/services/analytics-tracking"
+                            className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-[#670ef7] border border-purple-200 hover:bg-[#670ef7] hover:text-white transition-colors"
+                        >
+                            Call &amp; Lead Tracking
+                        </Link>
+                    </div>
                 </div>
 
                 <div id="about" className="scroll-mt-32">
@@ -106,7 +136,7 @@ export default function DentistCaseStudy() {
                     <p className='text-lg font-poppins'>
                         A full-service dental clinic in Canada, offering treatments like dental implants, root canals, emergency services, and cosmetic dentistry. The clinic was located in a <span className='font-semibold'>densely competitive area</span>  with numerous nearby clinics bidding for the same audience online.
                     </p>
-                    {/* <p className='text-lg mt-3 font-poppins'>But when digital started driving customer decisions, they struggled to keep up. Their offline reputation wasn&apos;t translating into online leads — and the business began feeling the heat.</p> */}
+
 
                 </div>
                 <div id="struggle" className="scroll-mt-32">
@@ -150,32 +180,37 @@ export default function DentistCaseStudy() {
                     {/* <h2 className="text-4xl font-bold text-left text-[#670ef7] mb-2 font-sofiasanscondensed">
                         The Bixeltek Turnaround
                     </h2>
-                    <p className='text-base text-black max-w-xl mb-12'>We knew this wasn&apos;t just about fixing ads — it was about reviving a legacy brand. As a Google Partner Certified agency, we stepped in with speed and strategy.</p> */}
+                    <p className='text-base text-black max-w-xl mb-12'>We knew this wasn&apos;t just about fixing ads; it was about reviving a legacy brand. As a Google Partner Certified agency, we stepped in with speed and strategy.</p> */}
 
-                    <div className="relative border-l-4 border-[#670ef7] ml-1 md:ml-4 space-y-16">
-                        {strategySteps.map((step, index) => {
+                    <div className="space-y-14">
+                        {strategySteps.map((step, index) => (
+                            <article key={step.title}>
+                                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                                    <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                                </div>
 
-
-                            return (
-                                <div
-                                    key={index}
-                                    className="relative pl-5 md:pl-10"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute -left-[12px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10" />
-
-                                    {/* Step Content */}
-                                    <h3 className="text-3xl font-sofiasanscondensed font-semibold mb-1">{step.title}</h3>
-                                    <p className='mb-3 max-w-xl'>{step.des}</p>
-                                    <ul className="list-disc md:text-lg pl-5 text-gray-700  space-y-1">
+                                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                                    <span className="sr-only">Step {index + 1}: </span>
+                                    {step.title}
+                                </h3>
+                                {step.des && (
+                                    <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.des}</p>
+                                )}
+                                {step.points && step.points.length > 0 && (
+                                    <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
                                         {step.points.map((point, i) => (
                                             <li key={i}>{point}</li>
                                         ))}
                                     </ul>
-                                    <p className='mt-3 max-w-xl'>{step.suffix}</p>
-                                </div>
-                            );
-                        })}
+                                )}
+                                {step.suffix && (
+                                    <p className="mt-3 leading-relaxed text-gray-700 font-poppins">{step.suffix}</p>
+                                )}
+                            </article>
+                        ))}
                     </div>
                 </section>
 
@@ -227,13 +262,13 @@ export default function DentistCaseStudy() {
                         </tbody>
                     </table>
 
-                    <p className='mt-4'>The result? A fully booked calendar — especially from dental patients who found them directly through <Link href="/services/google-ads" className="font-semibold text-[#670ef7] hover:underline">Google Ads</Link>.</p>
+                    <p className='mt-4'>The result? A fully booked calendar, especially from dental patients who found them directly through <Link href="/services/google-ads" className="font-semibold text-[#670ef7] hover:underline">Google Ads</Link>.</p>
                 </div>
 
                 <div id="client-impact" className="scroll-mt-32">
                     <h2 className="text-3xl font-sofiasanscondensed font-bold  text-[#670ef7] mb-4">What the Client Said</h2>
                     <blockquote className="italic max-w-[90%] mx-auto text-gray-700 text-2xl md:text-3xl md:text-center border-l-4 border-[#670ef7] pl-4">
-                        “The difference was clear — our phones were ringing with the right kind of patients. We started seeing more implant and root canal cases than ever before.”
+                        “The difference was clear: our phones were ringing with the right kind of patients. We started seeing more implant and root canal cases than ever before.”
                         <br /><span className='font-semibold text-lg md:text-2xl'>Dr.Baseer</span>
                     </blockquote>
                 </div>
@@ -241,7 +276,7 @@ export default function DentistCaseStudy() {
                 <div id="conclusion" className="scroll-mt-32 pb-6">
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4">The Impact</h2>
                     <p className='text-lg font-poppins'>
-                        Patients weren&apos;t just browsing — they were calling and booking. The campaign delivered a <span className='font-semibold'>surge in phone calls</span>, many for <span className='font-semibold'>high-margin procedures.</span>
+                        Patients weren&apos;t just browsing; they were calling and booking. The campaign delivered a <span className='font-semibold'>surge in phone calls</span>, many for <span className='font-semibold'>high-margin procedures.</span>
                     </p>
                     <p className='text-lg font-poppins mt-3'>
                         This translated into real, predictable growth and better use of the clinic&apos;s marketing budget.
@@ -283,7 +318,7 @@ export default function DentistCaseStudy() {
                     </h2>
                     <p className="text-lg font-poppins mb-6">
                         At Bixeltek, we specialize in <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link> and <Link href="/services/seo-services" className="text-[#670ef7] hover:underline font-medium">SEO for dental clinics</Link> across India, Canada, and the United States.<br />
-                        Our campaigns don&apos;t just drive traffic — they bring real patients to your chair.
+                        Our campaigns don&apos;t just drive traffic; they bring real patients to your chair.
                     </p>
                 </div>
 

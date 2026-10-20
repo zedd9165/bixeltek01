@@ -26,6 +26,11 @@ import guerr from '@/assets/guerr-case-study-1.jpeg'
 import heroimginvisalign from '@/assets/dentist-examining-patient-s-teeth.jpg'
 import innovwayzImg from '@/assets/innovwayz-case-study.png'
 import promenadeImg from '@/assets/promenade-casestudy.png'
+import sacImg from '@/assets/sac-casestudy.png'
+import petGroomingImg from '@/assets/pet-grooming-case-study.jpg'
+import omaImg from '@/assets/oma-casestudy.png'
+import cloudUpskillImg from '@/assets/cloudupskill-casestudy.png'
+import rootedTreeImg from '@/assets/rooted-tree-casestudy.png'
 import Image from 'next/image'
 
 const casestudies = [
@@ -38,7 +43,7 @@ const casestudies = [
     },
     {
         id: 2,
-        title: "Digital Marketing for Dentists — 200+ Patient Leads in 30 Days",
+        title: "Digital Marketing for Dentists: 200+ Patient Leads in 30 Days",
         description: "How Bixeltek Helped a Dental Clinic Dominate Google Search and Attract High-Value Patients",
         image: heroimgdm,
         link: "/case-studies/digital-marketing-for-dentists-case-study",
@@ -78,6 +83,41 @@ const casestudies = [
         image: promenadeImg,
         link: "/case-studies/promenade-dental-website-rebuild-case-study",
     },
+    {
+        id: 8,
+        title: "Building an Enterprise Website for Scorpion Arabia: Infrastructure Expertise to Project Enquiries",
+        description: "How Bixeltek built a WordPress website for Scorpion Arabia with clearer specialist service pages, stronger capability information, and conversion-focused paths to technical proposals.",
+        image: sacImg,
+        link: "/case-studies/scorpion-arabia-enterprise-website-case-study",
+    },
+    {
+        id: 9,
+        title: "From Local SEO to a Nuxt 4 Migration for a US Pet Grooming Business",
+        description: "How Bixeltek built city-specific landing pages, applied CRO principles, and migrated a live Nuxt 2 website to Nuxt 4 while addressing hydration and architecture needs.",
+        image: petGroomingImg,
+        link: "/case-studies/pet-grooming-website-usa-case-study",
+    },
+    {
+        id: 10,
+        title: "Building a WooCommerce Store for a 2,000+ Product Computer Catalogue",
+        description: "How Bixeltek brought OMA Computer Systems’ product range online with a structured catalogue, product discovery tools and a scalable WordPress ecommerce foundation.",
+        image: omaImg,
+        link: "/case-studies/oma-computers-ecommerce-website-case-study",
+    },
+    {
+        id: 11,
+        title: "Building a WordPress Website Around Course Discovery and Enquiries",
+        description: "How Bixeltek organized Cloud Upskill’s technical training portfolio into a clearer digital experience with course information, learner-support content and direct enquiry paths.",
+        image: cloudUpskillImg,
+        link: "/case-studies/cloud-upskill-wordpress-website-case-study",
+    },
+    {
+        id: 12,
+        title: "Rooted Tree Services: Connecting Tree-Care Searches to Clearer Quote Requests",
+        description: "How Bixeltek built the Rooted Tree Services website and focused Google Ads on relevant local demand across Toronto and the Greater Toronto Area.",
+        image: rootedTreeImg,
+        link: "/case-studies/rooted-tree-services-case-study",
+    },
 ];
 
 export default function CasestudyPage() {
@@ -95,30 +135,52 @@ export default function CasestudyPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 
-                    {casestudies.map((study) => (
-                        <a className="group flex flex-col focus:outline-hidden" href={study.link} key={study.id}>
-                            <div className="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-                                <Image src={study.image} alt={study.title} className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" />
-                                <span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-purple-800 text-white py-1.5 px-3">
-                                    Must Read
-                                </span>
-                        </div>
+                   {casestudies.map((study) => (
+  <a
+    key={study.id}
+    href={study.link}
+    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-purple-400 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-purple-200 hover:shadow-[0_20px_40px_-12px_rgba(103,14,247,0.25)] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#670ef7]"
+  >
+    {/* Image */}
+    <div className="relative overflow-hidden pt-[50%] sm:pt-[70%]">
+      <Image
+        src={study.image}
+        alt={study.title}
+        className="absolute start-0 top-0 size-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
+      />
+      <span className="absolute end-0 top-0 rounded-es-xl bg-purple-800 px-3 py-1.5 text-xs font-medium text-white">
+        Must Read
+      </span>
+    </div>
 
-                            <div className="mt-7">
-                                <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600">
-                                    {study.title}
-                                </h3>
-                                <p className="mt-3 text-gray-800">
-                                    {study.description}
-                                </p>
-                                <p className="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium">
-                                Read more
-                                <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-                            </p>
-                        </div>
-                    </a>
-                    ))    
-                }
+    {/* Content */}
+    <div className="flex flex-1 flex-col p-6">
+      <h3 className="text-xl font-semibold text-gray-900 transition-colors group-hover:text-[#670ef7]">
+        {study.title}
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
+        {study.description}
+      </p>
+      <p className="mt-auto inline-flex items-center gap-x-1 pt-5 text-sm font-semibold text-[#670ef7]">
+        Read more
+        <svg
+          className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </p>
+    </div>
+  </a>
+))}
 
                 </div>
 

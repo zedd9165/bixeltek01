@@ -1,11 +1,11 @@
 export const metadata = {
   title: "Case Study: 436% ROAS for Local Laundry Brand | TumbleWash",
   description:
-    "Discover how TumbleWash, a local laundry business, achieved 436% ROAS and 477+ monthly phone calls — all with half the budget. See the exact strategy used.",
+    "Discover how TumbleWash, a local laundry business, achieved 436% ROAS and 477+ monthly phone calls, all with half the budget. See the exact strategy used.",
   openGraph: {
     title: "Case Study: 436% ROAS for Local Laundry Brand | TumbleWash",
     description:
-      "TumbleWash saw massive growth with our digital strategy — 436% ROAS, 477+ calls/month. Read the full case study.",
+      "TumbleWash saw massive growth with our digital strategy: 436% ROAS, 477+ calls/month. Read the full case study.",
     url: "https://bixeltek.com/case-studies/Tumblewash-Casestudy",
     images: [
       {
@@ -20,7 +20,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Case Study: 436% ROAS for Local Laundry Brand | TumbleWash",
     description:
-      "How a small laundry brand achieved big results — 436% ROAS and 477+ monthly calls with half the spend. View the breakdown.",
+      "How a small laundry brand achieved big results: 436% ROAS and 477+ monthly calls with half the spend. View the breakdown.",
     images: ["https://bixeltek.com/BIXELTEKLOGO.png"],
   },
   alternates: {

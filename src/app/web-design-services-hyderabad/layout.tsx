@@ -10,15 +10,15 @@ interface LayoutProps {
 }
 
 export const metadata = {
-  title: "Best Web Design Agency Hyderabad | Custom Website Designers",
+  title: "Best Web Design and Development Agency Hyderabad | Custom Website Designers",
   description:
-    "Bixeltek is Hyderabad’s leading web design agency creating responsive, SEO-friendly websites. Get a modern, high-performance website built to convert.",
+    "Bixeltek is Hyderabad’s leading web design and development agency creating responsive, SEO-friendly websites. Get a modern, high-performance website built to convert.",
   keywords:
     "Web design Hyderabad, Web development Hyderabad, E-commerce website development, SEO services Hyderabad, Custom website design, Best website designers Hyderabad, CMS development, Next.js development, React.js web development, Hyderabad digital agency",
   openGraph: {
     title: "Best Web Design Agency Hyderabad | Custom Website Designers",
     description:
-      "Bixeltek is Hyderabad’s leading web design agency creating responsive, SEO-friendly websites. Get a modern, high-performance website built to convert.",
+      "Bixeltek is Hyderabad’s leading web design and development agency creating responsive, SEO-friendly websites. Get a modern, high-performance website built to convert.",
     type: "website",
   },
                   alternates: {

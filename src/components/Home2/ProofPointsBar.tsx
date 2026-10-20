@@ -113,7 +113,7 @@ export default function ProofPointsBar() {
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               <span className="bg-gradient-to-r from-white via-[#D8C5FF] to-[#8B45FF] bg-clip-text text-transparent">
-                Numbers from the work we do
+                Numbers from <br/> the work we do
               </span>
             </h2>
 

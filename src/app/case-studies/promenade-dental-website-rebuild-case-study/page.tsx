@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: 'https://bixeltek.com/BIXELTEKLOGO.png',
         width: 1200,
         height: 630,
-        alt: 'Promenade Dental Website Rebuild Case Study — Bixeltek',
+        alt: 'Promenade Dental Website Rebuild Case Study | Bixeltek',
       },
     ],
   },

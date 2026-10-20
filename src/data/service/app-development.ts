@@ -40,6 +40,7 @@ export interface AppDevelopmentOverviewData {
   h2: string;
   intro: string;
   body: string;
+  points?: { title: string; description?: string }[];
   closingCopy: string;
 }
 
@@ -290,6 +291,41 @@ export const appDevelopmentOverview: AppDevelopmentOverviewData = {
 
   body:
     "The development decision is therefore bigger than choosing between iOS, Android, Flutter or React Native. The app needs an appropriate user experience, reliable application architecture, secure data flows, backend or API connections, device behaviour, testing coverage and a practical release strategy.",
+
+  points: [
+    {
+      title: "HRMS & Workforce Portals",
+      description: "Employee self-service, geo-fenced attendance, leave management, shift planning, and payroll workflows.",
+    },
+    {
+      title: "School & Campus Management",
+      description: "Student portals, digital fee collection, timetable management, parent communication, and exam notifications.",
+    },
+    {
+      title: "E-Commerce & Retail Apps",
+      description: "High-speed product browsing, integrated payment gateways, push notifications, and automated order tracking.",
+    },
+    {
+      title: "B2B SaaS Mobile Companions",
+      description: "Multi-tenant cloud platforms, role-based controls, real-time KPI dashboards, and critical alerts.",
+    },
+    {
+      title: "CRM & Field Sales Enablement",
+      description: "Lead capture, pipeline tracking, meeting check-ins, customer interaction logs, and offline data sync.",
+    },
+    {
+      title: "On-Demand & Service Booking",
+      description: "Instant dispatch, dynamic scheduling, live location tracking, and in-app customer support.",
+    },
+    {
+      title: "Healthcare & Telehealth Solutions",
+      description: "Doctor appointment booking, digital prescriptions, patient record access, and secure consultation channels.",
+    },
+    {
+      title: "Logistics & Fleet Operations",
+      description: "Real-time dispatch, route navigation, digital proof-of-delivery, and driver-dispatcher communication.",
+    },
+  ],
 
   closingCopy:
     "The right architecture depends on what the application needs to do, who will use it and how the product is expected to evolve after launch.",
@@ -928,60 +964,6 @@ export const appDevelopmentPostLaunch: AppPostLaunchData = {
    ========================================================= */
 
 export const appDevelopmentRelatedServices = [
-  {
-    title:
-      "Web Design & Development",
-
-    description:
-      "If your mobile app needs a web experience, customer portal or supporting website, the two can be planned as connected parts of the same digital system.",
-
-    linkText:
-      "Explore Web Design Services",
-
-    destination:
-      "/services/web-design",
-  },
-  {
-    title:
-      "Google Ads Management",
-
-    description:
-      "Once the application is ready, paid acquisition can help bring qualified users into the product and support measurable growth.",
-
-    linkText:
-      "Explore Google Ads Services",
-
-    destination:
-      "/services/google-ads",
-  },
-
-  {
-    title:
-      "SEO Services",
-
-    description:
-      "A mobile product often needs a web presence that can attract organic discovery, explain the product and support acquisition beyond the app stores.",
-
-    linkText:
-      "Explore SEO Services",
-
-    destination:
-      "/services/seo-services",
-  },
-
-  {
-    title:
-      "Analytics & Conversion Tracking",
-
-    description:
-      "Understanding acquisition, onboarding and important in-app actions helps teams make better decisions after the application launches.",
-
-    linkText:
-      "Explore Analytics Services",
-
-    destination:
-      "/services/conversion-rate-optimization",
-  },
 
   {
     title:
@@ -1023,6 +1005,20 @@ export const appDevelopmentRelatedServices = [
 
     destination:
       "/services/custom-app-development/web-application-development",
+  },
+/*  */ 
+  {
+    title:
+      "Analytics & Conversion Tracking",
+
+    description:
+      "Understanding acquisition, onboarding and important in-app actions helps teams make better decisions after the application launches.",
+
+    linkText:
+      "Explore Analytics Services",
+
+    destination:
+      "/services/conversion-rate-optimization",
   },
 ];
 

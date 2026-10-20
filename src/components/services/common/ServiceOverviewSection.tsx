@@ -10,7 +10,8 @@ export interface ServiceOverviewSectionProps {
   h2: string;
   intro: string;
   body?: string | string[];
-  points?: { title: string; description: string }[];
+  points?: { title: string; description?: string }[];
+  pointsCols?: 1 | 2 | 3;
   closingCopy?: string;
   imageSrc?: string | StaticImageData;
   imageAlt?: string;
@@ -24,6 +25,7 @@ export default function ServiceOverviewSection({
   intro,
   body,
   points,
+  pointsCols = 1,
   closingCopy,
   imageSrc,
   imageAlt = "Service overview image",
@@ -77,13 +79,26 @@ export default function ServiceOverviewSection({
 
             {/* Key Structured Points */}
             {points && points.length > 0 && (
-              <div className="space-y-3.5 mb-8">
+              <div
+                className={`mb-8 ${
+                  pointsCols === 3
+                    ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                    : pointsCols === 2
+                    ? "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    : "space-y-3.5"
+                }`}
+              >
                 {points.map((pt, idx) => (
                   <div key={idx} className="flex items-start gap-3 text-sm sm:text-base font-poppins">
                     <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <strong className="font-semibold text-[#08080C]">{pt.title}: </strong>
-                      <span className="text-gray-600">{pt.description}</span>
+                      <strong className="font-semibold text-[#08080C]">{pt.title}</strong>
+                      {pt.description && (
+                        <>
+                          <span className="text-[#08080C] font-semibold">: </span>
+                          <span className="text-gray-600">{pt.description}</span>
+                        </>
+                      )}
                     </div>
                   </div>
                 ))}

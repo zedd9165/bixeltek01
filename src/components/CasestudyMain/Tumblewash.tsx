@@ -19,7 +19,7 @@ const sections = [
 ];
 const strategySteps = [
     {
-        title: "1. Intent-Driven Keyword Targeting",
+        title: "Intent-Driven Keyword Targeting",
         des: "The original campaign used broad-match keywords with little intent filtering. We rebuilt the keyword strategy from scratch:",
         points: [
             "Targeted high-converting, location-based queries like “laundry pickup in Gurgaon,” “dry cleaning service near me,” and “affordable laundry same day.",
@@ -28,17 +28,17 @@ const strategySteps = [
         ],
     },
     {
-        title: "2. Ad Copy That Demands Attention",
+        title: "Ad Copy That Demands Attention",
         des: "Our creative team rewrote all ad copy with a focus on clarity, urgency, and local relevance:",
         points: [
-            "Headlines like: “Same-Day Laundry Pickup in Gurgaon”, “Affordable Dry Clean Service – Book Now”",
+            "Headlines like: “Same-Day Laundry Pickup in Gurgaon”, “Affordable Dry Clean Service - Book Now”",
             "Benefits upfront: Free pickup & delivery, Stain removal included, Fast turnaround",
             "Clear, compelling CTAs: Call Now, Book Pickup, Get a Quote Instantly",
         ],
         suffix: "This led to a 21% increase in click-through rate (CTR) in the first 30 days."
     },
     {
-        title: "3. Landing Page Optimization",
+        title: "Landing Page Optimization",
         des: "The client's old landing page wasn’t converting. We rebuilt it with:",
         points: [
             "Mobile-first design for the 90% mobile audience",
@@ -49,24 +49,24 @@ const strategySteps = [
         suffix: "The result? Over 400 form submissions in 90 days with qualified customer inquiries.",
     },
     {
-        title: "4. Smart Bidding + Budget",
+        title: "Smart Bidding + Budget",
         des: "We restructured the campaign to make every rupee work harder",
         points: [
             "Shifted from automated bidding to manual CPC with device-level modifiers",
             "Increased bids on mobile during high-conversion hours (9 AM–12 PM, 5 PM–9 PM)",
             "Allocated more budget to geo-locations with proven conversion history",
         ],
-        suffix: "This dropped the average CPC from ₹18 to ₹10 — while boosting conversions."
+        suffix: "This dropped the average CPC from ₹18 to ₹10 while boosting conversions."
     },
     {
-        title: "5. Weekly Optimization & Reporting",
+        title: "Weekly Optimization & Reporting",
         des: "We didn’t stop at launch. We ran continuous A/B tests on:",
         points: [
             "Ad copy variations",
             "Call extensions vs. sitelinks",
             "Different form CTA placements",
         ],
-        suffix: "Every week, we shared real-time performance dashboards with the client — keeping them in the loop and part of the process."
+        suffix: "Every week, we shared real-time performance dashboards with the client, keeping them in the loop and part of the process."
     },
 ];
 
@@ -151,7 +151,7 @@ export default function TumbleWashCaseStudySection() {
                     </p>
                     <p className='text-lg mt-3 font-poppins'>Their ads were attracting unqualified leads, the cost per acquisition (CPA) stood at ₹754, and they weren&apos;t seeing a measurable return on ad spend (ROAS). They were close to pulling the plug on paid advertising.</p>
                     <p className='text-lg mt-3 font-poppins'>Their objective was ambitious: <span className='font-semibold'>cut the budget in half and double the results.</span> <br />
-                        We delivered exactly that — and more.</p>
+                        We delivered exactly that and more.</p>
                 </div>
 
                 <div id="objectives" className="scroll-mt-32">
@@ -172,32 +172,35 @@ export default function TumbleWashCaseStudySection() {
                     <h2 className="text-4xl font-bold text-left text-[#670ef7] mb-2 font-sofiasanscondensed">
                         Our Strategic Approach
                     </h2>
-                    <p className='text-base text-black max-w-xl mb-12'>We implemented a complete full-funnel transformation — not just ad tweaks, but a <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing overhaul</Link>. Here’s how:</p>
+                    <p className='text-base text-black max-w-xl mb-12'>We implemented a complete full-funnel transformation: not just ad tweaks, but a <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing overhaul</Link>. Here’s how:</p>
 
-                    <div className="relative border-l-4 border-[#670ef7] ml-1 md:ml-4 space-y-16">
-                        {strategySteps.map((step, index) => {
-                            
+                    <div className="space-y-14">
+                        {strategySteps.map((step, index) => (
+                            <article key={step.title}>
+                                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                                    <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                                </div>
 
-                            return (
-                                <div
-                                    key={index}
-                                    className="relative pl-5 md:pl-10"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute -left-[12px] top-1 w-5 h-5 bg-[#670ef7] rounded-full border-4 border-white z-10" />
-
-                                    {/* Step Content */}
-                                    <h3 className="text-2xl font-sofiasanscondensed font-semibold mb-1">{step.title}</h3>
-                                    <p className='mb-3 max-w-xl'>{step.des}</p>
-                                    <ul className="list-disc md:text-lg pl-5 text-gray-700  space-y-1">
-                                        {step.points.map((point, i) => (
-                                             <li key={i}>{point}</li>
+                                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                                    <span className="sr-only">Step {index + 1}: </span>
+                                    {step.title}
+                                </h3>
+                                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.des}</p>
+                                {step.points && step.points.length > 0 && (
+                                    <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
+                                        {step.points.map((point) => (
+                                            <li key={point}>{point}</li>
                                         ))}
                                     </ul>
-                                    <p className='mt-3 max-w-xl'>{step.suffix}</p>
-                                </div>
-                            );
-                        })}
+                                )}
+                                {step.suffix && (
+                                    <p className="mt-3 leading-relaxed text-gray-700 font-poppins">{step.suffix}</p>
+                                )}
+                            </article>
+                        ))}
                     </div>
                 </section>
 
@@ -226,7 +229,7 @@ export default function TumbleWashCaseStudySection() {
                 <div id="client-impact" className="scroll-mt-32">
                     <h2 className="text-3xl font-sofiasanscondensed font-bold  text-[#670ef7] mb-4">Client Impact</h2>
                     <blockquote className="italic text-gray-700 text-2xl md:text-3xl md:text-center border-l-4 border-[#670ef7] pl-4">
-                        “We thought Google Ads didn&apos;t work. Now, we&apos;re getting 15–20 quality calls every day. Our delivery team is busier than ever — and we&apos;ve even started thinking about expansion.”
+                        “We thought Google Ads didn&apos;t work. Now, we&apos;re getting 15–20 quality calls every day. Our delivery team is busier than ever, and we&apos;ve even started thinking about expansion.”
                         <br /><span className='font-semibold text-lg md:text-2xl'>Founder, Laundry Service in Gurgaon</span>
                     </blockquote>
                 </div>
@@ -235,7 +238,7 @@ export default function TumbleWashCaseStudySection() {
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4">Conclusion</h2>
                     <p className='text-lg font-poppins'>
                         This case study reflects the power of strategic thinking, full-funnel alignment, and relentless optimization.
-                        At Bixeltek, we don&apos;t just run ads — we engineer systems for sustainable growth through our <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing solutions</Link>.
+                        At Bixeltek, we don&apos;t just run ads; we engineer systems for sustainable growth through our <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing solutions</Link>.
                     </p>
                     <p className='text-lg font-poppins mt-3'>
                         If your business is spending on ads and not getting results, discover how our dedicated <Link href="/services/google-ads" className="text-[#670ef7] font-semibold hover:underline">Google Ads management</Link> and <Link href="/services/analytics-tracking" className="text-[#670ef7] font-semibold hover:underline">analytics tracking</Link> turn wasted budgets into predictable customer acquisition.

@@ -30,7 +30,7 @@ type BuildStep = {
 
 const buildSteps: BuildStep[] = [
   {
-    title: '1. Rebuilding the Website on a Modern Stack',
+    title: 'Rebuilding the Website on a Modern Stack',
     description:
       'We rebuilt Promenade Dental’s existing website with Next.js and Tailwind CSS, replacing the older implementation with a more flexible foundation for the practice’s online presence.',
     points: [
@@ -48,7 +48,7 @@ const buildSteps: BuildStep[] = [
     },
   },
   {
-    title: '2. Creating a Scalable Service-Page System',
+    title: 'Creating a Scalable Service-Page System',
     description:
       'Dental practices need to explain different treatments without making each new service page a separate development project. We created reusable page patterns that allow service-specific content to sit within a consistent website theme.',
     points: [
@@ -60,9 +60,9 @@ const buildSteps: BuildStep[] = [
       'The practice has a more scalable structure for growing its service content while keeping the experience consistent.',
   },
   {
-    title: '3. Organising Services Around Patient Needs',
+    title: 'Organising Services Around Patient Needs',
     description:
-      'Patients often arrive with a specific question or concern—not a full understanding of a dental practice’s service catalogue. We organised the experience to make core care areas easier to explore and understand.',
+      'Patients often arrive with a specific question or concern rather than a full understanding of a dental practice’s service catalogue. We organised the experience to make core care areas easier to explore and understand.',
     points: [
       'Clear routes into family and preventive, cosmetic, restorative and emergency care',
       'Dedicated content for relevant treatment needs and patient questions',
@@ -72,7 +72,7 @@ const buildSteps: BuildStep[] = [
       'Visitors can move from a concern or treatment interest toward more relevant information instead of having to interpret a generic list of services.',
   },
   {
-    title: '4. Applying Conversion Rate Optimization (CRO) Principles',
+    title: 'Applying Conversion Rate Optimization (CRO) Principles',
     description:
       'A dental website should help patients feel informed enough to call or book. We applied CRO principles to make the journey from service discovery to appointment action more direct.',
     points: [
@@ -81,7 +81,7 @@ const buildSteps: BuildStep[] = [
       'A more deliberate hierarchy for service details, patient reassurance and next steps',
     ],
     outcome:
-      'The experience is structured around the action a visitor may want to take—not just around presenting information.',
+      'The experience is structured around the action a visitor may want to take, not just presenting information.',
     challenge: {
       problem:
         'A visitor may understand that a practice offers a treatment but still hesitate if booking options, trust information or the next step are hard to find.',
@@ -90,7 +90,7 @@ const buildSteps: BuildStep[] = [
     },
   },
   {
-    title: '5. Building a Stronger Foundation for Local Discovery',
+    title: 'Building a Stronger Foundation for Local Discovery',
     description:
       'Promenade Dental serves patients in Chandler, Arizona, including nearby communities such as Fulton Ranch, Ocotillo and Sun Lakes. The site needed a structure that could communicate its services and local relevance clearly to visitors and search engines.',
     points: [
@@ -102,7 +102,7 @@ const buildSteps: BuildStep[] = [
       'The rebuilt site gives the practice a clearer base for communicating local relevance and developing organic visibility. Traffic or ranking growth is not quantified here because verified before-and-after figures were not provided.',
   },
   {
-    title: '6. Preparing the Site for Ongoing Improvement',
+    title: 'Preparing the Site for Ongoing Improvement',
     description:
       'A website rebuild is not finished when the pages look right. The experience also needs to work across screen sizes and leave the practice with a structure that can keep evolving.',
     points: [
@@ -165,9 +165,9 @@ export default function PromenadeDentalCaseStudy() {
     <section className="mx-auto flex w-full max-w-7xl space-x-0 px-6 py-16 md:space-x-8 md:py-20">
       <div className="w-full space-y-12 md:w-2/3">
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
-          <span>Bixeltek</span>
+          <Link href="/" className="hover:underline">Bixeltek</Link>
           <span>/</span>
-          <span>Dental Website Development</span>
+          <Link href="/services/web-design" className="hover:underline">Dental Website Development</Link>
           <span>/</span>
           <span className="text-gray-600">Client Case Study</span>
         </div>
@@ -178,10 +178,10 @@ export default function PromenadeDentalCaseStudy() {
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
-              Promenade Dental is a family and cosmetic dental practice in Chandler, Arizona, serving patients across a range of needs—from preventive and cosmetic care to restorative treatment, emergency dentistry and sleep-apnea solutions. Its website needs to help people understand their options and find a practical next step.
+              Promenade Dental is a family and cosmetic dental practice in Chandler, Arizona, serving patients across a range of needs, from preventive and cosmetic care to restorative treatment, emergency dentistry, and sleep-apnea solutions. Its website needs to help people understand their options and find a practical next step.
             </p>
             <p>
-              Bixeltek rebuilt the existing website using Next.js and Tailwind CSS, moving it from an older technical foundation to a more maintainable and scalable system. The work combined reusable service-page patterns with a clearer patient journey and conversion-focused improvements.
+              Bixeltek rebuilt the existing website using Next.js and Tailwind CSS, moving it from an older technical foundation to a more maintainable and scalable system. The work combined reusable service-page patterns with a clearer patient journey and <Link href="/services/conversion-rate-optimization" className="font-medium text-[#670ef7] hover:underline">conversion-focused improvements</Link>.
             </p>
             <p>
               The goal was not just a newer-looking website. It was to give the practice a stronger online presence and a platform that could support future services, content and ongoing optimization.
@@ -218,18 +218,26 @@ export default function PromenadeDentalCaseStudy() {
           <p className="mb-10 max-w-2xl text-base leading-relaxed text-gray-700 font-poppins">
             We approached the project as a connected system: modern technology, reusable service pages, a patient-focused information structure, CRO principles and a foundation for ongoing local search improvements.
           </p>
-          <div className="relative ml-1 space-y-12 border-l-4 border-[#670ef7] md:ml-4">
+          <div className="space-y-14">
             {buildSteps.map((step, index) => (
-              <div key={step.title} className="relative pl-5 md:pl-10">
-                <div className="absolute -left-[12px] top-1 z-10 h-5 w-5 rounded-full border-4 border-white bg-[#670ef7]" />
-                <p className="mb-1 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Step {String(index + 1).padStart(2, '0')}</p>
-                <h3 className="mb-2 text-2xl font-semibold text-gray-900 font-sofiasanscondensed">{step.title}</h3>
-                <p className="mb-3 max-w-2xl leading-relaxed text-gray-700 font-poppins">{step.description}</p>
-                <ul className="mb-4 max-w-2xl list-disc space-y-2 pl-5 text-gray-700 font-poppins">
+              <article key={step.title}>
+                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                  <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                </div>
+
+                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                  <span className="sr-only">Step {index + 1}: </span>
+                  {step.title}
+                </h3>
+                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.description}</p>
+                <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
                   {step.points.map((point) => <li key={point}>{point}</li>)}
                 </ul>
                 {step.challenge && (
-                  <div className="mb-4 max-w-2xl overflow-hidden rounded-lg border border-gray-200">
+                  <div className="mb-5 overflow-hidden rounded-lg border border-gray-200">
                     <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
                       <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">The Challenge</p>
                       <p className="text-sm leading-relaxed text-gray-700 font-poppins">{step.challenge.problem}</p>
@@ -240,11 +248,11 @@ export default function PromenadeDentalCaseStudy() {
                     </div>
                   </div>
                 )}
-                <div className="max-w-2xl rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
+                <div className="rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
                   <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">What this achieved</p>
                   <p className="text-sm leading-relaxed text-gray-800 font-poppins">{step.outcome}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -322,11 +330,11 @@ export default function PromenadeDentalCaseStudy() {
 
         <div className="flex flex-wrap items-center gap-3 pt-2 text-sm font-medium text-gray-700">
           <span className="font-semibold text-gray-900">Services Delivered:</span>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Website Rebuild</span>
+          <Link href="/services/web-design" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Website Rebuild</Link>
           <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Next.js</span>
           <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Tailwind CSS</span>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">CRO</span>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">SEO Foundations</span>
+          <Link href="/services/conversion-rate-optimization" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">CRO</Link>
+          <Link href="/local-seo" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Local SEO</Link>
         </div>
 
         <section id="cta" className="relative z-10 mt-12 overflow-hidden rounded-2xl bg-[#670ef7] px-8 py-10 shadow-lg md:px-10">

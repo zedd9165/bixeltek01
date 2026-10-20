@@ -1,12 +1,12 @@
 export const metadata = {
     title: "Custom Medusa Ecommerce Build for Guerr | Bixeltek Case Study",
-    description: "How Bixeltek engineered a fully custom Medusa ecommerce platform for Guerr (guerrclo.com) — with Razorpay, OTP-secured checkout, abandoned cart recovery, an admin sales dashboard, and a full influencer/affiliate program.",
+    description: "How Bixeltek engineered a fully custom Medusa ecommerce platform for Guerr (guerrclo.com) with Razorpay, OTP-secured checkout, abandoned cart recovery, an admin sales dashboard, and a full influencer/affiliate program.",
     keywords:
         "Medusa ecommerce development, Custom ecommerce website Hyderabad, Razorpay integration, Ecommerce affiliate program development, Medusa.js developer India, Custom ecommerce backend, Ecommerce website development Hyderabad, Next.js ecommerce development",
     openGraph: {
         title: "Custom Medusa Ecommerce Build for Guerr | Bixeltek Case Study",
         description:
-            "How Bixeltek engineered a fully custom Medusa ecommerce platform for Guerr (guerrclo.com) — with Razorpay, OTP-secured checkout, abandoned cart recovery, an admin sales dashboard, and a full influencer/affiliate program.",
+            "How Bixeltek engineered a fully custom Medusa ecommerce platform for Guerr (guerrclo.com) with Razorpay, OTP-secured checkout, abandoned cart recovery, an admin sales dashboard, and a full influencer/affiliate program.",
         type: "website",
     },
     alternates: {
