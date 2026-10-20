@@ -149,7 +149,7 @@ export default function OMAComputersCaseStudy() {
               Bixeltek built a <Link href="/services/web-design/wordpress" className="font-medium text-[#670ef7] hover:underline">WordPress</Link> and <Link href="/services/ecommerce-development" className="font-medium text-[#670ef7] hover:underline">WooCommerce ecommerce website</Link> designed to bring that catalogue online in a structured, shoppable format. The initial launch included more than <strong className="text-gray-900">2,000 product listings</strong>, supported by product discovery and shopping tools for customers comparing technology options.
             </p>
             <p className="border-l-4 border-[#670ef7] bg-purple-50/60 py-2 pl-4 font-semibold text-gray-900">
-              The objective was to launch a working ecommerce system—not simply a website displaying products.
+              The objective was to launch a working ecommerce system, not simply a website displaying products.
             </p>
           </div>
         </div>

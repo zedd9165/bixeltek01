@@ -27,9 +27,9 @@ const strategySteps: StrategyStep[] = [
         title: "The Objective",
         des: "The client approached Bixeltek to solve one core problem:",
         points: [
-            "'We need to show up when someone searches for treatments we offer — especially the high-value ones.'"
+            "'We need to show up when someone searches for treatments we offer, especially the high-value ones.'"
         ],
-        suffix: "They wanted more leads, more calls, and more booked appointments — especially for implants, RCTs, and emergency services."
+        suffix: "They wanted more leads, more calls, and more booked appointments, especially for implants, RCTs, and emergency services."
     },
     {
         title: "The Solution: Dental Marketing That Drives Real Growth",
@@ -136,7 +136,7 @@ export default function DentistCaseStudy() {
                     <p className='text-lg font-poppins'>
                         A full-service dental clinic in Canada, offering treatments like dental implants, root canals, emergency services, and cosmetic dentistry. The clinic was located in a <span className='font-semibold'>densely competitive area</span>  with numerous nearby clinics bidding for the same audience online.
                     </p>
-                    {/* <p className='text-lg mt-3 font-poppins'>But when digital started driving customer decisions, they struggled to keep up. Their offline reputation wasn&apos;t translating into online leads — and the business began feeling the heat.</p> */}
+
 
                 </div>
                 <div id="struggle" className="scroll-mt-32">
@@ -180,7 +180,7 @@ export default function DentistCaseStudy() {
                     {/* <h2 className="text-4xl font-bold text-left text-[#670ef7] mb-2 font-sofiasanscondensed">
                         The Bixeltek Turnaround
                     </h2>
-                    <p className='text-base text-black max-w-xl mb-12'>We knew this wasn&apos;t just about fixing ads — it was about reviving a legacy brand. As a Google Partner Certified agency, we stepped in with speed and strategy.</p> */}
+                    <p className='text-base text-black max-w-xl mb-12'>We knew this wasn&apos;t just about fixing ads; it was about reviving a legacy brand. As a Google Partner Certified agency, we stepped in with speed and strategy.</p> */}
 
                     <div className="space-y-14">
                         {strategySteps.map((step, index) => (
@@ -262,13 +262,13 @@ export default function DentistCaseStudy() {
                         </tbody>
                     </table>
 
-                    <p className='mt-4'>The result? A fully booked calendar — especially from dental patients who found them directly through <Link href="/services/google-ads" className="font-semibold text-[#670ef7] hover:underline">Google Ads</Link>.</p>
+                    <p className='mt-4'>The result? A fully booked calendar, especially from dental patients who found them directly through <Link href="/services/google-ads" className="font-semibold text-[#670ef7] hover:underline">Google Ads</Link>.</p>
                 </div>
 
                 <div id="client-impact" className="scroll-mt-32">
                     <h2 className="text-3xl font-sofiasanscondensed font-bold  text-[#670ef7] mb-4">What the Client Said</h2>
                     <blockquote className="italic max-w-[90%] mx-auto text-gray-700 text-2xl md:text-3xl md:text-center border-l-4 border-[#670ef7] pl-4">
-                        “The difference was clear — our phones were ringing with the right kind of patients. We started seeing more implant and root canal cases than ever before.”
+                        “The difference was clear: our phones were ringing with the right kind of patients. We started seeing more implant and root canal cases than ever before.”
                         <br /><span className='font-semibold text-lg md:text-2xl'>Dr.Baseer</span>
                     </blockquote>
                 </div>
@@ -276,7 +276,7 @@ export default function DentistCaseStudy() {
                 <div id="conclusion" className="scroll-mt-32 pb-6">
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4">The Impact</h2>
                     <p className='text-lg font-poppins'>
-                        Patients weren&apos;t just browsing — they were calling and booking. The campaign delivered a <span className='font-semibold'>surge in phone calls</span>, many for <span className='font-semibold'>high-margin procedures.</span>
+                        Patients weren&apos;t just browsing; they were calling and booking. The campaign delivered a <span className='font-semibold'>surge in phone calls</span>, many for <span className='font-semibold'>high-margin procedures.</span>
                     </p>
                     <p className='text-lg font-poppins mt-3'>
                         This translated into real, predictable growth and better use of the clinic&apos;s marketing budget.
@@ -318,7 +318,7 @@ export default function DentistCaseStudy() {
                     </h2>
                     <p className="text-lg font-poppins mb-6">
                         At Bixeltek, we specialize in <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link> and <Link href="/services/seo-services" className="text-[#670ef7] hover:underline font-medium">SEO for dental clinics</Link> across India, Canada, and the United States.<br />
-                        Our campaigns don&apos;t just drive traffic — they bring real patients to your chair.
+                        Our campaigns don&apos;t just drive traffic; they bring real patients to your chair.
                     </p>
                 </div>
 

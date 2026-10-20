@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: 'https://bixeltek.com/BIXELTEKLOGO.png',
         width: 1200,
         height: 630,
-        alt: 'Scorpion Arabia Enterprise WordPress Website Case Study — Bixeltek',
+        alt: 'Scorpion Arabia Enterprise WordPress Website Case Study | Bixeltek',
       },
     ],
   },

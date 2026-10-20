@@ -31,7 +31,7 @@ const strategySteps = [
         title: "Ad Copy That Demands Attention",
         des: "Our creative team rewrote all ad copy with a focus on clarity, urgency, and local relevance:",
         points: [
-            "Headlines like: “Same-Day Laundry Pickup in Gurgaon”, “Affordable Dry Clean Service – Book Now”",
+            "Headlines like: “Same-Day Laundry Pickup in Gurgaon”, “Affordable Dry Clean Service - Book Now”",
             "Benefits upfront: Free pickup & delivery, Stain removal included, Fast turnaround",
             "Clear, compelling CTAs: Call Now, Book Pickup, Get a Quote Instantly",
         ],
@@ -56,7 +56,7 @@ const strategySteps = [
             "Increased bids on mobile during high-conversion hours (9 AM–12 PM, 5 PM–9 PM)",
             "Allocated more budget to geo-locations with proven conversion history",
         ],
-        suffix: "This dropped the average CPC from ₹18 to ₹10 — while boosting conversions."
+        suffix: "This dropped the average CPC from ₹18 to ₹10 while boosting conversions."
     },
     {
         title: "Weekly Optimization & Reporting",
@@ -66,7 +66,7 @@ const strategySteps = [
             "Call extensions vs. sitelinks",
             "Different form CTA placements",
         ],
-        suffix: "Every week, we shared real-time performance dashboards with the client — keeping them in the loop and part of the process."
+        suffix: "Every week, we shared real-time performance dashboards with the client, keeping them in the loop and part of the process."
     },
 ];
 
@@ -151,7 +151,7 @@ export default function TumbleWashCaseStudySection() {
                     </p>
                     <p className='text-lg mt-3 font-poppins'>Their ads were attracting unqualified leads, the cost per acquisition (CPA) stood at ₹754, and they weren&apos;t seeing a measurable return on ad spend (ROAS). They were close to pulling the plug on paid advertising.</p>
                     <p className='text-lg mt-3 font-poppins'>Their objective was ambitious: <span className='font-semibold'>cut the budget in half and double the results.</span> <br />
-                        We delivered exactly that — and more.</p>
+                        We delivered exactly that and more.</p>
                 </div>
 
                 <div id="objectives" className="scroll-mt-32">
@@ -172,7 +172,7 @@ export default function TumbleWashCaseStudySection() {
                     <h2 className="text-4xl font-bold text-left text-[#670ef7] mb-2 font-sofiasanscondensed">
                         Our Strategic Approach
                     </h2>
-                    <p className='text-base text-black max-w-xl mb-12'>We implemented a complete full-funnel transformation — not just ad tweaks, but a <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing overhaul</Link>. Here’s how:</p>
+                    <p className='text-base text-black max-w-xl mb-12'>We implemented a complete full-funnel transformation: not just ad tweaks, but a <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing overhaul</Link>. Here’s how:</p>
 
                     <div className="space-y-14">
                         {strategySteps.map((step, index) => (
@@ -229,7 +229,7 @@ export default function TumbleWashCaseStudySection() {
                 <div id="client-impact" className="scroll-mt-32">
                     <h2 className="text-3xl font-sofiasanscondensed font-bold  text-[#670ef7] mb-4">Client Impact</h2>
                     <blockquote className="italic text-gray-700 text-2xl md:text-3xl md:text-center border-l-4 border-[#670ef7] pl-4">
-                        “We thought Google Ads didn&apos;t work. Now, we&apos;re getting 15–20 quality calls every day. Our delivery team is busier than ever — and we&apos;ve even started thinking about expansion.”
+                        “We thought Google Ads didn&apos;t work. Now, we&apos;re getting 15–20 quality calls every day. Our delivery team is busier than ever, and we&apos;ve even started thinking about expansion.”
                         <br /><span className='font-semibold text-lg md:text-2xl'>Founder, Laundry Service in Gurgaon</span>
                     </blockquote>
                 </div>
@@ -238,7 +238,7 @@ export default function TumbleWashCaseStudySection() {
                     <h2 className="text-3xl font-bold font-sofiasanscondensed text-[#670ef7] mb-4">Conclusion</h2>
                     <p className='text-lg font-poppins'>
                         This case study reflects the power of strategic thinking, full-funnel alignment, and relentless optimization.
-                        At Bixeltek, we don&apos;t just run ads — we engineer systems for sustainable growth through our <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing solutions</Link>.
+                        At Bixeltek, we don&apos;t just run ads; we engineer systems for sustainable growth through our <Link href="/services/grow" className="text-[#670ef7] font-semibold hover:underline">performance marketing solutions</Link>.
                     </p>
                     <p className='text-lg font-poppins mt-3'>
                         If your business is spending on ads and not getting results, discover how our dedicated <Link href="/services/google-ads" className="text-[#670ef7] font-semibold hover:underline">Google Ads management</Link> and <Link href="/services/analytics-tracking" className="text-[#670ef7] font-semibold hover:underline">analytics tracking</Link> turn wasted budgets into predictable customer acquisition.

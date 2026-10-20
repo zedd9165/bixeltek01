@@ -62,7 +62,7 @@ const buildSteps: BuildStep[] = [
   {
     title: 'Organising Services Around Patient Needs',
     description:
-      'Patients often arrive with a specific question or concern—not a full understanding of a dental practice’s service catalogue. We organised the experience to make core care areas easier to explore and understand.',
+      'Patients often arrive with a specific question or concern rather than a full understanding of a dental practice’s service catalogue. We organised the experience to make core care areas easier to explore and understand.',
     points: [
       'Clear routes into family and preventive, cosmetic, restorative and emergency care',
       'Dedicated content for relevant treatment needs and patient questions',
@@ -81,7 +81,7 @@ const buildSteps: BuildStep[] = [
       'A more deliberate hierarchy for service details, patient reassurance and next steps',
     ],
     outcome:
-      'The experience is structured around the action a visitor may want to take—not just around presenting information.',
+      'The experience is structured around the action a visitor may want to take, not just presenting information.',
     challenge: {
       problem:
         'A visitor may understand that a practice offers a treatment but still hesitate if booking options, trust information or the next step are hard to find.',
@@ -178,7 +178,7 @@ export default function PromenadeDentalCaseStudy() {
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
-              Promenade Dental is a family and cosmetic dental practice in Chandler, Arizona, serving patients across a range of needs—from preventive and cosmetic care to restorative treatment, emergency dentistry and sleep-apnea solutions. Its website needs to help people understand their options and find a practical next step.
+              Promenade Dental is a family and cosmetic dental practice in Chandler, Arizona, serving patients across a range of needs, from preventive and cosmetic care to restorative treatment, emergency dentistry, and sleep-apnea solutions. Its website needs to help people understand their options and find a practical next step.
             </p>
             <p>
               Bixeltek rebuilt the existing website using Next.js and Tailwind CSS, moving it from an older technical foundation to a more maintainable and scalable system. The work combined reusable service-page patterns with a clearer patient journey and <Link href="/services/conversion-rate-optimization" className="font-medium text-[#670ef7] hover:underline">conversion-focused improvements</Link>.

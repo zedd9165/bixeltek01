@@ -29,7 +29,7 @@ export const metadata = {
         url: 'https://bixeltek.com/BIXELTEKLOGO.png',
         width: 1200,
         height: 630,
-        alt: 'InnovWayz Website Revamp Case Study — Bixeltek',
+        alt: 'InnovWayz Website Revamp Case Study | Bixeltek',
       },
     ],
   },

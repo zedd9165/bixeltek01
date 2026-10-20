@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: 'https://bixeltek.com/BIXELTEKLOGO.png',
         width: 1200,
         height: 630,
-        alt: 'US Pet Grooming Local SEO and Nuxt Migration Case Study — Bixeltek',
+        alt: 'US Pet Grooming Local SEO and Nuxt Migration Case Study | Bixeltek',
       },
     ],
   },

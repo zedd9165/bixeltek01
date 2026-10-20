@@ -283,7 +283,7 @@ export default function ScorpionArabiaCaseStudy() {
         <div id="takeaway" className="scroll-mt-32 pb-6">
           <h2 className="mb-4 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">The Takeaway</h2>
           <blockquote className="max-w-[95%] rounded-r-lg border-l-4 border-[#670ef7] bg-purple-50/40 py-3 pl-4 text-xl italic text-gray-900 md:text-2xl">
-            An enterprise website should make complex capabilities easier to evaluate—and make the next business conversation easier to start.
+            An enterprise website should make complex capabilities easier to evaluate and make the next business conversation easier to start.
           </blockquote>
           <p className="mt-5 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             For Scorpion Arabia, Bixeltek combined a WordPress website build with clearer service organization, stronger access to project and capability information, and conversion-focused enquiry paths. The work was designed to support how enterprise buyers evaluate specialized infrastructure partners and to turn more of that online interest into form submissions.

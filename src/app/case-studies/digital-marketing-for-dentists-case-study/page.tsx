@@ -23,7 +23,7 @@ export default function Dentist() {
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative z-10 flex flex-col items-start pl-5 pr-5 md:pr-0 md:pl-20 md:max-w-[70%] font-sofiasanscondensed justify-center h-full">
           <p className='text-left text-white font-poppins uppercase mb-5'>Case Study</p>
-          <h1 className="text-white text-3xl md:text-6xl font-bold">Digital Marketing for Dentists — 200+ Patient Leads in 30 Days</h1>
+          <h1 className="text-white text-3xl md:text-6xl font-bold">Digital Marketing for Dentists: 200+ Patient Leads in 30 Days</h1>
           <p className='text-white text-lg md:text-xl tracking-wide font-medium'>How Bixeltek Helped a Dental Clinic Dominate Google Search and Attract High-Value Patients</p>
         </div>
       </section>

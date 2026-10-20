@@ -162,7 +162,7 @@ export default function InvisalignCaseStudy() {
           </h2>
           <div className="space-y-4 text-base md:text-lg font-poppins text-gray-800 leading-relaxed">
             <p>
-              The clinic now reports an average of <span className="font-semibold text-gray-900">three to five Invisalign enquiries</span> for every CAD $100 spent on advertising—approximately <span className="font-semibold text-[#670ef7]">CAD $20–$33 per lead</span> through high-intent <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link> search campaigns.
+              The clinic now reports an average of <span className="font-semibold text-gray-900">three to five Invisalign enquiries</span> for every CAD $100 spent on advertising, which is approximately <span className="font-semibold text-[#670ef7]">CAD $20–$33 per lead</span> through high-intent <Link href="/services/google-ads" className="text-[#670ef7] hover:underline font-medium">Google Ads</Link> search campaigns.
             </p>
             <p>
               At its current advertising budget of <span className="font-semibold text-gray-900">CAD $3,000 per month</span>, maintaining that efficiency would imply approximately <span className="font-semibold text-gray-900">90–150 Invisalign enquiries monthly</span>. This is a projection from the reported lead efficiency, not a verified monthly lead count.
@@ -312,7 +312,7 @@ export default function InvisalignCaseStudy() {
 
           {/* Table Disclaimer */}
           <p className="mt-3 text-xs md:text-sm font-poppins text-gray-500 italic leading-relaxed">
-            * These are illustrative revenue scenarios—not confirmed treatment starts, clinic revenue or profit. Actual outcomes depend on lead quality, consultation attendance, treatment acceptance, and delivery.
+            * These are illustrative revenue scenarios, not confirmed treatment starts, clinic revenue or profit. Actual outcomes depend on lead quality, consultation attendance, treatment acceptance, and delivery.
           </p>
         </div>
 

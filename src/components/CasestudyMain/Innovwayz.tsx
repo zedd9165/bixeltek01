@@ -301,7 +301,7 @@ export default function InnovwayzCaseStudy() {
           <div className="relative z-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <h3 className="mb-3 text-2xl font-bold leading-tight tracking-wide text-white sm:text-3xl md:text-4xl font-sofiasanscondensed">
-                Need a website that makes your services easier to understand—and easier to enquire about?
+                Need a website that makes your services easier to understand and enquire about?
               </h3>
               <p className="text-sm font-medium leading-relaxed text-white/90 sm:text-base font-poppins">
                 Bixeltek builds tailored websites with scalable page systems, thoughtful user journeys and practical technical foundations.

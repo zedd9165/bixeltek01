@@ -43,7 +43,7 @@ const casestudies = [
     },
     {
         id: 2,
-        title: "Digital Marketing for Dentists — 200+ Patient Leads in 30 Days",
+        title: "Digital Marketing for Dentists: 200+ Patient Leads in 30 Days",
         description: "How Bixeltek Helped a Dental Clinic Dominate Google Search and Attract High-Value Patients",
         image: heroimgdm,
         link: "/case-studies/digital-marketing-for-dentists-case-study",
@@ -139,7 +139,7 @@ export default function CasestudyPage() {
   <a
     key={study.id}
     href={study.link}
-    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-purple-600 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-purple-200 hover:shadow-[0_20px_40px_-12px_rgba(103,14,247,0.25)] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#670ef7]"
+    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-purple-400 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-purple-200 hover:shadow-[0_20px_40px_-12px_rgba(103,14,247,0.25)] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#670ef7]"
   >
     {/* Image */}
     <div className="relative overflow-hidden pt-[50%] sm:pt-[70%]">

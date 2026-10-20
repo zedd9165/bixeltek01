@@ -33,7 +33,7 @@ const approachSteps: ApproachStep[] = [
     title: 'Build the Website Around the Services Customers Actually Need',
     description: (
       <>
-        Rooted offers more than one type of tree care. We structured the website so visitors can find the right service—from emergency tree removal and branch removal to pruning, stump grinding, crane-assisted work and arborist reports—without having to interpret a generic list. The build is presented as a connected service website, not simply a digital brochure.
+        Rooted offers more than one type of tree care. We structured the website so visitors can find the right service (from emergency tree removal and branch removal to pruning, stump grinding, crane-assisted work, and arborist reports) without having to interpret a generic list. The build is presented as a connected service website, not simply a digital brochure.
       </>
     ),
     points: [
@@ -87,7 +87,7 @@ const approachSteps: ApproachStep[] = [
     title: 'Align Google Ads With High-Intent Local Searches',
     description: (
       <>
-        We focused paid search around relevant tree-service demand in Rooted’s service area. The campaign approach connects the customer’s immediate need—such as emergency removal, tree removal or pruning—with an ad message and a destination that makes the next step clear.
+        We focused paid search around relevant tree-service demand in Rooted’s service area. The campaign approach connects the customer’s immediate need, such as emergency removal, tree removal, or pruning, with an ad message and a destination that makes the next step clear.
       </>
     ),
     points: [
@@ -212,7 +212,7 @@ export default function RootedTreeServicesCaseStudy() {
               The business brings long-standing industry experience and ISA-certified arborist expertise to residential, commercial and urgent tree-care needs. Its online presence therefore has two important jobs: help people understand the right service for their situation and make it straightforward to request help.
             </p>
             <p>
-              Bixeltek built the Rooted Tree Services website and worked on its <Link href="/services/google-ads" className="font-medium text-[#670ef7] hover:underline">Google Ads</Link> acquisition channel—bringing the <Link href="/services/web-design" className="font-medium text-[#670ef7] hover:underline">website experience</Link> and paid search closer together around local service enquiries.
+              Bixeltek built the Rooted Tree Services website and worked on its <Link href="/services/google-ads" className="font-medium text-[#670ef7] hover:underline">Google Ads</Link> acquisition channel, bringing the <Link href="/services/web-design" className="font-medium text-[#670ef7] hover:underline">website experience</Link> and paid search closer together around local service enquiries.
             </p>
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function RootedTreeServicesCaseStudy() {
             </div>
             <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
               <h3 className="mb-2 text-xl font-semibold text-gray-900 font-sofiasanscondensed">Advertising Efficiency</h3>
-              <p className="text-sm leading-relaxed text-gray-700 font-poppins">Spend needs to support relevant calls and quote requests—not traffic that is unlikely to become a viable job.</p>
+              <p className="text-sm leading-relaxed text-gray-700 font-poppins">Spend needs to support relevant calls and quote requests, not traffic that is unlikely to become a viable job.</p>
             </div>
           </div>
         </div>
@@ -374,7 +374,7 @@ export default function RootedTreeServicesCaseStudy() {
             “Local lead generation works best when the website answers the customer’s question and the campaign reaches people who are actually looking for that service.”
           </blockquote>
           <p className="mt-5 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
-            The Rooted Tree Services project shows why websites and paid search should not be treated as separate tasks. Service clarity, local context, trust and a straightforward enquiry path give advertising traffic a stronger destination—and give the business a more useful foundation for ongoing optimisation.
+            The Rooted Tree Services project shows why websites and paid search should not be treated as separate tasks. Service clarity, local context, trust and a straightforward enquiry path give advertising traffic a stronger destination, giving the business a more useful foundation for ongoing optimisation.
           </p>
         </div>
 
@@ -393,10 +393,10 @@ export default function RootedTreeServicesCaseStudy() {
                 Need More Qualified Tree-Service Leads?
               </h2>
               <p className="text-sm leading-relaxed text-white/90 sm:text-base font-poppins">
-                Bixeltek connects conversion-focused websites with Google Ads built around local service intent—helping arborists and home-service businesses create a clearer path from search to quote request.
+                Bixeltek connects conversion-focused websites with Google Ads built around local service intent, helping arborists and home-service businesses create a clearer path from search to quote request.
               </p>
             </div>
-            <div className="w-full text-center lg:w-1/3 lg:text-right">
+            <div className="w-full text-center lg:w-1/3">
               <Link href="/contact-us" className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#670ef7] shadow-md transition hover:bg-gray-100">
                 Discuss Your Lead Generation Strategy
               </Link>

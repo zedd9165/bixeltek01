@@ -150,7 +150,7 @@ export default function CloudUpskillCaseStudy() {
               Bixeltek built a <Link href="/services/web-design/wordpress" className="font-medium text-[#670ef7] hover:underline">WordPress website</Link> to bring this broad training portfolio into a clearer digital experience. Visitors can explore course categories, review individual programmes, learn about the support available and move toward actions such as downloading a brochure, booking a free demo or contacting the team.
             </p>
             <p className="border-l-4 border-[#670ef7] bg-purple-50/60 py-2 pl-4 font-semibold text-gray-900">
-              The goal was to make a wide range of training options easier to understand—and easier to enquire about.
+              The goal was to make a wide range of training options easier to understand and enquire about.
             </p>
           </div>
         </div>
