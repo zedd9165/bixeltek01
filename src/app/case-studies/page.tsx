@@ -30,6 +30,7 @@ import sacImg from '@/assets/sac-casestudy.png'
 import petGroomingImg from '@/assets/pet-grooming-case-study.jpg'
 import omaImg from '@/assets/oma-casestudy.png'
 import cloudUpskillImg from '@/assets/cloudupskill-casestudy.png'
+import rootedTreeImg from '@/assets/rooted-tree-casestudy.png'
 import Image from 'next/image'
 
 const casestudies = [
@@ -110,6 +111,13 @@ const casestudies = [
         image: cloudUpskillImg,
         link: "/case-studies/cloud-upskill-wordpress-website-case-study",
     },
+    {
+        id: 12,
+        title: "Rooted Tree Services: Connecting Tree-Care Searches to Clearer Quote Requests",
+        description: "How Bixeltek built the Rooted Tree Services website and focused Google Ads on relevant local demand across Toronto and the Greater Toronto Area.",
+        image: rootedTreeImg,
+        link: "/case-studies/rooted-tree-services-case-study",
+    },
 ];
 
 export default function CasestudyPage() {
@@ -127,11 +135,11 @@ export default function CasestudyPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 
-                    {casestudies.map((study) => (
+                   {casestudies.map((study) => (
   <a
     key={study.id}
     href={study.link}
-    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-purple-950 via-purple-900 to-neutral-900 shadow-[0_12px_32px_-12px_rgba(59,7,100,0.55)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_-12px_rgba(103,14,247,0.5)] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-purple-300"
+    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-purple-200 hover:shadow-[0_20px_40px_-12px_rgba(103,14,247,0.25)] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#670ef7]"
   >
     {/* Image */}
     <div className="relative overflow-hidden pt-[50%] sm:pt-[70%]">
@@ -140,22 +148,20 @@ export default function CasestudyPage() {
         alt={study.title}
         className="absolute start-0 top-0 size-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
       />
-      {/* soft fade so the image blends into the card */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-purple-950/70 to-transparent" />
-      <span className="absolute end-0 top-0 rounded-es-xl bg-white/95 px-3 py-1.5 text-xs font-semibold text-purple-900">
+      <span className="absolute end-0 top-0 rounded-es-xl bg-purple-800 px-3 py-1.5 text-xs font-medium text-white">
         Must Read
       </span>
     </div>
 
     {/* Content */}
     <div className="flex flex-1 flex-col p-6">
-      <h3 className="text-xl font-semibold text-white transition-colors group-hover:text-purple-200">
+      <h3 className="text-xl font-semibold text-gray-900 transition-colors group-hover:text-[#670ef7]">
         {study.title}
       </h3>
-      <p className="mt-3 text-sm leading-relaxed text-purple-100/80 md:text-base">
+      <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
         {study.description}
       </p>
-      <p className="mt-auto inline-flex items-center gap-x-1 pt-5 text-sm font-semibold text-purple-200 transition-colors group-hover:text-white">
+      <p className="mt-auto inline-flex items-center gap-x-1 pt-5 text-sm font-semibold text-[#670ef7]">
         Read more
         <svg
           className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
