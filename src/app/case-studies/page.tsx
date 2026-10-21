@@ -22,7 +22,7 @@ import Link from 'next/link';
 
 // Assets
 import omaImg from '@/assets/oma-casestudy.png';
-import mfPrintImg from '@/assets/mf-print-casestudy.png';
+import mfPrintImg from '@/assets/mf-print-casestudy.webp';
 import rootedTreeImg from '@/assets/rooted-tree-casestudy.png';
 import cloudUpskillImg from '@/assets/cloudupskill-casestudy.png';
 import petGroomingImg from '@/assets/pet-grooming-case-study.jpg';

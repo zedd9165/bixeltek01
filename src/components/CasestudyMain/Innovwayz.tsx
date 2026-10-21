@@ -173,7 +173,7 @@ export default function InnovwayzCaseStudy() {
         </div>
 
         <div id="challenge" className="scroll-mt-32">
-          <h2 className="mb-4 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">The Challenge</h2>
+          <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold text-[#670ef7] font-sofiasanscondensed">The Challenge</h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
               The brief was larger than a visual refresh. InnovWayz needed a complete website rebuild that could present its service portfolio clearly and remain practical to maintain as the business evolved.

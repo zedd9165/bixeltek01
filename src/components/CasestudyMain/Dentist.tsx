@@ -140,7 +140,7 @@ export default function DentistCaseStudy() {
 
                 </div>
                 <div id="struggle" className="scroll-mt-32">
-                    <h2 className="text-3xl font-sofiasanscondensed font-bold text-[#670ef7]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed font-bold text-[#670ef7]">
                         The Struggle
                     </h2>
                     <p className="text-lg font-poppins mb-4 mt-2">

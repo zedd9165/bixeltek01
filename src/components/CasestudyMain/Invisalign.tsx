@@ -105,7 +105,7 @@ export default function InvisalignCaseStudy() {
 
         {/* 1. Overview */}
         <div id="overview" className="scroll-mt-32">
-          <h2 className="text-3xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
             A Successful Practice with an Underperforming Service
           </h2>
           <div className="space-y-4 text-base md:text-lg font-poppins text-gray-800 leading-relaxed">
@@ -123,7 +123,7 @@ export default function InvisalignCaseStudy() {
 
         {/* 2. The Opportunity */}
         <div id="opportunity" className="scroll-mt-32">
-          <h2 className="text-3xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
             The Opportunity Was Not More Traffic. It Was Better Conversion.
           </h2>
           <p className="text-base md:text-lg font-poppins text-gray-800 leading-relaxed mb-6">
@@ -157,7 +157,7 @@ export default function InvisalignCaseStudy() {
 
         {/* 3. Lead Acquisition */}
         <div id="acquisition" className="scroll-mt-32">
-          <h2 className="text-3xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
             From Unpredictable Demand to Measurable Acquisition Costs
           </h2>
           <div className="space-y-4 text-base md:text-lg font-poppins text-gray-800 leading-relaxed">
@@ -318,7 +318,7 @@ export default function InvisalignCaseStudy() {
 
         {/* 5. What Changed */}
         <div id="what-changed" className="scroll-mt-32">
-          <h2 className="text-3xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
             What Changed
           </h2>
           <div className="space-y-4 text-base md:text-lg font-poppins text-gray-800 leading-relaxed">
@@ -333,7 +333,7 @@ export default function InvisalignCaseStudy() {
 
         {/* 6. The Takeaway */}
         <div id="takeaway" className="scroll-mt-32">
-          <h2 className="text-3xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed tracking-wide font-bold text-[#670ef7] mb-4">
             The Takeaway
           </h2>
           <blockquote className="italic max-w-[95%] mx-auto text-gray-900 text-xl md:text-2xl md:text-center border-l-4 border-[#670ef7] pl-4 py-2 bg-purple-50/40 rounded-r-lg">
