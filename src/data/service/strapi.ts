@@ -558,7 +558,7 @@ export const strapiRelatedServices: RelatedServiceCard[] = [
     description:
       "If Strapi needs to supply content to a web or mobile application, explore the application development service alongside the API architecture.",
     linkText: "Explore Application Development",
-    destination: "/services/mobile-app-development",
+    destination: "/services/custom-app-development",
   },
   {
     title: "SEO Services",

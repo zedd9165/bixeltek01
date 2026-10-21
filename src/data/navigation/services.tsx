@@ -26,7 +26,7 @@ export const servicesColumns: NavColumn[] = [
       { name: "Web Design & Development", link: "/services/web-design" },
       { name: "Custom Coded Websites", link: "/custom-coded-websites" },
       { name: "WordPress Development", link: "/services/web-design/wordpress" },
-      { name: "Web Applications", link: "/services/custom-app-development/web-application-development" },
+      { name: "Web Applications", link: "/services/custom-app-development/web-applications" },
     ],
   },
   {
@@ -46,6 +46,7 @@ export const servicesColumns: NavColumn[] = [
     title: "Technology & Automation",
     icon: <AiOutlineTool size={20} />,
     items: [
+      { name: "Custom App Development", link: "/services/custom-app-development" },
       { name: "Mobile App Development", link: "/services/custom-app-development/mobile-app-development" },
       { name: "Flutter", link: "/services/custom-app-development/mobile-app-development/flutter" },
       { name: "React Native", link: "/services/custom-app-development/mobile-app-development/react-native" },

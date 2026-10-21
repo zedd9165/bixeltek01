@@ -47,7 +47,7 @@ export default function InvisalignPage() {
           <p className="text-left text-white font-poppins uppercase tracking-widest text-sm mb-4 font-semibold">
             Case Study
           </p>
-          <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
+          <h1 className="font-sofiasanscondensed text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl max-w-5xl">
             A Canadian Dental Clinic Was Growing. Invisalign Wasn&apos;t.
           </h1>
           <p className="text-white/90 text-base md:text-xl tracking-wide font-normal font-poppins mt-4 max-w-3xl leading-relaxed">

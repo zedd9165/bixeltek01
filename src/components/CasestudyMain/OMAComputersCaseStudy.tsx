@@ -302,7 +302,7 @@ export default function OMAComputersCaseStudy() {
 
         <section id="cta" className="relative z-10 mt-16 overflow-hidden rounded-2xl bg-[#670ef7] px-8 py-10 shadow-lg">
           <div className="flex flex-wrap items-center gap-6">
-            <div className="w-full lg:w-2/3">
+            <div className="w-full lg:w-[60%]">
               <h3 className="mb-3 text-2xl font-bold leading-tight tracking-wide text-white sm:text-3xl md:text-4xl font-sofiasanscondensed">
                 Need an Ecommerce Store Built for a Large Product Catalogue?
               </h3>
@@ -310,7 +310,7 @@ export default function OMAComputersCaseStudy() {
                 We build ecommerce experiences that organize complex product ranges, support confident buying decisions and give your business room to expand.
               </p>
             </div>
-            <div className="w-full lg:w-1/3 lg:text-right">
+            <div className="w-full lg:w-1/3 text-center">
               <Link href="/contact-us" className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3.5 text-base font-semibold text-[#670ef7] shadow-md transition hover:bg-gray-100">
                 Discuss Your Ecommerce Project
               </Link>

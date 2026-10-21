@@ -695,7 +695,7 @@ export const aiAutomationRelatedServices: RelatedServiceCard[] = [
     description:
       "When the workflow needs a custom mobile interface that connects to the underlying business process rather than integrations alone.",
     linkText: "Explore Application Development",
-    destination: "/services/mobile-app-development",
+    destination: "/services/custom-app-development",
   },
   {
     title: "Ecommerce Development",

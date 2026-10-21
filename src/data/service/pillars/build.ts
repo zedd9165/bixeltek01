@@ -396,15 +396,15 @@ export const buildCapabilities: BuildCapability[] = [
 
   {
     number: "06",
-    label: "MOBILE",
-    title: "Mobile Applications",
+    label: "APPS",
+    title: "Mobile & Web Applications",
 
     description:
-      "Turn customer-facing products, internal workflows and new digital ideas into mobile applications built around real users and business requirements.",
+      "Turn customer-facing products, internal workflows and new digital ideas into mobile and web applications built around real users and business requirements.",
 
     items: [
-      "iOS applications",
-      "Android applications",
+      "iOS & Android applications",
+      "Web applications & portals",
       "Cross-platform apps",
       "Customer applications",
       "Internal business apps",
@@ -413,13 +413,21 @@ export const buildCapabilities: BuildCapability[] = [
 
     links: [
       {
+        label: "Custom App Development",
+        href: "/services/custom-app-development",
+      },
+      {
         label: "Mobile App Development",
-        href: "/services/mobile-app-development",
+        href: "/services/custom-app-development/mobile-app-development",
+      },
+      {
+        label: "Web Applications",
+        href: "/services/custom-app-development/web-applications",
       },
     ],
 
     ctaText: "Explore App Development",
-    ctaHref: "/services/mobile-app-development",
+    ctaHref: "/services/custom-app-development",
   },
 
   {
@@ -585,8 +593,16 @@ export const buildStartingPoints: BuildStartingPoint[] = [
 
     recommendedServices: [
       {
+        label: "Custom App Development",
+        href: "/services/custom-app-development",
+      },
+      {
         label: "Mobile App Development",
-        href: "/services/mobile-app-development",
+        href: "/services/custom-app-development/mobile-app-development",
+      },
+      {
+        label: "Web Applications",
+        href: "/services/custom-app-development/web-applications",
       },
     ],
 
@@ -594,7 +610,7 @@ export const buildStartingPoints: BuildStartingPoint[] = [
       "Discuss My App Idea",
 
     ctaHref:
-      "/services/mobile-app-development",
+      "/services/custom-app-development",
   },
 
   {

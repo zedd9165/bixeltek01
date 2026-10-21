@@ -1128,7 +1128,7 @@ export const automationRelatedServices = [
       "Explore App Development",
 
     destination:
-      "/services/mobile-app-development",
+      "/services/custom-app-development",
   },
 
   {

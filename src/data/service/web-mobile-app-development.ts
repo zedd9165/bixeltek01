@@ -338,14 +338,14 @@ export const applicationDevelopmentRelatedServices: RelatedServiceCard[] = [
     description:
       "Explore browser-based applications for business workflows, internal tools, customer portals, dashboards and API-connected systems.",
     linkText: "Explore Web Application Development",
-    destination: "/web-application-development",
+    destination: "/services/custom-app-development/web-applications",
   },
   {
     title: "Mobile Application Development",
     description:
       "Explore mobile app development for iOS and Android, with the platform and experience shaped around your users and product requirements.",
     linkText: "Explore Mobile Application Development",
-    destination: "/services/mobile-app-development",
+    destination: "/services/custom-app-development/mobile-app-development",
   },
   {
     title: "Web Design & Development",

@@ -100,7 +100,7 @@ export const Footer = () => {
                 </Link>
               </li>
               <li className="mb-6">
-                <Link href="/services/mobile-app-development" className="text-gray-300 hover:text-purple-700">
+                <Link href="/services/custom-app-development/mobile-app-development" className="text-gray-300 hover:text-purple-700">
                   Mobile App Development
                 </Link>
               </li>

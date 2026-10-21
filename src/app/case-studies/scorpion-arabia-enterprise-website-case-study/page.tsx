@@ -61,7 +61,7 @@ export default function ScorpionArabiaEnterpriseWordPressWebsiteCaseStudyPage() 
           <p className="mb-5 text-left text-sm font-semibold uppercase tracking-widest text-white font-poppins">
             Case Study · Enterprise WordPress Website & CRO
           </p>
-          <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl font-sofiasanscondensed">
+          <h1 className="font-sofiasanscondensed text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl max-w-5xl">
             Building an Enterprise Website That Turns Infrastructure Expertise into Project Enquiries
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed tracking-wide text-white/90 md:text-xl font-poppins">

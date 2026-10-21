@@ -295,35 +295,27 @@ export const appDevelopmentOverview: AppDevelopmentOverviewData = {
   points: [
     {
       title: "HRMS & Workforce Portals",
-      description: "Employee self-service, geo-fenced attendance, leave management, shift planning, and payroll workflows.",
     },
     {
       title: "School & Campus Management",
-      description: "Student portals, digital fee collection, timetable management, parent communication, and exam notifications.",
     },
     {
       title: "E-Commerce & Retail Apps",
-      description: "High-speed product browsing, integrated payment gateways, push notifications, and automated order tracking.",
     },
     {
       title: "B2B SaaS Mobile Companions",
-      description: "Multi-tenant cloud platforms, role-based controls, real-time KPI dashboards, and critical alerts.",
     },
     {
       title: "CRM & Field Sales Enablement",
-      description: "Lead capture, pipeline tracking, meeting check-ins, customer interaction logs, and offline data sync.",
     },
     {
       title: "On-Demand & Service Booking",
-      description: "Instant dispatch, dynamic scheduling, live location tracking, and in-app customer support.",
     },
     {
       title: "Healthcare & Telehealth Solutions",
-      description: "Doctor appointment booking, digital prescriptions, patient record access, and secure consultation channels.",
     },
     {
       title: "Logistics & Fleet Operations",
-      description: "Real-time dispatch, route navigation, digital proof-of-delivery, and driver-dispatcher communication.",
     },
   ],
 
@@ -1004,7 +996,7 @@ export const appDevelopmentRelatedServices = [
       "Explore Web Applications",
 
     destination:
-      "/services/custom-app-development/web-application-development",
+      "/services/custom-app-development/web-applications",
   },
 /*  */ 
   {

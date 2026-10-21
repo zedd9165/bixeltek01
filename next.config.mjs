@@ -232,13 +232,13 @@ const nextConfig = {
         permanent: true
       },
       {
-        source: '/services/custom-app-development/web-applications',
-        destination: '/services/custom-app-development/web-application-development',
+        source: '/services/custom-app-development/web-application-development',
+        destination: '/services/custom-app-development/web-applications',
         permanent: true
       },
       {
-        source: '/services/custom-app-development/web-applications/',
-        destination: '/services/custom-app-development/web-application-development',
+        source: '/services/custom-app-development/web-application-development/',
+        destination: '/services/custom-app-development/web-applications',
         permanent: true
       },
       {
@@ -253,22 +253,42 @@ const nextConfig = {
       },
       {
         source: '/web-application-development',
-        destination: '/services/custom-app-development/web-application-development',
+        destination: '/services/custom-app-development/web-applications',
         permanent: true
       },
       {
         source: '/web-application-development/',
-        destination: '/services/custom-app-development/web-application-development',
+        destination: '/services/custom-app-development/web-applications',
         permanent: true
       },
       {
         source: '/services/web-applications',
-        destination: '/services/custom-app-development/web-application-development',
+        destination: '/services/custom-app-development/web-applications',
         permanent: true
       },
       {
         source: '/services/web-applications/',
-        destination: '/services/custom-app-development/web-application-development',
+        destination: '/services/custom-app-development/web-applications',
+        permanent: true
+      },
+      {
+        source: '/services/mobile-app-development',
+        destination: '/services/custom-app-development/mobile-app-development',
+        permanent: true
+      },
+      {
+        source: '/services/mobile-app-development/',
+        destination: '/services/custom-app-development/mobile-app-development',
+        permanent: true
+      },
+      {
+        source: '/mobile-app-development',
+        destination: '/services/custom-app-development/mobile-app-development',
+        permanent: true
+      },
+      {
+        source: '/mobile-app-development/',
+        destination: '/services/custom-app-development/mobile-app-development',
         permanent: true
       },
       {

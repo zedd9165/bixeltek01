@@ -66,7 +66,7 @@ export const webApplicationsMetadata: WebApplicationsMetadata = {
     "web application developers",
   ],
   // Canonical route under custom-app-development
-  canonical: "https://bixeltek.com/services/custom-app-development/web-application-development",
+  canonical: "https://bixeltek.com/services/custom-app-development/web-applications",
 };
 
 // ============================================================
@@ -76,7 +76,7 @@ export const webApplicationsMetadata: WebApplicationsMetadata = {
 export const webApplicationsBreadcrumbs: BreadcrumbItem[] = [
   { label: "Services", href: "/services" },
   { label: "Custom App Development", href: "/services/custom-app-development" },
-  { label: "Web Application Development", href: "/services/custom-app-development/web-application-development" },
+  { label: "Web Applications", href: "/services/custom-app-development/web-applications" },
 ];
 
 // ============================================================

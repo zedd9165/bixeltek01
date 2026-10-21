@@ -57,7 +57,7 @@ const services: ServiceCard[] = [
       'We develop mobile apps, portals and internal platforms for defined users and workflows. Our team helps shape the requirements, design the experience, build the functionality and connect it with the systems it depends on. The work is scoped around what the product needs to do at launch and how it may evolve.',
     labels: ['Mobile Apps', 'Customer Portals', 'Internal Platforms',  'Conversion Optimization'],
     cta: 'Explore Application Development',
-    link: '/services/mobile-app-development',
+    link: '/services/custom-app-development',
     icon: Smartphone
   },
   {
