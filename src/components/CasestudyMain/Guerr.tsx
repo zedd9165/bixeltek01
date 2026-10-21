@@ -221,7 +221,7 @@ export default function GuerrCaseStudySection() {
                 </div>
 
                 <div id="struggle" className="scroll-mt-32">
-                    <h2 className="text-3xl font-sofiasanscondensed font-bold text-[#670ef7]">The Challenge</h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed font-bold text-[#670ef7]">The Challenge</h2>
                     <p className='text-lg font-poppins mb-4 mt-2'>On the business side, off-the-shelf ecommerce platforms couldn&apos;t give Guerr what the brand actually needed:</p>
                     <ul className="list-disc pl-5 space-y-3 text-lg font-poppins">
                         <li>No native way to verify and track influencer/affiliate sales</li>

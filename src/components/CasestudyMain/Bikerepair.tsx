@@ -132,7 +132,7 @@ export default function BikerepairCaseStudySection() {
                 </div>
 
                 <div id="struggle" className="scroll-mt-32">
-                    <h2 className="text-3xl font-sofiasanscondensed font-bold text-[#670ef7]">The Struggle</h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofiasanscondensed font-bold text-[#670ef7]">The Struggle</h2>
                     <p className='text-lg font-poppins mb-4 mt-2'>After trying multiple “big name” digital marketing agencies across Madhapur and Gachibowli, they still had:</p>
                     <ul className="list-disc pl-5 space-y-3 text-lg font-poppins">
                         <li>Wasted ad spend</li>

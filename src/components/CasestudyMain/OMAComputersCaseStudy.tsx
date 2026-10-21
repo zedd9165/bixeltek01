@@ -163,7 +163,7 @@ export default function OMAComputersCaseStudy() {
         </div>
 
         <div id="challenge" className="scroll-mt-32">
-          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+          <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
             The Challenge: Making a 2,000+ Product Range Usable
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">

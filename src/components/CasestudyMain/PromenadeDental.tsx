@@ -198,7 +198,7 @@ export default function PromenadeDentalCaseStudy() {
         </div>
 
         <div id="challenge" className="scroll-mt-32">
-          <h2 className="mb-4 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">The Challenge</h2>
+          <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold text-[#670ef7] font-sofiasanscondensed">The Challenge</h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
               The existing website needed more than a visual refresh. It needed a modern technical foundation, clearer service discovery and a page structure that could grow with the practice.

@@ -181,7 +181,7 @@ export default function ScorpionArabiaCaseStudy() {
         </div>
 
         <div id="challenge" className="scroll-mt-32">
-          <h2 className="mb-4 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">The Challenge</h2>
+          <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold text-[#670ef7] font-sofiasanscondensed">The Challenge</h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
               Infrastructure projects involve technical requirements, site constraints, safety considerations and multiple decision-makers. The website therefore needed to help visitors assess the company’s services and credibility before initiating a conversation.

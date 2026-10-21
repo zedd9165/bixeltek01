@@ -240,7 +240,7 @@ export default function BinHindiCaseStudy() {
 
         {/* 02 Challenge */}
         <div id="challenge" className="scroll-mt-32">
-          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+          <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
             The Challenge: The Journey Visitors Had to Take Through the Website
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
@@ -249,22 +249,42 @@ export default function BinHindiCaseStudy() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-3">
+          <div className="mt-8 space-y-4">
             {issues.map((issue) => (
               <div
                 key={issue.number}
-                className="rounded-2xl border border-gray-200 bg-white p-6 transition hover:border-purple-200 hover:shadow-sm"
+                className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-purple-300 hover:shadow-md"
               >
-                <span className="text-xs font-bold uppercase tracking-wider text-[#670ef7]">Issue {issue.number}</span>
-                <h3 className="mt-3 text-xl font-bold text-gray-900 font-sofiasanscondensed">
-                  {issue.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700 font-poppins">
-                  {issue.description}
-                </p>
-                <div className="mt-4 border-t border-gray-100 pt-3">
-                  <p className="text-xs font-bold uppercase tracking-wider text-purple-900">Why it matters</p>
-                  <p className="mt-1 text-xs text-gray-600 font-poppins">{issue.impact}</p>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+                  {/* Left Number / Badge */}
+                  <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-center sm:gap-1.5">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-base font-bold text-[#670ef7] border border-purple-100 group-hover:bg-[#670ef7] group-hover:text-white transition-colors duration-200 font-sofiasanscondensed">
+                      {issue.number}
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-purple-900 sm:text-center">
+                      Issue
+                    </span>
+                  </div>
+
+                  {/* Middle Content */}
+                  <div className="flex-1 space-y-2">
+                    <h3 className="text-xl font-bold text-gray-900 font-sofiasanscondensed tracking-wide md:text-2xl">
+                      {issue.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-gray-700 font-poppins md:text-base">
+                      {issue.description}
+                    </p>
+
+                    {/* Why It Matters / Impact Strip */}
+                    <div className="mt-3 flex flex-wrap items-baseline gap-2 rounded-lg bg-purple-50/60 px-3.5 py-2 border border-purple-100/80">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#670ef7]">
+                        Why it matters:
+                      </span>
+                      <span className="text-xs text-gray-700 font-poppins md:text-sm">
+                        {issue.impact}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
