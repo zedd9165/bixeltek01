@@ -25,7 +25,7 @@ export default function BikeRepair() {
                 <div className="absolute inset-0 bg-black opacity-30"></div>
                 <div className="relative z-10 flex flex-col items-start pl-5 pr-5 md:pr-0 md:pl-20 md:max-w-[70%] font-sofiasanscondensed justify-center h-full">
                     <p className='text-left text-white font-poppins uppercase mb-5'>Case Study</p>
-                    <h1 className="text-white text-3xl md:text-6xl font-bold">340+ Leads in 30 Days for a Trusted Bike Mechanic in Hyderabad</h1>
+                    <h1 className="font-sofiasanscondensed text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl max-w-5xl">340+ Leads in 30 Days for a Trusted Bike Mechanic in Hyderabad</h1>
                 </div>
             </section>
             <section>

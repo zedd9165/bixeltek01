@@ -14,152 +14,235 @@ const sections = [
   { id: 'engineering', label: 'Engineering Challenges' },
   { id: 'delivered', label: 'What Changed' },
   { id: 'takeaway', label: 'The Takeaway' },
-  { id: 'cta', label: 'Work With Bixeltek' },
 ];
 
 type BuildStep = {
+  number: string;
   title: string;
   description: string;
   points: string[];
   outcome: string;
-  challenge?: {
-    problem: string;
-    solution: string;
-  };
 };
 
 const buildSteps: BuildStep[] = [
   {
-    title: 'Improving Local Search Visibility',
+    number: '01',
+    title: 'Identify and address the existing SEO issues',
     description:
-      'The first phase focused on helping a US pet-grooming business become easier to discover in the cities and service areas it wanted to reach. We reviewed opportunities to make its local service coverage clearer and built out pages around relevant city-level searches.',
+      'We started by reviewing the existing website to understand what could be limiting its search visibility. The work focused on the website’s SEO foundation and the way its pages communicated relevance to search engines and potential customers.',
     points: [
-      'City-specific landing pages focused on the service and local audience',
-      'A clearer structure for presenting pet-grooming services in each target area',
-      'Page components that could support further location expansion without rebuilding each page from scratch',
+      'Reviewed the existing website structure and on-page SEO foundations.',
+      'Identified opportunities to improve page relevance and location targeting.',
+      'Considered how the site structure could better support organic discovery.',
+      'Connected the SEO work to the information customers need before enquiring.',
     ],
     outcome:
-      'The new local pages helped strengthen organic visibility and improve rankings for relevant local searches, without relying on one generic page to serve every city.',
-    challenge: {
-      problem:
-        'Location pages can become repetitive when only the city name changes. That gives customers little local value and can weaken the purpose of the page.',
-      solution:
-        'We used a reusable page structure while keeping the content focused on each target area and service intent. The goal was to make every page a useful destination, not just another URL targeting a city keyword.',
-    },
+      'A clearer SEO improvement plan based on the existing website’s problems, rather than adding pages without addressing the underlying issues.',
   },
   {
-    title: 'Applying CRO to the Customer Journey',
+    number: '02',
+    title: 'Build a stronger city- and state-specific SEO structure',
     description:
-      'Local visibility only creates an opportunity. Once visitors land on the website, they still need to understand the service and find a clear next step. We applied Conversion Rate Optimization (CRO) principles alongside the local SEO work.',
+      'A local service business needs to reach customers across the locations it serves. We developed city-specific and state-specific pages to give the website a more relevant structure for geographically targeted searches.',
     points: [
-      'A clearer hierarchy for service information and key messages',
-      'More direct paths from location-specific pages to the next action',
-      'Page components designed to make essential information easier to scan and use',
+      'Created dedicated pages targeting relevant cities and states.',
+      'Structured location content around the geographic areas the business serves.',
+      'Improved the relationship between service information and location relevance.',
+      'Built a more scalable foundation for expanding the website’s local search coverage.',
     ],
     outcome:
-      'The site was structured to support both discovery and action: attracting relevant local visitors while making the next step easier to understand.',
+      'A website structure designed to support broader geographic visibility across the US, with location-focused pages that can serve distinct search needs.',
   },
   {
-    title: 'Building Reusable Components for Growth',
+    number: '03',
+    title: 'Improve the customer journey with CRO',
     description:
-      'Rather than creating every new city page as a separate build, we introduced components that could be reused across the existing site. This created a more consistent way to expand local content while retaining control over each page’s purpose.',
+      'Search visibility is only one part of customer acquisition. Visitors also need a straightforward way to understand the service and take the next step. We reviewed the conversion journey and simplified the enquiry experience.',
     points: [
-      'Reusable sections for location-focused landing pages',
-      'A consistent design system across the pages added to the existing site',
-      'A structure that makes future service-area expansion easier to maintain',
+      'Reduced the number of steps required to complete the enquiry form.',
+      'Made the path from discovering the service to submitting an enquiry more direct.',
+      'Considered usability and friction points throughout the customer journey.',
+      'Aligned the website experience more closely with the goal of generating enquiries.',
     ],
     outcome:
-      'The website gained a more scalable approach to location-page creation, reducing the need to treat each new target area as a one-off development task.',
+      'A simpler conversion path with fewer steps between a potential customer’s visit and their decision to enquire. We do not attribute a specific conversion-rate increase without verified measurement data.',
   },
   {
-    title: 'Planning and Executing the Nuxt 2 to Nuxt 4 Migration',
+    number: '04',
+    title: 'Create a more maintainable frontend structure',
     description:
-      'After the local visibility work, the project expanded to a framework migration. The existing website was running on Nuxt 2, and we moved it to Nuxt 4 while preserving the established experience and the functionality visitors relied on.',
+      'Supporting a growing location-based website requires a frontend structure that can accommodate different pages without making every update a separate implementation. We worked on reusable patterns to support consistency and maintainability.',
     points: [
-      'Reviewed existing pages, components and application behavior before changing the framework',
-      'Updated legacy implementation patterns and dependencies that did not carry forward cleanly',
-      'Retested key routes and interactions as the application moved to the newer framework',
+      'Organised page structures around reusable implementation patterns.',
+      'Maintained consistency across the website’s location-focused experiences.',
+      'Considered how shared components and page-specific content should work together.',
+      'Prepared the frontend for the requirements of the framework migration.',
     ],
     outcome:
-      'The migration modernized the application foundation while keeping continuity of the existing website and its customer-facing workflows as a core requirement.',
-    challenge: {
-      problem:
-        'A major framework migration is more than changing a version number. Older conventions and dependencies may no longer behave as expected, and quick fixes can introduce regressions elsewhere in the site.',
-      solution:
-        'We handled the move as a compatibility and regression exercise: identify legacy patterns, update the affected implementation, and retest the pages and flows that depended on them.',
-    },
+      'A more structured foundation for maintaining the website and supporting future page and frontend changes.',
   },
   {
-    title: 'Diagnosing Hydration Mismatches',
+    number: '05',
+    title: 'Migrate the website from Nuxt 2 to Nuxt 4',
     description:
-      'During the migration, we encountered hydration issues where the markup produced on the server did not consistently match the client’s initial render. Those mismatches needed to be investigated rather than hidden, because they can affect the reliability of interactive pages.',
+      'The project later required a migration from Nuxt 2 to Nuxt 4. This was not simply a framework-version change: the existing website’s functionality and expected behaviour needed to continue working throughout the transition.',
     points: [
-      'Traced the affected components and the conditions producing inconsistent renders',
-      'Aligned server-rendered output with the initial client-side state where needed',
-      'Retested the affected UI after changes to confirm the application behaved consistently',
+      'Updated the frontend to work with the Nuxt 4 application structure and conventions.',
+      'Replaced outdated implementation patterns where they no longer fit the newer framework.',
+      'Reviewed existing functionality while updating the underlying frontend implementation.',
+      'Addressed issues discovered during migration and validation.',
     ],
     outcome:
-      'Resolving the hydration issues helped stabilize the migrated frontend and reduced the risk of carrying framework-transition problems into the finished site.',
-    challenge: {
-      problem:
-        'Hydration warnings can be symptoms of differences in data, state or markup between server and browser rendering. Suppressing the warning alone would not address the underlying mismatch.',
-      solution:
-        'We traced the affected components, corrected the rendering assumptions and checked the result through the migrated user interface instead of relying on the absence of a console warning as the only test.',
-    },
+      'A migrated Nuxt 4 frontend with the focus on preserving existing functionality and maintaining the expected user experience.',
   },
   {
-    title: 'Coordinating Frontend and Backend Behavior',
+    number: '06',
+    title: 'Resolve hydration issues and coordinate with the backend team',
     description:
-      'The frontend migration also required close coordination with the client’s backend team. The goal was to update the application without changing the expected user experience or breaking the way the frontend and backend exchanged data.',
+      'The migration also required attention to rendering behaviour and the integration between the frontend and backend. Hydration issues needed to be investigated, while frontend changes had to remain compatible with the backend team’s expectations.',
     points: [
-      'Worked with the backend team to verify data contracts and expected responses',
-      'Checked how integrated pages handled available data and relevant loading or error states',
-      'Validated key journeys across the updated frontend and existing services',
+      'Investigated hydration mismatches between server-rendered markup and client-side rendering.',
+      'Updated frontend patterns contributing to framework compatibility problems.',
+      'Coordinated with the backend team around API integration and expected behaviour.',
+      'Validated affected functionality as frontend changes were introduced.',
     ],
     outcome:
-      'Joint testing helped keep frontend changes aligned with backend behavior, so the migration was treated as an integrated application change rather than an isolated UI update.',
+      'A more stable migration process with closer alignment between rendering behaviour, frontend functionality and backend integration.',
   },
 ];
 
 const deliverables = [
   {
-    area: 'Local SEO',
-    detail: 'City-specific pages built to support relevant local searches and service-area discovery.',
+    title: 'SEO foundation review',
+    description:
+      'Identified issues and improvement opportunities in the existing website before expanding its search strategy.',
   },
   {
-    area: 'CRO',
-    detail: 'A clearer journey from local landing pages to service information and the next customer action.',
+    title: 'Location-focused SEO',
+    description:
+      'Created city- and state-specific pages to support geographically relevant organic search visibility.',
   },
   {
-    area: 'Reusable architecture',
-    detail: 'Location-page components that support future expansion while keeping the experience consistent.',
+    title: 'Conversion journey improvements',
+    description:
+      'Simplified the enquiry form and reduced the steps required for a visitor to get in touch.',
   },
   {
-    area: 'Framework migration',
-    detail: 'Existing website moved from Nuxt 2 to Nuxt 4 with compatibility changes and regression checks.',
+    title: 'UX improvements',
+    description:
+      'Refined the experience around how visitors discover services, understand the offering and take action.',
   },
   {
-    area: 'Rendering stability',
-    detail: 'Hydration mismatches investigated and addressed in the affected components.',
+    title: 'Nuxt 4 migration',
+    description:
+      'Updated the frontend from Nuxt 2 to Nuxt 4 while working to preserve existing website functionality.',
   },
   {
-    area: 'Team coordination',
-    detail: 'Frontend changes validated in coordination with the client’s backend team.',
+    title: 'Rendering and integration fixes',
+    description:
+      'Addressed hydration issues and coordinated frontend changes with the client’s backend team.',
+  },
+];
+
+const challenges = [
+  {
+    title: 'An existing website with SEO limitations',
+    description:
+      'Expanding organic visibility required more than publishing additional content. We first needed to identify weaknesses in the existing website and improve its SEO foundation.',
+  },
+  {
+    title: 'Reaching customers across different locations',
+    description:
+      'A single general service page has limited flexibility for communicating geographic relevance. City- and state-specific pages gave the website a more location-oriented structure.',
+  },
+  {
+    title: 'Reducing friction in the enquiry process',
+    description:
+      'A potential customer should not have to navigate unnecessary steps to make an enquiry. We simplified the form journey to make the next action more straightforward.',
+  },
+  {
+    title: 'Modernising the framework without losing functionality',
+    description:
+      'Moving from Nuxt 2 to Nuxt 4 meant reviewing implementation patterns, rendering behaviour and existing functionality instead of treating the upgrade as a simple version change.',
+  },
+];
+
+const localSeoCroAreas = [
+  {
+    step: '01 / Search visibility',
+    title: 'Addressing the existing SEO foundation',
+    description:
+      'We reviewed the existing website and identified SEO issues before developing a more location-oriented structure. This helped connect the website’s technical and on-page foundations with its broader organic search objectives.',
+    points: [
+      'Reviewed the existing website for SEO improvement opportunities.',
+      'Considered page structure, relevance and geographic targeting.',
+      'Focused on creating a stronger foundation for organic discovery.',
+    ],
+  },
+  {
+    step: '02 / Location-focused pages',
+    title: 'Creating city- and state-specific landing pages',
+    description:
+      'We built dedicated city and state pages to support the business’s geographic reach. Rather than relying on one general page to address every location, the website could present content aligned with specific service areas.',
+    points: [
+      'Developed pages for targeted cities and states.',
+      'Created a scalable structure for location-specific content.',
+      'Supported a more geographically relevant organic search strategy.',
+    ],
+  },
+  {
+    step: '03 / Conversion rate optimization',
+    title: 'Reducing the steps between interest and action',
+    description:
+      'Bringing visitors to a website is not enough if the enquiry process creates unnecessary friction. We simplified the form journey by reducing the number of steps users needed to complete, while improving the overall path from service discovery to enquiry.',
+    points: [
+      'Reduced the number of steps in the enquiry form.',
+      'Reviewed the customer journey for avoidable friction.',
+      'Focused on making the intended next action clearer.',
+    ],
+  },
+];
+
+const preserveItems = [
+  {
+    title: 'Existing functionality',
+    description:
+      'Established website features needed to continue behaving as expected.',
+  },
+  {
+    title: 'Rendering behaviour',
+    description:
+      'Server-rendered output and client-side hydration needed to remain compatible.',
+  },
+  {
+    title: 'Application integrations',
+    description:
+      'Frontend changes needed to respect the data and behaviour expected by connected systems.',
+  },
+  {
+    title: 'Maintainability',
+    description:
+      'The updated code needed to follow implementation patterns suitable for the newer framework.',
   },
 ];
 
 export default function USPetGroomingCaseStudy() {
-  const [activeId, setActiveId] = useState('overview');
+  const [activeId, setActiveId] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      let current = sections[0]?.id ?? 'overview';
+      let current = '';
       for (const section of sections) {
         const element = document.getElementById(section.id);
-        if (!element) continue;
-        if (element.getBoundingClientRect().top <= 160) current = section.id;
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 160 && rect.bottom >= 160) {
+            current = section.id;
+            break;
+          }
+        }
       }
-      setActiveId(current);
+      if (current) setActiveId(current);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -170,254 +253,390 @@ export default function USPetGroomingCaseStudy() {
   return (
     <section className="mx-auto flex w-full max-w-7xl space-x-0 px-6 py-16 md:space-x-8 md:py-20">
       <div className="w-full space-y-12 md:w-2/3">
+        {/* Breadcrumb Eyebrow */}
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#670ef7]">
           <Link href="/" className="hover:underline">Bixeltek</Link>
           <span>/</span>
-          <Link href="/local-seo" className="hover:underline">Local SEO</Link>
-          <span>/</span>
-          <Link href="/services/web-design" className="hover:underline">Web Development</Link>
+          <Link href="/services/seo-services" className="hover:underline">Local SEO &amp; CRO</Link>
           <span>/</span>
           <span className="text-gray-600">Client Case Study</span>
         </div>
 
+        {/* 01 Overview */}
         <div id="overview" className="scroll-mt-32">
           <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
-            Growing Local Visibility, Then Modernizing the Website Behind It
+            Connecting Local Search Visibility, Conversion-Focused UX and Modern Frontend Engineering
           </h2>
+
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
-              A US pet-grooming business wanted to improve how potential customers discovered its services in the local areas it served. The first phase focused on <Link href="/local-seo" className="font-medium text-[#670ef7] hover:underline">local SEO</Link> and <Link href="/services/conversion-rate-optimization" className="font-medium text-[#670ef7] hover:underline">conversion-focused improvements</Link> to the existing website, including the creation of city-specific pages and reusable components.
+              We worked with a US pet grooming business that needed a stronger website foundation for organic discovery and customer enquiries. The work combined an SEO review, location-focused page development, conversion rate optimization (CRO), user experience improvements and, later, a migration from Nuxt 2 to Nuxt 4.
             </p>
             <p>
-              As the website’s local presence expanded, the work grew into a larger engineering project: migrating the application from Nuxt 2 to Nuxt 4. That meant more than moving to a newer version. Existing behavior needed to remain dependable while legacy patterns, hydration issues and frontend-backend integration were addressed.
+              These workstreams addressed different parts of the same customer journey. <Link href="/services/seo-services" className="font-medium text-[#670ef7] hover:underline">SEO</Link> helped shape how the website could be discovered, <Link href="/services/conversion-rate-optimization" className="font-medium text-[#670ef7] hover:underline">CRO</Link> informed how visitors could take action, and <Link href="/services/custom-app-development" className="font-medium text-[#670ef7] hover:underline">frontend engineering</Link> supported the website’s functionality and maintainability.
             </p>
-            <p>
-              The project connected two kinds of work that are often handled separately: helping the site become easier to find, then improving the technical foundation required to maintain and extend it.
+            <p className="border-l-4 border-[#670ef7] bg-purple-50/60 py-2 pl-4 font-semibold text-gray-900">
+              The objective was to connect local discovery, enquiry UX and frontend reliability into one coherent website system.
             </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-gray-200 bg-purple-50/40 p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-purple-900">Business</p>
+              <p className="mt-2 text-2xl font-bold text-gray-900 font-sofiasanscondensed">US Pet Grooming Business</p>
+              <p className="mt-1 text-sm text-gray-700 font-poppins">A local service business targeting customers across multiple geographic areas.</p>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-purple-50/40 p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-purple-900">Project Focus</p>
+              <p className="mt-2 text-2xl font-bold text-gray-900 font-sofiasanscondensed">SEO, CRO &amp; Nuxt Migration</p>
+              <p className="mt-1 text-sm text-gray-700 font-poppins">Search visibility, enquiry experience and frontend reliability.</p>
+            </div>
           </div>
         </div>
 
+        {/* Project Showcase Image */}
         <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-md">
           <Image
             src={petGroomingImg}
-            alt="US Pet Grooming Website Local SEO & Nuxt Migration Showcase"
+            alt="Website project for a US pet grooming business"
             className="h-auto w-full object-cover"
+            priority={false}
           />
         </div>
 
+        {/* 02 Challenge */}
         <div id="challenge" className="scroll-mt-32">
-          <h2 className="mb-4 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">The Challenge</h2>
+          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+            The Challenge: Supporting Both Discovery and Conversion
+          </h2>
           <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
             <p>
-              The business needed stronger local discovery and a website that could keep evolving without putting the existing experience at risk. The work had to balance search visibility, conversion paths and technical continuity.
-            </p>
-            <ul className="list-disc space-y-3 pl-5">
-              <li><span className="font-semibold">Limited local targeting:</span> the existing page structure needed more relevant city-level entry points for customers searching for pet grooming nearby.</li>
-              <li><span className="font-semibold">Visitors needed a clearer next step:</span> local pages had to help people understand the service and continue toward an enquiry or booking action.</li>
-              <li><span className="font-semibold">Expansion needed a repeatable system:</span> creating more location pages one by one would make consistency and maintenance harder.</li>
-              <li><span className="font-semibold">A major framework jump:</span> the move from Nuxt 2 to Nuxt 4 introduced compatibility work across legacy code and dependencies.</li>
-              <li><span className="font-semibold">Hydration and integration risks:</span> server/client rendering differences and the need to keep frontend behavior aligned with backend responses required focused debugging and coordination.</li>
-            </ul>
-          </div>
-        </div>
-
-        <section id="local-seo-cro" className="scroll-mt-32 py-6">
-          <h2 className="mb-3 text-4xl font-bold text-[#670ef7] font-sofiasanscondensed">Phase One: Local SEO and CRO</h2>
-          <p className="mb-6 max-w-2xl text-base leading-relaxed text-gray-700 font-poppins">
-            We first worked on how people found the business and what they encountered after arriving on the site. City-specific pages created more relevant local entry points, while CRO principles helped the page experience guide visitors toward useful service information and clear next actions.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 p-5">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Local discovery</p>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900 font-sofiasanscondensed">Pages for Relevant City Searches</h3>
-              <p className="text-sm leading-relaxed text-gray-700 font-poppins">
-                We introduced location-focused pages to connect the business’s services with the areas it wanted to reach. The goal was to give each page a useful purpose and make its local relevance clear, rather than simply duplicate one page and swap place names.
-              </p>
-            </div>
-            <div className="rounded-xl border border-gray-200 p-5">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Conversion journey</p>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900 font-sofiasanscondensed">From Discovery to Action</h3>
-              <p className="text-sm leading-relaxed text-gray-700 font-poppins">
-                CRO improvements focused on making service information easier to follow and the next step clearer. The objective was to help local visitors move from finding a relevant page to acting on their interest.
-              </p>
-            </div>
-            <div className="rounded-xl border border-gray-200 p-5 sm:col-span-2">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Scalable delivery</p>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900 font-sofiasanscondensed">Reusable Components, Localized Content</h3>
-              <p className="text-sm leading-relaxed text-gray-700 font-poppins">
-                Reusable components made it easier to add location pages within the existing site design. The structure could be reused; local content still needed to reflect each target area&apos;s relevance and the services available there.
-              </p>
-            </div>
-          </div>
-          <p className="mt-5 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm italic leading-relaxed text-gray-600 font-poppins">
-            The reported outcome was improved organic visibility and rankings for relevant local searches. No specific traffic, ranking-position or conversion-rate figures are stated because verified before-and-after numbers were not supplied.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
-            For businesses looking to improve local discovery beyond this project, Bixeltek’s <Link href="/local-seo" className="font-semibold text-[#670ef7] underline decoration-purple-300 underline-offset-4 hover:decoration-[#670ef7]">Local SEO services</Link> focus on useful location pages, accurate local information and the journey from search to enquiry.
-          </p>
-        </section>
-
-        <section id="nuxt-migration" className="scroll-mt-32 py-6">
-          <h2 className="mb-3 text-4xl font-bold text-[#670ef7] font-sofiasanscondensed">Phase Two: Migrating from Nuxt 2 to Nuxt 4</h2>
-          <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
-            <p>
-              Following the local SEO and CRO work, the business entrusted Bixeltek with migrating its existing website from Nuxt 2 to Nuxt 4. The challenge was to modernize the implementation while preserving the behavior customers already depended on.
+              The original website had SEO issues that limited the effectiveness of its search foundation. At the same time, the customer journey needed attention: improving the experience meant helping visitors find relevant information and making it easier for them to submit an enquiry.
             </p>
             <p>
-              The migration required a review of older application patterns, updates to code that no longer fit the newer framework conventions, and testing across routes and interactive components. We treated compatibility as a project-wide responsibility rather than assuming that a successful build meant the migration was complete.
-            </p>
-            <p>
-              We also coordinated with the backend team as frontend components were updated. That collaboration helped verify that data responses and user-facing states remained aligned across the application.
+              As the project evolved, the technical requirements grew too. The move from Nuxt 2 to Nuxt 4 required changes to frontend implementation patterns, careful handling of hydration issues and coordination with the backend team.
             </p>
           </div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-purple-100 bg-purple-50/60 p-5">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Migration priority</p>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900 font-sofiasanscondensed">Preserve Existing Behavior</h3>
-              <p className="text-sm leading-relaxed text-gray-700 font-poppins">
-                Route behavior, existing page content and key interactions had to keep working as the framework and implementation patterns changed.
-              </p>
-            </div>
-            <div className="rounded-xl border border-purple-100 bg-purple-50/60 p-5">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#670ef7]">Validation priority</p>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900 font-sofiasanscondensed">Verify the Integrated Site</h3>
-              <p className="text-sm leading-relaxed text-gray-700 font-poppins">
-                Frontend behavior was checked alongside backend responses so the migrated experience worked as a connected application, not just as independently updated pieces.
-              </p>
-            </div>
-          </div>
-        </section>
 
-        <section id="engineering" className="scroll-mt-32 py-6">
-          <h2 className="mb-2 text-4xl font-bold text-[#670ef7] font-sofiasanscondensed">The Bixeltek Build</h2>
-          <p className="mb-10 max-w-2xl text-base leading-relaxed text-gray-700 font-poppins">
-            The work progressed from local search improvements to a deeper framework migration. Each stage addressed a specific problem while protecting the parts of the website that were already in use.
-          </p>
-          <div className="space-y-14">
-            {buildSteps.map((step, index) => (
-              <article key={step.title}>
-                <div className="mb-4 flex items-center gap-4" aria-hidden="true">
-                  <span className="text-5xl font-bold leading-none text-[#670ef7] font-sofiasanscondensed md:text-6xl">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {challenges.map((challenge) => (
+              <div
+                key={challenge.title}
+                className="rounded-2xl border border-gray-200 bg-white p-6 transition hover:border-purple-200 hover:shadow-sm"
+              >
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-purple-50 text-[#670ef7]">
+                  <MdCheckCircle size={22} aria-hidden="true" />
                 </div>
-
-                <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
-                  <span className="sr-only">Step {index + 1}: </span>
-                  {step.title}
+                <h3 className="text-xl font-bold text-gray-900 font-sofiasanscondensed">
+                  {challenge.title}
                 </h3>
-                <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.description}</p>
-                <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
-                  {step.points.map((point) => <li key={point}>{point}</li>)}
-                </ul>
-                {step.challenge && (
-                  <div className="mb-5 overflow-hidden rounded-lg border border-gray-200">
-                    <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
-                      <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">The Challenge</p>
-                      <p className="text-sm leading-relaxed text-gray-700 font-poppins">{step.challenge.problem}</p>
-                    </div>
-                    <div className="px-4 py-3">
-                      <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">How We Addressed It</p>
-                      <p className="text-sm leading-relaxed text-gray-700 font-poppins">{step.challenge.solution}</p>
-                    </div>
-                  </div>
-                )}
-                <div className="rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">Project outcome</p>
-                  <p className="text-sm leading-relaxed text-gray-800 font-poppins">{step.outcome}</p>
-                </div>
-              </article>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700 font-poppins">
+                  {challenge.description}
+                </p>
+              </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        <div id="delivered" className="scroll-mt-32">
-          <h2 className="mb-4 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">What Changed</h2>
+        {/* 03 Local SEO and CRO */}
+        <div id="local-seo-cro" className="scroll-mt-32">
+          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+            Local SEO &amp; CRO: Building a Useful Path from Search to Enquiry
+          </h2>
           <p className="mb-6 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
-            The project paired local search improvements with a deeper application migration. It improved the site’s local targeting, established a reusable pattern for location pages and moved the existing application to Nuxt 4 while addressing compatibility, hydration and integration issues along the way.
+            Our SEO and CRO work focused on two connected questions: how could the website become more relevant to customers searching in different locations, and how could those visitors take the next step with less friction?
           </p>
-          <div className="overflow-x-auto rounded-xl border border-gray-200">
-            <table className="w-full border-collapse text-left text-sm md:text-base">
-              <thead className="bg-black text-white">
-                <tr>
-                  <th className="p-4">Area</th>
-                  <th className="p-4">Delivered</th>
-                </tr>
-              </thead>
-              <tbody>
-                {deliverables.map((item, index) => (
-                  <tr key={item.area} className={index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}>
-                    <td className="p-4 align-top font-semibold text-gray-900">{item.area}</td>
-                    <td className="p-4 text-gray-700"><MdCheckCircle className="mr-2 inline-block text-lg text-[#670ef7]" />{item.detail}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+          <div className="space-y-6">
+            {localSeoCroAreas.map((area) => (
+              <div key={area.title} className="rounded-2xl border border-gray-200 bg-purple-50/30 p-6 md:p-8">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#670ef7]">
+                  {area.step}
+                </span>
+                <h3 className="mt-2 text-xl font-bold text-gray-900 font-sofiasanscondensed md:text-2xl">
+                  {area.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-gray-700 font-poppins">
+                  {area.description}
+                </p>
+                <ul className="mt-5 space-y-2.5">
+                  {area.points.map((point) => (
+                    <li key={point} className="flex gap-3 text-sm leading-relaxed text-gray-700 font-poppins">
+                      <MdCheckCircle
+                        className="mt-1 shrink-0 text-[#670ef7]"
+                        size={18}
+                        aria-hidden="true"
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-xs leading-relaxed text-gray-500 font-poppins">
+            These changes were designed to improve the conditions for search discovery and enquiry completion. We are not publishing specific ranking, traffic or conversion-rate gains because verified figures have not been provided for this case study.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/services/conversion-rate-optimization"
+              className="inline-flex items-center rounded-lg border border-purple-200 bg-white px-5 py-2.5 text-xs font-semibold text-[#670ef7] shadow-sm transition hover:bg-purple-50"
+            >
+              Explore CRO Services
+              <span className="ml-1.5" aria-hidden="true">↗</span>
+            </Link>
+            <Link
+              href="/services/web-design"
+              className="inline-flex items-center rounded-lg border border-purple-200 bg-white px-5 py-2.5 text-xs font-semibold text-[#670ef7] shadow-sm transition hover:bg-purple-50"
+            >
+              Website Design &amp; Development
+              <span className="ml-1.5" aria-hidden="true">↗</span>
+            </Link>
           </div>
         </div>
 
-        <div id="takeaway" className="scroll-mt-32 pb-6">
-          <h2 className="mb-4 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">The Takeaway</h2>
-          <blockquote className="max-w-[95%] rounded-r-lg border-l-4 border-[#670ef7] bg-purple-50/40 py-3 pl-4 text-xl italic text-gray-900 md:text-2xl">
-            Local growth works best when the pages that attract customers and the technology that supports them are built to improve together.
-          </blockquote>
-          <p className="mt-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
-            This project demonstrates how SEO, CRO and frontend engineering can support the same business objective: helping local customers find the right service while giving the website a more maintainable foundation for future growth.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
-            Learn more about Bixeltek’s <Link href="/technical-seo" className="font-semibold text-[#670ef7] underline decoration-purple-300 underline-offset-4 hover:decoration-[#670ef7]">technical SEO services</Link> for businesses that need to protect search visibility while changing or modernizing a website.
-          </p>
+        {/* 04 Nuxt 4 Migration */}
+        <div id="nuxt-migration" className="scroll-mt-32">
+          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+            The Nuxt 4 Migration: Modernising Without Breaking Functionality
+          </h2>
+
+          <div className="space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
+            <p>
+              Migrating a live application from Nuxt 2 to Nuxt 4 involves more than changing the framework version. Existing functionality, rendering behaviour, data flows and integrations all need to be considered as the application moves to a newer framework structure.
+            </p>
+            <p>
+              We updated the frontend implementation to align with Nuxt 4, replaced patterns that no longer suited the newer framework and worked through issues encountered during validation. The objective was to modernise the application while preserving the behaviour the existing website depended on.
+            </p>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-purple-100 bg-purple-50/60 p-6 md:p-8">
+            <h3 className="text-xl font-bold text-gray-900 md:text-2xl font-sofiasanscondensed">
+              What the migration needed to preserve
+            </h3>
+
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {preserveItems.map((item) => (
+                <div key={item.title} className="rounded-xl border border-gray-200/80 bg-white p-5 shadow-sm">
+                  <h4 className="text-lg font-bold text-gray-900 font-sofiasanscondensed">
+                    {item.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-700 font-poppins">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 pt-2 text-sm font-medium text-gray-700">
-          <span className="font-semibold text-gray-900">Services Delivered:</span>
-          <Link href="/local-seo" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Local SEO</Link>
-          <Link href="/services/conversion-rate-optimization" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">CRO</Link>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">City-Specific Pages</span>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Nuxt 2 to Nuxt 4 Migration</span>
-          <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764]">Hydration Debugging</span>
-        </div>
+        {/* 05 Engineering Challenges */}
+        <div id="engineering" className="scroll-mt-32">
+          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+            Engineering Challenges: Resolving Hydration &amp; Backend Alignment
+          </h2>
 
-        <section id="cta" className="relative z-10 mt-12 overflow-hidden rounded-2xl bg-[#670ef7] px-8 py-10 shadow-lg md:px-10">
-          <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
-            <div className="max-w-2xl">
-              <h3 className="mb-3 text-2xl font-bold leading-tight tracking-wide text-white sm:text-3xl md:text-4xl font-sofiasanscondensed">
-                Need Better Local Visibility or a Nuxt Migration for Your Pet Grooming Business?
+          <p className="text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
+            Framework migrations can expose issues that were not obvious in the previous implementation. In this project, hydration behaviour and frontend/backend coordination required particular attention.
+          </p>
+
+          <div className="mt-8 space-y-6">
+            <div className="border-l-4 border-[#670ef7] bg-purple-50/30 py-3 pl-5 md:pl-7 rounded-r-lg">
+              <h3 className="text-xl font-bold text-gray-900 font-sofiasanscondensed">
+                Handling hydration mismatches
               </h3>
-              <p className="text-sm font-medium leading-relaxed text-white/90 sm:text-base font-poppins">
-                Bixeltek connects local SEO, CRO and modern frontend engineering to help businesses improve discoverability and evolve their websites without losing sight of the customer journey.
+              <p className="mt-2 text-base leading-relaxed text-gray-700 font-poppins">
+                Hydration problems occur when the markup generated on the server does not match what the client-side application expects to render. We investigated these issues during the migration and adjusted frontend implementation patterns where required to improve compatibility between server and client rendering.
               </p>
             </div>
-            <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-center text-base font-semibold text-[#670ef7] shadow-md transition hover:bg-gray-100"
+
+            <div className="border-l-4 border-[#670ef7] bg-purple-50/30 py-3 pl-5 md:pl-7 rounded-r-lg">
+              <h3 className="text-xl font-bold text-gray-900 font-sofiasanscondensed">
+                Replacing outdated framework patterns
+              </h3>
+              <p className="mt-2 text-base leading-relaxed text-gray-700 font-poppins">
+                Existing code cannot always be carried forward unchanged when moving between major framework generations. We reviewed and replaced patterns that were no longer appropriate for the Nuxt 4 implementation while keeping the intended application behaviour in view.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-[#670ef7] bg-purple-50/30 py-3 pl-5 md:pl-7 rounded-r-lg">
+              <h3 className="text-xl font-bold text-gray-900 font-sofiasanscondensed">
+                Coordinating with the backend team
+              </h3>
+              <p className="mt-2 text-base leading-relaxed text-gray-700 font-poppins">
+                Frontend changes can affect how data is requested, processed and displayed. We coordinated with the client’s backend team during the migration so that frontend updates continued to work with expected backend responses and application flows.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-2xl bg-gray-900 p-6 text-white md:p-8 border border-purple-500/20 shadow-md">
+            <p className="text-xs font-bold uppercase tracking-wider text-purple-400 font-poppins">
+              Engineering principle
+            </p>
+            <p className="mt-3 text-lg font-medium leading-relaxed md:text-xl font-sofiasanscondensed">
+              &ldquo;A successful migration is not just about running on a newer framework. It is about preserving the behaviour users and connected systems already rely on.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        {/* 06 Deliverables */}
+        <div id="delivered" className="scroll-mt-32">
+          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+            What Changed: A Connected Set of SEO, UX and Engineering Improvements
+          </h2>
+
+          <p className="text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
+            The project brought together improvements to the website’s search foundation, geographic page structure, enquiry journey and frontend implementation. Each area addressed a different requirement, but all contributed to making the website more suitable for ongoing business and technical needs.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {deliverables.map((item, index) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-gray-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-purple-200 hover:shadow-md"
               >
-                Contact Us
+                <span className="font-sofiasanscondensed text-2xl font-bold text-[#670ef7]">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="mt-2 text-lg font-bold text-gray-900 font-sofiasanscondensed">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700 font-poppins">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border border-purple-200 bg-purple-50 p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-purple-900">Framework</p>
+              <p className="mt-2 text-3xl font-bold text-[#670ef7] font-sofiasanscondensed">Nuxt 4</p>
+              <p className="mt-1 text-sm text-gray-700">Migrated from Nuxt 2</p>
+            </div>
+            <div className="rounded-xl border border-gray-200 p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-600">Local SEO</p>
+              <p className="mt-2 text-2xl font-bold text-gray-900 font-sofiasanscondensed">City &amp; State</p>
+              <p className="mt-1 text-sm text-gray-700">Dedicated landing pages</p>
+            </div>
+            <div className="rounded-xl border border-gray-200 p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-600">Customer Journey</p>
+              <p className="mt-2 text-2xl font-bold text-gray-900 font-sofiasanscondensed">Shorter Funnel</p>
+              <p className="mt-1 text-sm text-gray-700">Reduced enquiry friction</p>
+            </div>
+          </div>
+        </div>
+
+        {/* 07 Takeaway & Steps */}
+        <div id="takeaway" className="scroll-mt-32">
+          <h2 className="mb-4 text-3xl font-bold tracking-wide text-[#670ef7] font-sofiasanscondensed">
+            The Takeaway
+          </h2>
+
+          <blockquote className="max-w-[95%] rounded-r-lg border-l-4 border-[#670ef7] bg-purple-50/40 py-2 pl-4 text-xl italic text-gray-900 md:text-2xl">
+            For a local service business, organic visibility and conversion experience are closely connected. Location pages help the website address geographically relevant searches, while a simpler enquiry journey gives visitors a more direct way to take action.
+          </blockquote>
+
+          <div className="mt-5 space-y-4 text-base leading-relaxed text-gray-800 md:text-lg font-poppins">
+            <p>
+              The technical foundation matters too. Updating a live website to a newer framework requires attention to existing functionality, rendering and system integrations. Treating SEO, UX and engineering as connected workstreams helps create a website that is easier to discover, use and maintain.
+            </p>
+            <p>
+              For businesses planning a similar project, our <Link href="/services/seo-services" className="font-medium text-[#670ef7] hover:underline">local SEO</Link> and <Link href="/services/custom-app-development" className="font-medium text-[#670ef7] hover:underline">custom web engineering</Link> services cover the structure and technical foundation needed to support both organic discovery and reliable application performance.
+            </p>
+          </div>
+
+          {/* Six Implementation Steps with New Pattern */}
+          <div className="mt-12">
+            <h3 className="mb-6 text-2xl font-bold tracking-wide text-gray-900 font-sofiasanscondensed md:text-3xl">
+              The Six Areas We Addressed
+            </h3>
+
+            <div className="my-8 space-y-14">
+              {buildSteps.map((step, index) => (
+                <article key={step.title}>
+                  <div className="mb-4 flex items-center gap-4" aria-hidden="true">
+                    <span className="font-sofiasanscondensed text-5xl font-bold leading-none text-[#670ef7] md:text-6xl">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="h-px flex-1 bg-gradient-to-r from-[#670ef7]/40 to-transparent" />
+                  </div>
+
+                  <h3 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl font-sofiasanscondensed">
+                    <span className="sr-only">Step {index + 1}: </span>
+                    {step.title}
+                  </h3>
+                  <p className="mb-4 leading-relaxed text-gray-700 font-poppins">{step.description}</p>
+                  {step.points && step.points.length > 0 && (
+                    <ul className="mb-5 list-disc space-y-2 pl-5 text-gray-700 marker:text-[#670ef7] font-poppins">
+                      {step.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {step.outcome && (
+                    <div className="rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3">
+                      <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#670ef7]">What this achieved</p>
+                      <p className="text-sm leading-relaxed text-gray-800 font-poppins">{step.outcome}</p>
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Services Delivered Pills */}
+        <div className="flex flex-wrap items-center gap-3 pt-4 text-sm font-medium text-gray-700">
+          <span className="font-semibold text-gray-900">Services Delivered:</span>
+          <Link href="/services/seo-services" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Local SEO</Link>
+          <Link href="/services/conversion-rate-optimization" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Conversion Rate Optimization (CRO)</Link>
+          <Link href="/services/web-design" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Website UX &amp; Design</Link>
+          <Link href="/services/custom-app-development" className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#3b0764] transition-colors hover:bg-purple-200">Nuxt 4 Migration &amp; Frontend</Link>
+        </div>
+
+        {/* 08 CTA */}
+        <section id="cta" className="relative z-10 mt-16 overflow-hidden rounded-2xl bg-[#670ef7] px-8 py-10 shadow-lg">
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="w-full lg:w-[60%]">
+              <h3 className="mb-3 text-2xl font-bold leading-tight tracking-wide text-white sm:text-3xl md:text-4xl font-sofiasanscondensed">
+                Need SEO, CRO or Website Migration Support?
+              </h3>
+              <p className="font-poppins text-sm font-medium text-white/90 sm:text-base">
+                We help businesses improve their websites through location-focused SEO, conversion-focused user experiences and practical frontend engineering.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/3 text-center">
+              <Link href="/contact-us" className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3.5 text-base font-semibold text-[#670ef7] shadow-md transition hover:bg-gray-100">
+                Discuss Your Project
               </Link>
             </div>
           </div>
+          <span className="absolute -right-6 -top-8 -z-10 opacity-10" aria-hidden="true">
+            <svg width="300" height="240" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M160 0L0 240H300V0H160Z" fill="white" />
+            </svg>
+          </span>
         </section>
       </div>
 
-      <aside className="sticky top-32 hidden h-max w-1/3 items-start justify-start pl-4 md:flex">
+      {/* Sticky Right Navigation */}
+      <aside className="sticky top-32 hidden h-max w-1/3 justify-start pl-4 md:flex">
         <div className="space-y-3 border-l-2 border-gray-200 py-2 pl-4">
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-400">Case Study Navigation</p>
-          <nav className="space-y-2.5">
+          <nav className="space-y-2.5" aria-label="Case study sections">
             {sections.map((section) => (
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className={`block text-sm font-medium transition-colors ${
-                  activeId === section.id
-                    ? 'translate-x-1 font-bold text-[#670ef7]'
-                    : 'text-gray-600 hover:text-black'
-                }`}
+                className={`block text-sm font-medium transition-colors ${activeId === section.id ? 'translate-x-1 font-bold text-[#670ef7]' : 'text-gray-600 hover:text-black'}`}
               >
                 {section.label}
               </a>
             ))}
+            <a href="#cta" className="block text-sm font-medium text-gray-600 transition-colors hover:text-black">Discuss a Project</a>
           </nav>
         </div>
       </aside>

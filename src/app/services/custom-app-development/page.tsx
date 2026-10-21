@@ -102,7 +102,7 @@ const applicationPillarOptions: PlatformOptionCardItem[] = [
     description:
       "Browser-based software, internal operations portals, customer self-service workspaces, interactive dashboards and API-driven web systems engineered with Next.js, React and scalable backends.",
     linkText: "Explore Web Applications",
-    destination: "/services/custom-app-development/web-application-development",
+    destination: "/services/custom-app-development/web-applications",
     badge: "Browser & Cloud Portals",
     image: webAppImg,
   },

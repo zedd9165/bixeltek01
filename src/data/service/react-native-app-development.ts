@@ -163,7 +163,7 @@ export const reactNativeHero = {
   primaryButtonText: "Talk to an Expert",
   primaryButtonHref: "#final-cta",
   secondaryLinkText: "Compare Mobile App Approaches",
-  secondaryLinkHref: "/services/mobile-app-development",
+  secondaryLinkHref: "/services/custom-app-development/mobile-app-development",
   microcopy:
     "Start with the required user journeys, integrations and platform constraints. Then choose the implementation approach that fits.",
 };
@@ -629,7 +629,7 @@ export const reactNativeRelatedServices: RelatedServiceCard[] = [
     description:
       "Compare React Native with Flutter and native development, or explore the broader mobile engineering service if your best-fit approach is not yet clear.",
     linkText: "Explore Mobile App Development",
-    destination: "/services/mobile-app-development",
+    destination: "/services/custom-app-development/mobile-app-development",
   },
   {
     title: "Web Design & Development",

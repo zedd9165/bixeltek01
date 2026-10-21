@@ -665,7 +665,7 @@ export const analyticsTrackingRelatedServices = [
     title: "Web Application Development",
     description:
       "Connect measurement to custom forms, account areas or workflow systems when the underlying product needs development work.",
-    href: "/web-application-development",
+    href: "/services/custom-app-development/web-applications",
   },
 ];
 

@@ -156,7 +156,7 @@ export const flutterHero = {
   primaryButtonText: "Discuss a Flutter App",
   primaryButtonHref: "#final-cta",
   secondaryLinkText: "Compare Mobile App Options",
-  secondaryLinkHref: "/services/mobile-app-development",
+  secondaryLinkHref: "/services/custom-app-development/mobile-app-development",
   microcopy:
     "Start with the product requirements. Choose the framework after the important journeys and constraints are understood.",
 };
@@ -614,7 +614,7 @@ export const flutterRelatedServices: RelatedServiceCard[] = [
     description:
       "Explore the broader mobile app service if you are comparing Flutter with native iOS, native Android or React Native, or if the platform choice is not yet settled.",
     linkText: "Explore Mobile App Development",
-    destination: "/services/mobile-app-development",
+    destination: "/services/custom-app-development/mobile-app-development",
   },
   {
     title: "Web Design & Development",

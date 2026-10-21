@@ -71,7 +71,7 @@ const capabilities = [
   { name: 'Ecommerce Development', link: '/services/ecommerce-development' },
   { name: 'Google Ads Management', link: '/services/google-ads' },
   { name: 'SEO Services', link: '/services/seo-services' },
-  { name: 'Application Development', link: '/services/mobile-app-development' },
+  { name: 'Application Development', link: '/services/custom-app-development' },
   { name: 'Automation & Analytics', link: '/services/automate' },
 ];
 
@@ -252,7 +252,7 @@ export default function HeroGrowthSystem({
             initial={{ opacity: 0, y: yOffset }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: staggerDelay * 4 }}
-            className="w-full pt-6 border-t border-white/[0.08]"
+            className="w-full pt-6 border-t border-white/[0.08] max-w-3xl"
           >
             <p 
               className="text-xs uppercase tracking-widest text-neutral-400 font-semibold mb-2.5"

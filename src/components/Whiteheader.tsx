@@ -269,7 +269,7 @@ export const Whiteheader = () => {
       title: "Mobile App Development",
       desc: "iOS, Android & cross-platform mobile apps.",
       icon: <IoPhonePortraitOutline size={24} />,
-      link: "/services/mobile-app-development",
+      link: "/services/custom-app-development/mobile-app-development",
       image: appdev,
     },
     {
@@ -568,7 +568,7 @@ export const Whiteheader = () => {
                                         </Link>
                                     </li>
                                      <li>
-                                        <Link href="/services/mobile-app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        <Link href="/services/custom-app-development/mobile-app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
                                             App Design and Development
                                         </Link>
                                     </li>
