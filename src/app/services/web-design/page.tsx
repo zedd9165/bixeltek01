@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Metadata } from "next";
+import { BookingModalProvider } from "@/components/Common/BookingModalContext";
 
 // Data Source of Truth for Web Design
 import {
@@ -196,6 +197,7 @@ export const dynamic = "force-dynamic";
 
 export default function WebDesignPreviewPage() {
   return (
+    <BookingModalProvider>
     <main className="bg-[#08080C] min-h-screen">
       {/* 02 Service Hero (Shared Common Component) */}
       <ServiceHero
@@ -318,5 +320,6 @@ export default function WebDesignPreviewPage() {
       />
 
     </main>
+    </BookingModalProvider>
   );
 }

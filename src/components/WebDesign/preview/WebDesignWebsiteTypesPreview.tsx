@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image, { type StaticImageData } from "next/image";
@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { websiteTypesData, type WebsiteTypeCardItem } from "@/data/service/webdesing";
+import { useBookingModal } from "@/components/Common/BookingModalContext";
 
 const websiteTypeIcons = [
   <Briefcase key="0" className="w-5 h-5" />,
@@ -42,6 +43,7 @@ const defaultBadges = [
 ];
 
 export default function WebDesignWebsiteTypesPreview() {
+  const { openBooking } = useBookingModal();
   const [activeTab, setActiveTab] = useState(0);
   const current: WebsiteTypeCardItem = websiteTypesData.cards[activeTab];
 
@@ -52,17 +54,30 @@ export default function WebDesignWebsiteTypesPreview() {
     >
       <div className="w-full lg:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-            <span>{websiteTypesData.eyebrow}</span>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+              <span>{websiteTypesData.eyebrow}</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.15] mb-5">
+              {websiteTypesData.h2}
+            </h2>
+            <p className="text-base md:text-lg text-gray-700 font-poppins leading-relaxed">
+              {websiteTypesData.intro}
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.15] mb-5">
-            {websiteTypesData.h2}
-          </h2>
-          <p className="text-base md:text-lg text-gray-700 font-poppins leading-relaxed">
-            {websiteTypesData.intro}
-          </p>
+
+          <div className="shrink-0">
+            <button
+              type="button"
+              onClick={openBooking}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all cursor-pointer group"
+            >
+              <span>Book a 1-on-1 Consultation</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
         </div>
 
         {/* Tabbed Interactive Layout */}

@@ -4,7 +4,7 @@ import type { StaticImageData } from "next/image";
 import businessImg from "@/assets/business.jpg";
 import ecommerceImg from "@/assets/ecom-industry.png";
 import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
-import localImg from "@/assets/2151823041.jpg";
+import localImg from "@/assets/local-business.jpg";
 import landingImg from "@/assets/landing-page.png";
 import customImg from "@/assets/custom'.png";
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
