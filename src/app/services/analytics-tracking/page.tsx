@@ -1,5 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
+import { BookingModalProvider } from "@/components/Common/BookingModalContext";
+import AnalyticsScopeSection from "@/components/services/analytics/AnalyticsScopeSection";
 
 // Data Source of Truth for Analytics & Tracking Services
 import {
@@ -21,6 +23,7 @@ import {
   analyticsTrackingRelatedServices,
   analyticsTrackingFaqs,
   analyticsTrackingFinalCta,
+  analyticsTrackingBusinessMarkets,
 } from "@/data/service/analytics-tracking";
 
 // Generic Reusable Service Components
@@ -36,6 +39,7 @@ import {
   ServiceTechnologySection,
   ServiceSystemCards,
   ServiceStartingSituations,
+  ServiceIndustryCarousel,
   ServiceWhyChooseUs,
   ServiceInvestment,
   ServiceRelatedServices,
@@ -221,7 +225,8 @@ const analyticsFinalCtaTools: TechStackItem[] = [
 
 export default function AnalyticsTrackingPage() {
   return (
-    <main className="bg-[#08080C] min-h-screen">
+    <BookingModalProvider>
+      <main className="bg-[#08080C] min-h-screen">
       {/* 01 Global Header */}
       <Header />
 
@@ -269,14 +274,7 @@ export default function AnalyticsTrackingPage() {
       />
 
       {/* 07 Scope of Services */}
-      <ServiceScopeSection
-        id={analyticsTrackingScope.id}
-        eyebrow={analyticsTrackingScope.eyebrow}
-        h2={analyticsTrackingScope.h2}
-        intro={analyticsTrackingScope.intro}
-        cards={analyticsTrackingScope.items}
-        scopeNote={analyticsTrackingScope.scopeNote}
-      />
+      <AnalyticsScopeSection ctaText="Book a 1-on-1 Consultation" />
 
       {/* 08 Measurement Model / Control Panels */}
       <ServiceContentPanels
@@ -391,6 +389,16 @@ export default function AnalyticsTrackingPage() {
         gridCols={3}
       />
 
+
+      {/* 17 Business Markets & Industry Telemetry Carousel */}
+      <ServiceIndustryCarousel
+        id="business-markets"
+        eyebrow={analyticsTrackingBusinessMarkets.eyebrow}
+        h2={analyticsTrackingBusinessMarkets.h2}
+        intro={analyticsTrackingBusinessMarkets.intro}
+        cards={analyticsTrackingBusinessMarkets.cards}
+      />
+
       {/* 18 Frequently Asked Questions */}
       <ServiceFAQ
         id={analyticsTrackingFaqs[0]?.question ? "analytics-tracking-faqs" : "faqs"}
@@ -413,6 +421,7 @@ export default function AnalyticsTrackingPage() {
       {/* 20 Global Footer */}
       <Footer />
     </main>
+    </BookingModalProvider>
   );
 }
 

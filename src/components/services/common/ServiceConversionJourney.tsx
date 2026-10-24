@@ -31,6 +31,9 @@ export interface ServiceConversionJourneyProps {
   id?: string;
   data: ConversionJourneyData;
   supportingText?: string;
+  ctaText?: string;
+  onCtaClick?: () => void;
+  ctaHref?: string;
 }
 
 const panelIcons = [
@@ -43,6 +46,9 @@ export default function ServiceConversionJourney({
   id = "conversion-journey",
   data,
   supportingText,
+  ctaText,
+  onCtaClick,
+  ctaHref,
 }: ServiceConversionJourneyProps) {
   return (
     <section
@@ -115,13 +121,24 @@ export default function ServiceConversionJourney({
             {supportingText ||
               "Connecting digital visibility with high-performing, conversion-focused landing experiences."}
           </p>
-          <Link
-            href={data.supportingLink.destination}
-            className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 font-poppins transition-colors group flex-shrink-0"
-          >
-            <span>{data.supportingLink.text}</span>
-            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          {onCtaClick ? (
+            <button
+              type="button"
+              onClick={onCtaClick}
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md transition-all cursor-pointer group flex-shrink-0"
+            >
+              <span>{ctaText || "Schedule One On One Consultation"}</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          ) : (
+            <Link
+              href={ctaHref || data.supportingLink.destination}
+              className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 font-poppins transition-colors group flex-shrink-0"
+            >
+              <span>{ctaText || data.supportingLink.text}</span>
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          )}
         </div>
       </div>
     </section>

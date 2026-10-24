@@ -10,6 +10,10 @@ import customImg from "@/assets/custom'.png";
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
 import technologyImg from "@/assets/campaign-creators-gMsnXqILjp4-unsplash.jpg";
 import franchiseImg from "@/assets/download.png";
+import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
+import realEstateImg from "@/assets/real-estate.jpg";
+import carImg from "@/assets/digital marketing for car detailers.jpg";
+import schoolImg from "@/assets/school.jpg";
 
 
 export interface WebsiteTypeCardItem {
@@ -855,110 +859,138 @@ export const webBusinessMarketsData = {
   cards: [
     {
       title: "Dental & Healthcare Practices",
-
       description:
         "Patients need confidence before they enquire. Treatment information, practitioner credibility, location details, FAQs, proof and clear appointment paths work together to help someone move from researching a treatment to contacting the practice.",
-
       visitorQuestion: "Can I trust this practice with my treatment?",
-
       focus: [
         "Treatment information and FAQs",
         "Practitioner credibility and proof",
         "Clear appointment paths",
       ],
-
       image: dentalImg,
       imageAlt: "Dental practice website shown on a laptop",
+      link: "#website-project",
+      linkText: "Healthcare Web Design →",
     },
-
+    {
+      title: "Roofing & Home Contracting Services",
+      description:
+        "High-ticket contracting websites need rapid estimate calculators, before-and-after project galleries, clear service radius maps, and prominent emergency call triggers that capture homeowners right away.",
+      visitorQuestion: "Can this contractor deliver reliable, insured work for my home or commercial property?",
+      focus: [
+        "Instant quote & inspection booking tools",
+        "Before/after portfolio & review proof",
+        "Service territory coverage architecture",
+      ],
+      image: roofingImg,
+      imageAlt: "Roofing and home contractor website design",
+      link: "#website-project",
+      linkText: "Contractor Web Design →",
+    },
     {
       title: "Local & Multi-Location Businesses",
-
       description:
         "Customers often search for a specific service in a specific area. The website needs a useful relationship between services and locations while keeping navigation simple and making it easy to contact the right team.",
-
       visitorQuestion: "Do you cover my area, and who do I contact?",
-
       focus: [
         "Service and location relationships",
         "Simple, predictable navigation",
         "Contact routing to the right team",
       ],
-
       image: localImg,
       imageAlt: "Local business website with service area pages",
+      link: "#website-project",
+      linkText: "Local Services Web Design →",
     },
-
+    {
+      title: "Real Estate & Construction Developers",
+      description:
+        "Property portals and development websites need interactive floorplans, virtual tour integrations, neighborhood amenity maps, and high-converting inquiry forms for prospective buyers and tenants.",
+      visitorQuestion: "Is this property development legitimate, and what are the unit availability details?",
+      focus: [
+        "Interactive floorplans & unit specs",
+        "High-resolution architectural galleries",
+        "Direct broker & sales team lead routing",
+      ],
+      image: realEstateImg,
+      imageAlt: "Real estate and property development website design",
+      link: "#website-project",
+      linkText: "Real Estate Web Design →",
+    },
     {
       title: "Ecommerce & Consumer Brands",
-
       description:
         "The website needs to help people discover products, compare options, understand the value of the purchase and complete checkout with confidence. Product data, collections, search, filters, reviews and merchandising all influence the experience.",
-
       visitorQuestion: "Is this the right product, and can I buy it with confidence?",
-
       focus: [
         "Collections, search and filters",
         "Product data, reviews and merchandising",
         "A confident checkout",
       ],
-
       image: ecommerceImg,
       imageAlt: "Ecommerce storefront with product collections",
+      link: "#website-project",
+      linkText: "Ecommerce Web Design →",
     },
-
     {
-      title: "B2B & Professional Services",
-
+      title: "B2B & Professional Legal Services",
       description:
         "B2B buyers may evaluate capabilities, expertise, industries, case studies and delivery processes before making contact. The website needs enough depth to support that research without turning every page into a corporate brochure.",
-
       visitorQuestion: "Do they have the expertise for our problem?",
-
       focus: [
         "Capabilities and industries served",
         "Case studies and evidence",
         "A clear delivery process",
       ],
-
       image: b2bImg,
       imageAlt: "Professional services team reviewing a case study",
+      link: "#website-project",
+      linkText: "Corporate & Legal Web Design →",
     },
-
     {
       title: "Growing Technology Companies",
-
       description:
         "Technology businesses often need to explain complex products quickly. We structure the experience around the problems solved, the people served, the product or platform and the evidence that helps buyers understand the value.",
-
       visitorQuestion: "What does it do, and is it right for us?",
-
       focus: [
         "Problems solved and people served",
         "The product or platform, explained quickly",
         "Evidence that shows the value",
       ],
-
       image: technologyImg,
       imageAlt: "Technology product dashboard and website",
+      link: "#website-project",
+      linkText: "Tech & SaaS Web Design →",
     },
-
     {
-      title: "Franchises & Multi-Unit Businesses",
-
+      title: "Automotive Dealerships & Detailers",
       description:
-        "Franchise and multi-unit websites need to balance a consistent brand with local relevance. Location structures, service information, lead routing and scalable page templates become important as the network grows.",
-
-      visitorQuestion: "Where is my nearest location, and is it the brand I know?",
-
+        "Automotive websites built for speed and sales conversion. Showcase new inventory with live filters, present transparent maintenance pricing, and guide drivers to book service appointments in seconds.",
+      visitorQuestion: "Can I easily book a service slot or view current inventory on my phone?",
       focus: [
-        "Consistent brand with local relevance",
-        "Location structures and service information",
-        "Lead routing and scalable page templates",
+        "Mobile-first vehicle inventory browsing",
+        "Service appointment booking calendar",
+        "Click-to-call & Google Maps directions",
       ],
-
-      image: franchiseImg,
-      imageAlt: "Franchise location finder on a website",
+      image: carImg,
+      imageAlt: "Automotive dealership and detailer website UX",
+      link: "#website-project",
+      linkText: "Automotive Web Design →",
+    },
+    {
+      title: "Education & Academies",
+      description:
+        "Academic and training websites designed to drive enrollments. Structured course catalogues, faculty credentials, downloadable syllabi, and multi-step student application funnels built on fast modern stacks.",
+      visitorQuestion: "How do I enroll, and what does the curriculum look like?",
+      focus: [
+        "Course discovery & curriculum search",
+        "Online prospectus & application funnels",
+        "Accreditation & campus credibility proof",
+      ],
+      image: schoolImg,
+      imageAlt: "Education academy and school website platform",
+      link: "#website-project",
+      linkText: "Education Web Design →",
     },
   ],
 };

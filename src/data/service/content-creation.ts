@@ -1,3 +1,7 @@
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import localImg from "@/assets/local-business.jpg";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
 import type {
   BreadcrumbItem,
   JumpLinkItem,
@@ -857,4 +861,74 @@ export const contentCreationImplementationNotes = {
       "Dedicated route, production logistics, exact deliverables, rights and package terms have not been verified in the repository and must be confirmed before publishing.",
     targetScore: 86,
   },
+};
+
+
+export const contentCreationBusinessMarkets = {
+  eyebrow: "CONTENT TAILORED TO YOUR BUSINESS MODEL",
+  h2: "Production Strategies for Diverse Industry Verticals",
+  intro:
+    "Whether capturing delicate clinical procedures, fast-paced consumer goods, on-site trade craftsmanship, or corporate executive thought leadership, we calibrate cameras, lighting, and pacing to your industry.",
+  cards: [
+    {
+      title: "Dental & Healthcare Practices",
+      description:
+        "Authentic, compassionate photography and video storytelling showcasing modern clinic environments, practitioner introductions, and calm patient experiences.",
+      visitorQuestion: "Can I see what the practice looks like and meet the doctors before I visit?",
+      focus: [
+        "Clinic walk-throughs & patient journey videos",
+        "Practitioner interviews & clinical expertise reels",
+        "High-resolution architectural & procedural stills",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: dentalImg,
+      imageAlt: "Medical and healthcare clinic video and photography production",
+    },
+    {
+      title: "Ecommerce & Consumer Brands",
+      description:
+        "Scroll-stopping product demos, unboxing experiences, lifestyle contextual imagery, and dynamic video ads engineered for social feeds and storefront conversions.",
+      visitorQuestion: "How does the product look, feel, and function in real life?",
+      focus: [
+        "Studio tabletop & 360-degree product showcases",
+        "Short-form social hooks, UGC & TikTok/Reels edits",
+        "Lifestyle setting shoots with authentic usage context",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: ecommerceImg,
+      imageAlt: "Commercial product photography and short-form video creation",
+    },
+    {
+      title: "Local & Trade Services",
+      description:
+        "On-location project time-lapses, before-and-after transformations, and real customer testimonials highlighting hands-on craftsmanship and team reliability.",
+      visitorQuestion: "Can I see real examples of their work in my local area?",
+      focus: [
+        "Job-site time-lapse footage & transformation reels",
+        "Customer on-camera video testimonials & reviews",
+        "Team action portraits & equipment in the field",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: localImg,
+      imageAlt: "Field service photography and on-site project video production",
+    },
+    {
+      title: "B2B & Corporate Organizations",
+      description:
+        "Polished executive interviews, company culture documentaries, event coverage, and client case-study films that establish industry authority.",
+      visitorQuestion: "Who are the leaders behind the business and what is their vision?",
+      focus: [
+        "C-level keynote & executive thought-leadership videos",
+        "Client video case studies & success narrative films",
+        "Corporate culture recruitment & employer brand media",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: b2bImg,
+      imageAlt: "B2B corporate video production and leadership portraits",
+    },
+  ],
 };

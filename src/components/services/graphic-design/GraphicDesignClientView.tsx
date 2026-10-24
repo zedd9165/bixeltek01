@@ -14,6 +14,7 @@ import {
   ServiceUseCaseSection,
   ServiceProcess,
   ServiceWhyChooseUs,
+  ServiceIndustryCarousel,
   ServiceRelatedServices,
   ServiceFAQ,
   ServiceFinalCTA,
@@ -25,6 +26,7 @@ import type { TechStackItem } from "@/components/services/common/ServiceFinalCTA
 import { Header } from "@/sections/Header";
 import ClientTrustMarquee from "@/components/Home2/ClientLogo";
 import { Footer } from "@/sections/Footer";
+import { graphicDesignBusinessMarkets } from "@/data/service/graphic-design";
 
 interface GraphicDesignClientViewProps {
   hero: any;
@@ -202,6 +204,15 @@ export default function GraphicDesignClientView({
           }}
           defaultImage={whyChooseImg}
           direction="left"
+        />
+
+        {/* 14 Industry Verticals Carousel */}
+        <ServiceIndustryCarousel
+          id="industry-sectors"
+          eyebrow={graphicDesignBusinessMarkets.eyebrow}
+          h2={graphicDesignBusinessMarkets.h2}
+          intro={graphicDesignBusinessMarkets.intro}
+          cards={graphicDesignBusinessMarkets.cards}
         />
 
         {/* 15 Related Services */}

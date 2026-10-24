@@ -23,10 +23,13 @@ export interface PlatformOptionCardItem {
   badge?: string;
 }
 
+export type ServiceHeaderLayout = "default" | "split" | "split-reversed";
+
 export interface ServicePlatformCTA {
   text?: string;
   href?: string;
   target?: string;
+  onClick?: () => void;
 }
 
 export interface ServicePlatformSectionProps {
@@ -39,6 +42,12 @@ export interface ServicePlatformSectionProps {
   ctaText?: string;
   ctaHref?: string;
   ctaVariant?: "blue" | "purple" | "dark";
+  onCtaClick?: () => void;
+  headerLayout?: ServiceHeaderLayout;
+  headerClassName?: string;
+  titleClassName?: string;
+  introClassName?: string;
+  ctaClassName?: string;
 }
 
 const platformIcons = [
@@ -75,6 +84,12 @@ export default function ServicePlatformSection({
   ctaText,
   ctaHref,
   ctaVariant = "blue",
+  onCtaClick,
+  headerLayout = "default",
+  headerClassName = "",
+  titleClassName = "",
+  introClassName = "",
+  ctaClassName = "",
 }: ServicePlatformSectionProps) {
   const [activeTab, setActiveTab] = useState(0);
   const current = cards[activeTab];
@@ -85,16 +100,19 @@ export default function ServicePlatformSection({
           text: cta.text || "Book a Free Consultation",
           href: cta.href || "/contact-us",
           target: cta.target,
+          onClick: cta.onClick || onCtaClick,
         }
       : cta === true
       ? {
-          text: "Book a Free Consultation",
-          href: "/contact-us",
-        }
-      : ctaText
-      ? {
-          text: ctaText,
+          text: ctaText || "Book a Free Consultation",
           href: ctaHref || "/contact-us",
+          onClick: onCtaClick,
+        }
+      : ctaText || onCtaClick
+      ? {
+          text: ctaText || "Book a Free Consultation",
+          href: ctaHref || "/contact-us",
+          onClick: onCtaClick,
         }
       : null;
         
@@ -105,26 +123,32 @@ export default function ServicePlatformSection({
     >
       <div className="w-full lg:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10 mb-16">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-              <span>{eyebrow}</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.15] mb-5">
-              {h2}
-            </h2>
-            <p className="text-base md:text-lg text-gray-700 font-poppins leading-relaxed">
-              {intro}
-            </p>
-          </div>
+        {(() => {
+          const isSplit = headerLayout === "split" || headerLayout === "split-reversed";
+          const isReversed = headerLayout === "split-reversed";
 
-          {resolvedCta && (
-            <div className="flex-shrink-0 lg:mb-2">
+          const renderPlatformCtaBtn = () => {
+            if (!resolvedCta) return null;
+            return resolvedCta.onClick ? (
+              <button
+                type="button"
+                onClick={resolvedCta.onClick}
+                className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 cursor-pointer ${ctaClassName} ${
+                  ctaVariant === "purple"
+                    ? "bg-[#670EF7] hover:bg-[#5a0bd9] text-white shadow-purple-600/25 hover:shadow-purple-500/35"
+                    : ctaVariant === "dark"
+                    ? "bg-neutral-900 hover:bg-neutral-800 text-white shadow-neutral-900/20"
+                    : "bg-blue-600 hover:bg-blue-500 text-white shadow-blue-600/25 hover:shadow-blue-500/35"
+                }`}
+              >
+                <span>{resolvedCta.text}</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            ) : (
               <Link
-                href={resolvedCta.href}
+                href={resolvedCta.href || "/contact-us"}
                 target={resolvedCta.target}
-                className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 ${
+                className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 ${ctaClassName} ${
                   ctaVariant === "purple"
                     ? "bg-[#670EF7] hover:bg-[#5a0bd9] text-white shadow-purple-600/25 hover:shadow-purple-500/35"
                     : ctaVariant === "dark"
@@ -135,9 +159,78 @@ export default function ServicePlatformSection({
                 <span>{resolvedCta.text}</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
+            );
+          };
+
+          if (!isSplit) {
+            // Default: Eyebrow, H2, and Intro on Left; CTA on Right
+            return (
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10 mb-16">
+                <div className="max-w-3xl">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                    <span>{eyebrow}</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.15] mb-5">
+                    {h2}
+                  </h2>
+                  <p className="text-base md:text-lg text-gray-700 font-poppins leading-relaxed">
+                    {intro}
+                  </p>
+                </div>
+
+                {resolvedCta && (
+                  <div className="flex-shrink-0 lg:mb-2">
+                    {renderPlatformCtaBtn()}
+                  </div>
+                )}
+              </div>
+            );
+          }
+
+          // Split:
+          // "split": Eyebrow & H2 on Left; Intro & CTA on Right
+          // "split-reversed": Eyebrow & H2 on Right; Intro & CTA on Left
+          return (
+            <div
+              className={`flex flex-col ${
+                isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
+              } lg:items-end lg:justify-between gap-6 lg:gap-12 mb-16`}
+            >
+              {/* Left (or Right when reversed): Eyebrow + H2 */}
+              <div className="max-w-2xl lg:max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-poppins font-semibold uppercase tracking-wider mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                  <span>{eyebrow}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-[#08080C] tracking-tight leading-[1.15]">
+                  {h2}
+                </h2>
+              </div>
+
+              {/* Right (or Left when reversed): Intro + CTA */}
+              {(intro || resolvedCta) && (
+                <div className="max-w-xl flex flex-col items-start gap-6 lg:mb-1">
+                  {intro && (
+                    <p className="text-base md:text-lg text-gray-700 font-poppins leading-relaxed">
+                      {intro}
+                    </p>
+                  )}
+
+                  {resolvedCta && (
+                    <div className="flex-shrink-0">
+                      {renderPlatformCtaBtn()}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          );
+        })()}
+        
+        
+        
+        
 
         {/* Tabbed Interactive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">

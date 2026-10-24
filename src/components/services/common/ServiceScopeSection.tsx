@@ -14,6 +14,7 @@ import { Info, ArrowRight } from "lucide-react";
  * - stack  : cards that pin and stack on top of each other while scrolling (light).
  */
 export type ServiceScopeVariant = "ledger" | "rows" | "bento" | "stack";
+export type ServiceHeaderLayout = "default" | "split" | "split-reversed";
 
 export interface ScopeCardItem {
   title: string;
@@ -40,6 +41,11 @@ export interface ServiceScopeSectionProps {
   ctaHref?: string;
   ctaVariant?: "blue" | "purple" | "dark";
   onCtaClick?: () => void;
+  headerLayout?: ServiceHeaderLayout;
+  headerClassName?: string;
+  titleClassName?: string;
+  introClassName?: string;
+  ctaClassName?: string;
 }
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -84,6 +90,11 @@ function SectionHeader({
   ctaHref,
   ctaVariant = "blue",
   onCtaClick,
+  headerLayout = "default",
+  headerClassName = "",
+  titleClassName = "",
+  introClassName = "",
+  ctaClassName = "",
 }: {
   eyebrow: string;
   h2: string;
@@ -95,6 +106,11 @@ function SectionHeader({
   ctaHref?: string;
   ctaVariant?: "blue" | "purple" | "dark";
   onCtaClick?: () => void;
+  headerLayout?: ServiceHeaderLayout;
+  headerClassName?: string;
+  titleClassName?: string;
+  introClassName?: string;
+  ctaClassName?: string;
 }) {
   const dark = tone === "dark";
 
@@ -120,11 +136,99 @@ function SectionHeader({
         }
       : null;
 
+  const renderCtaBtn = () => {
+    if (!resolvedCta) return null;
+    return resolvedCta.onClick ? (
+      <button
+        type="button"
+        onClick={resolvedCta.onClick}
+        className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 cursor-pointer ${ctaClassName} ${
+          ctaVariant === "purple"
+            ? "bg-[#670EF7] hover:bg-[#5a0bd9] text-white shadow-purple-600/25 hover:shadow-purple-500/35"
+            : ctaVariant === "dark"
+            ? "bg-neutral-900 hover:bg-neutral-800 text-white shadow-neutral-900/20"
+            : "bg-blue-600 hover:bg-blue-500 text-white shadow-blue-600/25 hover:shadow-blue-500/35"
+        }`}
+      >
+        <span>{resolvedCta.text}</span>
+        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+      </button>
+    ) : (
+      <Link
+        href={resolvedCta.href || "/contact-us"}
+        target={resolvedCta.target}
+        className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 ${ctaClassName} ${
+          ctaVariant === "purple"
+            ? "bg-[#670EF7] hover:bg-[#5a0bd9] text-white shadow-purple-600/25 hover:shadow-purple-500/35"
+            : ctaVariant === "dark"
+            ? "bg-neutral-900 hover:bg-neutral-800 text-white shadow-neutral-900/20"
+            : "bg-blue-600 hover:bg-blue-500 text-white shadow-blue-600/25 hover:shadow-blue-500/35"
+        }`}
+      >
+        <span>{resolvedCta.text}</span>
+        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+      </Link>
+    );
+  };
+
+  const isSplit = headerLayout === "split" || headerLayout === "split-reversed";
+  const isReversed = headerLayout === "split-reversed";
+
+  if (!isSplit) {
+    // Default layout: Eyebrow, H2, and Intro on Left; CTA on Right
+    return (
+      <div
+        className={`flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10 ${className} ${headerClassName}`}
+      >
+        <div className="max-w-3xl">
+          <div
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-poppins font-semibold uppercase tracking-wider mb-4 ${
+              dark
+                ? "bg-blue-950/50 border-blue-500/30 text-blue-400"
+                : "bg-blue-50 border-blue-200 text-blue-600"
+            }`}
+          >
+            <span
+              className={`w-1.5 h-1.5 rounded-full ${dark ? "bg-blue-400" : "bg-blue-600"}`}
+            />
+            <span>{eyebrow}</span>
+          </div>
+          <h2
+            className={`text-3xl md:text-4xl lg:text-5xl font-bold font-inter tracking-tight leading-[1.15] mb-5 ${titleClassName} ${
+              dark ? "text-white" : "text-[#08080C]"
+            }`}
+          >
+            {h2}
+          </h2>
+          <p
+            className={`text-base md:text-lg font-poppins leading-relaxed ${
+              dark ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
+            {intro}
+          </p>
+        </div>
+
+        {resolvedCta && (
+          <div className="flex-shrink-0 lg:mb-2">
+            {renderCtaBtn()}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Split layouts:
+  // "split": Eyebrow & H2 on Left; Intro & CTA on Right
+  // "split-reversed": Eyebrow & H2 on Right; Intro & CTA on Left
   return (
     <div
-      className={`flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10 ${className}`}
+      className={`flex flex-col ${
+        isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
+      } lg:items-end lg:justify-between gap-6 lg:gap-12 ${className} ${headerClassName}`}
     >
-      <div className="max-w-3xl">
+      {/* Left (or Right when reversed): Eyebrow + H2 */}
+      <div className="max-w-2xl lg:max-w-3xl">
         <div
           className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-poppins font-semibold uppercase tracking-wider mb-4 ${
             dark
@@ -138,53 +242,31 @@ function SectionHeader({
           <span>{eyebrow}</span>
         </div>
         <h2
-          className={`text-3xl md:text-4xl lg:text-5xl font-bold font-inter tracking-tight leading-[1.15] mb-5 ${
+          className={`text-3xl md:text-4xl lg:text-5xl font-bold font-inter tracking-tight leading-[1.15] ${titleClassName} ${
             dark ? "text-white" : "text-[#08080C]"
           }`}
         >
           {h2}
         </h2>
-        <p
-          className={`text-base md:text-lg font-poppins leading-relaxed ${
-            dark ? "text-gray-300" : "text-gray-700"
-          }`}
-        >
-          {intro}
-        </p>
       </div>
 
-      {resolvedCta && (
-        <div className="flex-shrink-0 lg:mb-2">
-          {resolvedCta.onClick ? (
-            <button
-              type="button"
-              onClick={resolvedCta.onClick}
-              className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 cursor-pointer ${
-                ctaVariant === "purple"
-                  ? "bg-[#670EF7] hover:bg-[#5a0bd9] text-white shadow-purple-600/25 hover:shadow-purple-500/35"
-                  : ctaVariant === "dark"
-                  ? "bg-neutral-900 hover:bg-neutral-800 text-white shadow-neutral-900/20"
-                  : "bg-blue-600 hover:bg-blue-500 text-white shadow-blue-600/25 hover:shadow-blue-500/35"
+      {/* Right (or Left when reversed): Intro + CTA */}
+      {(intro || resolvedCta) && (
+        <div className="max-w-xl flex flex-col items-start gap-6 lg:mb-1">
+          {intro && (
+            <p
+              className={`text-base md:text-lg font-poppins leading-relaxed ${introClassName} ${
+                dark ? "text-gray-300" : "text-gray-700"
               }`}
             >
-              <span>{resolvedCta.text}</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
-          ) : (
-            <Link
-              href={resolvedCta.href || "/contact-us"}
-              target={resolvedCta.target}
-              className={`group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-poppins font-medium text-sm sm:text-base shadow-lg transition duration-300 shrink-0 ${
-                ctaVariant === "purple"
-                  ? "bg-[#670EF7] hover:bg-[#5a0bd9] text-white shadow-purple-600/25 hover:shadow-purple-500/35"
-                  : ctaVariant === "dark"
-                  ? "bg-neutral-900 hover:bg-neutral-800 text-white shadow-neutral-900/20"
-                  : "bg-blue-600 hover:bg-blue-500 text-white shadow-blue-600/25 hover:shadow-blue-500/35"
-              }`}
-            >
-              <span>{resolvedCta.text}</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+              {intro}
+            </p>
+          )}
+
+          {resolvedCta && (
+            <div className="flex-shrink-0">
+              {renderCtaBtn()}
+            </div>
           )}
         </div>
       )}

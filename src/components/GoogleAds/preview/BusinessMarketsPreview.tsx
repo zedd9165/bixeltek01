@@ -1,28 +1,25 @@
 "use client";
 
 import React from "react";
-import ServiceBusinessMarkets, {
-  type BusinessMarketsData,
-} from "@/components/services/common/ServiceBusinessMarkets";
+import ServiceIndustryCarousel from "@/components/services/common/ServiceIndustryCarousel";
 import { businessMarketsPreviewData } from "@/data/googleAdsPreviewData";
 
 export default function BusinessMarketsPreview({
   data = businessMarketsPreviewData,
-  id,
-  regionalBadgeText,
-  regionalHeading = "Cross-Border Campaign Experience",
+  id = "business-markets",
 }: {
-  data?: BusinessMarketsData;
+  data?: any;
   id?: string;
   regionalBadgeText?: string;
   regionalHeading?: string;
 }) {
   return (
-    <ServiceBusinessMarkets
+    <ServiceIndustryCarousel
       id={id}
-      data={data}
-      regionalBadgeText={regionalBadgeText}
-      regionalHeading={regionalHeading}
+      eyebrow={data.eyebrow}
+      h2={data.h2}
+      intro={data.intro}
+      cards={data.cards}
     />
   );
 }

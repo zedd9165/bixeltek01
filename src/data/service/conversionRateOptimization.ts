@@ -746,3 +746,160 @@ export const conversionRateOptimizationFinalCta = {
   supportingCopy:
     "We’ll start with your current website, conversion goals, traffic situation and available measurement, not a predetermined redesign package.",
 };
+
+// ============================================================
+// CRO BUSINESS MARKETS / INDUSTRY CAROUSEL
+// ============================================================
+
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import realEstateImg from "@/assets/real-estate.jpg";
+import localImg from "@/assets/local-business.jpg";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
+import carImg from "@/assets/digital marketing for car detailers.jpg";
+import schoolImg from "@/assets/school.jpg";
+
+export const conversionRateOptimizationBusinessMarkets = {
+  eyebrow: "INDUSTRY-SPECIFIC FUNNEL OPTIMIZATION",
+  h2: "Tailored CRO Strategies for Distinct Conversion Journeys",
+  intro:
+    "Conversion optimization is never one-size-fits-all. A dental clinic needs reassurance and easy booking; an ecommerce brand needs checkout velocity; a B2B firm needs qualification and executive trust. We engineer hypotheses around how your actual customers evaluate and decide.",
+  cards: [
+    {
+      title: "Dental & Healthcare Clinics",
+      description:
+        "Prospective patients evaluate practitioner credentials, hygiene standards, and accepted insurance before committing to an appointment. We eliminate multi-step booking friction, clarify treatment guidance, and streamline mobile consultation forms to convert high-intent healthcare searchers.",
+      visitorQuestion: "Why are website visitors reading our treatment pages but leaving without booking an appointment?",
+      focus: [
+        "Frictionless mobile appointment and consult request flows",
+        "Prominent practitioner credentials and patient trust proof",
+        "Transparent treatment information and insurance clarity",
+      ],
+      image: dentalImg,
+      imageAlt: "Healthcare and dental clinic conversion rate optimization",
+      link: "#contact-us",
+      linkText: "Dental CRO Strategy →",
+    },
+    {
+      title: "Roofing & Home Contracting Services",
+      description:
+        "Property owners dealing with storm damage or urgent repairs need immediate proof of licensing, insurance, and rapid response times. We replace generic contact forms with targeted quote calculators, verified past project galleries, and emergency click-to-call pathways that maximize qualified estimate bookings.",
+      visitorQuestion: "How do we convert ad traffic into booked on-site estimates instead of price shoppers who bounce?",
+      focus: [
+        "Multi-step estimate calculators and territory qualification",
+        "Prominent emergency call and scheduled inspection CTAs",
+        "Verified licensing, warranty, and insurance trust signals",
+      ],
+      image: roofingImg,
+      imageAlt: "Roofing contractor and home service conversion optimization",
+      link: "#contact-us",
+      linkText: "Roofing CRO Strategy →",
+    },
+    {
+      title: "Ecommerce & Direct-to-Consumer Brands",
+      description:
+        "Shoppers abandon carts due to unexpected shipping fees, clunky mobile checkouts, and missing delivery estimates. We audit product page layouts, streamline checkout field validation, and deploy persuasive purchase signals that systematically recover drop-offs and lift revenue per session.",
+      visitorQuestion: "Why do so many mobile shoppers add items to the cart but drop off before completing checkout?",
+      focus: [
+        "Single-page checkout simplification and express payment integration",
+        "Clear shipping thresholds, delivery countdowns, and return policies",
+        "Product page reassurance with customer photo reviews and sizing guides",
+      ],
+      image: ecommerceImg,
+      imageAlt: "Ecommerce and online retail conversion rate optimization",
+      link: "#contact-us",
+      linkText: "Ecommerce CRO Strategy →",
+    },
+    {
+      title: "Real Estate & Property Development",
+      description:
+        "High-ticket property buyers and commercial tenants require comprehensive asset details before requesting private tours or prospectus packs. We engineer floor-plan viewer funnels, virtual tour lead gates, and progressive qualification forms that capture serious investor interest.",
+      visitorQuestion: "How do we filter casual browsers from serious property investors and tour bookers?",
+      focus: [
+        "Interactive floor plan and brochure download lead gates",
+        "Progressive buyer qualification and investor intent profiling",
+        "Clear unit availability schedules and neighborhood data integration",
+      ],
+      image: realEstateImg,
+      imageAlt: "Real estate and property development conversion optimization",
+      link: "#contact-us",
+      linkText: "Real Estate CRO Strategy →",
+    },
+    {
+      title: "Local & Multi-Location Field Services",
+      description:
+        "When homeowners or facility managers need urgent cleaning, plumbing, or maintenance, they choose the provider that confirms availability fastest. We optimize service-area landing pages with automated dispatch booking, upfront service tiers, and tap-to-call headers configured for mobile users.",
+      visitorQuestion: "How do we capture urgent service requests when customers need help the same day?",
+      focus: [
+        "One-tap mobile calling and instant WhatsApp dispatch triggers",
+        "Service-area postal code lookup and immediate availability checks",
+        "Clear package scope comparisons and transparent pricing guides",
+      ],
+      image: localImg,
+      imageAlt: "Local and multi-location field service conversion rate optimization",
+      link: "#contact-us",
+      linkText: "Local Services CRO Strategy →",
+    },
+    {
+      title: "Corporate, Legal & Professional Services",
+      description:
+        "Corporate buyers and legal clients make measured, high-stakes decisions that demand verified partner authority and case precedents. We optimize practice-area pages, restructure confidential intake forms, and introduce partner bio validation that converts skeptical decision-makers into consultation calls.",
+      visitorQuestion: "How do we get executive decision-makers to submit confidential inquiry forms on our website?",
+      focus: [
+        "Confidential case intake flows with progressive profiling",
+        "Practice-area depth and verified partner case result highlights",
+        "Direct partner scheduling widgets that eliminate email tag",
+      ],
+      image: b2bImg,
+      imageAlt: "Legal and corporate professional services conversion optimization",
+      link: "#contact-us",
+      linkText: "Corporate CRO Strategy →",
+    },
+    {
+      title: "Technology & Cloud SaaS Platforms",
+      description:
+        "Software buyers want to see actual product workflows, pricing transparency, and security certifications before booking enterprise demos. We redesign pricing matrices, remove friction from self-serve trial onboardings, and optimize interactive product tour modals to accelerate product-qualified lead volume.",
+      visitorQuestion: "Why are enterprise prospects bouncing from our pricing page instead of scheduling a product demo?",
+      focus: [
+        "Interactive pricing tier calculators and feature comparison tables",
+        "Self-serve trial sign-up flows with minimal form friction",
+        "Interactive guided product tours and enterprise security validation",
+      ],
+      image: b2bImg,
+      imageAlt: "Technology and SaaS platform conversion rate optimization",
+      link: "#contact-us",
+      linkText: "SaaS CRO Strategy →",
+    },
+    {
+      title: "Automotive Dealerships & Service Centers",
+      description:
+        "Car shoppers and maintenance customers compare inventory and service slots across multiple local providers simultaneously. We build high-speed Vehicle Details Page (VDP) action bars, instant trade-in appraisal calculators, and online service bay reservation funnels that capture immediate intent.",
+      visitorQuestion: "How do we get vehicle shoppers to commit to a test drive or trade-in appraisal on our site?",
+      focus: [
+        "Sticky mobile Vehicle Details Page (VDP) inquiry and test-drive bars",
+        "Instant trade-in value estimators linked to CRM workflows",
+        "Real-time service bay scheduling and maintenance package selection",
+      ],
+      image: carImg,
+      imageAlt: "Automotive dealership and service center conversion optimization",
+      link: "#contact-us",
+      linkText: "Automotive CRO Strategy →",
+    },
+    {
+      title: "Education, Academies & Private Institutions",
+      description:
+        "Prospective students and parents evaluate academic curriculum, campus life, and career outcomes over long consideration cycles. We optimize syllabus download funnels, streamline campus tour reservations, and craft frictionless enrollment application steps for desktop and mobile.",
+      visitorQuestion: "How do we turn program page views into submitted application packets and campus visits?",
+      focus: [
+        "Course syllabus and prospectus download capture workflows",
+        "Open-day and campus tour reservation calendar integrations",
+        "Multi-stage digital student application forms with progress indicators",
+      ],
+      image: schoolImg,
+      imageAlt: "Education and academic institution conversion rate optimization",
+      link: "#contact-us",
+      linkText: "Education CRO Strategy →",
+    },
+  ],
+};

@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="min-h-screen overflow-hidden">{children}</main>
+      <main className="min-h-screen overflow-x-clip">{children}</main>
       <Footer />
     </>
   );

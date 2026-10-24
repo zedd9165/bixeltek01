@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import { BookingModalProvider } from "@/components/Common/BookingModalContext";
 
 import {
   conversionRateOptimizationMetadata,
@@ -18,6 +19,7 @@ import {
   conversionRateOptimizationRelatedServices,
   conversionRateOptimizationFaqs,
   conversionRateOptimizationFinalCta,
+  conversionRateOptimizationBusinessMarkets,
 } from "@/data/service/conversionRateOptimization";
 
 // Reusable Generic Service Components
@@ -34,6 +36,7 @@ import {
   ServiceSelectedWork,
   ServiceInvestment,
   ServiceRelatedServices,
+  ServiceIndustryCarousel,
   ServiceFAQ,
   ServiceFinalCTA,
 } from "@/components/services/common";
@@ -200,6 +203,16 @@ export default function ConversionRateOptimizationPage() {
 
       {/* 14 Related Services */}
      
+
+
+      {/* 12 Industry-Specific Funnel Optimization Carousel */}
+      <ServiceIndustryCarousel
+        id="business-markets"
+        eyebrow={conversionRateOptimizationBusinessMarkets.eyebrow}
+        h2={conversionRateOptimizationBusinessMarkets.h2}
+        intro={conversionRateOptimizationBusinessMarkets.intro}
+        cards={conversionRateOptimizationBusinessMarkets.cards}
+      />
 
       {/* 15 FAQs */}
       <ServiceFAQ

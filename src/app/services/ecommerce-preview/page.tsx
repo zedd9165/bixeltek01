@@ -19,6 +19,7 @@ import {
   ecommerceFaqPreviewData,
   ecommerceFinalOfferPreviewData,
   ecommerceWhyChoosePreviewData,
+  ecommerceBusinessMarkets,
 } from "@/data/service/ecom";
 
 // Generic Data-Driven Reusable Service Components
@@ -32,6 +33,7 @@ import {
   ServiceProcess,
   ServicePostLaunchSection,
   ServiceWhyChooseUs,
+  ServiceIndustryCarousel,
   ServiceRelatedServices,
   ServiceFAQ,
   ServiceFinalCTA,

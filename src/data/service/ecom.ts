@@ -1,3 +1,7 @@
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import localImg from "@/assets/local-business.jpg";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
 import type { StaticImageData } from "next/image";
 
 // Import your local assets from /src/assets
@@ -743,4 +747,74 @@ export const ecommerceOverviewData = {
   ],
   closingCopy:
     "Deliver frictionless shopping experiences, eliminate checkout drop-offs, and scale transaction volume with engineered reliability.",
+};
+
+
+export const ecommerceBusinessMarkets = {
+  eyebrow: "STORES BUILT AROUND YOUR COMMERCE MODEL",
+  h2: "Architectures Tailored for Different Selling Models",
+  intro:
+    "A direct-to-consumer fashion brand requires completely different speed, catalog navigation, and merchandising architecture than a high-volume B2B portal or a multi-location retailer. We tailor every build to your commerce dynamics.",
+  cards: [
+    {
+      title: "DTC & Consumer Lifestyle Brands",
+      description:
+        "Fast, visual storefronts engineered for impulse discovery, mobile conversion, subscription retention, and seamless social commerce checkout.",
+      visitorQuestion: "Is this shopping experience fast, smooth, and trustworthy on my phone?",
+      focus: [
+        "Sub-second mobile speed & one-click checkout",
+        "Rich product bundles, upsells & subscriptions",
+        "Social proof, customer reviews & UGC gallery feeds",
+      ],
+      link: "#plan-project",
+      linkText: "Request Consultation →",
+      image: ecommerceImg,
+      imageAlt: "Direct to consumer lifestyle brand ecommerce store",
+    },
+    {
+      title: "Healthcare & Clinic Stores",
+      description:
+        "Specialized product and treatment package sales with prescription verification, practitioner-recommended collections, and regulatory-compliant checkout.",
+      visitorQuestion: "Can I safely purchase practitioner-recommended products and treatments online?",
+      focus: [
+        "Prescription & consultation intake workflows",
+        "Service package vouchers & gift cards",
+        "HIPAA / privacy-compliant customer profiles",
+      ],
+      link: "#plan-project",
+      linkText: "Request Consultation →",
+      image: dentalImg,
+      imageAlt: "Healthcare clinic product and treatment ecommerce checkout",
+    },
+    {
+      title: "B2B & Wholesale Portals",
+      description:
+        "Custom pricing tiers, bulk order matrices, net-payment terms, gated wholesale catalogs, and seamless integration with existing ERP and inventory software.",
+      visitorQuestion: "Can we purchase on our corporate terms with tiered pricing and automated reordering?",
+      focus: [
+        "Custom tiered pricing by customer account",
+        "Quick CSV order pads & request-a-quote modes",
+        "ERP, CRM & inventory bidirectional sync",
+      ],
+      link: "#plan-project",
+      linkText: "Request Consultation →",
+      image: b2bImg,
+      imageAlt: "B2B wholesale portal with corporate accounts and tiered pricing",
+    },
+    {
+      title: "Multi-Location & Omnichannel Retailers",
+      description:
+        "Connecting physical store inventory to online ordering with click-and-collect, local warehouse routing, and unified point-of-sale customer history.",
+      visitorQuestion: "Is this item in stock at my nearest branch, and can I pick it up today?",
+      focus: [
+        "Click & collect (BOPIS) & store inventory lookup",
+        "Location-based warehouse fulfillment routing",
+        "Unified online & POS customer loyalty sync",
+      ],
+      link: "#plan-project",
+      linkText: "Request Consultation →",
+      image: localImg,
+      imageAlt: "Omnichannel retail store with store locator and click and collect",
+    },
+  ],
 };

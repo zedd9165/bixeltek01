@@ -97,7 +97,7 @@ export default function ServiceBusinessMarkets({
           </div>
 
           {/* Right Column: International Geographic Terminal */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32">
+          <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
             <div className="p-8 md:p-10 rounded-3xl bg-gray-50 border border-gray-200 space-y-6 relative overflow-hidden shadow-sm">
               <div className="flex items-center gap-2.5 text-xs font-semibold text-blue-600 uppercase tracking-wider font-poppins">
                 <Globe2 className="w-4 h-4" />

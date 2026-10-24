@@ -19,6 +19,7 @@ import {
   ecommerceFaqPreviewData,
   ecommerceFinalOfferPreviewData,
   ecommerceWhyChoosePreviewData,
+  ecommerceBusinessMarkets,
 } from "@/data/service/ecom";
 
 // Generic Data-Driven Reusable Service Components
@@ -32,6 +33,7 @@ import {
   ServiceProcess,
   ServicePostLaunchSection,
   ServiceWhyChooseUs,
+  ServiceIndustryCarousel,
   ServiceRelatedServices,
   ServiceFAQ,
   ServiceFinalCTA,
@@ -300,6 +302,15 @@ export default function EcommerceDevelopmentPage() {
         ctaHref="#plan-project"
       />
   
+      {/* 14 Business Models & Industry Carousel */}
+      <ServiceIndustryCarousel
+        id="business-markets"
+        eyebrow={ecommerceBusinessMarkets.eyebrow}
+        h2={ecommerceBusinessMarkets.h2}
+        intro={ecommerceBusinessMarkets.intro}
+        cards={ecommerceBusinessMarkets.cards}
+      />
+
       {/* 15 FAQs */}
       <ServiceFAQ
         id="faqs"
