@@ -1,4 +1,5 @@
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import corporateLegalImg from "@/assets/cooperate-legal.jpg";
 import localImg from "@/assets/local-business.jpg";
 import ecommerceImg from "@/assets/ecom-industry.png";
 import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
@@ -425,7 +426,7 @@ export const metaAdsBusinessMarkets = {
         "Thought-leadership assets & case-study creative",
         "CRM pipeline integration & lead quality scoring",
       ],
-      image: b2bImg,
+      image: corporateLegalImg,
       imageAlt: "B2B enterprise paid social lead generation",
       link: "#meta-ads-contact",
       linkText: "B2B Consulting Meta Ads →",

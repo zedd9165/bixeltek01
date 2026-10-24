@@ -8,6 +8,7 @@ import localImg from "@/assets/local-business.jpg";
 import landingImg from "@/assets/landing-page.png";
 import customImg from "@/assets/custom'.png";
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import corporateLegalImg from "@/assets/cooperate-legal.jpg";
 import technologyImg from "@/assets/campaign-creators-gMsnXqILjp4-unsplash.jpg";
 import franchiseImg from "@/assets/download.png";
 import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
@@ -942,7 +943,7 @@ export const webBusinessMarketsData = {
         "Case studies and evidence",
         "A clear delivery process",
       ],
-      image: b2bImg,
+      image: corporateLegalImg,
       imageAlt: "Professional services team reviewing a case study",
       link: "#website-project",
       linkText: "Corporate & Legal Web Design →",

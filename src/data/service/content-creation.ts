@@ -1,4 +1,5 @@
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import corporateLegalImg from "@/assets/cooperate-legal.jpg";
 import localImg from "@/assets/local-business.jpg";
 import ecommerceImg from "@/assets/ecom-industry.png";
 import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
@@ -927,7 +928,7 @@ export const contentCreationBusinessMarkets = {
       ],
       link: "#final-cta",
       linkText: "Request Consultation →",
-      image: b2bImg,
+      image: corporateLegalImg,
       imageAlt: "B2B corporate video production and leadership portraits",
     },
   ],
