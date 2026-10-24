@@ -1,4 +1,5 @@
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import corporateLegalImg from "@/assets/cooperate-legal.jpg";
 import localImg from "@/assets/local-business.jpg";
 import ecommerceImg from "@/assets/ecom-industry.png";
 import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
@@ -477,7 +478,7 @@ export const businessMarketsPreviewData = {
         "High-intent commercial query filtering",
         "Multi-touch attribution & offline conversions",
       ],
-      image: b2bImg,
+      image: corporateLegalImg,
       imageAlt: "B2B lead generation and search intent capture",
       link: "#google-ads-review",
       linkText: "B2B Consulting Ads →",

@@ -1,4 +1,5 @@
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import corporateLegalImg from "@/assets/cooperate-legal.jpg";
 import localImg from "@/assets/local-business.jpg";
 import ecommerceImg from "@/assets/ecom-industry.png";
 import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
@@ -783,7 +784,7 @@ export const businessMarketsPreviewData = {
         "In-depth capability & solutions content",
         "Technical crawl health & topical authority",
       ],
-      image: b2bImg,
+      image: corporateLegalImg,
       imageAlt: "B2B enterprise search intent and thought leadership",
       link: "#final-cta",
       linkText: "Corporate & Legal SEO →",

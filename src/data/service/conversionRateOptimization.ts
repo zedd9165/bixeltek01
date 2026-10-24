@@ -752,6 +752,7 @@ export const conversionRateOptimizationFinalCta = {
 // ============================================================
 
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import corporateLegalImg from "@/assets/cooperate-legal.jpg";
 import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
 import ecommerceImg from "@/assets/ecom-industry.png";
 import realEstateImg from "@/assets/real-estate.jpg";
@@ -851,7 +852,7 @@ export const conversionRateOptimizationBusinessMarkets = {
         "Practice-area depth and verified partner case result highlights",
         "Direct partner scheduling widgets that eliminate email tag",
       ],
-      image: b2bImg,
+      image: corporateLegalImg,
       imageAlt: "Legal and corporate professional services conversion optimization",
       link: "#contact-us",
       linkText: "Corporate CRO Strategy →",

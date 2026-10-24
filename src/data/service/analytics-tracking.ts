@@ -793,6 +793,7 @@ export const analyticsTrackingFinalCta = {
 // ============================================================
 
 import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import corporateLegalImg from "@/assets/cooperate-legal.jpg";
 import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
 import ecommerceImg from "@/assets/ecom-industry.png";
 import realEstateImg from "@/assets/real-estate.jpg";
@@ -892,7 +893,7 @@ export const analyticsTrackingBusinessMarkets = {
         "Executive thought-leadership and whitepaper download depth analysis",
         "Clean tag governance and third-party script audit for corporate security",
       ],
-      image: b2bImg,
+      image: corporateLegalImg,
       imageAlt: "Corporate and legal professional services analytics governance",
       link: "#analytics-tracking-contact",
       linkText: "Corporate Analytics Setup →",
