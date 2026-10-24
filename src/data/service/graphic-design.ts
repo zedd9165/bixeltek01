@@ -1,3 +1,7 @@
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import localImg from "@/assets/local-business.jpg";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
 import type {
   BreadcrumbItem,
   JumpLinkItem,
@@ -801,5 +805,75 @@ export const graphicDesignImplementationNotes = {
     "Reviewed competitor service pages commonly group brand identity, social media assets, ad creatives, collateral, packaging and print. The intended Bixeltek differentiation is practical asset use, channel-specific preparation and clear handoff, rather than copying an expanded deliverables menu.",
     "Adobe Illustrator documentation explains packaging files with linked graphics and fonts for handoff, and warns that font permissions depend on applicable licences. Verify exact files and rights at project scoping.",
     "For digital visuals with text, contrast and legibility should be checked in context; WCAG guidance describes contrast thresholds for web text. Do not treat this as a blanket certification of a graphic design deliverable.",
+  ],
+};
+
+
+export const graphicDesignBusinessMarkets = {
+  eyebrow: "DESIGN SHAPED AROUND YOUR BUSINESS MODEL",
+  h2: "Strategic Visual Identity for Different Market Demands",
+  intro:
+    "Design requirements differ dramatically depending on what you sell and how customers perceive value. We tailor brand assets, marketing collateral, and digital visuals to your industry context.",
+  cards: [
+    {
+      title: "Dental & Healthcare Practices",
+      description:
+        "Clean, reassuring visual design that communicates medical professionalism, patient safety, and clinical excellence across signage, treatment brochures, and digital touchpoints.",
+      visitorQuestion: "Does this clinic present the hygiene, trust, and quality I want for my care?",
+      focus: [
+        "Patient-facing treatment guides & brochures",
+        "Clinical brand identity & interior signage systems",
+        "Digital social templates & website graphic assets",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: dentalImg,
+      imageAlt: "Healthcare practice branding and patient guide design",
+    },
+    {
+      title: "Ecommerce & Consumer Brands",
+      description:
+        "High-impact packaging, promotional campaign assets, and conversion-focused product merchandising that stand out in crowded feeds and physical shelves.",
+      visitorQuestion: "Does this product look premium, credible, and worth the price?",
+      focus: [
+        "Packaging design, unboxing collateral & labels",
+        "Promotional banner suites & social ad variations",
+        "Infographics, dimension charts & visual badges",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: ecommerceImg,
+      imageAlt: "Ecommerce packaging and promotional visual design",
+    },
+    {
+      title: "Local & Trade Services",
+      description:
+        "Memorable vehicle wraps, printed door hangers, uniform apparel, and localized marketing materials that build instant neighbourhood trust and recognition.",
+      visitorQuestion: "Are they an established, professional company I can trust in my home?",
+      focus: [
+        "Fleet vehicle wrap graphics & branded apparel",
+        "Direct mail flyers, door hangers & business cards",
+        "Service-area banners & job-site lawn signs",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: localImg,
+      imageAlt: "Local service business branding and fleet graphics",
+    },
+    {
+      title: "B2B & Corporate Enterprises",
+      description:
+        "Authoritative brand systems, investor decks, whitepapers, and exhibition trade-show graphics that reflect technical competence and commercial weight.",
+      visitorQuestion: "Does this organisation have the credibility to deliver enterprise-scale work?",
+      focus: [
+        "Executive presentation decks & annual reports",
+        "Whitepaper, case-study & one-pager collateral",
+        "Trade-show booth displays & large-format signage",
+      ],
+      link: "#final-cta",
+      linkText: "Request Consultation →",
+      image: b2bImg,
+      imageAlt: "Corporate enterprise visual identity and presentation collateral",
+    },
   ],
 };

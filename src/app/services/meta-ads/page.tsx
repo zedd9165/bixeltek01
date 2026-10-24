@@ -41,7 +41,7 @@ import {
   ServiceTechnologySection,
   ServiceSystemCards,
   ServiceStartingSituations,
-  ServiceBusinessMarkets,
+  ServiceIndustryCarousel,
   ServiceSuitabilitySection,
   ServiceWhyChooseUs,
   ServiceInvestment,
@@ -619,24 +619,13 @@ export default function MetaAdsPage() {
         data={metaAdsStartingSituations}
       />
 
-      {/* 15 Business Models & Regional Capabilities */}
-      <ServiceBusinessMarkets
+      {/* 15 Business Models & Industry Carousel */}
+      <ServiceIndustryCarousel
         id="business-markets"
-        data={{
-          ...metaAdsBusinessMarkets,
-          regionalIntro:
-            "We manage Meta Ads for businesses targeting local markets, nationwide expansion and cross-border audiences—adapting creative nuances, messaging angles and acquisition economics to each region.",
-          regionalLinks: [
-            { label: "Hyderabad", destination: "/social-media-marketing-agency-hyderabad" },
-            { label: "Toronto", destination: "/toronto" },
-            { label: "Mississauga", destination: "/mississauga/social-media-marketing" },
-            { label: "Vancouver", destination: "/vancouver/social-media-marketing" },
-            { label: "Riyadh", destination: "/saudi-arabia/riyadh/social-media-management" },
-            { label: "Eastern Province", destination: "/saudi-arabia/eastern-province/social-media-management" },
-          ],
-        }}
-        regionalBadgeText="Market Reach"
-        regionalHeading="Cross-Border & Regional Social Campaign Experience"
+        eyebrow={metaAdsBusinessMarkets.eyebrow}
+        h2={metaAdsBusinessMarkets.h2}
+        intro={metaAdsBusinessMarkets.intro}
+        cards={metaAdsBusinessMarkets.cards}
       />
 
       {/* 20 Frequently Asked Questions */}

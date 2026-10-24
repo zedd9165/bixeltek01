@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import { BookingModalProvider } from "@/components/Common/BookingModalContext";
 import {
   googleAdsPreviewMetadata,
   heroPreviewData,
@@ -39,9 +40,9 @@ import TechnologiesSection, {
   TechnologyItem,
 } from "@/components/services/common/ServiceTechnologySection";
 import type { TechStackItem } from "@/components/services/common/ServiceFinalCTA";
-
+import heroImg from '@/assets/google-ads-hero.png'
 import overviewImg from "@/assets/google-ads-overview.jpg";
-import whyChooseImg from "@/assets/google-ads-dentists-reporting-dashboard.webp";
+import whyChooseImg from "@/assets/why-choose-bixeltek-for-google-ads.png";
 
 import { Header } from "@/sections/Header";
 import ClientTrustMarquee from "@/components/Home2/ClientLogo";
@@ -190,7 +191,8 @@ export const dynamic = "force-dynamic";
 
 export default function GoogleAdsPreviewPage() {
   return (
-    <main className="bg-[#08080C] min-h-screen">
+    <BookingModalProvider>
+      <main className="bg-[#08080C] min-h-screen">
       {/* 02 Service Hero (Shared Common Component) */}
       <ServiceHero
         eyebrow={heroPreviewData.eyebrow}
@@ -203,7 +205,7 @@ export default function GoogleAdsPreviewPage() {
         visualTagSubtitle="Google Partner Agency"
         visualTagTitle="Search · Performance Max · Shopping"
         visualBadgeText="Verified Management"
-        visualImage={whyChooseImg}
+        visualImage={heroImg}
       />
 
       {/* 03 Client Trust Marquee */}
@@ -249,16 +251,6 @@ export default function GoogleAdsPreviewPage() {
       {/* 10 Conversion Journey */}
       <ConversionJourneyPreview />
 
-      {/* 11 Reporting & Lead Quality (Shared System Cards Component) */}
-      <ServiceSystemCards
-        id="reporting-systems"
-        eyebrow={reportingLeadQualityPreviewData.eyebrow}
-        h2={reportingLeadQualityPreviewData.h2}
-        intro={reportingLeadQualityPreviewData.intro}
-        cards={reportingLeadQualityPreviewData.cards}
-        supportingNote={reportingLeadQualityPreviewData.supportingParagraph}
-      />
-
             <ServiceWhyChooseUs
         id="why-bixeltek"
         data={googleAdsWhyChooseData}
@@ -280,8 +272,9 @@ export default function GoogleAdsPreviewPage() {
         h2="Platforms & Tools Engineered for Measurement & Scale"
         intro="From high-intent search bidding to server-side attribution and live ROAS dashboards, we deploy enterprise marketing technologies to optimize every click."
         technologies={googleAdsTechnologies}
-        ctaText="Need custom CRM integration, offline conversion tracking, or server-side GTM?"
-        ctaButtonText="Contact Us Now"
+        ctaTitle="Facing Complex Conversion or Measurement Challenges?"
+        ctaText="We evaluate your advertising around revenue outcomes, lead quality, and business goals aligning tracking, campaigns, and conversion paths to solve real growth bottlenecks."
+        ctaButtonText="Book an Audit"
         ctaHref="#google-ads-review"
       />
 
@@ -305,6 +298,7 @@ export default function GoogleAdsPreviewPage() {
       />
 
       {/* 18 Final CTA & Review Form (Shared Common Component) */}
+      <div id="final-cta" className="scroll-mt-24" />
       <ServiceFinalCTA
         id="google-ads-review"
         eyebrow={finalOfferPreviewData.eyebrow}
@@ -314,6 +308,7 @@ export default function GoogleAdsPreviewPage() {
         tools={googleAdsFinalCtaTools}
       />
 
-    </main>
+      </main>
+    </BookingModalProvider>
   );
 }

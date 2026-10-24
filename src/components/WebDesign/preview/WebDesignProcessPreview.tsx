@@ -29,6 +29,12 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { webProcessData } from "@/data/service/webdesing";
+import { Caveat } from "next/font/google";
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
 
 // One icon per stage (cycles if you add more stages)
 const stageIcons = [Search, Network, MousePointerClick, Palette, Code2, Rocket];
@@ -362,10 +368,9 @@ export default function WebDesignProcessPreview() {
           </h2>
               <div className="block select-none my-2">
             <span
-              className="text-3xl md:text-4xl font-medium italic tracking-wide"
+              className={`${caveat.className} text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide`}
               style={{
-                fontFamily: "var(--font-caveat), 'Playfair Display', cursive, sans-serif",
-                color: "#FEBC2E",
+                color: "#D4A017",
               }}
             >
               have you got yours?

@@ -1,6 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import Link from "next/link";
+import { useBookingModal } from "@/components/Common/BookingModalContext";
 import { showcaseContent } from "@/data/service/webdesing";
 
 import img1 from "@/assets/rootedtreeservices.com_(hd screenshot).png";
@@ -24,6 +26,7 @@ const images = [
 ];
 
 export default function WebDesignShowcaseSection() {
+  const { openBooking } = useBookingModal();
   return (
     <section className="mx-auto w-full py-5 md:py-20 min-h-screen relative bg-white text-[#08080C] gap-5 flex flex-col items-center justify-center overflow-hidden">
       {/* Cheap radial gradient instead of a 500px element with blur-[190px] (that blur is costly to paint) */}
@@ -103,11 +106,15 @@ export default function WebDesignShowcaseSection() {
         <h2 className="text-2xl font-inter font-semibold text-[#08080C] text-center">
           {showcaseContent.closingHeading}
         </h2>
-        <Link href={showcaseContent.ctaHref}>
-          <button className="px-7 py-3 rounded-2xl bg-blue-600 border border-blue-500 text-white font-semibold text-sm shadow-lg hover:bg-blue-700 transition">
-            {showcaseContent.ctaText}
-          </button>
-        </Link>
+
+        <button
+          type="button"
+          onClick={openBooking}
+          className="px-7 py-3 rounded-2xl bg-blue-600 border border-blue-500 text-white font-semibold text-sm shadow-lg hover:bg-blue-700 transition cursor-pointer"
+        >
+          {showcaseContent.ctaText}
+        </button>
+
       </div>
     </section>
   );

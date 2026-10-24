@@ -1,3 +1,10 @@
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import localImg from "@/assets/local-business.jpg";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
+import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
+import realEstateImg from "@/assets/real-estate.jpg";
+import carImg from "@/assets/digital marketing for car detailers.jpg";
 ﻿export interface GoogleAdsMetadata {
   title: string;
   description: string;
@@ -120,7 +127,7 @@ export const heroPreviewData = {
   h1: "Google Ads Management That Turns Search Intent Into Customers",
   p1: "We help reach people looking for what you sell or Offer, give them a clear reason to choose you, and measure what happens after they click. Bixeltek connects Google Ads strategy, landing pages and conversion tracking to help your business generate qualified enquiries and sales.",
   p2: "Whether you are launching your first campaign or improving an existing account, we build the approach around your market, budget and customer acquisition goals.",
-  primaryButtonText: "Talk to our Google Ads Expert",
+  primaryButtonText: "Get a Free Google Ads Audit",
   primaryButtonHref: "#google-ads-review",
   secondaryLinkText: "Explore Our Results",
   secondaryLinkHref: "#results",
@@ -419,21 +426,121 @@ export const businessMarketsPreviewData = {
       title: "Dental & Healthcare Practices",
       description:
         "Treatment and location searches, informative landing pages and a clear route to an appointment enquiry. Campaign priorities reflect the services offered, available capacity and relevant advertising requirements.",
+      visitorQuestion: "Can Google Ads predictably bring qualified new patients to our clinic?",
+      focus: [
+        "High-intent treatment & emergency searches",
+        "Call tracking & appointment conversion paths",
+        "Google Partner & healthcare ad compliance",
+      ],
+      image: dentalImg,
+      imageAlt: "Dental & healthcare practice Google Ads campaign",
+      link: "#google-ads-review",
+      linkText: "Dental Industry Ads →",
     },
     {
       title: "Local & Multi-Location Services",
       description:
         "Service-area targeting, relevant calls and quote requests, with a clear connection to the team responsible for each location. We consider geography, seasonality and service priorities when allocating the budget.",
+      visitorQuestion: "How do we generate quote requests in specific service territories without wasted spend?",
+      focus: [
+        "Radius & location-tier bidding",
+        "Call extensions & click-to-lead routing",
+        "Negative keyword & query waste elimination",
+      ],
+      image: localImg,
+      imageAlt: "Local service business advertising across target territories",
+      link: "#google-ads-review",
+      linkText: "Local Services Ads →",
     },
     {
       title: "Ecommerce & Consumer Brands",
       description:
         "Product discovery and purchase journeys informed by catalogue quality, conversion data and commercial priorities. Campaign decisions consider which products and customers can support viable growth.",
+      visitorQuestion: "Can our ad spend scale profitably across Shopping and Performance Max?",
+      focus: [
+        "Product feed optimization & merchant center health",
+        "Target ROAS & margin-based asset groups",
+        "New vs returning customer attribution",
+      ],
+      image: ecommerceImg,
+      imageAlt: "Ecommerce Google Shopping and Performance Max campaign management",
+      link: "#google-ads-review",
+      linkText: "Retail & Ecommerce Ads →",
     },
     {
-      title: "B2B & Established Businesses",
+      title: "B2B & Professional Services",
       description:
         "Advertising that helps prospective buyers understand the offer and make a relevant enquiry. Measurement considers lead quality and the longer path from first contact to a sales opportunity.",
+      visitorQuestion: "Can Google search capture decision-makers researching complex enterprise solutions?",
+      focus: [
+        "Qualified lead capture & CRM pipeline sync",
+        "High-intent commercial query filtering",
+        "Multi-touch attribution & offline conversions",
+      ],
+      image: b2bImg,
+      imageAlt: "B2B lead generation and search intent capture",
+      link: "#google-ads-review",
+      linkText: "B2B Consulting Ads →",
+    },
+    {
+      title: "Roofing & Home Contractors",
+      description:
+        "High-ticket replacement and emergency repair campaigns engineered with strict geo-radius boundaries, negative query filtering, and real-time call tracking to eliminate wasted spend.",
+      visitorQuestion: "How do we win high-value roofing and restoration contracts in our primary service areas?",
+      focus: [
+        "Geo-fenced territory radius bidding",
+        "Emergency click-to-call routing",
+        "High-ticket commercial contract funnels",
+      ],
+      image: roofingImg,
+      imageAlt: "Roofing and contractor Google Ads acquisition campaigns",
+      link: "#google-ads-review",
+      linkText: "Roofing Industry Ads →",
+    },
+    {
+      title: "Real Estate & Construction",
+      description:
+        "Campaigns structured to capture qualified home buyers, commercial tenants, and property investors with high-intent localized search ads and hyper-targeted display remarketing.",
+      visitorQuestion: "Can Google search reliably connect us with verified property buyers and commercial lease leads?",
+      focus: [
+        "High-intent commercial property search",
+        "Verified lead form conversion paths",
+        "Project-tier asset segmentation",
+      ],
+      image: realEstateImg,
+      imageAlt: "Real estate and construction digital advertising",
+      link: "#google-ads-review",
+      linkText: "Real Estate Ads →",
+    },
+    {
+      title: "Technology & Enterprise SaaS",
+      description:
+        "Reach IT leaders, CTOs, and technical buyers through intent-driven search, demo booking landing page experiences, and closed-loop CRM offline conversion synchronization.",
+      visitorQuestion: "Can Google Ads reach enterprise decision-makers and convert high-ACV pipeline opportunities?",
+      focus: [
+        "B2B intent qualification filters",
+        "Demo & trial conversion tracking",
+        "HubSpot & Salesforce pipeline sync",
+      ],
+      image: b2bImg,
+      imageAlt: "Enterprise technology and SaaS search advertising",
+      link: "#google-ads-review",
+      linkText: "Tech & SaaS Ads →",
+    },
+    {
+      title: "Automotive & Dealerships",
+      description:
+        "Drive showroom visits, test-drive inquiries, and high-margin service center bookings through localized Google Maps promotions, mobile extensions, and vehicle inventory ads.",
+      visitorQuestion: "How do we drive high-intent local repair bookings and vehicle sales inquiries with measurable ROAS?",
+      focus: [
+        "Google Maps & local call extensions",
+        "High-margin repair query prioritization",
+        "Cross-device appointment attribution",
+      ],
+      image: carImg,
+      imageAlt: "Automotive dealership and service center advertising",
+      link: "#google-ads-review",
+      linkText: "Automotive Ads →",
     },
   ],
   regionalIntro:
@@ -583,7 +690,7 @@ export const googleAdsWhyChooseData = {
 
 export const googleAdsRelatedServicesData = {
   eyebrow: "CONNECTED GROWTH SOLUTIONS",
-  h2: "Our Other Services That Multiply Your Google Ads Performance",
+  h2: "Our Expertise That Compliments Your Google Ads Performance",
   intro:
     "Paid search thrives when backed by strong organic authority, high-converting web experiences, and relentless conversion rate optimization. Explore our connected digital solutions engineered to scale your business.",
   cards: [

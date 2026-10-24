@@ -1,3 +1,11 @@
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import localImg from "@/assets/local-business.jpg";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
+import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
+import realEstateImg from "@/assets/real-estate.jpg";
+import carImg from "@/assets/digital marketing for car detailers.jpg";
+import schoolImg from "@/assets/school.jpg";
 ﻿/**
  * Bixeltek Meta Ads Management - service-page content draft
  *
@@ -335,22 +343,137 @@ export const metaAdsBusinessMarkets = {
     {
       title: "Dental & Healthcare Practices",
       description:
-        "Present relevant treatments and appointment options with clear, responsible messaging. Campaigns should direct prospective patients to useful information and a practical booking or enquiry path, while respecting applicable platform policies and local regulations.",
+        "Present relevant treatments and appointment options with clear, responsible messaging. Campaigns direct prospective patients to useful information and practical booking paths while respecting healthcare policies.",
+      visitorQuestion: "Can Facebook & Instagram ads predictably bring private patients for high-value treatments?",
+      focus: [
+        "Treatment awareness & practitioner credibility proof",
+        "Localized radius targeting & clinic trust signals",
+        "Frictionless lead forms & appointment booking paths",
+      ],
+      image: dentalImg,
+      imageAlt: "Healthcare and dental practice paid social advertising",
+      link: "#meta-ads-contact",
+      linkText: "Dental Meta Ads →",
+    },
+    {
+      title: "Roofing & Home Contracting Services",
+      description:
+        "Run localized video reels showing storm damage diagnostics and crew craftsmanship. Guide local homeowners through fast Meta Instant Forms with automated email and SMS notification to your sales team.",
+      visitorQuestion: "How do we generate qualified roof replacement leads from local homeowners on Instagram and Facebook?",
+      focus: [
+        "Zip-code & homeowner radius targeting",
+        "Free roof inspection offer hooks",
+        "Automated CRM lead notification pipeline",
+      ],
+      image: roofingImg,
+      imageAlt: "Roofing and home contractor Facebook and Instagram ad campaigns",
+      link: "#meta-ads-contact",
+      linkText: "Roofing Meta Ads →",
     },
     {
       title: "Ecommerce & Consumer Brands",
       description:
-        "Connect product value, creative testing, catalogue considerations where relevant and purchase measurement. Review the shopping journey so the ad promise, product page, delivery information and checkout experience stay aligned.",
+        "Connect product value, creative testing, catalogue considerations and purchase measurement. Review the shopping journey so the ad promise, product page, and checkout stay aligned.",
+      visitorQuestion: "Can our paid social spend acquire customers profitably while scaling revenue?",
+      focus: [
+        "Dynamic product ads & Advantage+ catalogue campaigns",
+        "Direct-to-consumer creative hooks & UGC variations",
+        "Server-side Conversions API & purchase attribution",
+      ],
+      image: ecommerceImg,
+      imageAlt: "Ecommerce social media shopping and catalogue campaigns",
+      link: "#meta-ads-contact",
+      linkText: "Ecommerce Meta Ads →",
+    },
+    {
+      title: "Real Estate & Property Developers",
+      description:
+        "Showcase luxury developments, architectural renders, and unit walk-throughs using immersive Instagram Reels and carousel formats with targeted buyer demographics.",
+      visitorQuestion: "Can Meta ads reach serious home buyers and property investors in our target cities?",
+      focus: [
+        "High-value demographic & interest clustering",
+        "Interactive virtual tour video ads",
+        "Pre-qualified brochure download forms",
+      ],
+      image: realEstateImg,
+      imageAlt: "Real estate development paid social advertising",
+      link: "#meta-ads-contact",
+      linkText: "Real Estate Meta Ads →",
     },
     {
       title: "Local & Multi-Location Services",
       description:
-        "Reach people within realistic service areas and make the location, service and next action clear. Where multiple branches are involved, lead routing and location-level reporting may need to be considered.",
+        "Reach people within realistic service areas and make the location, service and next action clear. Where multiple branches are involved, lead routing and location-level reporting are built in.",
+      visitorQuestion: "How do we generate qualified phone calls and service requests in our local service areas?",
+      focus: [
+        "Localized zip & radius geo-fencing",
+        "Instant lead forms with qualifying questions",
+        "Click-to-call & message-based enquiry flows",
+      ],
+      image: localImg,
+      imageAlt: "Local service business targeted social advertising",
+      link: "#meta-ads-contact",
+      linkText: "Local Services Meta Ads →",
     },
     {
-      title: "B2B & Considered Services",
+      title: "B2B & Professional Consulting",
       description:
-        "Use Meta to introduce an offer, support consideration or generate enquiries when the audience and message fit the buying process. Lead qualification, follow-up and sales feedback matter when conversion to revenue takes time.",
+        "Use Meta to introduce an offer, support consideration or generate enquiries when the audience and message fit the buying process. Lead qualification and sales feedback ensure revenue impact.",
+      visitorQuestion: "Can targeted Meta campaigns generate real decision-maker leads without vanity metrics?",
+      focus: [
+        "Job-title, industry & interest proxy targeting",
+        "Thought-leadership assets & case-study creative",
+        "CRM pipeline integration & lead quality scoring",
+      ],
+      image: b2bImg,
+      imageAlt: "B2B enterprise paid social lead generation",
+      link: "#meta-ads-contact",
+      linkText: "B2B Consulting Meta Ads →",
+    },
+    {
+      title: "Technology & SaaS Platforms",
+      description:
+        "Capture product demand with 15-second interface walkthroughs, founder story reels, and interactive calculator lead magnets that convert cold prospects into product trials.",
+      visitorQuestion: "Can paid social acquire low-CAC free trial signups for our software platform?",
+      focus: [
+        "Micro-demo video hooks & feature carousels",
+        "Self-serve trial & demo booking funnels",
+        "In-app event tracking with Conversions API",
+      ],
+      image: b2bImg,
+      imageAlt: "Technology and SaaS software Meta advertising",
+      link: "#meta-ads-contact",
+      linkText: "Tech & SaaS Meta Ads →",
+    },
+    {
+      title: "Automotive Dealerships & Detailers",
+      description:
+        "Drive local drivers to your showroom or service bay with dynamic vehicle inventory ads, seasonal maintenance discounts, and click-to-WhatsApp booking conversations.",
+      visitorQuestion: "How do we book out our service bays and drive weekend showroom traffic?",
+      focus: [
+        "Dynamic vehicle inventory catalogue ads",
+        "Localized service discount video promos",
+        "Direct-to-WhatsApp appointment booking",
+      ],
+      image: carImg,
+      imageAlt: "Automotive dealership and service center Meta advertising",
+      link: "#meta-ads-contact",
+      linkText: "Automotive Meta Ads →",
+    },
+    {
+      title: "Education & Online Academies",
+      description:
+        "Recruit qualified applicants for degree programs, bootcamps, and professional certifications with authentic graduate transformation reels and deadline-driven scholarship funnels.",
+      visitorQuestion: "Can Instagram & Facebook reels drive qualified student application submissions?",
+      focus: [
+        "Student success story video campaigns",
+        "Admission deadline & early-bird hooks",
+        "Multi-step applicant qualification forms",
+      ],
+      image: schoolImg,
+      imageAlt: "Education institution and training academy Meta advertising",
+      link: "#meta-ads-contact",
+      linkText: "Education Meta Ads →",
     },
   ],
 };

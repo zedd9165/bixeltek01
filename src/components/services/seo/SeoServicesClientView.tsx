@@ -14,7 +14,7 @@ import {
   ServiceConversionJourney,
   ServiceProcess,
   ServiceStartingSituations,
-  ServiceBusinessMarkets,
+  ServiceIndustryCarousel,
   ServiceRelatedServices,
   ServiceFAQ,
   ServiceFinalCTA,
@@ -143,6 +143,7 @@ export default function SeoServicesClientView({
         {/* 07 SEO Service Scope with Dynamic Booking Calendar CTA */}
         <ServiceScopeSection
           id="seo-scope"
+          headerLayout="split"
           eyebrow="SEO SERVICE SCOPE"
           h2="Comprehensive Search Optimization Across Technical, Content & Strategic Priorities"
           intro="From technical audits and crawl diagnostics to intent-mapped content architecture, local visibility, and search analytics, our SEO deliverables address the full spectrum of organic discovery."
@@ -160,8 +161,9 @@ export default function SeoServicesClientView({
           h2="Tools & Platforms Engineered for Technical Precision & Crawl Clarity"
           intro="From crawl analysis and search console telemetry to intent mapping, server-side tracking and live ranking analytics, we deploy enterprise SEO tools to guide every optimization decision."
           technologies={technologies}
-          ctaText="Need custom crawl analysis, Schema integration, or technical site migration audits?"
-          ctaButtonText="Get in Touch"
+          ctaTitle="Losing Leads? Clients? Low Visibility?"
+          ctaText="We evaluate your search presence around qualified enquiries, client acquisition, and measurable revenue outcomes—pinpointing the exact crawl, content, and ranking bottlenecks holding your business back."
+          ctaButtonText="Request an Audit"
           ctaHref="#final-cta"
         />
 
@@ -188,14 +190,13 @@ export default function SeoServicesClientView({
         <ServiceProcess
           id="seo-process"
           eyebrow="OUR DELIVERY PROCESS"
-          h2="A Methodical SEO Process Designed Around Real Search Opportunities"
+          h2="A Proven SEO Process Designed Around Real Search Opportunities"
           intro="From understanding your business context and auditing technical foundations to intent mapping, implementation, and iterative measurement, our process ensures steady organic progress."
           stages={process.map((p: any) => ({
             stageNumber: p.number,
             title: p.title,
             description: p.description,
           }))}
-          supportingParagraph="We validate indexation, search performance indicators, and enquiry tracking at each stage, refining priorities based on observed results."
         />
 
         {/* 12 Starting Situations */}
@@ -204,12 +205,13 @@ export default function SeoServicesClientView({
           data={startingSituationsData}
         />
 
-        {/* 13 Business Types and Markets */}
-        <ServiceBusinessMarkets
+        {/* 13 Business Types and Markets (Dynamic Industry Carousel) */}
+        <ServiceIndustryCarousel
           id="business-markets"
-          data={businessMarketsData}
-          regionalBadgeText="Regional Capabilities"
-          regionalHeading="Local & International Search Capabilities"
+          eyebrow={businessMarketsData.eyebrow}
+          h2={businessMarketsData.h2}
+          intro={businessMarketsData.intro}
+          cards={businessMarketsData.cards}
         />
 
         {/* 14 Related Services */}

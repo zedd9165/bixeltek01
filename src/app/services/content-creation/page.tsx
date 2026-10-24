@@ -18,6 +18,7 @@ import {
   contentCreationRelatedServices,
   contentCreationFaqs,
   contentCreationFinalCta,
+  contentCreationBusinessMarkets,
 } from "@/data/service/content-creation";
 
 // Generic Reusable Service Components
@@ -32,6 +33,7 @@ import {
   ServiceProcess,
   ServiceTechnologySection,
   ServiceWhyChooseUs,
+  ServiceIndustryCarousel,
   ServiceInvestment,
   ServicePostLaunchSection,
   ServiceRelatedServices,
@@ -301,6 +303,15 @@ export default function ContentCreationPage() {
       />
 
 
+
+      {/* 14 Industry Verticals Carousel */}
+      <ServiceIndustryCarousel
+        id="business-markets"
+        eyebrow={contentCreationBusinessMarkets.eyebrow}
+        h2={contentCreationBusinessMarkets.h2}
+        intro={contentCreationBusinessMarkets.intro}
+        cards={contentCreationBusinessMarkets.cards}
+      />
 
       {/* 15 Related Services */}
       <ServiceRelatedServices

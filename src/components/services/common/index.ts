@@ -22,3 +22,5 @@ export { default as ServiceBusinessMarkets } from "./ServiceBusinessMarkets";
 export { default as ServiceConversionJourney } from "./ServiceConversionJourney";
 export { default as ServiceTechnologySection } from "./ServiceTechnologySection";
 export { default as TechnologiesSection } from "./ServiceTechnologySection";
+export { default as ServiceIndustryCarousel } from "./ServiceIndustryCarousel";
+export { default as ServiceBusinessMarketsCarousel } from "./ServiceIndustryCarousel";

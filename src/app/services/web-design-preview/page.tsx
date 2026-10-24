@@ -1,4 +1,5 @@
 import React from "react";
+import { BookingModalProvider } from "@/components/Common/BookingModalContext";
 import { Metadata } from "next";
 
 // Data Source of Truth for Web Design
@@ -199,6 +200,7 @@ export const dynamic = "force-dynamic";
 
 export default function WebDesignPreviewPage() {
   return (
+    <BookingModalProvider>
     <main className="bg-[#08080C] min-h-screen">
       {/* 01 Global Header */}
       <Header />
@@ -326,5 +328,6 @@ export default function WebDesignPreviewPage() {
       {/* 21 Global Footer */}
       <Footer />
     </main>
+    </BookingModalProvider>
   );
 }

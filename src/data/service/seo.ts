@@ -1,3 +1,12 @@
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import localImg from "@/assets/local-business.jpg";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
+import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
+import realEstateImg from "@/assets/real-estate.jpg";
+import carImg from "@/assets/digital marketing for car detailers.jpg";
+import cleaningImg from "@/assets/digital marketing servies for cleaning companies.jpg";
+import schoolImg from "@/assets/school.jpg";
 ﻿
 import type {
   BreadcrumbItem,
@@ -668,7 +677,7 @@ export const startingSituationsPreviewData = {
   h2: "Building Organic Visibility or Improving What Already Exists?",
   cards: [
     {
-      title: "Launching a New Website?",
+      title: "Launch An SEO Ready Website",
       description:
         "Build a search-ready foundation before organic growth becomes harder to manage. We assess site architecture, search intent, URL structure, indexation, internal linking and measurement requirements to establish a practical SEO roadmap for launch and beyond.",
     },
@@ -693,21 +702,136 @@ export const businessMarketsPreviewData = {
       title: "Dental & Healthcare Practices",
       description:
         "Build visibility around relevant treatments, practitioner expertise and location-based searches. We consider local search presence, service-page relevance, useful patient information and trust signals that help prospective patients evaluate their options.",
+      visitorQuestion: "Can prospective patients easily find and trust our clinic for their treatments?",
+      focus: [
+        "Treatment pages & localized service schema",
+        "Google Business Profile & local pack visibility",
+        "Patient trust signals & doctor credentials",
+      ],
+      image: dentalImg,
+      imageAlt: "Healthcare and dental practice search optimization",
+      link: "#final-cta",
+      linkText: "Dental SEO Services →",
     },
     {
-      title: "Local & Multi-Location Businesses",
+      title: "Roofing & Home Contractors",
+      description:
+        "Dominate high-ticket replacement, inspection, and emergency storm repair searches in your service territories through localized landing page hierarchies and verified local authority signals.",
+      visitorQuestion: "How do we rank #1 for high-ticket roofing and contractor queries across our service area?",
+      focus: [
+        "Service-area architecture & location pages",
+        "Emergency repair & storm damage search capture",
+        "Google Map Pack & local review generation",
+      ],
+      image: roofingImg,
+      imageAlt: "Roofing contractor and home service search engine optimization",
+      link: "#final-cta",
+      linkText: "Roofing SEO Strategy →",
+    },
+    {
+      title: "Local & Multi-Location Services",
       description:
         "Help customers find the right service in the areas you serve. We focus on local search visibility, Google Business Profile relevance, location-page quality and consistent business information without relying on thin or duplicated location pages.",
+      visitorQuestion: "How do we rank across multiple service territories without duplicate pages?",
+      focus: [
+        "Territory-tier landing page hierarchy",
+        "Citation consistency & local ranking signals",
+        "Click-to-call & enquiry path optimization",
+      ],
+      image: cleaningImg,
+      imageAlt: "Local and multi-location business SEO strategy",
+      link: "#final-cta",
+      linkText: "Local Services SEO →",
+    },
+    {
+      title: "Real Estate & Property Development",
+      description:
+        "Capture buyers, investors, and commercial tenants actively searching for developments, property types, and neighborhoods with localized architecture and rich schema markup.",
+      visitorQuestion: "How do we attract qualified property buyers and investors without paying portals forever?",
+      focus: [
+        "Community & neighborhood search silos",
+        "Property listing schema & rich snippets",
+        "High-intent commercial tenant search capture",
+      ],
+      image: realEstateImg,
+      imageAlt: "Real estate property search engine optimization",
+      link: "#final-cta",
+      linkText: "Real Estate SEO →",
     },
     {
       title: "Ecommerce & Product Catalogues",
       description:
         "Make products and categories easier for search engines and shoppers to discover. We assess category architecture, product-page content, internal linking, indexation controls, faceted navigation and relevant structured data across the catalogue.",
+      visitorQuestion: "How do we get our collections and high-margin products discovered organically?",
+      focus: [
+        "Category architecture & internal linking",
+        "Faceted navigation & indexation management",
+        "Product schema & rich snippet integration",
+      ],
+      image: ecommerceImg,
+      imageAlt: "Ecommerce catalogue architecture and search visibility",
+      link: "#final-cta",
+      linkText: "Ecommerce SEO Solutions →",
     },
     {
       title: "B2B & Corporate Services",
       description:
         "Reach buyers researching complex services, technical solutions and potential suppliers. We align content with informational and commercial search intent, strengthen relevant service pages and support evaluation through useful expertise, case studies and clear enquiry paths.",
+      visitorQuestion: "How do we attract enterprise buyers researching complex technical solutions?",
+      focus: [
+        "Search-intent mapping across buyer journeys",
+        "In-depth capability & solutions content",
+        "Technical crawl health & topical authority",
+      ],
+      image: b2bImg,
+      imageAlt: "B2B enterprise search intent and thought leadership",
+      link: "#final-cta",
+      linkText: "Corporate & Legal SEO →",
+    },
+    {
+      title: "Technology & Cloud SaaS",
+      description:
+        "Scale organic pipeline with product-led SEO, competitor comparison hubs, feature-specific landing pages, and bottom-of-funnel keyword architectures tailored for technical decision-makers.",
+      visitorQuestion: "Can SEO drive qualified product trials and demo requests from enterprise buyers?",
+      focus: [
+        "Comparison & alternative-to content hubs",
+        "Technical buyer journey intent capture",
+        "Product feature & use-case taxonomy",
+      ],
+      image: b2bImg,
+      imageAlt: "Technology SaaS product search optimization",
+      link: "#final-cta",
+      linkText: "SaaS SEO Growth →",
+    },
+    {
+      title: "Automotive & Dealerships",
+      description:
+        "Target high-intent vehicle service searches, maintenance bookings, and dealership showroom traffic with localized Map Pack dominance and structured vehicle inventory data.",
+      visitorQuestion: "How do we capture local car repair and maintenance searches in our immediate radius?",
+      focus: [
+        "Local Map Pack & service bay ranking",
+        "Automotive repair query optimization",
+        "Mobile click-to-book conversion funnels",
+      ],
+      image: carImg,
+      imageAlt: "Automotive repair and dealership SEO",
+      link: "#final-cta",
+      linkText: "Automotive SEO →",
+    },
+    {
+      title: "Education & Academies",
+      description:
+        "Attract prospective students and parents during critical enrollment windows by optimizing program curriculum pages, accreditation authority signals, and campus search visibility.",
+      visitorQuestion: "How do we increase prospectus downloads and student enrollments every semester?",
+      focus: [
+        "Program & degree pathway architecture",
+        "Seasonal admission cycle search strategy",
+        "Institutional authority & schema markup",
+      ],
+      image: schoolImg,
+      imageAlt: "Education and university program search optimization",
+      link: "#final-cta",
+      linkText: "Education SEO →",
     },
   ],
   regionalIntro:

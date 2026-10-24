@@ -5,31 +5,32 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Bixeltekblacklogo from '@/assets/Bixeltek Black Logo.png'
-import { HiChevronDown, HiMenu, HiX } from 'react-icons/hi';
-import anr from '@/assets/anr.jpg'
-import googleads from '@/assets/grow.jpg'
-import graphic from '@/assets/T-shirt Social Media Graphic - Mojahidul Islam.jpg'
-import seo from '@/assets/Dentist Near Me Search Dashboard.png'
-import webdesign from '@/assets/image2.jpeg'
-import { TbLayoutDashboard } from "react-icons/tb";
-import { AiOutlineCode, AiOutlineShoppingCart } from "react-icons/ai";
-import { RiBankCardLine } from "react-icons/ri";
-import cmsImage from '@/assets/laptop dentist 2.png'
-import socialmedia from '@/assets/mobile-app-phone2.webp'
-import customcoded from '@/assets/image 3.jpeg'
-import payment from '@/assets/phone finanacce.png'
-import ecommerce from '@/assets/E-Commerce-Website.png'
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { AiOutlineFileSearch, AiOutlineTool } from "react-icons/ai";
-import { SiGoogleads, SiInstagram } from "react-icons/si";
-import { TbDeviceImacSearch } from 'react-icons/tb';
+import { HiChevronDown, HiMenu, HiX, HiOutlineSparkles } from 'react-icons/hi';
+import { SiGoogleads, SiInstagram, SiShopify, SiMeta } from "react-icons/si";
+import { TbDeviceImacSearch, TbTargetArrow, TbDeviceDesktopCode } from 'react-icons/tb';
 import { IoLogoReact, IoPhonePortraitOutline } from 'react-icons/io5';
-import seo1 from '@/assets/Component-1-1.png'
-import seo2 from '@/assets/Frame-297.png'
-import seo3 from '@/assets/Card-1.png'
-import appdev from '@/assets/appdev.png'
-import pdpl from '@/assets/pdpl-consulting.png'
-import { AiOutlineLineChart, AiOutlinePicture } from "react-icons/ai";
+import {
+  AiOutlineLineChart,
+  AiOutlinePicture,
+  AiOutlineShoppingCart,
+  AiOutlineFileSearch,
+  AiOutlineFileText,
+} from "react-icons/ai";
+import anr from '@/assets/anr.jpg';
+import googleads from '@/assets/grow.jpg';
+import graphic from '@/assets/T-shirt Social Media Graphic - Mojahidul Islam.jpg';
+import seo from '@/assets/Dentist Near Me Search Dashboard.png';
+import webdesign from '@/assets/image2.jpeg';
+import socialmedia from '@/assets/mobile-app-phone2.webp';
+import ecommerce from '@/assets/E-Commerce-Website.png';
+import appdev from '@/assets/appdev.png';
+import pdpl from '@/assets/pdpl-consulting.png';
+import shopifyImg from '@/assets/shopify-overview.webp';
+import metaAdsImg from '@/assets/meta-ads-overview.png';
+import croImg from '@/assets/cro-overview.png';
+import customAppImg from '@/assets/web-application-overview.webp';
+import contentImg from '@/assets/content-overview.webp';
+import aiAutomationImg from '@/assets/ai-automation-overview.jpg';
 export const Whiteheader = () => {
 
     const locations = {
@@ -231,9 +232,9 @@ export const Whiteheader = () => {
     ];
 
 
-     const services = [
+       const services = [
     {
-      id: 6,
+      id: 1,
       title: "Google Ads Management",
       desc: "Optimize and manage Google Ads campaigns effectively.",
       icon: <SiGoogleads size={24} />,
@@ -241,7 +242,7 @@ export const Whiteheader = () => {
       image: googleads,
     },
     {
-      id: 7,
+      id: 2,
       title: "Search Engine Optimization",
       desc: "Improve your website ranking and visibility.",
       icon: <TbDeviceImacSearch size={24} />,
@@ -249,7 +250,15 @@ export const Whiteheader = () => {
       image: seo,
     },
     {
-      id: 8,
+      id: 3,
+      title: "Meta Ads Management",
+      desc: "High-ROI paid social campaigns across Facebook and Instagram.",
+      icon: <SiMeta size={24} />,
+      link: "/services/meta-ads",
+      image: metaAdsImg,
+    },
+    {
+      id: 4,
       title: "Social Media Management",
       desc: "Enhance your online presence with expert strategies.",
       icon: <SiInstagram size={24} />,
@@ -257,12 +266,44 @@ export const Whiteheader = () => {
       image: socialmedia,
     },
     {
-      id: 9,
+      id: 5,
+      title: "Conversion Rate Optimization",
+      desc: "Turn more visitors into paying customers with data-driven CRO.",
+      icon: <TbTargetArrow size={24} />,
+      link: "/services/conversion-rate-optimization",
+      image: croImg,
+    },
+    {
+      id: 6,
       title: "Web Design and Development",
       desc: "Build scalable and modern web solutions.",
       icon: <IoLogoReact size={24} />,
       link: "/services/web-design",
       image: webdesign,
+    },
+    {
+      id: 7,
+      title: "E-commerce Website",
+      desc: "Conversion-focused online stores built for speed and scalability.",
+      icon: <AiOutlineShoppingCart size={24} />,
+      link: "/services/ecommerce-development",
+      image: ecommerce,
+    },
+    {
+      id: 8,
+      title: "Shopify Development",
+      desc: "Custom Shopify stores, high-converting themes, and integrations.",
+      icon: <SiShopify size={24} />,
+      link: "/services/ecommerce-development/shopify",
+      image: shopifyImg,
+    },
+    {
+      id: 9,
+      title: "Custom App Development",
+      desc: "Bespoke web applications and software built for scale.",
+      icon: <TbDeviceDesktopCode size={24} />,
+      link: "/services/custom-app-development",
+      image: customAppImg,
     },
     {
       id: 10,
@@ -282,6 +323,14 @@ export const Whiteheader = () => {
     },
     {
       id: 12,
+      title: "Content Creation",
+      desc: "Engaging, high-converting content tailored to your audience.",
+      icon: <AiOutlineFileText size={24} />,
+      link: "/services/content-creation",
+      image: contentImg,
+    },
+    {
+      id: 13,
       title: "Graphic Design",
       desc: "Create stunning visuals to elevate your brand identity.",
       icon: <AiOutlinePicture size={24} />,
@@ -289,72 +338,37 @@ export const Whiteheader = () => {
       image: graphic,
     },
     {
-      id: 13,
-      title: "Custom CMS Websites",
-      desc: "Tailor-built CMS platforms with flexibility and SEO-ready architecture.",
-      icon: <TbLayoutDashboard size={24} />,
-      link: "/custom-cms-websites",
-      image: cmsImage,
-    },
-    {
       id: 14,
-      title: "Custom Coded Websites",
-      desc: "Fully hand-coded sites for performance, scalability, and uniqueness.",
-      icon: <AiOutlineCode size={24} />,
-      link: "/custom-coded-websites",
-      image: customcoded,
+      title: "AI Automation",
+      desc: "Streamline workflows and operations with intelligent AI systems.",
+      icon: <HiOutlineSparkles size={24} />,
+      link: "/services/automation/ai-automation",
+      image: aiAutomationImg,
     },
     {
       id: 15,
-      title: "Payment Gateway Integration",
-      desc: "Seamless integrations with Razorpay, Stripe, PayPal, and more.",
-      icon: <RiBankCardLine size={24} />,
-      link: "/payment-gateway-integrations",
-      image: payment,
-    },
-    {
-      id: 16,
-      title: "E-commerce Website",
-      desc: "Conversion-focused online stores built for speed and scalability.",
-      icon: <AiOutlineShoppingCart size={24} />,
-      link: "/services/ecommerce-development",
-      image: ecommerce,
-    },
-
-    // 🌍 NEWLY ADDED SEO SERVICES
-    {
-      id: 17,
-      title: "Local SEO",
-      desc: "Increase local visibility with optimized maps, listings, and reviews.",
-      icon: <FaMapMarkerAlt size={24} />,
-      link: "/local-seo",
-      image: seo1, // import an image named `localseo` from assets
-    },
-    {
-      id: 18,
-      title: "On-Page SEO",
-      desc: "Optimize content, meta tags, and structure for stronger relevance.",
+      title: "PDPL Consulting",
+      desc: "Comprehensive PDPL compliance programs for businesses in Saudi Arabia.",
       icon: <AiOutlineFileSearch size={24} />,
-      link: "/on-page-seo",
-      image: seo2, // import from assets
+      link: "/services/pdpl-consulting",
+      image: pdpl,
     },
-    {
-      id: 19,
-      title: "Technical SEO",
-      desc: "Enhance site speed, crawlability, and schema for better indexing.",
-      icon: <AiOutlineTool size={24} />,
-      link: "/technical-seo",
-      image: seo3, // import from assets
-    },
-    {
-          id: 20,
-          title: "PDPL Consulting",
-          desc: "Comprehensive PDPL compliance programs for businesses in Saudi Arabia.",
-          icon: <AiOutlineFileSearch size={24} />,
-          link: "/services/pdpl-consulting",
-          image: pdpl,
-        }
   ];
+      const headerIndustries = [
+    { name: "Dental Clinics", link: "/industries/dental-marketing-agency" },
+    { name: "Medical Clinics", link: "/industries/medical-clinics" },
+    { name: "Physiotherapy", link: "/industries/physiotherapy-clinic" },
+    { name: "Roofing & Contractors", link: "/industries/roofing" },
+    { name: "HVAC Services", link: "/industries/hvac" },
+    { name: "Cleaning Services", link: "/industries/cleaning" },
+    { name: "Real Estate", link: "/industries/real-estate" },
+    { name: "Construction", link: "/industries/construction" },
+    { name: "Legal & Law Firms", link: "/industries/legal" },
+    { name: "Retail & Ecommerce", link: "/industries/retail" },
+    { name: "Technology & SaaS", link: "/industries/technology-saas" },
+    { name: "Automotive Services", link: "/industries/automotive" },
+  ];
+
     const [hoveredService, setHoveredService] = useState(services[0]);
     return (
         <>
@@ -396,7 +410,7 @@ export const Whiteheader = () => {
                                         }`}>
 
      
-                                        <div className="w-[75%] grid grid-cols-3 gap-4 px-10">
+                                        <div className="w-[75%] grid grid-flow-col grid-rows-5 grid-cols-3 gap-4 px-10">
                                             {services.map((service) => (
                                                 <Link
                                                     key={service.id} 
@@ -548,79 +562,79 @@ export const Whiteheader = () => {
                                     className="ml-4 text-lg md:text-xl space-y-2"
                                 >
                                     <li>
-                                        <Link href="/services/google-ads" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Google Ads Management
-                                        </Link>
+                                      <Link href="/services/google-ads" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Google Ads Management
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/seo-services" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Search Engine Optimization
-                                        </Link>
+                                      <Link href="/services/seo-services" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Search Engine Optimization
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/social-media-marketing-agency-hyderabad" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Social Media Management
-                                        </Link>
+                                      <Link href="/services/meta-ads" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Meta Ads Management
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/web-design" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Web Design and Development
-                                        </Link>
-                                    </li>
-                                     <li>
-                                        <Link href="/services/custom-app-development/mobile-app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            App Design and Development
-                                        </Link>
+                                      <Link href="/social-media-marketing-agency-hyderabad" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Social Media Management
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/analytics-tracking" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Analytics Reporting
-                                        </Link>
+                                      <Link href="/services/conversion-rate-optimization" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Conversion Rate Optimization
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/graphic-design" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Graphic Design
-                                        </Link>
+                                      <Link href="/services/web-design" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Web Design and Development
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/custom-cms-websites" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Custom CMS Websites
-                                        </Link>
+                                      <Link href="/services/ecommerce-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        E-commerce Website
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/custom-coded-websites" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Custom Coded Websites
-                                        </Link>
+                                      <Link href="/services/ecommerce-development/shopify" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Shopify Development
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/payment-gateway-integrations" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Payment Gateway Integration
-                                        </Link>
+                                      <Link href="/services/custom-app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Custom App Development
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/ecommerce-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            E-commerce Website
-                                        </Link>
+                                      <Link href="/services/custom-app-development/mobile-app-development" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Mobile App Development
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/local-seo" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Local SEO
-                                        </Link>
+                                      <Link href="/services/analytics-tracking" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Analytics Reporting
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/technical-seo" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            Technical SEO
-                                        </Link>
+                                      <Link href="/services/content-creation" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Content Creation
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/on-page-seo" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            On Page SEO
-                                        </Link>
+                                      <Link href="/services/graphic-design" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        Graphic Design
+                                      </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/pdpl-consulting" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
-                                            PDPL Consulting
-                                        </Link>
+                                      <Link href="/services/automation/ai-automation" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        AI Automation
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link href="/services/pdpl-consulting" onClick={toggleMenu} className="block py-2 px-4 hover:bg-gray-700 rounded">
+                                        PDPL Consulting
+                                      </Link>
                                     </li>
                                 </motion.ul>
 

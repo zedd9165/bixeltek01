@@ -786,3 +786,161 @@ export const analyticsTrackingFinalCta = {
  * - https://www.epixs.in/services/digital-marketing/analytics-tracking/
  * - https://www.gohnd.com/services/conversion-tracking-setup/
  */
+
+
+// ============================================================
+// ANALYTICS & TRACKING BUSINESS MARKETS / INDUSTRY CAROUSEL
+// ============================================================
+
+import dentalImg from "@/assets/digital marketing for health care practices.jpg";
+import roofingImg from "@/assets/Roofing_SP_0441-cleaned-1920x1280-1440x960.webp";
+import ecommerceImg from "@/assets/ecom-industry.png";
+import realEstateImg from "@/assets/real-estate.jpg";
+import localImg from "@/assets/local-business.jpg";
+import b2bImg from "@/assets/b2b-business-business-corporate-connection-partnership-concept.jpg";
+import carImg from "@/assets/digital marketing for car detailers.jpg";
+import schoolImg from "@/assets/school.jpg";
+
+export const analyticsTrackingBusinessMarkets = {
+  eyebrow: "MEASUREMENT ACROSS BUSINESS MODELS",
+  h2: "Reliable Tracking Architecture for Every Growth Stage",
+  intro:
+    "Data accuracy problems vary by business model. Online stores lose revenue attribution to browser restrictions; contractors struggle with phone call tracking; SaaS businesses suffer broken onboarding funnels. We engineer robust telemetry and verified event tagging configured for your operations.",
+  cards: [
+    {
+      title: "Dental & Healthcare Clinics",
+      description:
+        "Patient privacy and multi-channel booking pathways require rigorous telemetry without violating health data regulations. We configure privacy-compliant event tracking for phone clicks, appointment requests, and consultation forms while excluding sensitive patient identifiers from analytics payloads.",
+      visitorQuestion: "Are our paid search ads driving actual scheduled patient appointments or just general inquiries?",
+      focus: [
+        "Privacy-conscious GA4 event telemetry without PII exposure",
+        "Click-to-call and booking widget interaction tracking across devices",
+        "Ad platform conversion signal deduplication and value assignment",
+      ],
+      image: dentalImg,
+      imageAlt: "Dental and healthcare clinic analytics and conversion tracking",
+      link: "#analytics-tracking-contact",
+      linkText: "Healthcare Analytics Setup →",
+    },
+    {
+      title: "Ecommerce & Direct-to-Consumer Brands",
+      description:
+        "Missing purchase events, currency discrepancies, and browser ad-blockers distort return on ad spend and revenue reporting. We implement server-side Google Tag Manager and Conversions API (CAPI) pipelines alongside full GA4 ecommerce data layers to capture every step from cart addition to payment confirmation.",
+      visitorQuestion: "Why do our Shopify or WooCommerce sales numbers differ from the conversions reported in GA4 and Meta Ads?",
+      focus: [
+        "Server-side GTM and Meta Conversions API (CAPI) deduplication",
+        "Granular ecommerce data-layer telemetry for view_item, cart, and purchase",
+        "Refund, coupon, and product variant revenue attribution tracking",
+      ],
+      image: ecommerceImg,
+      imageAlt: "Ecommerce and online retail tracking architecture and data layer",
+      link: "#analytics-tracking-contact",
+      linkText: "Ecommerce Analytics Setup →",
+    },
+    {
+      title: "Roofing & Home Contracting Services",
+      description:
+        "Contractors invest heavily in local search and paid ads but often cannot trace which zip codes generate booked jobs. We build call tracking, estimate form milestones, and CRM-connected conversion events that tie revenue back to the originating ad campaign and service territory.",
+      visitorQuestion: "Which ad campaigns and local landing pages produce genuine roof inspections instead of unqualified calls?",
+      focus: [
+        "Dynamic number insertion and call duration qualification tracking",
+        "Zip-code and service-area event parameter passing",
+        "Offline lead status feedback loops into Google Ads conversion actions",
+      ],
+      image: roofingImg,
+      imageAlt: "Roofing contractor call tracking and lead conversion telemetry",
+      link: "#analytics-tracking-contact",
+      linkText: "Contractor Tracking Setup →",
+    },
+    {
+      title: "Real Estate & Property Development",
+      description:
+        "Property investments involve long research cycles across property portals, virtual tours, and agent inquiries. We implement custom event pipelines measuring floor plan interactions, brochure downloads, and tour bookings to give developers clear visibility into investor engagement.",
+      visitorQuestion: "How do we measure which digital marketing channels bring high-net-worth buyers to our developments?",
+      focus: [
+        "Virtual tour engagement and architectural brochure download telemetry",
+        "Multi-touch attribution modeling for high-consideration buyer paths",
+        "Agent contact and private viewing request event segmentation",
+      ],
+      image: realEstateImg,
+      imageAlt: "Real estate property development analytics and investor tracking",
+      link: "#analytics-tracking-contact",
+      linkText: "Real Estate Analytics Setup →",
+    },
+    {
+      title: "Local & Multi-Location Field Services",
+      description:
+        "Managing multi-unit branches requires tracking service requests by location without crossing data streams or breaking attribution. We configure centralized Google Tag Manager containers with dynamic branch identifiers, tracking phone calls, WhatsApp messages, and quote submissions by individual territory.",
+      visitorQuestion: "How can we see branch-by-branch conversion performance without setting up separate analytics for every city?",
+      focus: [
+        "Dynamic branch and territory parameter tagging across all events",
+        "WhatsApp click, SMS click, and direct call intent instrumentation",
+        "Unified Looker Studio territory dashboards for multi-location reporting",
+      ],
+      image: localImg,
+      imageAlt: "Local and multi-location field service measurement and telemetry",
+      link: "#analytics-tracking-contact",
+      linkText: "Local Services Analytics Setup →",
+    },
+    {
+      title: "Corporate, Legal & Professional Services",
+      description:
+        "Professional firms need to track discreet corporate inquiries and confidential consultations while preserving client trust. We map enterprise visitor engagement across whitepaper downloads, attorney bios, and consultation scheduling forms without injecting insecure third-party trackers.",
+      visitorQuestion: "Are in-house corporate counsel and executive decision-makers actually engaging with our thought leadership?",
+      focus: [
+        "Confidential consultation and multi-field intake form event tracking",
+        "Executive thought-leadership and whitepaper download depth analysis",
+        "Clean tag governance and third-party script audit for corporate security",
+      ],
+      image: b2bImg,
+      imageAlt: "Corporate and legal professional services analytics governance",
+      link: "#analytics-tracking-contact",
+      linkText: "Corporate Analytics Setup →",
+    },
+    {
+      title: "Technology & Cloud SaaS Platforms",
+      description:
+        "Subscription businesses must connect website acquisition channels with product-led onboarding events, trial activations, and churn signals. We unify marketing site telemetry with product analytics, setting up user ID tracking and lifecycle event pipelines that track true customer lifetime value.",
+      visitorQuestion: "Which acquisition channels generate paid subscribers versus users who abandon during the free trial?",
+      focus: [
+        "Cross-domain user ID tracking between marketing site and SaaS app",
+        "Onboarding milestone events from trial registration to product activation",
+        "Stripe and subscription payment webhook event feeds into GA4",
+      ],
+      image: b2bImg,
+      imageAlt: "Technology SaaS platform telemetry and product activation tracking",
+      link: "#analytics-tracking-contact",
+      linkText: "SaaS Analytics Setup →",
+    },
+    {
+      title: "Automotive Dealerships & Service Centers",
+      description:
+        "Car dealerships lose visibility when shoppers move between showroom listings, inventory syndicators, and service scheduling software. We establish unified cross-domain tracking across inventory pages, trade-in valuation forms, and service booking iframes to track true cost per acquired service customer.",
+      visitorQuestion: "How can we accurately attribute service bay bookings and vehicle test-drive requests across our third-party inventory tools?",
+      focus: [
+        "Cross-domain tracking across third-party inventory and appraisal tools",
+        "Vehicle Details Page (VDP) view depth and specification click tracking",
+        "Online service bay reservation and repair quote conversion telemetry",
+      ],
+      image: carImg,
+      imageAlt: "Automotive dealership and service department conversion measurement",
+      link: "#analytics-tracking-contact",
+      linkText: "Automotive Analytics Setup →",
+    },
+    {
+      title: "Education, Academies & Private Institutions",
+      description:
+        "Universities and private academies navigate protracted student enrollment journeys with critical application deadlines. We track program syllabus downloads, open-day registrations, and multi-step application submissions to optimize seasonal paid campaign budgets.",
+      visitorQuestion: "Which paid campaigns and search terms deliver completed student applications rather than just casual brochure views?",
+      focus: [
+        "Program prospectus download and curriculum view milestone events",
+        "Campus open-day tour registration and attendance tracking",
+        "Multi-step student application form drop-off and completion analysis",
+      ],
+      image: schoolImg,
+      imageAlt: "Education and academic institution tracking and enrollment telemetry",
+      link: "#analytics-tracking-contact",
+      linkText: "Education Analytics Setup →",
+    },
+  ],
+};
