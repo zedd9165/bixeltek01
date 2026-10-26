@@ -10,7 +10,7 @@ interface BookingModalContextType {
   isBookingOpen: boolean;
 }
 
-const BookingModalContext = createContext<BookingModalContextType | undefined>(undefined);
+export const BookingModalContext = createContext<BookingModalContextType | undefined>(undefined);
 
 export function BookingModalProvider({ children }: { children: ReactNode }) {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -66,4 +66,8 @@ export function useBookingModal(): BookingModalContextType {
     throw new Error('useBookingModal must be used within a BookingModalProvider');
   }
   return context;
+}
+
+export function useOptionalBookingModal(): BookingModalContextType | undefined {
+  return useContext(BookingModalContext);
 }
