@@ -36,7 +36,9 @@ const config: Config = {
         'bento-card': '1px 1px 20px 1px rgba(140,69,255,0.5)',
         'purple-custom2': '0px 0px 100px 10px rgba(140,69,255,0.5)',
         'purple-custom3': '0px 0px 50px 6px rgba(140,69,255,0.5)',
-        'card-shadow':'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px'
+        'card-shadow':'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px',
+        panel: "0 1px 0 rgba(11,18,32,.04), 0 24px 48px -24px rgba(11,18,32,.18)",
+        lift: "0 12px 32px -16px rgba(36,71,245,.35)",
       },
       fontFamily:{
         'inter': ['Inter', 'sans-serif'],
@@ -46,13 +48,29 @@ const config: Config = {
         'italiana': ['Italiana', 'serif'],
         'antonio': ['Antonio', 'sans-serif'],
         'sofiasanscondensed': ['Sofia Sans Condensed', 'sans-serif'],
+        display: ["'Bricolage Grotesque Variable'", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
-       colors: {
+      colors: {
         'neon-pink': '#ff00ff',
         'neon-blue': '#00ffff', 
         'neon-purple': '#bf00ff',
         'primary-500': '#6366f1',
         'dark-900': '#0f0f0f',
+        ink: { DEFAULT: "#0B1220", 700: "#2A3344", 500: "#5B6475", 300: "#9AA2B1" },
+        paper: { DEFAULT: "#FFFFFF", soft: "#F6F7F9", line: "#E4E7EC" },
+        brand: { DEFAULT: "#2447F5", dark: "#1A35C4", tint: "#EDF0FF" },
+        night: { DEFAULT: "#0A0F1E", card: "#111833", line: "#222B4D" },
+      },
+      fontSize: {
+        "display-xl": ["clamp(2.5rem, 5.4vw, 4.5rem)", { lineHeight: "1.04", letterSpacing: "-0.03em" }],
+        "display-lg": ["clamp(2rem, 3.6vw, 3.1rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
+        "display-md": ["clamp(1.5rem, 2.2vw, 2rem)", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
+      },
+      borderRadius: {
+        card: "20px",
+      },
+      maxWidth: {
+        page: "1200px",
       },
       keyframes:{
         'border-spin': {
