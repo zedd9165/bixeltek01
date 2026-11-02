@@ -488,6 +488,15 @@ export const Header = () => {
                                 >
                                 <li>
                                     <Link
+                                    href="/industries"
+                                    onClick={toggleMenu}
+                                    className="block py-2 px-4 text-purple-400 font-semibold hover:text-purple-300"
+                                    >
+                                    All Industries Overview →
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
                                     href="/industries/dental-marketing-agency"
                                     onClick={toggleMenu}
                                     className="block py-2 px-4 text-gray-200 hover:text-purple-400"
@@ -645,7 +654,15 @@ export const Header = () => {
                 <Link href="/industries" className="text-white/70 flex items-center hover:text-white transition">
                   Industries <HiChevronDown className="ml-1 text-sm" />
                 </Link>
-                <ul className="absolute top-full -left-7 mt-0 bg-white rounded-b-md shadow-lg hidden group-hover:block z-50 min-w-[200px]">
+                <ul className="absolute top-full -left-7 mt-0 bg-white rounded-b-md shadow-lg hidden group-hover:block z-50 min-w-[210px] overflow-hidden">
+                  <li>
+                    <Link
+                      href="/industries"
+                      className="block px-4 py-2.5 text-xs font-bold text-purple-700 bg-purple-50 hover:bg-purple-100 transition border-b border-gray-100"
+                    >
+                      All Industries Overview →
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       href="/industries/dental-marketing-agency"

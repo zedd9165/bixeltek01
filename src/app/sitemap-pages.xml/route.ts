@@ -2,6 +2,7 @@ import { readdirSync, existsSync } from "fs";
 import path from "path";
 import { client } from "@/lib/graphql-client";
 import { gql } from "graphql-request";
+import { getCanonicalIndustrySlugs } from "@/data/industries";
 
 const baseUrl = "https://bixeltek.com";
 
@@ -101,7 +102,11 @@ export async function GET() {
 
   const homePage: SitemapUrlEntry[] = [{ url: `${baseUrl}/` }];
 
-  const allPages = [...homePage, ...staticRoutes, ...categoryRoutes];
+  const industryRoutes: SitemapUrlEntry[] = getCanonicalIndustrySlugs().map((slug) => ({
+    url: `${baseUrl}/industries/${slug}`,
+  }));
+
+  const allPages = [...homePage, ...staticRoutes, ...categoryRoutes, ...industryRoutes];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
   <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
