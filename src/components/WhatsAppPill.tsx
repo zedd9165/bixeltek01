@@ -1,9 +1,15 @@
 'use client';
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { FaWhatsapp } from 'react-icons/fa6';
 
 export default function WhatsAppPill() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/sisco')) {
+    return null;
+  }
+
   const phoneNumber = '919100032301';
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
