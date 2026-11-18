@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   description:
     "This Privacy Policy explains how SISCO collects, uses, discloses, and safeguards your information when you use our mobile application and related services.",
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 
