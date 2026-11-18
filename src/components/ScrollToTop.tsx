@@ -1,8 +1,14 @@
 'use client'; 
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function ScrollToTopButton() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/sisco')) {
+    return null;
+  }
+
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
