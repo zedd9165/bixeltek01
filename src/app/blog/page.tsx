@@ -13,6 +13,7 @@ export const metadata = {
 };
 
 export const dynamic = "force-dynamic";
+export const revalidate = 900; // 15-minute cache timer
 import { client } from '@/lib/graphql-client';
 import { GET_ALL_POSTS, GET_ALL_CATEGORIES_WITH_COUNT } from '@/lib/queries';
 import { BlogPageUI } from '@/components/BlogPage';

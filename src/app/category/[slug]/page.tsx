@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export const dynamic = "force-dynamic";
+export const revalidate = 900; // 15-minute cache timer
 
 const GET_POSTS_BY_CATEGORY = gql`
   query GetPostsByCategory($slug: [String]) {
