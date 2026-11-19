@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 900; // 15-minute cache timer
+
 import { client } from '@/lib/graphql-client';
 import { GET_SINGLE_POST, GET_SUGGESTED_POSTS } from '@/lib/queries';
 import Link from 'next/link';
